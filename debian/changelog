@@ -1,3 +1,15 @@
+linux-firmware (1.49) natty; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git 5d6e01c4db4e8115296895efcf1feb80be93b8c4
+    linux-firmware: Add Patch and sysconfig files for AR300x
+
+  [ Leann Ogasawara ]
+
+  * UBUNTU: Rename bcm43xx Broadcom Firmware Files
+    -LP: #728746
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 18 Mar 2011 14:29:50 -0600
+
 linux-firmware (1.48) natty; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git c2e530abf58116fbc4eb3baedeb5b3ed092b2c8a
