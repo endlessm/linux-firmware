@@ -1,3 +1,36 @@
+linux-firmware (1.53) oneiric; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git ae524638c277301a83daf126aaaf880738e2474b
+    rt2870sta: Use latest firmware for RT3070 and RT3071
+    rt2860sta: Use latest firmware for RT3090
+    Add source and copyright notice for CIS files from pcmcia-cs
+    linux-firmware: bnx2: Update firmware and version
+    linux-firmware: add new firmware for RTL8168E-VL
+    linux-firmware: update firmware for RTL8111E
+    Update QLogic phanfw.bin
+    linux-firmware: update ap firmware for mwl8k 8366 chip
+    linux-firmware: add cxgb4 firmware
+    linux-firmware: Initial release for Bluetooth init script
+    linux-firmware: Add firmware for RTL8168/8111E
+    linux-firmware: Add firmware for RTL8105E
+    STMICROELECTRONICS TDA7706 FW for BC and CB revision
+    linux-firmware: wl12xx- New STA&AP FW support WL128x + Update STA&AP FW for wl127x
+    linux-firmware: add myri10ge firmware
+    s2255: updated firmware f2255usb.bin
+    Add new firmware for AR7010 devices.
+    Add new firmware for AR9271 devices.
+    linux-firmware: add APIv2 AP firmware for marvell 8388
+    linux-firmware: updated firmware for BCM4313, BCM43224, and BCM43225 chips
+    linux-firmware: Removed codeversion from brcm firmware filenames.
+    linux-firmware: Simplified license file for brcm firmware
+    linux-firmware: add ath6kl firmware
+    linux-firmware: update Atheros firmware license
+    linux-firmware: Add sysconfig file
+    linux-firmware: Add patch and sysconfig files
+    linux-firmware: rt2800pci: rt2800usb: Firmware update
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 26 May 2011 08:46:57 -0600
+
 linux-firmware (1.52) natty; urgency=low
 
   * Update Broadcom firmware for 2.6.38 (which requires some file
