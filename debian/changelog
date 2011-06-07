@@ -1,3 +1,12 @@
+linux-firmware (1.54) oneiric; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git 7522de5d09b434602389ea63058a1fe0cbac3b3f
+    iwlwifi: add updated firmware for 1000 devices
+    linux-firmware: update for Intel 6000 series Wi-Fi Adapters
+    firmware: add SUMO + SUMO2 firmwares for llano APUs.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 07 Jun 2011 08:06:45 -0600
+
 linux-firmware (1.53) oneiric; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git ae524638c277301a83daf126aaaf880738e2474b
