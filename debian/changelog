@@ -1,3 +1,11 @@
+linux-firmware (1.56) oneiric; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git c8958f5de9a8a2fa590ab9e5641fe16ec044c200
+    bnx2x: Adding FW 7.0.23.0
+    -LP: #808884
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 11 Jul 2011 10:35:17 -0600
+
 linux-firmware (1.55) oneiric; urgency=low
 
   * Update ath9k firmware to version 1.3
