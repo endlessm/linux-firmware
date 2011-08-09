@@ -1,3 +1,16 @@
+linux-firmware (1.57) oneiric; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git 13f5008494268031d569f830d0955479bd5b9dfc
+    libertas: add cf8381 firmware v5.11.9p0
+    Add ene-ub6250 SD card reader firmware
+    linux-firmware: update firmware for Intel 6205 Series Wi-Fi Adapters
+    Qualcomm Atheros adds Bluetooth firmware for WiFi-BT combo module
+    Qualcomm Atheros updates firmware for WiFi-BT combo module
+    linux-firmware: Update patch and sysconfig files for AR3012
+    Add license for Terratec H5 DRX-K firmware
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 09 Aug 2011 13:05:01 -0600
+
 linux-firmware (1.56) oneiric; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git c8958f5de9a8a2fa590ab9e5641fe16ec044c200
