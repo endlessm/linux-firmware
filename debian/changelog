@@ -1,3 +1,9 @@
+linux-firmware (1.59) oneiric; urgency=low
+
+  * The last patch added some invalid firmware file names. Fixes FTBS.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 11 Aug 2011 14:43:13 +0100
+
 linux-firmware (1.58) oneiric; urgency=low
 
   [ Colin Watson ]
