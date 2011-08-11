@@ -8,9 +8,6 @@ ipw2200-ibss.fw
 ipw2200-sniffer.fw
 iwlwifi-100-5.ucode
 iwlwifi-1000-5.ucode
-iwlwifi-105-5.ucode
-iwlwifi-2000-5.ucode
-iwlwifi-2030-5.ucode
 iwlwifi-3945-2.ucode
 iwlwifi-4965-2.ucode
 iwlwifi-5000-1.ucode
