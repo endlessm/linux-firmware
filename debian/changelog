@@ -1,3 +1,16 @@
+linux-firmware (1.58) oneiric; urgency=low
+
+  [ Colin Watson ]
+
+  * Add firmware for ath9k_htc, rt2800*, and iwlagn NIC drivers.
+    d-i now supports WPA in Oneiric.  While soliciting testing of this, I
+    heard from testers with Atheros, Ralink, and Intel AGN chipsets, none of
+    whom were able to test WPA support in d-i because the relevant drivers
+    weren't delivered to d-i. This patch adds firmware for these drivers to
+    nic-firmware.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 11 Aug 2011 07:24:41 -0600
+
 linux-firmware (1.57) oneiric; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git 13f5008494268031d569f830d0955479bd5b9dfc
