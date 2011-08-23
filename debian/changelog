@@ -1,3 +1,12 @@
+linux-firmware (1.60) oneiric; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git f8ddc05e13c4c6dd9d725bc376b287f307eb223a
+    linux-firmware: wl12xx: Updated STA & AP FW for wl12xx-fw-3
+    linux-firmware: wl12xx: Updated STA & AP FW for WL128x & wl127x
+    libertas: add OLPC libertas blobs
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 23 Aug 2011 07:16:12 -0600
+
 linux-firmware (1.59) oneiric; urgency=low
 
   * The last patch added some invalid firmware file names. Fixes FTBS.
