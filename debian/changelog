@@ -1,3 +1,13 @@
+linux-firmware (1.61) precise; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git 15888a2eab052ac3d3f49334e4f6f05f347a516e
+    bnx2x: Adding FW 7.0.29.0
+    linux-firmware: Add new firmware image for ath6kl driver
+    Update QLogic phanfw.bin
+    linux-firmware: Update cxgb4 firmware
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 28 Oct 2011 09:01:52 -0600
+
 linux-firmware (1.60) oneiric; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git f8ddc05e13c4c6dd9d725bc376b287f307eb223a
