@@ -8,6 +8,7 @@ Vcs-Git: git://kernel.ubuntu.com/ubuntu/linux-firmware.git
 
 Package: linux-firmware
 Architecture: all
+Multi-Arch: foreign
 Priority: optional
 Provides: atmel-firmware
 Conflicts: atmel-firmware
