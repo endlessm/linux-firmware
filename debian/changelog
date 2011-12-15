@@ -1,3 +1,9 @@
+linux-firmware (1.64) precise; urgency=low
+
+  * Add all rtl_nic firmware files to nic-firmware
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 15 Dec 2011 13:16:42 -0700
+
 linux-firmware (1.63) precise; urgency=low
 
   * Add rtl8168d-2.fw to nic-firmware.  LP: #900750.
