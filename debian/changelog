@@ -1,3 +1,9 @@
+linux-firmware (1.63) precise; urgency=low
+
+  * Add rtl8168d-2.fw to nic-firmware.  LP: #900750.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Wed, 14 Dec 2011 15:21:51 -0800
+
 linux-firmware (1.62) precise; urgency=low
 
   [ Colin Watson ]
