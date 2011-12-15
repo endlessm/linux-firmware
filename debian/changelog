@@ -1,3 +1,9 @@
+linux-firmware (1.65) precise; urgency=low
+
+  * rtl_nic: add new firmware for RTL8111F
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 15 Dec 2011 15:14:21 -0700
+
 linux-firmware (1.64) precise; urgency=low
 
   * Add all rtl_nic firmware files to nic-firmware
