@@ -21,4 +21,9 @@ NPE-B
 NPE-C
 rt2860.bin
 rt2870.bin
+rtl_nic/rtl8168e-2.fw
 rtl_nic/rtl8168d-2.fw
+rtl_nic/rtl8105e-1.fw
+rtl_nic/rtl8168e-3.fw
+rtl_nic/rtl8168d-1.fw
+rtl_nic/rtl8168e-1.fw
