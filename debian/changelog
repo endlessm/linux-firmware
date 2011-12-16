@@ -1,3 +1,14 @@
+linux-firmware (1.66) precise; urgency=low
+
+  * Rebase against new upstream repo
+    git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 4969d2da0c2019df2419cbe9d3f8f9f8e44a0f7d
+    rtl_nic: add new firmware for RTL8402
+    rtl_nic: add new firmware for RTL8411
+    rtl_nic: add new firmware for RTL8111F
+    rtl_nic: update firmware for RTL8111E-VL
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 16 Dec 2011 09:12:32 -0700
+
 linux-firmware (1.65) precise; urgency=low
 
   * rtl_nic: add new firmware for RTL8111F
