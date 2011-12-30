@@ -1,3 +1,20 @@
+linux-firmware (1.67) precise; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git de960e5045cce262dabfba7aee621ddf27b67bdb
+    isci: Add firmware blob and sources
+    linux-firmware: bnx2: Update mips firmware to fix iSCSI problems
+    bnx2x: Update firmware to 6.2.9
+    WHENCE: bnx2x: Add the version 6.x.y files
+    bnx2x: replace FW to 6.2.5
+    bnx2x: Add 57712 support
+    bnx2x, cnic, bnx2i: use new FW/HSI
+    keyspan_pda: Add makefile for building from source
+    keyspan_pda: Fix parse error with as31 version 2.3.1
+    dvb-ttpci: Add source code and makefile
+    dsp56k: Add makefile for building from source
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 30 Dec 2011 08:21:54 -0700
+
 linux-firmware (1.66) precise; urgency=low
 
   * Rebase against new upstream repo
