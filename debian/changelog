@@ -1,3 +1,18 @@
+linux-firmware (1.68) precise; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git a2995d38c234e3d767df7223d84a0f33a1a24997
+    firmware/isci: update to oem parameter format v1.3
+    cis: Add makefile for building CIS files from text format
+
+  * Add new iwlwifi ucode files
+    iwlwifi: add new firmware for 6000g2b devices
+    iwlwifi: add new firmware for 2030 devices
+    iwlwifi: add new firmware for 2000 devices
+    iwlwifi: add new firmware for 135 devcies
+    iwlwifi: add new firmware for 105 devices
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 23 Jan 2012 10:22:54 -0700
+
 linux-firmware (1.67) precise; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git de960e5045cce262dabfba7aee621ddf27b67bdb
