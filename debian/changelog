@@ -1,3 +1,13 @@
+linux-firmware (1.69) precise; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 38118a598df73d5a9fd72bf04910e8298db82a46 
+    linux-firmware: brcm: add firmware for bcm43236 usb device
+    linux-firmware: brcm: remove nvram file for bcm4329 development board
+    linux-firmware: brcm: add bcm4330 firmware for brcmfmac
+    linux-firmware: brcm: add new bcm4329 firmware for brcmfmac
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 13 Feb 2012 07:03:52 -0700
+
 linux-firmware (1.68) precise; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git a2995d38c234e3d767df7223d84a0f33a1a24997
