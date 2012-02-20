@@ -1,3 +1,16 @@
+linux-firmware (1.70) precise; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 09c949f6d3196a7199eb2c7015bfa5d34ed723b5
+    usbdux: Add usbduxsigma firmware
+    Remove execute permissions from various blobs
+    bnx2x: adding fw 7.2.16
+    cxgb4: Delete unused file cxgb4/t4fw-1.3.10.0.bin
+    linux-firmware: update cxgb3 driver firmware to revision 7.12.0
+    linux-firmware: add t4fw-1.4.16.0.bin firmware for cxgb4 driver.
+    linux-firmware: rename t4fw.bin
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 20 Feb 2012 07:15:29 -0700
+
 linux-firmware (1.69) precise; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 38118a598df73d5a9fd72bf04910e8298db82a46 
