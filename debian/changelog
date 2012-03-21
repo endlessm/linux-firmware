@@ -1,3 +1,10 @@
+linux-firmware (1.72) precise; urgency=low
+
+  * Add bnx2x firmware to the NIC firmware udeb
+    -LP: #944108
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 21 Mar 2012 14:07:59 -0600
+
 linux-firmware (1.71) precise; urgency=low
 
   * Update carl9170 to 1.9.4
