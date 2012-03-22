@@ -1,3 +1,10 @@
+linux-firmware (1.73) precise; urgency=low
+
+  * Updated ath3k-1.fw
+    -LP: #714862
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 22 Mar 2012 05:59:22 -0600
+
 linux-firmware (1.72) precise; urgency=low
 
   * Add bnx2x firmware to the NIC firmware udeb
