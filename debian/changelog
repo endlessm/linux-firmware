@@ -1,3 +1,10 @@
+linux-firmware (1.74) precise; urgency=low
+
+  * Added isci/isci_firmware.bin to scsi-firmware.lst 
+    -LP: #963306
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 23 Mar 2012 11:47:09 -0600
+
 linux-firmware (1.73) precise; urgency=low
 
   * Updated ath3k-1.fw
