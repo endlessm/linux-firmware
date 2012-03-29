@@ -1,3 +1,9 @@
+linux-firmware (1.75) precise; urgency=low
+
+  * Add bcm4329-fullmac-4.bin to nic-firmware.lst
+
+ -- Leann Ogasawara <leann.ogasawara@canonical.com>  Thu, 29 Mar 2012 10:03:03 -0700
+
 linux-firmware (1.74) precise; urgency=low
 
   * Added isci/isci_firmware.bin to scsi-firmware.lst 
