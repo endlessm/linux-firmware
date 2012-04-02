@@ -1,3 +1,15 @@
+linux-firmware (1.76) precise; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 8ccddee5ee23a0e192da38d98bcbbbb41bf385dd
+    rtl_nic: update firmware for RTL8411
+    rtl_nic: update firmware for RTL8111F
+    rtl_nic: update firmware for RTL8111E-VL
+    linux-firmware: ti-connectivity: update wl12xx firmwares
+    linux-firmware: ti-connectivity: change fw version info to
+    linux-firmware: update ti-connectivity licence
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 02 Apr 2012 13:52:00 -0600
+
 linux-firmware (1.75) precise; urgency=low
 
   * Add bcm4329-fullmac-4.bin to nic-firmware.lst
