@@ -1,3 +1,10 @@
+linux-firmware (1.77) precise; urgency=low
+
+  * Added phanfw.bin to nic-firmware-lst
+    -LP: #969304
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 03 Apr 2012 08:40:31 -0600
+
 linux-firmware (1.76) precise; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 8ccddee5ee23a0e192da38d98bcbbbb41bf385dd
