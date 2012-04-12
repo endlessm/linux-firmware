@@ -1,3 +1,13 @@
+linux-firmware (1.79) precise; urgency=low
+
+  * Remove obsolete firmware files.
+    UBUNTU: Remove obsolete bnx2 firmware
+    UBUNTU: Remove obsolete bnx2x firmware files
+    UBUNTU: Remove obsolete iwlwifi ucode files 
+    LP: #979887
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 12 Apr 2012 09:54:35 -0600
+
 linux-firmware (1.78) precise; urgency=low
 
   * make sure all current iwlwifi ucode is in nic-firmware.lst
