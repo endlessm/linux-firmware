@@ -1,3 +1,28 @@
+linux-firmware (1.80) quantal; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git f6480b142add3ff517389cca02cbef20671f8e14
+    bnx2x: adding fw 7.2.51
+    WHENCE: List each file on its own line
+    WHENCE: Add currently undocumented firmware files
+    Add missing : in WHENCE file
+    WHENCE: Delete ath6kl's references to directories and non-existent files
+    WHENCE: Fix ti-connectivity firmware filenames
+    linux-firmware: ath6k: add firmware for AR6004 hw1.2
+    linux-firmware: ath6k: add AR6003 hw2.1.1 firmware version 3.2.0.144
+
+    [ Tim Gardner ]
+
+  * Cleaned out more obsolete firmware files that are only relevant to kernels
+    prior to 3.4.
+    UBUNT: Remove obsolete ath6k firmware
+    UBUNTU: Remove obsolete slicoss firmware
+    UBUNTU: Remove obsolete cx2341x firmware
+    UBUNTU: Remove obsolete ath9k firmware
+    UBUNTU: Remove obsolete ar3k firmware
+    UBUNTU: Remove obsolete cxgb3 firmware
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 30 Apr 2012 09:18:09 -0600
+
 linux-firmware (1.79) precise; urgency=low
 
   * Remove obsolete firmware files.
