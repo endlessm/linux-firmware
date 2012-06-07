@@ -21,6 +21,7 @@ rtl_nic/rtl8168f-1.fw
 rtl_nic/rtl8402-1.fw
 rtl_nic/rtl8168e-1.fw
 rtl_nic/rtl8168f-2.fw
+bnx2/bnx2-mips-09-6.2.1b.fw
 bnx2x/bnx2x-e1-7.0.29.0.fw
 bnx2x/bnx2x-e2-7.0.29.0.fw
 bnx2x/bnx2x-e1h-7.0.29.0.fw
