@@ -1,3 +1,22 @@
+linux-firmware (1.82) quantal; urgency=low
+
+  * Update bnx2 firmware list to 3.5-rc3 MODULE_FIRMWARE() list 
+    -LP: #1016444
+  * Update bnx2x firmware list to 3.5-rc3 MODULE_FIRMWARE() list 
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 5f9710a5770ad1f741caa67f7e97b824fb51ef2c
+    rt2800pci:Firmware update v1
+    cxgb4: update firmware to revision 1.4.23.0
+    build: Implement minimal GNOME Build API
+    ar3k: add patch and sysconfig for QCA9564(Aphrodite)
+    linux-firmware: add README
+    radeon: add new firmware for SI and TN
+    qla2xxx: Update ql2500_fw.bin to version 5.06.05.
+    qla2xxx: Update ql2400_fw.bin to version 5.06.05.
+    qla2xxx: Update ql2322_fw.bin to version 3.03.28.
+    qla2xxx: Update ql2300_fw.bin to version 3.03.28.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 22 Jun 2012 11:28:06 -0600
+
 linux-firmware (1.81) quantal-proposed; urgency=low
 
   * Add bnx2-mips-09-6.2.1b.fw to nic-firmware.lst
