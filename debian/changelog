@@ -1,3 +1,14 @@
+linux-firmware (1.83) quantal; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git e0836e6ec3568f54b7fac24b9e17bbe8c46eb508
+    rtlwifi: rtl8192ce: rtl8192se: rtl8192de: Update to rtl_92ce_92se_92de_linux_mac80211_0004.0816.2011 driver
+    WHENCE: Move version strings from Info to Version fields
+    WHENCE: Move informational text from File to Info fields
+    wl18xx: add firmware for WiLink8 WLAN chips
+    wl127x/wl128x: add new firmware series as version 5
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 09 Jul 2012 09:08:34 -0600
+
 linux-firmware (1.82) quantal; urgency=low
 
   * Update bnx2 firmware list to 3.5-rc3 MODULE_FIRMWARE() list 
