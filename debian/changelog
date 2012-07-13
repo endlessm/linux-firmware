@@ -1,3 +1,10 @@
+linux-firmware (1.84) quantal; urgency=low
+
+  * Add tigon/tg3_tso.bin to nic-firmware.lst
+    - LP: #1021747 
+
+ -- Leann Ogasawara <leann.ogasawara@canonical.com>  Fri, 13 Jul 2012 07:15:27 -0700
+
 linux-firmware (1.83) quantal; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git e0836e6ec3568f54b7fac24b9e17bbe8c46eb508
