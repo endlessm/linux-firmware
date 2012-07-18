@@ -1,3 +1,14 @@
+linux-firmware (1.85) quantal; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git f1f86bbaa02cc499ce625c93d8fad2055a0dd733
+    rtl_nic: add new firmware for RTL8168G
+    rtl_nic: add new firmware for RTL8106E
+    rtl_nic: update firmware for RTL8411
+    rtl_nic: update firmware for RTL8168F
+    ar3k: add patch and sysconfig for Qualcomm Atheros AR9462 
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 18 Jul 2012 13:27:03 -0600
+
 linux-firmware (1.84) quantal; urgency=low
 
   * Add tigon/tg3_tso.bin to nic-firmware.lst
