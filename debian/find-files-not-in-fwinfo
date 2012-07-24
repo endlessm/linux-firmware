@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Compare the files in linux-firmware and print the list of
+# files _not_ found in the supplied fwinfo file. You can then
+# use this list to pare down the files in linux-firmware since
+# they are aren't used.
+#
+FWINFO="$1"
+
+if [ "$FWINFO" = "" ]
+then
+	echo You must supply a fwinfo file from getabi
+	exit 1
+fi
+if ! cat $FWINFO | head -n1 | grep "firmware:       " > /dev/null
+then
+	echo $FWINFO looks bogus.
+	exit 1
+fi
+
+find . -type f|sed 's/\.\///'|egrep -v "debian|\.git|WHENCE|LICEN" | sort > fwlist.$$
+cat $FWINFO | sed 's/firmware:       //' | sort > fwinfo.$$
+cat fwlist.$$ fwinfo.$$ | sort | uniq -u | while read f
+do
+	if [ -f $f ]
+	then
+		echo $f
+	fi
+done
+rm -f fwlist.$$ fwinfo.$$
