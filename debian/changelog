@@ -1,3 +1,14 @@
+linux-firmware (1.86) quantal; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 7560108a2c94a62056fa82d912282b901aa0904f
+    Add syscfg (different frequency) and patch for AR3002 2.2.1.
+    brcm: add bcm4334 firmware for brcmfmac
+    r8712u: Update to latest firmware
+    rtl_nic: update firmware for RTL8168G
+    Add syscfg and patch files for AR3002 2.2.1 
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 24 Jul 2012 10:02:29 -0600
+
 linux-firmware (1.85) quantal; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git f1f86bbaa02cc499ce625c93d8fad2055a0dd733
