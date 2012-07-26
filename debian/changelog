@@ -1,3 +1,31 @@
+linux-firmware (1.87) quantal; urgency=low
+
+  * Remove obsolete firmware files:
+    UBUNTU: Remove obsolete 3com firmware
+    UBUNTU: Remove obsolete ath3k firmware
+    UBUNTU: Remove obsolete ar7010 firmware
+    UBUNTU: Remove obsolete ar9170 firmware
+    UBUNTU: Remove obsolete asihpi firmware
+    UBUNTU: Remove obsolete bnx2x firmware
+    UBUNTU: Remove obsolete bnx2 firmware
+    UBUNTU: Remove obsolete brcm firmware
+    UBUNTU: Remove obsolete cxgb firmware
+    UBUNTU: Remove obsolete dabusb firmware
+    UBUNTU: Remove obsolete Computone firmware
+    UBUNTU: Remove obsolete libertas firmware
+    UBUNTU: Remove obsolete mwl8k firmware
+    UBUNTU: Remove obsolete myricom firmware
+    UBUNTU: Remove obsolete rt2x00 firmware
+    UBUNTU: Remove obsolete RTL8192SE firmware
+    UBUNTU: Remove obsolete sxg firmware
+    UBUNTU: Remove obsolete tda1004x firmware
+    UBUNTU: Remove obsolete ti-connectivity firmware
+    UBUNTU: Remove obsolete tr_smctr firmware
+    UBUNTU: Remove obsolete ueagle-atm firmware
+    UBUNTU: Remove obsolete zd1211 firmware
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 26 Jul 2012 14:46:20 -0600
+
 linux-firmware (1.86) quantal; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 7560108a2c94a62056fa82d912282b901aa0904f
