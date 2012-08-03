@@ -21,9 +21,6 @@ rtl_nic/rtl8168f-1.fw
 rtl_nic/rtl8402-1.fw
 rtl_nic/rtl8168e-1.fw
 rtl_nic/rtl8168f-2.fw
-bnx2x/bnx2x-e1h-7.2.51.0.fw
-bnx2x/bnx2x-e1-7.2.51.0.fw
-bnx2x/bnx2x-e2-7.2.51.0.fw
 phanfw.bin
 iwlwifi-1000-5.ucode
 iwlwifi-100-5.ucode
