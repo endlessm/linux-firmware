@@ -1,3 +1,14 @@
+linux-firmware (1.88) quantal; urgency=low
+
+  * Remove boot essential duplicated firmware files that
+    are also carried in the linux-image package.
+    UBUNTU: Remove duplicate tigon firmware
+    UBUNTU: Remove duplicate bnx2x firmware
+    UBUNTU: Remove duplicate bnx2 firmware
+    UBUNTU: Remove duplicate e100 firmware
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 03 Aug 2012 12:22:11 -0600
+
 linux-firmware (1.87) quantal; urgency=low
 
   * Remove obsolete firmware files:
