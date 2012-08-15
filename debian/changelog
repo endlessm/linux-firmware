@@ -1,3 +1,12 @@
+linux-firmware (1.89) quantal; urgency=low
+
+  * Revert "UBUNTU: Remove obsolete ti-connectivity firmware"
+    This firmware is still in use by the 3.4 kernel in ti-omap4.
+    -LP: #1032779
+  * UBUNTU: Remove duplicate qlogic firmware 
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 15 Aug 2012 08:58:30 -0600
+
 linux-firmware (1.88) quantal; urgency=low
 
   * Remove boot essential duplicated firmware files that
