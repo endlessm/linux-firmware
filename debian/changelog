@@ -1,3 +1,15 @@
+linux-firmware (1.90) quantal; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git bbede96f3d68ac056ae5d9f6ac56819b6462f4f5 
+    iwlwifi: update firmware for 6205
+    -LP: #1039856
+
+  * Revert "Revert "UBUNTU: Remove obsolete ti-connectivity firmware""
+    The ti-omap4 kernel is now based on 3.5, so dropping obsolete firmware
+    files should be OK.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 22 Aug 2012 07:28:00 -0600
+
 linux-firmware (1.89) quantal; urgency=low
 
   * Revert "UBUNTU: Remove obsolete ti-connectivity firmware"
