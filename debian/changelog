@@ -1,3 +1,10 @@
+linux-firmware (1.92) quantal; urgency=low
+
+  * Add zd1201.fw and zd1211/* to nic-firmware.lst
+    -LP: #1047092
+
+ -- Leann Ogasawara <leann.ogasawara@canonical.com>  Fri, 14 Sep 2012 06:22:04 -0700
+
 linux-firmware (1.91) quantal; urgency=low
 
   * ti-connectivity: Restore nvs firmware
