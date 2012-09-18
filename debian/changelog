@@ -1,3 +1,10 @@
+linux-firmware (1.93) quantal; urgency=low
+
+  * revert 'UBUNTU: Remove obsolete cx2341x firmware'
+    -LP: #1052580
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 18 Sep 2012 19:25:44 -0400
+
 linux-firmware (1.92) quantal; urgency=low
 
   * Add zd1201.fw and zd1211/* to nic-firmware.lst
