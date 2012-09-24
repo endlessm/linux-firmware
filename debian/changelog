@@ -1,3 +1,11 @@
+linux-firmware (1.94) quantal-proposed; urgency=low
+
+  * Added iwlwifi-6000g2a-6.ucode to nic-firmware.lst
+    Stops the d-i installer from nagging about missing firmware.
+    -LP: #1055735
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 24 Sep 2012 13:43:06 -0600
+
 linux-firmware (1.93) quantal; urgency=low
 
   * revert 'UBUNTU: Remove obsolete cx2341x firmware'
