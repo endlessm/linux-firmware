@@ -1,3 +1,17 @@
+linux-firmware (1.95) quantal-proposed; urgency=low
+
+  * rtlwifi/rtl8712u Revert firmware
+    Although the newest firmware for the RTL8192SU, which is found in vendor
+    driver rtl8188C_8192C_8192D_usb_linux_v3.4.2_3727.20120404, works with most
+    devices, it causes drops of the wireless connection for the ASUS WL-167G V3
+    (USB ID 0b05:1791), the D-Link DWA131 (07d1:3303), and probably others.
+    Tests show that the firmware from vendor driver
+    rtl8712_8188_8191_8192SU_usb_linux_v7_0.20100831 works better.
+    This commerts reverts to that older firmware.
+    -LP: #1062827
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 12 Oct 2012 07:43:13 -0600
+
 linux-firmware (1.94) quantal-proposed; urgency=low
 
   * Added iwlwifi-6000g2a-6.ucode to nic-firmware.lst
