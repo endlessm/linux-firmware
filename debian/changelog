@@ -1,3 +1,18 @@
+linux-firmware (1.96) raring; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git fae71211eb70eb4d50de72a9dd70ece21905af57
+    rtl_nic: update firmware for RTL8168G
+    cxgb4: update firmware to revision 1.6.2.0
+    bnx2x: update fw to 7.8.2
+    Update rampatch file for AR9462.
+    netxen_nic: Update QLogic phanfw.bin to version 4.0.588 Signed-
+    rtlwifi/rtl8723e: Add firmware for new driver
+    linux-firmware: ath6k: add firmware for AR6004 hw1.3
+    Marvell SD8787: update to v14.66.9.p96
+    Marvell SD8686: update to v9.70.20.p0
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 08 Nov 2012 10:19:34 -0700
+
 linux-firmware (1.95) quantal-proposed; urgency=low
 
   * rtlwifi/rtl8712u Revert firmware
