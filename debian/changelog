@@ -1,3 +1,16 @@
+linux-firmware (1.97) raring; urgency=low
+
+  * Remove conflicting firmware files in favor of atmel-firmware
+    atmel_at76c502.bin
+    atmel_at76c502_3com.bin
+    atmel_at76c502d.bin
+    atmel_at76c502e.bin
+    atmel_at76c504.bin
+    atmel_at76c506.bin 
+    -LP: #1069325
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 09 Nov 2012 12:08:24 -0700
+
 linux-firmware (1.96) raring; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git fae71211eb70eb4d50de72a9dd70ece21905af57
