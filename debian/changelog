@@ -1,3 +1,14 @@
+linux-firmware (1.98) raring; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git bda53ca96deb3cacbef10a7a84bbaee2d09c7f34
+    brcm: new firmware version for brcmsmac
+    linux-firmware: add Marvell USB8797-B0 firmware image
+    s5p-mfc: Adding firmware files for Samsung MFC device driver
+    ar5523: Add firmware for new driver
+    Update patch and syscfg files for QCA9564.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 03 Dec 2012 09:07:31 -0700
+
 linux-firmware (1.97) raring; urgency=low
 
   * Remove conflicting firmware files in favor of atmel-firmware
