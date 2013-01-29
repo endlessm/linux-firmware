@@ -1,3 +1,17 @@
+linux-firmware (1.100) raring; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 65a5163b8bb77bd7759efa3ca780867fcaed89b0
+    carl9170: Install binary in the parent directory, not /lib/firmware
+    carl9170: Add checksum during installation, as preferred by the driver
+    carl9170: Add and check SHA-256 sums for the toolchain tarballs
+    carl9170: Fix minimum CMake version
+    carl9170: Add full licence texts to BSD-licenced CMake files
+
+  * Add AMD microcode.
+    -LP: #1068299
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 29 Jan 2013 10:46:44 -0700
+
 linux-firmware (1.99) raring; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 8cf14f0acad3c3d361c324474e889dc4ad939709
