@@ -1,3 +1,10 @@
+linux-firmware (1.101) raring; urgency=low
+
+  * Add Conflicts/Replaces/Provides amd64-microcode
+    -LP: #1112423
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 06 Feb 2013 05:48:44 -0700
+
 linux-firmware (1.100) raring; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 65a5163b8bb77bd7759efa3ca780867fcaed89b0
