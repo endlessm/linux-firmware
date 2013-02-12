@@ -1,3 +1,10 @@
+linux-firmware (1.102) raring; urgency=low
+
+  * Updated asihpi firmware from http://www.audioscience.com/internet/download/drivers/released/v4/08/00/hpklinux-4.08.00.tar.bz2
+    -LP: #1122377
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 12 Feb 2013 05:47:25 -0700
+
 linux-firmware (1.101) raring; urgency=low
 
   * Add Conflicts/Replaces/Provides amd64-microcode
