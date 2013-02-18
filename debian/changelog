@@ -1,3 +1,16 @@
+linux-firmware (1.103) raring; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git f87c5b8dd547bcb434d5296ead3748241810c1d8
+    linux-firmware: update Marvell SD8797-B0 firmware image
+    linux-firmware: add Marvell SD8797-B0 firmware image
+      -LP: #1128810
+    rtl_nic: update firmware for RTL8168G
+    Move sd8688*.bin images into mrvl/ tree
+    rtlwifi/rtl8188ee: Add firmware for new driver
+    Revert "carl9170: Add checksum during installation, as preferred by the driver"
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 18 Feb 2013 07:05:35 -0700
+
 linux-firmware (1.102) raring; urgency=low
 
   * Updated asihpi firmware from http://www.audioscience.com/internet/download/drivers/released/v4/08/00/hpklinux-4.08.00.tar.bz2
