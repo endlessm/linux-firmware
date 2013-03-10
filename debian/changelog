@@ -1,3 +1,11 @@
+linux-firmware (1.104) raring; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git c11f374afdd2a3ff0665c1cb0aab4ad0c6573ec7
+    cx231xx/cx23885: Remove incorrect Conexant CX23885 firmware
+    linux-firmware: Increment ap firmware API for mwl8k 8366 chip
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Sun, 10 Mar 2013 06:38:25 -0600
+
 linux-firmware (1.103) raring; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git f87c5b8dd547bcb434d5296ead3748241810c1d8
