@@ -1,3 +1,14 @@
+linux-firmware (1.105) raring; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git b584174fb7ca76645f9187d7f710c3d913529093
+    netxen_nic: Add FTP location of phanfw.bin in WHENCE file
+    netxen_nic: Update QLogic phanfw.bin to version 4.0.590
+    linux-firmware: Add firmware for mwl8k 8764 chip
+    tg3: Add EEE support firmware for 57766 cards
+    bnx2x: update fw to 7.8.17
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 10 Apr 2013 07:30:18 -0600
+
 linux-firmware (1.104) raring; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git c11f374afdd2a3ff0665c1cb0aab4ad0c6573ec7
