@@ -1,3 +1,11 @@
+linux-firmware (1.106) raring; urgency=low
+
+  * Restore rt3290.bin. It was originally removed as it was thought
+    superfluous (by mistake).
+    - LP: #1049466 
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 18 Apr 2013 06:27:19 -0600
+
 linux-firmware (1.105) raring; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git b584174fb7ca76645f9187d7f710c3d913529093
