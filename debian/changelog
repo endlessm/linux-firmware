@@ -1,3 +1,14 @@
+linux-firmware (1.107) saucy; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 120a97ff309b6a20812f13d0f9da231eacc3311a
+    Add Intel Bluetooth firmware patch files
+    Fix formatting of LICENCE.ca0132
+    radeon: add updated ucode for UVD
+    radeon: add ucode for OLAND GPUs
+    linux-firmware: Add firmware files for Creative CA0132 HD-audio codec
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 02 May 2013 18:24:45 -0400
+
 linux-firmware (1.106) raring; urgency=low
 
   * Restore rt3290.bin. It was originally removed as it was thought
