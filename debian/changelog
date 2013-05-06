@@ -1,3 +1,14 @@
+linux-firmware (1.108) saucy; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 07ea598af5b9dde3acdf279846b062fa1b2987b8
+    rtl_nic: add firmware rtl8106e-2
+    rtl_nic: Add firmware rtl8168g-3
+    wl18xx: add default configuration binary
+    wl18xx: add version 2 of the wl18xx firmware
+    wl127x/wl128x: update firmwares
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 06 May 2013 08:56:31 -0600
+
 linux-firmware (1.107) saucy; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 120a97ff309b6a20812f13d0f9da231eacc3311a
