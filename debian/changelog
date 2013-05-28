@@ -1,3 +1,14 @@
+linux-firmware (1.109) saucy; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 94f39039688a53491f10130ac22dadb07e809764
+    rp2: Initial commit of Comtrol RocketPort 2 microcode
+    Merge branch 'master' of git://git.marvell.com/mwifiex-firmware
+    radeon: add ucode for SUN/HAINAN GPUs
+    linux-firmware: Add firmware files for mtk mt7630/mt7650 chipsets
+    linux-firmware: add Marvell PCIe8897-B0 WLAN firmware image
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 28 May 2013 12:55:13 -0600
+
 linux-firmware (1.108) saucy; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 07ea598af5b9dde3acdf279846b062fa1b2987b8
