@@ -1,3 +1,12 @@
+linux-firmware (1.110) saucy; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 2892af06dc38a764938f0583a2eac30595108799
+    List symlinks consistently in WHENCE
+    Add symlinks for old go7007 firmware filenames
+    Add go7007 firmware. 
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 27 Jun 2013 12:22:17 -0600
+
 linux-firmware (1.109) saucy; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 94f39039688a53491f10130ac22dadb07e809764
