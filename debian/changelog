@@ -1,3 +1,10 @@
+linux-firmware (1.111) saucy; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git e982abf07f7986ca42b8cfdeb3374d009c18902a
+    iwlwifi: add firmware for 7260 / 3160 devices
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 10 Jul 2013 08:59:20 -0600
+
 linux-firmware (1.110) saucy; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 2892af06dc38a764938f0583a2eac30595108799
