@@ -1,3 +1,15 @@
+linux-firmware (1.112) saucy; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 31f6b3076bab3c4b65f67fdb232f4579ed828b4f
+    linux-firmware: Update AMD microcode patch firmware files
+      This AMD ucode fixes some severe lockup issues on AMD family 15h CPUs when under high load.
+      The fix for erratum #759 being the most severe.
+    rtl_nic: add firmware rtl8411-2
+    ar3k: add Bluetooth support for QCA98XX/QCA24XX 
+    - LP: #1200533
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 12 Jul 2013 06:35:00 -0600
+
 linux-firmware (1.111) saucy; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git e982abf07f7986ca42b8cfdeb3374d009c18902a
