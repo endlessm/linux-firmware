@@ -1,3 +1,12 @@
+linux-firmware (1.113) saucy; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 931e4469dc254df66a2c990ff1a8723685759eb4
+    radeon: add ucode for KABINI GPUs
+    radeon: add ucode for BONAIRE GPUs
+    radeon: add smc ucode for radeon GPUs
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Sun, 04 Aug 2013 05:47:09 -0600
+
 linux-firmware (1.112) saucy; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 31f6b3076bab3c4b65f67fdb232f4579ed828b4f
