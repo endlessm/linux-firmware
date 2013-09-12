@@ -1,3 +1,12 @@
+linux-firmware (1.114) saucy; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 3fe01af27849c45c36c4c88eab8e24ddfeae307e
+    Fix filename for Intel Bluetooth firmware
+    linux-firmware: update Intel Bluetooth firmware patch file
+    -LP: #1011423
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 12 Sep 2013 13:36:30 +0000
+
 linux-firmware (1.113) saucy; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 931e4469dc254df66a2c990ff1a8723685759eb4
