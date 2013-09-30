@@ -1,3 +1,16 @@
+linux-firmware (1.115) saucy; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git b8ac7c7e27dcd13fa3c843aaf62457e9c57ea4db
+    linux-firmware: Add Brocade FC/FCOE Adapter firmware files
+    radeon: add ucode for KAVERI GPUs (LP: #1218691)
+    radeon: add smc ucode for BONAIRE
+    linux-firmware: Add firmware patch file for Intel Bluetooth device(3160)
+    linux-firmware: add version information for Intel Bluetooth firmware
+    cw1200: Add SDD file for the Sagrad SG901-1091/1098 WLAN modules.
+    moxa: Fix firmware file names.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 30 Sep 2013 08:33:18 -0600
+
 linux-firmware (1.114) saucy; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 3fe01af27849c45c36c4c88eab8e24ddfeae307e
