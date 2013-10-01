@@ -1,3 +1,11 @@
+linux-firmware (1.116) saucy; urgency=low
+
+  * UBUNTU: SAUCE: ath10k: Add firmware
+    Pulled from https://github.com/kvalo/ath10k until it
+    appears upstream. (LP: #1232990) 
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 01 Oct 2013 11:58:09 -0600
+
 linux-firmware (1.115) saucy; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git b8ac7c7e27dcd13fa3c843aaf62457e9c57ea4db
