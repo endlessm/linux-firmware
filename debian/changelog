@@ -1,3 +1,16 @@
+linux-firmware (1.117) trusty; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 7d0c7a8cfd78388d90cc784a185b19dcbdbce824
+    rtlwifi: Add new firmware files for rtl8188eu
+    rtlwifi: Add new firmware files for rtl8192cu
+    brcm: add firmware file for the BCM4335 SDIO chipset
+    brcm: add firmware for newer version of BCM43241 SDIO chipset
+    brcm: add firmware file for BCM43241 SDIO chipset
+    brcm: rename firmware names expressing host interface type
+    ti-connectivity: add wl1251 firmware and license
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 21 Oct 2013 13:06:16 -0600
+
 linux-firmware (1.116) saucy; urgency=low
 
   * UBUNTU: SAUCE: ath10k: Add firmware
