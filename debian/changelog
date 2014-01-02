@@ -1,3 +1,18 @@
+linux-firmware (1.118) trusty; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 52d77db9f133afe4d2b26aeccfd603745f45fda1
+    iwlwifi: update firmware for 7260 / 3160 devices
+    linux-firmware: 3.2.3.0 Firmware for Brocade Adapters
+    cxgb4: Updated T4 firmware, add T5 firmware
+    qla2xxx: Update ql2{4,5}00_fw.bin to version 7.01.00
+    linux-firmware: Update Intel Bluetooth devices firmware patch files
+    firmware: cw1200: Add firmware for the ST-E CW1200 WLAN chipset.
+    emi62: Provide the correct bitstream
+    linux-firmware: add Marvell SD8897-B0 firmware combo image
+    linux-firmware: update Marvell PCIe/USB 8897-B0 firmware combo image 
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 02 Jan 2014 07:55:19 -0700
+
 linux-firmware (1.117) trusty; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 7d0c7a8cfd78388d90cc784a185b19dcbdbce824
