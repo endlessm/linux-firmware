@@ -1,3 +1,14 @@
+linux-firmware (1.119) trusty; urgency=low
+
+  * iwlwifi: update firmware for 7260 / 3160 devices
+    version: 22.15.8.0
+    Supported by kernel 3.13 and up. 
+    cherry-picked from git://git.kernel.org/pub/scm/linux/kernel/git/egrumbach/linux-firmware
+    http://www.spinics.net/lists/linux-wireless/msg116615.html
+    -LP: #1265436
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 03 Jan 2014 10:35:23 -0700
+
 linux-firmware (1.118) trusty; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 52d77db9f133afe4d2b26aeccfd603745f45fda1
