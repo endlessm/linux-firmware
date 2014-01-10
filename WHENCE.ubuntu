@@ -61,15 +61,6 @@ License: Redistributable. See LICENCE.atmel for details
 
 --------------------------------------------------------------------------
 
-Driver: aic94xx-seq
-
-File: aic94xx-seq.fw
-Info: http://www.adaptec.com/en-US/speed/scsi/linux/aic94xx-seq-30-1_tar_gz
-
-License: Redistributable. See LICENCE.aic94xx-seq for details
-
---------------------------------------------------------------------------
-
 Driver: rtl8192se - for RealTek RTL8191/2SE or RTL8171 wireless MACs
 
 File: rtl8192sfw492.bin  rtl8192sfw74.bin  rtl8192sfw.bin
