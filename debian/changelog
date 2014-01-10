@@ -1,3 +1,11 @@
+linux-firmware (1.120) trusty; urgency=low
+
+  * Remove aic94xx-seq.fw and license. It has been pointed out
+    that this firmware is likely not redistributable.
+    -LP: #1101636
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 10 Jan 2014 13:47:41 -0700
+
 linux-firmware (1.119) trusty; urgency=low
 
   * iwlwifi: update firmware for 7260 / 3160 devices
