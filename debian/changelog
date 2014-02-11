@@ -1,3 +1,11 @@
+linux-firmware (1.124) trusty; urgency=low
+
+  * Hmm, somehow managed to trash 1.123 that was already in the git repo and in the archive, but no big
+    deal since this is a straightforward rebase against upstream. No bits were lost in the making
+    of this package.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 11 Feb 2014 07:28:26 -0700
+
 linux-firmware (1.123) trusty; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 4164c23d2e3b4863ca42d72f40dc7cc5d9fb8c6c
