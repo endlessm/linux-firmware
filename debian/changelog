@@ -1,3 +1,10 @@
+linux-firmware (1.125) trusty; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 343e46092a2b9c2ee24b88e66155226798bbec3f
+    wl18xx: add version 3 of the wl18xx firmware
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 19 Feb 2014 12:36:22 -0700
+
 linux-firmware (1.124) trusty; urgency=low
 
   * Hmm, somehow managed to trash 1.123 that was already in the git repo and in the archive, but no big
