@@ -1,3 +1,15 @@
+linux-firmware (1.126) trusty; urgency=low
+
+  * Update firmware for 7260 / 3160 devices (Wilkins Peak)
+    https://bugs.launchpad.net/intel/+bug/1265436/comments/13
+    Quote from the release note:
+      "This firmware is supported starting 3.13 kernel.
+      We have a here quite a few bug fixes with a few new features.
+      Most of the improvements concern P2P client and GO modes."
+    -LP: #1265436
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 05 Mar 2014 08:34:45 -0700
+
 linux-firmware (1.125) trusty; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 343e46092a2b9c2ee24b88e66155226798bbec3f
