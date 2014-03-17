@@ -1,3 +1,13 @@
+linux-firmware (1.127) trusty; urgency=low
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git dec41bce44e0dff6a2c3358a958fadf22bf58858
+    brcm: add firmware for the BCM43362 WLAN device
+    iwlwifi: update firmware for 7260 / 3160 devices
+      (official upstream patch, replaces patch from 1.126)
+    WHENCE: Fix oddly capitalised instances of 'File'
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 17 Mar 2014 08:34:55 -0600
+
 linux-firmware (1.126) trusty; urgency=low
 
   * Update firmware for 7260 / 3160 devices (Wilkins Peak)
