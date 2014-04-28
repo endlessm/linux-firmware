@@ -1,3 +1,11 @@
+linux-firmware (1.128) utopic; urgency=medium
+
+  * Add firmware file to support Intel 7265 (Stone Peak) for linux v3.13+
+    http://wireless.kernel.org/en/users/Drivers/iwlwifi?action=AttachFile&do=get&target=iwlwifi-7265-ucode-22.24.8.0.tgz
+    -LP: #1188092
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 28 Apr 2014 11:38:58 -0600
+
 linux-firmware (1.127) trusty; urgency=low
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git dec41bce44e0dff6a2c3358a958fadf22bf58858
