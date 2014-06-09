@@ -1,3 +1,20 @@
+linux-firmware (1.131) utopic; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git a4f3bc03f1e7b1f25cc52328981c2a35871e55a1
+    README: Update the submission address to linux-firmware@kernel.org
+    firmware: Added fw for qat_dh895xxcc hw crypto accelerator
+    s5p-mfc: Adding MFC v7 and v8 firmwares
+    s5p-mfc: Add s5p-mfc-v6-v2 firmware
+    radeon: add firmware for Mullins/Beema GPUs
+    radeon: add mc2 firmware for SI/CI GPUs
+    rtlwifi: rtl8723be: Add firmware
+    brcm: add firmware for BCM4354 2x2 11ac SDIO device
+    brcm: add firmware for BCM43143 2.4G 11n SDIO device
+    brcm: add firmware for BCM43143 2.4G 11n USB device
+    firmware: update Intel Bluetooth device firmware patch files
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 09 Jun 2014 06:41:24 -0600
+
 linux-firmware (1.130) utopic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 4a050f5524a09c35192273e3a5d741f63e7bf7d6
