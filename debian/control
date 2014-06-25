@@ -10,9 +10,9 @@ Package: linux-firmware
 Architecture: all
 Multi-Arch: foreign
 Priority: optional
-Provides: atmel-firmware, amd64-microcode
-Conflicts: atmel-firmware, amd64-microcode
-Replaces: atmel-firmware, linux-restricted-common, amd64-microcode
+Provides: atmel-firmware
+Conflicts: atmel-firmware
+Replaces: atmel-firmware, linux-restricted-common
 Description: Firmware for Linux kernel drivers
  This package provides firmware used by Linux kernel drivers.
 
