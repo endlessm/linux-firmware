@@ -1,3 +1,14 @@
+linux-firmware (1.132) utopic; urgency=medium
+
+  * Remove amd64-microcode for licensing reasons.
+    The amd64 microcode is not suitable for packaging in main since
+    the license does not allow modification or disassembly. Install
+    the multiverse package amd64-microcode instead which also contains
+    initramfs hooks.
+    -LP: #1181145
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 25 Jun 2014 08:11:00 -0600
+
 linux-firmware (1.131) utopic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git a4f3bc03f1e7b1f25cc52328981c2a35871e55a1
