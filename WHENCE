@@ -3856,21 +3856,6 @@ License: Redistributable. See LICENSE.amd-sev for details
 
 --------------------------------------------------------------------------
 
-Driver: microcode_amd - AMD CPU Microcode Update Driver for Linux
-
-File: amd-ucode/microcode_amd.bin
-Version: 2013-07-10
-File: amd-ucode/microcode_amd_fam15h.bin
-Version: 2018-05-24
-File: amd-ucode/microcode_amd_fam16h.bin
-Version: 2014-10-28
-File: amd-ucode/microcode_amd_fam17h.bin
-Version: 2019-12-18
-
-License: Redistributable. See LICENSE.amd-ucode for details
-
---------------------------------------------------------------------------
-
 Driver: mxu11x0 - MOXA UPort 11x0 USB Serial hub driver
 
 File: moxa/moxa-1110.fw
