@@ -1,3 +1,29 @@
+linux-firmware (1.133) utopic; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 365e80cce17e033cc612ac6b3f74a28c2753f184
+    radeon: add new firmware for the UVD block on older asics
+    radeon: add updated firmware for radeon GPUs
+    linux-firmware: add firmware v3.25.0.0 for ITEtech IT9135 DVB-T USB dr
+    xc4000: add firmware for Xceive xc4000 tuner driver
+    xc5000: Add firmware for xc5000c variant
+    as102: add firmware for Abilis Systems Single DVB-T Receiver
+    Move metadata for intel/fw_sst_0f28.bin-48kHz_i2s_master into WHENCE
+    bnx2x: Add FW 7.10.51
+    cxgb4: Update firmware to revision 1.11.27.0
+    linux-firmware: Add Intel BT firmware for 3160
+    xhci-rcar: add firmware for R-Car H2/M2 USB 3.0 host controller
+    linux-firmware: Update firmware patch for Intel BT 7265
+    linux-firmware: Update firmware patch for Intel BT 7260
+    fw_sst_0f28: Add firmware for Intel Baytrail SST DSP
+    firmware: qat: QAT_dh895 - Removed unnecessary dma read.
+    wl18xx: add version 4 of the wl18xx firmware
+    qla2xxx: Update ql2{4,5}00_fw.bin to version 7.03.00
+    Move the s5p-mfc firmware out of its subdirectory
+  * linux-firmware: Updated firmware patch for Intel Bluetooth 7265
+    -LP: #1188096
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 29 Aug 2014 06:43:21 -0600
+
 linux-firmware (1.132) utopic; urgency=medium
 
   * Remove amd64-microcode for licensing reasons.
