@@ -1,3 +1,14 @@
+linux-firmware (1.134) utopic; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git f66291398181d24856fd2d19454d246199abd5ea
+    Update firmware for rtl8821ae
+    Update firmware for rtl8192de
+    Update firmware for rtl8723be
+    Update firmware for rtl8192ce
+    iwlwifi: update firmware for 3160 / 7260 / 7265 
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 15 Sep 2014 07:51:33 -0600
+
 linux-firmware (1.133) utopic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 365e80cce17e033cc612ac6b3f74a28c2753f184
