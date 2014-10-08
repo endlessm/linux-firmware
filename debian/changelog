@@ -1,3 +1,11 @@
+linux-firmware (1.135) utopic; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 935b5557b1485d839748b40f5721539b54d429e1
+    linux-firmware: Add firmware patch for Intel Bluetooth 7265 ROM-spin(D0)
+    rtl_nic: add firmware for RTL8168H and RTL8107E
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 08 Oct 2014 07:27:14 +0100
+
 linux-firmware (1.134) utopic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git f66291398181d24856fd2d19454d246199abd5ea
