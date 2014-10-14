@@ -1,3 +1,12 @@
+linux-firmware (1.136) utopic; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 0e5f63771d0df6d7859f7c4100a74d737c62ac88 
+    Fix upstream mis-commit:
+      Revert "linux-firmware: Add firmware patch for Intel Bluetooth 7265 ROM-spin(D0)"
+      linux-firmware: Add firmware patch for Intel Bluetooth 7265 ROM-spin(D0)
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 14 Oct 2014 15:03:42 +0200
+
 linux-firmware (1.135) utopic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 935b5557b1485d839748b40f5721539b54d429e1
