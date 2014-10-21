@@ -1,3 +1,11 @@
+linux-firmware (1.137) utopic; urgency=medium
+
+  * Restore cxgb3/t3fw-7.12.0.bin which was accidentally dropped
+    when grooming for obsolete firmware.
+    -LP: #1382710
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Tue, 21 Oct 2014 14:41:52 -0400
+
 linux-firmware (1.136) utopic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 0e5f63771d0df6d7859f7c4100a74d737c62ac88 
