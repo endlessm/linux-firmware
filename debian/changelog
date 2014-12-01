@@ -1,3 +1,18 @@
+linux-firmware (1.139) vivid; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 8ac569dd3ca3ca685bd47ee86c1eeb6050864db3
+    linux-firmware: Update AMD microcode patch firmware files
+    linux-firmware: Add firmware files for Siano DTV devices
+    linux-firmware: add sst audio firmware for baytrail platforms
+    IntcSST2: Add firmware for Intel Broadwell SST DSP
+    iwlwifi: add new firmware for 3160 / 7260 / 7265 / 7265D
+    iwlwifi: update firmware for 3160 / 7260 / 7265
+  * Updated "UBUNTU: Remove amd64-microcode" during rebase to remove
+    files introduced by "linux-firmware: Update AMD microcode patch
+    firmware files."
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Mon, 01 Dec 2014 12:45:33 -0600
+
 linux-firmware (1.138) utopic; urgency=medium
 
   * Add bnx2x firmware to the NIC firmware udeb to support net booting as described
