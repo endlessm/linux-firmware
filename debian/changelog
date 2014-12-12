@@ -1,3 +1,10 @@
+linux-firmware (1.140) vivid; urgency=medium
+
+  * Revert "linux-firmware: Add firmware files for Siano DTV devices"
+    -LP: #1401711
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 12 Dec 2014 16:17:39 -0600
+
 linux-firmware (1.139) vivid; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 8ac569dd3ca3ca685bd47ee86c1eeb6050864db3
