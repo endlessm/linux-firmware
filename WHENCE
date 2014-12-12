@@ -4103,26 +4103,6 @@ License: Redistributable. See LICENCE.adsp_sst for details
 
 --------------------------------------------------------------------------
 
-Driver: smsmdtv - Siano MDTV Core module
-
-File: cmmb_vega_12mhz.inp
-File: cmmb_venice_12mhz.inp
-File: dvb_nova_12mhz.inp
-File: dvb_nova_12mhz_b0.inp
-File: isdbt_nova_12mhz.inp
-File: isdbt_nova_12mhz_b0.inp
-File: isdbt_rio.inp
-File: sms1xxx-hcw-55xxx-dvbt-02.fw
-File: sms1xxx-hcw-55xxx-isdbt-02.fw
-File: sms1xxx-nova-a-dvbt-01.fw
-File: sms1xxx-nova-b-dvbt-01.fw
-File: sms1xxx-stellar-dvbt-01.fw
-File: tdmb_nova_12mhz.inp
-
-Licence: Redistributable. See LICENCE.siano for details
-
---------------------------------------------------------------------------
-
 Driver: xhci-tegra -- NVIDIA Tegra XHCI driver
 
 File: nvidia/tegra124/xusb.bin
