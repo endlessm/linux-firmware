@@ -1,3 +1,12 @@
+linux-firmware (1.141) vivid; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 78535e88bfb95e2f50afb6f9e728df0fbec2cddc
+    cxgb4: Update firmware to revision 1.12.25.0
+    iwlwifi: update -10.ucode for 3160 / 7260 / 7265 / 7265D
+    radeon: add updated firmware for kaveri (radeon GPU)
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Sat, 10 Jan 2015 11:12:18 -0600
+
 linux-firmware (1.140) vivid; urgency=medium
 
   * Revert "linux-firmware: Add firmware files for Siano DTV devices"
