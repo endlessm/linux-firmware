@@ -1,3 +1,51 @@
+linux-firmware (1.142) vivid; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 17657c35869baa999b454e868cd3d5a7e1656425
+    linux-firmware: update Marvell USB8797-B0 firmware image
+    linux-firmware: update Marvell SD8897-B0 firmware combo image
+    linux-firmware: update Marvell PCIe/USB 8897-B0 firmware combo image
+    linux-firmware: add Marvell USB8897-B0 firmware combo image
+    linux-firmware: update Marvell 8897-B0 firmware images to p73
+    linux-firmware: update Marvell SD8787 firmware version p192
+    linux-firmware: update Marvell SD8787 firmware version p52
+    linux-firmware: update Marvell 8897-B0 firmware images to p103
+    linux-firmware: update WHENCE file for Marvell 8897 FW versions
+    linux-firmware: update Marvell USB8797-B0 firmware image
+    linux-firmware: add Marvell 8887-A2 firmware image
+    linux-firmware: add Marvell USB8766-A0 firmware combo image
+    linux-firmware: update Marvell 8897-B0 firmware images to p106
+    rtlwifi: rtl8192ee: New firmware from Realtek
+    linux-firmware: update Marvell 8897-B0 firmware images to p112
+    linux-firmware: update Marvell USB8797-B0 firmware image
+    linux-firmware: update Marvell SD8897-B0 firmware combo image
+    linux-firmware: update Marvell PCIe/USB 8897-B0 firmware combo image
+    linux-firmware: add Marvell USB8897-B0 firmware combo image
+    linux-firmware: update Marvell 8897-B0 firmware images to p73
+    linux-firmware: update Marvell SD8787 firmware version p192
+    linux-firmware: update Marvell SD8787 firmware version p52
+    linux-firmware: update Marvell 8897-B0 firmware images to p103
+    linux-firmware: update WHENCE file for Marvell 8897 FW versions
+    linux-firmware: update Marvell USB8797-B0 firmware image
+    linux-firmware: add Marvell 8887-A2 firmware image
+    linux-firmware: add Marvell USB8766-A0 firmware combo image
+    linux-firmware: update Marvell 8897-B0 firmware images to p106
+    linux-firmware: update Marvell 8897-B0 firmware images to p112
+    Merge branch 'marvell-mwifiex'
+    linux-firmware: update firmware for Intel Broadwell SST DSP
+    linux-firmware: add sst audio firmware for braswell platforms
+    Fix WHENCE entry for smsmdtv
+    iwlwifi: add new -12 firmware for 3160 / 7260 / 7265 / 7265D
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B3)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B4)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B5)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7265 (C0)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B6)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7265 (D0)
+  * iwlwifi: update -10.ucode for 3160 / 7260 / 7265 / 7265D
+    -LP: #1354975
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 19 Feb 2015 10:14:41 -0600
+
 linux-firmware (1.141) vivid; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 78535e88bfb95e2f50afb6f9e728df0fbec2cddc
