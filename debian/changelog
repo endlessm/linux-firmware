@@ -1,3 +1,18 @@
+linux-firmware (1.143) vivid; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git cef33368c4d3425f11306496f0250f8ef1cf3c1f
+    rtl_nic: update firmware for RTL8168H and RTL8107E
+    linux-firmware: Fix qat_895xcc.bin permissions
+    linux-firmware: Add QLogic BR Series Adapter Firmware
+    linux-firmware: Fix firmware files with executable permission set
+
+  [ Leann Ogasawara ]
+
+  * UBUNTU: Add bnx2x firmware to linux-firmware udeb
+    -LP: #1424884
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 04 Mar 2015 00:16:58 -0600
+
 linux-firmware (1.142) vivid; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 17657c35869baa999b454e868cd3d5a7e1656425
