@@ -2,14 +2,15 @@ Source: linux-firmware
 Section: misc
 Priority: optional
 Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
-Standards-Version: 3.6.1
-Build-Depends: debhelper (>= 4.0.0), rsync, gcc
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 4.0.0), rsync
 Vcs-Git: git://kernel.ubuntu.com/ubuntu/linux-firmware.git
 
 Package: linux-firmware
 Architecture: all
 Multi-Arch: foreign
 Priority: optional
+Depends: ${misc:Depends}
 Provides: atmel-firmware
 Conflicts: atmel-firmware
 Replaces: atmel-firmware, linux-restricted-common
