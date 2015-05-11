@@ -1,3 +1,48 @@
+linux-firmware (1.144) wily; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 8e181320b11de501046cf75c8c30915cd09a1e39
+    Add v1.4.0 firmware for ath9k_htc.
+    ath9k_htc: update versions in WHENCE
+    firmware: tegra: Add XHCI firmware v45.46 for T124
+    iwlwifi: update -10.ucode for 3160 / 7260 / 7265 / 7265D
+    Revert these to ath9k-htc 1.3.1 - to keep backwards compatibility with older kernels.
+    ath9k_htc: revert versions in WHENCE to 1.3.1
+    Add v1.4.0 firmware for ath9k_htc.
+    ath10k: add firmware 10.2.4.45 as firmware-4.bin
+    radeon: Update Kaveri MEC firmware to #396
+    brcm: add firmware for BCM43242 USB device
+    brcm: add firmware for BCM4356 PCIe device
+    brcm: add firmware files for BCM43602 PCIe device
+    brcm: add firmware for BCM43455 SDIO device
+    brcm: add firmware for BCM4339 SDIO device
+    brcm: add firmware for BCM43340/1 SDIO devices
+    brcm: upgrade firmware for BCM4354 SDIO device
+    cxgb4: update firmware to revision 1.13.32.0 for T4 and T5
+    firmware: tegra: Add XHCI firmware v50.07 for T210
+    firmware: WHENCE: note nvidia xusb.bin firmware versions
+    ath3k: update AR3012 2.2.1 firmware with v.170
+    iwlwifi: update -12.ucode for 3160 / 7260 / 7265 / 7265D
+    brcm: add firmware for BCM43569 USB device
+    brcm: add firmware for BCM43570 PCIe device
+    brcm: replace non-working firmware for BCM4339
+    brcm: add firmware for BCM4324(1) B5 chipset
+    linux-firmware: Update firmware patch for Intel Bluetooth 7265 (C0/D0)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B5/B6)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B3/B4)
+    linux-firmware: Fix nvidia/tegra210/xusb.bin permissions
+    brcm: add brcmfmac43241b5-sdio.bin to WHENCE
+    linux-firmware: Add Realtek Bluetooth HCD firmware
+    wl18xx: update firmware file, remove conf file
+
+  [ Seth Forshee ]
+
+  * Remove DH_COMPAT definition from debian/rules
+  * Add ${misc:Depends} dependency for binary package
+  * Remove explicit gcc build dependency
+  * Bump Standards-Version to 3.9.6
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 08 May 2015 13:20:27 -0500
+
 linux-firmware (1.143) vivid; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git cef33368c4d3425f11306496f0250f8ef1cf3c1f
