@@ -1,3 +1,29 @@
+linux-firmware (1.145) wily; urgency=medium
+
+  [ Emmanuel Grumbach ]
+
+  * iwlwifi: add new -13 firmware for iwlmvm devices
+    cherry picked from git://git.kernel.org/pub/scm/linux/kernel/git/egrumbach/linux-firmware.git
+    This firmware also supports 3165. This is the first firmware release for
+    8000. Version number: 25.30.13.0
+
+  [ Rodrigo Vivi ]
+
+  * Add firmware files for i915 Skylake graphics:
+    cherry picked from git://people.freedesktop.org/~vivijim/linux-firmware-i915
+    linux-firmware: Add i915 DMC firmware
+    linux-firmware: New minor DMC release for Skylake.
+    linux-firmware: New minor DMC release for Skylake - ver1_18
+    linux-firmware: New minor DMC release for Skylake - ver1_19
+    -LP: #1441861
+
+  [ Seth Forshee ]
+
+  * Remove unused cxgb4/t4fw-1.12.25.0.bin and cxgb4/t5fw-1.12.25.0.bin
+    which were left in the last version by mistake.
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 10 Jul 2015 07:55:14 -0500
+
 linux-firmware (1.144) wily; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 8e181320b11de501046cf75c8c30915cd09a1e39
