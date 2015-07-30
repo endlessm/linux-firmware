@@ -1,3 +1,44 @@
+linux-firmware (1.146) wily; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 75cc3ef8ba6712fd72c073b17a790282136cc743 
+    usbdux: usbduxsigma: fixed timing issues between ADC and DAC
+    usbdux: usbduxsigma: added digital IO read
+    usbdux: usbduxsigma: added soft interval mode in the firmware
+    usbdux: usbduxsigma: contact info updated
+    usbdux: usbduxsigma: changed firmware from ADC polling to IRQ processing
+    usbdux: Makefile_dux: as31 compile no longer needed
+    usbdux: usbduxsigma: Changed address and updated date
+    linux-firmware: Update to QAT dh895xxcc UOF firmware and a new QAT MMP FW
+    rtl_bt: correct RTL8723A firmware file
+    Makefile: usbdux is an empty dir
+    Makefile: use find instead of shell globs
+    Makefile: use correct dir for usbdux
+    bnx2x: Update to FW version 7.12.30
+    firmware: tegra: add GK20A FECS/GPCCS firmware
+    Remove patch conflict remains
+    linux-firmware: Add firmware file for Intel Bluetooth 8260
+    Add firmware for Cavium LiquidIO 210NV, 210SV, and 410NV cards
+    linux-firmware: update audio firmware for Braswell platform
+    qca: add BT firmware files to support QCA ROME chips
+    cxgb4: Add BT adapter PHY firmware
+    linux-firmware: add firmware for atusb driver
+    README: clarify redistribution requirements covering patents
+    radeon: add firmware for VCE1.0 hardware
+    linux-firmware: New minor DMC release for Skylake - ver1_18
+    iwlwifi: add new -13 firmware for iwlmvm devices
+    linux-firmware: New minor DMC release for Skylake.
+    linux-firmware: Add i915 DMC firmware for Broxton
+    linux-firmware: Add i915 GuC firmware
+    linux-firmware: Add i915 DMC firmware
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B3/B4)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B5/B6)
+    Revert "linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B3/B4)"
+    Revert "linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B5/B6)"
+    linux-firmware: Update firmware patch for Intel Bluetooth 7265 (C0/D0)
+    Revert "linux-firmware: Update firmware patch for Intel Bluetooth 7265 (C0/D0)"
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 29 Jul 2015 10:07:25 -0500
+
 linux-firmware (1.145) wily; urgency=medium
 
   [ Emmanuel Grumbach ]
