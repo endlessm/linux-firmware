@@ -1,3 +1,19 @@
+linux-firmware (1.147) wily; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 38358cfcf50436bf4462b3e45f5b30ab66bb63a6
+    firmware: tegra: Update XHCI firmware to v50.10 for T210
+    linux-firmware: wilc1000: add firmware for wilc1000 802.11n driver
+
+  [ Alberto Milone ]
+
+  * UBUNTU: Add firmware for amdgpu's Carrizo, Fiji, Tonga, and Topaz
+
+  [ Seth Forshee ]
+
+  * UBUNTU: Remove unused LICENCE.radeon_rlc
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 26 Aug 2015 07:37:48 -0500
+
 linux-firmware (1.146) wily; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 75cc3ef8ba6712fd72c073b17a790282136cc743 
