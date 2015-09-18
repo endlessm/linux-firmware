@@ -1,3 +1,16 @@
+linux-firmware (1.148) wily; urgency=medium
+
+  * Update i915 Skylake firmware to upstream versions
+    linux-firmware: New minor DMC release for Skylake - ver1_20
+    linux-firmware: New minor DMC release for Skylake - ver1_21
+    linux-firmware: Clean up i915 by removing old skl dmc firmware.
+    -LP: #1497070
+  * Update amdgpu firmware to upstream versions
+    amdgpu: add firmware for VI asics
+    -LP: #1497284
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 18 Sep 2015 08:40:52 -0500
+
 linux-firmware (1.147) wily; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 38358cfcf50436bf4462b3e45f5b30ab66bb63a6
