@@ -1,3 +1,49 @@
+linux-firmware (1.150) xenial; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 66d3d8d7607c9a3a7d083f81990f6523f5842065
+    cxgb4: update firmware to revision 1.14.4.0
+    Merge branch 'for-upstream' of git://git.chelsio.net/pub/git/linux-firmware
+    linux-firmware: New minor DMC release for Skylake - ver1_19
+    linux-firmware: New minor DMC release for Broxton - ver1_05
+    linux-firmware: New minor DMC release for Skylake - ver1_20
+    linux-firmware: New minor DMC release for Skylake - ver1_21
+    linux-firmware: Clean up i915 by removing old skl dmc firmware.
+    linux-firmware: New major GuC release for Skylake.
+    linux-firmware: Add Intel OPA hfi1 firmware
+    ar3k: add to support AR3012 v2.1 firmware
+    Merge commit 'd1fa230a' of git://people.freedesktop.org/~vivijim/linux-firmware-i915
+    Merge branch 'master-hfi1-firmware-v2' of git://github.com/weiny2/linux-firmware
+    amdgpu: add firmware for VI asics
+    linux-firmware: New minor DMC release for Broxton - ver1_06
+    linux-firmware: New minor DMC release for Skylake - ver1_22
+    linux-firmware: Clean up i915 by removing old skl dmc firmware.
+    linux-firmware: Add qmss accumulator pdsp firmware for keystone SoCs
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B3/B4)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B5/B6)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7265 (C0/D0)
+    Merge 'c11384c' of git://people.freedesktop.org/~vivijim/linux-firmware-i915
+    usb: host: xhci-plat: add support for the R-Car H3 xHCI controllers
+    brcmfmac: firmware refresh for BCM43602 PCIE devices
+    linux-firmware: Add firmware patch for Intel Bluetooth 7265 (D1)
+    WHENCE: Remove listing of a nonexistent file
+    WHENCE: Expand file wildcard RTL8192E/*
+    WHENCE: Fix several licen[cs]e filenames
+    Add licence information for kaweth firmware
+    Add licence information for e100 microcode
+    Add licence information for qla1280 firmware
+    WHENCE: Summarise several more custom licences as 'Redistributable'
+    ath10k: QCA988X hw2.0: add board.bin
+    ath10k: QCA988X hw2.0: add firmware 10.2.4.70.9-2
+    ath10k: QCA6174 hw2.1: add firmware WLAN.RM.1.1-00141 and board.bin
+    ath10k: QCA6174 hw3.0: add WLAN.RM.2.0-00180-QCARMSWPZ-1
+    ath10k: QCA99X0 hw2.0: add firmware 10.4.1.00030-1 and board.bin
+    Add FW binary used by mwlwifi driver.
+  * Drop "UBUNTU: SAUCE: ath10k: Add firmware". This conflicts with upstream
+    ath10k firmware, and the files are for an older firmware API which has
+    been deprecated.
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Mon, 26 Oct 2015 10:23:03 -0500
+
 linux-firmware (1.149) wily; urgency=medium
 
   [ Arend van Spriel ]
