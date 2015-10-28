@@ -1,3 +1,12 @@
+linux-firmware (1.151) xenail; urgency=medium
+
+  * Update i915 Skylake firmware to version 1.23
+    linux-firmware: New minor DMC release for Skylake - ver1_23
+    linux-firmware/i915: Removing old Skylake DMC
+    -LP: #1509103
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 28 Oct 2015 10:55:40 -0500
+
 linux-firmware (1.150) xenial; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 66d3d8d7607c9a3a7d083f81990f6523f5842065
