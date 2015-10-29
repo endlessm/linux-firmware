@@ -1,4 +1,4 @@
-linux-firmware (1.151) xenail; urgency=medium
+linux-firmware (1.151) xenial; urgency=medium
 
   * Update i915 Skylake firmware to version 1.23
     linux-firmware: New minor DMC release for Skylake - ver1_23
