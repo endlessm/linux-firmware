@@ -1,3 +1,9 @@
+linux-firmware (1.152) xenial; urgency=medium
+
+  * Fix typo in changelog for 1.151.
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 29 Oct 2015 09:03:47 -0500
+
 linux-firmware (1.151) xenial; urgency=medium
 
   * Update i915 Skylake firmware to version 1.23
