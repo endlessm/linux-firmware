@@ -1,3 +1,20 @@
+linux-firmware (1.153) xenial; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 1406ec112423c8f70d503d3cd44c6f8e147f7ac3
+    linux-firmware: New minor DMC release for Skylake - ver1_23
+    linux-firmware/i915: Removing old Skylake DMC
+    brcm: adding firmware for BCM4350 PCIe device
+    brcm: update firmware for the BCM4356 PCIe device
+    ath10k: add notice.txt references to WHENCE
+    linux-firmware: add Skylake audio firmware
+    remove executable bit from some firmware
+    radeon/amdgpu: update to latest firmware
+    fix WHENCE, which for some reason became executable...
+    qed: Add FW 8.4.2.0.
+    linux-firmware: Update firmware patch for Intel Bluetooth 7265 (C0/D0)
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 20 Nov 2015 07:46:50 -0600
+
 linux-firmware (1.152) xenial; urgency=medium
 
   * Fix typo in changelog for 1.151.
