@@ -1,3 +1,19 @@
+linux-firmware (1.154) xenial; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 2bf2280b4c3f83ebc61bdcbcd446e78b5a7f0780
+    brcm: add initial firmware for bcm4371 11ac wifi device
+    brcm: update firmware for bcm43602 device
+    WHENCE: Remove claim that qed and bfa/bna firmware came from kernel source
+    WHENCE: Correct filename of qed firmware
+    fix permissions on qed_init_values_zipped-8.4.2.0.bin
+    qla2xxx: Update firmware version to 8.03.00
+    bnx2x: Add FW 7.13.1.0.
+    Merge tag 'iwlwifi-fw-2015-11-18' of git://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware
+  * iwlwifi: add new -16 firmware for iwlmvm devices
+    -LP: #1518859
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 04 Dec 2015 15:21:20 -0600
+
 linux-firmware (1.153) xenial; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 1406ec112423c8f70d503d3cd44c6f8e147f7ac3
