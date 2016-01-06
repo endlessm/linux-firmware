@@ -1,3 +1,13 @@
+linux-firmware (1.155) xenial; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git bbe4917c054eb0a73e250c6363341e3bf6725839
+    Add firmware for mt7601u. version 34.
+    WHENCE: use https://linuxtv.org for LinuxTV URLs
+  * UBUNTU: Added ql2500_fw.bin to scsi-firmware.lst
+    -LP: #1528688
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 06 Jan 2016 09:44:16 -0600
+
 linux-firmware (1.154) xenial; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 2bf2280b4c3f83ebc61bdcbcd446e78b5a7f0780
