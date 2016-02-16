@@ -1,3 +1,37 @@
+linux-firmware (1.156) xenial; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git b2deae592adde46eadfc8fe1f7841d0f13f16ee5
+    linux-firmware: add Marvell SD/USB8801 B0 firmware images
+    linux-firmware: update Marvell 8897-B0 firmware images to 7.p18
+    linux-firmware: update Marvell 8897-B0 firmware images to 7.p53
+    linux-firmware: update Marvell USB8797-B0 firmware image
+    Update Intel OPA hfi1 firmware
+    iwlwifi: replace 7265D-10.ucode by 7265-10.ucode
+    moxa: Add firmware for Moxa 11x0 USB Serial devices
+    moxa: Refer to LICENCE.moxa for mxuport driver
+    linux-firmware: Update Skylake audio firmware
+    WHENCE: Add version information for hfi1
+    linux-firmware: add fw for new qat devices
+    add a symlink from qat_mmp.bin to its new file name
+    fix permissions on brcm/brcmfmac4371-pcie.bin
+    brcm: add firmware for BCM4350 rev 5
+    Clarified licensing terms for the current ath9k_htc firmware
+    qed: Add firmware 8.7.3.0.
+    rtlwifi: v35 firmware for rtl8723bu
+    linux-firmware: Update firmware patch for Intel Bluetooth 7265 (D1)
+    brcm: add firmware for bcm4366 device
+    linux-firmware: intel: add symbolic link and file versions
+    linux-firmware: Update firmware patch for Intel Bluetooth 7265 (C0/D0)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B5/B6)
+    linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B3/B4)
+    rtlwifi: v19 firmware for rtl8192eu
+    linux-firmware: intel: Update Skylake audio firmware
+    linux-firmware: New minor DMC release for Skylake - ver1_26
+    linux-firmware: Add AR3012 firmware
+  * debian: Update Vcs-Git to point to launchpad
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 16 Feb 2016 11:04:55 -0600
+
 linux-firmware (1.155) xenial; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git bbe4917c054eb0a73e250c6363341e3bf6725839
