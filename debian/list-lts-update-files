@@ -1,0 +1,65 @@
+#!/bin/bash
+#
+# Used to get a list of firmware files needed to update a LTS
+# linux-firmware package for a backport kernel. For example to
+# get a list of files for trusty to support the linux-lts-xenial
+# kernel run:
+#
+#  debian/list-lts-update-files trusty xenial /path/to/xenial/fwinfo
+#
+# This will generate a list of files that satisfy all of these
+# conditions:
+#
+#  1) In the xenial branch of linux-firmware
+#  2) Not in the trusty branch of linux-firmware
+#  3) In the specified fwinfo file
+#
+# This can be used as a starting point for finding upstream
+# commits needed to add the missing firmware files.
+#
+# The fwinfo file can be omitted, in which case the output is a list
+# of firmware files in @newbranch but not in @oldbranch.
+
+if [ $# -lt 2 ]; then
+	echo "Usage $0 <oldbranch> <newbranch> [<fwinfo>]"
+	exit 1
+fi
+
+OLDBRANCH="$1"
+NEWBRANCH="$2"
+FWINFO="$3"
+
+TMPDIR=$(mktemp -d)
+
+function cleanup {
+	rm -r "$TMPDIR"
+}
+trap cleanup EXIT
+
+if ! git ls-tree -r --name-only "$OLDBRANCH" >"$TMPDIR/files.tmp"
+then
+	exit 1
+fi
+cat "$TMPDIR/files.tmp" | sort >"$TMPDIR/oldbranch-files"
+
+if ! git ls-tree -r --name-only "$NEWBRANCH" >"$TMPDIR/files.tmp"
+then
+	exit 1
+fi
+cat "$TMPDIR/files.tmp" | sort >"$TMPDIR/newbranch-files"
+
+# Get files in @newbranch not in @oldbranch
+comm -13 "$TMPDIR/oldbranch-files" "$TMPDIR/newbranch-files" >"$TMPDIR/new-files"
+
+if [ "$3" == "" ]; then
+	cat "$TMPDIR/new-files"
+	exit 0
+fi
+
+if ! cat $FWINFO | head -n1 | grep "firmware:       " > /dev/null
+then
+	echo "Invliad fwinfo file $FWINFO"
+	exit 1
+fi
+cat "$FWINFO" | sed 's/firmware: \+//' | sort >"$TMPDIR/fwinfo-files"
+comm -12 "$TMPDIR/new-files" "$TMPDIR/fwinfo-files"
