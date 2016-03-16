@@ -1,3 +1,14 @@
+linux-firmware (1.157) xenial; urgency=medium
+
+  * UBUNTU: Add script to identify candidate firmware for lts backport updates
+  * Update debian/nic-firmware.lst and debian/scsi-firmware.lst.
+    UBUNTU: Add script to help ease updating udeb lists
+    UBUNTU: Remove obsolete bnx2x firmware files
+    UBUNTU: Update nic-firmware.lst and scsi-firmware.lst based on kernel udebs
+    -LP: #1558135
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 16 Mar 2016 14:19:09 -0500
+
 linux-firmware (1.156) xenial; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git b2deae592adde46eadfc8fe1f7841d0f13f16ee5
