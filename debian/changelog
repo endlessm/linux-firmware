@@ -1,3 +1,31 @@
+linux-firmware (1.158) yakkety; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 8afadbe553017bec1e442b5a9fba859b54fd33fb
+    Update Intel OPA hfi1 firmware
+    nvidia: Add GM200, GM204 and GM206 signed firmware
+    nvidia: Add GM20B signed firmware
+    iwlwifi: add new -21.ucode for 7265D, 8260, 3168 and 8265 devices
+    wl18xx: update firmware file
+    iwlwifi: add -21.ucode to WHENCE
+    linux-firmware: intel: Update Skylake audio firmware
+    linux-firmware/i915: Major GuC release for Skylake - ver 6.1
+    linux-firmware: Update AMD microcode patch firmware
+    Update radeon ucode images
+    Update amdgpu ucode images
+    Add amdgpu ucode images for Polaris family asics
+    radeon: revert last kaveri mec ucode update
+    linux-firmware: Update firmware patch for Intel Bluetooth 7265 (D1)
+    usb: host: xhci-plat: add firmware for the R-Car M3-W xHCI controllers
+    amdgpu: update CZ to new UVD fw that supports 40 sessions
+    linux-firmware: Update firmware file for Intel Bluetooth 8265
+    radeon: update CIK UVD firmware
+    ath10k: QCA6174 hw2.1: update firmware-5.bin to SW_RM.1.1.1-00157-QCARMSWPZ-1
+    ath10k: QCA6174 hw2.1: add board-2.bin
+    ath10k: QCA6174 hw3.0: add board-2.bin
+    ath10k: QCA9377 hw1.0: add firmware and board files
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 06 May 2016 07:49:09 -0500
+
 linux-firmware (1.157) xenial; urgency=medium
 
   * UBUNTU: Add script to identify candidate firmware for lts backport updates
