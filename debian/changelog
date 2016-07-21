@@ -1,3 +1,43 @@
+linux-firmware (1.159) yakkety; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    cccb6a0da98372bd66787710249727ad6b0aaf72 (LP: #1605276)
+    - linux-firmware: intel: Update Skylake audio firmware
+    - linux-firmware: update rt2860.bin, rt2800pci driver
+    - linux-firmware: update rt2870.bin, rt2800usb driver
+    - amdgpu: update firmware
+    - cxgb4: update firmware to revision 1.15.37.0
+    - qed: Add FW 8.10.5.0
+    - linux-firmware: intel: Add Broxton audio firmware
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B3/B4)
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B5/B6)
+    - linux-firmware: update audio firmware for Braswell platform
+    - radeon: add new CI smc firmware
+    - radeon: add new SI smc firmware
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7265 (D1)
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7265 (C0/D0)
+    - linux-firmware: Update firmware file for Intel Bluetooth 8260
+    - wl18xx: update firmware file
+    - linux-firmware: intel: Update Skylake audio firmware
+    - linux-firmware: Add firmware file for Intel Bluetooth 8265
+    - amdgpu: Update UVD firmware for Polaris
+    - amdgpu: update polaris ucode
+    - linux-firmware: intel: Update Broxton audio firmware
+    - linux-firmware: intel: Update Skylake audio firmware
+    - linux-firmware: New minor DMC release for Broxton - ver1_07
+    - linux-firmware: First DMC image for Kabylake.
+    - linux-firmware/i915: Step away from symbolic links and clean up repo.
+    - mediatek: Add mt8173 VPU firmware
+    - linux-firmware: Fix the filename for WsP to align with device HW_VARIANT
+    - nvidia: Add GP100 signed firmware
+    - iwlwifi: add new -17 firmware for iwlmvm devices
+    - iwlwifi: add new -22 firmware for 7265D and up
+    - amdgpu: update vce firmware for VI asics
+    - linux-firmware: intel: Add Kabylake audio firmware
+    - Add dptx firmware for rockchip rk3399
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 21 Jul 2016 09:55:19 -0500
+
 linux-firmware (1.158) yakkety; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git 8afadbe553017bec1e442b5a9fba859b54fd33fb
