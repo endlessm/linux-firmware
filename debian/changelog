@@ -1,3 +1,47 @@
+linux-firmware (1.162) zesty; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    87941021a622c882b1921df85d6115940a4e568a
+    - Update Intel OPA hfi1 firmware file
+    - brcm: add firmware for BCM43430 802.11n chipset
+    - amdgpu: update tonga and fiji VCE firmware to 52.8.3
+    - Add a metadata consistency check script
+    - WHENCE: Correct filename of LICENCE.moxa
+    - Add copy of GPL v2 and references to the GPL-2 and GPL-3 files
+    - WHENCE: Specify source directories for cis, isci, and usbdux firmware
+    - WHENCE: Remove references to source for emi62 firmware
+    - WHENCE: Remove references to two nvidia firmware files that were never added
+    - Remove unused 'LICENCE.mwl8335'
+    - WHENCE: Adjust some licence file references to satisfy check_whence.py
+    - WHENCE: Fix metadata for snd-soc-skl firmware
+    - WHENCE: List new radeon CI and SI smc firmware
+    - WHENCE: List symlink 'qat_mmp.bin'
+    - WHENCE: Add reference to 'qca/NOTICE.txt'
+    - README: Say that files must be listed in WHENCE, and how to check it
+    - radeon: update SMC firmware for SI parts
+    - radeon: update SMC firmware for CI parts
+    - amdgpu: update SMC firmware for VI parts
+    - mediatek: update MT8173 VPU firmware for idle state
+    - amdgpu: add new smc firmware for newer tonga and iceland chips
+    - linux-firmware: rockchip: update dptx firmware to v3.1
+    - rockchip/dptx: update WHENCE to version 3.1
+    - linux-firmware: update BYT audio firmware
+    - rtlwifi: Add updates for RTL8723BE and RTL8821AE
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7265 (C0)
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7265 (D1)
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B5/B6)
+    - linux-firmware: Update firmware file for Intel Bluetooth 8260
+    - linux-firmware: Update firmware file for Intel Bluetooth 8265
+
+  * Trigger update-initramfs following linux-firmware install (LP: #1646197)
+    - UBUNTU: Add postinst script to update initrds
+
+  * Don't install build scripts, and move GPL license files to the license
+    install directory.
+    - UBUNTU: Build and license file installation changes
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 30 Nov 2016 14:50:27 -0600
+
 linux-firmware (1.161) yakkety; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
