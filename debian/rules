@@ -36,7 +36,9 @@ install-indep: build-indep
 
 	install -d $(firm_dir)
 
-	rsync -a --exclude=WHENCE --exclude=.git --exclude=debian --exclude fw_source * $(firm_dir)
+	rsync -a --exclude=WHENCE --exclude=.git --exclude=debian --exclude=fw_source \
+		--exclude=/Makefile --exclude=check_whence.py --exclude=GPL-[23] \
+	       	* $(firm_dir)
 	find $(firm_dir) -type f -name "LICEN[CS]E*" |xargs rm
 
 	for f in $$(cat debian/nic-firmware.lst); do \
@@ -51,7 +53,7 @@ install-indep: build-indep
 	cp WHENCE $(doc_dir)/README
 
 	install -d $(license_dir)
-	cp LICEN[CS]E* $(license_dir)
+	cp LICEN[CS]E* GPL-[23] $(license_dir)
 
 binary-indep: install-indep
 	dh_testdir
