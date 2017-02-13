@@ -1,3 +1,24 @@
+linux-firmware (1.163) zesty; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    6d3bc8886517d171068fd1263176b8b5c51df204
+    - WHENCE: Add new amdgpu firmware
+    - WHENCE: Add new snd_intel_sst_core
+    - LICENCE.siano: Add copyright years
+    - linux-firmware: update firmware file for atusb
+    - Update Intel OPA hfi1 firmware
+    - cxgb4: Update firmware to revision 1.16.26.0.
+    - linux-firmware: intel: Update Skylake audio firmware
+    - linux-firmware: intel: Update Broxton audio firmware
+    - linux-firmware: Fix DDC file format for Intel Bluetooth 8260/8265
+    - brcm: add firmware for the BCM4356 SDIO device
+    - brcm: add firmware for the BCM4358 PCIe device.
+    - wl127x/wl128x: update firmwares
+    - atusb: Document that dfu-util needs to be run before device enters runtime mode
+    - Fix permissions on ti-connectivity firmware from 05e9fe59
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Mon, 13 Feb 2017 08:37:23 -0600
+
 linux-firmware (1.162) zesty; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
