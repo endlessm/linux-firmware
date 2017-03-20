@@ -1,3 +1,33 @@
+linux-firmware (1.164) zesty; urgency=medium
+
+  * Upstream firmware updates for zesty (LP: #1674413)
+    - Revert "UBUNTU: SAUCE: Remove iwlwifi-8000C-22.ucode"
+    - linux-firmware: liquidio: update firmware to v1.4.2
+    - iwlwifi: update -17 firmware for 3260, 7260 and 7265
+    - iwlwifi: update -22 firmware for 7265D and up
+    - linux-firmware/i915: GuC firmware for Broxton v8.7
+    - linux-firmware/i915: GuC firmware for Kabylake v9.14
+    - radeon/amdgpu: update license copyright dates
+    - radeon: add new firmware for SI chips
+    - qla2xxx: Update firmware version to 8.06.00
+    - amdgpu: add firmware for polaris12 asics
+    - update WHENCE for new amdgpu/polaris12_*.bin firmware
+    - linux-firmware: update Marvell SD8897-B0 firmware image
+    - linux-firmware: update Marvell PCIe-USB8997 firmware image
+    - amdgpu: add smc firmware for new polaris variants
+    - linux-firmware/i915: Fix Corrupted GuC files.
+    - cxgb4: update firmware to revision 1.16.33.0
+    - linux-firmware: Update firmware patch for Intel Bluetooth, 7265
+    - linux-firmware: Update firmware patch for Intel Bluetooth,8260
+    - linux-firmware: Update firmware file for Intel Bluetooth,8265
+    - brcm: update firmware for BCM43340/1 SDIO devices
+    - ath10k: QCA6174 hw3.0: update board-2.bin
+
+  * Update linux-firmware udebs in zesty (LP: #1674344)
+    - UBUNTU: Update nic-firmware.lst based on kernel udebs
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Mon, 20 Mar 2017 13:34:02 -0500
+
 linux-firmware (1.163) zesty; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
