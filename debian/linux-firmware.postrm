@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Remove directory created by linux-firmware.conf tmpfiles.d entry,
+# except if it contains user-installed files.
+DIR="/var/lib/firmware"
+if [ -d ${DIR} ]; then
+	if [ -z "$(ls -A ${DIR})" ]; then
+		rmdir ${DIR}
+	else
+		echo "${DIR} is not empty, not removing"
+	fi
+fi
