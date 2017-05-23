@@ -26,6 +26,9 @@ override_dh_clean:
 	fi
 
 override_dh_auto_build:
+	dh_link -i
+	dh_installtmpfiles -i
+	dh_missing --fail-missing
 
 override_dh_auto_test:
 
