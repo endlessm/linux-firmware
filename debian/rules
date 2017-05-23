@@ -48,6 +48,9 @@ install-linux-%:
 	dh_compress
 	dh_fixperms
 	dh_installdeb
+	dh_link -i
+	dh_installtmpfiles -i
+	dh_missing --fail-missing
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
