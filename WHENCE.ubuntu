@@ -276,3 +276,14 @@ File: rtl_bt/rtl8723b_uart_fw.bin
 Licence: Redistributable.
 
 --------------------------------------------------------------------------
+
+Endless ATV185 WLAN+BT
+
+File: brcm/ap6212/fw_bcm43438a0.bin
+File: brcm/ap6212/fw_bcm43438a0_apsta.bin
+File: brcm/ap6212/fw_bcm43438a0_p2p.bin
+File: brcm/ap6212/nvram.txt
+
+Licence: Redistributable.
+
+--------------------------------------------------------------------------
