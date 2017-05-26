@@ -1,0 +1,7 @@
+kso_enable=0
+ccode=CN
+regrev=38
+use_rxchain=1
+tcpack_sup_mode=1
+tx_in_rx=0
+dhd_rxbound=64
