@@ -221,3 +221,13 @@ Version: WLAN.HSP.1.1-03003-QCAHSPSWPL_V1_V2_SILICONZ_LITE-2
 License: ath11k/WCN6855/hw2.0/1.1/WLAN.HSP.1.1-03003-QCAHSPSWPL_V1_V2_SILICONZ_LITE-2/Notice.txt
 
 Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k for details
+
+--------------------------------------------------------------------------
+
+Endless EF20 BT
+
+File: brcm/BCM43341B0.hcd
+
+Licence: Redistributable.
+
+--------------------------------------------------------------------------
