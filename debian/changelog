@@ -1,3 +1,25 @@
+linux-firmware (1.166) artful; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    37857004a430e96dc837db7f967b6d0279053de8
+    - cxgb4: update firmware to revision 1.16.43.0
+    - linux-firmware: add Marvell USB8997 firmware image
+    - iwlwifi: update -22 firmware for 3168
+    - qed: Add firmware 8.20.0.0
+    - Update Intel OPA hfi1 firmware
+    - linux-firmware: add wil6210 firmware 4.1.0.55
+    - cxgb4: update firmware to revision 1.16.45.0.
+    - Mellanox: Add firmware for mlxsw_spectrum
+    - linux-firmware: add firmware image for Redpine 9113 chipset
+
+  * Update nic-firmware udeb for 4.11
+    - UBUNTU: Update nic-firmware.lst based on linux 4.11.0-5.10 udebs
+
+  * Add audio topology firmware for Joule (LP: #1689497)
+    - UBUNTU: SAUCE: linux-firmware: audio topology binary for Joule
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 08 Jun 2017 11:36:34 -0500
+
 linux-firmware (1.165) artful; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
