@@ -138,3 +138,13 @@ Licence: Redistributable, provided by Realtek in their driver
          source download.
 
 --------------------------------------------------------------------------
+
+Driver snd-soc-skl - ASoC Audio driver for SKL
+
+File: 1a98-INTEL-EDK2-2-tplg.bin
+
+Info: audio topology binary
+
+License: Redistributable. See LICENSE.1a98-INTEL-EDK2-2-tplg for details.
+
+--------------------------------------------------------------------------
