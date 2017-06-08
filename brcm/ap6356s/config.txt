@@ -5,3 +5,4 @@ use_rxchain=1
 tcpack_sup_mode=1
 tx_in_rx=0
 dhd_rxbound=64
+nv_by_chip=1 17238 2 nvram_4356a2.txt
