@@ -1,3 +1,4 @@
 kso_enable=0
 ccode=CN
 regrev=38
+nv_by_chip=1 17221 6 nvram_43455c0.txt
