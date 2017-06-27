@@ -1,3 +1,32 @@
+linux-firmware (1.167) artful; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    7d2c913dcd1be083350d97a8cb1eba24cfacbc8a
+    - linux-firmware: liquidio: update firmware to v1.6.0
+    - qcom: add venus firmware files for v1.8
+    - linux-firmware: intel: Update Kabylake audio firmware
+    - qla2xxx: Update firmware version to 8.07.00
+    - firmware: tegra: Add VIC firmware
+    - imx: Add SDMA firmware for Freescale i.MX6/7 SoCs.
+    - linux-firmware: wilc1000: Add unified firmware for wilc1000 WLAN
+    - ath10k: QCA4019 hw1.0: update board-2.bin
+    - ath10k: QCA4019 hw1.0: update firmware to 10.4-3.4-00082
+    - ath10k: QCA6174 hw3.0: update board-2.bin
+    - ath10k: QCA6174 hw3.0: add WLAN.RM.4.4-00022-QCARMSWPZ-2
+    - ath10k: QCA9377 hw1.0: update board-2.bin
+    - ath10k: QCA9887 hw1.0: update firmware to 10.2.4-1.0-00029
+    - ath10k: QCA9888 hw2.0: update board-2.bin
+    - ath10k: QCA9888 hw2.0: update firmware to 10.4-3.5.1-00014
+    - ath10k: QCA988X hw2.0: update firmware to 10.2.4.70.63-2
+    - ath10k: QCA9984 hw1.0: update board-2.bin
+    - ath10k: QCA9984 hw1.0: update firmware to 10.4-3.4-00082
+    - ath10k: update year in license
+
+  * Revert Intel OPA firmware to 0.47 (LP: #1700772)
+    - SAUCE: Revert "Update Intel OPA hfi1 firmware"
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 27 Jun 2017 09:58:15 -0500
+
 linux-firmware (1.166) artful; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
