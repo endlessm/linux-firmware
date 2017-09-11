@@ -1,3 +1,29 @@
+linux-firmware (1.168) artful; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    a61ac5cf8374edbfe692d12f805a1b194f7fead2
+    - Update Intel OPA hfi1 firmware
+    - iwlwifi: update -27 firmware for 3168, 7265D, 8000C and 8265
+    - iwlwifi: add new firmware for 3168, 7265D, 8000C and 8265
+    - linux-firmware: intel: Add Kabylake IPU3 firmware
+    - linux-firmware: intel: Update Kabylake audio firmware
+    - linux-firmware: intel: remove old skylake firmware
+    - linux-firmware: intel: remove old broxton firmware
+    - linux-firmware: liquidio: update firmware to v1.6.1
+    - amdgpu: add initial vega10 firmware
+    - amdgpu: add initial uvd and vce firmware for vega10
+    - cavium: Add firmware for CNN55XX crypto driver.
+    - Update Intel OPA hfi1 firmware
+    - amdgpu: update psp and acg_smu firmware for vega10
+    - rtlwifi: rtl8822be: Add firmware for new driver/device
+    - qcom: add firmware files for Adreno A3xx
+
+  * [Packaging] Update to debhelper 9
+
+  * Update nic-firmware.lst for 4.13
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Mon, 11 Sep 2017 09:52:28 -0500
+
 linux-firmware (1.167) artful; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
