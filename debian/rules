@@ -32,7 +32,7 @@ scsi_firm_dir = $(CURDIR)/debian/scsi-firmware/lib/firmware
 install-indep: build-indep
 	dh_testdir
 	dh_testroot
-	dh_clean -k -i
+	dh_prep -i
 
 	install -d $(firm_dir)
 
