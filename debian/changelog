@@ -1,3 +1,10 @@
+linux-firmware (1.169) artful; urgency=medium
+
+  * [Feature] PXE boot with Intel Omni-Path (LP: #1712031)
+    - Add Intel Omni-Path firmware to nic-firmware.lst
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 04 Oct 2017 09:23:35 -0500
+
 linux-firmware (1.168) artful; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
