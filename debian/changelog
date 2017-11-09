@@ -1,3 +1,24 @@
+linux-firmware (1.170) bionic; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    bf04291309d3169c0ad3b8db52564235bbd08e30
+    - cxgb4: update firmware to revision 1.16.63.0
+    - ath10k: QCA6174 hw3.0: update firmware-6.bin to WLAN.RM.4.4.1-00051-QCARMSWP-1
+    - ath10k: QCA6174 hw3.0: update board-2.bin
+    - Revert "ath10k: QCA988X hw2.0: update firmware to 10.2.4.70.63-2"
+    - WHENCE: Fix syntax error for iwlwifi-8265-31.ucode entry
+    - WHENCE: Add new radeon firmware
+    - WHENCE: Add new qed firmware
+
+  * CVE-2017-13080 and CVE-2017-13081 (LP: #1728762)
+    - iwlwifi: update firmwares for 3160, 3168, 7265D, 8000C and 8265
+    - iwlwifi: update firmwares for 3160, 3168, 7260, 7265 and 7265D
+
+  * a300_[pfp|pm4].fw clashes when installing linux-firmware (LP: #1728908)
+    - Add linux-firmware-snapdragon to Breaks: and Replaces:
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 15 Nov 2017 15:04:50 -0600
+
 linux-firmware (1.169) artful; urgency=medium
 
   * [Feature] PXE boot with Intel Omni-Path (LP: #1712031)
