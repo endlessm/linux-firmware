@@ -1,3 +1,46 @@
+linux-firmware (1.171) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    a42f895714f3e8867d0227d8eef8156917a5edf3
+    - linux-firmware: update Marvell PCIe-USB8897-A2 firmware image
+    - linux-firmware: update Marvell PCIe-USB8997 firmware image
+    - linux-firmware/i915: Add Geminilake DMC version 1.04
+    - linux-firmware/i915: Add Cannonlake DMC version 1.06
+    - linux-firmware: GuC firmware for Skylake v9.33
+    - linux-firmware: GuC firmware for Broxton v9.29
+    - linux-firmware: GuC firmware for kabylake v9.39
+    - linux-firmware: update Marvell PCIe-USB8997 firmware image
+    - linux-firmware: DMC firmware for kabylake v1.04
+    - iwlwifi: update firmwares for 3160, 3168, 7265D, 8000C and 8265
+    - iwlwifi: update firmwares for 3160, 3168, 7260, 7265 and 7265D
+    - iwlwifi: add new firmware version 34 for 8000C and 8265
+    - iwlwifi: add firmware version 33 for new 9000 series
+    - linux-firmware: intel: Update Geminilake audio firmware
+    - linux-firmware: liquidio: update firmware to v1.7.0
+    - iwlwifi: add firmware version 34 for new 9000 series
+    - qcom: add firmware files for Adreno a530
+    - qcom: add venus firmware files for v4.2
+    - qed: Add firmware 8.33.1.0
+    - amdgpu: add new CP firmware for polaris chips
+    - s2255drv: f2255usb: firmware version 1.2.8
+    - WHENCE: Fix typo in entry for iwlwifi-8265-34.ucode
+    - WHENCE: Add missing entry for mlxsw_spectrum firmware
+    - Mellanox: Add new mlxsw_spectrum firmware 13.1530.152
+    - brcm: update firmware for bcm4339
+    - brcm: introduce firmware for bcm43430 revision 0
+    - brcm: update firmware for bcm4354
+    - brcm: update firmware for bcm4356
+    - brcm: update firmware for bcm4358
+    - linux-firmware: DMC firmware for skylake v1.27
+    - amdgpu: update vega10 vce firmware
+    - amdgpu: add firmware for Raven
+    - linux-firmware: Add firmware file for Intel Bluetooth 9560
+    - linux-firmware: Add firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 8265
+    - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 05 Dec 2017 14:24:23 -0600
+
 linux-firmware (1.170) bionic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
