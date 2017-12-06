@@ -97,10 +97,10 @@ iwlwifi-6050-5.ucode
 iwlwifi-7260-17.ucode
 iwlwifi-7265-17.ucode
 iwlwifi-7265D-29.ucode
-iwlwifi-8000C-27.ucode
-iwlwifi-8000C-31.ucode
-iwlwifi-8265-27.ucode
-iwlwifi-8265-31.ucode
+iwlwifi-8000C-34.ucode
+iwlwifi-8265-34.ucode
+iwlwifi-9000-pu-b0-jf-b0-34.ucode
+iwlwifi-9260-th-b0-jf-b0-34.ucode
 tigon/tg3_tso.bin
 zd1201.fw
 zd1211/zd1211b_ub
