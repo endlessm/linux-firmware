@@ -1,7 +1,7 @@
 linux-firmware (1.171) UNRELEASED; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-    a42f895714f3e8867d0227d8eef8156917a5edf3
+    f5b867e7a517c60ffc751f960e293e498a6838bc
     - linux-firmware: update Marvell PCIe-USB8897-A2 firmware image
     - linux-firmware: update Marvell PCIe-USB8997 firmware image
     - linux-firmware/i915: Add Geminilake DMC version 1.04
@@ -38,6 +38,15 @@ linux-firmware (1.171) UNRELEASED; urgency=medium
     - linux-firmware: Add firmware file for Intel Bluetooth 9260
     - linux-firmware: Update firmware file for Intel Bluetooth 8265
     - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+    - nfp: update firmware for Agilio CX SmartNICs
+    - nfp: change firmware directory layout
+    - nfp: add firmware for tc-flower
+    - Revert commits a42f895, c113d33, 041aff8, 73d13b5
+    - linux-firmware: Add firmware file for Intel Bluetooth 9560
+    - linux-firmware: Add firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 8265
+    - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+    - brcm: add CYW4373 firmwares and Cypress license file
 
  -- Seth Forshee <seth.forshee@canonical.com>  Tue, 05 Dec 2017 14:24:23 -0600
 
