@@ -1,3 +1,17 @@
+linux-firmware (1.169.2) artful; urgency=medium
+
+  * Intel 9260/9462/9560 firmware support (LP: #1734243)
+    - iwlwifi: add firmware version 33 for new 9000 series
+    - linux-firmware: Add firmware file for Intel Bluetooth 9560
+    - linux-firmware: Add firmware file for Intel Bluetooth 9260
+
+  * Bluetooth mouse and keyboard connects, works for a few seconds, then
+    doesn't react (LP: #1729389)
+    - linux-firmware: Update firmware file for Intel Bluetooth 8265
+    - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 12 Dec 2017 08:16:01 -0600
+
 linux-firmware (1.169.1) artful; urgency=medium
 
   * CVE-2017-13080 and CVE-2017-13081 (LP: #1728762)
