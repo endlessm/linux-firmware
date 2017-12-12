@@ -1,7 +1,7 @@
 linux-firmware (1.171) UNRELEASED; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-    a42f895714f3e8867d0227d8eef8156917a5edf3
+    2aa2ac2e9c09f09b0cfb6fc320c1e2d281530fa0
     - linux-firmware: update Marvell PCIe-USB8897-A2 firmware image
     - linux-firmware: update Marvell PCIe-USB8997 firmware image
     - linux-firmware/i915: Add Geminilake DMC version 1.04
@@ -38,6 +38,34 @@ linux-firmware (1.171) UNRELEASED; urgency=medium
     - linux-firmware: Add firmware file for Intel Bluetooth 9260
     - linux-firmware: Update firmware file for Intel Bluetooth 8265
     - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+    - nfp: update firmware for Agilio CX SmartNICs
+    - nfp: change firmware directory layout
+    - nfp: add firmware for tc-flower
+    - Revert commits a42f895, c113d33, 041aff8, 73d13b5
+    - linux-firmware: Add firmware file for Intel Bluetooth 9560
+    - linux-firmware: Add firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 8265
+    - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+    - brcm: add CYW4373 firmwares and Cypress license file
+    - linux-firmware: liquidio: add v1.7.0 vswitch firmware
+    - nvidia: add GP108 signed firmware
+    - linux-firmware: DMC firmware for cannonlake v1.07
+    - rtlwifi: rtl8723de: Add firmware for new driver/device
+    - wl127x/wl128x: update firmwares
+    - wl18xx: update firmware file 8.9.0.0.76
+    - linux-firmware: intel: Update Geminilake audio firmware
+    - linux-firmware: update Marvell PCIe-USB8897/8997 firmware image to add WPA2 vulnerability fix
+    - cxgb4: update firmware to revision 1.17.14.0
+    - mediatek: update MT8173 VPU firmware to 1.0.8 [decoder h264] Fix h264 decoder output delay for some low latency bitstreams
+    - amdgpu: update vce and uvd firmware for Vega10
+    - amdgpu: update vcn firmware for raven
+    - amdgpu: update vce firmware for Fiji
+    - amdgpu: update uvd firmware for polaris asics
+    - linux-firmware: intel: Update Kabylake audio firmware
+    - wl127x/wl128x: update PLT firmwares
+    - linux-firmware: Update firmware file for Intel Bluetooth,8265
+    - linux-firmware: Add firmware file for Intel Bluetooth,9260
+    - linux-firmware: Add firmware file for Intel Bluetooth,9560
 
  -- Seth Forshee <seth.forshee@canonical.com>  Tue, 05 Dec 2017 14:24:23 -0600
 
