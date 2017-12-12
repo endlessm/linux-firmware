@@ -959,6 +959,12 @@ Version 22.391740.0
 File: iwlwifi-8265-27.ucode
 Version 27.455470.0
 
+File: iwlwifi-9260-th-b0-jf-b0-33.ucode
+Version: 33.610294.0
+
+File: iwlwifi-9000-pu-b0-jf-b0-33.ucode
+Version: 33.610294.0
+
 Licence: Redistributable. See LICENCE.iwlwifi_firmware for details
 
 Also available from http://wireless.kernel.org/en/users/Drivers/iwlwifi#Firmware
@@ -2836,6 +2842,22 @@ File: intel/ibt-12-16.ddc
 Version: BT_WindStormPeak_REL0101
 File: intel/ibt-12-16.sfi
 Version: BT_WindStormPeak_REL0101
+File: intel/ibt-17-16-1.sfi
+Version: BT_JeffersonPeak_B0_B0_REL0186
+File: intel/ibt-17-16-1.ddc
+Version: BT_JeffersonPeak_B0_B0_REL0186
+File: intel/ibt-17-2.sfi
+Version: BT_JeffersonPeak_B0_B0_REL0186
+File: intel/ibt-17-2.ddc
+Version: BT_JeffersonPeak_B0_B0_REL0186
+File: intel/ibt-17-0-1.sfi
+Version: BT_JeffersonPeak_A0_B0_REL0186
+File: intel/ibt-17-0-1.ddc
+Version: BT_JeffersonPeak_A0_B0_REL0186
+File: intel/ibt-17-1.sfi
+Version: BT_JeffersonPeak_A0_B0_REL0186
+File: intel/ibt-17-1.ddc
+Version: BT_JeffersonPeak_A0_B0_REL0186
 
 Licence: Redistributable. See LICENCE.ibt_firmware for details
 
