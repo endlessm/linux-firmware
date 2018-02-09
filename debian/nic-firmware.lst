@@ -35,6 +35,8 @@ brcm/brcmfmac4358-pcie.bin
 brcm/brcmfmac43602-pcie.bin
 brcm/brcmfmac4366b-pcie.bin
 brcm/brcmfmac4371-pcie.bin
+brcm/brcmfmac4373-sdio.bin
+brcm/brcmfmac4373.bin
 hfi1_dc8051.fw
 hfi1_fabric.fw
 hfi1_pcie.fw
