@@ -1,4 +1,4 @@
-linux-firmware (1.171) UNRELEASED; urgency=medium
+linux-firmware (1.171) bionic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     2aa2ac2e9c09f09b0cfb6fc320c1e2d281530fa0
@@ -67,10 +67,14 @@ linux-firmware (1.171) UNRELEASED; urgency=medium
     - linux-firmware: Add firmware file for Intel Bluetooth,9260
     - linux-firmware: Add firmware file for Intel Bluetooth,9560
 
+  * UBUNTU: Update nic-firmware.lst for 4.14
+
+  * UBUNTU: Update nic-firmware.lst for 4.15
+
   [ dann frazier ]
   * nic-firmware: Add QLogic QED firmware (LP: #1743638)
 
- -- Seth Forshee <seth.forshee@canonical.com>  Tue, 05 Dec 2017 14:24:23 -0600
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 09 Feb 2018 15:32:29 -0600
 
 linux-firmware (1.170) bionic; urgency=medium
 
