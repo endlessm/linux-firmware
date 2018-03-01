@@ -1,3 +1,27 @@
+linux-firmware (1.172) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    7344ec9e1df9e27d105ed48d2db99e22370236de
+    - nfp: update Agilio SmartNIC firmware to rev 2.0.4
+    - qed: Add firmwares 8.30.12.0 and 8.10.9.0
+    - rtl_bt: Add firmware and configuration files for the Bluetooth parts of RTL8821C and RTL8723D
+    - ath10k: QCA4019 hw1.0: update firmware-5.bin to 10.4-3.5.3-00053
+    - ath10k: QCA4019 hw1.0: update board-2.bin
+    - ath10k: QCA6174 hw3.0: update firmware-6.bin to WLAN.RM.4.4.1-00079-QCARMSWPZ-1
+    - ath10k: QCA6174 hw3.0: update board-2.bin
+    - ath10k: QCA9377 hw1.0: update firmware-5.bin to WLAN.TF.1.0-00002-QCATFSWPZ-5
+    - ath10k: QCA9887 hw1.0: update firmware-5.bin to 10.2.4-1.0-00037
+    - ath10k: QCA9888 hw2.0: update firmware-5.bin to 10.4-3.5.3-00053
+    - ath10k: QCA988X hw2.0: update firmware-5.bin to 10.2.4-1.0-00037
+    - ath10k: QCA9984 hw1.0: update firmware-5.bin to 10.4-3.5.3-00053
+
+  * Missing firmware in linux-image-4.15.0-10-generic (LP: #1751266)
+    - Restore firmware which was removed due to being duplicates of firmware
+      files distributed with the kernel packages, as the upstream kernel has
+      removed all firmware files.
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 01 Mar 2018 15:04:36 -0600
+
 linux-firmware (1.171) bionic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
