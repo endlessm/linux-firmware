@@ -37,6 +37,9 @@ brcm/brcmfmac4366b-pcie.bin
 brcm/brcmfmac4371-pcie.bin
 brcm/brcmfmac4373-sdio.bin
 brcm/brcmfmac4373.bin
+e100/d101m_ucode.bin
+e100/d101s_ucode.bin
+e100/d102e_ucode.bin
 hfi1_dc8051.fw
 hfi1_fabric.fw
 hfi1_pcie.fw
@@ -73,13 +76,15 @@ rtl_nic/rtl8168h-1.fw
 rtl_nic/rtl8168h-2.fw
 rtl_nic/rtl8402-1.fw
 sun/cassini.bin
+tigon/tg3.bin
+tigon/tg3_tso5.bin
 bnx2/bnx2-mips-06-6.2.3.fw
 bnx2/bnx2-mips-09-6.2.1b.fw
 bnx2/bnx2-rv2p-09ax-6.0.17.fw
 bnx2/bnx2-rv2p-09-6.0.17.fw
-bnx2x/bnx2x-e1h-7.2.51.0.fw
-bnx2x/bnx2x-e1-7.2.51.0.fw
-bnx2x/bnx2x-e2-7.2.51.0.fw
+bnx2x/bnx2x-e1-7.13.1.0.fw
+bnx2x/bnx2x-e1h-7.13.1.0.fw
+bnx2x/bnx2x-e2-7.13.1.0.fw
 phanfw.bin
 iwlwifi-1000-5.ucode
 iwlwifi-100-5.ucode
@@ -112,6 +117,3 @@ zd1211/zd1211b_ur
 zd1211/zd1211_ub
 zd1211/zd1211_uphr
 zd1211/zd1211_ur
-bnx2x/bnx2x-e1-7.13.1.0.fw
-bnx2x/bnx2x-e1h-7.13.1.0.fw
-bnx2x/bnx2x-e2-7.13.1.0.fw
