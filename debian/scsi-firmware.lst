@@ -8,4 +8,7 @@ ql2300_fw.bin
 ql2322_fw.bin
 ql2400_fw.bin
 ql2500_fw.bin
+qlogic/1040.bin
+qlogic/12160.bin
+qlogic/1280.bin
 isci/isci_firmware.bin
