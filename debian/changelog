@@ -1,4 +1,4 @@
-linux-firmware (1.172) UNRELEASED; urgency=medium
+linux-firmware (1.172) bionic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     7344ec9e1df9e27d105ed48d2db99e22370236de
@@ -16,11 +16,10 @@ linux-firmware (1.172) UNRELEASED; urgency=medium
     - ath10k: QCA9984 hw1.0: update firmware-5.bin to 10.4-3.5.3-00053
 
   * Missing firmware in linux-image-4.15.0-10-generic (LP: #1751266)
-    - Restore firmware which was removed due to being duplicates of firmware
-      files distributed with the kernel packages, as the upstream kernel has
-      removed all firmware files.
+    - Restore firmware files previously duplicated in the kernel package
+    - Add restored firmware files to nic-firmware.lst and scsi-firmware.lst
 
- -- Seth Forshee <seth.forshee@canonical.com>  Thu, 01 Mar 2018 15:04:36 -0600
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 01 Mar 2018 15:30:32 -0600
 
 linux-firmware (1.171) bionic; urgency=medium
 
