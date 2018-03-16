@@ -1,3 +1,12 @@
+linux-firmware (1.173) bionic; urgency=medium
+
+  * missing bnx2 firmware (LP: #1756367)
+    - Revert "UBUNTU: Remove obsolete bnx2 firmware"
+    - Revert "UBUNTU: Remove obsolete bnx2 firmware"
+    - UBUNTU: Add additional files to nic-firmware.lst
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 16 Mar 2018 14:19:07 -0500
+
 linux-firmware (1.172) bionic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
