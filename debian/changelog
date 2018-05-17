@@ -1,3 +1,43 @@
+linux-firmware (1.174) cosmic; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    8fc2d4e55685bf73b6f7752383da9067404a74bb
+    - iwlwifi: update firmware version 34 for 9000 series
+    - qed: Add firmwares 8.20.0.0 8.18.9.0 and 8.14.6.0
+    - linux-firmware:Update firmware patch for Intel Bluetooth 7265 (D1)
+    - BCM-0bb4-0306: Cypress Bluetooth firmware for HTC Vive
+    - qed: Add firmware 8.33.11.0
+    - Mellanox: Add new mlxsw_spectrum firmware 13.1620.192
+    - linux-firmware: intel: Update Kabylake audio firmware
+    - BCM-0bb4-0306: Update to Cypress license in WHENCE
+    - linux-firmware: intel: Update Skylake audio firmware
+    - linux-firmware: intel: Update Broxton audio firmware
+    - linux-firmware: intel: Update Kabylake audio firmware
+    - linux-firmware: intel: Update Geminilake audio firmware
+    - cxgb4: update firmware to revision 1.18.9.0
+    - nfp: update Agilio SmartNIC firmware to rev 2.0.7
+    - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+    - linux-firmware: Update firmware file for Intel Bluetooth,8265
+    - linux-firmware: Add firmware file for Intel Bluetooth,9260
+    - linux-firmware: Add firmware file for Intel Bluetooth,9560
+    - amdgpu: update vce firmware for Polaris
+    - iwlwifi: add some new FW versions and update older ones
+    - iwlwifi: update firmwares for 3160, 3168 and 7265
+    - linux-firmware: rsi: update firmware images for Redpine 9113 chipset
+    - linux-firmware: update wil6210 firmware to 5.2.0.18
+    - nfp: update Agilio SmartNIC flower firmware to rev 5701
+    - nfp: add symlink for mixed mode Agilio CX 2x25GbE cards
+    - cxgb4: update firmware to revision 1.19.1.0
+    - linux-firmware: Update firmware file for Intel Bluetooth,8265
+    - linux-firmware: Add firmware file for Intel Bluetooth,9260
+    - linux-firmware: Add firmware file for Intel Bluetooth,9560
+    - qed: Add firmware 8.33.12.0
+    - Update Intel OPA hfi1 firmware
+    - linux-firmware: update Marvell SD8897-B0 firmware image to add WPA2 vulnerability fix
+    - linux-firmware: update Marvell USB8997 firmware image to add WPA2 vulnerability fix
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 17 May 2018 11:49:13 -0500
+
 linux-firmware (1.173) bionic; urgency=medium
 
   * missing bnx2 firmware (LP: #1756367)
