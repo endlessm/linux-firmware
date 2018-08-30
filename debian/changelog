@@ -1,3 +1,89 @@
+linux-firmware (1.175) cosmic; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    fea76a04f25fd0a217c0d566ff5ff8f23ad3e648
+    - linux-firmware: liquidio: update firmware to v1.7.2
+    - nfp: update Agilio SmartNIC flower firmware to rev AOTC-2.9.A.16
+    - nfp: Add symlink for Agilio CX 1x40GbE flower firmware
+    - amdgpu: sync up raven firmware with 18.10 release
+    - amdgpu: sync up fiji firmware with 18.10 release
+    - amdgpu: sync up tonga firmware with 18.10 release
+    - amdgpu: sync up stoney firmware with 18.10 release
+    - amdgpu: sync up topaz firmware with 18.10 release
+    - amdgpu: sync up carrizo firmware with 18.10 release
+    - amdgpu: sync up vega10 firmware with 18.10 release
+    - amdgpu: sync up polaris10 firmware with 18.10 release
+    - amdgpu: sync up polaris11 firmware with 18.10 release
+    - amdgpu: sync up polaris12 firmware with 18.10 release
+    - linux-firmware: Update AMD cpu microcode
+    - linux-firmware: Update firmware file for Intel Bluetooth,9560
+    - linux-firmware:Update firmware patch for Intel Bluetooth 7265 (D1)
+    - linux-firmware: Update firmware file for Intel Bluetooth,9260
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B3/B4)
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7260 (B5/B6)
+    - linux-firmware: Update firmware file for Intel Bluetooth,8265
+    - linux-firmware: liquidio: update vswitch firmware to v1.7.2
+    - qed: Add firmware 8.37.2.0
+    - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+    - Update AMD cpu microcode for family 15h
+    - qcom: add venus firmware files for v5.2
+    - linux-firmware:Update firmware patch for Intel Bluetooth 7265 (D1)
+    - linux-firmware: Update firmware patch for Intel Bluetooth 7265 (D0)
+    - amdgpu: update vega10 VCE firmware to version 55.3
+    - Update Cypress license termination clause
+    - brcm: update firmware for bcm43430 sdio
+    - brcm: update firmware for bcm43340 sdio
+    - brcm: update firmware for bcm43362 sdio
+    - brcm: update firmware for bcm4354 sdio
+    - brcm: update firmware for bcm4356 pcie
+    - cxgb4: update firmware to revision 1.20.8.0
+    - WHENCE: Fix typo Version
+    - amdgpu: sync up bonaire firmware with 18.20 release
+    - amdgpu: sync up hawaii firmware with 18.20 release
+    - amdgpu: sync up kabini firmware with 18.20 release
+    - amdgpu: sync up mullins firmware with 18.20 release
+    - amdgpu: sync up kaveri firmware with 18.20 release
+    - amdgpu: sync up hainan firmware with 18.20 release
+    - amdgpu: sync up oland firmware with 18.20 release
+    - amdgpu: sync up tahiti firmware with 18.20 release
+    - amdgpu: sync up pitcairn firmware with 18.20 release
+    - amdgpu: sync up verde firmware with 18.20 release
+    - amdgpu: sync up polaris10 firmware with 18.20 release
+    - amdgpu: sync up polaris11 firmware with 18.20 release
+    - amdgpu: sync up polaris12 firmware with 18.20 release
+    - amdgpu: sync up raven firmware with 18.20 release
+    - amdgpu: sync up vega10 firmware with 18.20 release
+    - amdgpu: add initial VegaM firmware
+    - amdgpu: update copyright date
+    - linux-firmware: update Marvell USB8801 B0 firmware image
+    - brcm: add 43430 based AP6212 and 1DX NVRAM
+    - linux-firmware: mediatek: add MT7622 Bluetooth firmwares and license file
+    - WHENCE: Remove reference to amdgpu/vegam_me_2.bin
+    - Mellanox: Add new mlxsw_spectrum firmware 13.1702.6
+    - wl18xx: update firmware file 8.9.0.0.79
+    - linux-firmware: add firmware for mt76x2u
+    - nfp: update Agilio SmartNIC flower firmware to rev AOTC-2.9.A.31
+    - qcom: update venus firmware files for v5.2
+    - linux-firmware: add firmware for mt76x0
+    - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+    - linux-firmware: Update firmware file for Intel Bluetooth,8265
+    - linux-firmware: Update firmware file for Intel Bluetooth,9260
+    - linux-firmware: Update firmware file for Intel Bluetooth,9560
+    - linux-firmware:Update firmware patch for Intel Bluetooth 7265 (D1)
+    - qed: Add firmware 8.37.7.0
+    - linux-firmware: add firmware for mhdp8546
+    - amdgpu: sync up fiji firmware with 18.30 release
+    - amdgpu: sync up polaris11 firmware with 18.30 release
+    - amdgpu: sync up tonga firmware with 18.30 release
+    - amdgpu: sync up polaris12 firmware with 18.30 release
+    - amdgpu: sync up raven firmware with 18.30 release
+    - amdgpu: sync up vega10 firmware with 18.30 release
+    - amdgpu: sync up polaris10 firmware with 18.30 release
+
+  * Update nic-firmware.lst for 4.18 (LP: #1790006)
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 30 Aug 2018 16:32:09 -0500
+
 linux-firmware (1.174) cosmic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
