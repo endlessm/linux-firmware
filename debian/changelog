@@ -1,3 +1,55 @@
+linux-firmware (1.176) disco; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    1baa34868b2c0a004dc595b20678145e3fff83e7
+    - nvidia: switch GP10[2467] to newer scrubber/ACR firmware (from GP108)
+    - Mellanox: Add new mlxsw_spectrum firmware 13.1703.4
+    - rtl_bt: Add firmware and configuration files for the Bluetooth part of RTL8822CU
+    - Mellanox: Add new mlxsw_spectrum firmware 13.1703.4
+    - brcm: update firmware for bcm43362 sdio
+    - qca: update BT firmware files for QCA ROME chip.
+    - linux-firmware: add Marvell SD8997 firmware image
+    - firmware/icl/dmc: Add v1.07 of DMC for Icelake
+    - nvidia: add GV100 signed firmware
+    - linux-firmware: mediatek: add firmware for mt7668u Bluetooth
+    - ti-connectivity: add firmware for CC2560(A) Bluetooth
+    - nfp: update Agilio SmartNIC firmware to rev 2.1.13
+    - iwlwifi: update firmwares for 7000, 8000 and 9000 series
+    - iwlwifi: update firmwares for 9000 series
+    - iwlwifi: add -41.ucode firmwares for 9000 series
+    - nfp: update Agilio SmartNIC flower firmware to rev AOTC-2.9.A.37
+    - rtw88: Add firmware file for driver rtw88
+    - nfp: Add Agilio BPF firmware rev 2.0.6.124
+    - ath10k: QCA4019 hw1.0: update firmware-5.bin to 10.4-3.6-00140
+    - ath10k: QCA4019 hw1.0: update board-2.bin
+    - ath10k: QCA6174 hw3.0: update firmware-6.bin to RM.4.4.1.c2-00057-QCARMSWP-1
+    - ath10k: QCA9377 hw1.0: add firmware-6.bin to WLAN.TF.2.1-00021-QCARMSWP-1
+    - ath10k: QCA9887 hw1.0: update firmware-5.bin to 10.2.4-1.0-00041
+    - ath10k: QCA9888 hw2.0: update firmware-5.bin to 10.4-3.6-00140
+    - ath10k: QCA9888 hw2.0: update board-2.bin
+    - ath10k: QCA988X hw2.0: update firmware-5.bin to 10.2.4-1.0-00041
+    - ath10k: QCA9984 hw1.0: update firmware-5.bin to 10.4-3.6.0.1-00003
+    - ath10k: QCA9984 hw1.0: update board-2.bin
+    - Update Intel OPA hfi1 firmware
+    - linux-firmware: add firmware for mt7610e
+    - linux-firmware: Update firmware file for Intel Bluetooth,9560
+    - linux-firmware: Update firmware file for Intel Bluetooth,9260
+    - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+    - linux-firmware: Update firmware file for Intel Bluetooth,8265
+    - linux-firmware: liquidio: fix GPL compliance issue
+    - linux-firmware: add MC firmware for NXP DPAA2 SoCs
+    - linux-firmware: add firmware for mt7650e
+    - amdgpu: update vega10 firmware to 18.40
+    - amdgpu: update polaris10 firmware to 18.40
+    - amdgpu: update carrizo firmware to 18.40
+    - amdgpu: update tonga firmware to 18.40
+    - amdgpu: update fiji firmware to 18.40
+    - amdgpu: update raven firmware to 18.40
+    - amdgpu: add raven dmcu firmware
+    - qed: Add 8.37.7.0 firmware image
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 06 Nov 2018 08:33:42 -0600
+
 linux-firmware (1.175) cosmic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
