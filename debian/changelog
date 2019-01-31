@@ -1,3 +1,57 @@
+linux-firmware (1.177) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    a8b75cac06f80dc1500ba385680ac5b5c1d1c4f8
+    - cxgb4: update firmware to revision 1.21.5.0
+    - nfp: update Agilio SmartNIC firmware to rev 2.1.16
+    - firmware/huc/bxt: Add huC Update for BXT
+    - linux-firmware: intel: Update Cannonlake audio firmware.
+    - microchip: add firmware for VSC8574 and VSC8584 Ethernet PHYs
+    - nfp: update Agilio SmartNIC flower firmware to rev AOTC-2.10.A.13
+    - linux-firmware: Update AMD cpu microcode
+    - amdgpu: Add new polaris SMC firmwares
+    - amdgpu: Add new polaris MC firmwares
+    - amdgpu: add firmware for vega12
+    - amdgpu: update polaris10 fw for 18.50 release
+    - amdgpu: update polaris11 fw for 18.50 release
+    - amdgpu: update raven fw for 18.50 release
+    - amdgpu: update vega10 fw for 18.50 release
+    - amdgpu: update vega12 fw for 18.50 release
+    - cavium: Update firmware for CNN55XX crypto driver
+    - Mellanox: Add new mlxsw_spectrum firmware 13.1910.622
+    - brcm: provide new firmwares for BCM4366 chipset
+    - iwlwifi: update -41.ucode for 9000 series
+    - iwlwifi: add -43.ucode for 9000 series
+    - iwlwifi: update firmwares for 8000 series
+    - rtl_bt: Add firmware and configuration files for the Bluetooth part of RTL8723BS
+    - check_whence.py: Add support for filenames with spaces in them
+    - WHENCE: Put quotes around brcmfmac NVRAM filenames
+    - brcm: Add 43362 based AP6210 NVRAM for the Cubietech Cubietruck
+    - brcm: Add brcmfmac43362-sdio.lemaker,bananapro.txt symlink
+    - brcm: Add 4356 based AP6356 NVRAM for the GPD win handheld
+    - brcm: Add 43430a0 based AP6212 NVRAM for the Onda V80 Plus tablet
+    - brcm: Add 43430a0 based AP6212 NVRAM for the Jumper EZpad mini 3 tablet
+    - brcm: Add 43340 based AP6234 NVRAM for the Meegopad T08 HDMI stick
+    - brcm: Add 43430 NVRAM for the Chuwi Vi8 Plus tablet
+    - brcm: Add 4330 NVRAM for the Prowise PT301 tablet
+    - Revert "amdgpu: update vega10 fw for 18.50 release"
+    - cxgb4: update firmware to revision 1.22.9.0
+    - iwlwifi: update firmwares for 9000 series
+    - linux-firmware: update Marvell USB8801 B0 firmware image
+    - brcm: Add BCM43455 NVRAM for Raspberry Pi 3 B+
+    - brcm: Add BCM43430 NVRAM for the Raspberry Pi 3 Model B
+    - linux-firmware: Update firmware file for Intel Bluetooth,9560
+    - linux-firmware: Update firmware file for Intel Bluetooth,9260
+    - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+    - linux-firmware: Update firmware file for Intel Bluetooth,8265
+    - Revert "brcm: Add BCM43455 NVRAM for Raspberry Pi 3 B+"
+    - amdgpu: add picasso fw for 18.50 release
+    - amdgpu: add raven2 fw for 18.50 release
+    - brcm: Fix filename for BCM43430 NVRAM for the Raspberry Pi 3 Model B
+    - brcm: Add BCM43455 NVRAM for Raspberry Pi 3 B+
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 31 Jan 2019 12:09:48 -0600
+
 linux-firmware (1.176) disco; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
