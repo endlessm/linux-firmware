@@ -35,6 +35,7 @@ brcm/brcmfmac43570-pcie.bin
 brcm/brcmfmac4358-pcie.bin
 brcm/brcmfmac43602-pcie.bin
 brcm/brcmfmac4366b-pcie.bin
+brcm/brcmfmac4366c-pcie.bin
 brcm/brcmfmac4371-pcie.bin
 brcm/brcmfmac4373-sdio.bin
 brcm/brcmfmac4373.bin
