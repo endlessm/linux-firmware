@@ -1,3 +1,21 @@
+linux-firmware (1.175.2) cosmic; urgency=medium
+
+  * iwlwifi Intel 8265 firmware crashing on lenovo x1 Gen 6 (LP: #1808389)
+    - iwlwifi: update firmwares for 7000, 8000 and 9000 series
+    - iwlwifi: update firmwares for 8000 series
+
+  * OS booting thrown with nouveau errors (LP: #1794055)
+    - nvidia: add GV100 signed firmware
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 08 Feb 2019 13:38:19 -0600
+
+linux-firmware (1.175.1) cosmic; urgency=medium
+
+  * [0cf3:e007] Can't turn on BT by Wireless hotkey (LP: #1796634)
+    - qca: update BT firmware files for QCA ROME chip.
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 06 Nov 2018 09:42:24 -0600
+
 linux-firmware (1.175) cosmic; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
