@@ -1,4 +1,4 @@
-linux-firmware (1.177) UNRELEASED; urgency=medium
+linux-firmware (1.177) disco; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     a8b75cac06f80dc1500ba385680ac5b5c1d1c4f8
@@ -49,6 +49,8 @@ linux-firmware (1.177) UNRELEASED; urgency=medium
     - amdgpu: add raven2 fw for 18.50 release
     - brcm: Fix filename for BCM43430 NVRAM for the Raspberry Pi 3 Model B
     - brcm: Add BCM43455 NVRAM for Raspberry Pi 3 B+
+
+  *  Add brcmfmac4366c-pcie.bin to nic-firmware.lst
 
  -- Seth Forshee <seth.forshee@canonical.com>  Thu, 31 Jan 2019 12:09:48 -0600
 
