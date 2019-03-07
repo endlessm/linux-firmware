@@ -1,3 +1,41 @@
+linux-firmware (1.178) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    7bc246451318b3536d9bfd3c4e46d541a9831b33
+    - ath10k: QCA6174 hw3.0: update board-2.bin
+    - ath10k: QCA9888 hw2.0: update firmware-5.bin to 10.4-3.9.0.2-00024
+    - ath10k: QCA988X hw2.0: update firmware-5.bin to 10.2.4-1.0-00043
+    - ath10k: QCA9984 hw1.0: update firmware-5.bin to 10.4-3.9.0.2-00021
+    - linux-firmware: add Marvell SD8977 firmware image
+    - linux-firmware: update Marvell SD8897-B0 firmware image
+    - linux-firmware: update Marvell PCIe-USB8997 firmware image
+    - amdgpu: bump year on license
+    - amdgpu: add firmware for vega20 from 18.50
+    - bnx2x: Add FW 7.13.11.0.
+    - nvidia: add TU10x typec controller firmware
+    - qca: Add firmware files for BT chip wcn3990.
+    - linux-firmware: Update firmware file for Intel Bluetooth,9260
+    - linux-firmware: Update firmware file for Intel Bluetooth,9560
+    - amdgpu: drop raven2_sdma1.bin
+    - amdgpu: update raven2 rlc firmware
+    - WHENCE: Correct errant entries
+    - linux-firmware: Add AMD SEV firmware
+    - QCA: Add the fw files for BT Chip QCA6174.
+    - nfp: update Agilio SmartNIC firmware to rev 2.1.16.1
+    - linux-firmware: update Marvell 8897/8997 firmware images
+    - linux-firmware: update Marvell 8787/8801/8887 firmware images
+    - rtl_bt: Update firmware for BT part of RTL8822C
+    - rtw88: RTL8822C: update rtw8822c_fw.bin to v5.0
+    - drm/amdgpu: update vega20 to latest from 18.50 branch
+    - drm/amdgpu: update polaris12 to latest from 18.50 branch
+    - drm/amdgpu: update picasso to latest from 18.50 branch
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 8265
+    - cxgb4: update firmware to revision 1.23.3.0
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 07 Mar 2019 09:53:28 -0600
+
 linux-firmware (1.177) disco; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
