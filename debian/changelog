@@ -1,4 +1,4 @@
-linux-firmware (1.178) UNRELEASED; urgency=medium
+linux-firmware (1.178) disco; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     7bc246451318b3536d9bfd3c4e46d541a9831b33
@@ -33,6 +33,8 @@ linux-firmware (1.178) UNRELEASED; urgency=medium
     - linux-firmware: Update firmware file for Intel Bluetooth 9260
     - linux-firmware: Update firmware file for Intel Bluetooth 8265
     - cxgb4: update firmware to revision 1.23.3.0
+
+  * Update nic-firmware.lst for 5.0
 
  -- Seth Forshee <seth.forshee@canonical.com>  Thu, 07 Mar 2019 09:53:28 -0600
 
