@@ -148,3 +148,14 @@ Info: audio topology binary
 License: Redistributable. See LICENSE.1a98-INTEL-EDK2-2-tplg for details.
 
 --------------------------------------------------------------------------
+
+Driver: snd_soc_sof - sound open firmware driver
+
+File: intel/sof/sof-cnl.ri
+File: intel/sof-tplg/sof-hda-generic.tplg
+
+Licence: Redistributable. See LICENSE.sof
+
+Also available from https://github.com/thesofproject/sof/blob/master/LICENCE
+
+--------------------------------------------------------------------------
