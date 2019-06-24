@@ -1,3 +1,57 @@
+linux-firmware (1.180) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    7ae3a09dcc7581da3fcc6c578429b89e2764a684
+    - nfp: update Agilio SmartNIC flower firmware to rev AOTC-2.10.A.23
+    - linux-firmware: update Marvell 8797/8997 firmware images
+    - mediatek: update MT8173 VPU firmware to v1.1.2
+    - linux-firmware: add firmware for MT7615E
+    - linux-firmware: Update NXP Management Complex firmware to version 10.14.3
+    - cxgb4: update firmware to revision 1.23.4.0
+    - linux-firmware: Add firmware file for Intel Bluetooth 22161
+    - drm/i915/firmware: Add BXT GuC v32.0.3
+    - drm/i915/firmware: Add SKL GuC v32.0.3
+    - drm/i915/firmware: Add KBL GuC v32.0.3
+    - drm/i915/firmware: Add GLK GuC v32.0.3
+    - drm/i915/firmware: Add GLK HuC v03.01.2893
+    - drm/i915/firmware: Add ICL GuC v32.0.3
+    - drm/i915/firmware: Add ICL HuC v8.4.3238
+    - Mellanox: Add new mlxsw_spectrum firmware 13.2000.1122
+    - linux-firmware: update fw for qat devices
+    - amdgpu: update picasso to the latest 19.10 firmware
+    - amdgpu: update raven to the latest 19.10 firmware
+    - amdgpu: update raven2 to the latest 19.10 firmware
+    - amdgpu: update polaris10 to the latest 19.10 firmware
+    - amdgpu: update polaris11 to the latest 19.10 firmware
+    - amdgpu: update vega10 to the latest 19.10 firmware
+    - amdgpu: update vega12 to the latest 19.10 firmware
+    - amdgpu: update vega20 to the latest 19.10 firmware
+    - iwlwifi: add -46.ucode firmwares for 9000 series
+    - iwlwifi: add firmware for 22260 and update 9000 series -46 firmwares
+    - iwlwifi: update -46 firmwares for 22260 and 9000 series
+    - amlogic: add video decoder firmwares
+    - linux-firmware: Update firmware file for Intel Bluetooth 22161
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 8265
+    - nvidia: update GP10[2467] SEC2 RTOS with the one already used on GP108
+    - imx: sdma: update firmware to v3.5/v4.5
+    - linux-firmware: rsi: update firmware images for Redpine 9113 chipset
+    - linux-firmware: update firmware for mhdp8546
+    - linux-firmware: update licence text for Marvell firmware
+    - linux-firmware: Update AMD SEV firmware
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth 22161
+    - cavium: Add firmware for CNN55XX crypto driver.
+    - iwlwifi: udpate -36 firmware for 8000 series
+    - iwlwifi: update Core45 FWs for 22260, 9000 and 9260
+    - iwlwifi: update FWs for 9000 series to Core45-96
+    - iwlwifi: update FW for 22000 to Core45-96
+    - iwlwifi: add new firmwares for integrated 22000 series
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Mon, 24 Jun 2019 07:29:39 -0500
+
 linux-firmware (1.179) eoan; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
