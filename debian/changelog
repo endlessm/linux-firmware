@@ -1,4 +1,4 @@
-linux-firmware (1.180) UNRELEASED; urgency=medium
+linux-firmware (1.180) eoan; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     7ae3a09dcc7581da3fcc6c578429b89e2764a684
@@ -49,6 +49,10 @@ linux-firmware (1.180) UNRELEASED; urgency=medium
     - iwlwifi: update FWs for 9000 series to Core45-96
     - iwlwifi: update FW for 22000 to Core45-96
     - iwlwifi: add new firmwares for integrated 22000 series
+
+  * add firmware and topology file for sound sof driver [cml/cnl]
+    (LP: #1833405)
+    - SAUCE: add firmware and topology for cml/cnl sof driver
 
  -- Seth Forshee <seth.forshee@canonical.com>  Mon, 24 Jun 2019 07:29:39 -0500
 
