@@ -1,3 +1,12 @@
+linux-firmware (1.181) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    70e43940b05e8d6e0c5f15b5e2d67760f1581ece
+    - linux-firmware: Add firmware file for Intel Bluetooth AX201
+    - linux-firmware: rsi: add firmware image for redpine 9116 chipset
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 12 Jul 2019 07:09:19 -0500
+
 linux-firmware (1.180) eoan; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
