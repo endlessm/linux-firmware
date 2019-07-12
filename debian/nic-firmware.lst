@@ -85,9 +85,9 @@ bnx2/bnx2-mips-09-6.2.1b.fw
 bnx2/bnx2-rv2p-06-6.0.15.fw
 bnx2/bnx2-rv2p-09ax-6.0.17.fw
 bnx2/bnx2-rv2p-09-6.0.17.fw
-bnx2x/bnx2x-e1-7.13.1.0.fw
-bnx2x/bnx2x-e1h-7.13.1.0.fw
-bnx2x/bnx2x-e2-7.13.1.0.fw
+bnx2x/bnx2x-e1-7.13.11.0.fw
+bnx2x/bnx2x-e1h-7.13.11.0.fw
+bnx2x/bnx2x-e2-7.13.11.0.fw
 phanfw.bin
 iwlwifi-1000-5.ucode
 iwlwifi-100-5.ucode
@@ -110,8 +110,12 @@ iwlwifi-7265-17.ucode
 iwlwifi-7265D-29.ucode
 iwlwifi-8000C-36.ucode
 iwlwifi-8265-36.ucode
-iwlwifi-9000-pu-b0-jf-b0-43.ucode
-iwlwifi-9260-th-b0-jf-b0-43.ucode
+iwlwifi-9000-pu-b0-jf-b0-46.ucode
+iwlwifi-9260-th-b0-jf-b0-46.ucode
+iwlwifi-Qu-b0-hr-b0-48.ucode
+iwlwifi-Qu-b0-jf-b0-48.ucode
+iwlwifi-QuZ-a0-hr-b0-48.ucode
+iwlwifi-cc-a0-48.ucode
 tigon/tg3_tso.bin
 zd1201.fw
 zd1211/zd1211b_ub
