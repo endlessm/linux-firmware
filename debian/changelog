@@ -1,4 +1,4 @@
-linux-firmware (1.181) UNRELEASED; urgency=medium
+linux-firmware (1.181) eoan; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     bf13a71b18af229b4c900b321ef1f8443028ded8
@@ -25,7 +25,11 @@ linux-firmware (1.181) UNRELEASED; urgency=medium
     - linux-firmware: Update firmware file for Intel Bluetooth 22161
     - linux-firmware: Update firmware file for Intel Bluetooth AX201
 
- -- Seth Forshee <seth.forshee@canonical.com>  Fri, 12 Jul 2019 07:09:19 -0500
+  * Update udebs for Linux 5.2
+    - update list-udeb-updates for the linux-lts -> linux-hwe change
+    - update nic-firmware.lst for Linux 5.2
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 18 Jul 2019 15:39:40 -0500
 
 linux-firmware (1.180) eoan; urgency=medium
 
