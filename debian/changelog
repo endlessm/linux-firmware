@@ -1,9 +1,29 @@
 linux-firmware (1.181) UNRELEASED; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-    70e43940b05e8d6e0c5f15b5e2d67760f1581ece
+    bf13a71b18af229b4c900b321ef1f8443028ded8
     - linux-firmware: Add firmware file for Intel Bluetooth AX201
     - linux-firmware: rsi: add firmware image for redpine 9116 chipset
+    - drm/i915/firmware: Add v33 of GuC for BXT
+    - drm/i915/firmware: Add v33 of GuC for GLK
+    - drm/i915/firmware: Add v33 of GuC for SKL
+    - drm/i915/firmware: Add v33 of GuC for KBL
+    - drm/i915/firmware: Add v33 of GuC for ICL
+    - amdgpu: update picasso to latest 19.20 firmware
+    - amdgpu: update raven to latest 19.20 firmware
+    - amdgpu: update raven2 to latest 19.20 firmware
+    - amdgpu: update polaris12 to latest 19.20 firmware
+    - amdgpu: update vega10 to latest 19.20 firmware
+    - amdgpu: partially revert 2579167548be33afb1fe2a9a5c141561ee5a8bbe
+    - amdgpu: update vega12 to latest 19.20 firmware
+    - amdgpu: update tonga to latest 19.20 firmware
+    - amdgpu: update raven vcn firmware
+    - amdgpu: update picasso vcn firmware
+    - amdgpu: update vega10 VCE firmware
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth 22161
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
 
  -- Seth Forshee <seth.forshee@canonical.com>  Fri, 12 Jul 2019 07:09:19 -0500
 
