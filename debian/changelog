@@ -1,4 +1,4 @@
-linux-firmware (1.182) UNRELEASED; urgency=medium
+linux-firmware (1.182) eoan; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     6c6918ad8ae0dfb2cb591484eba525409980c16f
@@ -37,6 +37,8 @@ linux-firmware (1.182) UNRELEASED; urgency=medium
     - Add symlinks for Tegra VIC firmware binaries
     - nvidia: Add XUSB firmware for Tegra186
     - linux-firmware: Update firmware file for Intel Bluetooth AX201
+
+  * Update nic-firmware.lst for Linux 5.3
 
  -- Seth Forshee <seth.forshee@canonical.com>  Tue, 10 Sep 2019 11:31:52 +0100
 
