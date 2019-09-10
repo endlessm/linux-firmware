@@ -1,3 +1,45 @@
+linux-firmware (1.182) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    6c6918ad8ae0dfb2cb591484eba525409980c16f
+    - iwlwifi: update FWs for 3168, 7265D, 9000, 9260, 8000, 8265 and cc
+    - iwlwifi: update -48 FWs for Qu and cc
+    - linux-firmware: Update NXP Management Complex firmware to version 10.16.2
+    - nvidia: add missing entries in WHENCE
+    - nfp: update Agilio SmartNIC flower firmware to rev AOTC-2.10.A.38
+    - cxgb4: update firmware to revision 1.24.3.0
+    - ath10k: QCA4019 hw1.0: update board-2.bin
+    - ath10k: QCA6174 hw3.0: update firmware-6.bin to WLAN.RM.4.4.1-00140-QCARMSWPZ-1
+    - ath10k: QCA9887 hw1.0: update firmware-5.bin to 10.2.4-1.0-00045
+    - ath10k: QCA9888 hw2.0: update firmware-5.bin to 10.4-3.9.0.2-00040
+    - ath10k: QCA9888 hw2.0: update board-2.bin
+    - ath10k: QCA988X hw2.0: update firmware-5.bin to 10.2.4-1.0-00045
+    - ath10k: QCA9984 hw1.0: update firmware-5.bin to 10.4-3.9.0.2-00046
+    - ath10k: QCA9984 hw1.0: update board-2.bin
+    - rtw88: RTL8822C: update rtw8822c_fw.bin to v7.3
+    - rtw88: RTL8822C: add WoW firmware v7.3
+    - rtw88: add a README file
+    - Install only listed firmware files
+    - Mellanox: Add new mlxsw_spectrum firmware 13.2000.1886
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - rtl_bt: Update RTL8822C BT FW to V0x098A_94A4
+    - check_whence: Add copy-firmware.sh to the list of ignored files
+    - iwlwifi: update FWs to core45-152 release
+    - brcm: Add 43340 based AP6234 NVRAM for the PoV TAB-P1006W-232 tablet
+    - brcm: Add 43455 based AP6255 NVRAM for the Minix Neo Z83-4 Mini PC
+    - Chelsio driver loads firmware configuration file to allow firmware to distribute resources before chip bring up. Chelsio NIC driver, cxgb4 searches for firmware config file at /lib/firmware/cxgb4/ directory.
+    - linux-firmware: Add firmware file for Intel Bluetooth AX201
+    - rtl_nic: add firmware rtl8125a-3
+    - rtl_bt: Update RTL8723D BT FW to 0x828A_96F1
+    - Add symlinks for Tegra VIC firmware binaries
+    - nvidia: Add XUSB firmware for Tegra186
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 10 Sep 2019 11:31:52 +0100
+
 linux-firmware (1.181) eoan; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
