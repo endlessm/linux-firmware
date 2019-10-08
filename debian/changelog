@@ -1,3 +1,11 @@
+linux-firmware (1.183) eoan; urgency=medium
+
+  * update firmware for sound sof driver to fix the hang issue on several
+    Dell machines (LP: #1847250)
+    - SAUCE: update firmware for sound sof driver to fix hang issues
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 08 Oct 2019 13:54:11 -0500
+
 linux-firmware (1.182) eoan; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
