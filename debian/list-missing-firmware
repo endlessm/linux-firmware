@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Lists firmware files which appear in the specified fwinfo file
+# but are not present in the linux-firmware tree. Optionally
+# specify the branch in git to check; if not supplied HEAD is
+# assumed.
+
+if [ $# -lt 1 ]; then
+	echo "Usage $0 <fwinfo> [<branch>]"
+	exit 1
+fi
+
+fwinfo="$1"
+branch="$2"
+[ -z "$branch" ] && branch="HEAD"
+
+declare -A fw_files
+IFS=$'\n'
+for line in $(git ls-tree -r --name-only "$branch")
+do
+	fw_files[$line]=1
+done
+
+for line in $(cat "$fwinfo")
+do
+	file=$(echo "$line" | sed -e 's/^firmware:\s\+\(.*\)$/\1/')
+	[ -z "${fw_files[$file]}" ] && echo "$file"
+done
