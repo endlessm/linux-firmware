@@ -116,7 +116,7 @@ if test -e .git/config; then
 fi
 
 # shellcheck disable=SC2162 # file/folder name can include escaped symbols
-grep -E '^(RawFile|File):' WHENCE | sed -E -e 's/^(RawFile|File): */\1 /;s/"//g' | while read k f; do
+grep -h -E '^(RawFile|File):' WHENCE WHENCE.ubuntu | sed -E -e 's/^(RawFile|File): */\1 /;s/"//g' | while read k f; do
     install -d "$destdir/$(dirname "$f")"
     $verbose "copying/compressing file $f$compext"
     if test "$compress" != "cat" && test "$k" = "RawFile"; then
@@ -140,7 +140,7 @@ if [ "$num_jobs" -gt 1 ]; then
 fi
 
 # shellcheck disable=SC2162 # file/folder name can include escaped symbols
-grep -E '^Link:' WHENCE | sed -e 's/^Link: *//g;s/-> //g' | while read l t; do
+grep -h -E '^Link:' WHENCE WHENCE.ubuntu | sed -e 's/^Link: *//g;s/-> //g' | while read l t; do
     directory="$destdir/$(dirname "$l")"
     install -d "$directory"
     target="$(cd "$directory" && realpath -m -s "$t")"
