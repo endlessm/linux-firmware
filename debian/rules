@@ -23,8 +23,9 @@ build-arch:
 
 build-indep:
 
-firm_dir = $(CURDIR)/debian/linux-firmware/lib/firmware
-doc_dir = $(CURDIR)/debian/linux-firmware/usr/share/doc/linux-firmware
+dest_dir = $(CURDIR)/debian/linux-firmware
+firm_dir = $(dest_dir)/lib/firmware
+doc_dir = $(dest_dir)/usr/share/doc/linux-firmware
 license_dir = $(doc_dir)/licenses
 nic_firm_dir = $(CURDIR)/debian/nic-firmware/lib/firmware
 scsi_firm_dir = $(CURDIR)/debian/scsi-firmware/lib/firmware
@@ -36,17 +37,14 @@ install-indep: build-indep
 
 	install -d $(firm_dir)
 
-	rsync -a --exclude=WHENCE --exclude=.git --exclude=debian --exclude=fw_source \
-		--exclude=/Makefile --exclude=check_whence.py --exclude=GPL-[23] \
-	       	* $(firm_dir)
-	find $(firm_dir) -type f -name "LICEN[CS]E*" |xargs rm
+	make install DESTDIR=$(dest_dir)
 
 	for f in $$(cat debian/nic-firmware.lst); do \
-		install -m644 -D $$f $(nic_firm_dir)/$$f; \
+		install -m644 -D $(firm_dir)/$$f $(nic_firm_dir)/$$f; \
 	done
 
 	for f in $$(cat debian/scsi-firmware.lst); do \
-		install -m644 -D $$f $(scsi_firm_dir)/$$f; \
+		install -m644 -D $(firm_dir)/$$f $(scsi_firm_dir)/$$f; \
 	done
 
 	install -d $(doc_dir)
