@@ -1,4 +1,4 @@
-linux-firmware (1.184) UNRELEASED; urgency=medium
+linux-firmware (1.184) focal; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     e8a0f4c9314754d8b2cbe9840357d88a861c438a (LP: #1850654) (LP: #1849598)
@@ -58,7 +58,20 @@ linux-firmware (1.184) UNRELEASED; urgency=medium
     - linux-firmware: Update NXP Management Complex firmware to version 10.18.0
     - rtl_nic: add firmware rtl8168fp-3
 
- -- Seth Forshee <seth.forshee@canonical.com>  Mon, 04 Nov 2019 15:39:43 -0600
+  * Revert the firmware update for sound/sof (LP: #1850739)
+    - Revert "UBUNTU: SAUCE: update firmware for sound sof driver to fix hang issues"
+
+  * Miscellaneous Ubuntu changes
+    - [Debian] Add script to identify missing firmware files
+    - rebase to upstream commit 11bdc578ec861c7797ec614d60737a0448b68195
+    - Fix File: entries in WHENCE.ubuntu
+    - SAUCE: Also install files from WHENCE.ubuntu
+    - [Debian] Use "make install" to install firmware
+    - [Debian] Move maintainer scripts to debian/scripts
+    - SAUCE: Remove IXP4xx NPE firmware files
+    - [Packaging] Update nic-firmwarelist for 5.4
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 04 Dec 2019 13:21:00 -0600
 
 linux-firmware (1.183) eoan; urgency=medium
 
