@@ -1,7 +1,7 @@
 linux-firmware (1.184) UNRELEASED; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-    11bdc578ec861c7797ec614d60737a0448b68195
+    e8a0f4c9314754d8b2cbe9840357d88a861c438a (LP: #1850654) (LP: #1849598)
     - qcom: add firmware files for Adreno a630
     - drm/i915/firmware: Add v1.09 of DMC for ICL
     - drm/i915/firmware: Add v2.04 of DMC for TGL
@@ -45,6 +45,18 @@ linux-firmware (1.184) UNRELEASED; urgency=medium
     - amdgpu: add new navi14 wks gfx firmware for 19.30
     - qed: Add firmware 8.40.33.0
     - rtw88: RTL8723D: add firmware file v48
+    - i915: Add GuC firmware v33.0.4 for EHL
+    - i915: Add HuC firmware v9.0.0 for EHL
+    - i915: Add GuC firmware v35.2.0 for TGL
+    - i915: Add HuC firmware v7.0.3 for TGL
+    - amdgpu: update navi10 vcn firmware
+    - amdgpu: update navi14 vcn firmware
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update NXP Management Complex firmware to version 10.18.0
+    - rtl_nic: add firmware rtl8168fp-3
 
  -- Seth Forshee <seth.forshee@canonical.com>  Mon, 04 Nov 2019 15:39:43 -0600
 
