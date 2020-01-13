@@ -148,8 +148,9 @@ License: Redistributable. See LICENSE.1a98-INTEL-EDK2-2-tplg for details.
 
 Driver: snd_soc_sof - sound open firmware driver
 
-File: intel/sof/sof-cnl.ri
-File: intel/sof-tplg/sof-hda-generic.tplg
+File: intel/sof/*.ri
+File: intel/sof/*.ldc
+File: intel/sof-tplg/*.tplg
 
 Licence: Redistributable. See LICENSE.sof
 
