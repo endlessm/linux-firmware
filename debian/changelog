@@ -1,4 +1,4 @@
-linux-firmware (1.185) UNRELEASED; urgency=medium
+linux-firmware (1.185) focal; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     1eb2408c6feacccd10b02a49214745f15d1c6fb7
@@ -53,7 +53,11 @@ linux-firmware (1.185) UNRELEASED; urgency=medium
     - linux-firmware: Update firmware file for Intel Bluetooth AX201
     - linux-firmware: Update firmware file for Intel Bluetooth AX200
 
- -- Seth Forshee <seth.forshee@canonical.com>  Tue, 28 Jan 2020 14:55:55 -0600
+  * intel/sof: update the intel sof firmware to v1.3-0f73628 for cml and cnl
+    (LP: #1859387)
+    - Update cml and cnl sof firmware files to v1.3-0f73628
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 28 Jan 2020 15:14:26 -0600
 
 linux-firmware (1.184) focal; urgency=medium
 
