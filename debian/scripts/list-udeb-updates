@@ -24,7 +24,8 @@ if [ $# -ne 2 ]; then
 fi
 
 # Bail if the source package or version string isn't the format we expect
-if ! (expr match "$1" '^linux$' &>/dev/null || expr match "$1" '^linux-hwe[a-z\-]*$' &>/dev/null)
+if ! (expr match "$1" '^linux$' &>/dev/null || expr match "$1" '^linux-hwe[a-z\-]*$' &>/dev/null ||
+      expr match "$1" '^linux-[0-9]\+\.[0-9]\+$' &>/dev/null)
 then
 	errecho "Invalid source package $1"
 	exit 1
