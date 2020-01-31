@@ -14,7 +14,7 @@ Depends: ${misc:Depends}
 Provides: atmel-firmware
 Conflicts: atmel-firmware
 Replaces: atmel-firmware, linux-restricted-common, linux-firmware-snapdragon (<= 1.2-0ubuntu1)
-Breaks: linux-firmware-snapdragon (<= 1.2-0ubuntu1)
+Breaks: linux-firmware-snapdragon (<= 1.2-0ubuntu1), linux-firmware-raspi2 (<= 1.20190819-0ubuntu2)
 Description: Firmware for Linux kernel drivers
  This package provides firmware used by Linux kernel drivers.
 
