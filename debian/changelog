@@ -1,3 +1,9 @@
+linux-firmware (1.186) focal; urgency=medium
+
+  * Add Breaks: on linux-firmware-raspi2 <= 1.20190819-0ubuntu2
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 31 Jan 2020 09:47:18 -0600
+
 linux-firmware (1.185) focal; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
