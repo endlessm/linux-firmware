@@ -2269,6 +2269,18 @@ File: amdgpu/raven2_pfp.bin
 File: amdgpu/raven2_rlc.bin
 File: amdgpu/raven2_sdma.bin
 File: amdgpu/raven2_vcn.bin
+File: amdgpu/renoir_asd.bin
+File: amdgpu/renoir_ce.bin
+File: amdgpu/renoir_dmcub.bin
+File: amdgpu/renoir_gpu_info.bin
+File: amdgpu/renoir_me.bin
+File: amdgpu/renoir_mec.bin
+File: amdgpu/renoir_mec2.bin
+File: amdgpu/renoir_pfp.bin
+File: amdgpu/renoir_rlc.bin
+File: amdgpu/renoir_sdma.bin
+File: amdgpu/renoir_vcn.bin
+
 
 Licence: Redistributable. See LICENSE.amdgpu for details.
 
