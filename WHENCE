@@ -2308,6 +2308,17 @@ File: amdgpu/navi14_sdma1.bin
 File: amdgpu/navi14_smc.bin
 File: amdgpu/navi14_sos.bin
 File: amdgpu/navi14_vcn.bin
+File: amdgpu/renoir_asd.bin
+File: amdgpu/renoir_ce.bin
+File: amdgpu/renoir_dmcub.bin
+File: amdgpu/renoir_gpu_info.bin
+File: amdgpu/renoir_me.bin
+File: amdgpu/renoir_mec.bin
+File: amdgpu/renoir_mec2.bin
+File: amdgpu/renoir_pfp.bin
+File: amdgpu/renoir_rlc.bin
+File: amdgpu/renoir_sdma.bin
+File: amdgpu/renoir_vcn.bin
 
 Licence: Redistributable. See LICENSE.amdgpu for details.
 
