@@ -148,9 +148,114 @@ License: Redistributable. See LICENSE.1a98-INTEL-EDK2-2-tplg for details.
 
 Driver: snd_soc_sof - sound open firmware driver
 
-File: intel/sof/*.ri
-File: intel/sof/*.ldc
-File: intel/sof-tplg/*.tplg
+File: intel/sof/debug/sof-bdw.ldc
+File: intel/sof/debug/sof-byt.ldc
+File: intel/sof/debug/sof-cht.ldc
+File: intel/sof/debug/sof-hsw.ldc
+File: intel/sof/debug/sof-imx8.ldc
+File: intel/sof/debug/sof-jsl.ldc
+File: intel/sof/debug/sof-kbl.ldc
+File: intel/sof/debug/sof-skl.ldc
+File: intel/sof/debug/sof-sue.ldc
+File: intel/sof/gcc/debug/sof-apl.ldc
+File: intel/sof/gcc/debug/sof-cnl.ldc
+Link: intel/sof/gcc/debug/sof-icl.ldc -> ../../debug/sof-jsl.ldc
+Link: intel/sof/gcc/sof-apl.ri -> ../signed/sof-apl-signed-intel.ri
+Link: intel/sof/gcc/sof-cnl.ri -> ../signed/sof-cnl-signed-intel.ri
+Link: intel/sof/gcc/sof-icl.ri -> ../signed/sof-icl-signed-intel.ri
+File: intel/sof/signed/debug/sof-apl.ldc
+File: intel/sof/signed/debug/sof-cnl.ldc
+File: intel/sof/signed/debug/sof-icl.ldc
+File: intel/sof/signed/sof-apl-signed-intel.ri
+File: intel/sof/signed/sof-cnl-signed-intel.ri
+File: intel/sof/signed/sof-icl-signed-intel.ri
+Link: intel/sof/sof-apl.ri -> signed/sof-apl-signed-intel.ri
+File: intel/sof/sof-bdw.ri
+File: intel/sof/sof-byt.ri
+Link: intel/sof/sof-cfl.ri -> sof-cnl.ri
+File: intel/sof/sof-cht.ri
+Link: intel/sof/sof-cml.ri -> sof-cnl.ri
+Link: intel/sof/sof-cnl.ri -> signed/sof-cnl-signed-intel.ri
+File: intel/sof/sof-hsw.ri
+Link: intel/sof/sof-icl.ri -> signed/sof-icl-signed-intel.ri
+File: intel/sof/sof-imx8.ri
+File: intel/sof/sof-jsl.ri
+File: intel/sof/sof-kbl.ri
+File: intel/sof/sof-skl.ri
+File: intel/sof/sof-sue.ri
+
+File: intel/sof-tplg/sof-apl-da7219.tplg
+File: intel/sof-tplg/sof-apl-demux-pcm512x.tplg
+File: intel/sof-tplg/sof-apl-dmic-2ch.tplg
+File: intel/sof-tplg/sof-apl-dmic-4ch.tplg
+File: intel/sof-tplg/sof-apl-dmic-a2ch-b2ch.tplg
+File: intel/sof-tplg/sof-apl-dmic-a2ch-b4ch.tplg
+File: intel/sof-tplg/sof-apl-dmic-a2ch.tplg
+File: intel/sof-tplg/sof-apl-dmic-a4ch-b2ch.tplg
+File: intel/sof-tplg/sof-apl-dmic-b2ch.tplg
+File: intel/sof-tplg/sof-apl-eq-dmic.tplg
+File: intel/sof-tplg/sof-apl-eq-pcm512x.tplg
+File: intel/sof-tplg/sof-apl-keyword-detect.tplg
+File: intel/sof-tplg/sof-apl-nocodec.tplg
+File: intel/sof-tplg/sof-apl-pcm512x-nohdmi.tplg
+File: intel/sof-tplg/sof-apl-pcm512x.tplg
+File: intel/sof-tplg/sof-apl-rt298.tplg
+File: intel/sof-tplg/sof-apl-src-50khz-pcm512x.tplg
+File: intel/sof-tplg/sof-apl-src-dmic.tplg
+File: intel/sof-tplg/sof-apl-src-pcm512x.tplg
+File: intel/sof-tplg/sof-apl-tdf8532.tplg
+File: intel/sof-tplg/sof-apl-wm8804.tplg
+File: intel/sof-tplg/sof-bdw-rt286.tplg
+Link: intel/sof-tplg/sof-bdw-rt5640.tplg -> sof-bdw-rt286.tplg
+File: intel/sof-tplg/sof-byt-da7213.tplg
+File: intel/sof-tplg/sof-byt-nocodec.tplg
+Link: intel/sof-tplg/sof-byt-rt5640.tplg -> sof-byt-da7213.tplg
+Link: intel/sof-tplg/sof-byt-rt5645.tplg -> sof-byt-da7213.tplg
+Link: intel/sof-tplg/sof-byt-rt5651.tplg -> sof-byt-da7213.tplg
+Link: intel/sof-tplg/sof-byt-rt5682.tplg -> sof-byt-da7213.tplg
+File: intel/sof-tplg/sof-cht-max98090.tplg
+Link: intel/sof-tplg/sof-cht-nocodec.tplg -> sof-byt-nocodec.tplg
+File: intel/sof-tplg/sof-cht-rt5682.tplg
+File: intel/sof-tplg/sof-cht-src-50khz-pcm512x.tplg
+File: intel/sof-tplg/sof-cml-demux-rt5682-max98357a.tplg
+File: intel/sof-tplg/sof-cml-demux-rt5682.tplg
+File: intel/sof-tplg/sof-cml-rt1011-rt5682.tplg
+File: intel/sof-tplg/sof-cml-rt5682-kwd.tplg
+File: intel/sof-tplg/sof-cml-rt5682-max98357a.tplg
+File: intel/sof-tplg/sof-cml-rt5682.tplg
+File: intel/sof-tplg/sof-cml-rt700.tplg
+File: intel/sof-tplg/sof-cml-rt711-rt1308-mono-rt715.tplg
+File: intel/sof-tplg/sof-cml-rt711-rt1308-rt715.tplg
+File: intel/sof-tplg/sof-cml-src-rt5682.tplg
+File: intel/sof-tplg/sof-cnl-nocodec.tplg
+File: intel/sof-tplg/sof-cnl-rt274.tplg
+File: intel/sof-tplg/sof-glk-da7219-kwd.tplg
+File: intel/sof-tplg/sof-glk-da7219.tplg
+File: intel/sof-tplg/sof-glk-rt5682.tplg
+File: intel/sof-tplg/sof-hda-generic-2ch.tplg
+File: intel/sof-tplg/sof-hda-generic-4ch.tplg
+File: intel/sof-tplg/sof-hda-generic-idisp-2ch.tplg
+File: intel/sof-tplg/sof-hda-generic-idisp-4ch.tplg
+File: intel/sof-tplg/sof-hda-generic-idisp.tplg
+File: intel/sof-tplg/sof-hda-generic.tplg
+File: intel/sof-tplg/sof-hsw-rt5640.tplg
+File: intel/sof-tplg/sof-icl-dmic-4ch.tplg
+File: intel/sof-tplg/sof-icl-nocodec.tplg
+File: intel/sof-tplg/sof-icl-rt5682-kwd.tplg
+File: intel/sof-tplg/sof-icl-rt5682.tplg
+File: intel/sof-tplg/sof-icl-rt700.tplg
+Link: intel/sof-tplg/sof-icl-rt711-rt1308-rt715-hdmi.tplg -> sof-cml-rt711-rt1308-rt715.tplg
+File: intel/sof-tplg/sof-icl-rt711-rt1308-rt715.tplg
+File: intel/sof-tplg/sof-imx8qxp-cs42888.tplg
+File: intel/sof-tplg/sof-imx8qxp-nocodec-sai.tplg
+File: intel/sof-tplg/sof-imx8qxp-nocodec.tplg
+File: intel/sof-tplg/sof-imx8qxp-wm8960.tplg
+File: intel/sof-tplg/sof-tgl-nocodec.tplg
+File: intel/sof-tplg/sof-tgl-rt711-rt1308-nohdmi.tplg
+File: intel/sof-tplg/sof-tgl-rt711-rt1308.tplg
+File: intel/sof-tplg/sof-whl-demux-rt5682.tplg
+File: intel/sof-tplg/sof-whl-rt5682-kwd.tplg
+File: intel/sof-tplg/sof-whl-rt5682.tplg
 
 Licence: Redistributable. See LICENSE.sof
 
