@@ -1,7 +1,7 @@
 linux-firmware (1.187) UNRELEASED; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-    0148cfefcbf98898ca65bb26d9d7d638b30e211d
+    8eb0b281511d6455ca9151e52f694dc982193251
     - check_whence: python3/utf-8 support
     - Makefile: improve `make check` usefulness
     - mediatek: Remove in-tree symlinks
@@ -23,6 +23,16 @@ linux-firmware (1.187) UNRELEASED; urgency=medium
     - amdgpu: update raven2 firmware for 19.50
     - nfp: update Agilio SmartNIC flower firmware to rev AOTC-2.12.A.13
     - qca: update bluetooth firmware for QCA6174
+    - i915: add HuC firmware v7.0.12 for TGL
+    - i915: Add DMC firmware v2.06 for TGL
+    - rtl_bt: Add firmware and configuration files for RTL8822C BT UART chip
+    - amdgpu: update vega10 firmware from 19.50
+    - amdgpu: update vega12 firmware from 19.50
+    - amdgpu: update vega20 firmware from 19.50
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
 
  -- Seth Forshee <seth.forshee@canonical.com>  Fri, 06 Mar 2020 13:41:43 -0600
 
