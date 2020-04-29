@@ -262,3 +262,12 @@ Licence: Redistributable. See LICENSE.sof
 Also available from https://github.com/thesofproject/sof/blob/master/LICENCE
 
 --------------------------------------------------------------------------
+
+Endless EC-100 bluetooth
+
+File: rtl_bt/rtl8723b_uart_config.bin
+File: rtl_bt/rtl8723b_uart_fw.bin
+
+Licence: Redistributable.
+
+--------------------------------------------------------------------------
