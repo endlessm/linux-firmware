@@ -1,3 +1,44 @@
+linux-firmware (1.188) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    9a94b781885c7b9e9c264f270ca57c0d14747795
+    - mediatek: Add mt8183 SCP firmware
+    - QCA: Add Bluetooth firmware for QCA6390
+    - qca: Enable transparent WBS for WCN3991
+    - qcom: Add SDM845 Adreno ZAP shader firmware
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: add firmware for MT7663 Wifi/BT combo device
+    - cxgb4: Update firmware to revision 1.24.14.0
+    - amdgpu: add navi14 TA firmware from 20.10
+    - amdgpu: update navi14 firmware for 20.10
+    - amdgpu: update navi10 firmware for 20.10
+    - amdgpu: update picasso firmware for 20.10
+    - amdgpu: update raven firmware for 20.10
+    - amdgpu: update raven2 firmware for 20.10
+    - amdgpu: update renoir firmware for 20.10
+    - amdgpu: update vega10 firmware for 20.10
+    - amdgpu: update vega12 firmware for 20.10
+    - amdgpu: update vega20 firmware for 20.10
+    - cxgb4: Update T6 config file
+    - rtl_bt: Update RTL8822C BT FW to 0x0999_3AA1
+    - Add symlink for Dell XPS 15 9550 Broadcom Bluetooth patch-ram file
+    - Use Link function for brcmfmac43362-sdio.lemaker,bananapro.txt
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: add rebb firmware for mt7663
+    - QCA: Add Bluetooth firmware for QCA9377
+    - linux-firmware: add firmware for MT7915E
+    - rtw88: update firmware information and README
+    - iwlwifi: update 8265 FW
+    - iwlwifi: update FWs to core47-142 release
+    - rtw88: RTL8821C: add firmware file v24.5
+    - iwlwifi: update and add new FWs from core50-70 and core52-81 releases
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Fri, 05 Jun 2020 15:33:46 -0500
+
 linux-firmware (1.187) focal; urgency=medium
 
   * Sound doesn't work on Lenovo X1 Carbon 7th with 20.04 (LP: #1860697)
