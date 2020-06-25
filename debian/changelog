@@ -1,7 +1,7 @@
 linux-firmware (1.188) UNRELEASED; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-    9a94b781885c7b9e9c264f270ca57c0d14747795
+    e96c1212f0c61505f3efe6e9db324735b15fd290
     - mediatek: Add mt8183 SCP firmware
     - QCA: Add Bluetooth firmware for QCA6390
     - qca: Enable transparent WBS for WCN3991
@@ -36,6 +36,25 @@ linux-firmware (1.188) UNRELEASED; urgency=medium
     - iwlwifi: update FWs to core47-142 release
     - rtw88: RTL8821C: add firmware file v24.5
     - iwlwifi: update and add new FWs from core50-70 and core52-81 releases
+    - mrvl: add firmware for Prestera ASIC devices
+    - cxgb4: Update firmware to revision 1.24.17.0
+    - rtw88: RTL8822C: update firmware version to v9.9
+    - Mellanox: Add new mlxsw_spectrum firmware xx.2007.1168
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - rtl_nic: add firmware for RTL8125B
+    - amdgpu: update navi14 firmware from 20.20 release
+    - amdgpu: update navi10 firmware from 20.20 release
+    - amdgpu: update vega10 firmware from 20.20 release
+    - amdgpu: update vega12 firmware from 20.20 release
+    - amdgpu: update vega20 firmware from 20.20 release
+    - amdgpu: add vega20 TA firmware from 20.20 release
+    - amdgpu: update raven firmware from 20.20 release
+    - amdgpu: update raven2 firmware from 20.20 release
+    - amdgpu: update picasso firmware from 20.20 release
+    - amdgpu: update renoir firmware from 20.20 release
 
  -- Seth Forshee <seth.forshee@canonical.com>  Fri, 05 Jun 2020 15:33:46 -0500
 
