@@ -1,3 +1,10 @@
+linux-firmware (1.187.1) focal; urgency=medium
+
+  * Add sof-firmware and tplg files for tgl machines (LP: #1880792)
+    - SAUCE: add sof firmware and tplg for tgl platforms
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 17 Jun 2020 07:36:48 -0500
+
 linux-firmware (1.187) focal; urgency=medium
 
   * Sound doesn't work on Lenovo X1 Carbon 7th with 20.04 (LP: #1860697)
