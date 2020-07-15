@@ -1,3 +1,19 @@
+linux-firmware (1.187.2) focal; urgency=medium
+
+  * Revert the sof-firmware and tplg files from v0.6_release for tgl machines
+    (LP: #1885970)
+    - SAUCE: Revert "UBUNTU: SAUCE: add sof firmware and tplg for tgl platforms"
+
+  * Fix an issue that HID devices are not scanned by Realtek 8822C
+    (LP: #1886390)
+    - rtl_bt: Update RTL8822C BT FW to 0x0999_3AA1
+
+  * Integrate TGL_SOF_FW_prod_signed_v0.6.2_release for tigerlake machines
+    (LP: #1887595)
+    - SAUCE: integrate TGL_SOF_FW_prod_signed_v0.6.2_release
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 15 Jul 2020 08:11:59 -0500
+
 linux-firmware (1.187.1) focal; urgency=medium
 
   * Add sof-firmware and tplg files for tgl machines (LP: #1880792)
