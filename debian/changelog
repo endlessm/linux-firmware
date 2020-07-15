@@ -1,3 +1,19 @@
+linux-firmware (1.189) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    f39b68729aab3787b89c35bbbd76538e3edb13c4
+    - QCA: Update WCN3991 FW files
+    - amdgpu: add UVD firmware for SI asics
+    - QCA: Update Bluetooth firmware for QCA6390
+    - linux-firmware: wilc1000: add wilc1000 v15.4 FW
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - Update binary firmware for MT7663 based devices to include firmware offload feature and low power feature.
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 15 Jul 2020 07:58:01 -0500
+
 linux-firmware (1.188) groovy; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
