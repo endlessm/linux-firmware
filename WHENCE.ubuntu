@@ -181,10 +181,11 @@ Link: intel/sof/sof-icl.ri -> signed/sof-icl-signed-intel.ri
 File: intel/sof/sof-imx8.ri
 File: intel/sof/sof-jsl.ri
 File: intel/sof/sof-kbl.ri
-File: intel/sof/sof-tgl.ri
-File: intel/sof/signed/debug/sof-tgl.ldc
 File: intel/sof/sof-skl.ri
 File: intel/sof/sof-sue.ri
+File: intel/sof/signed/debug/sof-tgl.ldc
+File: intel/sof/signed/sof-tgl.ri
+Link: intel/sof/sof-tgl.ri -> signed/sof-tgl.ri
 
 File: intel/sof-tplg/sof-apl-da7219.tplg
 File: intel/sof-tplg/sof-apl-demux-pcm512x.tplg
@@ -255,9 +256,6 @@ File: intel/sof-tplg/sof-imx8qxp-wm8960.tplg
 File: intel/sof-tplg/sof-tgl-nocodec.tplg
 File: intel/sof-tplg/sof-tgl-rt711-rt1308-nohdmi.tplg
 File: intel/sof-tplg/sof-tgl-rt711-rt1308.tplg
-File: intel/sof-tplg/sof-tgl-max98357a-rt5682.tplg
-File: intel/sof-tplg/sof-tgl-max98373-rt5682.tplg
-File: intel/sof-tplg/sof-tgl-sdw-max98373-rt5682.tplg
 File: intel/sof-tplg/sof-whl-demux-rt5682.tplg
 File: intel/sof-tplg/sof-whl-rt5682-kwd.tplg
 File: intel/sof-tplg/sof-whl-rt5682.tplg
