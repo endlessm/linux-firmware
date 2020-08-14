@@ -235,7 +235,9 @@ File: intel/sof-tplg/sof-cnl-rt274.tplg
 File: intel/sof-tplg/sof-glk-da7219-kwd.tplg
 File: intel/sof-tplg/sof-glk-da7219.tplg
 File: intel/sof-tplg/sof-glk-rt5682.tplg
+File: intel/sof-tplg/sof-hda-generic-1ch.tplg
 File: intel/sof-tplg/sof-hda-generic-2ch.tplg
+File: intel/sof-tplg/sof-hda-generic-3ch.tplg
 File: intel/sof-tplg/sof-hda-generic-4ch.tplg
 File: intel/sof-tplg/sof-hda-generic-idisp-2ch.tplg
 File: intel/sof-tplg/sof-hda-generic-idisp-4ch.tplg
