@@ -1,4 +1,4 @@
-linux-firmware (1.190) UNRELEASED; urgency=medium
+linux-firmware (1.190) groovy; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     7a30af16115959cf5a817ae51429e72c0084fc0c
@@ -23,7 +23,10 @@ linux-firmware (1.190) UNRELEASED; urgency=medium
     - rtl_bt: Update RTL8822C BT UART firmware to 0x0599_8A4F
     - brcm: Add brcmfmac43455-sdio.raspberrypi,3-model-a-plus.txt symlink
 
- -- Seth Forshee <seth.forshee@canonical.com>  Wed, 19 Aug 2020 13:00:58 -0500
+  * alsa/sof: support 1 and 3 dmics (LP: #1891585)
+    - SAUCE: sof-firmware: add 1ch and 3ch topology files
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 19 Aug 2020 13:07:19 -0500
 
 linux-firmware (1.189) groovy; urgency=medium
 
