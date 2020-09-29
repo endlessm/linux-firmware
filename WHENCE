@@ -4944,3 +4944,20 @@ Driver: prestera - Marvell driver for Prestera family ASIC devices
 File: mrvl/prestera/mvsw_prestera_fw-v2.0.img
 
 Licence: Redistributable. See LICENCE.Marvell for details.
+
+--------------------------------------------------------------------------
+
+Driver: bcm43456 - Broadcom driver for bcm43456 devices
+
+File: brcm/BCM4345C5.hcd
+File: brcm/brcmfmac43456-sdio.bin
+File: brcm/brcmfmac43456-sdio.clm_blob
+File: brcm/brcmfmac43456-sdio.txt
+Link: brcm/brcmfmac43456-sdio.pine64,pinebook-pro.txt
+
+License: Unknown
+
+Get from ap6256-firmware package of manjaro-arm [1] at commit 7074a2e21dd8 ("add
+firmware for orangepi and fallback") to enable PINEBOOK Pro's WiFi and Bluetooth
+
+[1]: https://gitlab.manjaro.org/manjaro-arm/packages/community/ap6256-firmware
