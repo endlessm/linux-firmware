@@ -1,4 +1,4 @@
-linux-firmware (1.191) UNRELEASED; urgency=medium
+linux-firmware (1.191) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     dae4b4cd084102cd49c37aa8b579b208028ab025
@@ -47,7 +47,7 @@ linux-firmware (1.191) UNRELEASED; urgency=medium
     - rtl_bt: Update RTL8821C BT FW to 0xAA6C_A99E
     - cypress: add Cypress firmware and clm_blob files
 
- -- Seth Forshee <seth.forshee@canonical.com>  Wed, 28 Oct 2020 14:42:07 -0500
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 28 Oct 2020 14:44:27 -0500
 
 linux-firmware (1.190) groovy; urgency=medium
 
