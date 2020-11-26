@@ -1,3 +1,12 @@
+linux-firmware (1.192) hirsute; urgency=medium
+
+  * [SRU]sof-firmware: update the sof-firmware from version v1.4.2 to
+    stable-v1.6 (LP: #1900809)
+    - SAUCE: sof-firmware: update the sof-firmware to stable-v1.6
+    - SAUCE: sof-firmware: Replace duplicates with symbolic links
+
+ -- Juerg Haefliger <juergh@canonical.com>  Thu, 26 Nov 2020 13:23:20 +0100
+
 linux-firmware (1.191) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
