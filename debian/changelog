@@ -1,4 +1,4 @@
-linux-firmware (1.193) UNRELEASED; urgency=medium
+linux-firmware (1.193) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     7455a36066741a6e52fba65e04f6451b4cdfd9c4
@@ -42,7 +42,13 @@ linux-firmware (1.193) UNRELEASED; urgency=medium
     - ath10k: QCA6174 hw3.0: update board-2.bin
     - ath10k: QCA6174 hw3.0: update firmware-6.bin to WLAN.RM.4.4.1-00157-QCARMSWPZ-1
 
- -- Seth Forshee <seth.forshee@canonical.com>  Wed, 02 Dec 2020 13:36:46 -0600
+  * [Debian] Update to debhelper compat 13
+
+  * [Debian] Bump Standards-Version to 4.5.0
+
+  * [Packaging] Update nic-firmware.lst for 5.10
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Mon, 14 Dec 2020 13:17:01 -0600
 
 linux-firmware (1.192) hirsute; urgency=medium
 
