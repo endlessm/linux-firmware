@@ -1,3 +1,23 @@
+linux-firmware (1.194) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    f580dc2bc1a06ad1511969fb5b04406c4a8e37ce
+    - QCA : Updated firmware files for WCN3991
+    - mediatek: update MT8173 VPU firmware to v1.1.6
+    - linux-firmware: add firmware for Lontium LT9611UXC DSI to HDMI bridge
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: Update firmware file for Intel Bluetooth AX210
+    - make AP6212 in bananpi m2 plus/zero work
+    - rtl_bt: Update RTL8821C BT(USB I/F) FW to 0x829a_7644
+    - rtl_bt: Add firmware and config files for RTL8852A BT USB chip
+    - rtl_bt: Update RTL8822C BT(USB I/F) FW to 0x099a_7253
+    - rtl_bt: Update RTL8822C BT(UART I/F) FW to 0x059A_25CB
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 05 Jan 2021 15:41:32 -0600
+
 linux-firmware (1.193) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
