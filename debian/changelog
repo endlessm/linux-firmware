@@ -1,4 +1,4 @@
-linux-firmware (1.194) UNRELEASED; urgency=medium
+linux-firmware (1.194) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     f580dc2bc1a06ad1511969fb5b04406c4a8e37ce
@@ -16,7 +16,7 @@ linux-firmware (1.194) UNRELEASED; urgency=medium
     - rtl_bt: Update RTL8822C BT(USB I/F) FW to 0x099a_7253
     - rtl_bt: Update RTL8822C BT(UART I/F) FW to 0x059A_25CB
 
- -- Seth Forshee <seth.forshee@canonical.com>  Tue, 05 Jan 2021 15:41:32 -0600
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 07 Jan 2021 09:37:37 -0600
 
 linux-firmware (1.193) hirsute; urgency=medium
 
