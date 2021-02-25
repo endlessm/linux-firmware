@@ -1,3 +1,31 @@
+linux-firmware (1.195) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    f7915a0c29fee27a310cebd7155b9e3a6eb71a1d
+    - brcm: remove old brcm firmwares that have newer cypress variants
+    - cypress: Link the new cypress firmware to the old brcm files
+    - cypress: Fix link direction
+    - brcm: Update Raspberry Pi 3B+/4B NVRAM for downstream changes
+    - brcm: Add NVRAM for Vamrs 96boards Rock960
+    - brcm: Link RPi4's WiFi firmware with DMI machine name.
+    - qcom: add firmware files for Adreno a650
+    - qcom: Add SM8250 Audio DSP firmware
+    - qcom: Add SM8250 Compute DSP firmware
+    - qcom: Add venus firmware files for VPU-1.0
+    - i915: Add GuC v49.0.1 for DG1
+    - i915: Add HuC v7.7.1 for DG1
+    - i915: Add DMC v2.01 for ADL-S
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: Update firmware file for Intel Bluetooth AX210
+    - rtw88: RTL8821C: Update firmware to v24.8
+    - linux-firmware: add firmware for MT7921
+    - Mellanox: Add new mlxsw_spectrum firmware xx.2008.2304
+    - rtw88: RTL8822C: Update normal firmware to v9.9.5
+    - amdgpu: add initial firmware for green sardine
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 25 Feb 2021 08:15:17 -0600
+
 linux-firmware (1.194) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
