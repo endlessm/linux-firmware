@@ -1,4 +1,4 @@
-linux-firmware (1.195) UNRELEASED; urgency=medium
+linux-firmware (1.195) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     f7915a0c29fee27a310cebd7155b9e3a6eb71a1d
@@ -23,8 +23,9 @@ linux-firmware (1.195) UNRELEASED; urgency=medium
     - Mellanox: Add new mlxsw_spectrum firmware xx.2008.2304
     - rtw88: RTL8822C: Update normal firmware to v9.9.5
     - amdgpu: add initial firmware for green sardine
+  * Add support for noudeb build profile
 
- -- Seth Forshee <seth.forshee@canonical.com>  Thu, 25 Feb 2021 08:15:17 -0600
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 03 Mar 2021 07:24:55 -0600
 
 linux-firmware (1.194) hirsute; urgency=medium
 
