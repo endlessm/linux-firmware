@@ -19,6 +19,7 @@ Description: Firmware for Linux kernel drivers
  This package provides firmware used by Linux kernel drivers.
 
 Package: nic-firmware
+Build-Profiles: <!noudeb>
 XC-Package-Type: udeb
 Architecture: all
 Section: debian-installer
@@ -26,6 +27,7 @@ Description: Firmware for NICs
  This package contains firmware needed by some network controllers.
 
 Package: scsi-firmware
+Build-Profiles: <!noudeb>
 XC-Package-Type: udeb
 Architecture: all
 Section: debian-installer
