@@ -39,6 +39,7 @@ install-indep: build-indep
 
 	make install DESTDIR=$(dest_dir)
 
+ifeq ($(filter noudeb,$(DEB_BUILD_PROFILES)),)
 	for f in $$(cat debian/nic-firmware.lst); do \
 		install -m644 -D $(firm_dir)/$$f $(nic_firm_dir)/$$f; \
 	done
@@ -46,6 +47,7 @@ install-indep: build-indep
 	for f in $$(cat debian/scsi-firmware.lst); do \
 		install -m644 -D $(firm_dir)/$$f $(scsi_firm_dir)/$$f; \
 	done
+endif
 
 	install -d $(doc_dir)
 	cp WHENCE $(doc_dir)/README
