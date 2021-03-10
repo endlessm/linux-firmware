@@ -164,6 +164,8 @@ File: intel/sof/v1.6/intel-signed/sof-ehl-v1.6.ri
 File: intel/sof/v1.6/intel-signed/sof-icl-v1.6.ri
 File: intel/sof/v1.6/intel-signed/sof-jsl-v1.6.ri
 File: intel/sof/v1.6/intel-signed/sof-tgl-v1.6.ri
+File: intel/sof/v1.6.1/intel-signed/sof-tgl-h-v1.6.1.ri
+File: intel/sof/v1.6.1/sof-tgl-h-v1.6.1.ldc
 File: intel/sof/v1.6/sof-apl-v1.6.ldc
 File: intel/sof/v1.6/sof-bdw-v1.6.ldc
 File: intel/sof/v1.6/sof-bdw-v1.6.ri
@@ -193,6 +195,7 @@ Link: intel/sof/sof-kbl.ri -> v1.4.2/sof-kbl.ri
 Link: intel/sof/sof-skl.ri -> v1.4.2/sof-skl.ri
 Link: intel/sof/sof-sue.ri -> v1.4.2/sof-sue.ri
 Link: intel/sof/sof-tgl.ri -> v1.6/intel-signed/sof-tgl-v1.6.ri
+Link: intel/sof/sof-tgl-h.ri -> v1.6.1/intel-signed/sof-tgl-h-v1.6.1.ri
 
 File: intel/sof-tplg/sof-apl-asrc-pcm512x.tplg
 File: intel/sof-tplg/sof-apl-asrc-wm8804.tplg
