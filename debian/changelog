@@ -1,4 +1,4 @@
-linux-firmware (1.196) UNRELEASED; urgency=medium
+linux-firmware (1.196) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     3f026a2f13a8f130cde849168a111ec80f12e27b
@@ -29,8 +29,10 @@ linux-firmware (1.196) UNRELEASED; urgency=medium
     - amdgpu: update vega20 firmware for 20.50
     - amdgpu: update sienna cichlid firmware for 20.50
     - rtl_bt: Update RTL8822C BT(UART I/F) FW to 0x59A_76A3
+  * alsa/sdw: support soundwire audio for TGL-H machines (LP: #1911830)
+    - SAUCE: sof-firmware: add TGL-H firmware from sof-bin v1.6.1
 
- -- Seth Forshee <seth.forshee@canonical.com>  Wed, 31 Mar 2021 13:43:56 -0500
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 31 Mar 2021 13:49:18 -0500
 
 linux-firmware (1.195) hirsute; urgency=medium
 
