@@ -1,3 +1,37 @@
+linux-firmware (1.196) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    3f026a2f13a8f130cde849168a111ec80f12e27b
+    - silabs: add new firmware for WF200
+    - brcm: Fix Raspberry Pi 4B NVRAM file
+    - Add symlink for BananaPi M2 to brcmfmac43430-sdio config
+    - WHENCE: add missing symlink for BananaPi M3
+    - rtw89: 8852a: add firmware v0.9.12.2
+    - linux-firmware: add frimware for mediatek bluetooth chip (MT7921)
+    - Mellanox: Add new mlxsw_spectrum firmware xx.2008.2406
+    - iwlwifi: update 7265D firmware
+    - iwlwifi: update 9000-family firmwares
+    - iwlwifi: add new FWs from core59-66 release
+    - rtw88: 8822c: Update normal firmware to v9.9.6
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: Update firmware file for Intel Bluetooth AX210
+    - amdgpu: add initial support for navy flounder
+    - amdgpu: update raven firmware for 20.50
+    - amdgpu: update raven2 firmware for 20.50
+    - amdgpu: update navi10 firmware for 20.50
+    - amdgpu: update renoir firmware for 20.50
+    - amdgpu: update vega10 firmware for 20.50
+    - amdgpu: update navi12 firmware for 20.50
+    - amdgpu: update vega12 firmware for 20.50
+    - amdgpu: update navi14 firmware for 20.50
+    - amdgpu: update picasso firmware for 20.50
+    - amdgpu: update vega20 firmware for 20.50
+    - amdgpu: update sienna cichlid firmware for 20.50
+    - rtl_bt: Update RTL8822C BT(UART I/F) FW to 0x59A_76A3
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 31 Mar 2021 13:43:56 -0500
+
 linux-firmware (1.195) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
