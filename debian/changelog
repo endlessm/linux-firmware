@@ -1,3 +1,11 @@
+linux-firmware (1.197) hirsute; urgency=medium
+
+  * Intel AX210 Wi-Fi card does not work since updating to 1.196
+    (LP: #1922406)
+    - SAUCE: Revert "iwlwifi: add new FWs from core59-66 release"
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Wed, 07 Apr 2021 08:50:11 -0500
+
 linux-firmware (1.196) hirsute; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
