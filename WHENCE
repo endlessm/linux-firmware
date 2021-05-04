@@ -2740,7 +2740,6 @@ Link: brcm/brcmfmac43455-sdio.Raspberry\ Pi\ Foundation-Raspberry\ Pi\ 4\ Model\
 File: "brcm/brcmfmac43455-sdio.MINIX-NEO Z83-4.txt"
 File: "brcm/brcmfmac4356-pcie.gpd-win-pocket.txt"
 File: brcm/brcmfmac4356-sdio.vamrs,rock960.txt
-File: "brcm/brcmfmac4356-sdio.khadas,vim2.txt"
 
 Licence: GPLv2. See GPL-2 for details.
 
