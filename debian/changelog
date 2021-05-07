@@ -1,3 +1,67 @@
+linux-firmware (1.198) UNRELEASED; urgency=medium
+
+  * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    ecdfcf8e2ca15f5682ab94fd30ba29fb869b24a7
+    - qcom: update a650 firmware files
+    - qcom: sm8250: update remoteproc firmware
+    - brcm: Add nvram for the Predia Basic tablet
+    - brcm: Add nvram for the Chuwi Hi8 (CWI509) tablet
+    - rtl_bt: Add rtl8723bs_config-OBDA0623.bin symlink
+    - amdgpu: add arcturus firmware
+    - nfp: update Agilio SmartNIC flower firmware to rev AOTC-2.14.A.6
+    - WHENCE: link to similar config file for rtl8821a support
+    - QCA: Update Bluetooth firmware for QCA6174
+    - amdgpu: update navi10 SMC firmware
+    - amdgpu: update navi14 smc firmware
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - brcm: Link CM4's WiFi firmware with DMI machine name.
+    - Mellanox: Add new mlxsw_spectrum firmware xx.2008.2438
+    - cxgb4: Update firmware to revision 1.25.4.0
+    - rtl_nic: add new firmware for RTL8153 and RTL8156 series
+    - amdgpu: update raven firmware from 21.10
+    - amdgpu: update raven2 firmware from 21.10
+    - amdgpu: update navi10 firmware from 21.10
+    - amdgpu: update renoir firmware from 21.10
+    - amdgpu: update vega10 firmware from 21.10
+    - amdgpu: update navi12 firmware from 21.10
+    - amdgpu: update vega12 firmware from 21.10
+    - amdgpu: update green sardine firmware from 21.10
+    - amdgpu: update navi14 firmware from 21.10
+    - amdgpu: update picasso firmware from 21.10
+    - amdgpu: update vega20 firmware from 21.10
+    - amdgpu: update sienna cichlid firmware from 21.10
+    - amdgpu: update navy flounder firmware from 21.10
+    - amdgpu: update arcturus firmware from 21.10
+    - brcm: add missing symlink for Pi Zero W NVRAM file
+    - rtw88: 8822c: Update normal firmware to v9.9.9
+    - mrvl: prestera: Add Marvell Prestera Switchdev firmware 3.0 version
+    - qcom: update venus firmware files for v5.4
+    - linux-firmware: Update firmware file for Intel Bluetooth 8265
+    - linux-firmware: Intel BT 7265: Fix Security Issues
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX210
+    - rtw89: 8852a: update fw to v0.13.8.0
+    - qcom: Add venus firmware files for VPU-2.0
+    - rtl_bt: Update RTL8852A BT USB firmware to 0xD9A8_7893
+    - rtw89: 8852a: update fw to v0.13.8.0
+    - brcm: Add a link to enable khadas VIM2's WiFi
+    - qcom: add gpu firmwares for sc7280
+    - firmware: nvidia: Add VIC firmware for Tegra194
+    - amdgpu: add new polaris 12 MC firmware
+    - i915: Add ADL-P DMC Support
+    - linux-firmware: update firmware for mhdp8546
+    - nvidia: Update Tegra210 XUSB firmware to v50.26
+    - nvidia: Update Tegra186 XUSB firmware to v55.18
+    - nvidia: Update Tegra194 XUSB firmware to v60.09
+    - iwlwifi: add new FWs from core60-51 release
+    - iwlwifi: update 9000-family firmwares to core60-51
+    - iwlwifi: update 8000 family firmwares
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 18 May 2021 08:45:00 -0500
+
 linux-firmware (1.197) hirsute; urgency=medium
 
   * Intel AX210 Wi-Fi card does not work since updating to 1.196
