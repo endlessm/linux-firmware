@@ -50,7 +50,7 @@ linux-firmware (1.198) UNRELEASED; urgency=medium
     - brcm: Add a link to enable khadas VIM2's WiFi
     - qcom: add gpu firmwares for sc7280
     - firmware: nvidia: Add VIC firmware for Tegra194
-    - amdgpu: add new polaris 12 MC firmware
+    - amdgpu: add new polaris 12 MC firmware (LP: #1929147)
     - i915: Add ADL-P DMC Support
     - linux-firmware: update firmware for mhdp8546
     - nvidia: Update Tegra210 XUSB firmware to v50.26
