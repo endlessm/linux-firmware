@@ -1,7 +1,7 @@
 linux-firmware (1.198) UNRELEASED; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-    ecdfcf8e2ca15f5682ab94fd30ba29fb869b24a7
+    f8462923ed8fc874f770b8c6dfad49d39b381f14
     - qcom: update a650 firmware files
     - qcom: sm8250: update remoteproc firmware
     - brcm: Add nvram for the Predia Basic tablet
@@ -59,6 +59,8 @@ linux-firmware (1.198) UNRELEASED; urgency=medium
     - iwlwifi: add new FWs from core60-51 release
     - iwlwifi: update 9000-family firmwares to core60-51
     - iwlwifi: update 8000 family firmwares
+    - rtw88: 8822c: Update normal firmware to v9.9.10
+    - nvidia: fix symlinks for tu104/tu106 acr unload firmware
 
  -- Seth Forshee <seth.forshee@canonical.com>  Tue, 18 May 2021 08:45:00 -0500
 
