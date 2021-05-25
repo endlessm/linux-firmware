@@ -1,4 +1,4 @@
-linux-firmware (1.198) UNRELEASED; urgency=medium
+linux-firmware (1.198) impish; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     f8462923ed8fc874f770b8c6dfad49d39b381f14
@@ -62,7 +62,7 @@ linux-firmware (1.198) UNRELEASED; urgency=medium
     - rtw88: 8822c: Update normal firmware to v9.9.10
     - nvidia: fix symlinks for tu104/tu106 acr unload firmware
 
- -- Seth Forshee <seth.forshee@canonical.com>  Tue, 18 May 2021 08:45:00 -0500
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 25 May 2021 08:35:16 -0500
 
 linux-firmware (1.197) hirsute; urgency=medium
 
