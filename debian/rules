@@ -62,6 +62,7 @@ binary-indep: install-indep
 	dh_link -i
 	dh_installchangelogs -i
 	dh_installdocs -i
+	dh_installtmpfiles -i
 	dh_missing --fail-missing
 	dh_compress -i
 	dh_fixperms -i
