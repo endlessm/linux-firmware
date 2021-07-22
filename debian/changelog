@@ -1,4 +1,4 @@
-linux-firmware (1.199) UNRELEASED; urgency=medium
+linux-firmware (1.199) impish; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
     168452ee695b5edb9deb641059bc110b9c5e8fc7
@@ -59,7 +59,7 @@ linux-firmware (1.199) UNRELEASED; urgency=medium
     - linux-firmware: update NXP 8897/8997 firmware images
     - iwlwifi: add ty firmware from Core63-43
 
- -- Seth Forshee <seth.forshee@canonical.com>  Thu, 22 Jul 2021 07:26:41 -0500
+ -- Seth Forshee <seth.forshee@canonical.com>  Thu, 22 Jul 2021 07:59:01 -0500
 
 linux-firmware (1.198) impish; urgency=medium
 
