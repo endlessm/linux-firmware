@@ -1,0 +1,37 @@
+#!/bin/bash -eu
+#
+# Compress firmware blobs
+#
+
+if [ $# -ne 1 ] ; then
+	echo "Usage: compress-firmware <dirname>" >&2
+	exit 2
+fi
+
+if ! [ -d "${1}" ] ; then
+	echo "No such directory: ${1}" >&2
+	exit 1
+fi
+
+echo "Compressing firmware files in ${1} ..."
+
+# Compress all files
+while IFS= read -r f ; do
+	[ "${f%.xz}" = "${f}" ] || continue
+	xz -F xz -C crc32 "${f}"
+done < <(find "${1}" -type f)
+
+# Recreate symlinks
+while IFS= read -r l ; do
+	[ "${l%.xz}" = "${l}" ] || continue
+	t=$(readlink "${l}")
+	ln -s "${t}".xz "${l}".xz
+	rm "${l}"
+done < <(find "${1}" -type l)
+
+# Check for dangling symlinks
+if [ "$(find "${1}" -xtype l | wc -l)" -ne 0 ] ; then
+	echo "Error: Dangling symlinks found" >&2
+	find "${1}" -xtype l
+	exit 1
+fi
