@@ -79,3 +79,6 @@ clean:
 	dh_testdir
 	dh_testroot
 	dh_clean
+
+rebase:
+	debian/scripts/rebase-upstream
