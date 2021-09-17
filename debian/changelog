@@ -1,3 +1,52 @@
+linux-firmware (1.200) impish; urgency=medium
+
+  * Rebase to upstream commit 090a34dfe32bfe139bf0f8df96bcbce320ee8864
+    Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    - qca: Add firmware files for BT chip WCN6750.
+    - i915: Add v2.12 DMC for TGL
+    - i915: Add v2.03 DMC for RKL
+    - QCA : Updated firmware files for WCN3991
+    - linux-firmware: add firmware for MT7922
+    - linux-firmware: update frimware for mediatek bluetooth chip (MT7921)
+    - linux-firmware: Update firmware file for Intel Bluetooth AX210
+    - amdgpu: update arcturus firmware from 21.30
+    - amdgpu: update green sardine firmware from 21.30
+    - amdgpu: update navi10 firmware from 21.30
+    - amdgpu: update navi12 firmware from 21.30
+    - amdgpu: update navi14 firmware from 21.30
+    - amdgpu: update sienna cichlid firmware from 21.30
+    - amdgpu: update navy flounder firmware from 21.30
+    - amdgpu: update dimgrey cavefish firmware from 21.30
+    - amdgpu: update picasso firmware from 21.30
+    - amdgpu: update polaris12 firmware from 21.30
+    - amdgpu: update raven firmware from 21.30
+    - amdgpu: update raven2 firmware from 21.30
+    - amdgpu: update renoir firmware from 21.30
+    - amdgpu: update vega10 firmware from 21.30
+    - amdgpu: update vega12 firmware from 21.30
+    - amdgpu: update vega20 firmware from 21.30
+    - amdgpu: add initial vangogh support
+    - amdgpu: revert back to older picasso sdma firmware
+    - amdgpu: revert back to older raven sdma firmware
+    - amdgpu: revert back to older raven2 sdma firmware
+    - ice: update package file to 1.3.26.0
+    - rtl_nic: update firmware of RTL8153C
+    - rtl_bt: Update RTL8852A BT USB firmware to 0xD9A9_127B
+    - iwlwifi: add FW for new So/Gf device type
+    - Mellanox: Add new mlxsw_spectrum firmware xx.2008.3326
+    - rtl_bt: Update RTL8822C BT USB firmware to 0x09A9_1A4A
+    - rtl_bt: Update RTL8822C BT UART firmware to 0x05A9_1A4A
+    - rtl_bt: Update RTL8852A BT USB firmware to 0xD9A9_1D69
+    - linux-firmware: update frimware for mediatek bluetooth chip (MT7921)
+    - Revert "iwlwifi: add FW for new So/Gf device type"
+    - linux-firmware: Update AMD SEV firmware
+    - linux-firmware: add frimware for mediatek bluetooth chip (MT7922)
+  * [Packaging] Add compress-firmware helper script
+  * [Packaging] Add rebase-upstream helper script and debian rule
+  * [Packaging] Add close-release helper script and debian rule
+
+ -- Juerg Haefliger <juergh@canonical.com>  Fri, 17 Sep 2021 11:20:12 +0200
+
 linux-firmware (1.199) impish; urgency=medium
 
   * Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
