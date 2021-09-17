@@ -1,0 +1,59 @@
+#!/bin/bash -eu
+#
+# Close a release
+#
+
+release=$(dpkg-parsechangelog -SDistribution)
+version=$(dpkg-parsechangelog -SVersion)
+
+# The version and tag of the new release
+new_version="${version%.*}.$((${version##*.} + 1))"
+new_tag="Ubuntu-${new_version}"
+
+# Check if the tag exists already
+if git rev-parse "${new_tag}" >/dev/null 2>&1 ; then
+	echo "Tag exists already: ${new_tag}" >&2
+	exit 1
+fi
+
+# Find the previous release commit
+prev_subject="UBUNTU: Ubuntu-${version}"
+prev_commit=$(git log --format='%H %s' | \
+				  grep -m1 -P "^[0-9a-f]{40} ${prev_subject}$" || true)
+prev_commit=${prev_commit%% *}
+if [ -z "${prev_commit}" ] ; then
+	echo "Unable to find previous release commit: ${prev_subject}" >&2
+	exit 1
+fi
+
+# Add a new changelog section with all the new commit subjects since the
+# previous release
+{
+	echo "linux-firmware (${new_version}) ${release}; urgency=medium"
+	echo
+
+	while IFS= read -r line ; do
+		commit=${line%% *}
+		subject=${line#* }
+		# shellcheck disable=SC2001
+		subject=$(echo "${subject}" | sed 's,\s*UBUNTU:\s*,,')
+
+		echo "  * ${subject}"
+
+		# For rebase commits, add the list of changes from the commit message
+		if [ "${subject#Rebase to upstream commit}" != "${subject}" ] ; then
+			git log --format=%b "${commit}" -1 | grep -P '^Rebase|^- ' | \
+				sed -e 's,^,    ,'
+		fi
+	done < <(git log --reverse --format='%h %s' "${prev_commit}"..)
+
+	echo
+	echo " -- ${DEBFULLNAME} <${DEBEMAIL}>  $(date -R)"
+	echo
+	cat debian/changelog
+} > debian/changelog.new
+mv debian/changelog.new debian/changelog
+
+# Commit and tag the new release
+git commit -s -m "UBUNTU: ${new_tag}" -- debian/changelog
+git tag -s -m  "UBUNTU: ${new_tag}" "${new_tag}"
