@@ -41,10 +41,16 @@ fi
 # Do the rebase
 git rebase "${new_base}"
 
+# Add an LP bug reference
+lp=
+if [ -n "${LP:-}" ] ; then
+	lp=" (LP: #${LP})"
+fi
+
 # Update the upstream hash and commit it
 echo "${new_base}" > debian/upstream
 git add debian/upstream
-git commit -s -m "UBUNTU: Rebase to upstream commit ${new_base}
+git commit -s -m "UBUNTU: Rebase to upstream commit ${new_base}${lp}
 
 Rebase against ${upstream_git}
 ${new_base}
