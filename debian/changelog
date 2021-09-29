@@ -1,3 +1,37 @@
+linux-firmware (1.201) impish; urgency=medium
+
+  * Rebase to upstream commit 7a30050592e20f494ad331b90737913d59167c3f
+    Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    - i915: Update ADLP DMC v2.12
+    - amdgpu: add initial firmware for Yellow Carp (LP: #1945227)
+    - iwlwifi: add FWs for new So device types with multiple RF modules
+    - linux-firmware: Update firmware file for Intel Bluetooth 8265
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: Update firmware file for Intel Bluetooth AX210
+    - linux-firmware: Update firmware file for Intel Bluetooth AX211
+    - qed: Add firmware 8.59.1.0
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX211
+    - linux-firmware: update frimware for mediatek bluetooth chip (MT7921)
+    - cxgb4: Update firmware to revision 1.26.2.0
+    - amdgpu: Add initial firmware for Beige Goby
+    - amdgpu: update VCN firmware for raven
+    - amdgpu: update VCN firmware for raven2
+    - amdgpu: update VCN firmware for picasso
+    - amdgpu: update VCN firmware for renoir
+    - amdgpu: update VCN firmware for vangogh
+    - amdgpu: update VCN firmware for sienna cichlid
+    - amdgpu: update VCN firmware for navy flounder
+    - amdgpu: update VCN firmware for dimgrey cavefish
+    - linux-firmware: Update firmware file for Intel Bluetooth 9462
+    - brcm: Add 43455 based AP6255 NVRAM for the ACEPC T8 Mini PC
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 29 Sep 2021 11:36:54 +0300
+
 linux-firmware (1.200) impish; urgency=medium
 
   * Rebase to upstream commit 090a34dfe32bfe139bf0f8df96bcbce320ee8864
