@@ -1,3 +1,10 @@
+linux-firmware (1.202) jammy; urgency=medium
+
+  * [Packaging] rebase-upstream: Add a bug reference if env variable LP is set
+  * linux-firmware: update firmware for MT7921 WiFi device
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 20 Oct 2021 15:24:10 +0300
+
 linux-firmware (1.201) impish; urgency=medium
 
   * Rebase to upstream commit 7a30050592e20f494ad331b90737913d59167c3f
