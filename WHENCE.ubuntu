@@ -152,6 +152,7 @@ License: Redistributable. See LICENSE.1a98-INTEL-EDK2-2-tplg for details.
 Driver: intel-ipu6 - Intel IPU6 driver
 
 File: intel/ipu6_fw.bin
+File: intel/ipu6ep_fw.bin
 
 Licence: Redistributable. See LICENSE.ipu6_firmware for details.
 Also available from https://github.com/intel/ipu6-camera-bins/blob/main/LICENSE
