@@ -44,6 +44,8 @@ def main():
     git_files = set(list_git())
 
     for name in sorted(list(known_files - git_files)):
+        if name.startswith('ea/'):
+            continue
         sys.stderr.write('E: %s listed in WHENCE or WHENCE.ubuntu does not exist\n' % name)
         ret = 1
 
