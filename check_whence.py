@@ -39,7 +39,8 @@ def main():
     known_files = set(name for name in whence_list if not name.endswith('/')) | \
                   set(['check_whence.py', 'configure', 'Makefile',
                        'README', 'copy-firmware.sh', 'WHENCE', 'WHENCE.ubuntu'])
-    known_prefixes = set(name for name in whence_list if name.endswith('/'))
+    known_prefixes = set(name for name in whence_list if name.endswith('/')) | \
+                     set(['debian/', 'fw_source/'])
     git_files = set(list_git())
 
     for name in sorted(list(known_files - git_files)):
