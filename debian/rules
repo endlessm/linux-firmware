@@ -85,3 +85,6 @@ rebase:
 
 release:
 	debian/scripts/close-release
+
+check:
+	$(MAKE) check
