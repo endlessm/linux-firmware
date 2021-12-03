@@ -45,7 +45,7 @@ fi
 			git log --format=%b "${commit}" -1 | grep -P '^Rebase|^- ' | \
 				sed -e 's,^,    ,'
 		fi
-	done < <(git log --reverse --format='%h %s' "${prev_commit}"..)
+	done < <(git log --no-merges --reverse --format='%h %s' "${prev_commit}"..)
 
 	echo
 	echo " -- ${DEBFULLNAME} <${DEBEMAIL}>  $(date -R)"
