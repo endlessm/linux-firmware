@@ -10,7 +10,7 @@ Package: linux-firmware
 Architecture: all
 Multi-Arch: foreign
 Priority: optional
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, firmware-sof-signed
 Provides: atmel-firmware
 Conflicts: atmel-firmware
 Replaces: atmel-firmware, linux-restricted-common, linux-firmware-snapdragon (<= 1.2-0ubuntu1)
