@@ -86,4 +86,4 @@ git commit -s -m "UBUNTU: Rebase to upstream commit ${new_base}${lp}
 
 Rebase against ${upstream_git}
 ${new_base}
-$(git log --no-merges --reverse --format='- %s' ${old_base}..${new_base})"
+$(git log --no-merges --reverse --format='- %s' "${old_base}".."${new_base}")"
