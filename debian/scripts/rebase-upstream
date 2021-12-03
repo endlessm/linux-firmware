@@ -15,6 +15,38 @@ function out()
 	exit "${rc}"
 }
 
+function usage()
+{
+	cat <<EOF
+Usage: $(basename "${0}") [-h]
+
+Rebase onto latest upstream linux-firmware. If not present, adds a new remote
+'upstream', fetches form it, rebases onto upstream/main and adds a rebase
+commit.
+
+Supported environment variables:
+  LP          Is set, appends a Launchpad bug reference (LP: #<LP>) to the
+              rebase commit subject.
+
+Option arguments:
+  -h, --help  Show this help text and exit.
+EOF
+}
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		*)
+			echo "Invalid argument: ${1}" >&2
+			exit 2
+			;;
+	esac
+	shift
+done
+
 trap out EXIT INT TERM HUP
 
 # Find the current upstream commit
