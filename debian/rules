@@ -81,6 +81,12 @@ clean:
 	dh_testroot
 	dh_clean
 
+	# Ensure sanity checks are run when building packages from the
+	# git repo
+	if [ -d .git ] ; then \
+	    $(MAKE) -f debian/rules check; \
+	fi
+
 rebase:
 	debian/scripts/rebase-upstream
 
