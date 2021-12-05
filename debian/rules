@@ -54,6 +54,7 @@ endif
 
 	install -d $(doc_dir)
 	cp WHENCE $(doc_dir)/README
+	cp WHENCE.ubuntu $(doc_dir)/README.ubuntu
 
 	install -d $(license_dir)
 	cp LICEN[CS]E* GPL-[23] $(license_dir)
