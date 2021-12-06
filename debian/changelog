@@ -1,3 +1,113 @@
+linux-firmware (1.203) jammy; urgency=medium
+
+  * SAUCE: check_whence.py: Add python3 shebang
+  * SAUCE: check_whence.py: Also process WHENCE.ubuntu
+  * SAUCE: check_whence.py: Ignore debian/ and fw_source/ directories
+  * SAUCE: check_whence.py: Ignore ea/ directory
+  * [Packaging] Add check debian rule
+  * [Packaging] rebase-upstream: Add usage
+  * [Packaging] rebase-upstream: Fix shellcheck warnings
+  * Rebase to upstream commit b0e898fbaf377c99a36aac6fdeb7250003648ca4 (LP: #1953008)
+    Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX210
+    - linux-firmware: Update firmware file for Intel Bluetooth AX211
+    - linux-firmware: Update firmware file for Intel Bluetooth AX211
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth 9462
+    - linux-firmware: Update firmware file for Intel Bluetooth 9462
+    - rtw89: 8852a: update fw to v0.13.30.0
+    - linux-firmware: update firmware for MT7921 WiFi device
+    - QCA: Update Bluetooth firmware for WCN685x
+    - linux-firmware: Update NXP Management Complex firmware to version 10.28.1
+    - Mellanox: Add new mlxsw_spectrum firmware xx.2010.1006
+    - bnx2x: Add FW 7.13.20.0
+    - QCA: Update Bluetooth firmware for WCN685x
+    - linux-firmware: Update AMD cpu microcode
+    - linux-firmware: update frimware for mediatek bluetooth chip (MT7921)
+    - amdgpu: update VCN firmware for green sardine
+    - iwlwifi: update 9000-family firmwares to core64-96
+    - iwlwifi: add new FWs from core64-96 release
+    - rtl_bt: Update RTL8852A BT USB firmware to 0xDBA9_6937
+    - amdgpu: update sienna cichlid firmware from 21.40
+    - amdgpu: update arcturus firmware from 21.40
+    - amdgpu: update renoir firmware from 21.40
+    - amdgpu: update navy flounder firmware from 21.40
+    - amdgpu: update green sardine firmware from 21.40
+    - amdgpu: update dimgrey cavefish firmware from 21.40
+    - amdgpu: add cyan skillfish firmware from 21.40
+    - amdgpu: update beige goby firmware from 21.40
+    - amdgpu: update vangogh firmware from 21.40
+    - amdgpu: update picasso firmware from 21.40
+    - amdgpu: update vega10 firmware from 21.40
+    - amdgpu: update vega12 firmware from 21.40
+    - amdgpu: update vega20 firmware from 21.40
+    - amdgpu: update navi10 firmware from 21.40
+    - amdgpu: update navi12 firmware from 21.40
+    - amdgpu: update raven firmware from 21.40
+    - amdgpu: update navi14 firmware from 21.40
+    - amdgpu: update raven2 firmware from 21.40
+    - linux-firmware: Update AMD cpu microcode
+    - QCA: Add Bluetooth firmware for WCN685x
+    - mrvl: prestera: Update Marvell Prestera Switchdev v4.0
+    - Update ath10k/QCA6174/hw3.0/board-2.bin
+    - amdgpu: update vangogh DMCUB firmware
+    - amdgpu: update yellow carp dmcub firmware
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX200
+    - linux-firmware: Update firmware file for Intel Bluetooth 9260
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth AX210
+    - linux-firmware: Update firmware file for Intel Bluetooth AX211
+    - linux-firmware: Update firmware file for Intel Bluetooth AX211
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth AX201
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth 9560
+    - linux-firmware: Update firmware file for Intel Bluetooth 9462
+    - linux-firmware: Update firmware file for Intel Bluetooth 9462
+  * [Packaging] close-release: Exclude merge commits from the changelog
+  * Rename LICENCE.dib0700 to LICENSE.dib0700
+  * Add LICENCE.realtek-firmware.txt to WHENCE.ubuntu
+  * Remove unnecessary symbolic links
+  * Move Ubuntu check_firmware script to debian/scripts/
+  * linux-firmware: remove sof-firmware files
+  * [Packaging] Depend on firmware-sof-signed
+  * SAUCE: Remove obsolete bnx2x from WHENCE
+  * SAUCE: Remove obsolete tr_smctr from WHENCE
+  * SAUCE: Remove obsolete ti-connectivity from WHENCE
+  * SAUCE: Remove obsolete tda7706 from WHENCE
+  * SAUCE: Remove obsolete sxg from WHENCE
+  * SAUCE: Remove obsolete myricom from WHENCE
+  * SAUCE: Remove obsolete mwl8k from WHENCE
+  * SAUCE: Remove obsolete libertas from WHENCE
+  * SAUCE: Remove obsolete Computone from WHENCE
+  * SAUCE: Remove obsolete dabusb from WHENCE
+  * SAUCE: Remove obsolete cxgb from WHENCE
+  * SAUCE: Remove obsolete bnx2x from WHENCE
+  * SAUCE: Remove obsolete ar9170 from WHENCE
+  * SAUCE: Remove obsolete ar7010 from WHENCE
+  * SAUCE: Remove obsolete ath3k from WHENCE
+  * SAUCE: Remove obsolete 3com from WHENCE
+  * SAUCE: Remove obsolete ath6k from WHENCE
+  * SAUCE: Remove obsolete slicoss from WHENCE
+  * SAUCE: Remove obsolete ath9k from WHENCE
+  * SAUCE: Remove obsolete ar3k from WHENCE
+  * SAUCE: Remove obsolete bnx2x from WHENCE
+  * SAUCE: Remove obsolete files from WHENCE
+  * SAUCE: Remove obsolete cxgb3 from WHENCE
+  * SAUCE: Remove obsolete ueagle-atm from WHENCE
+  * [Packaging] Add WHENCE.ubuntu as README.ubuntu to the package
+  * [Packaging] Run sanity checks in the cleaning stage
+
+ -- Juerg Haefliger <juergh@canonical.com>  Mon, 06 Dec 2021 15:38:13 +0100
+
 linux-firmware (1.202) jammy; urgency=medium
 
   * [Packaging] rebase-upstream: Add a bug reference if env variable LP is set
