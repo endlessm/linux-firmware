@@ -212,5 +212,11 @@ Also available from https://github.com/intel/ivsc-firmware/blob/main/LICENSE
 Driver: ath11k - Qualcomm Technologies 802.11ax chipset support
 
 File: ath11k/WCN6855/hw2.0/board-2.bin
+File: ath11k/WCN6855/hw2.0/1.1/WLAN.HSP.1.1-03003-QCAHSPSWPL_V1_V2_SILICONZ_LITE-2/amss.bin
+File: ath11k/WCN6855/hw2.0/1.1/WLAN.HSP.1.1-03003-QCAHSPSWPL_V1_V2_SILICONZ_LITE-2/m3.bin
+Link: ath11k/WCN6855/hw2.0/amss.bin -> 1.1/WLAN.HSP.1.1-03003-QCAHSPSWPL_V1_V2_SILICONZ_LITE-2/amss.bin
+Link: ath11k/WCN6855/hw2.0/m3.bin -> 1.1/WLAN.HSP.1.1-03003-QCAHSPSWPL_V1_V2_SILICONZ_LITE-2/m3.bin
+Version: WLAN.HSP.1.1-03003-QCAHSPSWPL_V1_V2_SILICONZ_LITE-2
+License: ath11k/WCN6855/hw2.0/1.1/WLAN.HSP.1.1-03003-QCAHSPSWPL_V1_V2_SILICONZ_LITE-2/Notice.txt
 
 Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k for details
