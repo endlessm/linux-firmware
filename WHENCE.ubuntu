@@ -163,14 +163,46 @@ Driver: mei-vsc - Intel Vision Sensing Controller device with ME interface
 
 File: vsc/soc_a1_prod/ivsc_fw.bin
 Link: vsc/soc_a1_prod/ivsc_fw_a1_prod.bin -> ivsc_fw.bin
+File: vsc/soc_a1_prod/ivsc_pkg_hi556_0.bin
+Link: vsc/soc_a1_prod/ivsc_pkg_hi556_0_a1_prod.bin -> ivsc_pkg_hi556_0.bin
+File: vsc/soc_a1_prod/ivsc_pkg_himx11b1_0.bin
+Link: vsc/soc_a1_prod/ivsc_pkg_himx11b1_0_a1_prod.bin -> ivsc_pkg_himx11b1_0.bin
 File: vsc/soc_a1_prod/ivsc_pkg_ovti01a0_0.bin
 Link: vsc/soc_a1_prod/ivsc_pkg_ovti01a0_0_a1_prod.bin -> ivsc_pkg_ovti01a0_0.bin
+File: vsc/soc_a1_prod/ivsc_pkg_ovti01af_0.bin
+Link: vsc/soc_a1_prod/ivsc_pkg_ovti01af_0_a1_prod.bin -> ivsc_pkg_ovti01af_0.bin
 File: vsc/soc_a1_prod/ivsc_pkg_ovti01as_0.bin
 Link: vsc/soc_a1_prod/ivsc_pkg_ovti01as_0_a1_prod.bin -> ivsc_pkg_ovti01as_0.bin
+File: vsc/soc_a1_prod/ivsc_pkg_ovti02c1_0.bin
+Link: vsc/soc_a1_prod/ivsc_pkg_ovti02c1_0_a1_prod.bin -> ivsc_pkg_ovti02c1_0.bin
+File: vsc/soc_a1_prod/ivsc_pkg_ovti2740_0.bin
+Link: vsc/soc_a1_prod/ivsc_pkg_ovti2740_0_a1_prod.bin -> ivsc_pkg_ovti2740_0.bin
+File: vsc/soc_a1_prod/ivsc_pkg_ovti5678_0.bin
+Link: vsc/soc_a1_prod/ivsc_pkg_ovti5678_0_a1_prod.bin -> ivsc_pkg_ovti5678_0.bin
+File: vsc/soc_a1_prod/ivsc_pkg_ovti9734_0.bin
+Link: vsc/soc_a1_prod/ivsc_pkg_ovti9734_0_a1_prod.bin -> ivsc_pkg_ovti9734_0.bin
+File: vsc/soc_a1_prod/ivsc_pkg_ovti9738_0.bin
+Link: vsc/soc_a1_prod/ivsc_pkg_ovti9738_0_a1_prod.bin -> ivsc_pkg_ovti9738_0.bin
+File: vsc/soc_a1_prod/ivsc_skucfg_hi556_0_1.bin
+Link: vsc/soc_a1_prod/ivsc_skucfg_hi556_0_1_a1_prod.bin -> ivsc_skucfg_hi556_0_1.bin
+File: vsc/soc_a1_prod/ivsc_skucfg_himx11b1_0_1.bin
+Link: vsc/soc_a1_prod/ivsc_skucfg_himx11b1_0_1_a1_prod.bin -> ivsc_skucfg_himx11b1_0_1.bin
 File: vsc/soc_a1_prod/ivsc_skucfg_ovti01a0_0_1.bin
 Link: vsc/soc_a1_prod/ivsc_skucfg_ovti01a0_0_1_a1_prod.bin -> ivsc_skucfg_ovti01a0_0_1.bin
+File: vsc/soc_a1_prod/ivsc_skucfg_ovti01af_0_1.bin
+Link: vsc/soc_a1_prod/ivsc_skucfg_ovti01af_0_1_a1_prod.bin -> ivsc_skucfg_ovti01af_0_1.bin
 File: vsc/soc_a1_prod/ivsc_skucfg_ovti01as_0_1.bin
 Link: vsc/soc_a1_prod/ivsc_skucfg_ovti01as_0_1_a1_prod.bin -> ivsc_skucfg_ovti01as_0_1.bin
+File: vsc/soc_a1_prod/ivsc_skucfg_ovti02c1_0_1.bin
+Link: vsc/soc_a1_prod/ivsc_skucfg_ovti02c1_0_1_a1_prod.bin -> ivsc_skucfg_ovti02c1_0_1.bin
+File: vsc/soc_a1_prod/ivsc_skucfg_ovti2740_0_1.bin
+Link: vsc/soc_a1_prod/ivsc_skucfg_ovti2740_0_1_a1_prod.bin -> ivsc_skucfg_ovti2740_0_1.bin
+File: vsc/soc_a1_prod/ivsc_skucfg_ovti5678_0_1.bin
+Link: vsc/soc_a1_prod/ivsc_skucfg_ovti5678_0_1_a1_prod.bin -> ivsc_skucfg_ovti5678_0_1.bin
+File: vsc/soc_a1_prod/ivsc_skucfg_ovti9734_0_1.bin
+Link: vsc/soc_a1_prod/ivsc_skucfg_ovti9734_0_1_a1_prod.bin -> ivsc_skucfg_ovti9734_0_1.bin
+File: vsc/soc_a1_prod/ivsc_skucfg_ovti9738_0_1.bin
+Link: vsc/soc_a1_prod/ivsc_skucfg_ovti9738_0_1_a1_prod.bin -> ivsc_skucfg_ovti9738_0_1.bin
 
 Licence: Redistributable. See LICENSE.ivsc_firmware for details.
 Also available from https://github.com/intel/ivsc-firmware/blob/main/LICENSE
