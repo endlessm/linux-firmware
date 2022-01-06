@@ -208,3 +208,9 @@ Licence: Redistributable. See LICENSE.ivsc_firmware for details.
 Also available from https://github.com/intel/ivsc-firmware/blob/main/LICENSE
 
 --------------------------------------------------------------------------
+
+Driver: ath11k - Qualcomm Technologies 802.11ax chipset support
+
+File: ath11k/WCN6855/hw2.0/board-2.bin
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k for details
