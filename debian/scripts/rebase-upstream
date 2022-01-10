@@ -24,10 +24,6 @@ Rebase onto latest upstream linux-firmware. If not present, adds a new remote
 'upstream', fetches form it, rebases onto upstream/main and adds a rebase
 commit.
 
-Supported environment variables:
-  LP          Is set, appends a Launchpad bug reference (LP: #<LP>) to the
-              rebase commit subject.
-
 Option arguments:
   -h, --help  Show this help text and exit.
 EOF
@@ -73,16 +69,10 @@ fi
 # Do the rebase
 git rebase "${new_base}"
 
-# Add an LP bug reference
-lp=
-if [ -n "${LP:-}" ] ; then
-	lp=" (LP: #${LP})"
-fi
-
 # Update the upstream hash and commit it
 echo "${new_base}" > debian/upstream
 git add debian/upstream
-git commit -s -m "UBUNTU: Rebase to upstream commit ${new_base}${lp}
+git commit -s -m "UBUNTU: Rebase to upstream commit ${new_base}
 
 Rebase against ${upstream_git}
 ${new_base}
