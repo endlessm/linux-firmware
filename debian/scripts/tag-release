@@ -1,0 +1,51 @@
+#!/bin/bash -eu
+#
+# Tag a release
+#
+
+function usage()
+{
+    cat <<EOF
+Usage: $(basename "${0}") [-f] [-h]
+
+Tag a release commit.
+
+Optional arguments:
+  -f, --force  Overwrite an already existing tag.
+  -h, --help   Show this help text and exit.
+EOF
+}
+
+force=0
+
+while [ ${#} -gt 0 ] ; do
+    case "${1}" in
+		-f|--force)
+			force=1
+			;;
+		-h|--help)
+			usage
+			exit
+			;;
+		*)
+			echo "Invalid argument: ${1}" >&2
+			exit 2
+			;;
+	esac
+	shift
+done
+
+version=$(git log --format='%s' -1 | sed -n 's/^UBUNTU: Ubuntu-//p')
+if [ -z "${version}" ] ; then
+	echo "Current HEAD is not an Ubuntu release commit" >&2
+	exit 1
+fi
+
+tag=Ubuntu-${version}
+
+if [ ${force} -eq 0 ] && git rev-parse "${tag}" >/dev/null 2>&1 ; then
+	echo "Tag exists already: ${tag}" >&2
+	exit 1
+fi
+
+git tag -f -s -m  "UBUNTU: ${tag}" "${tag}"

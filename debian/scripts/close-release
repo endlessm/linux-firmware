@@ -6,13 +6,13 @@
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-h] [-v] [VERSION]
+Usage: $(basename "${0}") [-h] [VERSION]
 
-Create a closing commit.
+Create a release commit.
 
 Positional arguments:
-  VERSION     The new package version. If not provided, increments the current version
-              by one.
+  VERSION     The new package version. If not provided, increments the current
+              version by one.
 
 Optional arguments:
   -h, --help  Show this help text and exit.
@@ -117,6 +117,6 @@ fi
 } > debian/changelog.new
 mv debian/changelog.new debian/changelog
 
-# Commit and tag the new release
+# Commit the new release
 git commit -s -m "UBUNTU: ${new_tag}" -- debian/changelog
-git tag -s -m  "UBUNTU: ${new_tag}" "${new_tag}"
+debian/scripts/tag-release
