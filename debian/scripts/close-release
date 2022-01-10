@@ -68,48 +68,7 @@ fi
 {
 	echo "linux-firmware (${new_version}) ${release}; urgency=medium"
 	echo
-
-	while IFS= read -r line ; do
-		commit=${line%% *}
-		subject=${line#* }
-
-		# Parse the commit message for Ignores and BugLinks
-		ignore=0
-		bugs=""
-		while IFS= read -r line ; do
-			case "${line,,}" in
-				"ignore: yes")
-					ignore=1
-					;;
-				"buglink: https://bugs.launchpad.net/bugs/"*)
-					bug="LP: #${line##*/}"
-					bugs="${bugs}, ${bug}"
-					;;
-			esac
-		done < <(git log --format=%b "${commit}" -1)
-
-		if [ ${ignore} -eq 1 ] ; then
-			# Ignore commits with 'Ignore: yes'
-			continue
-		fi
-
-		if [ -n "${bugs}" ] ; then
-			# Add bugs to the changelog
-			subject="${subject} (${bugs:2})"
-		fi
-
-		# shellcheck disable=SC2001
-		subject=$(echo "${subject}" | sed 's,\s*UBUNTU:\s*,,')
-
-		echo "  * ${subject}"
-
-		# For rebase commits, add the list of changes from the commit message
-		if [ "${subject#Rebase to upstream commit}" != "${subject}" ] ; then
-			git log --format=%b "${commit}" -1 | grep -P '^Rebase|^- ' | \
-				sed -e 's,^,    ,'
-		fi
-	done < <(git log --no-merges --reverse --format='%h %s' "${prev_commit}"..)
-
+	debian/scripts/generate-changelog "${prev_commit}"..
 	echo
 	echo " -- ${DEBFULLNAME} <${DEBEMAIL}>  $(date -R)"
 	echo
