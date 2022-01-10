@@ -1,0 +1,131 @@
+#!/bin/bash -eu
+#
+# Generate an Ubuntu-style changelog entry
+#
+
+function lp_title()
+{
+	curl -s -S --get "https://api.launchpad.net/devel/bugs/${1}" | \
+		python3 -c "\
+import json,sys
+try:
+    obj = json.load(sys.stdin)
+    print(obj['title'])
+except:
+    pass
+"
+}
+
+function usage()
+{
+	cat <<EOF
+Usage: $(basename "${0}") [-h] REV_RANGE
+
+Generate an Ubuntu-style changelog entry.
+
+Positional arguments:
+  REV_RANGE   Git revision range.
+
+Optional arguments:
+  -h, --help  Show this help text and exit.
+EOF
+}
+
+rev_range=
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		*)
+			rev_range=("${@}")
+			break
+			;;
+	esac
+	shift
+done
+
+if [ ${#rev_range[@]} -eq 0 ] ; then
+	usage
+	exit 2
+fi
+
+declare -A commits=()
+declare -a keys=()
+
+while IFS= read -r commit ; do
+	# Check for 'Ignore: yes'
+	if git log --format='%b' "${commit}" -1 | grep -q '^Ignore: yes$' ; then
+		continue
+	fi
+
+	# Extract all bug numbers and CVEs from the commit message
+	readarray -t refs < <(git log --format='%b' "${commit}" -1 | \
+							  grep -P '^BugLink: |^CVE-'  | \
+							  sed 's,BugLink: .*/,,')
+
+	# Generate the commits array key
+	if [ ${#refs[@]} -eq 0 ] ; then
+		if git log --format='%s' "${commit}" -1 | grep -q '^\s*UBUNTU:\s*' ; then
+			refs=("UBUNTU")
+		else
+			refs=("MISC")
+		fi
+	fi
+	key=${refs[*]}
+
+	# Add the commit to the commits array
+	prev=${commits["${key}"]:-}
+	if [ -z "${prev}" ] ; then
+		commits["${key}"]=${commit}
+		keys+=("${key}")
+	else
+		commits["${key}"]="${prev} ${commit}"
+	fi
+done < <(git log --no-merges --reverse --format='%h' "${rev_range[@]}")
+
+for key in "${keys[@]}" ; do
+	# Generate and print the entry title
+	entry=
+	for ref in ${key} ; do
+		case "${ref}" in
+			UBUNTU)
+				title="Miscellaneous Ubuntu changes"
+				;;
+			MISC)
+				title="Miscellaneous upstream changes"
+				;;
+			CVE-*)
+				title=${ref}
+				;;
+			*)
+				title=$(lp_title "${ref}")
+				if [ -z "${title}" ] ; then
+					title="INVALID or PRIVATE BUG (LP: #${ref})"
+				else
+					title="${title} (LP: #${ref})"
+				fi
+				;;
+		esac
+		if [ -z "${entry}" ] ; then
+			entry="  * ${title}"
+		else
+			entry="${entry} //\n    ${title}"
+		fi
+	done
+	echo -e "${entry}"
+
+	# Print the sub-entries (commit subjects)
+	for commit in ${commits["${key}"]} ; do
+		subject=$(git log --format='%s' "${commit}" -1 | sed -e 's/\s*UBUNTU:\s*//')
+		echo "    - ${subject}"
+
+		# For rebase commits, add the list of changes from the commit message
+		if [ "${subject#Rebase to upstream commit}" != "${subject}" ] ; then
+			git log --format='%b' "${commit}" -1 | grep -P '^Rebase|^- ' | \
+                sed -e 's,^,      ,'
+		fi
+	done
+done
