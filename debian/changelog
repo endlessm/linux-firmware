@@ -1,3 +1,20 @@
+linux-firmware (1.204) jammy; urgency=medium
+
+  * Support Intel IPU6 MIPI camera on Alder Lake platforms (LP: #1955383)
+    - SAUCE: intel-ipu6: Add IPU6 firmware files
+    - SAUCE: intel-ipu6: update IPU6 Release_20210121 WW04 firmware files
+    - SAUCE: Camera bins release on 2021-11-01 for Alder Lake
+  * [Packaging] Downgrade firmware-sof-signed depends to recommends
+  * QCA: Add Bluetooth default nvm file for WCN685x (LP: #1955689)
+  * Missing firmware for Intel Visual Sensing Controller (LP: #1956426)
+    - SAUCE: first release of ivsc firmware binaries
+    - SAUCE: firmware: add support of more sensors
+  * Add basic Wifi support for Qualcomm WCN6856 (LP: #1955613)
+    - SAUCE: WCN6855 hw2.0: update board-2.bin
+    - SAUCE: WCN6855 hw2.0: 1.1: add WLAN.HSP.1.1-03003-QCAHSPSWPL_V1_V2_SILICONZ_LITE-2
+
+ -- Juerg Haefliger <juergh@canonical.com>  Mon, 10 Jan 2022 12:50:22 +0100
+
 linux-firmware (1.203) jammy; urgency=medium
 
   * SAUCE: check_whence.py: Add python3 shebang
