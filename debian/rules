@@ -87,11 +87,5 @@ clean:
 	    $(MAKE) -f debian/rules check; \
 	fi
 
-rebase:
-	debian/scripts/rebase-upstream
-
-release:
-	debian/scripts/close-release
-
 check:
 	$(MAKE) check
