@@ -6,20 +6,14 @@
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-h] [VERSION]
+Usage: $(basename "${0}") [-h]
 
-Create a release commit.
-
-Positional arguments:
-  VERSION     The new package version. If not provided, increments the current
-              version by one.
+Close a release, i.e., create a release commit.
 
 Optional arguments:
   -h, --help  Show this help text and exit.
 EOF
 }
-
-new_version=
 
 while [ ${#} -gt 0 ] ; do
 	case "${1}" in
@@ -28,22 +22,28 @@ while [ ${#} -gt 0 ] ; do
 			exit
 			;;
 		*)
-			if [ -n "${new_version}" ] ; then
-				echo "Invalid argument: ${1}" >&2
-				exit 2
-			fi
-			new_version=${1}
+			echo "Invalid argument: ${1}" >&2
+			exit 2
 			;;
 	esac
 	shift
 done
 
+# Current upstream commit and version
+. debian/upstream
+
+# Current package release and version
 release=$(dpkg-parsechangelog -SDistribution)
 version=$(dpkg-parsechangelog -SVersion)
 
-# The version and tag of the new release
-if [ -z "${new_version}" ] ; then
-	new_version="${version%.*}.$((${version##*.} + 1))"
+# New release version and and tag
+if [ "${version%-*}" = "${VERSION}" ] ; then
+	# Bump the upload number
+	upload=$(echo "${version}" | grep -o '[0-9]*$')
+	new_version=${version%${upload}}$((upload + 1))
+else
+	# New upstream version
+	new_version="${VERSION}-0ubuntu1"
 fi
 new_tag="Ubuntu-${new_version}"
 
