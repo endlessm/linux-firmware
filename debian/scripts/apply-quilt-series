@@ -1,0 +1,31 @@
+#!/bin/bash -eu
+#
+# Apply quilt patch series
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	if [ ${rc} -ne 0 ] ; then
+		echo "Error: Script failed" >&2
+	fi
+
+	exit "${rc}"
+}
+
+trap out EXIT INT TERM HUP
+
+# Remove patches first
+while IFS= read -r patch ; do
+	echo "Unapply ${patch} ..."
+	patch -p1 -R < "${patch}"
+done < <(ls -1r -- debian/patches/*.patch)
+
+# Reapply patches using quilt
+echo "Apply quilt series ..."
+export QUILT_PATCHES=debian/patches
+rm -rf .pc
+quilt init
+quilt push -a
