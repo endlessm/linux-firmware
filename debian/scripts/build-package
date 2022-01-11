@@ -1,0 +1,41 @@
+#!/bin/bash -eu
+#
+# Wrapper around dpkg-buildpackage
+#
+
+function out()
+{
+    local rc=${?}
+
+    trap - EXIT INT TERM HUP
+    if [ ${rc} -ne 0 ] ; then
+        echo "Error: Script failed" >&2
+    fi
+
+    exit "${rc}"
+}
+
+if [ -n "$(git status --porcelain)" ] ; then
+    echo "Repo is unclean" >&2
+    exit 1
+fi
+
+trap out EXIT INT TERM HUP
+
+debian/scripts/create-quilt-series
+debian/scripts/apply-quilt-series
+
+# Default dpkg-builpackage options
+opts=(
+    "-i"  # Exclude revision control files and directories (diff)
+    "-I"  # Exclude revision control files and directories (tarball)
+)
+
+# Check if the orig tarball should be included
+version=$(dpkg-parsechangelog -SVersion)
+prev_version=$(dpkg-parsechangelog -SVersion -o1 -c1)
+if [ "${version%-*}" != "${prev_version%-*}" ] ; then
+    opts+=("-sa")  # Include the original source tarball
+fi
+
+dpkg-buildpackage "${opts[@]}" "${@}"
