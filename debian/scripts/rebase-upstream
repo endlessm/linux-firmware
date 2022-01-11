@@ -9,7 +9,7 @@ function out()
 
 	trap - EXIT INT TERM HUP
 	if [ ${rc} -ne 0 ] ; then
-		echo 'Error: Script failed' >&2
+		echo "Error: Script failed" >&2
 	fi
 
 	exit "${rc}"
@@ -45,35 +45,31 @@ done
 
 trap out EXIT INT TERM HUP
 
-# Find the current upstream commit
-if [ -e debian/upstream ] ; then
-	old_base=$(cat debian/upstream)
-else
-	old_base=$(git log --format=%s | grep -m1 -P 'UBUNTU: [Rr]ebase to upstream commit' | sed 's/.* //')
-fi
-
 # Add an upstream remote and fetch it
 upstream_git=git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 if ! git remote | grep -qxF upstream ; then
-    git remote add upstream "${upstream_git}"
+	git remote add upstream "${upstream_git}"
 fi
 git fetch upstream
 
-# Check if a rebase is necessary
-new_base=$(git rev-parse upstream/main)
-if [ "${new_base}" = "${old_base}" ] ; then
-	echo "No rebase necessary"
-	exit
-fi
+# Current upstream commit and version
+. debian/upstream
 
-# Do the rebase
-git rebase "${new_base}"
+# New upstream commit and version
+new_commit=$(git rev-parse upstream/main)
+new_version=$(date --utc +%Y%m%d).git${new_commit::8}
 
-# Update the upstream hash and commit it
-echo "${new_base}" > debian/upstream
+# Rebase onto upstream/main
+git rebase "${new_commit}"
+
+# Create the rebase commit
+{
+	echo "COMMIT=${new_commit}"
+	echo "VERSION=${new_version}"
+} > debian/upstream
 git add debian/upstream
-git commit -s -m "UBUNTU: Rebase to upstream commit ${new_base}
+git commit -s -m "UBUNTU: Rebase to upstream commit ${new_commit}
 
 Rebase against ${upstream_git}
-${new_base}
-$(git log --no-merges --reverse --format='- %s' "${old_base}".."${new_base}")"
+${new_commit}
+$(git log --no-merges --reverse --format='- %s' "${COMMIT}".."${new_commit}")"
