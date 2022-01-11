@@ -1,0 +1,31 @@
+#!/bin/bash -eu
+#
+# Create an orig tarball
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	if [ ${rc} -ne 0 ] ; then
+		echo "Error: Script failed" >&2
+	fi
+
+	exit "${rc}"
+}
+
+trap out EXIT INT TERM HUP
+
+# Current upstream commit and version
+. debian/upstream
+
+orig_tarball=../linux-firmware_${VERSION}.orig.tar.xz
+if [ -e "${orig_tarball}" ] ; then
+	echo "Orig tarball ${orig_tarball} exists already"
+	exit
+fi
+
+echo "Creating orig tarball ${orig_tarball} ..."
+git archive --format=tar --prefix=linux-firmware-"${VERSION}" "${COMMIT}" | \
+	xz -z - > "${orig_tarball}"

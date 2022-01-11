@@ -1,0 +1,69 @@
+#!/bin/bash -eu
+#
+# Create quilt patch series and include-binaries file
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	if [ ${rc} -ne 0 ] ; then
+		echo "Error: Script failed" >&2
+	fi
+
+	exit "${rc}"
+}
+
+function add_file()
+{
+	local added=${1} name=${2}
+
+	if [ -z "${name}" ] || [ "${name#debian/}" != "${name}" ] ; then
+		# Empty name or debian/* file
+		return
+	fi
+
+	if [ -h "${name}" ] ; then
+		# Symlink
+		BINARIES+=("${name}")
+		PATCHABLES+=("${name}")
+	elif [ "${added}" = "-" ] ; then
+		# Binary file
+		BINARIES+=("${name}")
+	else
+		# Patchable file
+		PATCHABLES+=("${name}")
+	fi
+}
+
+trap out EXIT INT TERM HUP
+
+# Current upstream commit and version
+. debian/upstream
+
+BINARIES=()
+PATCHABLES=()
+
+# Walk through all touched files and separate them into binaries that need to
+# be included and patchable files
+while IFS=" " read -r added name new_name ; do
+	add_file "${added}" "${name}"
+	add_file "${added}" "${new_name}"
+done < <(git diff --numstat "${COMMIT}" | awk '{ print $1 " " $3 " " $5 }')
+
+if [ ${#BINARIES[@]} -gt 0 ] ; then
+	echo "Create debian/source/include-binaries ..."
+	printf "%s\n" "${BINARIES[@]}" > debian/source/include-binaries
+fi
+
+rm -rf debian/patches
+mkdir debian/patches
+
+if [ ${#PATCHABLES[@]} -gt 0 ] ; then
+	echo "Create debian/patches/ubuntu.patch ..."
+	for patchable in "${PATCHABLES[@]}" ; do
+		git diff "${COMMIT}" -- "${patchable}"
+	done > debian/patches/ubuntu.patch
+	echo ubuntu.patch > debian/patches/series
+fi
