@@ -1,0 +1,38 @@
+Ubuntu Maintenance Notes
+========================
+
+
+Development Series
+------------------
+
+For the current development series, we don't cherry-pick upstream commits but
+rather rebase onto latest upstream. Whenever a rebase is performed, a new
+orig tarball needs to be generated and uploaded to the archive as part of the
+source package upload.
+
+The following are the steps to rebase onto latest upstream and create a new
+source package.
+
+1) $ debian/scripts/rebase-upstream
+
+Rebases onto latest upstream/main, updates the content of debian/upstream and
+creates a rebase commit.
+
+2) $ debian/scripts/create-orig-tarball
+
+Creates a new orig tarball, using the upstream commit and version from
+debian/upstream.
+
+3) $ debian/scripts/close-release
+
+Creates a new changelog entry with all changes since the last release. Commits
+the changelog and tags the commit. The new package version is generated
+automatically from the upstream version.
+
+4) $ debian/scripts/build-package -S -us -uc
+
+Creates a new (unsigned) source package.
+
+
+Stable Series
+-------------
