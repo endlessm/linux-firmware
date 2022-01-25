@@ -27,5 +27,5 @@ if [ -e "${orig_tarball}" ] ; then
 fi
 
 echo "Creating orig tarball ${orig_tarball} ..."
-git archive --format=tar --prefix=linux-firmware-"${VERSION}" "${COMMIT}" | \
+git archive --format=tar --prefix=linux-firmware-"${VERSION}"/ "${COMMIT}" | \
 	xz -z - > "${orig_tarball}"
