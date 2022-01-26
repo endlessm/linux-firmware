@@ -18,19 +18,3 @@ Replaces: atmel-firmware, linux-restricted-common, linux-firmware-snapdragon (<=
 Breaks: linux-firmware-snapdragon (<= 1.2-0ubuntu1), linux-firmware-raspi2 (<= 1.20190819-0ubuntu2)
 Description: Firmware for Linux kernel drivers
  This package provides firmware used by Linux kernel drivers.
-
-Package: nic-firmware
-Build-Profiles: <!noudeb>
-XC-Package-Type: udeb
-Architecture: all
-Section: debian-installer
-Description: Firmware for NICs
- This package contains firmware needed by some network controllers.
-
-Package: scsi-firmware
-Build-Profiles: <!noudeb>
-XC-Package-Type: udeb
-Architecture: all
-Section: debian-installer
-Description: Firmware for SCSI controllers
- This package contains firmware needed by some scsi controllers.
