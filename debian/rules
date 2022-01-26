@@ -27,8 +27,6 @@ dest_dir = $(CURDIR)/debian/linux-firmware
 firm_dir = $(dest_dir)/lib/firmware
 doc_dir = $(dest_dir)/usr/share/doc/linux-firmware
 license_dir = $(doc_dir)/licenses
-nic_firm_dir = $(CURDIR)/debian/nic-firmware/lib/firmware
-scsi_firm_dir = $(CURDIR)/debian/scsi-firmware/lib/firmware
 
 install-indep: build-indep
 	dh_testdir
@@ -39,18 +37,6 @@ install-indep: build-indep
 
 	make install DESTDIR=$(dest_dir)
 	# debian/scripts/compress-firmware $(firm_dir)
-
-ifeq ($(filter noudeb,$(DEB_BUILD_PROFILES)),)
-	for f in $$(cat debian/nic-firmware.lst); do \
-		install -m644 -D $(firm_dir)/$$f $(nic_firm_dir)/$$f; \
-	done
-	# debian/scripts/compress-firmware $(nic_firm_dir)
-
-	for f in $$(cat debian/scsi-firmware.lst); do \
-		install -m644 -D $(firm_dir)/$$f $(scsi_firm_dir)/$$f; \
-	done
-	# debian/scripts/compress-firmware $(scsi_firm_dir)
-endif
 
 	install -d $(doc_dir)
 	cp WHENCE $(doc_dir)/README
