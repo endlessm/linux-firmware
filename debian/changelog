@@ -1,3 +1,64 @@
+linux-firmware (20220124.git0c6a7b3b-0ubuntu1) jammy; urgency=medium
+
+  * mt7921e 0000:02:00.0: PM: failed to resume async: error -110 (LP: #1958286)
+    - Rebase to upstream commit 0c6a7b3bf728b95c8b7b95328f94335e2bb2c967
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - QCA: Add Bluetooth default nvm file for WCN685x
+      - i915: Add DMC firmware v2.14 for ADL-P
+      - rtw89: 8852a: update fw to v0.13.33.0
+      - cxgb4: Update firmware to revision 1.26.4.0
+      - i915: Add GuC v69.0.3 for all platforms
+      - rtl_bt: Update RTL8761B BT USB firmware to 0x09A9_8A6B
+      - rtl_bt: Update RTL8761B BT UART firmware to 0x0CA9_8A6B
+      - linux-firmware: wilc1000: update WILC1000 firmware to v15.4.1
+      - linux-firmware: update frimware for mediatek bluetooth chip (MT7921)
+      - bnx2x: Add FW 7.13.21.0
+      - amdgpu: update green sardine PSP firmware
+      - QCA: Update Bluetooth WCN685x firmware to 2.1.0-00298
+      - rtw88: 8822c: Update normal firmware to v9.9.11
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - cnm: add chips&media wave521c firmware.
+      - cxgb4: Update firmware to revision 1.26.6.0
+      - QCA: Update Bluetooth WCN685x 2.0 firmware to 2.0.0-00609
+      - QCA: Update Bluetooth WCN685x 2.1 firmware to 2.1.0-00324
+      - QCA: Add Bluetooth nvm file for WCN685x
+      - amdgpu: update yellow carp dmcub firmware
+      - WHENCE: add missing symlink for NanoPi R1
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: add firmware for MT7916
+      - iwlwifi: update 9000-family firmwares to core66-88
+      - iwlwifi: add new FWs from core66-88 release
+      - iwlwifi: add new FWs from core63-136 release
+      - linux-firmware: update firmware for MT7915
+      - linux-firmware: add marvell CPT firmware images
+      - Mellanox: Add new mlxsw_spectrum firmware xx.2010.1232
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - linux-firmware: update firmware for mediatek bluetooth chip(MT7921)
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth 9260
+
+ -- Juerg Haefliger <juergh@canonical.com>  Fri, 28 Jan 2022 11:20:55 +0100
+
 linux-firmware (1.204) jammy; urgency=medium
 
   * Support Intel IPU6 MIPI camera on Alder Lake platforms (LP: #1955383)
