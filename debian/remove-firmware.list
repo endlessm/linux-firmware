@@ -106,3 +106,11 @@ ar7010_1_1.fw
 # Replaces commit 4ce08856dee0 ("UBUNTU: Remove obsolete ar9170 firmware")
 ar9170-1.fw
 ar9170-2.fw
+
+# Replaces commit 064c4d3944e4 ("UBUNTU: Remove obsolete bnx2x firmware")
+bnx2x/bnx2x-e1-7.0.29.0.fw
+bnx2x/bnx2x-e1-7.2.16.0.fw
+bnx2x/bnx2x-e1h-7.0.29.0.fw
+bnx2x/bnx2x-e1h-7.2.16.0.fw
+bnx2x/bnx2x-e2-7.0.29.0.fw
+bnx2x/bnx2x-e2-7.2.16.0.fw
