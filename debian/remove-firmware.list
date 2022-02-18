@@ -132,3 +132,6 @@ libertas/lbtf_sdio.bin
 libertas/sd8682.bin
 libertas/sd8682_helper.bin
 libertas/usb8388_olpc.bin
+
+# Replaces commit bfa2ac04ade6 ("UBUNTU: Remove obsolete mwl8k firmware")
+mwl8k/fmimage_8366_ap-1.fw
