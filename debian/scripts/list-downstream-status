@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+# List status of downstream files
+#
+
+. debian/upstream
+
+while IFS= read -r name ; do
+	# Check if file exists in upstream
+	if git cat-file -e "${COMMIT}":"${name}" > /dev/null 2>&1 ; then
+		if [ -e "${name}" ] ; then
+			if [ -z "$(git diff 6342082c -- "${name}")" ] ; then
+				# Files is identical with upstream
+				echo "IDENTICAL  ${name}"
+			else
+				# File was modified
+				echo "MODIFIED   ${name}"
+			fi
+		else
+			# File was deleted
+			echo "DELETED    ${name}"
+		fi
+	else
+		if [ -e "${name}" ] ; then
+			# Files was added
+			echo "ADDED      ${name}"
+		else
+			# File was added and subsequently removed again
+			echo "TRANSIENT  ${name}"
+		fi
+	fi
+done < <(git log --format= --name-only "${COMMIT}"..)
