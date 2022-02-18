@@ -22,3 +22,26 @@ iwlwifi-5000-1.ucode
 iwlwifi-5000-2.ucode
 iwlwifi-6000g2b-5.ucode
 iwlwifi-6050-4.ucode
+
+# Replaces commit 4f7cf7c3ecd1 ("UBUNTU: Remove obsolete bnx2x firmware files")
+bnx2x-e1-4.8.53.0.fw
+bnx2x-e1-5.2.13.0.fw
+bnx2x-e1-5.2.7.0.fw
+bnx2x-e1h-4.8.53.0.fw
+bnx2x-e1h-5.2.13.0.fw
+bnx2x-e1h-5.2.7.0.fw
+bnx2x/bnx2x-e1-6.0.34.0.fw
+bnx2x/bnx2x-e1-6.2.5.0.fw
+bnx2x/bnx2x-e1-6.2.9.0.fw
+bnx2x/bnx2x-e1-7.0.20.0.fw
+bnx2x/bnx2x-e1-7.0.23.0.fw
+bnx2x/bnx2x-e1h-6.0.34.0.fw
+bnx2x/bnx2x-e1h-6.2.5.0.fw
+bnx2x/bnx2x-e1h-6.2.9.0.fw
+bnx2x/bnx2x-e1h-7.0.20.0.fw
+bnx2x/bnx2x-e1h-7.0.23.0.fw
+bnx2x/bnx2x-e2-6.0.34.0.fw
+bnx2x/bnx2x-e2-6.2.5.0.fw
+bnx2x/bnx2x-e2-6.2.9.0.fw
+bnx2x/bnx2x-e2-7.0.20.0.fw
+bnx2x/bnx2x-e2-7.0.23.0.fw
