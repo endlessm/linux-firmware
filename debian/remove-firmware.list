@@ -64,3 +64,6 @@ ar3k/30101coex/ar3kbdaddr.pst
 
 # Replaces commit 0563995d173f ("UBUNTU: Remove obsolete ath9k firmware")
 ar9271.fw
+
+# Replaces commit e55ef4edc755 ("UBUNTU: Remove obsolete slicoss firmware")
+slicoss/oasisdbgdownload.sys
