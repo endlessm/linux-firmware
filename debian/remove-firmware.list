@@ -142,3 +142,8 @@ myricom/lanai.bin
 # Replaces commit 09e02976b05b ("UBUNTU: Remove obsolete sxg firmware")
 sxg/saharadbgdownloadB.sys
 sxg/saharadownloadB.sys
+
+# Replaces commit 3d183a325fec ("UBUNTU: Remove obsolete tda1004x firmware")
+LICENCE.tda7706-firmware.txt
+TDA7706_OM_v2.5.1_boot.txt
+TDA7706_OM_v3.0.2_boot.txt
