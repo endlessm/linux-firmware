@@ -147,3 +147,16 @@ sxg/saharadownloadB.sys
 LICENCE.tda7706-firmware.txt
 TDA7706_OM_v2.5.1_boot.txt
 TDA7706_OM_v3.0.2_boot.txt
+
+# Replaces commit 1be4f28f91fb ("UBUNTU: Remove obsolete ti-connectivity firmware")
+ti-connectivity/TIInit_7.2.31.bts
+ti-connectivity/wl1271-fw-2.bin
+ti-connectivity/wl1271-fw-ap.bin
+ti-connectivity/wl1271-fw.bin
+ti-connectivity/wl127x-fw-3.bin
+ti-connectivity/wl127x-fw-plt-3.bin
+ti-connectivity/wl128x-fw-3.bin
+ti-connectivity/wl128x-fw-ap.bin
+ti-connectivity/wl128x-fw-plt-3.bin
+ti-connectivity/wl128x-fw.bin
+ti-connectivity/wl18xx-fw.bin
