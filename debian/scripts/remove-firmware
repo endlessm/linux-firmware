@@ -1,0 +1,30 @@
+#!/bin/bash -eu
+#
+# Remove firmware files and/or directories
+#
+
+if [ $# -ne 1 ] ; then
+	echo "Usage: remove-firmware <dirname>" >&2
+	exit 2
+fi
+
+if ! [ -d "${1}" ] ; then
+	echo "No such directory: ${1}" >&2
+	exit 1
+fi
+
+echo "Remove firmware files in ${1} ..."
+
+while IFS= read -r item ; do
+	# Don't quote 'item' to allow globs in remove-firmware.list
+	# shellcheck disable=SC2086
+	rm -rf "${1:?}"/${item}
+done < <(sed -E '/^#|^$/d' debian/remove-firmware.list)
+
+echo "Check for dangling symlinks in ${1} ..."
+
+if [ "$(find "${1}" -xtype l | wc -l)" -ne 0 ] ; then
+    echo "Error: Dangling symlinks found" >&2
+    find "${1}" -xtype l
+    exit 1
+fi

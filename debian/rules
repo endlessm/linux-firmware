@@ -36,6 +36,7 @@ install-indep: build-indep
 	install -d $(firm_dir)
 
 	make install DESTDIR=$(dest_dir)
+	debian/scripts/remove-firmware $(firm_dir)
 	# debian/scripts/compress-firmware $(firm_dir)
 
 	install -d $(doc_dir)
@@ -44,6 +45,7 @@ install-indep: build-indep
 
 	install -d $(license_dir)
 	cp LICEN[CS]E* GPL-[23] $(license_dir)
+	debian/scripts/remove-firmware $(license_dir)
 
 binary-indep: install-indep
 	dh_testdir
