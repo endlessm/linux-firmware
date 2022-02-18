@@ -91,3 +91,6 @@ ath6k/AR6003/hw2.0/bdata.WB31.bin
 ath6k/AR6003/hw2.1.1/bdata.SD32.bin
 ath6k/AR6003/hw2.1.1/bdata.WB31.bin
 ath6k/AR6003/hw2.1.1/endpointping.bin
+
+# Replaces commit 2188b4baf819 ("UBUNTU: Remove obsolete 3com firmware")
+3com/3C359.bin
