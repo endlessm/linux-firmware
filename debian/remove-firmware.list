@@ -190,3 +190,7 @@ sms1xxx-nova-a-dvbt-01.fw
 sms1xxx-nova-b-dvbt-01.fw
 sms1xxx-stellar-dvbt-01.fw
 tdmb_nova_12mhz.inp
+
+# Replaces commit 563bb48ed143 ("UBUNTU: Remove amd64-microcode")
+LICENSE.amd-ucode
+amd-ucode
