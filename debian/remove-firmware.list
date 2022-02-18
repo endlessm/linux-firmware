@@ -117,3 +117,7 @@ bnx2x/bnx2x-e2-7.2.16.0.fw
 
 # Replaces commit 03310ea1e1e7 ("UBUNTU: Remove obsolete cxgb firmware")
 cxgb3/t3fw-7.10.0.bin
+
+# Replaces commit 22f2239919d9 ("UBUNTU: Remove obsolete dabusb firmware")
+dabusb/bitstream.bin
+dabusb/firmware.fw
