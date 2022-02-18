@@ -135,3 +135,6 @@ libertas/usb8388_olpc.bin
 
 # Replaces commit bfa2ac04ade6 ("UBUNTU: Remove obsolete mwl8k firmware")
 mwl8k/fmimage_8366_ap-1.fw
+
+# Replaces commit 9b6d6bbcbc18 ("UBUNTU: Remove obsolete myricom firmware")
+myricom/lanai.bin
