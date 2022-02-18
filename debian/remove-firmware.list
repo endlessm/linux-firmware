@@ -67,3 +67,27 @@ ar9271.fw
 
 # Replaces commit e55ef4edc755 ("UBUNTU: Remove obsolete slicoss firmware")
 slicoss/oasisdbgdownload.sys
+
+# Replaces commit 0470cfcec635 ("UBUNT: Remove obsolete ath6k firmware")
+ath6k/AR6002/athwlan.bin.z77
+ath6k/AR6002/data.patch.hw2_0.bin
+ath6k/AR6002/eeprom.bin
+ath6k/AR6002/eeprom.data
+ath6k/AR6003.1/hw2.1.1/athwlan.bin
+ath6k/AR6003.1/hw2.1.1/bdata.SD31.bin
+ath6k/AR6003.1/hw2.1.1/bdata.SD32.bin
+ath6k/AR6003.1/hw2.1.1/bdata.WB31.bin
+ath6k/AR6003.1/hw2.1.1/data.patch.bin
+ath6k/AR6003.1/hw2.1.1/endpointping.bin
+ath6k/AR6003.1/hw2.1.1/otp.bin
+ath6k/AR6003/hw1.0/athwlan.bin.z77
+ath6k/AR6003/hw1.0/bdata.SD31.bin
+ath6k/AR6003/hw1.0/bdata.SD32.bin
+ath6k/AR6003/hw1.0/bdata.WB31.bin
+ath6k/AR6003/hw1.0/data.patch.bin
+ath6k/AR6003/hw1.0/otp.bin.z77
+ath6k/AR6003/hw2.0/bdata.SD32.bin
+ath6k/AR6003/hw2.0/bdata.WB31.bin
+ath6k/AR6003/hw2.1.1/bdata.SD32.bin
+ath6k/AR6003/hw2.1.1/bdata.WB31.bin
+ath6k/AR6003/hw2.1.1/endpointping.bin
