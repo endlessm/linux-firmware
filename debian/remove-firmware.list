@@ -160,3 +160,6 @@ ti-connectivity/wl128x-fw-ap.bin
 ti-connectivity/wl128x-fw-plt-3.bin
 ti-connectivity/wl128x-fw.bin
 ti-connectivity/wl18xx-fw.bin
+
+# Replaces commit 935dc770957e ("UBUNTU: Remove obsolete tr_smctr firmware")
+tr_smctr.bin
