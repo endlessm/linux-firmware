@@ -15,3 +15,10 @@ ueagle-atm/CMVepWO.bin
 cxgb3/t3fw-7.0.0.bin
 cxgb3/t3fw-7.1.0.bin
 cxgb3/t3fw-7.4.0.bin
+
+# Replaces commit 634d7ba9a08a ("UBUNTU: Remove obsolete iwlwifi ucode files")
+iwlwifi-1000-3.ucode
+iwlwifi-5000-1.ucode
+iwlwifi-5000-2.ucode
+iwlwifi-6000g2b-5.ucode
+iwlwifi-6050-4.ucode
