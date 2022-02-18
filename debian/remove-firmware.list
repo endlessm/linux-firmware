@@ -124,3 +124,11 @@ dabusb/firmware.fw
 
 # Replaces commit 1faeeb10de57 ("UBUNTU: Remove obsolete Computone firmware")
 intelliport2.bin
+
+# Replaces commit a46068ae4580 ("UBUNTU: Remove obsolete libertas firmware")
+libertas/gspi8682.bin
+libertas/gspi8682_helper.bin
+libertas/lbtf_sdio.bin
+libertas/sd8682.bin
+libertas/sd8682_helper.bin
+libertas/usb8388_olpc.bin
