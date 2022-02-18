@@ -163,3 +163,14 @@ ti-connectivity/wl18xx-fw.bin
 
 # Replaces commit 935dc770957e ("UBUNTU: Remove obsolete tr_smctr firmware")
 tr_smctr.bin
+
+# Replaces commit 513a97a03fba ("UBUNTU: Remove obsolete bnx2x firmware files")
+bnx2x/bnx2x-e1-7.10.51.0.fw
+bnx2x/bnx2x-e1-7.8.17.0.fw
+bnx2x/bnx2x-e1-7.8.19.0.fw
+bnx2x/bnx2x-e1h-7.10.51.0.fw
+bnx2x/bnx2x-e1h-7.8.17.0.fw
+bnx2x/bnx2x-e1h-7.8.19.0.fw
+bnx2x/bnx2x-e2-7.10.51.0.fw
+bnx2x/bnx2x-e2-7.8.17.0.fw
+bnx2x/bnx2x-e2-7.8.19.0.fw
