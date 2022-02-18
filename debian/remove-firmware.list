@@ -1,2 +1,12 @@
 # This file contains a list of firmware files and/or directories that need to
 # be removed from the final package.
+
+# Replaces commit 6a312e01f665 ("UBUNTU: Remove obsolete ueagle-atm firmware")
+ueagle-atm/CMVeiWO.bin
+ueagle-atm/CMVepES.bin
+ueagle-atm/CMVepES03.bin
+ueagle-atm/CMVepFR.bin
+ueagle-atm/CMVepFR04.bin
+ueagle-atm/CMVepFR10.bin
+ueagle-atm/CMVepIT.bin
+ueagle-atm/CMVepWO.bin
