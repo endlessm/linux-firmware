@@ -102,3 +102,7 @@ ar3k/1020201/RamPatch.txt
 # Replaces commit c5a7aadccbfd ("UBUNTU: Remove obsolete ar7010 firmware")
 ar7010.fw
 ar7010_1_1.fw
+
+# Replaces commit 4ce08856dee0 ("UBUNTU: Remove obsolete ar9170 firmware")
+ar9170-1.fw
+ar9170-2.fw
