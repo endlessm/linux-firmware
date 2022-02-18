@@ -45,3 +45,19 @@ bnx2x/bnx2x-e2-6.2.5.0.fw
 bnx2x/bnx2x-e2-6.2.9.0.fw
 bnx2x/bnx2x-e2-7.0.20.0.fw
 bnx2x/bnx2x-e2-7.0.23.0.fw
+
+# Replaces commit 85ee46eb9136 ("UBUNTU: Remove obsolete ar3k firmware")
+ar3k/1020200/PS_ASIC.pst
+ar3k/1020200/RamPatch.txt
+ar3k/1020200/ar3kbdaddr.pst
+ar3k/30000/PS_ASIC.pst
+ar3k/30000/RamPatch.txt
+ar3k/30000/ar3kbdaddr.pst
+ar3k/30101/PS_ASIC.pst
+ar3k/30101/RamPatch.txt
+ar3k/30101/ar3kbdaddr.pst
+ar3k/30101coex/PS_ASIC.pst
+ar3k/30101coex/PS_ASIC_aclHighPri.pst
+ar3k/30101coex/PS_ASIC_aclLowPri.pst
+ar3k/30101coex/RamPatch.txt
+ar3k/30101coex/ar3kbdaddr.pst
