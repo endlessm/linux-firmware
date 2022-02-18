@@ -98,3 +98,7 @@ ath6k/AR6003/hw2.1.1/endpointping.bin
 # Replaces commit f11a59536386 ("UBUNTU: Remove obsolete ath3k firmware")
 ar3k/1020201/PS_ASIC.pst
 ar3k/1020201/RamPatch.txt
+
+# Replaces commit c5a7aadccbfd ("UBUNTU: Remove obsolete ar7010 firmware")
+ar7010.fw
+ar7010_1_1.fw
