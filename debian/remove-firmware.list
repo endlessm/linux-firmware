@@ -121,3 +121,6 @@ cxgb3/t3fw-7.10.0.bin
 # Replaces commit 22f2239919d9 ("UBUNTU: Remove obsolete dabusb firmware")
 dabusb/bitstream.bin
 dabusb/firmware.fw
+
+# Replaces commit 1faeeb10de57 ("UBUNTU: Remove obsolete Computone firmware")
+intelliport2.bin
