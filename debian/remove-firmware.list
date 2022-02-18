@@ -114,3 +114,6 @@ bnx2x/bnx2x-e1h-7.0.29.0.fw
 bnx2x/bnx2x-e1h-7.2.16.0.fw
 bnx2x/bnx2x-e2-7.0.29.0.fw
 bnx2x/bnx2x-e2-7.2.16.0.fw
+
+# Replaces commit 03310ea1e1e7 ("UBUNTU: Remove obsolete cxgb firmware")
+cxgb3/t3fw-7.10.0.bin
