@@ -10,3 +10,8 @@ ueagle-atm/CMVepFR04.bin
 ueagle-atm/CMVepFR10.bin
 ueagle-atm/CMVepIT.bin
 ueagle-atm/CMVepWO.bin
+
+# Replaces commit ee2de66a5c8e ("UBUNTU: Drop obsolete cxgb3 firmware")
+cxgb3/t3fw-7.0.0.bin
+cxgb3/t3fw-7.1.0.bin
+cxgb3/t3fw-7.4.0.bin
