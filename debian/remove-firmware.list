@@ -174,3 +174,19 @@ bnx2x/bnx2x-e1h-7.8.19.0.fw
 bnx2x/bnx2x-e2-7.10.51.0.fw
 bnx2x/bnx2x-e2-7.8.17.0.fw
 bnx2x/bnx2x-e2-7.8.19.0.fw
+
+# Replaces commit 251237583bdd ("UBUNTU: Revert "linux-firmware: Add firmware files for Siano DTV devices"")
+LICENCE.siano
+cmmb_vega_12mhz.inp
+cmmb_venice_12mhz.inp
+dvb_nova_12mhz.inp
+dvb_nova_12mhz_b0.inp
+isdbt_nova_12mhz.inp
+isdbt_nova_12mhz_b0.inp
+isdbt_rio.inp
+sms1xxx-hcw-55xxx-dvbt-02.fw
+sms1xxx-hcw-55xxx-isdbt-02.fw
+sms1xxx-nova-a-dvbt-01.fw
+sms1xxx-nova-b-dvbt-01.fw
+sms1xxx-stellar-dvbt-01.fw
+tdmb_nova_12mhz.inp
