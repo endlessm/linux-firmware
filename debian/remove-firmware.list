@@ -138,3 +138,7 @@ mwl8k/fmimage_8366_ap-1.fw
 
 # Replaces commit 9b6d6bbcbc18 ("UBUNTU: Remove obsolete myricom firmware")
 myricom/lanai.bin
+
+# Replaces commit 09e02976b05b ("UBUNTU: Remove obsolete sxg firmware")
+sxg/saharadbgdownloadB.sys
+sxg/saharadownloadB.sys
