@@ -61,3 +61,6 @@ ar3k/30101coex/PS_ASIC_aclHighPri.pst
 ar3k/30101coex/PS_ASIC_aclLowPri.pst
 ar3k/30101coex/RamPatch.txt
 ar3k/30101coex/ar3kbdaddr.pst
+
+# Replaces commit 0563995d173f ("UBUNTU: Remove obsolete ath9k firmware")
+ar9271.fw
