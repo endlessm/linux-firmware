@@ -26,8 +26,10 @@ echo "Recreate symlinks in ${1} ..."
 while IFS= read -r l ; do
 	if [ "${l%.xz}" = "${l}" ] ; then
 		t=$(readlink "${l}")
-		ln -s "${t}".xz "${l}".xz
-		rm "${l}"
+		if ( cd "${l%/*}" && ! [ -d "${t}" ] ) ; then
+			ln -s "${t}".xz "${l}".xz
+			rm "${l}"
+		fi
 	fi
 done < <(find "${1}" -type l)
 
