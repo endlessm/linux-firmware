@@ -7,6 +7,12 @@ if known, for each piece of firmware distributed for use with the Linux
 kernel.
 
 --------------------------------------------------------------------------
+
+# Make check-whence.py ignore the packaging files.
+Source: debian/
+
+--------------------------------------------------------------------------
+
 Driver: ipw2200 - Intel ipw2200 wireless driver
 
 File: ipw2200-bss.fw
@@ -26,6 +32,7 @@ File: ipw2100-1.3-p.fw
 Info: v1.3
 
 License: Redistributable. See LICENCE.ipw2100 for details
+
 --------------------------------------------------------------------------
 
 Driver: zd1211rw - ZD1211 USB-WLAN driver for Linux
@@ -39,6 +46,7 @@ File: zd1211/zd1211b_ur
 Info: http://linux-lc100020.sourceforge.net/
 
 License: Redistributable. See LICENCE.zd1211 for details
+
 --------------------------------------------------------------------------
 
 Driver: zd1201 - Driver for ZyDAS zd1201 based wireless USB devices.
@@ -48,6 +56,7 @@ File: zd1201.fw
 Info: http://linux-lc100020.sourceforge.net/
 
 License: Redistributable. See LICENCE.zd1201 for details
+
 --------------------------------------------------------------------------
 
 Driver: pvrusb2, v4l-cx2341x - Hauppauge cx2341x based models
@@ -104,6 +113,7 @@ File: ea/mona_301_dsp.fw
 File: ea/mona_361_1_asic_48.fw
 File: ea/mona_361_1_asic_96.fw
 File: ea/mona_361_dsp.fw
+Source: fw_source/
 
 Info: http://www.alsa-project.org/main/index.php/Main_Page
 
