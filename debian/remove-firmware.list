@@ -194,3 +194,22 @@ tdmb_nova_12mhz.inp
 # Replaces commit 563bb48ed143 ("UBUNTU: Remove amd64-microcode")
 LICENSE.amd-ucode
 amd-ucode
+
+# LP: #1962468
+# Remove upstream directories that contain reasonably old firmware files that
+# are not referenced by the currently supported Jammy kernels.
+ar3k
+atusb
+carl9170fw
+dabusb
+dsp56k
+inside-secure
+matrox
+meson
+mwlwifi
+myricom
+r128
+sb16
+sxg
+ti-keystone
+usbdux
