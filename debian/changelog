@@ -1,3 +1,68 @@
+linux-firmware (20220302.gitee0667aa-0ubuntu1) jammy; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Add fw_source/ and debian/ directories to WHENCE.ubuntu
+    - [Packaging] compress-firmware: Make it more readable and verbose
+    - [Packaging] compress-firmware: Ignore symlinks pointing at directories
+    - Rebase to upstream commit ee0667aa201e7d725ec87b1e4cf08de1d748d64f
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - linux-firmware: Update AMD cpu microcode
+      - LICENSE.amdgpu: update copyright date
+      - amdgpu: Add aldebaran firmware from 21.50
+      - amdgpu: Update arcturus firmware from 21.50
+      - amdgpu: Update green sardine firmware from 21.50
+      - amdgpu: Update cyan skillfish2 firmware from 21.50
+      - amdgpu: Update navi10 firmware from 21.50
+      - amdgpu: Update navi12 firmware from 21.50
+      - amdgpu: Update navi14 firmware from 21.50
+      - amdgpu: Update sienna cichlid firmware from 21.50
+      - amdgpu: Update navy flounder firmware from 21.50
+      - amdgpu: Update dimgrey cavefish firmware from 21.50
+      - amdgpu: Update beige goby firmware from 21.50
+      - amdgpu: Update picasso firmware from 21.50
+      - amdgpu: Update raven firmware from 21.50
+      - amdgpu: Update raven2 firmware from 21.50
+      - amdgpu: Update renoir firmware from 21.50
+      - amdgpu: Update vangogh firmware from 21.50
+      - amdgpu: Update vega10 firmware from 21.50
+      - amdgpu: Update vega12 firmware from 21.50
+      - amdgpu: Update vega20 firmware from 21.50
+      - amdgpu: Update yellow carp firmware from 21.50
+      - rtl_bt: Update RTL8822C BT UART firmware to 0x15B7_6D7D
+      - rtl_bt: Update RTL8822C BT USB firmware to 0x19B7_6D7D
+      - rtl_bt: Update RTL8852A BT USB firmware to 0xDFB7_6D7A
+      - linux-firmware: Intel BT 7265: Fix Security Issues
+      - linux-firmware: Update firmware file for Intel Bluetooth 8265
+      - linux-firmware: Update firmware patch for Intel Bluetooth 8260
+      - linux-firmware: update firmware for mediatek bluetooth chip(MT7921)
+      - wfx: rename silabs/ into wfx/
+      - wfx: add antenna configuration files
+      - wfx: update to firmware 3.14
+      - Mellanox: Add new mlxsw_spectrum firmware xx.2010.1406
+      - rtw89: 8852a: update fw to v0.13.35.0
+      - linux-firmware: Update AMD SEV firmware
+      - linux-firmware: Update firmware file for Intel Bluetooth 9260
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - amdgpu: update picasso VCN firmware
+      - amdgpu: update raven VCN firmware
+      - amdgpu: update raven2 VCN firmware
+  * Remove old/obsolete/unnecessary firmware files (LP: #1962468)
+    - [Packaging] Remove old and unneeded upstream firmware files
+
+ -- Juerg Haefliger <juergh@canonical.com>  Thu, 03 Mar 2022 09:01:58 +0100
+
 linux-firmware (20220217.git6342082c-0ubuntu3) jammy; urgency=medium
 
   * Miscellaneous Ubuntu changes
