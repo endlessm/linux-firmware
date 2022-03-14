@@ -1,3 +1,23 @@
+linux-firmware (20220314.gitcd01f857-0ubuntu1) jammy; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit cd01f857da28abc170ebf19216945873ec7d5fec
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - iwlwifi: update 9000-family firmwares to core68-60
+      - rtw89: 8852a: update fw to v0.13.36.0
+      - amdgpu: add firmware for GC 10.3.7 IP block
+      - amdgpu: add firmware for DCN 3.1.6 IP block
+      - amdgpu: add firmware for PSP 13.0.8 IP block
+      - amdgpu: add firmware for SDMA 5.2.7 IP block
+      - linux-firmware: add firmware for MT7986
+      - ath10k/ath11k: mark notice.txt as "File:"
+      - ath11k: WCN6855 hw2.0: add board-2.bin and regdb.bin
+      - ath11k: WCN6855 hw2.0: add WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3
+      - ath11k: add links for WCN6855 hw2.1
+      - iwlwifi: add new FWs from core68-60 release
+
+ -- Juerg Haefliger <juergh@canonical.com>  Mon, 14 Mar 2022 11:40:01 +0100
+
 linux-firmware (20220302.gitee0667aa-0ubuntu1) jammy; urgency=medium
 
   * Miscellaneous Ubuntu changes
