@@ -1,3 +1,10 @@
+linux-firmware (20220314.gitcd01f857-0ubuntu2) jammy; urgency=medium
+
+  * linux-firmware fails to upgrade to 20220314.gitcd01f857-0ubuntu1 (LP: #1964814)
+    - [Packaging] Remove directory symlink before package upgrade
+
+ -- Juerg Haefliger <juergh@canonical.com>  Tue, 15 Mar 2022 09:12:25 +0100
+
 linux-firmware (20220314.gitcd01f857-0ubuntu1) jammy; urgency=medium
 
   * Miscellaneous Ubuntu changes
