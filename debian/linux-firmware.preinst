@@ -5,7 +5,7 @@ set -e
 case "$1" in
 	install|upgrade)
 		# Fix package upgrade (LP: #1964814)
-		if [ -h /lib/firmware/ath11k/WCN6855/hw2.1 ]; then
+		if [ -L /lib/firmware/ath11k/WCN6855/hw2.1 ]; then
 			rm -f /lib/firmware/ath11k/WCN6855/hw2.1
 		fi
 		;;
