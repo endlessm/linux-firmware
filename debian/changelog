@@ -1,3 +1,15 @@
+linux-firmware (20220329.git681281e4-0ubuntu1) jammy; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] preinst: Use test -L instead of -h
+    - Rebase to upstream commit 681281e49fb6778831370e5d94e6e1d97f0752d6
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - rtl_bt: Add firmware and config files for RTL8852B
+      - amdgpu: update GC 10.3.7 firmware
+      - amdgpu: update PSP 13.0.8 firmware
+
+ -- Juerg Haefliger <juergh@canonical.com>  Tue, 29 Mar 2022 08:17:59 +0200
+
 linux-firmware (20220314.gitcd01f857-0ubuntu2) jammy; urgency=medium
 
   * linux-firmware fails to upgrade to 20220314.gitcd01f857-0ubuntu1 (LP: #1964814)
