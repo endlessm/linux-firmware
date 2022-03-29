@@ -32,11 +32,3 @@ while IFS= read -r l ; do
 		fi
 	fi
 done < <(find "${1}" -type l)
-
-echo "Check for dangling symlinks in ${1} ..."
-
-if [ "$(find "${1}" -xtype l | wc -l)" -ne 0 ] ; then
-	echo "Error: Dangling symlinks found" >&2
-	find "${1}" -xtype l
-	exit 1
-fi
