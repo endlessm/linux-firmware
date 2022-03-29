@@ -1,0 +1,22 @@
+#!/bin/bash -eu
+#
+# Check for dangling symlinks
+#
+
+if [ $# -ne 1 ] ; then
+	echo "Usage: check-symlinks <dirname>" >&2
+	exit 2
+fi
+
+if ! [ -d "${1}" ] ; then
+	echo "No such directory: ${1}" >&2
+	exit 1
+fi
+
+echo "Check for dangling symlinks in ${1} ..."
+
+if [ "$(find "${1}" -xtype l | wc -l)" -ne 0 ] ; then
+    echo "Error: Dangling symlinks found" >&2
+    find "${1}" -xtype l
+    exit 1
+fi
