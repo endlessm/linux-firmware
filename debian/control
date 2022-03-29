@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
 Standards-Version: 4.5.0
-Build-Depends: debhelper-compat (= 13), rsync
+Build-Depends: debhelper-compat (= 13)
 Vcs-Git: git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-firmware
 
 Package: linux-firmware
