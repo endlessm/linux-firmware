@@ -47,6 +47,9 @@ install-indep: build-indep
 	cp LICEN[CS]E* GPL-[23] $(license_dir)
 	debian/scripts/remove-firmware $(license_dir)
 
+	# Check for dangling symlinks
+	debian/scripts/check-symlinks $(dest_dir)
+
 binary-indep: install-indep
 	dh_testdir
 	dh_testroot
