@@ -198,7 +198,6 @@ amd-ucode
 # LP: #1962468
 # Remove upstream directories that contain reasonably old firmware files that
 # are not referenced by the currently supported Jammy kernels.
-ar3k
 atusb
 carl9170fw
 dabusb
