@@ -1,3 +1,56 @@
+linux-firmware (20220429.gitac21ab5d-0ubuntu1) kinetic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] Drop rsync from Build-Depends
+    - [Packaging] Move obsolete scripts
+    - [Packaging] Put symlink checking into its own script
+    - Rebase to upstream commit ac21ab5d1de0de34201c90d32eee436f873d1e5b
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - ice: update ice DDP comms package to 1.3.31.0
+      - ice: Add wireless edge file for Intel E800 series driver
+      - rtw88: 8821c: Update normal firmware to v24.11.00
+      - i915: Add GuC v70.1.1 for all platforms
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - amdgpu: update navi10 VCN firmware
+      - amdgpu: update navi12 VCN firmware
+      - amdgpu: update navi14 VCN firmware
+      - amdgpu: update renoir VCN firmware
+      - amdgpu: update green sardine VCN firmware
+      - linux-firmware: Update firmware file for Intel Bluetooth 9260
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - brcm: rename Rock960 NVRAM to AP6356S and link devices to it
+      - nvidia: add GA102/GA103/GA104/GA106/GA107 signed firmware
+      - linux-firmware: Update AMD cpu microcode
+      - mediatek: Add mt8192 SCP firmware
+      - rtl_bt: Add firmware and config files for RTL8852C
+      - qcom: apq8096: add aDSP firmware
+      - qcom: apq8096: add modem firmware
+      - mediatek: Add mt8195 SCP firmware
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7922)
+      - amdgpu: update yellow carp DMCUB firmware
+      - Mellanox: Add new mlxsw_spectrum firmware xx.2010.1502
+      - Mellanox: xx.2010.1502: Distribute non-xz-compressed lc_ini_bundle
+      - Mellanox: Add lc_ini_bundle for xx.2010.1006
+  * Add missing inside-secure firmware (LP: #1970543)
+    - [Packaging] Include inside-secure firmware
+  * No Bluetooth Found on QCA9565 (but replacing the ar3k firmware works) (LP: #1969853)
+    - [Packaging] Include ar3k firmware
+
+ -- Juerg Haefliger <juergh@canonical.com>  Fri, 29 Apr 2022 08:06:54 +0200
+
 linux-firmware (20220329.git681281e4-0ubuntu1) jammy; urgency=medium
 
   * Miscellaneous Ubuntu changes
