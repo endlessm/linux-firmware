@@ -80,6 +80,8 @@ Info: atmelwlandriver.sourceforge.net
 
 License: Redistributable. See LICENCE.atmel for details
 
+--------------------------------------------------------------------------
+
 Driver: Echo Audio sound cards: snd-{echo3g,darla20,darla24,gina20,gina24,
                                      indigo,indigodj,indigodjx,indigoio,
                                      indigoiox,layla20,layla24,mia,mona}
@@ -145,7 +147,6 @@ Files: RTL8192E/*
 Info: License provided by Realtek in their driver source download.
 
 Licence: Redistributable. See LICENCE.realtek-firmware.txt for details.
-
 
 --------------------------------------------------------------------------
 
