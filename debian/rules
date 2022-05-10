@@ -11,24 +11,12 @@
 export LC_ALL=C
 export SHELL=/bin/bash -e
 
-#
-# A list of the directories created by makefiles under fw_source.
-#
-GENERATED_DIRS=ea
-
-binary-arch:
-
-build-arch:
-	$(MAKE) -C fw_source update
-
-build-indep:
-
 dest_dir = $(CURDIR)/debian/linux-firmware
 firm_dir = $(dest_dir)/lib/firmware
 doc_dir = $(dest_dir)/usr/share/doc/linux-firmware
 license_dir = $(doc_dir)/licenses
 
-install-indep: build-indep
+install-indep:
 	dh_testdir
 	dh_testroot
 	dh_prep -i
@@ -63,11 +51,11 @@ binary-indep: install-indep
 	dh_md5sums -i
 	dh_builddeb -i
 
-binary: binary-indep binary-arch
-build: build-arch build-indep
+binary: binary-indep
+
+build:
 
 clean:
-	rm -rf $(GENERATED_DIRS)
 	dh_testdir
 	dh_testroot
 	dh_clean
