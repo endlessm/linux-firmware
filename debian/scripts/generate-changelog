@@ -119,7 +119,7 @@ for key in "${keys[@]}" ; do
 
 	# Print the sub-entries (commit subjects)
 	for commit in ${commits["${key}"]} ; do
-		subject=$(git log --format='%s' "${commit}" -1 | sed -e 's/\s*UBUNTU:\s*//')
+		subject=$(git log --format='%s' "${commit}" -1 | sed -e 's/^\s*UBUNTU:\s*//')
 		echo "    - ${subject}"
 
 		# For rebase commits, add the list of changes from the commit message
