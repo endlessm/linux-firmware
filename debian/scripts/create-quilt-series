@@ -39,8 +39,10 @@ function add_file()
 
 trap out EXIT INT TERM HUP
 
-# Current upstream commit and version
-. debian/upstream
+# Current upstream commit
+version=$(dpkg-parsechangelog -Sversion)
+upstream=${version#*.git}
+upstream=${upstream%%-*}
 
 BINARIES=()
 PATCHABLES=()
@@ -50,7 +52,7 @@ PATCHABLES=()
 while IFS=" " read -r added name new_name ; do
 	add_file "${added}" "${name}"
 	add_file "${added}" "${new_name}"
-done < <(git diff --numstat "${COMMIT}" | awk '{ print $1 " " $3 " " $5 }')
+done < <(git diff --numstat "${upstream}" | awk '{ print $1 " " $3 " " $5 }')
 
 if [ ${#BINARIES[@]} -gt 0 ] ; then
 	echo "Create debian/source/include-binaries ..."
@@ -63,7 +65,7 @@ mkdir debian/patches
 if [ ${#PATCHABLES[@]} -gt 0 ] ; then
 	echo "Create debian/patches/ubuntu.patch ..."
 	for patchable in "${PATCHABLES[@]}" ; do
-		git diff "${COMMIT}" -- "${patchable}"
+		git diff "${upstream}" -- "${patchable}"
 	done > debian/patches/ubuntu.patch
 	echo ubuntu.patch > debian/patches/series
 fi
