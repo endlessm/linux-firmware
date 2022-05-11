@@ -1,0 +1,6 @@
+#!/usr/bin/dh-exec --with=install
+
+WHENCE => /usr/share/doc/linux-firmware/README
+WHENCE.ubuntu => /usr/share/doc/linux-firmware/README.ubuntu
+
+LICEN[CS]E* GPL-[23] /usr/share/doc/linux-firmware/licenses/
