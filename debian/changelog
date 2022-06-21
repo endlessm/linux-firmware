@@ -1,3 +1,90 @@
+linux-firmware (20220621.git7b71b75b-0ubuntu1) kinetic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Clean up WHENCE.ubuntu
+    - [Packaging] scripts: Use the changelog to determine the upstream commit
+    - Rebase to upstream commit 7b71b75be8fb0fa7cceeb3dc22f97920a6be28bd
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - ath11k: IPQ6018 hw1.0: update board-2.bin
+      - ath11k: IPQ6018 hw1.0: update to WLAN.HK.2.5.0.1-01208-QCAHKSWPL_SILICONZ-1
+      - ath11k: IPQ8074 hw2.0: update board-2.bin
+      - ath11k: IPQ8074 hw2.0: update to WLAN.HK.2.5.0.1-01208-QCAHKSWPL_SILICONZ-1
+      - ath11k: QCA6390 hw2.0: update board-2.bin
+      - ath11k: QCN9074 hw1.0: add board-2.bin
+      - ath11k: QCN9074 hw1.0: add to WLAN.HK.2.5.0.1-01208-QCAHKSWPL_SILICONZ-1
+      - ath11k: WCN6750 hw1.0: add board-2.bin
+      - ath11k: WCN6750 hw1.0: add to WLAN.MSL.1.0.1-00887-QCAMSLSWPLZ-1
+      - ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.7
+      - ath10k: QCA99X0 hw2.0: add board-2.bin
+      - ath10k: QCA4019 hw1.0: update board-2.bin
+      - ath10k: QCA6174 hw3.0: update firmware-6.bin to WLAN.RM.4.4.1-00288-QCARMSWPZ-1
+      - ath10k: QCA6174 hw3.0: update board-2.bin
+      - ath10k: QCA9888 hw2.0: update firmware-5.bin to 10.4-3.9.0.2-00156
+      - ath10k: QCA9888 hw2.0: update board-2.bin
+      - ath10k: QCA9984 hw1.0: update firmware-5.bin to 10.4-3.9.0.2-00156
+      - ath10k: QCA9984 hw1.0: update board-2.bin
+      - rtw89: 8852c: add new firmware v0.27.20.0 for RTL8852C
+      - i915: Add GuC v70.1.2 for DG2
+      - qcom: add firmware files for Adreno a220
+      - qcom: add firmware files for Adreno a330
+      - qcom: add firmware files for Adreno a420 & related generations
+      - ath11k: QCA6390 hw2.0: update to WLAN.HST.1.0.1-05266-QCAHSTSWPLZ_V2_TO_X86-1
+      - amdgpu: update dcn_3_1_6_dmcub firmware
+      - amdgpu: update gc_10_3_7_rlc firmware
+      - amdgpu: update psp_13_0_8 firmware
+      - rtl_bt: Update RTL8852A BT USB firmware to 0xDBB7_C1D9
+      - i915: Add DMC v2.06 for DG2
+      - ice: Update package to 1.3.28.0
+      - mediatek: Update mt8183 SCP firmware
+      - mediatek: Update mt8192 SCP firmware
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - amdgpu: update aldebaran firmware for 22.10
+      - amdgpu: update navi10 firmware for 22.10
+      - amdgpu: update navi12 firmware for 22.10
+      - amdgpu: update navi14 firmware for 22.10
+      - amdgpu: update vangogh firmware for 22.10
+      - amdgpu: update PCO firmware for 22.10
+      - amdgpu: update green sardine firmware for 22.10
+      - amdgpu: update sienna cichlid firmware for 22.10
+      - amdgpu: update raven firmware for 22.10
+      - amdgpu: update raven2 firmware for 22.10
+      - amdgpu: update vega10 firmware for 22.10
+      - amdgpu: update navy flounder firmware for 22.10
+      - amdgpu: update vega12 firmware for 22.10
+      - amdgpu: update yellow carp firmware for 22.10
+      - amdgpu: update vega20 firmware for 22.10
+      - amdgpu: update dimgrey cavefish firmware for 22.10
+      - amdgpu: update renoir firmware for 22.10
+      - amdgpu: update beige goby firmware for 22.10
+      - ath10k: WCN3990 hw1.0: add board-2.bin
+      - ath10k: QCA4019 hw1.0: update board-2.bin
+      - ath10k: QCA9888 hw2.0: update firmware-5.bin to 10.4-3.9.0.2-00157
+      - ath10k: QCA9888 hw2.0: update board-2.bin
+      - ath10k: QCA9984 hw1.0: update firmware-5.bin to 10.4-3.9.0.2-00157
+      - WHENCE: ath11k: move regdb.bin before board-2.bin
+      - ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.9
+      - iwlwifi: remove old unsupported 3160/7260/7265/8000/8265 firmware
+      - Makefile: replace mkdir by install
+      - rtl_bt: Update RTL8852A BT USB firmware to 0xDFB8_0634
+      - iwlwifi: update 9000-family firmwares to core70-87
+      - iwlwifi: add new FWs from core70-87 release
+      - brcm: Add NVRAM file 43455 based Wifi/BT module as used on the Quartz64 Model B from Pine64. This file is based on the existing "brcm/brcmfmac43455-sdio.raspberrypi,4-model-b.txt" NVRAM file.
+      - linux-firmware: wilc1000: update WILC1000 firmware to v15.6
+      - WHENCE: add symlinks for StarFive based boards
+    - [Packaging] scripts: Replace mkdir -p with install
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 21 Jun 2022 11:17:13 +0200
+
 linux-firmware (20220429.gitac21ab5d-0ubuntu1) kinetic; urgency=medium
 
   * Miscellaneous Ubuntu changes
