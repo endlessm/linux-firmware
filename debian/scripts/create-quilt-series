@@ -60,7 +60,7 @@ if [ ${#BINARIES[@]} -gt 0 ] ; then
 fi
 
 rm -rf debian/patches
-mkdir debian/patches
+install -d debian/patches
 
 if [ ${#PATCHABLES[@]} -gt 0 ] ; then
 	echo "Create debian/patches/ubuntu.patch ..."
