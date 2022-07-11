@@ -1,3 +1,50 @@
+linux-firmware (20220711.gitdfa29317-0ubuntu1) kinetic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit dfa29317dd78f3a18f37ef8063efe9d2659e6387
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - QCA: Update Bluetooth WCN685x 2.1 firmware to 2.1.0-00409
+      -     qca: Update firmware files for BT chip WCN6750.
+      - Remove the Pine64 Quartz copy of the RPi NVRAM
+      - Add initial AzureWave AW-CM256SM NVRAM file
+      - Link some devices that ship with the AW-CM256SM
+      - qed: update 8.59.1.0 firmware
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - amdgpu: update Yellow Carp VCN firmware
+      - rtw88: 8822c: Update normal firmware to v9.9.12
+      - rtw88: 8822c: Update normal firmware to v9.9.13
+      - mediatek: Add SCP firmware for MT8186
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7922)
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - linux-firmware: update firmware for MT7622 WiFi device
+      - amdgpu: update yellow carp DMCUB firmware
+      - brocade: drop old unsupported firmware revs
+      - Drop ATM Ambassador devices firmware
+      - Drop Computone IntelliPort Plus serial firmware
+      - Drop Intel WiMax firmware
+      - Drop TDA7706 radio firmware
+      - drop Token Ring network firmwares
+      - Remove old Broadcom Everest (bnx2x) v4/5 firmware
+      - bnx2: sort firmware names in filesystem order
+      - bnx2: drop unsupported firmwares
+      - bnx2: Drop unsupported Broadcom NetXtremeII firmware
+      - Correct WHENCE entry for wfx firmware
+      - WHENCE: Correct dangling symlinks
+
+ -- Mario Limonciello <superm1@gmail.com>  Mon, 11 Jul 2022 00:30:19 -0500
+
 linux-firmware (20220621.git7b71b75b-0ubuntu1) kinetic; urgency=medium
 
   * Miscellaneous Ubuntu changes
