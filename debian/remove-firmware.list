@@ -210,3 +210,9 @@ sb16
 sxg
 ti-keystone
 usbdux
+
+# LP: #1983409
+# LP: #1986796
+# Remove AMD SEV firmware which is now provided by amd64-microcode
+LICENSE.amd-sev
+amd
