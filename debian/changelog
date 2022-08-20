@@ -1,3 +1,10 @@
+linux-firmware (20220819.git8413c63c-0ubuntu2) kinetic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] debian/control: Fix Breaks line
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Sat, 20 Aug 2022 14:13:38 +0200
+
 linux-firmware (20220819.git8413c63c-0ubuntu1) kinetic; urgency=medium
 
   * Miscellaneous Ubuntu changes
