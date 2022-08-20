@@ -1,3 +1,63 @@
+linux-firmware (20220819.git8413c63c-0ubuntu1) kinetic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 8413c63c7a539a912be8851ce941eea32dcd1786
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - amdgpu: update DMCUB firmware for DCN 3.1.6
+      - WHENCE: Fix the dangling symlinks fix
+      - amdgpu: update psp 13.0.8 TA firmware
+      - amdgpu: update aldebaran to release 22.20
+      - amdgpu: update picasso to release 22.20
+      - amdgpu: update navi10 to release 22.20
+      - amdgpu: update navi12 to release 22.20
+      - amdgpu: update vangogh to release 22.20
+      - amdgpu: update green sardine to release 22.20
+      - amdgpu: update navi14 to release 22.20
+      - amdgpu: update sienna cichlid to release 22.20
+      - amdgpu: update vega10 to release 22.20
+      - amdgpu: update navy flounder to release 22.20
+      - amdgpu: update raven to release 22.20
+      - amdgpu: update vega12 to release 22.20
+      - amdgpu: update vega20 to release 22.20
+      - amdgpu: update dimgrey cavefish to release 22.20
+      - amdgpu: update yellow carp to release 22.20
+      - amdgpu: update beige goby to release 22.20
+      - amdgpu: update renoir to release 22.20
+      - mediatek: Update mt8183/mt8192/mt8195 SCP firmware
+      - amdgpu partially revert "amdgpu: update beige goby to release 22.20"
+      - i915: Add DMC v2.07 for DG2
+      - i915: Add GuC v70.4.1 for DG2
+      - linux-firmware: Add firmware for Cirrus CS35L41
+      - qcom: Add firmware for Lenovo ThinkPad X13s
+      - Mellanox: Add new mlxsw_spectrum firmware xx.2010.3020
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - amdgpu: Update Yellow Carp VCN firmware
+      - qca: Update firmware files for BT chip WCN6750.      This commit will update required firmware files for WCN6750.
+      - Add amd-ucode README file
+      - brcm: Add nvram for the Asus TF103C tablet
+      - brcm: Add nvram for the Xiaomi Mi Pad 2 tablet
+      - brcm: Add nvram for Lenovo Yoga Tablet 2 830F/L and 1050F/L tablets
+      - QCA: Update Bluetooth WCN685x 2.1 firmware to 2.1.0-00438
+      - ice: Update package to 1.3.30.0
+      - mediatek: Add new mt8186 SOF firmware
+  * REQUEST add meson vdec firmware to arm64 linux-firmware package (LP: #1986743)
+    - [Packaging] Include meson/vdec firmware
+  * Please merge amd64-microcode 3.20220411.1 (main) from Debian unstable (non-free) (LP: #1983409) //
+    amd64-microcode conflicts with linux-firmware (LP: #1986796)
+    - [Packaging] Exclude AMD SEV firmware
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Sat, 20 Aug 2022 08:54:54 +0200
+
 linux-firmware (20220711.gitdfa29317-0ubuntu1) kinetic; urgency=medium
 
   * Miscellaneous Ubuntu changes
