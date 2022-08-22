@@ -1,0 +1,45 @@
+#!/bin/bash -eu
+#
+# Open a new SRU release
+#
+
+function usage()
+{
+	cat <<EOF
+Usage: $(basename "${0}") [-h]
+
+Open a new SRU release.
+
+Optional arguments:
+  -h, --help  Show this help text and exit.
+EOF
+}
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		*)
+			echo "Invalid argument: ${1}" >&2
+			exit 2
+			;;
+	esac
+	shift
+done
+
+version=$(dpkg-parsechangelog -S Version)
+if echo "${version}" | grep -qE '\.[0-9]$' ; then
+    echo "Current package version (${version}) looks like an SRU version" \
+		 "already." >&2
+    exit 1
+fi
+
+dist=$(dpkg-parsechangelog -S Distribution)
+
+dch -v "${version}.0" "Initial dummy SRU release."
+dch -r -D "${dist}" ""
+git commit -s -m "UBUNTU: Initial dummy SRU release
+
+Ignore:yes" -- debian/changelog
