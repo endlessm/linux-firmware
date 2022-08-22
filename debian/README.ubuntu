@@ -36,3 +36,15 @@ Creates a new (unsigned) source package.
 
 Stable Series
 -------------
+
+Stable series are not rebased to latest upstream but instead only receive
+cherry-picked and backported commits. The development series becomes a stable
+series at the time of its official release. At this time, a new development
+branch should be created and an initial SRU release commit should be added to
+the branch of the just released series:
+
+1) $ debian/scripts/open-sru
+
+This creates a dummy initial release commit with a package version ending in
+.0 which prevents future rebases and serves as a starting point for future
+SRU release.
