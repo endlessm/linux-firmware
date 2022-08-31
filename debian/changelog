@@ -1,3 +1,13 @@
+linux-firmware (20220831.gitd3c92280-0ubuntu1) kinetic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit d3c92280565c39e78e9acbb9e63c42a3dcd80d34
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - mediatek: reference the LICENCE file for MediaTek firmwares
+      - rtl_bt: Update RTL8852C BT USB firmware to 0xDFB8_5A33
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 31 Aug 2022 11:38:48 +0200
+
 linux-firmware (20220819.git8413c63c-0ubuntu2) kinetic; urgency=medium
 
   * Miscellaneous Ubuntu changes
