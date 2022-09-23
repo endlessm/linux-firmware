@@ -1,3 +1,33 @@
+linux-firmware (20220923.gitf09bebf3-0ubuntu1) kinetic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] scripts: Add update-firmware helper script
+    - [Packaging] scripts: Drop obsolete scripts
+    - [Packaging] rules: Don't build firmware during package build
+    - Add pre-compiled echoaudio firmware
+    - SAUCE: Revert "UBUNTU: SAUCE: check_whence.py: Ignore ea/ directory"
+    - [Packaging] generate-changelog: Fix removal of 'UBUNTU:' prefix
+    - [Packaging] remove-firmware: Print names of removed firmwares
+    - [Packaging] rules: Use dh_* build rules
+    - Rebase to upstream commit f09bebf31b0590bdc875d7236aa705279510cfd0
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - amdgpu: update sienna cichlid VCN firmware
+      - amdgpu: update navy flounder VCN firmware
+      - amdgpu: update dimgrey cavefish VCN firmware
+      - amdgpu: update beige goby VCN firmware
+      - Mellanox: Add new mlxsw_spectrum firmware xx.2010.3146
+      - rtw89: 8852c: update fw to v0.27.36.0
+      - rtw89: 8852c: update fw to v0.27.42.0
+      - qcom: rename Lenovo ThinkPad X13s firmware paths
+      - amdgpu: add firmware for DCN 3.1.5 IP block
+      - amdgpu: add firmware for GC 10.3.6 IP block
+      - amdgpu: add firmware for PSP 13.0.5 IP block
+      - amdgpu: add firmware for SDMA 5.2.6 IP block
+      - amdgpu: add firmware for VCN 3.1.2 IP block
+      - amdgpu: update yellow carp DMCUB firmware
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 23 Sep 2022 11:39:55 +0200
+
 linux-firmware (20220831.gitd3c92280-0ubuntu1) kinetic; urgency=medium
 
   * Miscellaneous Ubuntu changes
