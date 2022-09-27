@@ -219,19 +219,3 @@ Licence: Redistributable. See LICENSE.ivsc_firmware for details.
 Also available from https://github.com/intel/ivsc-firmware/blob/main/LICENSE
 
 --------------------------------------------------------------------------
-
-Endless EF20 BT
-
-File: brcm/BCM43341B0.hcd
-
-Licence: Redistributable.
-
---------------------------------------------------------------------------
-
-Endless EF20 wifi
-
-File: brcm/brcmfmac43340-sdio.txt
-
-Licence: Redistributable.
-
---------------------------------------------------------------------------
