@@ -1,0 +1,248 @@
+#!/bin/bash
+#
+# Used to get a list of firmware files needed to update a LTS
+# linux-firmware package for a backport kernel. For example to
+# get a list of files for trusty to support the linux-lts-xenial
+# kernel run:
+#
+#  debian/scripts/list-lts-update-files [--dump-filtered] trusty xenial /path/to/xenial/fwinfo
+#
+# This will generate a list of files that satisfy all of these
+# conditions:
+#
+#  1) In the xenial branch of linux-firmware
+#  2) Not in the trusty branch of linux-firmware
+#  3) In the specified fwinfo file
+#
+# This can be used as a starting point for finding upstream
+# commits needed to add the missing firmware files.
+#
+# The fwinfo file can be omitted, in which case the output is a list
+# of firmware files in @newbranch but not in @oldbranch.
+
+#set -ex
+
+dump_filtered=
+if [ $# -ge 1 ]; then
+	case "$1" in
+	--dump-filtered)
+		dump_filtered=1; shift;;
+	*) ;;
+	esac
+fi
+
+if [ $# -lt 2 ]; then
+	echo "Usage $0 [--dump-filtered] <oldbranch> <newbranch> [<fwinfo>]"
+	exit 1
+fi
+
+OLDBRANCH="$1"
+NEWBRANCH="$2"
+FWINFO="$3"
+
+TMPDIR=$(mktemp -d)
+
+function cleanup {
+	rm -r "$TMPDIR"
+}
+trap cleanup EXIT
+
+function normalize_link {
+	# handle relative paths: a/b/c/../../d/e -> a/d/e
+	local s="$1"
+	s="${s#./}"
+	while true; do
+		case "$s" in
+		*/../*)
+			s=$(echo "$s" | sed 's,[^/]\+/../,,')
+			;;
+		*)
+			break ;;
+		esac
+	done
+	echo "$s"
+}
+
+function grep_links {
+	grep ^WHENCE "$1" | sed "s,^,$2:," | xargs git show | grep ^Link:
+}
+
+if ! git ls-tree -r --name-only "$OLDBRANCH" >"$TMPDIR/files.tmp"
+then
+	exit 1
+fi
+cat "$TMPDIR/files.tmp" | sort >"$TMPDIR/oldbranch-files"
+
+if ! git ls-tree -r --name-only "$NEWBRANCH" >"$TMPDIR/files.tmp"
+then
+	exit 1
+fi
+cat "$TMPDIR/files.tmp" | sort >"$TMPDIR/newbranch-files"
+
+# Get files in @newbranch not in @oldbranch
+comm -13 "$TMPDIR/oldbranch-files" "$TMPDIR/newbranch-files" >"$TMPDIR/new-files"
+
+if [ "$3" == "" ]; then
+	cat "$TMPDIR/new-files"
+	exit 0
+fi
+
+if ! cat $FWINFO | head -n1 | grep "firmware:       " > /dev/null
+then
+	echo "Invliad fwinfo file $FWINFO"
+	exit 1
+fi
+
+declare -A oldbranch_files
+while read of; do
+	oldbranch_files["$of"]="old"
+done < "$TMPDIR/oldbranch-files"
+
+while read dc1 ol dc2 of; do
+	if [ -z "${oldbranch_files[$ol]:-}" ]; then
+		oldbranch_files["$ol"]="link"
+	fi
+done < <(grep_links "$TMPDIR/oldbranch-files" "$OLDBRANCH")
+
+declare -A new_files
+while read nf; do
+	if [ -n "${oldbranch_files["$nf"]:-}" ]; then
+		# new file but matches a previous link
+		new_files["$nf"]="duplicated"
+	elif [ -n "$(git log "$OLDBRANCH" -1 -- "$nf")" ]; then
+		new_files["$nf"]="deleted"
+	else
+		new_files["$nf"]="unused"
+	fi
+done < "$TMPDIR/new-files"
+
+declare -A newlink_files
+while read dc1 nl dc2 nf; do
+
+	nf="$(normalize_link "$(dirname "$nl")/$nf")"
+	newlink_files["$nl"]="$nf"
+done < <(grep_links "$TMPDIR/newbranch-files" "$NEWBRANCH")
+
+function check_duplicated {
+	if [ -n "${oldbranch_files["$1"]:-}" ]; then
+		return 0
+	fi
+
+	if [ -n "${newlink_files["$1"]:-}" ]; then
+		if check_duplicated "${newlink_files["$1"]}"; then
+			return 0
+		fi
+	fi
+
+	return 1
+}
+
+function mark_if_unused {
+	if [ -n "${new_files["$1"]:-}" ]; then
+		if [ "${new_files["$1"]}" = "unused" ]; then
+			new_files["$1"]="$2"
+		fi
+
+		return 0
+	fi
+
+	if [ -n "${newlink_files["$1"]:-}" ]; then
+		if mark_if_unused "${newlink_files["$1"]}" "$2"; then
+			return 0
+		fi
+	fi
+
+	return 1
+}
+
+while read fw_pattern; do
+	fws=()
+
+	case "$fw_pattern" in
+	*\**)
+		# pattern with wildcard
+		for nf in "${!new_files[@]}"; do
+			case "$nf" in
+			$fw_pattern)
+				fws+=("$nf");;
+			*)
+				;;
+			esac
+		done
+		;;
+	*)
+		fws+=("$fw_pattern")
+		;;
+	esac
+
+	for fw in "${fws[@]}"; do
+	case "$fw" in
+	iwlwifi-*.ucode)
+		# check if new_files contains one with lower-equal FW API
+		prefix="${fw%-*}"
+		max_fw_api="${fw##*-}"
+		max_fw_api="${max_fw_api%.ucode}"
+		found=
+		for api in $(seq $max_fw_api -1 1); do
+			nf="$prefix-$api.ucode"
+
+			if [ -n "$found" ]; then
+				mark_if_unused "$nf" "iwlwifi fwapi skipped" || true
+				continue
+			fi
+
+			if check_duplicated "$nf"; then
+				mark_if_unused "$nf" "duplicated" || true
+				found=1
+			elif mark_if_unused "$nf" "new"; then
+				found=1
+			fi
+		done
+		;;
+	*)
+		if check_duplicated "$fw"; then
+			mark_if_unused "$fw" "duplicated" || true
+		else
+			mark_if_unused "$fw" "new" || true
+		fi
+		;;
+	esac
+	done
+done < <(cat "$FWINFO" | sed 's/firmware: \+//' | sort)
+
+declare -A ath_hidden_fw
+for nf in "${!new_files[@]}"; do
+	[ "${new_files[$nf]}" = "unused" ] || continue
+
+	case "$nf" in
+	ath*k/*)
+		model=${nf#*/}
+		model=${model%%/*}
+		if [ -z "${ath_hidden_fw[$model]}" ]; then
+			if ! grep -q "/$model/" "$FWINFO"; then
+				ath_hidden_fw["$model"]=1
+			fi
+		fi
+
+		# ath*k build firmware path at runtime, so set as new if not
+		# previously marked duplicated.
+		if [ -n "${ath_hidden_fw[$model]:-}" ]; then
+			if check_duplicated "$nf"; then
+				mark_if_unused "$nf" "duplicated" || true
+			else
+				mark_if_unused "$nf" "new" || true
+			fi
+		fi
+		;;
+	esac
+done
+
+for nf in "${!new_files[@]}"; do
+	[ "${new_files[$nf]}" = "new" ] && echo "$nf"
+done | sort
+
+if [ -n "$dump_filtered" ]; then
+	for nf in "${!new_files[@]}"; do
+		[ "${new_files[$nf]}" = "new" ] || echo "# $nf: ${new_files[$nf]}"
+	done | sort
+fi
