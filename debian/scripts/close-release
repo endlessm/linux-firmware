@@ -53,8 +53,8 @@ if git rev-parse "${new_tag}" >/dev/null 2>&1 ; then
 	exit 1
 fi
 
-# Find the previous release commit
-prev_subject="UBUNTU: Ubuntu-${version}"
+# Find the previous release commit (skip dummy versions ending in .0)
+prev_subject="UBUNTU: Ubuntu-${version%.0}"
 prev_commit=$(git log --format='%H %s' | \
 				  grep -m1 -P "^[0-9a-f]{40} ${prev_subject}$" || true)
 prev_commit=${prev_commit%% *}
