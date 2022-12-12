@@ -1,3 +1,23 @@
+linux-firmware (20221212.git0707b2f2-0ubuntu1) lunar; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 0707b2f2f1e9049a9fac46a796f43e3173161378
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for MT7986
+      - i915: Add DMC v2.10 for MTL
+      - amdgpu: update green sardine DMCUB firmware
+      - i915: Add DMC v2.08 for DG2
+      - linux-firmware: update firmware for MT7915
+      - linux-firmware: update firmware for MT7916
+      - QCA: Add Bluetooth firmware for WCN785x This commit will add required Bluetooth firmware files for QCA WCN785x. The image version is 2.0.0-00515.
+      - amdgpu: update sdma_5.2.7 firmware
+      - rtl_bt: Update RTL8821C BT(USB I/F) FW to 0x75b8_f098
+      - brcm: add/update firmware files for brcmfmac driver
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 12 Dec 2022 08:51:34 +0100
+
 linux-firmware (20221114.git60310c2d-0ubuntu1) lunar; urgency=medium
 
   * Support Intel IPU6 MIPI camera (LP: #1987595)
