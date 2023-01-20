@@ -1,3 +1,83 @@
+linux-firmware (20230120.gitbb2d42dc-0ubuntu1) lunar; urgency=medium
+
+  * Update firmware for hwe/oem kernel migrations (LP: #1999406)
+    - [Packaging] scripts: add back list-lts-update-files
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit bb2d42dceff755623d6d59a32a743ccf87cbb6b9
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - sr150 : Add NXP SR150 UWB firmware
+      - amdgpu: updated aldebaran firmware for amd-5.4
+      - amdgpu: updated navi12 firmware for amd-5.4
+      - amdgpu: updated renoir firmware for amd-5.4
+      - amdgpu: updated navi14 firmware for amd-5.4
+      - amdgpu: updated arcture firmware for amd-5.4
+      - amdgpu: updated sienna cichlid firmware for amd-5.4
+      - amdgpu: updated green sardine firmware for amd-5.4
+      - amdgpu: updated navy flounder firmware for amd-5.4
+      - amdgpu: updated picasso firmware for amd-5.4
+      - amdgpu: updated vangogh firmware for amd-5.4
+      - amdgpu: updated dimgrey cavefish firmware for amd-5.4
+      - amdgpu: updated beige goby firmware for amd-5.4
+      - amdgpu: updated vega10 firmware for amd-5.4
+      - amdgpu: add DCN 3.2.0 firmware for amd-5.4
+      - amdgpu: add GC 11.0.0 firmware for amd-5.4
+      - amdgpu: add PSP 13.0.0 firmware for amd-5.4
+      - amdgpu: Add SDMA 6.0.0 firmware for amd-5.4
+      - amdgpu: add SMU 13.0.0 firmware for amd-5.4
+      - amdgpu: add VCN 4.0.0 firmware for amd-5.4
+      - amdgpu: updated PSP 13.0.5 firmware for amd-5.4
+      - amdgpu: updated vega20 firmware for amd-5.4
+      - amdgpu: updated GC 10.3.7 RLC firmware for amd-5.4
+      - amdgpu: updated PSP 13.0.8 firmware for amd-5.4
+      - amdgpu: updated raven firmware for amd-5.4
+      - amdgpu: updated raven2 firmware for amd-5.4
+      - amdgpu: updated yellow carp firmware for amd-5.4
+      - amdgpu: updated navi10 firmware for amd-5.4
+      - rtw89: 8852c: update fw to v0.27.56.8
+      - rtw89: 8852c: update fw to v0.27.56.9
+      - qca: Update firmware files for BT chip WCN6750
+      - cxgb4: Update firmware to revision 1.27.1.0
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7922)
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - amdgpu: update copyright date for LICENSE.amdgpu
+      - amdgpu: Update renoir PSP firmware
+      - amdgpu: update renoir DMCUB firmware
+      - iwlwifi: update 9000-family firmwares to core75-47
+      - iwlwifi: add new FWs from core75-47 release
+      - iwlwifi: update cc/Qu/QuZ firmwares for core76-35 release
+      - iwlwifi: add new FWs from core76-35 release
+      - amdgpu: update GC11.0.0 firmware from amd-5.4
+      - amdgpu: update PSP13.0.0 firmware from amd-5.4
+      - amdgpu: update SDMA6.0.0 firmware from amd-5.4
+      - amdgpu: update SMU13.0.0 firmware from amd-5.4
+      - amdgpu: update VCN4.0.0 firmware from amd-5.4
+      - amdgpu: add DCN3.2.1 firmware from amd-5.4
+      - amdgpu: add GC11.0.2 firmware from amd-5.4
+      - amdgpu: add PSP13.0.7 firmware from amd-5.4
+      - amdgpu: add SDMA6.0.2 firmware from amd-5.4
+      - amdgpu: add SMU13.0.7 firmware from amd-5.4
+      - amdgpu: add VCN4.0.4 firmware from amd-5.4
+      -  QCA: Add Bluetooth firmware for QCA2066
+      - rtw89: 8852c: update fw to v0.27.56.10
+      - qcom: add firmware files for Adreno A200
+      - brcm: add configuration files for CyberTan WC121
+      - linux-firmware: Update firmware file for Intel Bluetooth 9260
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - amdgpu: update vangogh firmware
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for MT7921 WiFi device
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 20 Jan 2023 17:21:10 +0100
+
 linux-firmware (20221212.git0707b2f2-0ubuntu1) lunar; urgency=medium
 
   * Miscellaneous Ubuntu changes
