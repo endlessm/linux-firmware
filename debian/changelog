@@ -1,3 +1,29 @@
+linux-firmware (20230213.gitbf4115c1-0ubuntu1) lunar; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit bf4115c1aa2bee686ec675595271da50611684b5
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - iwlwifi: remove old unsupported older than 4.14 LTS
+      - iwlwifi: remove 4.19 and 5.4 intermediate old firmwares
+      - iwlwifi: remove 5.4 and 5.10 intermediate old firmwares
+      - iwlwifi: remove 5.10 and 5.15 intermediate old firmwares
+      - iwlwifi: remove old intermediate 5.15+ firmwares
+      - amdgpu: Add DCN 3.1.4 firmware
+      - amdgpu: Add GC 11.0.1 firmware
+      - amdgpu: Add SDMA 6.0.1 fimware
+      - amdgpu: Add PSP 13.0.4 firmware
+      - amdgpu: Add VCN 4.0.2 firmware
+      - i915: Add DMC v2.18 for ADLP
+      - linux-firmware: Add missing tuning files for HP Laptops using Cirrus Amps
+      - linux-firmware: Add firmware for Cirrus CS35L41 on UM3402 ASUS Laptop
+      - i915: Add DMC v2.11 for MTL
+      - rtw88: 8822c: Update normal firmware to v9.9.14
+      - brcm: restore previous firmware file for BCM4329 device
+      - brcm: revert firmware files for Cypress devices
+      - linux-firmware: Update AMD cpu microcode
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 13 Feb 2023 13:10:13 +0100
+
 linux-firmware (20230120.gitbb2d42dc-0ubuntu1) lunar; urgency=medium
 
   * Update firmware for hwe/oem kernel migrations (LP: #1999406)
