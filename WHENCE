@@ -4072,7 +4072,7 @@ Driver: snd_soc_catpt -- Intel AudioDSP driver for HSW/BDW platforms
 
 File: intel/catpt/bdw/dsp_basefw.bin
 Version: 44b81c4d5397a63108356f58f036953d9b288c4e
-Link: intel/IntcSST2.bin -> intel/catpt/bdw/dsp_basefw.bin
+Link: intel/IntcSST2.bin -> catpt/bdw/dsp_basefw.bin
 
 License: Redistributable. See LICENCE.IntcSST2 for details
 
@@ -4083,15 +4083,15 @@ Driver: snd_soc_avs -- Intel AudioDSP driver for cAVS platforms
 File: intel/avs/skl/dsp_basefw.bin
 File: intel/avs/skl/dsp_mod_7CAD0808-AB10-CD23-EF45-12AB34CD56EF.bin
 Version: 9.21.00.4899
-Link: intel/dsp_fw_release.bin -> intel/avs/skl/dsp_basefw.bin
-Link: intel/dsp_fw_kbl.bin -> intel/avs/skl/dsp_basefw.bin
+Link: intel/dsp_fw_release.bin -> avs/skl/dsp_basefw.bin
+Link: intel/dsp_fw_kbl.bin -> avs/skl/dsp_basefw.bin
 File: intel/avs/apl/dsp_basefw.bin
 Version: 9.22.01.4908
-Link: intel/dsp_fw_bxtn.bin -> intel/avs/apl/dsp_basefw.bin
-Link: intel/dsp_fw_glk.bin -> intel/avs/apl/dsp_basefw.bin
+Link: intel/dsp_fw_bxtn.bin -> avs/apl/dsp_basefw.bin
+Link: intel/dsp_fw_glk.bin -> avs/apl/dsp_basefw.bin
 File: intel/avs/cnl/dsp_basefw.bin
 Version: 10.23.00.8551
-Link: intel/dsp_fw_cnl.bin -> intel/avs/cnl/dsp_basefw.bin
+Link: intel/dsp_fw_cnl.bin -> avs/cnl/dsp_basefw.bin
 
 License: Redistributable. See LICENCE.adsp_sst for details
 
