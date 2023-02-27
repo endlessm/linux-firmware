@@ -1,3 +1,24 @@
+linux-firmware (20230227.git83f1d778-0ubuntu1) lunar; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 83f1d7781300b52785c062a8285da59042c0d1ff
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - intel: catpt: Add AudioDSP base firmware for BDW platforms
+      - amdgpu: Update GC 11.0.1 firmware
+      - cnm: update chips&media wave521c firmware.
+      - ath10k: WCN3990 hw1.0: update board-2.bin
+      - ath10k: QCA6174 hw3.0: update firmware-sdio-6.bin to version WLAN.RMH.4.4.1-00174
+      - ath11k: IPQ5018 hw1.0: add board-2.bin
+      - ath11k: IPQ5018 hw1.0: add to WLAN.HK.2.6.0.1-00861-QCAHKSWPL_SILICONZ-1
+      - ath11k: WCN6750 hw1.0: update board-2.bin
+      - ath11k: WCN6855 hw2.0: update board-2.bin
+      - ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.23
+      - intel: avs: Add AudioDSP base firmware for SKL-based platforms
+      - intel: avs: Add AudioDSP base firmware for APL-based platforms
+      - intel: avs: Add AudioDSP base firmware for CNL-based platforms
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 27 Feb 2023 13:41:32 +0100
+
 linux-firmware (20230213.gitbf4115c1-0ubuntu1) lunar; urgency=medium
 
   * Miscellaneous Ubuntu changes
