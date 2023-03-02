@@ -30,6 +30,12 @@ fi
 
 trap out EXIT INT TERM HUP
 
+# Sanity check
+destdir=debian/build
+DESTDIR=${destdir} make install
+debian/scripts/check-symlinks "${destdir}"
+rm -rf "${destdir}"
+
 debian/scripts/create-quilt-series
 debian/scripts/apply-quilt-series
 
