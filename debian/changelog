@@ -1,3 +1,17 @@
+linux-firmware (20230302.git60971a64-0ubuntu1) lunar; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - SAUCE: intel: Fix broken links
+    - Rebase to upstream commit 60971a6485ee604c47cc905ff77c583ae001f9df
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - liquidio: remove lio_23xx_vsw.bin
+      - rtw89: 8852b: update fw to v0.29.26.0
+      - rtw89: 8852b: update fw to v0.29.29.0
+      - rtl_bt: Add firmware and config files for RTL8821CS
+      - rtl_bt: Update RTL8852C BT USB firmware to 0xD7B8_FABF
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Thu, 02 Mar 2023 14:02:24 +0100
+
 linux-firmware (20230227.git83f1d778-0ubuntu1) lunar; urgency=medium
 
   * Miscellaneous Ubuntu changes
