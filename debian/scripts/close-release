@@ -6,20 +6,29 @@
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-h]
+Usage: $(basename "${0}") [-h] [-s SUFFIX]
 
 Close a release, i.e., create a release commit.
 
 Optional arguments:
-  -h, --help  Show this help text and exit.
+  -h, --help           Show this help text and exit.
+  -s, --suffix SUFFIX  Generate the new package version by appending SUFFIX to
+                       the current version rather than incrementing the upload
+                       number by one.
 EOF
 }
+
+suffix=
 
 while [ ${#} -gt 0 ] ; do
 	case "${1}" in
 		-h|--help)
 			usage
 			exit
+			;;
+		-s|--suffix)
+			shift
+			suffix=${1}
 			;;
 		*)
 			echo "Invalid argument: ${1}" >&2
@@ -36,16 +45,22 @@ done
 release=$(dpkg-parsechangelog -SDistribution)
 version=$(dpkg-parsechangelog -SVersion)
 
-# New release version and and tag
+# New release version and tag
 if [ "${version%-*}" = "${VERSION}" ] ; then
-	# Bump the upload number
-	upload=$(echo "${version}" | grep -o '[0-9]*$')
-	new_version=${version%${upload}}$((upload + 1))
+	if [ -n "${suffix}" ] ; then
+		# Append the provided suffix
+		new_version=${version}${suffix}
+	else
+		# Bump the upload number
+		upload=$(echo "${version}" | grep -o '[0-9]*$')
+		new_version=${version%"${upload}"}$((upload + 1))
+	fi
 else
 	# New upstream version
 	new_version="${VERSION}-0ubuntu1"
 fi
 new_tag="Ubuntu-${new_version}"
+new_tag=${new_tag//~/_}
 
 # Check if the tag exists already
 if git rev-parse "${new_tag}" >/dev/null 2>&1 ; then
