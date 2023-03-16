@@ -1,3 +1,26 @@
+linux-firmware (20230316.gitc761dbe8-0ubuntu1) lunar; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit c761dbe804f903cc2df81f251d367cca285eca06
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - brcm: Add nvram for the Advantech MICA-071 tablet
+      - brcm: Fix Xiaomi Inc Mipad2 nvram/.txt file macaddr
+      - brcm: Add nvram for the Lenovo Yoga Book X90F / X90L convertible
+      - rtlwifi: Add firmware v16.0 for RTL8710BU aka RTL8188GU
+      - iwlwifi: update core69 and core72 firmwares for Ty device
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - Fix symlinks for Intel firmware
+      - linux-firmware: add fw for qat_4xxx
+      - WHENCE: remove trailing white space
+      - WHENCE: remove duplicate File entries
+      - rtl_bt: Update RTL8822C BT UART firmware to 0x05C6_D2E3
+      - rtl_bt: Update RTL8822C BT USB firmware to 0x0CC6_D2E3
+      - qat: update licence text
+      - iwlwifi: update core69 and core72 firmwares for So device
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Thu, 16 Mar 2023 16:19:57 +0100
+
 linux-firmware (20230302.git60971a64-0ubuntu1) lunar; urgency=medium
 
   * Miscellaneous Ubuntu changes
