@@ -15,6 +15,38 @@ function out()
     exit "${rc}"
 }
 
+function usage()
+{
+	cat <<EOF
+Usage: $(basename "${0}") [-h] [-s] [option...]
+
+Build a Debian package.
+
+Optional arguments:
+  -h, --help        Show this help text and exit.
+  -s, --skip-check  Skip branch name check.
+  option...         Additional options for dpkg-buildpackage.
+EOF
+}
+
+skip_check=0
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		-s|--skip-check)
+			skip_check=1
+			;;
+		*)
+			break
+			;;
+	esac
+	shift
+done
+
 if [ -n "$(git status --porcelain)" ] ; then
     echo "Repo is unclean" >&2
     exit 1
@@ -25,7 +57,9 @@ release=$(dpkg-parsechangelog -SDistribution)
 branch=$(git rev-parse --abbrev-ref HEAD)
 if [ "${release}" != "${branch}" ] ; then
 	echo "Release and branch name mismatch (${release} != ${branch})" >&2
-	exit 1
+	if [ ${skip_check} -eq 0 ] ; then
+		exit 1
+	fi
 fi
 
 trap out EXIT INT TERM HUP
