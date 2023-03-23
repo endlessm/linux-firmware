@@ -1,3 +1,28 @@
+linux-firmware (20230323.gitbcdcfbcf-0ubuntu1) lunar; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit bcdcfbcf0a8f24a914b8c163906e6ce93d7f8897
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - mediatek: Update mt8192/mt8195 SCP firmware to support MM21 and MT21
+      - i915: Update ADLP DMC to v2.19
+      - i915: Update MTL DMC to v2.12
+      - rtw89: 8852b: rollback firmware to v0.27.32.1
+      - rtw89: 8852b: add format-1 fw v0.29.26.0
+      - rtw89: 8852b: update format-1 fw to v0.29.29.0
+      - linux-firmware: add firmware files for NXP BT chipsets
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX203
+      - linux-firmware: Update firmware file for Intel Bluetooth AX203
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth 9462
+      - linux-firmware: Update firmware file for Intel Bluetooth AX101
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Thu, 23 Mar 2023 08:42:26 +0100
+
 linux-firmware (20230316.gitc761dbe8-0ubuntu1) lunar; urgency=medium
 
   * Miscellaneous Ubuntu changes
