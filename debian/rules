@@ -10,7 +10,7 @@ clean:
 	dh_clean
 
 	# Run sanity checks if in a git repo
-	if [ -d .git ] ; then \
+	if [ -d .git ] && [ -x /usr/bin/python3 ] ; then \
 		$(MAKE) check ; \
 	fi
 
