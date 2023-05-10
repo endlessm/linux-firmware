@@ -18,21 +18,26 @@ function out()
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-h] [-s] [option...]
+Usage: $(basename "${0}") [-c] [-h] [-s] [option...]
 
 Build a Debian package.
 
 Optional arguments:
+  -c, --clean       Clean the git repo before the build.
   -h, --help        Show this help text and exit.
   -s, --skip-check  Skip branch name check.
   option...         Additional options for dpkg-buildpackage.
 EOF
 }
 
+clean=0
 skip_check=0
 
 while [ ${#} -gt 0 ] ; do
 	case "${1}" in
+		-c|--clean)
+			clean=1
+			;;
 		-h|--help)
 			usage
 			exit
@@ -46,6 +51,12 @@ while [ ${#} -gt 0 ] ; do
 	esac
 	shift
 done
+
+
+if [ ${clean} -eq 1 ] && [ -n "$(git status --porcelain)" ] ; then
+	git reset --hard HEAD
+	git clean -dxf
+fi
 
 if [ -n "$(git status --porcelain)" ] ; then
     echo "Repo is unclean" >&2
