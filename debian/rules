@@ -26,6 +26,9 @@ install-linux-%:
 	# Install firmware files
 	debian/scripts/install-firmware $(PACKAGE) $(ARCH)
 
+	# Replace duplicate firmware files with symlinks
+	debian/scripts/symlink-duplicates $(PACKAGE)
+
 	dh_installchangelogs
 	dh_installdocs
 	dh_compress

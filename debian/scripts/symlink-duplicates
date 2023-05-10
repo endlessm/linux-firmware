@@ -1,0 +1,34 @@
+#!/bin/bash -eu
+#
+# Replace duplicate files with symbolic links
+#
+
+if [ $# -ne 1 ] ; then
+	echo "Usage: symlink-duplicates <package>" >&2
+	exit 2
+fi
+
+package=${1}
+
+echo "Symlink duplicate files for ${package} ..."
+
+firmware_dir=debian/${package}/lib/firmware
+
+prev_md5=
+while IFS= read -r line ; do
+	md5=${line::32}
+	fw=${line:34}
+	if [ "${md5}" != "${prev_md5}" ] ; then
+		tgt=${fw}
+	else
+		lnk=$(realpath --relative-to="${fw%/*}" "${tgt}")
+		echo "  ${fw} -> ${lnk}"
+		rm -f "${fw}"
+		ln -s "${lnk}" "${fw}"
+	fi
+	prev_md5=${md5}
+done < <(find "${firmware_dir}" ! -empty -type f -exec md5sum -b {} + | \
+         sort | uniq -w32 -dD)
+
+# Sanity check
+debian/scripts/check-symlinks "${firmware_dir}"
