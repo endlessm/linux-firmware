@@ -65,7 +65,7 @@ else
 	fi
 fi
 new_tag="Ubuntu-${new_version}"
-new_tag=${new_tag//~/_}
+new_tag=${new_tag//\~/_}
 
 # Check if the tag exists already
 if git rev-parse "${new_tag}" >/dev/null 2>&1 ; then
@@ -97,5 +97,5 @@ fi
 mv debian/changelog.new debian/changelog
 
 # Commit the new release
-git commit -s -m "UBUNTU: ${new_tag}" -- debian/changelog
+git commit -s -m "UBUNTU: Ubuntu-${new_version}" -- debian/changelog
 debian/scripts/tag-release
