@@ -58,6 +58,11 @@ if [ "${version%-*}" = "${VERSION}" ] ; then
 else
 	# New upstream version
 	new_version="${VERSION}-0ubuntu1"
+
+	if [ -n "${suffix}" ] ; then
+		# Append the provided suffix
+		new_version=${version}${suffix}
+	fi
 fi
 new_tag="Ubuntu-${new_version}"
 new_tag=${new_tag//~/_}
