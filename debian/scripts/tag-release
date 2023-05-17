@@ -41,11 +41,12 @@ if [ -z "${version}" ] ; then
 	exit 1
 fi
 
-tag=Ubuntu-${version}
+tag="Ubuntu-${version}"
+tag=${tag//\~/_}
 
 if [ ${force} -eq 0 ] && git rev-parse "${tag}" >/dev/null 2>&1 ; then
 	echo "Tag exists already: ${tag}" >&2
 	exit 1
 fi
 
-git tag -f -s -m  "UBUNTU: ${tag}" "${tag}"
+git tag -f -s -m  "UBUNTU: Ubuntu-${version}" "${tag}"
