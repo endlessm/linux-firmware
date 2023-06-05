@@ -14,14 +14,15 @@ function move_item()
 	mv "${src}" "${dst}"
 }
 
-if [ $# -ne 1 ] ; then
-	echo "Usage: install-firmware <package>" >&2
+if [ $# -lt 1 ] || [ $# -gt 2 ] ; then
+	echo "Usage: install-firmware <package> [<arch>]" >&2
 	exit 2
 fi
 
 package=${1}
+arch=${2:-none}
 
-echo "Install firmware files for ${package} ..."
+echo "Install firmware files for ${package} (arch=${arch}) ..."
 
 staging_dir=debian/build/${package}
 
@@ -44,7 +45,11 @@ debian/scripts/check-symlinks "${staging_dir}"
 # ----------------------------------------------------------------------------
 # Install included files
 
-for f in debian/config/"${package}"/include.* ; do
+for f in debian/config/"${package}"/include.* \
+         debian/config/"${package}"/"${arch}"/include.* ; do
+	if ! [ -e "${f}" ] ; then
+		continue
+	fi
 	echo "  - Include files from ${f}"
 	while IFS= read -r items ; do
 		while IFS= read -r item ; do
@@ -78,7 +83,11 @@ debian/scripts/check-symlinks "${staging_dir}"
 # ----------------------------------------------------------------------------
 # Remove excluded files
 
-for f in debian/config/"${package}"/exclude.* ; do
+for f in debian/config/"${package}"/exclude.* \
+         debian/config/"${package}"/"${arch}"/exclude.* ; do
+	if ! [ -e "${f}" ] ; then
+		continue
+	fi
 	echo "  - Exclude files from ${f}"
 	while IFS= read -r items ; do
 		while IFS= read -r item ; do

@@ -3,6 +3,8 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+arch ?= $(shell dpkg-architecture -q DEB_HOST_ARCH)
+
 clean:
 	dh_testdir
 	dh_clean
@@ -22,7 +24,7 @@ install-linux-%:
 	dh_prep
 
 	# Install firmware files
-	debian/scripts/install-firmware $(PACKAGE)
+	debian/scripts/install-firmware $(PACKAGE) $(ARCH)
 
 	dh_installchangelogs
 	dh_installdocs
@@ -33,6 +35,7 @@ install-linux-%:
 	dh_md5sums
 	dh_builddeb
 
+install-arch: ARCH = $(arch)
 install-arch: install-linux-firmware
 
 install-indep:
