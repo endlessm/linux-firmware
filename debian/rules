@@ -3,20 +3,11 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-dest_dir = $(CURDIR)/debian/linux-firmware
-firmware_dir = $(dest_dir)/lib/firmware
-license_dir = $(dest_dir)/usr/share/doc/linux-firmware/licenses
-
 %:
 	dh $@
 
 override_dh_install:
-	dh_install
-	# Everything is installed, so remove unwanted firmware and licences
-	# and check for any dangling symlinks
-	debian/scripts/remove-firmware $(firmware_dir)
-	debian/scripts/remove-firmware $(license_dir)
-	debian/scripts/check-symlinks $(dest_dir)
+	debian/scripts/install-firmware linux-firmware
 
 override_dh_clean:
 	dh_clean
@@ -28,5 +19,7 @@ override_dh_clean:
 override_dh_auto_build:
 
 override_dh_auto_test:
+
+override_dh_auto_install:
 
 override_dh_strip_nondeterminism:

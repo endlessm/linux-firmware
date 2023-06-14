@@ -1,0 +1,123 @@
+#!/bin/bash -eu
+#
+# Install firmware and license files into a package directory
+#
+
+function move_item()
+{
+	local item=${1} src_dir=${2} dst_dir=${3}
+	local src dst
+
+	src=${src_dir}/${item}
+	dst=${dst_dir}/${item}
+	mkdir -p "${dst%/*}"
+	mv "${src}" "${dst}"
+}
+
+if [ $# -ne 1 ] ; then
+	echo "Usage: install-firmware <package>" >&2
+	exit 2
+fi
+
+package=${1}
+
+echo "Install firmware files for ${package} ..."
+
+staging_dir=debian/build/${package}
+
+package_dir=debian/${package}
+firmware_dir=${package_dir}/lib/firmware
+doc_dir=${package_dir}/usr/share/doc/${package}
+licenses_dir=${doc_dir}/licenses
+
+rm -rf "${staging_dir}" "${package_dir}"
+install -d "${staging_dir}" "${firmware_dir}" "${licenses_dir}"
+
+# ----------------------------------------------------------------------------
+# Copy firmware files and links to a staging directory
+
+echo "  - Copy firmware files to ${staging_dir}"
+
+./copy-firmware.sh "${staging_dir}"
+debian/scripts/check-symlinks "${staging_dir}"
+
+# ----------------------------------------------------------------------------
+# Install included files
+
+for f in debian/config/"${package}"/include.* ; do
+	echo "  - Include files from ${f}"
+	while IFS= read -r items ; do
+		while IFS= read -r item ; do
+			move_item "${item}" "${staging_dir}" "${firmware_dir}"
+		done < <(
+			# Don't quote 'items' to allow for globs
+			# shellcheck disable=SC2086
+			cd "${staging_dir}" && find ${items} \( -type f -o -type l \)
+		)
+	done < <(sed -E '/^#|^$/d' "${f}")
+done
+
+# ----------------------------------------------------------------------------
+# Resolve dangling symlinks
+
+# Install missing link targets
+while IFS= read -r item ; do
+	item=$(realpath --relative-to="${firmware_dir}" "${item}")
+	move_item "${item}" "${staging_dir}" "${firmware_dir}"
+done < <(find "${firmware_dir}" -xtype l)
+
+# Install missing links
+while IFS= read -r item ; do
+	move_item "${item}" "${staging_dir}" "${firmware_dir}"
+done < <(cd "${staging_dir}" && find . -xtype l)
+
+# Sanity checks
+debian/scripts/check-symlinks "${firmware_dir}"
+debian/scripts/check-symlinks "${staging_dir}"
+
+# ----------------------------------------------------------------------------
+# Remove excluded files
+
+for f in debian/config/"${package}"/exclude.* ; do
+	echo "  - Exclude files from ${f}"
+	while IFS= read -r items ; do
+		while IFS= read -r item ; do
+			# Remove the item and any link target it might point at
+			rm -f "$(realpath "${item}")" "${item}"
+		done < <(
+			# Don't quote 'items' to allow for globs
+			# shellcheck disable=SC2086
+			find "${firmware_dir}"/${items} \( -type f -o -type l \)
+		)
+	done < <(sed -E '/^#|^$/d' "${f}")
+done
+
+# Remove any dangling symlinks and empty directories
+find "${firmware_dir}" -xtype l -delete
+find "${firmware_dir}" -type d -empty -delete
+
+# ----------------------------------------------------------------------------
+# Install relevant licenses
+
+echo "  - Install licenses"
+
+install -m 0644 GPL-* "${licenses_dir}"
+
+while IFS= read -r item ; do
+	item=${item#./}
+	while IFS= read -r license ; do
+		if ! [ -e "${licenses_dir}/${license}" ] ; then
+			install -m 0644 "${license}" "${licenses_dir}"
+		fi
+	done < <(grep -A 1000 -h "^File:[ '\"]*${item}[ '\"]*$" WHENCE* | \
+	         grep -m1 "^Licen[cs]e:" | tr " " "\n" | grep "LICEN[CS]E" || \
+	         true)
+done < <(cd "${firmware_dir}" && find . -type f)
+
+# ----------------------------------------------------------------------------
+# Install WHENCE files
+
+echo "  - Install WHENCE files"
+
+install -m 0644 WHENCE "${doc_dir}"/README
+install -m 0644 WHENCE.ubuntu "${doc_dir}"/README.ubuntu
