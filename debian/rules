@@ -3,23 +3,49 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-%:
-	dh $@
-
-override_dh_install:
-	debian/scripts/install-firmware linux-firmware
-
-override_dh_clean:
+clean:
+	dh_testdir
 	dh_clean
+
 	# Run sanity checks if in a git repo
 	if [ -d .git ] ; then \
 		$(MAKE) check ; \
 	fi
 
-override_dh_auto_build:
+export DH_OPTIONS
 
-override_dh_auto_test:
+install-linux-%: PACKAGE = linux-$*
+install-linux-%: DH_OPTIONS = -p$(PACKAGE)
+install-linux-%:
+	dh_testdir
+	dh_testroot
+	dh_prep
 
-override_dh_auto_install:
+	# Install firmware files
+	debian/scripts/install-firmware $(PACKAGE)
 
-override_dh_strip_nondeterminism:
+	dh_installchangelogs
+	dh_installdocs
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+install-arch:
+
+install-indep: install-linux-firmware
+
+install: install-arch install-indep
+
+binary-arch: install-arch
+
+binary-indep: install-indep
+
+binary: binary-arch binary-indep
+
+# There's nothing to build
+build-indep:
+build-arch:
+build:
