@@ -140,16 +140,6 @@ License: Redistributable. See LICENCE.asihpi for details
 
 --------------------------------------------------------------------------
 
-Driver rtl8192e - Realtek 8192 PCI wireless driver
-
-Files: RTL8192E/*
-
-Info: License provided by Realtek in their driver source download.
-
-Licence: Redistributable. See LICENCE.realtek-firmware.txt for details.
-
---------------------------------------------------------------------------
-
 Driver snd-soc-skl - ASoC Audio driver for SKL
 
 File: 1a98-INTEL-EDK2-2-tplg.bin
