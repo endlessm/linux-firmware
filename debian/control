@@ -7,8 +7,7 @@ Build-Depends: debhelper-compat (= 13)
 Vcs-Git: git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-firmware
 
 Package: linux-firmware
-Architecture: all
-Multi-Arch: foreign
+Architecture: any
 Priority: optional
 Depends: ${misc:Depends}
 Recommends: firmware-sof-signed

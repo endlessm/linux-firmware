@@ -33,9 +33,9 @@ install-linux-%:
 	dh_md5sums
 	dh_builddeb
 
-install-arch:
+install-arch: install-linux-firmware
 
-install-indep: install-linux-firmware
+install-indep:
 
 install: install-arch install-indep
 
