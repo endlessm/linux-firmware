@@ -1,3 +1,157 @@
+linux-firmware (20230629.gitee91452d-0ubuntu1) mantic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - SAUCE: Remove RTL8192E from WHENCE.ubuntu
+    - [Packaging] build-package: Add --clean commandline option
+    - [Packaging] close-release: Always append version suffix
+    - [Packaging] close-release: Fix tag name and commit subject
+    - [Packaging] tag-release: Handle '~' in package versions
+    - [Packaging] Rework the packaging process
+    - [Packaging] config: Clean up exclude.obsolete
+    - [Packaging] rules: Use explicit top-level rules
+    - Rebase to upstream commit ee91452dac5abfc4c5b9827cf55e701d8c0ca678
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - rtw88: 8822c: Update normal firmware to v9.9.15
+      - amdgpu: Add GC 11.0.4 firmware
+      - amdgpu: Update DCN 3.1.4 firmware
+      - amdgpu: Update GC 11.0.1 firmware
+      - amdgpu: Update PSP 13.0.4 firmware
+      - amdgpu: Add PSP 13.0.11 firmware
+      - amdgpu: Update SDMA 6.0.1 firmware
+      - iwlwifi: update 9000-family firmwares to core78-32
+      - iwlwifi: add new FWs from core78-32 release
+      - linux-firmware: Amphion: Update vpu firmware
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7922)
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - nvidia: update Tu10x and Tu11x signed firmware to support newer Turing HW
+      - ath10k: QCA4019 hw1.0: update board-2.bin
+      - ath10k: QCA6174 hw3.0: update board-2.bin
+      - ath10k: QCA9888 hw2.0: update board-2.bin
+      - ath10k: QCA9984 hw1.0: update board-2.bin
+      - ath10k: QCA99X0 hw2.0: update board-2.bin
+      - ath11k: IPQ6018 hw1.0: update board-2.bin
+      - ath11k: IPQ6018 hw1.0: update to WLAN.HK.2.7.0.1-01744-QCAHKSWPL_SILICONZ-1
+      - ath11k: IPQ8074 hw2.0: update board-2.bin
+      - ath11k: IPQ8074 hw2.0: update to WLAN.HK.2.7.0.1-01744-QCAHKSWPL_SILICONZ-1
+      - ath11k: QCN9074 hw1.0: update to WLAN.HK.2.7.0.1-01744-QCAHKSWPL_SILICONZ-1
+      - ath11k: WCN6750 hw1.0: update to WLAN.MSL.1.0.1-01160-QCAMSLSWPLZ-1
+      - ath11k: WCN6855 hw2.0: update board-2.bin
+      - rtw89: 8852c: update fw to v0.27.56.13
+      - rtw89: 8852b: update format-1 fw to v0.29.29.1
+      - linux-firmware: update firmware for MT7916
+      - linux-firmware: Add firmware for Cirrus CS35L41 on Lenovo Laptops
+      - linux-firmware: update qat firmware
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - linux-firmware: add firmware for MT7981
+      - linux-firmware: Update AMD cpu microcode
+      - rtl_bt: Add firmware and config files for RTL8851B
+      - mt76xx: Move the old Mediatek WiFi firmware to mediatek
+      - qca: Update firmware files for BT chip WCN6750
+      - linux-firmware: update firmware for MT7981
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX203
+      - linux-firmware: Update firmware file for Intel Bluetooth AX203
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - rtl_nic: update firmware of USB devices
+      - Group all Conexant V4L devices together
+      - rtl_bt: Update RTL8761B BT UART firmware to 0x9DC6_D922
+      - rtl_bt: Update RTL8761B BT USB firmware to 0xDFC6_D922
+      - rtl_bt: Update RTL8852B BT USB firmware to 0xDBC6_B20F
+      - amdgpu: update DCN 3.1.6 DMCUB firmware
+      - i915: Add GuC v70.6.6 for MTL
+      - WHENCE: comment out duplicate MediaTek firmware
+      - check_whence: error on duplicate file entries
+      - check_whence: error on directory listed as File
+      - cxgb4: Update firmware to revision 1.27.3.0
+      - cirrus: Add firmware and tuning files for Lenovo ThinkPad P1 Gen 6
+      - cnm: update chips&media wave521c firmware.
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - WHENCE: Cleanup Realtek BT firmware provenance
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7922)
+      - cirrus: Add firmware and tuning files for HP G10 series laptops
+      - rtlwifi: Update firmware for RTL8188EU to v28.0
+      - rtlwifi: Add firmware v6.0 for RTL8192FU
+      - ice: update ice DDP comms package to 1.3.40.0
+      - amdgpu: DMCUB updates for various AMDGPU asics
+      - amdgpu: update aldebaran firmware for amd.5.5 release
+      - amdgpu: update sienna cichlid firmware for amd.5.5 release
+      - amdgpu: update navy flounder firmware for amd.5.5 release
+      - amdgpu: update GC 10.3.6 firmware for amd.5.5 release
+      - amdgpu: update psp 13.0.5 firmware for amd.5.5 release
+      - amdgpu: update vcn 3.1.2 firmware for amd.5.5 release
+      - amdgpu: update arcturus firmware for amd.5.5 release
+      - amdgpu: update dimgrey cavefish firmware for amd.5.5 release
+      - amdgpu: update beige goby firmware for amd.5.5 release
+      - amdgpu: update green sardine firmware for amd.5.5 release
+      - amdgpu: update GC 11.0.0 firmware for amd.5.5 release
+      - amdgpu: update PSP 13.0.0 firmware for amd.5.5 release
+      - amdgpu: update SMU 13.0.0 firmware for amd.5.5 release
+      - amdgpu: update VCN 4.0.0 firmware for amd.5.5 release
+      - amdgpu: update renoir firmware for amd.5.5 release
+      - amdgpu: update GC 11.0.2 firmware for amd.5.5 release
+      - amdgpu: update PSP 13.0.7 firmware for amd.5.5 release
+      - amdgpu: update SMU 13.0.7 firmware for amd.5.5 release
+      - amdgpu: update VCN 4.0.4 firmware for amd.5.5 release
+      - amdgpu: update vangogh firmware for amd.5.5 release
+      - amdgpu: update GC 10.3.7 firmware for amd.5.5 release
+      - amdgpu: update 13.0.8 firmware for amd.5.5 release
+      - amdgpu: update GC 11.0.1 firmware for amd.5.5 release
+      - amdgpu: update PSP 13.0.4 firmware for amd.5.5 release
+      - amdgpu: update SDMA 6.0.1 firmware for amd.5.5 release
+      - amdgpu: update GC 11.0.4 firmware for amd.5.5 release
+      - amdgpu: update PSP 13.0.11 firmware for amd.5.5 release
+      - amdgpu: update vega10 firmware for amd.5.5 release
+      - amdgpu: update navi10 firmware for amd.5.5 release
+      - amdgpu: update vega12 firmware for amd.5.5 release
+      - amdgpu: update vega20 firmware for amd.5.5 release
+      - amdgpu: update navi12 firmware for amd.5.5 release
+      - amdgpu: update navi14 firmware for amd.5.5 release
+      - amdgpu: update yellow carp firmware for amd.5.5 release
+      - rtw89: 8851b: add firmware v0.29.41.0
+      - amdgpu: Update GC 11.0.1 and 11.0.4
+      - brcm: Add symlinks from Pine64 devices to AW-CM256SM.txt
+      - cirrus: Add firmware for new Asus ROG Laptops
+      - qcom: apq8016: add Dragonboard 410c WiFi and modem firmware
+      - mediatek: Update mt8195 SCP firmware to support hevc
+      - i915: Add HuC v8.5.0 for MTL
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7922)
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - amdgpu: DMCUB updates for various AMDGPU asics
+      - rtl_bt: Update RTL8852C BT USB firmware to 0x040D_7225
+      - rtl_bt: Update RTL8852A BT USB firmware to 0xDAC7_480D
+      - qcom: sdm845: update remoteproc firmware
+      - qcom: sdm845: rename the modem firmware
+      - qcom: Update the microcode files for Adreno a630 GPUs.
+      - fix broken cirrus firmware symlinks
+      - amdgpu: update DMCUB to v0.0.172.0 for various AMDGPU ASICs
+      - amdgpu: DMCUB updates for DCN 3.1.4 and 3.1.5
+      - ice: update ice DDP wireless_edge package to 1.3.10.0
+      - linux-firmware: wilc1000: update WILC1000 firmware to v16.0
+      - check_whence: strip quotation marks
+      - check_whence: error if File: is actually a link
+      - check_whence: error if symlinks are in-tree
+      - copy-firmware: quote deskdir and dirname
+      - copy-firmware: tweak sed invocation
+      - copy-firmware: drop obsolete backticks, quote
+      - copy-firmware: silence the last shellcheck warnings
+      - Makefile, copy-firmware: support xz/zstd compressed firmware
+  * Make arch specific linux-firmware (LP: #1967858)
+    - [Packaging] Switch to per-arch packaging
+    - [Packaging] config: Add per-arch firmware exclude files
+    - [Packaging] config: Clean up per-arch firmware exclude files
+  * 600+ duplicate or duplicated firmware files exist. (LP: #2019072)
+    - [Packaging] Replace duplicate firmware files with symlinks
+  * Remove obsolete iwlwifi firmware (LP: #2025360)
+    - [Packaging] Remove some obsolete iwlwifi firmware
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Thu, 29 Jun 2023 16:16:46 +0200
+
 linux-firmware (20230323.gitbcdcfbcf-0ubuntu1) lunar; urgency=medium
 
   * Miscellaneous Ubuntu changes
