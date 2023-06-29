@@ -146,3 +146,14 @@ ti-keystone
 # LP: #1986796
 # Remove AMD SEV firmware which is now provided by amd64-microcode
 amd
+
+# LP: #2025360
+# Remove obsolete iwlwifi firmware
+iwlwifi-Qu-b0-hr-b0-5?.ucode
+iwlwifi-Qu-b0-jf-b0-5?.ucode
+iwlwifi-Qu-c0-hr-b0-5?.ucode
+iwlwifi-Qu-c0-jf-b0-5?.ucode
+iwlwifi-QuZ-a0-hr-b0-5?.ucode
+iwlwifi-QuZ-a0-jf-b0-5?.ucode
+iwlwifi-cc-a0-5?.ucode
+iwlwifi-ty-a0-gf-a0-5?.ucode
