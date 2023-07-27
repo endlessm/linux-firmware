@@ -2,8 +2,18 @@
 
 set -e
 
-if [ -x /usr/sbin/update-initramfs ]; then
-	/usr/sbin/update-initramfs -u -k all
-fi
+case "$1" in
+	configure)
+		dpkg-trigger --no-await update-initramfs
+		;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+		;;
+
+	*)
+		echo "postinst called with unknown argument: $1" >&2
+		exit 1
+		;;
+esac
 
 #DEBHELPER#
