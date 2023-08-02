@@ -1,3 +1,62 @@
+linux-firmware (20230731.git07f05b0c-0ubuntu1) mantic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] Compress all firmware license files
+    - [Packaging] Check for /usr/bin/python3 in clean rule
+    - Rebase to upstream commit 07f05b0c9750b4e3302473244400668dab70a91e
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - qcom: Add Audio firmware for SC8280XP X13s
+      - iwlwifi: update cc/Qu/QuZ firmwares for core80-39 release
+      - iwlwifi: add new FWs from core80-39 release
+      - check_whence: Check link targets are valid
+      - Fix qcom ASoC tglp WHENCE entry
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX203
+      - linux-firmware: Update firmware file for Intel Bluetooth AX203
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7922)
+      - Partially revert "amdgpu: DMCUB updates for DCN 3.1.4 and 3.1.5"
+      - cirrus: Add CS35L41 firmware for ASUS ROG 2023 Models
+      - i915: update to GuC 70.8.0 and HuC 8.5.1 for MTL
+      - i915: update DG2 GuC to v70.8.0
+      - mediatek: Update mt8195 SCP firmware to support 10bit mode
+      - wfx: update to firmware 3.16.1
+      - Updated NXP SR150 UWB firmware
+      - amdgpu: update DMCUB to v0.0.175.0 for various AMDGPU ASICs
+      - amdgpu: update Picasso VCN firmware
+      - amdgpu: update raven2 VCN firmware
+      - amdgpu: update raven VCN firmware
+      - amdgpu: update renoir VCN firmware
+      - amdgpu: update green sardine VCN firmware
+      - linux-firmware: Update AMD cpu microcode
+      - linux-firmware: Update AMD fam17h cpu microcode
+      - amdgpu: add initial GC 11.0.3 firmware
+      - amdgpu: add initial PSP 13.0.10 firmware
+      - amdgpu: add initial SDMA 6.0.3 firmware
+      - amdgpu: add initial SMU 13.0.10 firmware
+      - amdgpu: update VCN 4.0.0 firmware
+      - qcom: sc8280xp: LENOVO: Remove execute bits
+      - qcom: sc8280xp: LENOVO: remove directory sym link
+      - copy-firmware: Fix test: unexpected operator
+      - copy-firmware: Fix linking directories when using compression
+      - cirrus: Add CS35L41 firmware for Dell Oasis Models
+      - i915: Update ADLP DMC to v2.20
+      - i915: Update MTL DMC to v2.13
+      - ice: add LAG-supporting DDP package
+    - SAUCE: Also check WHENCE.ubuntu for files to not compress
+    - [Packaging] build-package: Drop sanity check
+  * compress firmware in /lib/firmware (LP: #1942260)
+    - SAUCE: Support additional compressor options
+    - [Packaging] Enable zstd firmware compression
+  * upgrading does not defer initramfs updates (LP: #1926608)
+    - [Packaging] Use dpkg-trigger for updating the initramfs
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 02 Aug 2023 15:26:20 +0200
+
 linux-firmware (20230629.gitee91452d-0ubuntu1) mantic; urgency=medium
 
   * Miscellaneous Ubuntu changes
