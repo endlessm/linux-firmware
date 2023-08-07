@@ -9,8 +9,17 @@ clean:
 	dh_testdir
 	dh_clean
 
+	# Run git-build-recipe scripts (only used in conjunction with
+	# Launchpad build recipes for special/unofficial builds)
+	for f in debian/git-build-recipe/* ; do \
+		if [ -f "$${f}" ] && [ -x "$${f}" ] ; then \
+			"$${f}" ; \
+		fi ; \
+	done
+
 	# Run sanity checks if in a git repo
-	if [ -d .git ] && [ -x /usr/bin/python3 ] ; then \
+	if [ -d .git ] && [ -x /usr/bin/python3 ] && \
+	   ! [ -d debian/git-build-recipe ] ; then \
 		$(MAKE) check ; \
 	fi
 
