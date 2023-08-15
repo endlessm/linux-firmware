@@ -1,3 +1,29 @@
+linux-firmware (20230815.git0e048b06-0ubuntu1) mantic; urgency=medium
+
+  * compress firmware in /lib/firmware (LP: #1942260)
+    - [Packaging] Add Breaks: initramfs-tools (<< 0.142ubuntu8~)
+  * Miscellaneous Ubuntu changes
+    - [Packaging] Add support for arbitrary git-build-recipe scripts
+    - SAUCE: WHENCE: Don't compress Qualcomm json files
+    - Rebase to upstream commit 0e048b061bde79ad735c7b7b5161ee1bd3400150
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - amdgpu: Update DMCUB for DCN314 & Yellow Carp
+      - qcom: sdm845: add RB3 sensors DSP firmware
+      - rtw89: 8851b: update firmware to v0.29.41.1
+      - linux-firmware: Add URL for latest FW binaries for NXP BT chipsets
+      - Mellanox: Add new mlxsw_spectrum firmware xx.2012.1012
+      - cxgb4: Update firmware to revision 1.27.4.0
+      - amdgpu: DMCUB updates for various AMDGPU asics
+      - Revert "rtl_bt: Update RTL8852C BT USB firmware to 0x040D_7225"
+      - rtl_bt: Add firmware v2 file for RTL8852C
+      - linux-firmware: Update AMD cpu microcode
+      - cirrus: Add CS35L41 firmware for HP G11 models
+      - amdgpu: partially revert firmware for GC 11.0.0 and GC 11.0.2
+      - Revert "amdgpu: partially revert firmware for GC 11.0.0 and GC 11.0.2"
+      - amdgpu: DMCUB updates for various AMDGPU asics
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 15 Aug 2023 11:48:52 +0200
+
 linux-firmware (20230731.git07f05b0c-0ubuntu1) mantic; urgency=medium
 
   * Miscellaneous Ubuntu changes
