@@ -1,3 +1,60 @@
+linux-firmware (20230915.gitdfa11466-0ubuntu1) mantic; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - SAUCE: Don't gitignore debian/
+    - Rebase to upstream commit dfa11466cf000120d1551146fd5bf78c44941eda
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - amdgpu: DMCUB updates for various AMDGPU asics
+      - i915: add GSC 102.0.0.1655 for MTL
+      - rtw89: 8851b: update fw to v0.29.41.2
+      - rtw89: 8852b: update fw to v0.29.29.3
+      - amdgpu: update DMCUB to 0.0.181.0 for various AMDGPU ASICs
+      - linux-firmware: Update AMD SEV firmware
+      - linux-firmware: update firmware for qat_4xxx devices
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX200
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX203
+      - linux-firmware: Update firmware file for Intel Bluetooth AX203
+      - copy-firmware: Support additional compressor options
+      - copy-firmware: Introduce 'RawFile' keyword
+      - i915: Update MTL DMC to v2.16
+      - check_whence: reformat using python black
+      - Add pre-commit hooks and codespell template
+      - Wire up pre-commit to `make check`
+      - Rewrite README in markdown
+      - Add Dockerfile used to build CI image
+      - Add gitlab ci for calling pre-commit and ci-fairy
+      - Add a rule for automatic tagging releases by pipeline schedule
+      - Fix carl9170fw shell scripts for shellcheck errors
+      - Add shellcheck pre-commit target
+      - QCA: Update Bluetooth WCN685x 2.1 firmware to 2.1.0-00605
+      - Create symlinks for all firmware that is duplicate using rdfind
+      - Add new toplevel 'make dist' target.
+      - Capture artifacts from `make dist` to save at release time.
+      - Only run ci-fairy on merge requests
+      - check_whence: Recognize RawFile keyword
+      - WHENCE: amd-ucode: Use new RawFile keyword
+      - WHENCE: Don't compress qcom json files
+      - ath10k/WCN3990: move wlanmdsp to qcom/sdm845
+      - qcom: add GPU firmware for QCM2290 / QRB2210
+      - qcom: add firmware for QCM2290 platforms
+      - qcom: add firmware for QRB4210 platforms
+      - qcom: add venus firmware files for v6.0
+      - qcom: add firmware for the onboard WiFi on qcm2290 / qrb4210
+      - qcom: sm8250: update DSP firmware
+      - qcom: Update vpu-1.0 firmware
+      - qcom: sm8250: add RB5 sensors DSP firmware
+      - linux-firmware: add link to sc8280xp audioreach firmware
+      - Turn off textwidth check
+    - [Packaging] scripts: Fix shellcheck warnings
+  * Missing firmware for Intel VPU on Intel Meteor Lake platforms (LP: #2031882)
+    - SAUCE: Add firmware for Intel VPU on Meteor Lake platforms
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 15 Sep 2023 13:27:42 +0200
+
 linux-firmware (20230815.git0e048b06-0ubuntu1) mantic; urgency=medium
 
   * compress firmware in /lib/firmware (LP: #1942260)
