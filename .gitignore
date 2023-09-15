@@ -1,4 +1,4 @@
-debian/
+#debian/
 dist/
 release/
 contrib/*.db
