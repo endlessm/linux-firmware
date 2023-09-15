@@ -54,6 +54,7 @@ function normalize_link {
 	while true; do
 		case "$s" in
 		*/../*)
+			# shellcheck disable=SC2001
 			s=$(echo "$s" | sed 's,[^/]\+/../,,')
 			;;
 		*)
@@ -71,13 +72,13 @@ if ! git ls-tree -r --name-only "$OLDBRANCH" >"$TMPDIR/files.tmp"
 then
 	exit 1
 fi
-cat "$TMPDIR/files.tmp" | sort >"$TMPDIR/oldbranch-files"
+sort "$TMPDIR/files.tmp" >"$TMPDIR/oldbranch-files"
 
 if ! git ls-tree -r --name-only "$NEWBRANCH" >"$TMPDIR/files.tmp"
 then
 	exit 1
 fi
-cat "$TMPDIR/files.tmp" | sort >"$TMPDIR/newbranch-files"
+sort "$TMPDIR/files.tmp" >"$TMPDIR/newbranch-files"
 
 # Get files in @newbranch not in @oldbranch
 comm -13 "$TMPDIR/oldbranch-files" "$TMPDIR/newbranch-files" >"$TMPDIR/new-files"
@@ -87,25 +88,25 @@ if [ "$3" == "" ]; then
 	exit 0
 fi
 
-if ! cat $FWINFO | head -n1 | grep "firmware:       " > /dev/null
+if ! head -n1 "$FWINFO" | grep "firmware:       " > /dev/null
 then
 	echo "Invliad fwinfo file $FWINFO"
 	exit 1
 fi
 
 declare -A oldbranch_files
-while read of; do
+while read -r of; do
 	oldbranch_files["$of"]="old"
 done < "$TMPDIR/oldbranch-files"
 
-while read dc1 ol dc2 of; do
+while read -r _dc1 ol _dc2 of; do
 	if [ -z "${oldbranch_files[$ol]:-}" ]; then
 		oldbranch_files["$ol"]="link"
 	fi
 done < <(grep_links "$TMPDIR/oldbranch-files" "$OLDBRANCH")
 
 declare -A new_files
-while read nf; do
+while read -r nf; do
 	if [ -n "${oldbranch_files["$nf"]:-}" ]; then
 		# new file but matches a previous link
 		new_files["$nf"]="duplicated"
@@ -117,7 +118,7 @@ while read nf; do
 done < "$TMPDIR/new-files"
 
 declare -A newlink_files
-while read dc1 nl dc2 nf; do
+while read -r _dc1 nl _dc2 nf; do
 
 	nf="$(normalize_link "$(dirname "$nl")/$nf")"
 	newlink_files["$nl"]="$nf"
@@ -155,7 +156,7 @@ function mark_if_unused {
 	return 1
 }
 
-while read fw_pattern; do
+while read -r fw_pattern; do
 	fws=()
 
 	case "$fw_pattern" in
@@ -163,7 +164,7 @@ while read fw_pattern; do
 		# pattern with wildcard
 		for nf in "${!new_files[@]}"; do
 			case "$nf" in
-			$fw_pattern)
+			"$fw_pattern")
 				fws+=("$nf");;
 			*)
 				;;
@@ -183,7 +184,7 @@ while read fw_pattern; do
 		max_fw_api="${fw##*-}"
 		max_fw_api="${max_fw_api%.ucode}"
 		found=
-		for api in $(seq $max_fw_api -1 1); do
+		for api in $(seq "$max_fw_api" -1 1); do
 			nf="$prefix-$api.ucode"
 
 			if [ -n "$found" ]; then
@@ -208,7 +209,7 @@ while read fw_pattern; do
 		;;
 	esac
 	done
-done < <(cat "$FWINFO" | sed 's/firmware: \+//' | sort)
+done < <(sed 's/firmware: \+//' "$FWINFO" | sort)
 
 declare -A ath_hidden_fw
 for nf in "${!new_files[@]}"; do

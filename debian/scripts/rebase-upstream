@@ -40,7 +40,6 @@ while [ ${#} -gt 0 ] ; do
 			exit 2
 			;;
 	esac
-	shift
 done
 
 version=$(dpkg-parsechangelog -SVersion)
