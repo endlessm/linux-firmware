@@ -1,3 +1,17 @@
+linux-firmware (20230919.git3672ccab-0ubuntu1) mantic; urgency=medium
+
+  * Intel AX201 Bluetooth not available with 20230915.gitdfa11466-0ubuntu1
+    (LP: #2036428)
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 3672ccab9237315db2f3a28a47f8ac1062a5a35e
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - amdgpu: update DMCUB to 0.0.183.0 for various AMDGPU ASICs
+      - i915: update MTL HuC to version 8.5.4
+      - linux-firmware: amd-ucode: Add note on fam19h warnings
+      - Run merge request pipelines for pre-commit.
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 19 Sep 2023 08:46:58 +0200
+
 linux-firmware (20230915.gitdfa11466-0ubuntu1) mantic; urgency=medium
 
   * Miscellaneous Ubuntu changes
