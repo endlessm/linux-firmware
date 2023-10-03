@@ -41,4 +41,4 @@ dch -v "${version}.0" "Initial dummy SRU release."
 dch -r -D "${dist}" ""
 git commit -s -m "UBUNTU: Initial dummy SRU release
 
-Ignore:yes" -- debian/changelog
+Ignore: yes" -- debian/changelog
