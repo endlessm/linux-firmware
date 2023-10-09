@@ -29,17 +29,6 @@ cis/SW_555_SER.cis
 cis/SW_7xx_SER.cis
 cis/SW_8xx_SER.cis
 cis/tamarack.cis
-cypress/cyfmac43012-sdio.bin
-cypress/cyfmac43340-sdio.bin
-cypress/cyfmac43362-sdio.bin
-cypress/cyfmac4339-sdio.bin
-cypress/cyfmac43430-sdio.bin
-cypress/cyfmac43455-sdio.bin
-cypress/cyfmac4354-sdio.bin
-cypress/cyfmac4356-pcie.bin
-cypress/cyfmac4356-sdio.bin
-cypress/cyfmac43570-pcie.bin
-cypress/cyfmac4373-sdio.bin
 cypress/cyfmac54591-pcie.bin
 hfi1_dc8051.fw
 hfi1_fabric.fw
