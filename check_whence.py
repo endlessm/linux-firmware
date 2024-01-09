@@ -82,6 +82,7 @@ def main():
         [
             ".codespell.cfg",
             ".editorconfig",
+            ".gitea/workflows/pr_check.yaml",
             ".gitignore",
             ".gitlab-ci.yml",
             ".pre-commit-config.yaml",
