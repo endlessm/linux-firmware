@@ -18,6 +18,7 @@ function out()
 trap out EXIT INT TERM HUP
 
 # Current upstream commit and version
+# shellcheck disable=SC1091
 . debian/upstream
 
 orig_tarball=../linux-firmware_${VERSION}.orig.tar.xz

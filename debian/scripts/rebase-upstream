@@ -59,6 +59,7 @@ fi
 git fetch upstream
 
 # Current upstream commit and version
+# shellcheck disable=SC1091
 . debian/upstream
 
 # New upstream commit and version

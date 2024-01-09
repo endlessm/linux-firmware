@@ -39,6 +39,7 @@ while [ ${#} -gt 0 ] ; do
 done
 
 # Current upstream commit and version
+# shellcheck disable=SC1091
 . debian/upstream
 
 # Current package release and version
@@ -46,6 +47,7 @@ release=$(dpkg-parsechangelog -SDistribution)
 version=$(dpkg-parsechangelog -SVersion)
 
 # New release version and tag
+# shellcheck disable=SC2153
 if [ "${version%-*}" = "${VERSION}" ] ; then
 	if [ -n "${suffix}" ] ; then
 		# Append the provided suffix

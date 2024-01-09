@@ -3,6 +3,7 @@
 # List status of downstream files
 #
 
+# shellcheck disable=SC1091
 . debian/upstream
 
 while IFS= read -r name ; do
