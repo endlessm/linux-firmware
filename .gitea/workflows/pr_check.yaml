@@ -1,0 +1,38 @@
+---
+name: PR checks
+
+on:
+  pull_request_target:
+    types:
+      - edited
+      - opened
+      - synchronize
+
+jobs:
+  pr_checks:
+    runs-on: ubuntu-latest
+    steps:
+      - step:
+        name: Show versions
+        run: |
+          cat /etc/os-release
+          python3 --version
+          pip3 list
+      - step:
+        name: Clone repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          fetch-depth: 0
+      - step:
+        name: Run pre-commit hooks
+        run: |
+          pre-commit install
+          pre-commit run --all-files
+      - step:
+        name: Run ubuntu-check-commit
+        uses: juergh/ubuntu-check-commit@main
+        with:
+          start_rev: ${{ github.event.pull_request.base.sha }}
+          end_rev: ${{ github.event.pull_request.head.sha }}
