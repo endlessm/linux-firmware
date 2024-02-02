@@ -1,3 +1,282 @@
+linux-firmware (20240202.git36777504-0ubuntu1) noble; urgency=medium
+
+  * /lib/firmware/brcm/brcmfmac43430-sdio.bin missing on riscv64 (LP: #2038546)
+    - [Packaging] config: Don't exclude cypress fw link targets
+  * Miscellaneous Ubuntu changes
+    - [Packaging] scripts: Fix shellcheck warnings
+    - [Workflow] Add initial gitea workflow file
+    - SAUCE: [Workflow] Disable markdownlint pre-commit hook
+    - SAUCE: [Workflow] check_whence.py: Update list of known files
+    - [Packaging] config: Remove all arch-specific excludes
+    - [Packaging] scripts/generate-changelog: Fix array initialization
+    - Rebase to upstream commit 3677750467cb8286c59462e490df23d8462a84f9
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - iwlwifi: update cc/Qu/QuZ firmwares for core81-65 release
+      - iwlwifi: add new FWs from core81-65 release
+      - rtl_bt: Update RTL8851B BT USB firmware to 0x048A_D230
+      - linux-firmware: Update FW files for MRVL PCIE 8997 chipsets
+      - amd_pmf: Add initial PMF TA for Smart PC Solution Builder
+      - iwlwifi: add FWs for new GL and MA device types with multiple RF modules
+      - amdgpu: update aldebaran firmware from 5.7 branch
+      - amdgpu: update GC 11.0.3 firmware from 5.7 branch
+      - amdgpu: update PSP 13.0.10 firmware from 5.7 branch
+      - amdgpu: update SMU 13.0.10 firmware from 5.7 branch
+      - amdgpu: update raven2 firmware from 5.7 branch
+      - amdgpu: update navi10 firmware from 5.7 branch
+      - amdgpu: update yellow carp firmware from 5.7 branch
+      - amdgpu: update GC 11.0.2 firmware from 5.7 branch
+      - amdgpu: update PSP 13.0.7 firmware from 5.7 branch
+      - amdgpu: update SDMA 6.0.2 firmware from 5.7 branch
+      - amdgpu: update SMU 13.0.7 firmware from 5.7 branch
+      - amdgpu: update VCN 4.0.4 firmware from 5.7 branch
+      - amdgpu: update navi12 firmware from 5.7 branch
+      - amdgpu: update renoir firmware from 5.7 branch
+      - amdgpu: update navi14 firmware from 5.7 branch
+      - amdgpu: update GC 11.0.1 firmware from 5.7 branch
+      - amdgpu: update PSP 13.0.4 firmware from 5.7 branch
+      - amdgpu: update SDMA 6.0.1 firmware from 5.7 branch
+      - amdgpu: update GC 11.0.4 firmware from 5.7 branch
+      - amdgpu: update PSP 13.0.11 firmware from 5.7 branch
+      - amdgpu: update sienna cichlid firmware from 5.7 branch
+      - amdgpu: update green sardine firmware from 5.7 branch
+      - amdgpu: update vangogh firmware from 5.7 branch
+      - amdgpu: update navy flounder firmware from 5.7 branch
+      - amdgpu: update picasso firmware from 5.7 branch
+      - amdgpu: update dimgrey cavefish firmware from 5.7 branch
+      - amdgpu: update vega10 firmware from 5.7 branch
+      - amdgpu: update vega12 firmware from 5.7 branch
+      - amdgpu: update beige goby firmware from 5.7 branch
+      - amdgpu: update vega20 firmware from 5.7 branch
+      - amdgpu: update GC 11.0.0 firmware from 5.7 branch
+      - amdgpu: update PSP 13.0.0 firmware from 5.7 branch
+      - amdgpu: update SDMA 6.0.0 firmware from 5.7 branch
+      - amdgpu: update SMU 13.0.0 firmware from 5.7 branch
+      - amdgpu: update VCN 4.0.0 firmware from 5.7 branch
+      - amdgpu: update GC 10.3.6 firmware from 5.7 branch
+      - amdgpu: update PSP 13.0.5 firmware from 5.7 branch
+      - amdgpu: update SDMA 5.2.6 firmware from 5.7 branch
+      - amdgpu: update DCN 3.1.6 firmware from 5.7 branch
+      - amdgpu: update GC 10.3.7 firmware from 5.7 branch
+      - amdgpu: update PSP 13.0.8 firmware from 5.7 branch
+      - amdgpu: update SDMA 5.2.7 firmware from 5.7 branch
+      - amdgpu: update raven firmware from 5.7 branch
+      - i915: Update MTL DMC to v2.17
+      - Add new Makefile target to build a deb and rpm package
+      - Build debian and fedora images
+      - linux-firmware: Update firmware file for Intel Bluetooth 9260
+      - linux-firmware: Update firmware file for Intel Bluetooth 9560
+      - linux-firmware: Update firmware file for Intel Bluetooth AX210
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX211
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Update firmware file for Intel Bluetooth AX201
+      - linux-firmware: Add firmware file for Intel Bluetooth AX211
+      - WHENCE: add symlink for BananaPi M64
+      - iwlwifi: add a missing FW from core80-39 release
+      - i915: Add GuC v70.13.1 for DG2, TGL, ADL-P and MTL
+      - Add a script for a robot to open up pull requests
+      - linux-firmware: add Amlogic bluetooth firmware
+      - amdgpu: update SMU 13.0.0 firmware
+      - Add support for sending emails while processing a PR/patch
+      - linux-firmware: Update AMD cpu microcode
+      - Fix the robot email script
+      - Catch unicode decode errors
+      - rtl_nic: update firmware of RTL8156B
+      - Use `git am` instead of `b4 shazam`
+      - Disable deb and rpm CI other than at release
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth BE200
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth Magnetor AX211
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth Magnetor AX201
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth Magnetor AX101
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth AX210
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth AX211
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth AX211
+      - rtw89: 8851b: update fw to v0.29.41.3
+      - rtw89: 8852b: update fw to v0.29.29.4
+      - rtw89: 8852b: update fw to v0.29.29.5
+      - linux-firmware: ixp4xx: Add the IXP4xx firmware
+      - qca: add bluetooth firmware for WCN3988
+      - amdgpu: DMCUB updates for various AMDGPU ASICs
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX210
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX211
+      - Intel Bluetooth: Update firmware file for SolarF Intel Bluetooth AX211
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for SolarF Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for Magnetor Intel Bluetooth AX211
+      - Intel Bluetooth: Update firmware file for Magnetor Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for Magnetor Intel Bluetooth AX101
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth BE200
+      - nvidia: add GSP-RM version 535.113.01 firmware images
+      - Fix classification of some pull requests
+      - Fix symlink creation for some files
+      - Add checks for destination directory being specified
+      - Ensure rdfind is installed
+      - amdgpu: DMCUB updates for various AMDGPU ASICs
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX210
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX211
+      - Intel Bluetooth: Update firmware file for SolarF Intel Bluetooth AX211
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for SolarF Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX101
+      - Intel Bluetooth: Update firmware file for SolarF Intel Bluetooth AX101
+      - Intel Bluetooth: Update firmware file for Magnetor Intel Bluetooth AX211
+      - Intel Bluetooth: Update firmware file for Magnetor Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for Magnetor Intel Bluetooth AX101
+      - linux-firmware: add firmware for mt7988 internal 2.5G ethernet phy
+      - Process pull requets directly from mbox
+      - Add extra debugging output when processing pull requests
+      - Add a workaround for gitlab.freedesktop.org pull requests
+      - linux-firmware: Add firmware for Cirrus CS35L41 on 2024 ASUS Zenbook Laptops
+      - linux-firmware: Add firmware for Cirrus CS35L41 on HP G11 Laptops
+      - iwlwifi: update cc/Qu/QuZ firmwares for core83-55 release
+      - iwlwifi: add new FWs from core83-55 release
+      - Enable deb and rpm builds on tags
+      - iwlwifi: fix for the new FWs from core83-55 release
+      - Try both utf-8 and windows-1252 for decoding email
+      - Make email replies more resilient
+      - i915: Update MTL DMC to v2.19
+      - amdgpu: update DMCUB firmware to 0.0.193.0 for DCN31 and DCN314
+      - Intel Bluetooth: Update firmware file for Intel Bluetooth BE200
+      - mediatek: Sync shared memory structure changes
+      - mediatek: Remove an unused packed library
+      - ice: update ice DDP package to 1.3.35.0
+      - ice: update ice DDP comms package to 1.3.45.0
+      - powervr: add firmware for Imagination Technologies AXE-1-16M GPU
+      - qcom: update Venus firmware file for v6.0
+      - qcom: update qcm2290/qrb4210 WiFi firmware file
+      - qcom: update qcm2290 firmware
+      - qcom: update qrb4210 firmware
+      - amdgpu: update DMCUB firmware to 0.0.194.0 for DCN321 and DCN32
+      - Makefile, copy-firmware: Use portable "command -v" to detect installed programs
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7922)
+      - ice: update ice DDP wireless_edge package to 1.3.13.0
+      - Make rdfind optional
+      - rtl_bt: Update RTL8852A BT USB firmware to 0xDFC8_145F
+      - Add a COPYOPTS variable
+      - s5p-mfc: Add MFC v12 Firmware
+      - linux-firmware: add firmware for en8811h 2.5G ethernet phy
+      - cxgb4: Update firmware to revision 1.27.5.0
+      - linux-firmware: Update AMD cpu microcode
+      - wfx: fix broken firmware
+      - wfx: update to firmware 3.17
+      - Add rdfind for deb/rpm build jobs
+      - qcom: Add Audio firmware for SM8550 QRD
+      - qcom: Add Audio firmware for SM8650 QRD
+      - amdgpu: DMCUB updates for various AMDGPU ASICs
+      - QCA: Update Bluetooth QCA2066 firmware to 2.1.0-00629
+      - QCA: Add bluetooth firmware nvm files for QCA2066
+      - cirrus: Add CS35L41 firmware and tunings for ASUS Zenbook 2022 Models
+      - cirrus: Add CS35L41 firmware and tunings for ASUS Zenbook 2023 Models
+      - intel: vsc: Add firmware for Visual Sensing Controller
+      - iwlwifi: update gl FW for core80-165 release
+      - ath12k: add new driver and firmware for WCN7850
+      - ath10k: QCA6174 hw3.0: update firmware-6.bin to WLAN.RM.4.4.1-00309-
+      - ath10k: QCA4019 hw1.0: update board-2.bin
+      - ath10k: QCA9888 hw2.0: update board-2.bin
+      - ath10k: WCN3990 hw1.0: update board-2.bin
+      - ath11k: IPQ8074 hw2.0: update board-2.bin
+      - ath11k: WCN6750 hw1.0: update board-2.bin
+      - ath11k: WCN6855 hw2.0: update board-2.bin
+      - ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.36
+      - ASoC: tas2781: Add dsp firmware for different laptops
+      - rtl_bt: Add firmware and config files for RTL8852BT/RTL8852BE-VT
+      - ASoC: tas2563: Add dsp firmware for laptops or other mobile devices
+      - linux-firmware: add firmware for MT7925
+      - linux-firmware: add firmware for mediatek bluetooth chip (MT7925)
+      - amlogic/bluetooth: add firmware bin of W1 serial soc(w1u_uart)
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX210
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX101
+      - Intel Bluetooth: Update firmware file for Magnetor Intel Bluetooth AX211
+      - amdgpu: DMCUB updates for DCN314
+      - amdgpu: DMCUB updates for DCN312
+      - cirrus: Add firmware file for cs42l43
+      - linux-firmware: update firmware for w1u_uart
+      - linux-firmware: update firmware for qat_4xxx devices
+      - linux-firmware: Add firmware for Cirrus CS35L41 for various Dell laptops
+      - cirrus: Add CS35L41 firmware for Legion Slim 7 Gen 8 laptops
+      - qcom: Update the firmware for Adreno a630 family of GPUs
+      - amdgpu: DMCUB updates for DCN314
+      - Intel Bluetooth: Update firmware file for Solar Intel Bluetooth AX211
+      - Intel Bluetooth: Update firmware file for SolarF Intel Bluetooth AX211
+      - Intel Bluetooth: Update firmware file for SolarF Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for Magnetor Intel Bluetooth AX203
+      - Intel Bluetooth: Update firmware file for Magnetor Intel Bluetooth AX101
+      - RTL8192E: Remove old realtek WiFi firmware
+      - linux-firmware: Update AMD cpu microcode
+      - amdgpu: update aldebaran firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update GC 11.0.3 firmware
+      - amdgpu: update PSP 13.0.10 firmware
+      - amdgpu: update SDMA 6.0.3 firmware
+      - amdgpu: update SMU 13.0.10 firmware
+      - amdgpu: update yellow carp firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: update GC 11.0.2 firmware
+      - amdgpu: update PSP 13.0.7 firmware
+      - amdgpu: update SMU 13.0.7 firmware
+      - amdgpu: update VCN 4.0.4 firmware
+      - amdgpu: update renoir firmware
+      - amdgpu: Add GC 9.4.3 firmware
+      - amdgpu: add PSP 13.0.6 firmware
+      - amdgpu: add SMU 13.0.6 firmware
+      - amdgpu: add SDMA 4.4.2 firmware
+      - amdgpu: add VCN 4.0.3 firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: update arcturus firmware
+      - amdgpu: update GC 11.0.1 firmware
+      - amdgpu: update PSP 13.0.4 firmware
+      - amdgpu: update VCN 4.0.2 firmware
+      - amdgpu: update GC 11.0.4 firmware
+      - amdgpu: update PSP 13.0.11 firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update green sardine firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update vangogh firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update picasso firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update vega10 firmware
+      - amdgpu: update vega12 firmware
+      - amdgpu: update GC 11.0.0 firmware
+      - amdgpu: update PSP 13.0.0 firmware
+      - amdgpu: update SMU 13.0.0 firmware
+      - amdgpu: update VCN 4.0.0 firmware
+      - amdgpu: update vega20 firmware
+      - amdgpu: add GC 11.0.1 rlc_1 firmware
+      - amdgpu: update GC 10.3.6 firmware
+      - amdgpu: update PSP 13.0.5 firmware
+      - amdgpu: update SDMA 5.2.6 firmware
+      - amdgpu: update VCN 3.1.2 firmware
+      - amdgpu: update PSP 13.0.8 firmware
+      - amdgpu: update SDMA 5.2.7 firmware
+      - amdgpu: update raven firmware
+      - amdgpu: update raven2 firmware
+      - Intel Bluetooth: Make spacing consistent with rest of WHENCE
+      - linux-firmware: Add firmware for Cirrus CS35L41 on HP Consumer Laptops
+      - qcom: Add Audio firmware for SM8650 MTP
+      - amdgpu: DMCUB updates for various AMDGPU ASICs
+      - brcm: Add brcmfmac43430-sdio.xxx.txt nvram for the Chuwi Hi8 (CWI509) tablet
+      - amdgpu: update GC 11.0.0 firmware
+      - amdgpu: update PSP 13.0.0 firmware
+      - amdgpu: update SMU 13.0.0 firmware
+      - Revert "amdgpu: DMCUB updates for various AMDGPU ASICs"
+      - qcom: Add Audio firmware for SM8550 HDK
+      - ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.37
+      - linux-firmware: intel: Add IPU6 firmware binaries
+      - rtl_nic: add firmware for RTL8126A
+      - linux-firmware: wilc1000: update WILC1000 firmware to v16.1.2
+    - [Packaging] control: Add XSBC-Original-Maintainer field
+    - [Packaging] control: Add rdfind to Build-Depends
+    - [Packaging] scripts/install-firmware: Fix installation of license files
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 02 Feb 2024 15:42:49 +0100
+
 linux-firmware (20230919.git3672ccab-0ubuntu1) mantic; urgency=medium
 
   * Intel AX201 Bluetooth not available with 20230915.gitdfa11466-0ubuntu1
