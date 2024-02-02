@@ -31,7 +31,7 @@ Optional arguments:
 EOF
 }
 
-rev_range=
+rev_range=()
 
 while [ ${#} -gt 0 ] ; do
 	case "${1}" in
