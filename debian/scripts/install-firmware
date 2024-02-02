@@ -119,6 +119,7 @@ install -m 0644 GPL-* "${licenses_dir}"
 
 while IFS= read -r item ; do
 	item=${item#./}
+	item=${item%.zst}
 	while IFS= read -r license ; do
 		if ! [ -e "${licenses_dir}/${license}" ] ; then
 			install -m 0644 "${license}" "${licenses_dir}"
