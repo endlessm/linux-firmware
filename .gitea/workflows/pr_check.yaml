@@ -32,7 +32,7 @@ jobs:
           pre-commit run --all-files
       - step:
         name: Run ubuntu-check-commit
-        uses: juergh/ubuntu-check-commit@main
+        uses: actions/ubuntu-check-commit@main
         with:
           start_rev: ${{ github.event.pull_request.base.sha }}
           end_rev: ${{ github.event.pull_request.head.sha }}
