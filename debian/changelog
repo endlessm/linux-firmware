@@ -1,3 +1,44 @@
+linux-firmware (20240318.git3b128b60-0ubuntu1) noble; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Workflow] Swich to actions/ubuntu-check-commit
+    - Rebase to upstream commit 3b128b6069267b60a46a4074c383183177ee6e6d
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - linux-firmware: Fix filenames for some CS35L41 firmwares for HP
+      - linux-firmware: Remove 2 HP laptops using CS35L41 Audio Firmware
+      - amdgpu: update DMCUB to v0.0.203.0 for DCN314 and DCN32
+      - Montage: add firmware for Mont-TSSE
+      - qcom: update venus firmware file for v5.4
+      - amdgpu: DMCUB updates for Yellow Carp: 4.0.68.0
+      - amdgpu: DMCUB Updates for DCN321: 7.0.38.0
+      - panthor: Add initial firmware for Gen10 Arm Mali GPUs
+      - linux-firmware: Add CS35L41 firmware for additional ASUS Zenbook 2023 models
+      - WHENCE: Clean up section separators
+      - check_whence: Add a check for duplicate link entries
+      - Intel IPU6: Move firmware binaries under ipu/
+      - Intel IPU3 ImgU: Move firmware file under intel/ipu
+      - ice: update ice DDP package to 1.3.36.0
+      - brcm: Add nvram for the Asus Memo Pad 7 ME176C tablet
+      - linux-firmware: Add CS35L41 firmware for Lenovo Legion 7i gen7 laptop (16IAX7)
+      - i915: Add GuC v70.20.0 for ADL-P, DG1, DG2, MTL and TGL
+      - xe: First GuC release for LNL and Xe
+      - linux-firmware: add firmware for MT7996
+      - linux-firmware: update firmware for en8811h 2.5G ethernet phy
+      - i915: Update MTL DMC v2.21
+      - i915: Add Xe2LPD DMC v2.18
+      - brcm: Add nvram for the Acer Iconia One 7 B1-750 tablet
+      - Intel IPU2: Add firmware files
+      - amdgpu: Update VCN firmware binaries
+      - linux-firmware: Add CS35L41 HDA Firmware for Lenovo Thinkbook 16P Laptops
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7922)
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - rtl_bt: Update RTL8852A BT USB firmware to 0xD9D6_17DA
+      - iwlwifi: update 9000-family firmwares to core85-89
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 18 Mar 2024 08:36:53 +0100
+
 linux-firmware (20240202.git36777504-0ubuntu1) noble; urgency=medium
 
   * /lib/firmware/brcm/brcmfmac43430-sdio.bin missing on riscv64 (LP: #2038546)
