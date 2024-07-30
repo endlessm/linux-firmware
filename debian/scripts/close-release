@@ -6,18 +6,21 @@
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-h] [-s SUFFIX]
+Usage: $(basename "${0}") [-h] [-r RELEASE] [-s SUFFIX]
 
 Close a release, i.e., create a release commit.
 
 Optional arguments:
-  -h, --help           Show this help text and exit.
-  -s, --suffix SUFFIX  Generate the new package version by appending SUFFIX to
-                       the current version rather than incrementing the upload
-                       number by one.
+  -h, --help             Show this help text and exit.
+  -r, --release RELEASE  The package release name. Defaults to the current release
+                         if not provided.
+  -s, --suffix SUFFIX    Generate the new package version by appending SUFFIX to
+                         the current version rather than incrementing the upload
+                         number by one.
 EOF
 }
 
+release=
 suffix=
 
 while [ ${#} -gt 0 ] ; do
@@ -25,6 +28,10 @@ while [ ${#} -gt 0 ] ; do
 		-h|--help)
 			usage
 			exit
+			;;
+		-r|--release)
+			shift
+			release=${1}
 			;;
 		-s|--suffix)
 			shift
@@ -43,7 +50,9 @@ done
 . debian/upstream
 
 # Current package release and version
-release=$(dpkg-parsechangelog -SDistribution)
+if [ -z "${release}" ] ; then
+	release=$(dpkg-parsechangelog -SDistribution)
+fi
 version=$(dpkg-parsechangelog -SVersion)
 
 # New release version and tag
