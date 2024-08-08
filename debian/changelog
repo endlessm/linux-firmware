@@ -1,3 +1,26 @@
+linux-firmware (20240808.gite131a437-0ubuntu1) oracular; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit e131a437050360bf31b0ad7b69667432947acbab
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - QCA: Update Bluetooth QCA2066 firmware to 2.1.0-00641
+      - amdgpu: add new ISP 4.1.1 firmware
+      - amdgpu: Update ISP FW for isp v4.1.1
+      - amdgpu: Update ISP FW for isp v4.1.1
+      - i915: update DG2 HuC to v7.10.16
+      - xe: Add LNL HuC 9.4.13
+      - xe: Add GSC 104.0.0.1161 for LNL
+      - xe: Add BMG HuC 8.2.10
+      - i915: update MTL GSC to v102.0.10.1878
+      - i915: Update MTL DMC v2.22
+      - i915: Add GuC v70.29.2 for ADL-P, DG1, DG2, MTL, and TGL
+      - xe: Add GuC v70.29.2 for LNL
+      - xe: First GuC release v70.29.2 for BMG
+      - amdgpu: DMCUB updates for DCN314
+      - mediatek: Update mt8195 SOF firmware
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Thu, 08 Aug 2024 07:41:54 +0200
+
 linux-firmware (20240730.git65c5d9b1-0ubuntu1) oracular; urgency=medium
 
   * Missing firmware for Intel NPU driver on Intel Lunar Lake platform: Failed to request firmware: -2 (LP: #2071771)
