@@ -19,8 +19,8 @@ function add_file()
 {
 	local added=${1} name=${2}
 
-	if [ -z "${name}" ] || [ "${name#debian/}" != "${name}" ] ; then
-		# Empty name or debian/* file
+	if [ "${name#debian/}" != "${name}" ] ; then
+		# Ignore debian/* files
 		return
 	fi
 
@@ -49,10 +49,32 @@ PATCHABLES=()
 
 # Walk through all touched files and separate them into binaries that need to
 # be included and patchable files
-while IFS=" " read -r added name new_name ; do
-	add_file "${added}" "${name}"
-	add_file "${added}" "${new_name}"
-done < <(git diff --numstat "${upstream}" | awk '{ print $1 " " $3 " " $5 }')
+while IFS=$'\t' read -r added _ name ; do
+	case "${name}" in
+		*"{"*" => "*"}"*)
+			# Rename with path suffix/prefix:
+			# prefix/{old => new}/suffix
+			old=${name% => *}
+			new=${name#* => }
+			IFS="{" read -r prefix old_name <<<"${old}"
+			IFS="}" read -r new_name suffix <<<"${new}"
+			add_file "${added}" "${prefix}${old_name}${suffix}"
+			add_file "${added}" "${prefix}${new_name}${suffix}"
+			;;
+		*" => "*)
+			# Simple rename:
+			# old => new
+			old_name=${name% => *}
+			new_name=${name#* => }
+			add_file "${added}" "${old_name}"
+			add_file "${added}" "${new_name}"
+			;;
+		*)
+			# New file
+			add_file "${added}" "${name}"
+			;;
+	esac
+done < <(git diff --numstat "${upstream}")
 
 if [ ${#BINARIES[@]} -gt 0 ] ; then
 	echo "Create debian/source/include-binaries ..."
