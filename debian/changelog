@@ -1,3 +1,34 @@
+linux-firmware (20240826.git2cdc11a7-0ubuntu1) oracular; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging]: scripts/create-quilt-series: Correctly handle file renames and spaces
+    - Rebase to upstream commit 2cdc11a7b3bf06042f1fb179fa1775fde381491f
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - amdgpu: Update ISP FW for isp v4.1.1
+      - rtw89: 8852bt: add firmware 0.29.91.0
+      - rtw89: 8852c: add fw format-1 v0.27.97.0
+      - QCA: Update Bluetooth WCN685x 2.1 firmware to 2.1.0-00642
+      - qcom: update path for video firmware for vpu-1/2/3.0
+      - amdgpu: DMCUB updates for various AMDGPU ASICs
+      - qcom: vpu: add video firmware for sa8775p
+      - ath11k: IPQ5018 hw1.0: update to WLAN.HK.2.6.0.1-01291-QCAHKSWPL_SILICONZ-1
+      - ath11k: QCA2066 hw2.1: add board-2.bin
+      - ath11k: QCA2066 hw2.1: add to WLAN.HSP.1.1-03926.13-QCAHSPSWPL_V2_SILICONZ_CE-2.52297.3
+      - ath11k: WCN6855 hw2.0: update board-2.bin
+      - ath11k: WCN6855 hw2.0: update to WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.41
+      - ath12k: WCN7850 hw2.0: update board-2.bin
+      - Revert "i915: Update MTL DMC v2.22"
+      - linux-firmware: update firmware for MT7996
+      - linux-firmware: Update AMD SEV firmware
+      - rename rtl8723bs_config-OBDA8723.bin -> rtl_bt/rtl8723bs_config.bin
+      - rtl_bt: de-dupe identical config.bin files
+      - rtl_bt: Add firmware file for the the RTL8723CS Bluetooth part
+      - rtl_bt: Add firmware and config files for RTL8922A
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7925)
+      - linux-firmware: update firmware for MT7925 WiFi device
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 26 Aug 2024 08:38:31 +0200
+
 linux-firmware (20240808.gite131a437-0ubuntu1) oracular; urgency=medium
 
   * Miscellaneous Ubuntu changes
