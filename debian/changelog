@@ -1,3 +1,10 @@
+linux-firmware (20240826.git2cdc11a7-0ubuntu2) oracular; urgency=medium
+
+  * Support Intel IPU7 MIPI camera (LP: #2071821)
+    - SAUCE: intel: Add IPU7 firmware
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 27 Aug 2024 09:46:19 +0200
+
 linux-firmware (20240826.git2cdc11a7-0ubuntu1) oracular; urgency=medium
 
   * Miscellaneous Ubuntu changes
