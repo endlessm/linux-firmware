@@ -1,3 +1,25 @@
+linux-firmware (20240911.gitce299c0f-0ubuntu1) oracular; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Workflow] Add .gitattribute
+    - [Workflow] Rename pr_check.yaml
+    - Rebase to upstream commit ce299c0f97a873e969f2b22644ee9e9710bfbc63
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - rtw89: 8922a: add fw format-1 v0.35.41.0
+      - amdgpu: DMCUB updates forvarious AMDGPU ASICs
+      - qcom: vpu: restore compatibility with kernels before 6.6
+      - amdgpu: update DMCUB to v0.0.232.0 for DCN314 and DCN351
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7921)
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - rtl_nic: add firmware rtl8126a-3
+      - iwlwifi: add Bz FW for core89-58 release
+      - amdgpu: Revert sienna cichlid dmcub firmware update
+      - cirrus: cs35l56: Add firmware for Cirrus CS35L54 for some HP laptops
+      - i915: Update MTL DMC v2.23
+      - realtek: rt1320: Add patch firmware of MCU
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 11 Sep 2024 08:36:33 +0200
+
 linux-firmware (20240826.git2cdc11a7-0ubuntu2) oracular; urgency=medium
 
   * Support Intel IPU7 MIPI camera (LP: #2071821)
