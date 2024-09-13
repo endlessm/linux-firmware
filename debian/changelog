@@ -1,3 +1,25 @@
+linux-firmware (20240913.gita34e7a5f-0ubuntu1) oracular; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging]: Ignore .* files and directories
+    - Rebase to upstream commit a34e7a5f86c931e6642b7f11164b1926809fe546
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - rtl_bt: Update RTL8852B BT USB FW to 0x0447_9301
+      - linux-firmware: Update firmware file for Intel Bluetooth Solar core
+      - linux-firmware: Update firmware file for Intel BlazarU core
+      - linux-firmware: Update firmware file for Intel Bluetooth Magnetor core
+      - qcom: qcm6490: add ADSP and CDSP firmware
+      - amdgpu: add GC 11.5.2 microcode
+      - amdgpu: Add support for PSP 14.0.4
+      - amdgpu: add SDMA 6.1.2 microcode
+      - amdgpu: Add VPE 6.1.3 microcode
+      - WHENCE: Fix battmgr.jsn entry type
+      - copy-firmware: Handle links to uncompressed files
+  * Updating firmware disabled QCOM WiFi WCN7850 on T14 Gen5 AMD (LP: #2080428)
+    - SAUCE: Revert "ath12k: WCN7850 hw2.0: update board-2.bin"
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 13 Sep 2024 15:50:29 +0200
+
 linux-firmware (20240911.gitce299c0f-0ubuntu1) oracular; urgency=medium
 
   * Miscellaneous Ubuntu changes
