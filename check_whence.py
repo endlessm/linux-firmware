@@ -190,6 +190,8 @@ def main():
             ret = 1
 
     for name in sorted(list(git_files - executable_files)):
+        if name.startswith("debian/"):
+            continue
         mode = os.stat(name).st_mode
         if stat.S_ISDIR(mode):
             if not (
