@@ -45,7 +45,7 @@ install -d "${staging_dir}" "${firmware_dir}" "${licenses_dir}"
 
 echo "  - Copy firmware files to ${staging_dir}"
 
-./copy-firmware.sh --zstd -19 "${staging_dir}"
+ZSTD_CLEVEL=19 ./copy-firmware.sh --zstd "${staging_dir}"
 debian/scripts/check-symlinks "${staging_dir}"
 
 # ----------------------------------------------------------------------------
