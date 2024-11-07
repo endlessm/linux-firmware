@@ -50,7 +50,7 @@ install-linux-%:
 	dh_installdeb
 	dh_gencontrol
 	dh_md5sums
-	dh_builddeb
+	dh_builddeb -- -Znone
 
 install-arch: ARCH = $(arch)
 install-arch: install-linux-firmware
