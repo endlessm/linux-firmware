@@ -1,3 +1,17 @@
+linux-firmware (20241108.git3bbb13a7-0ubuntu1) plucky; urgency=medium
+
+  * Missing CS35L56 sof firmware for Dell Bolan platform (LP: #2077829)
+    - SAUCE: cirrus: cs35l56: Add firmware for Cirrus CS35L56 for various Dell laptops
+  * Miscellaneous Ubuntu changes
+    - SAUCE: copy-firmware.sh: Run check_whence.py only if in a git repo
+    - Rebase to upstream commit 3bbb13a78b3defc5cfca702114108f0bd7fcf542
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - i915: Update Xe2LPD DMC to v2.23
+      - rtw88: Add firmware v52.14.0 for RTL8812AU
+      - amdgpu: update DMCUB to v9.0.10.0 for DCN351
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 08 Nov 2024 16:44:23 +0100
+
 linux-firmware (20241107.gitdb0082fa-0ubuntu1) plucky; urgency=medium
 
   * Miscellaneous Ubuntu changes
