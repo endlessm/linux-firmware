@@ -14,6 +14,7 @@ Optional arguments:
   -h, --help             Show this help text and exit.
   -r, --release RELEASE  The package release name. Defaults to the current release
                          if not provided.
+  --skip-check           Skip branch name check.
   -s, --suffix SUFFIX    Generate the new package version by appending SUFFIX to
                          the current version rather than incrementing the upload
                          number by one.
@@ -21,6 +22,7 @@ EOF
 }
 
 release=
+skip_check=0
 suffix=
 
 while [ ${#} -gt 0 ] ; do
@@ -32,6 +34,9 @@ while [ ${#} -gt 0 ] ; do
 		-r|--release)
 			shift
 			release=${1}
+			;;
+		--skip-check)
+			skip_check=1
 			;;
 		-s|--suffix)
 			shift
@@ -54,6 +59,15 @@ if [ -z "${release}" ] ; then
 	release=$(dpkg-parsechangelog -SDistribution)
 fi
 version=$(dpkg-parsechangelog -SVersion)
+
+# Check that the release and branch names match
+branch=$(git rev-parse --abbrev-ref HEAD)
+if [ "${release}" != "${branch}" ] ; then
+	echo "Release and branch name mismatch (${release} != ${branch})" >&2
+	if [ ${skip_check} -eq 0 ] ; then
+		exit 1
+	fi
+fi
 
 # New release version and tag
 # shellcheck disable=SC2153
