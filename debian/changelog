@@ -1,3 +1,128 @@
+linux-firmware (20241107.gitdb0082fa-0ubuntu1) plucky; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit db0082faa5fee3e81ef00fc6a5d09d8f97a1b0af
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - rtw89: 8922a: add fw format-2 v0.35.42.1
+      - amdgpu: update DMCUB to v0.0.233.0 DCN351
+      - qcom: add gpu firmwares for sa8775p chipset
+      - mt76: mt7996: add firmware files for mt7996 chipset variants
+      - mt76: mt7996: add firmware files for mt7992 chipset
+      - qcom: update gpu firmwares for qcm6490 chipset
+      - amdgpu: update aldebaran firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update GC 11.0.2 firmware
+      - amdgpu: update PSP 13.0.7 firmware
+      - amdgpu: update VCN 4.0.4 firmware
+      - amdgpu: update yellow carp firmware
+      - amdgpu: update GC 9.4.3 firmware
+      - amdgpu: update PSP 13.0.6 firmware
+      - amdgpu: update SDMA 4.4.2 firmware
+      - amdgpu: update SMU 13.0.6 firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: update renoir firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: update GC 11.5.0 firmware
+      - amdgpu: update PSP 14.0.0 firmware
+      - amdgpu: update VCN 4.0.5 firmware
+      - amdgpu: update GC 11.5.1 firmware
+      - amdgpu: update PSP 14.0.1 firmware
+      - amdgpu: update VCN 4.0.6 firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update GC 11.0.1 firmware
+      - amdgpu: update PSP 13.0.4 firmware
+      - amdgpu: update VCN 4.0.2 firmware
+      - amdgpu: update green sardine firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update vangogh firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update picasso firmware
+      - amdgpu: update GC 11.0.0 firmware
+      - amdgpu: update PSP 13.0.0 firmware
+      - amdgpu: update VCN 4.0.0 firmware
+      - amdgpu: update vega10 firmware
+      - amdgpu: update GC 11.5.2 firmware
+      - amdgpu: update PSP 14.0.4 firmware
+      - amdgpu: update vega12 firmware
+      - amdgpu: update PSP 13.0.8 firmware
+      - amdgpu: update PSP 13.0.5 firmware
+      - amdgpu: update VCN 3.1.2 firmware
+      - amdgpu: update GC 11.0.3 firmware
+      - amdgpu: update PSP 13.0.10 firmware
+      - amdgpu: update SMU 13.0.10 firmware
+      - amdgpu: update raven firmware
+      - linux-firmware: add firmware for MT7920
+      - linux-firmware: add firmware for MediaTek Bluetooth chip (MT7920)
+      - brcm: Link FriendlyElec NanoPi M4 to AP6356S nvram
+      - brcm: Add BCM4354 NVRAM for Jetson TX1
+      - amdgpu: DMCUB DCN35 update
+      - QCA: Add Bluetooth firmwares for WCN785x with UART transport
+      - Revert "ath12k: WCN7850 hw2.0: update board-2.bin"
+      - rtlwifi: Add firmware v39.0 for RTL8192DU
+      - tas2781: Upload dsp firmware for ASUS laptop 1EB30 & 1EB31
+      - Add a link from TAS2XXX1EB3.bin -> ti/tas2781/TAS2XXX1EB30.bin
+      - check_whence.py: use consistent naming
+      - check_whence.py: ban link-to-a-link
+      - check_whence.py: LC_ALL=C sort -u the filelist
+      - check_whence.py: annotate replacement strings as raw
+      - editorconfig: add initial config file
+      - Style update yaml files
+      - copy-firmware.sh: flesh out and fix dedup-firmware.sh
+      - Revert "copy-firmware: Support additional compressor options"
+      - copy-firmware.sh: reset and consistently handle destdir
+      - copy-firmware.sh: fix indentation
+      - copy-firmware.sh: add err() helper
+      - copy-firmware.sh: warn if the destination folder is not empty
+      - copy-firmware.sh: call ./check_whence.py before parsing the file
+      - copy-firmware.sh: remove no longer reachable test -f
+      - copy-firmware.sh: remove no longer reachable test -L
+      - copy-firmware.sh: rename variables in symlink hanlding
+      - ath12k: QCN9274 hw2.0: add board-2.bin
+      - ath12k: QCN9274 hw2.0: add to WLAN.WBE.1.3.1-00162-QCAHKSWPL_SILICONZ-1
+      - ath12k: WCN7850 hw2.0: update board-2.bin
+      - mtk_wed: add firmware for mt7988 Wireless Ethernet Dispatcher
+      - linux-firmware: update firmware for en8811h 2.5G ethernet phy
+      - cirrus: cs35l56: Add firmware for Cirrus Amps for some HP laptops
+      - cirrus: cs35l56: Add firmware for Cirrus CS35L56 for some ASUS laptops
+      - cirrus: cs35l56: Add firmware for Cirrus CS35L56 for a Lenovo Laptop
+      - iwlwifi: update cc/Qu/QuZ firmwares for core91-69 release
+      - iwlwifi: update ty/So/Ma firmwares for core91-69 release
+      - iwlwifi: add gl/Bz FW for core91-69 release
+      - rtl_nic: add firmware rtl8125d-1
+      - configure: remove unused file
+      - Remove execute bit from firmware files
+      - check_whence.py: check the permissions
+      - make: separate installation and de-duplication targets
+      - rtlwifi: Update firmware for RTL8192FU to v7.3
+      - brcm: replace NVRAM for Jetson TX1
+      - amdgpu: DMCUB updates forvarious AMDGPU ASICs
+      - qcom: Add Audio firmware for X1E80100 CRD/QCPs
+      - check_whence.py: skip some validation if git ls-files fails
+      - Makefile: error out of 'install' if COPYOPTS is set
+      - linux-firmware: Update firmware file for Intel BlazarU core
+      - linux-firmware: Add firmware for Cirrus CS35L41
+      - cnm: update chips&media wave521c firmware.
+      - i915: Add Xe3LPD DMC
+      - mediatek: Add sof-tolg for mt8195
+      - amdgpu: DMCUB updates for various AMDGPU ASICs
+      - i915: Update MTL/ARL GSC to v102.1.15.1926
+      - xe: Update LNL GSC to v104.0.0.1263
+      - ath11k: move WCN6750 firmware to the device-specific subdir
+      - cirrus: cs35l56: Update firmware for Cirrus Amps for some HP laptops
+      - qcom: update gpu firmwares for qcs615 chipset
+      - qcom: Add link for QCS6490 GPU firmware
+      -  linux-firmware: Update firmware file for Intel BlazarI core
+      - WHENCE: Add sof-tolg for mt8195
+      - linux-firmware: update firmware for MT7925 WiFi device
+      - linux-firmware: update firmware for mediatek bluetooth chip (MT7925)
+    - SAUCE: check_whence.py: Don't check execute bit of debian/ files
+    - [Packaging] rules: Don't compress the binary packages
+    - [Packaging] scripts/install-firmware: Set compression level via env variable
+    - [Packaging] scripts/close-release: Check that release and branch names match
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 08 Nov 2024 07:50:45 +0100
+
 linux-firmware (20240913.gita34e7a5f-0ubuntu2) oracular; urgency=medium
 
   * Miscellaneous Ubuntu changes
