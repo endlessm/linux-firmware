@@ -1,3 +1,28 @@
+linux-firmware (20241118.git6e4e94b0-0ubuntu1) plucky; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 6e4e94b02da0357ed7db03b2120b02e378c403e0
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - rtw89: 8852a: update fw to v0.13.36.2
+      - cirrus: cs35l56: Add firmware for Cirrus CS35L56 for various Dell laptops
+      - copy-firmware.sh: Run check_whence.py only if in a git repo
+      - linux-firmware: update firmware for MT7920 WiFi device
+      - mediatek MT7920: update bluetooth firmware to 20241104091246
+      - cnm: update chips&media wave521c firmware.
+      - rtl_bt: Update RTL8852BT/RTL8852BE-VT BT USB FW to 0x04D7_63F7
+      - dedup-firmware.sh: fix infinite loop for --verbose
+      - qcom: Update aic100 firmware files
+      - qcom: Add QDU100 firmware image files.
+      - linux-firmware: update firmware for MT7921 WiFi device
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - mediatek MT7921: update bluetooth firmware to 20241106151414
+      - mediatek MT7922: update bluetooth firmware to 20241106163512
+      - QCA: Add 22 bluetooth firmware nvm files for QCA2066
+      - qcom: update venus firmware file for SC7280
+      - qcom: venus-5.4: add venus firmware file for qcs615
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 18 Nov 2024 11:00:03 +0100
+
 linux-firmware (20241108.git3bbb13a7-0ubuntu1) plucky; urgency=medium
 
   * Missing CS35L56 sof firmware for Dell Bolan platform (LP: #2077829)
