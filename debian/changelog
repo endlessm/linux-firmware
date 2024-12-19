@@ -1,3 +1,124 @@
+linux-firmware (20241219.git3f227859-0ubuntu1) plucky; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 3f227859c1a2910d5bf29230382b3faadedd24ac
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - iwlwifi: add Bz-gf FW for core91-69 release
+      - i915: Update GUC to v70.36.0 for ADL-P, DG1, DG2, MTL, TGL
+      - xe: Update GUC to v70.36.0 for BMG, LNL
+      - linux-firmware: Update AMD cpu microcode
+      - amdgpu: update DMCUB to v9.0.10.0 for DCN351
+      - amdgpu: update DMCUB to v9.0.10.0 for DCN314
+      - ice: update ice DDP package to ice-1.3.41.0
+      - ice: update ice DDP comms package to 1.3.52.0
+      - ice: update ice DDP wireless_edge package to 1.3.20.0
+      - amdgpu: update aldebaran firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update gc 11.0.2 firmware
+      - amdgpu: update psp 13.0.7 firmware
+      - amdgpu: update vcn 4.0.4 firmware
+      - amdgpu: update gc 9.4.3 firmware
+      - amdgpu: update psp 13.0.6 firmware
+      - amdgpu: update sdma 4.4.2 firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: update renoir firmware
+      - amdgpu: update arcturus firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: update gc 11.5.0 firmware
+      - amdgpu: update psp 14.0.0 firmware
+      - amdgpu: update vcn 4.0.5 firmware
+      - amdgpu: update gc 11.5.1 firmware
+      - amdgpu: update psp 14.0.1 firmware
+      - amdgpu: update vcn 4.0.6 firmware
+      - amdgpu: update vpe 6.1.1 firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update gc 11.0.1 firmware
+      - amdgpu: update psp 13.0.4 firmware
+      - amdgpu: update vcn 4.0.2 firmware
+      - amdgpu: update gc 11.0.4 firmware
+      - amdgpu: update psp 13.0.11 firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update vangogh firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update gc 11.0.0 firmware
+      - amdgpu: update psp 13.0.0 firmware
+      - amdgpu: update smu 13.0.0 firmware
+      - amdgpu: update vcn 4.0.0 firmware
+      - amdgpu: update vega10 firmware
+      - amdgpu: update gc 11.5.2 firmware
+      - amdgpu: update psp 14.0.4 firmware
+      - amdgpu: update vega12 firmware
+      - amdgpu: update vega20 firmware
+      - amdgpu: update psp 13.0.8 firmware
+      - amdgpu: update psp 13.0.5 firmware
+      - amdgpu: update vcn 3.1.2 firmware
+      - amdgpu: add gc 9.4.4 firmware
+      - amdgpu: add psp 13.0.14 firmware
+      - amdgpu: add sdma 4.4.5 firmware
+      - amdgpu: add smu 13.0.14 firmware
+      - amdgpu: update gc 11.0.3 firmware
+      - amdgpu: update psp 13.0.10 firmware
+      - amdgpu: update sdma 6.0.3 firmware
+      - amdgpu: update smu 13.0.10 firmware
+      - QCA: Update Bluetooth WCN785x firmware to 2.0.0-00515-2
+      - iwlwifi: add Bz-gf FW for core89-91 release
+      - cirrus: cs35l56: Add firmware for Cirrus CS35L56 for various Dell laptops
+      - i915: Update Xe2LPD DMC to v2.24
+      - QCA: Add Bluetooth nvm files for WCN785x
+      - upstream amdnpu firmware
+      - amdgpu: update aldebaran firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update gc 11.0.2 firmware
+      - amdgpu: update vcn 4.0.4 firmware
+      - amdgpu: update yellow carp firmware
+      - amdgpu: update psp 13.0.6 firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: add gc 12.0.0 firmware
+      - amdgpu: add psp 14.0.2 firmware
+      - amdgpu: add sdma 7.0.0 firmware
+      - amdgpu: add smu 14.0.2 firmware
+      - amdgpu: update renoir firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: add gc 12.0.1 firmware
+      - amdgpu: add psp 14.0.3 firmware
+      - amdgpu: add sdma 7.0.1 firmware
+      - amdgpu: add smu 14.0.3 firmware
+      - amdgpu: add vcn 5.0.0 firmware
+      - amdgpu: update psp 14.0.0 firmware
+      - amdgpu: update vcn 4.0.5 firmware
+      - amdgpu: update gc 11.5.1 firmware
+      - amdgpu: update vcn 4.0.6 firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update gc 11.0.1 firmware
+      - amdgpu: update vcn 4.0.2 firmware
+      - amdgpu: update green sardine firmware
+      - amdgpu: update gc 11.0.4 firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update vangogh firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update picasso firmware
+      - amdgpu: update gc 11.0.0 firmware
+      - amdgpu: update vcn 4.0.0 firmware
+      - amdgpu: update gc 11.5.2 firmware
+      - amdgpu: update psp 14.0.4 firmware
+      - amdgpu: update vpe 6.1.3 firmware
+      - amdgpu: update vcn 3.1.2 firmware
+      - amdgpu: update psp 13.0.14 firmware
+      - amdgpu: update gc 11.0.3 firmware
+      - amdgpu: update raven firmware
+      - Add top level license file.
+      - amdgpu: update dmcub 0.0.246.0 firmware
+      - linux-firmware: Update firmware file for Intel BlazarU core
+      - rtl_nic: add firmware rtl8125d-2
+      - cirrus: cs35l56: Correct SSID order for 103c8d01 103c8d08 10431f43
+      - cirrus: cs35l56: Add and update firmware for various Cirrus CS35L54 and CS35L56 laptops
+      - cirrus: cs35l56: Correct filenames of SSID 17aa3832
+      - qcom: venus-5.4: update firmware binary for sc7180 and qcs615
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Thu, 19 Dec 2024 12:31:29 +0100
+
 linux-firmware (20241118.git6e4e94b0-0ubuntu1) plucky; urgency=medium
 
   * Miscellaneous Ubuntu changes
