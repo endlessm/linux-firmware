@@ -1,3 +1,132 @@
+linux-firmware (20250127.git7da36bae-0ubuntu1) plucky; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 7da36bae1acc162465249e4f9dd968b901596938
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - rtl_nic: add firmware rtl8125bp-2
+      - WHENCE: Add "Info:" tag to text that's clearly not part of the license
+      - cnm: update chips&media wave521c firmware.
+      - rtl_bt: Update RTL8852B BT USB FW to 0x04BE_1F5E
+      - check_whence.py: Use a more portable shebang.
+      - Makefile: Remove obsolete/broken reference.
+      - Add support to install files/symlinks in parallel.
+      - copy-firmware.sh: Fix typo in error message.
+      - WHENCE: Link the Raspberry Pi CM5 and 500 to the 4B
+      - amdgpu: revert dimgrey cavefish VCN firmware
+      - amdgpu: revert navy flounder VCN firmware
+      - amdgpu: revert sienna cichlid VCN firmware
+      - amdgpu: revert yellow carp VCN firmware
+      - amdgpu: revert VCN 3.1.2 firmware
+      - rtl_bt: Add separate config for RLT8723CS Bluetooth part
+      - Fix has_gnu_parallel function
+      - cirrus: cs35l41: Add Firmware for Ayaneo system 1f660105
+      - linux-firmware: Update firmware file for Intel Bluetooth Solar core
+      - linux-firmware: Update firmware file for Intel BlazarU core
+      - linux-firmware: Update firmware file for Intel Bluetooth Magnetar core
+      - cirrus: cs35l56: Correct some links to address the correct amp instance
+      - amdgpu: update aldebaran firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update gc 11.0.2 firmware
+      - amdgpu: update psp 13.0.7 firmware
+      - amdgpu: update vcn 4.0.4 firmware
+      - amdgpu: update yellow carp firmware
+      - amdgpu: update gc 9.4.3 firmware
+      - amdgpu: update psp 13.0.6 firmware
+      - amdgpu: update sdma 4.4.2 firmware
+      - amdgpu: update vcn 4.0.3 firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: update gc 12.0.0 firmware
+      - amdgpu: update psp 14.0.2 firmware
+      - amdgpu: update smu 14.0.2 firmware
+      - amdgpu: update renoir firmware
+      - amdgpu: update arcturus firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: update gc 12.0.1 firmware
+      - amdgpu: update psp 14.0.3 firmware
+      - amdgpu: update smu 14.0.3 firmware
+      - amdgpu: update vcn 5.0.0 firmware
+      - amdgpu: update gc 11.5.0 firmware
+      - amdgpu: update vcn 4.0.5 firmware
+      - amdgpu: update psp 14.0.1 firmware
+      - amdgpu: update vcn 4.0.6 firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update gc 11.0.1 firmware
+      - amdgpu: update psp 13.0.4 firmware
+      - amdgpu: update vcn 4.0.2 firmware
+      - amdgpu: update gc 11.0.4 firmware
+      - amdgpu: update psp 13.0.11 firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update vangogh firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update picasso firmware
+      - amdgpu: update gc 11.0.0 firmware
+      - amdgpu: update psp 13.0.0 firmware
+      - amdgpu: update vcn 4.0.0 firmware
+      - amdgpu: update vega10 firmware
+      - amdgpu: update vega12 firmware
+      - amdgpu: update vega20 firmware
+      - amdgpu: update psp 13.0.5 firmware
+      - amdgpu: update gc 9.4.4 firmware
+      - amdgpu: update psp 13.0.14 firmware
+      - amdgpu: update sdma 4.4.5 firmware
+      - amdgpu: update gc 11.0.3 firmware
+      - amdgpu: update psp 13.0.10 firmware
+      - amdgpu: update sdma 6.0.3 firmware
+      - amdgpu: DMCUB updates for various AMDGPU ASICs
+      - rtw89: 8852b: update fw to v0.29.29.7
+      - rtw89: 8852bt: update fw to v0.29.110.0
+      - rtw89: 8922a: update fw to v0.35.52.1 and stuffs
+      - rtw89: 8922a: update fw to v0.35.54.0
+      - rtw89: 8852c: update fw to v0.27.122.0
+      - rtw89: 8852b: update fw to v0.29.29.8
+      - linux-firmware: wilc3000: add firmware for WILC3000 WiFi device
+      - iwlwifi: add Bz FW for core90-93 release
+      - linux-firmware: Update firmware (v10) for mt7988 internal
+      - qcom: add missing version information
+      - qcom: correct venus firmware versions
+      - qcom: add DSP firmware for SA8775p platform
+      - amdgpu: DMCUB updates for various AMDGPU ASICs
+      - qcom: update SLPI firmware for RB5 board
+      - qcom: correct licence information for SA8775P binaries
+      - amdgpu: update yellow carp firmware
+      - amdgpu: update gc 11.0.2 firmware
+      - amdgpu: update psp 13.0.7 firmware
+      - amdgpu: update vcn 4.0.4 firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update gc 9.4.3 firmware
+      - amdgpu: update gc 12.0.0 firmware
+      - amdgpu: update psp 14.0.2 firmware
+      - amdgpu: update smu 14.0.2 firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: update gc 12.0.1 firmware
+      - amdgpu: update psp 14.0.3 firmware
+      - amdgpu: update smu 14.0.3 firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update gc 11.0.0 firmware
+      - amdgpu: update psp 13.0.0 firmware
+      - amdgpu: update vcn 4.0.0 firmware
+      - amdgpu: update psp 13.0.5 firmware
+      - amdgpu: update psp 13.0.8 firmware
+      - amdgpu: update gc 11.0.3 firmware
+      - amdgpu: update psp 13.0.10 firmware
+      - linux-firmware: update firmware for MT7925 WiFi device
+      - mediatek MT7925: update bluetooth firmware to 20250113153307
+      - amlogic: update firmware for w265s2
+      - amdgpu: revert DMCUB 3.1.4 firmware
+      - QCA: Add Bluetooth firmware for QCA6698
+      - trivial: contrib: use python-magic to detect encoding of emails
+      - trivial: contrib: wrap the process in try/except to catch server issues
+      - amdgpu: Update ISP FW for isp v4.1.1
+      - rtl_bt: Update RTL8852B BT USB FW to 0x049B_5037
+      - qca: Update Bluetooth WCN6856 firmware 2.1.0-00642 to 2.1.0-00650
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 27 Jan 2025 17:41:15 +0100
+
 linux-firmware (20241219.git3f227859-0ubuntu1) plucky; urgency=medium
 
   * Miscellaneous Ubuntu changes
