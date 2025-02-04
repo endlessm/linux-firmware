@@ -1,3 +1,23 @@
+linux-firmware (20250204.git0fd450ee-0ubuntu1) plucky; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 0fd450ee905e934ac51286fd290f77a87add971c
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - i915: Update Xe2LPD DMC to v2.27
+      - linux-firmware: Update FW files for MRVL SD8997 chips
+      - qcom:x1e80100: Support for Lenovo T14s G6 Qualcomm platform
+      - qcom:x1e80100: Support for Lenovo T14s G6 Qualcomm platform
+      - qca: Update Bluetooth WCN6750 1.1.0-00476 firmware to 1.1.3-00069
+      - amdgpu: DMCUB updates forvarious AMDGPU ASICs
+      - amdgpu: DMCUB updates for various ASICs
+      - qca: restore licence information for WCN399x firmware
+      - qca: move QCA6390 firmware to separate section
+      - qca: add firmware for WCN3950 chips
+      - qca: add more WCN3950 1.3 NVM files
+      - ath11k: add device-specific firmware for QCM6490 boards
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 04 Feb 2025 13:30:23 +0100
+
 linux-firmware (20250127.git7da36bae-0ubuntu1) plucky; urgency=medium
 
   * Miscellaneous Ubuntu changes
