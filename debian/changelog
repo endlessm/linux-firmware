@@ -1,3 +1,68 @@
+linux-firmware (20250317.git1d4c88ee-0ubuntu1) plucky; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 1d4c88ee96ec0176fa6e239ffe3d3a4278a8e418
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - i915: Update Xe3LPD DMC to v2.20
+      - amdgpu: DMCUB updates for various ASICs
+      - linux-firmware: add firmware for qat_420xx devices
+      - qcom: Update gpu firmwares for qcs8300 chipset
+      - amdgpu: update aldebaran firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update gc 11.0.4 firmware
+      - amdgpu: update gc 11.5.1 firmware
+      - amdgpu: update psp 14.0.1 firmware
+      - amdgpu: update gc 10.3.7 firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update gc 9.4.3 firmware
+      - amdgpu: update psp 13.0.6 firmware
+      - amdgpu: update gc 9.4.4 firmware
+      - amdgpu: update psp 13.0.14 firmware
+      - amdgpu: update gc 11.0.0 firmware
+      - amdgpu: update psp 13.0.0 firmware
+      - amdgpu: update vcn 4.0.0 firmware
+      - amdgpu: update picasso firmware
+      - amdgpu: update vangogh firmware
+      - amdgpu: update gc 11.0.3 firmware
+      - amdgpu: update psp 13.0.10 firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update gc 10.3.6 firmware
+      - amdgpu: update vcn 3.1.2 firmware
+      - amdgpu: update vega10 firmware
+      - amdgpu: update gc 11.0.2 firmware
+      - amdgpu: update psp 13.0.7 firmware
+      - amdgpu: update vcn 4.0.4 firmware
+      - amdgpu: update vega12 firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: update vega20 firmware
+      - amdgpu: update gc 12.0.0 firmware
+      - amdgpu: update psp 14.0.2 firmware
+      - amdgpu: update smu 14.0.2 firmware
+      - amdgpu: update yellow carp firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update gc 12.0.1 firmware
+      - amdgpu: update gc 14.0.3 firmware
+      - amdgpu: update sdma 7.0.1 firmware
+      - amdgpu: update smu 14.0.3 firmware
+      - amdgpu: update vcn 5.0.0 firmware
+      - amdgpu: update gc 11.5.2 firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update gc 11.0.1 firmware
+      - amdgpu: update psp 13.0.4 firmware
+      - amdgpu: update vcn 4.0.2 firmware
+      - amdgpu: update gc 11.5.0 firmware
+      - amdgpu: update psp 14.0.0 firmware
+      - iwlwifi: update cc/Qu/QuZ firmwares for core94-91 release
+      - iwlwifi: update ty/So/Ma firmwares for core94-91 release
+      - iwlwifi: add Bz/gl FW for core94-91 release
+      - rtw89: 8852c: update fw to v0.27.125.0
+      - rtw89: 8922a: update fw to v0.35.63.0
+      - rtw89: 8922a: update fw to v0.35.64.0
+      - rtw88: Add firmware v33.6.0 for RTL8814AE/RTL8814AU
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 17 Mar 2025 13:59:14 +0100
+
 linux-firmware (20250310.git9e1370d3-0ubuntu1) plucky; urgency=medium
 
   * Miscellaneous Ubuntu changes
