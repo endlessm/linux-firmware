@@ -8,7 +8,8 @@ Build-Depends: debhelper-compat (= 13), zstd, rdfind
 Vcs-Git: git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-firmware
 
 Package: linux-firmware
-Architecture: any
+Architecture: all
+Multi-Arch: foreign
 Priority: optional
 Depends: ${misc:Depends}
 Recommends: firmware-sof-signed
