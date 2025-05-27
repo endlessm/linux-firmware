@@ -157,3 +157,9 @@ iwlwifi-QuZ-a0-hr-b0-5?.ucode
 iwlwifi-QuZ-a0-jf-b0-5?.ucode
 iwlwifi-cc-a0-5?.ucode
 iwlwifi-ty-a0-gf-a0-5?.ucode
+
+# Remove obsolete Marvell Prestera firmware
+# Kernel 6.15 wants v4.1
+mrvl/prestera/mvsw_prestera_fw-v2.0.img
+mrvl/prestera/mvsw_prestera_fw-v3.0.img
+mrvl/prestera/mvsw_prestera_fw-v4.0.img
