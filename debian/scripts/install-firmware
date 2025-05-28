@@ -3,23 +3,6 @@
 # Install firmware and license files into a package directory
 #
 
-function move_item()
-{
-	local item=${1} src_dir=${2} dst_dir=${3}
-	local src dst
-
-	src=${src_dir}/${item}
-	dst=${dst_dir}/${item}
-
-	if [ -e "${src}".zst ] ; then
-		src=${src}.zst
-		dst=${dst}.zst
-	fi
-
-	mkdir -p "${dst%/*}"
-	mv "${src}" "${dst}"
-}
-
 if [ $# -ne 1 ] ; then
 	echo "Usage: install-firmware <package>" >&2
 	exit 2
@@ -70,20 +53,6 @@ for f in debian/config/"${package}"/include.* ; do
 		done
 	done < <(sed -E '/^#|^$/d' "${f}")
 done
-
-# ----------------------------------------------------------------------------
-# Resolve dangling symlinks
-
-# Install missing link targets
-while IFS= read -r item ; do
-	item=$(realpath --relative-to="${firmware_dir}" "${item}")
-	move_item "${item}" "${staging_dir}" "${firmware_dir}"
-done < <(find "${firmware_dir}" -xtype l)
-
-# Install missing links
-while IFS= read -r item ; do
-	move_item "${item}" "${staging_dir}" "${firmware_dir}"
-done < <(cd "${staging_dir}" && find . -xtype l)
 
 # Sanity checks
 debian/scripts/check-symlinks "${firmware_dir}"
