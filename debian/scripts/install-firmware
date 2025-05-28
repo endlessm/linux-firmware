@@ -58,10 +58,15 @@ for f in debian/config/"${package}"/include.* ; do
 	while IFS= read -r items ; do
 		# Don't quote 'items' to allow for globs
 		# shellcheck disable=SC2086
-		for item in "${staging_dir}"/${items} ; do
-			# Move the item from the staging to the package directory
-			item=${item#"${staging_dir}"/}
-			move_item "${item}" "${staging_dir}" "${firmware_dir}"
+		for item in "${staging_dir}"/${items}{,.zst} ; do
+			if [ -e "${item}" ] || [ -L "${item}" ] ; then
+				# Move the item from the staging to the package directory
+				item_base=${item#"${staging_dir}"/}
+				dest=${firmware_dir}/${item_base}
+				echo "    - ${item_base}"
+				mkdir -p "${dest%/*}"
+				mv "${item}" "${dest}"
+			fi
 		done
 	done < <(sed -E '/^#|^$/d' "${f}")
 done
@@ -95,10 +100,13 @@ for f in debian/config/"${package}"/exclude.* ; do
 	while IFS= read -r items ; do
 		# Don't quote 'items' to allow for globs
 		# shellcheck disable=SC2086
-		for item in "${firmware_dir}"/${items} ; do
-			# Remove the item and any link target from the package directory
-			rm -rf "$(realpath "${item}")" "${item}"
-			rm -rf "$(realpath "${item}".zst)" "${item}".zst
+		for item in "${firmware_dir}"/${items}{,.zst} ; do
+			if [ -e "${item}" ] || [ -L "${item}" ] ; then
+				# Remove the item and any link target from the package directory
+				item_base=${item#"${firmware_dir}"/}
+				echo "    - ${item_base}"
+				rm -rf "${item}" "$(realpath "${item}")"
+			fi
 		done
 	done < <(sed -E '/^#|^$/d' "${f}")
 done
