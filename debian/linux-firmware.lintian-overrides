@@ -1,0 +1,4 @@
+linux-firmware: uses-no-compression-for-control-tarball
+linux-firmware: uses-no-compression-for-data-tarball
+linux-firmware: copyright-without-copyright-notice
+linux-firmware: debian-changelog-line-too-long [usr/share/doc/linux-firmware/changelog.Debian.gz:*]

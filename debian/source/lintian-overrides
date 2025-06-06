@@ -1,0 +1,6 @@
+linux-firmware source: debian-upstream-obsolete-path [debian/upstream]
+linux-firmware source: custom-compression-in-debian-rules dh_builddeb -- -Znone [debian/rules:*]
+
+# Ignore firmware binary warnings and errors
+linux-firmware source: binary-with-bad-dynamic-table
+linux-firmware source: elf-error

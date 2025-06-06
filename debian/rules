@@ -43,6 +43,7 @@ install-linux-%:
 	# by dh_compress so compress them all explicitly
 	gzip -9n debian/$(PACKAGE)/usr/share/doc/$(PACKAGE)/licenses/*
 
+	dh_lintian
 	dh_compress
 	dh_fixperms
 	dh_installdeb
