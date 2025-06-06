@@ -18,7 +18,7 @@ function out()
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-c] [-h] [--skip-branch-check] [option...]
+Usage: $(basename "${0}") [-c] [-h] [--skip-branch-check] [--skip-lintian] [option...]
 
 Build a Debian package.
 
@@ -26,12 +26,14 @@ Optional arguments:
   -c, --clean          Clean the git repo before the build.
   -h, --help           Show this help text and exit.
   --skip-branch-check  Skip branch name check.
+  --skip-lintian       Skip lintian.
   option...            Additional options for dpkg-buildpackage.
 EOF
 }
 
 clean=0
 skip_branch_check=0
+skip_lintian=0
 
 while [ ${#} -gt 0 ] ; do
 	case "${1}" in
@@ -44,6 +46,9 @@ while [ ${#} -gt 0 ] ; do
 			;;
 		--skip-branch-check)
 			skip_branch_check=1
+			;;
+		--skip-lintian)
+			skip_lintian=1
 			;;
 		*)
 			break
@@ -91,4 +96,16 @@ if [ "${version%-*}" != "${prev_version%-*}" ] ; then
     opts+=("-sa")  # Include the original source tarball
 fi
 
+ts=$(date)
+
 dpkg-buildpackage "${opts[@]}" "${@}"
+
+if [ ${skip_lintian} -eq 0 ] ; then
+	package=$(dpkg-parsechangelog -SSource)
+	while IFS= read -r changes ; do
+		echo "Run lintian on ${changes}"
+		lintian "${changes}"
+	done < <(
+		find ../"${package}"_"${version}"_*.changes -type f -newermt "${ts}"
+	)
+fi
