@@ -170,3 +170,7 @@ mellanox/mlxsw_spectrum-13.1*.mfa2
 mellanox/mlxsw_spectrum-13.200*.mfa2
 mellanox/mlxsw_spectrum2-29.200*.mfa2
 mellanox/mlxsw_spectrum3-30.200*.mfa2
+
+# LP: #2112488
+# Remove AMD TEE firmware which is provided by amd64-microcode
+amdtee
