@@ -149,11 +149,3 @@ Info: audio topology binary
 License: Redistributable. See LICENSE.1a98-INTEL-EDK2-2-tplg for details.
 
 --------------------------------------------------------------------------
-
-Driver: intel-ipu7 - Intel IPU7 (Image Processing Unit 7) driver
-
-File: intel/ipu/ipu7_fw.bin
-
-Licence: Redistributable. See LICENSE.ivsc for details
-
---------------------------------------------------------------------------
