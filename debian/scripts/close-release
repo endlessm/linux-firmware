@@ -6,7 +6,7 @@
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-h] [-r RELEASE] [-s SUFFIX]
+Usage: $(basename "${0}") [-h] [-r RELEASE] [--skip-branch-check] [-s SUFFIX]
 
 Close a release, i.e., create a release commit.
 
@@ -14,7 +14,7 @@ Optional arguments:
   -h, --help             Show this help text and exit.
   -r, --release RELEASE  The package release name. Defaults to the current release
                          if not provided.
-  --skip-check           Skip branch name check.
+  --skip-branch-check    Skip branch name check.
   -s, --suffix SUFFIX    Generate the new package version by appending SUFFIX to
                          the current version rather than incrementing the upload
                          number by one.
@@ -22,7 +22,7 @@ EOF
 }
 
 release=
-skip_check=0
+skip_branch_check=0
 suffix=
 
 while [ ${#} -gt 0 ] ; do
@@ -35,8 +35,8 @@ while [ ${#} -gt 0 ] ; do
 			shift
 			release=${1}
 			;;
-		--skip-check)
-			skip_check=1
+		--skip-branch-check)
+			skip_branch_check=1
 			;;
 		-s|--suffix)
 			shift
@@ -64,7 +64,7 @@ version=$(dpkg-parsechangelog -SVersion)
 branch=$(git rev-parse --abbrev-ref HEAD)
 if [ "${release}" != "${branch}" ] ; then
 	echo "Release and branch name mismatch (${release} != ${branch})" >&2
-	if [ ${skip_check} -eq 0 ] ; then
+	if [ ${skip_branch_check} -eq 0 ] ; then
 		exit 1
 	fi
 fi

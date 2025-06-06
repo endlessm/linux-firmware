@@ -18,20 +18,20 @@ function out()
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-c] [-h] [-s] [option...]
+Usage: $(basename "${0}") [-c] [-h] [--skip-branch-check] [option...]
 
 Build a Debian package.
 
 Optional arguments:
-  -c, --clean       Clean the git repo before the build.
-  -h, --help        Show this help text and exit.
-  -s, --skip-check  Skip branch name check.
-  option...         Additional options for dpkg-buildpackage.
+  -c, --clean          Clean the git repo before the build.
+  -h, --help           Show this help text and exit.
+  --skip-branch-check  Skip branch name check.
+  option...            Additional options for dpkg-buildpackage.
 EOF
 }
 
 clean=0
-skip_check=0
+skip_branch_check=0
 
 while [ ${#} -gt 0 ] ; do
 	case "${1}" in
@@ -42,8 +42,8 @@ while [ ${#} -gt 0 ] ; do
 			usage
 			exit
 			;;
-		-s|--skip-check)
-			skip_check=1
+		--skip-branch-check)
+			skip_branch_check=1
 			;;
 		*)
 			break
@@ -68,7 +68,7 @@ release=$(dpkg-parsechangelog -SDistribution)
 branch=$(git rev-parse --abbrev-ref HEAD)
 if [ "${release}" != "${branch}" ] ; then
 	echo "Release and branch name mismatch (${release} != ${branch})" >&2
-	if [ ${skip_check} -eq 0 ] ; then
+	if [ ${skip_branch_check} -eq 0 ] ; then
 		exit 1
 	fi
 fi
