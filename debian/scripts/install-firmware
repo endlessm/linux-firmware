@@ -25,7 +25,7 @@ install -d "${staging_dir}" "${firmware_dir}" "${licenses_dir}"
 # ----------------------------------------------------------------------------
 # Copy firmware files and links to a staging directory
 
-echo "  - Copy firmware files to ${staging_dir}"
+echo "Copy firmware files to ${staging_dir}"
 
 ZSTD_CLEVEL=19 ./copy-firmware.sh --zstd "${staging_dir}"
 debian/scripts/check-symlinks "${staging_dir}"
@@ -37,7 +37,7 @@ for f in debian/config/"${package}"/include.* ; do
 	if ! [ -e "${f}" ] ; then
 		continue
 	fi
-	echo "  - Include files from ${f}"
+	echo "Include files from ${f}"
 	while IFS= read -r items ; do
 		# Don't quote 'items' to allow for globs
 		# shellcheck disable=SC2086
@@ -46,7 +46,7 @@ for f in debian/config/"${package}"/include.* ; do
 				# Move the item from the staging to the package directory
 				item_base=${item#"${staging_dir}"/}
 				dest=${firmware_dir}/${item_base}
-				echo "    - ${item_base}"
+				echo "  ${item_base}"
 				mkdir -p "${dest%/*}"
 				mv "${item}" "${dest}"
 			fi
@@ -65,7 +65,7 @@ for f in debian/config/"${package}"/exclude.* ; do
 	if ! [ -e "${f}" ] ; then
 		continue
 	fi
-	echo "  - Exclude files from ${f}"
+	echo "Exclude files from ${f}"
 	while IFS= read -r items ; do
 		# Don't quote 'items' to allow for globs
 		# shellcheck disable=SC2086
@@ -73,7 +73,7 @@ for f in debian/config/"${package}"/exclude.* ; do
 			if [ -e "${item}" ] || [ -L "${item}" ] ; then
 				# Remove the item and any link target from the package directory
 				item_base=${item#"${firmware_dir}"/}
-				echo "    - ${item_base}"
+				echo "  ${item_base}"
 				rm -rf "${item}" "$(realpath "${item}")"
 			fi
 		done
@@ -87,7 +87,7 @@ find "${firmware_dir}" -type d -empty -delete
 # ----------------------------------------------------------------------------
 # Install relevant licenses
 
-echo "  - Install licenses"
+echo "Install licenses"
 
 install -m 0644 GPL-* "${licenses_dir}"
 
@@ -106,7 +106,7 @@ done < <(cd "${firmware_dir}" && find . -type f)
 # ----------------------------------------------------------------------------
 # Install WHENCE files
 
-echo "  - Install WHENCE files"
+echo "Install WHENCE files"
 
 install -m 0644 WHENCE "${doc_dir}"/README
 install -m 0644 WHENCE.ubuntu "${doc_dir}"/README.ubuntu
