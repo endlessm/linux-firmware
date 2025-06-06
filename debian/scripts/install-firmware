@@ -15,7 +15,7 @@ echo "Install firmware files for ${package} ..."
 staging_dir=debian/build/${package}
 
 package_dir=debian/${package}
-firmware_dir=${package_dir}/lib/firmware
+firmware_dir=${package_dir}/usr/lib/firmware
 doc_dir=${package_dir}/usr/share/doc/${package}
 licenses_dir=${doc_dir}/licenses
 

@@ -12,7 +12,7 @@ package=${1}
 
 echo "Symlink duplicate files for ${package} ..."
 
-firmware_dir=debian/${package}/lib/firmware
+firmware_dir=debian/${package}/usr/lib/firmware
 
 prev_md5=
 while IFS= read -r line ; do
