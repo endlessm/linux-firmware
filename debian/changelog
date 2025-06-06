@@ -1,3 +1,198 @@
+linux-firmware (20250606.git3b75d677-0ubuntu1) questing; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 3b75d677f898fe2aacc7b11763bbcd4732e71ce7
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - amdgpu: DMCUB updates for various ASICs
+      - qcom: Add Audio firmware for Lenovo T14s
+      - qcom: Add Audio firmware for Lenovo Slim 7x
+      - linux-firmware: Update firmware file for Intel BlazarI core
+      - copy-firmware: add usage help text
+      - copy-firmware: make script smarter about bad parameters
+      - copy-firmware: fail gracefully if moreutils parallel is installed
+      - mediatek: Add MT8188 SCP firmware
+      - qcom: Add DSP firmware for QCS8300 platform
+      - cirrus: Add cs35l56 firmware symlinks for Asus UM5606KA
+      - cirrus: cs35l41: Add Firmware for various HP Laptops using CS35L41 HDA
+      - amdgpu: update dcn 3.5 firmware to 0.1.0.0
+      - amdgpu: update dcn 4.01 firmware to 0.1.3.0
+      - amdgpu: update dcn 3.1.4 firmware to 8.0.78.0
+      - amdgpu: update dcn 3.5 and dcn 3.5.1 firmware to 9.0.27.0
+      - rtl_bt: Update RTL8852BT/RTL8852BE-VT BT USB FW to 0x0471_70A6
+      - cirrus: cs35l56: Correct filenames of SSID 103c8e1b and 103c8e1c
+      - intel_vpu: Update NPU firmware
+      - Revert "rtl_bt: Update RTL8852BT/RTL8852BE-VT BT USB FW to 0x0471_70A6"
+      - rtl_bt: Update RTL8852BT/RTL8852BE-VT BT USB FW to 0x17E9_16ED
+      - mediatek: Add new mt8188 SOF firmware
+      - mediatek: Add new mt8195 SOF firmware
+      - qcom: update firmware binary for SM8250
+      - QCA: Update WCN785x btusb firmware to 2.0.0-00790-3
+      - QCA: Add 8 bluetooth nvm files for WCN785x btusb
+      - linux-firmware: add firmware for Aeonsemi AS21x1x 1G/2.5G/5G/10G Ethernet Phy
+      - Mellanox: Add new mlxsw_spectrum firmware xx.2014.4012
+      - qcom:x1e80100: Support for Lenovo Yoga Slim 7 Snapdragon platform
+      - qcom:x1e80100: Iris Support for Lenovo T14s G6 Qualcomm platform
+      - i915: Update GUC to v70.44.1 for i915 platforms
+      - xe: Update GUC to v70.44.1 for BMG and LNL
+      - intel: avs: Update topology file for I2S Dialog 7219
+      - intel: avs: Update topology file for Digital Microphone Array
+      - intel: avs: Update topology file for HDMI codecs
+      - intel: avs: Update topology file for HDAudio codecs
+      - intel: avs: Update topology file for I2S Maxim 98357a
+      - intel: avs: Update topology file for I2S Maxim 98373
+      - intel: avs: Update topology file for I2S Maxim 98927
+      - intel: avs: Update topology file for I2S Nuvoton 8825
+      - intel: avs: Update topology file for I2S Realtek 274
+      - intel: avs: Update topology file for I2S Realtek 286
+      - intel: avs: Update topology file for I2S Realtek 298
+      - intel: avs: Update topology file for I2S Realtek 5514
+      - intel: avs: Update topology file for I2S Realtek 5640
+      - intel: avs: Update topology file for I2S Realtek 5663
+      - intel: avs: Update topology file for I2S Analog Devices 4567
+      - intel: ish: Update license file for ISH
+      - amdgpu: update dcn 4.01 frmware to 0.1.6.0
+      - amdgpu: update aldebaran firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update gc 11.0.4 firmware
+      - amdgpu: update psp 13.0.11 firmware
+      - amdgpu: update gc 11.5.1 firmware
+      - amdgpu: update psp 14.0.1 firmware
+      - amdgpu: update psp 13.0.8 firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update gc 9.4.3 firmware
+      - amdgpu: update psp 13.0.6 firmware
+      - amdgpu: update arcturus firmware
+      - amdgpu: update gc 9.4.4 firmware
+      - amdgpu: update psp 13.0.14 firmware
+      - amdgpu: update gc 11.0.0 firmware
+      - amdgpu: update psp 13.0.0 firmware
+      - amdgpu: update vcn 4.0.0 firmware
+      - amdgpu: update picasso firmware
+      - amdgpu: update vangogh firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update gc 11.0.3 firmware
+      - amdgpu: update psp 13.0.10 firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: update psp 13.0.5 firmware
+      - amdgpu: update vega10 firmware
+      - amdgpu: update gc 11.0.2 firmware
+      - amdgpu: update psp 13.0.7 firmware
+      - amdgpu: update smu 13.0.7 firmware
+      - amdgpu: update vcn 4.0.4 firmware
+      - amdgpu: update vega12 firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: update vega20 firmware
+      - amdgpu: update gc 12.0.0 firmware
+      - amdgpu: update psp 14.0.2 firmware
+      - amdgpu: update smu 14.0.2 firmware
+      - amdgpu: update yellow carp firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update gc 12.0.1 firmware
+      - amdgpu: update psp 14.0.3 firmware
+      - amdgpu: update smu 14.0.3 firmware
+      - amdgpu: update vcn 5.0.0 firmware
+      - amdgpu: update gc 11.5.2 firmware
+      - amdgpu: update psp 14.0.4 firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update gc 11.0.1 firmware
+      - amdgpu: update psp 13.0.4 firmware
+      - amdgpu: update vcn 4.0.2 firmware
+      - amdgpu: update psp 14.0.0 firmware
+      - amdgpu: update vcn 4.0.5 firmware
+      - contrib: process_linux_firmware: set user agent
+      - qcom: vpu: add video firmware binary for qcm6490
+      - Revert "rtw89: 8852c: update fw to v0.27.125.0"
+      - rtw89: 8852c: add fw v0.27.125.0 with format version 2
+      - rtw89: 8852c: update element RF TXPWR to R78
+      - rtw89: 8922a: update element RF TXPWR to R40
+      - rtl_bt: Update RTL8852BT/RTL8852BE-VT BT USB FW to 0x1881_BA06
+      - bmi260: Add BMI260 IMU initial configuration data file
+      - ASoC: tas2781: Swap channel for SPI projects.
+      - qcom: add QUPv3 firmware for QCS9100 platform
+      - iwlwifi: add Bz-hr FW for core93-123 release
+      - iwlwifi: update cc/Qu/QuZ firmwares for core95-82 release
+      - iwlwifi: update ty/So/Ma firmwares for core95-82 release
+      - iwlwifi: add Bz/gl FW for core95-82 release
+      - qcom: vpu: update video firmware binary for SA8775p
+      - ath12k: QCN9274 hw2.0: update board-2.bin
+      - ath12k: WCN7850 hw2.0: update to WLAN.HMT.1.1.c5-00284-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+      - ath11k: IPQ5018 hw1.0: update to WLAN.HK.2.6.0.1-01300-QCAHKSWPL_SILICONZ-1
+      - ath11k: WCN6855 hw2.0: update board-2.bin
+      - rtl_bt: Update RTL8852B BT USB FW to 0x098B_154B
+      - i915: Update Xe3LPD DMC to v2.23
+      - brcm: Add NVRAM file for Radxa Rock Pi X mini PC
+      - rtw89: 8922a: update fw to v0.35.71.0
+      - rtw89: 8852c: add tables for dynamic antenna TXPWR
+      - mediatek MT7925: update bluetooth firmware to 20250425073330
+      - linux-firmware: update firmware for MT7925 WiFi device
+      - cirrus: cs35l56: Update firmware for Cirrus Amps for some Dell laptops
+      - cirrus: cs35l56: Update firmware for Cirrus Amps for some Lenovo laptops
+      - cirrus: cs35l56: Add firmware for Cirrus Amps for some ASUS laptops
+      - cirrus: cs35l56: Add firmware for Cirrus Amps for some Lenovo laptops
+      - qcom: Add link for SM8350 GPU firmware
+      - amdgpu: update dcn 4.01 firmware to 0.1.8.0
+      - amd_pmf: Update AMD PMF TA Firmware to v3.1
+      - linux-firmware: Amphion: Update vpu firmware
+      - amdgpu: updates for dcn 3.20 and dcn 4.01 firmware to 0.1.10.0
+      - intel: avs: Update topology file for Digital Microphone Array
+      - intel_vpu: Update NPU firmware
+      - cnm: update chips&media wave521c firmware.
+      - rtl_nic: add firmware rtl8127a-1
+      - brcmfmac: Add a couple of NanoPi devices
+      - rtl_bt: Update RTL8822C BT USB and UART firmware to 0x7C20
+      - powervr: add firmware for Imagination Technologies BXS-4-64 GPU
+      - amdgpu: DMCUB updates for various ASICs
+      - nvidia: add GSP-RM version 570.144 firmware images
+      - cirrus: cs35l41: Add Firmware for various ACER Laptops using CS35L41 HDA
+      - mediatek: Add mt8196 VCP firmware
+      - qcom: add QUPv3 firmware for QCM6490 platform
+      - cnm: Add Chips&Media wave633c firmware for NXP i.MX9
+      - Adjust QUPv3 driver name
+      - cirrus: cs35l41: Add Firmware for various HP Agusta Laptops using CS35L41 HDA
+      - cirrus: cs35l41: Fix firmware links for several ASUS laptops
+      - ath12k: WCN7850 hw2.0: update to WLAN.HMT.1.1.c5-00284.1-QCAHMTSWPL_V1.0_V2.0_SILICONZ-3
+      - brcm: Add symlinks for Khadas VIM SDIO wifi config to AW-CM256SM.txt
+      - qcom: sc8280xp: FW blob updates for X13s
+      - linux-firmware: update firmware for MT7925 WiFi device
+      - mediatek MT7925: update bluetooth firmware to 20250526153203
+      - iwlwifi: update 7265D firmware
+      - iwlwifi: update firmwares for 8000 series
+      - iwlwifi: update cc/Qu/QuZ firmwares for core96-76 release
+      - iwlwifi: update ty/So/Ma firmwares for core96-76 release
+      - iwlwifi: add Bz/gl FW for core96-76 release
+      - linux-firmware: Update firmware file for Intel BlazarU core
+      - linux-firmware: Update firmware file for Intel Magnetar core
+      - linux-firmware: Update firmware file for Intel Solar core
+      - linux-firmware: Update firmware file for Intel Quasar core
+      - linux-firmware: Update firmware file for Intel BlazarI core
+      - linux-firmware: Update firmware file for Intel Pulsar core
+      - ice: update package to 1.3.43.0
+      - ice: update comms package to 1.3.55.0
+      - ice: update wireless_edge package to 1.3.23.0
+      - Intel IPU7: Add firmware binary files
+      - qcom: add QUPv3 firmware for QCS8300 platform
+      - amdgpu: DMCUB updates for various ASICs
+      - xe: Update LNL GSC to v104.0.5.1429
+      - i915: Update GUC to v70.45.2 for DG2
+      - xe: Update GUC to v70.45.2 for BMG, LNL
+    - SAUCE: Revert "UBUNTU: SAUCE: intel: Add IPU7 firmware"
+    - [Packaging] Switch back to indep packaging
+    - [Packaging] scripts/install-firmware: Remove arch handling
+    - [Packaging] scripts/install-firmware: Fix handling of .zst extension
+    - [Packaging] scripts/install-firmware: Remove dangling symlink handling
+    - [Packaging] scripts/install-firmware: Remove most indentations
+    - [Packaging] Remove some obsolete Marvell Prestera firmware
+    - [Packaging] Remove some obsolete Mellanox Spectrum firmware
+    - [Packaging] Bump Standards-Version to 4.7.2
+    - [Packaging] Add lintian overrides
+    - [Packaging] scripts: Rename --skip-check commandline option
+    - [Packaging] scripts/build-package: Run lintian after the build
+    - [Packaging] Add Rules-Requires-Root: no
+  * amdtee firmwares provided by both amd64-microcode and linux-firmware  (LP: #2112488)
+    - [Packaging] Remove AMD TEE firmware
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 06 Jun 2025 16:56:40 +0200
+
 linux-firmware (20250317.git1d4c88ee-0ubuntu1) plucky; urgency=medium
 
   * Miscellaneous Ubuntu changes
