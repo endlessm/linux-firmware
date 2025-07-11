@@ -48,3 +48,42 @@ the branch of the just released series:
 This creates a dummy initial release commit with a package version ending in
 .0 which prevents future rebases and serves as a starting point for future
 SRU release.
+
+
+Release Process
+---------------
+
+Note that linux-firmware follows the regular Ubuntu SRU process [1] and *not*
+the Ubuntu kernel team's special SRU process.
+
+To release a new package, go through the following steps:
+
+1) Create a new changelog entry with all the changes since the last release.
+   Commit the updated changelog and tag it. Run the following script which
+   does all of that:
+   $ debian/scripts/close-release
+
+2) Clean your tree and build a signed source package:
+   $ git reset --hard
+   $ git clean -dxf
+   $ debian/scripts/build-package -S
+
+3) Review the source package and make sure it looks sane. Use debdiff to
+   compare it to the previous released package.
+
+4) Upload the source package to the Ubuntu unapproved queue [2]. You obvisouly
+   need upload rights for linux-firmware to be able to do that:
+   $ dput ubuntu linux-firmware-<version>_source.changes
+
+5) Check your email to verify the package upload was accepted.
+
+6) Push the updated branch and new tag to the git server.
+
+7) If urgent, ping the Ubuntu SRU team to review your upload.
+
+
+References
+----------
+
+[1] https://documentation.ubuntu.com/sru/en/latest/
+[2] https://launchpad.net/ubuntu/<series>/+queue
