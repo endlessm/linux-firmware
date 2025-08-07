@@ -1,3 +1,44 @@
+linux-firmware (20250807.gitb6b0b152-0ubuntu1) questing; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] Document the release process in the README
+    - Rebase to upstream commit b6b0b15278c76bbc1b7aaf17e706734d4be28e00
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - linux-firmware: Update firmware file for Intel BlazarI core
+      - linux-firmware: Update firmware file for Intel BlazarU core
+      - linux-firmware: Update firmware file for Intel Solar core
+      - qcom: Update gpu firmwares of QCS615 chipset
+      - rtw89: 8922a: update BB parameter V49
+      - rtw89: 8852c: add regd fw element with version R72-R57
+      - rtw89: 8922a: add regd fw element with version R72-R6
+      - rtw89: 8852bt: update fw to v0.29.127.0
+      - rtw89: 8852b: update fw to v0.29.128.0
+      - amdgpu: Update GC 11.5.1 microcode
+      - WHENCE: clarify io_ti origin
+      - WHENCE: extract more license statements
+      - amdgpu: update dmcub fw for various DCN version
+      - intel_vpu: Update NPU firmware
+      - qcom: Add Audio topology for QCS6490 RB3Gen2
+      - cirrus: cs35l56: Add firmware for Cirrus CS35L56 for various Dell laptops
+      - cirrus: cs35l41: Update Firmware for Dell Oasis
+      - cirrus: cs35l41: Add Firmware for various ASUS commercial Laptops using CS35L41 HDA
+      - amdgpu: update dmcub fw for dcn314
+      - qcom: Add firmware binary for SM8750.
+      - qcom: Add QCS6490 symlink for QUPv3 firmware
+      - linux-firmware: Update AMD cpu microcode
+      - i915: Xe3LPD DMC v2.29
+      - qcom: update Venus firmware file for v6.0
+      - qcom: Update DSP firmware for qcm6490 platform
+      - mediatek MT7925: update bluetooth firmware to 20250721233113
+      - linux-firmware: update firmware for MT7925 WiFi device
+      - linux-firmware: Add firmware for airoha-npu driver
+      - qcom: Add QDU100 firmware image files required for booting.
+      - amdgpu: Update GC 11.5.0 microcode
+      - amdgpu: Update SDMA 6.1.0 microcode
+      - amdgpu: Update GCN 4.0.5 microcode
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Thu, 07 Aug 2025 08:12:40 +0200
+
 linux-firmware (20250711.git99d64b4f-0ubuntu1) questing; urgency=medium
 
   * Miscellaneous Ubuntu changes
