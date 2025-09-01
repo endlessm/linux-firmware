@@ -1,3 +1,35 @@
+linux-firmware (20250901.git993ff19b-0ubuntu1) questing; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 993ff19b553cd4d252fdf99f07c28825ef57b862
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - iwlwifi: update cc/Qu/QuZ firmwares for core97-84 release
+      - iwlwifi: update ty/So/Ma firmwares for core97-84 release
+      - iwlwifi: add Bz/gl FW for core97-84 release
+      - qcom: add CDSP firmware for x1e80100 platform
+      - rtw89: 8852c: update fw to v0.27.129.3
+      - rtw89: 8852c: update fw to v0.27.129.4
+      - rtw89: 8922a: update fw to v0.35.80.3
+      - Link rtl8723b_config.bin to rtl8723bs
+      - qcom: Add firmware binary for SM8650.
+      - cirrus: cs35l56: Add firmware for Cirrus Amps for some Lenovo laptops
+      - ath11k: WCN6855 hw2.0@nfa765: add to WLAN.HSP.1.1-04685-QCAHSPSWPL_V1_V2_SILICONZ_IOE-1
+      - cirrus: cs35l56: Update firmware for Cirrus Amps for some Lenovo laptops
+      - cirrus: cs35l41: Move entries to correct driver section in WHENCE
+      - intel/ish: Add firmware for LENOVO THINKPAD X1 2-in-1 Gen 10
+      - amdgpu: DMCUB updates for various ASICs
+      - intel_vpu: Update NPU firmware
+      - firmware: qcom: Reorder VPU firmware entries in WHENCE
+      - Update README.md to clarify S-o-b requirements
+      - amdgpu: Update ISP FW for isp v4.1.1
+      - ath11k: Support WCN6855 hw2.1 with NFA firmware variant
+      - Revert "intel/ish: Add firmware for LENOVO THINKPAD X1 2-in-1 Gen 10"
+      - Move all iwlwifi top level files to intel/ directory
+      - Move QAT firmware to intel/ subdirectory
+      - Fix link entry for qat_895xcc.bin
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 01 Sep 2025 13:02:26 +0200
+
 linux-firmware (20250818.git07ed893d-0ubuntu1) questing; urgency=medium
 
   * Miscellaneous Ubuntu changes
