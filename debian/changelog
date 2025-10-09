@@ -1,3 +1,125 @@
+linux-firmware (20251009.git46a6999a-0ubuntu1) resolute; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 46a6999a2d14a5f2239e7e712e5bbcf543f59034
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - iwlwifi: add Bz-HR FW for core90-93 release
+      - rtl_bt: Update RTL8822C BT USB firmware to 0x2B66_D962
+      - qcom: add ADSP firmware for qcs615 platform
+      - i915: Update GUC to v70.49.4 for ADL-P, DG1, DG2, MTL, TGL
+      - xe: Update GUC to v70.49.4 for BMG, LNL, PTL
+      - cs35l56: Rename firmware for Thinkbook 16P Gen6 (17AA3921) without multiple speakers
+      - Revert "cs35l56: Rename firmware for Thinkbook 16P Gen6 (17AA3921) without multiple speakers"
+      - intel_vpu: Update NPU firmware
+      - qcom: vpu: update firmware binaries to fix encoder drain handling
+      - mediatek MT7925:update bluetooth firmware to 20250825220109 Update binary firmware for MT7925 BT devices.
+      - linux-firmware: update firmware for MT7925 WiFi device
+      - ath12k: WCN7850 hw2.0@ncm865: add to WLAN.IOE_HMT.1.1-00018-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+      - qcom: Add Audio topology for LEMANS-EVK
+      - qcom: add CDSP firmware for qcs615 platform
+      - qcom: Add Audio topology for MONACO-EVK
+      - qcom: move Monaco EVK topology from qcs8275 to qcs8300 subdir
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - mediatek MT7922: update bluetooth firmware to 20250903123504
+      - intel/ish: Add firmware for LENOVO THINKPAD X1 2-in-1 Gen 10
+      - amdgpu: DMCUB updates for various ASICs
+      - linux-firmware: update firmware for en8811h 2.5G ethernet phy
+      - amdgpu: update GC 9.4.3 firmware
+      - amdgpu: update PSP 13.0.6 firmware
+      - amdgpu: update VCN 4.0.3 firmware
+      - amdgpu: update green sardine firmware
+      - amdgpu: update GC 11.5.2 firmware
+      - amdgpu: update PSP 14.0.4 firmware
+      - amdgpu: update VPE 6.1.3 firmware
+      - amdgpu: update GC 11.5.3 firmware
+      - amdgpu: update PSP 14.0.5 firmware
+      - amdgpu: update SDMA 6.1.3 firmware
+      - amdgpu: update GC 9.4.4 firmware
+      - amdgpu: update PSP 13.0.14 firmware
+      - amdgpu: update GC 9.5.0 firmware
+      - amdgpu: update PSP 13.0.12 firmware
+      - amdgpu: update VCN 5.0.1 firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update GC 11.0.0 firmware
+      - amdgpu: update PSP 13.0.0 firmware
+      - amdgpu: update SMU 13.0.0 firmware
+      - amdgpu: update SDMA 6.0.0 firmware
+      - amdgpu: update VCN 4.0.0 firmware
+      - amdgpu: update PSP 13.0.0 kicker firmware
+      - amdgpu: update SMU 13.0.0 kicker firmware
+      - amdgpu: update GC 11.0.3 firmware
+      - amdgpu: update PSP 13.0.10 firmware
+      - amdgpu: update SMU 13.0.10 firmware
+      - amdgpu: update GC 11.0.2 firmware
+      - amdgpu: update PSP 13.0.7 firmware
+      - amdgpu: update VCN 4.0.4 firmware
+      - amdgpu: update GC 12.0.0 firmware
+      - amdgpu: update PSP 14.0.2 firmware
+      - amdgpu: update SMU 14.0.2 firmware
+      - amdgpu: update GC 12.0.1 firmware
+      - amdgpu: update PSP 14.0.3 firmware
+      - amdgpu: update VCN 5.0.0 firmware
+      - amdgpu: update GC 11.0.1 firmware
+      - amdgpu: update PSP 13.0.4 firmware
+      - amdgpu: update VCN 4.0.2 firmware
+      - amdgpu: update GC 11.0.4 firmware
+      - amdgpu: update PSP 13.0.11 firmware
+      - amdgpu: update GC 10.3.6 firmware
+      - amdgpu: update PSP 13.0.5 firmware
+      - amdgpu: update VCN 3.1.2 firmware
+      - amdgpu: update yellow carp firmware
+      - amdgpu: update renoir firmware
+      - amdgpu: update GC 11.5.0 firmware
+      - amdgpu: update PSP 14.0.0 firmware
+      - amdgpu: update VPE 6.1.0 firmware
+      - amdgpu: update VCN 4.0.5 firmware
+      - amdgpu: update GC 11.5.1 firmware
+      - amdgpu: update PSP 14.0.1 firmware
+      - amdgpu: update VCN 4.0.6 firmware
+      - amdgpu: update vangogh firmware
+      - amdgpu: update vega10 firmware
+      - amdgpu: update vega12 firmware
+      - amdgpu: update vega20 firmware
+      - amdgpu: update PSP 14.0.3 kicker firmware
+      - qcom: move LEMANS EVK firmware to correct location
+      - ath12k: WCN7850 hw2.0: update board-2.bin
+      - amdgpu: DMCUB updates for various ASICs
+      - qcom: Update DSP firmware for sa8775p platform.
+      - powervr: update firmware for Imagination Technologies BXS-4-64 GPU
+      - qcom: Update DSP firmware for qcs8300 platform.
+      - Revert "amdgpu: update gc 10.3.6 firmware"
+      - mediatek: mtk_wed: drop links for mt7988
+      - amdgpu: DMCUB updates for various ASICs
+      - qcom: Add audio topology and ADSP firmware for qcs6490-radxa-dragon-q6a
+      - qcom: Update aic100 firmware files
+      - linux-firmware: ql2500_fw: update ISP25xx Firmware
+      - mediatek: update firmware version info for MT7986/81/16
+      - intel/ish:Add ISH firmware file for Intel Lunar Lake platform
+      - qcom: Add Audio topology for HAMOA-EVK
+      - qcom: Update DSP firmware for qcs8300 platform.
+      - qcom: vpu: add video firmware for Kaanapali
+      - rtl_bt: Update RTL8852BT/RTL8852BE-VT BT USB FW to 0x3BAC_ADBA
+      - qcom: vpu: update video firmware binary for SM8550
+      - WHENCE: clean up emi62 and yam license statements
+      - WHENCE: rename LICENCE.go7007-s2250 to LICENCE.sensoray
+      - WHENCE: use LICENCE.sensoray for s2255drv
+      - WHENCE: extract ueagle license
+      - WHENCE: extract multitech license text
+      - Update VCN for Navi1x, Green Sardine and Renoir
+      - linux-firmware: Add Dell ISH firmware for Intel Lunar Lake systems
+      - intel_vpu: Update NPU firmware
+      - WHENCE: remove link for Kaanapali video firmware
+      - amdgpu: DMCUB updates for various ASICs
+      - qcom: Update DSP firmware for sa8775p platform
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 09 Oct 2025 16:14:50 +0300
+
 linux-firmware (20250901.git993ff19b-0ubuntu1) questing; urgency=medium
 
   * Miscellaneous Ubuntu changes
