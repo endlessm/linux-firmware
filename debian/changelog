@@ -1,3 +1,47 @@
+linux-firmware (20251029.git4f72031f-0ubuntu1) resolute; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 4f72031fc195b612d4d4a694383e0ef3e20cb562
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - qcom: Fix QCS615 chipset's GPU secure fw
+      - qcom: Update A623 GMU fw
+      - qcom: Add firmwares for Kaanapali GPU
+      - qca: Update Bluetooth WCN6750 1.1.3-00091 firmware to 1.1.3-00100
+      - qcom: add version for A650 GMU firmware
+      - qcom: add CDSP firmware for kaanapali platform
+      - linux-firmware: Update firmware file for Intel BlazarI core
+      - linux-firmware: Update firmware file for Intel BlazarU core
+      - linux-firmware: Update firmware file for Intel Magnetar core
+      - linux-firmware: Add ISH firmware file for Intel Pather Lake platform
+      - WHENCE: nvidia: rearrange GSP-RM firmware lines
+      - i915: Xe3LPD_3002 DMC v2.27
+      - i915: Xe3LPD DMC v2.32
+      - i915: Xe2LPD DMC v2.29
+      - Intel IPU7: Update product signed firmware binary
+      - qcom: vpu: rename firmware binaries
+      - linux-firmware: qcom: sync audioreach firmwares from v1.0.0 build
+      - nvidia: add generic bootloader for GSP-enabled systems
+      - amdgpu: DMCUB updates for various ASICs
+      - intel: qat: Fix missing link
+      - iwlwifi: update cc/Qu/QuZ firmwares for core98-161 release
+      - iwlwifi: update ty/So/Ma firmwares for core98-161 release
+      - iwlwifi: update Bz/Hr and Bz/Gf firmwares for core98-161 release
+      - iwlwifi: add Bz/Fm and gl FW for core98-161 release
+      - QCA: Update Bluetooth WCN6856 firmware 2.1.0-00653 to 2.1.0-00659
+      - Revert "linux-firmware: update firmware for MT7922 WiFi device"
+      - mediatek MT7922: update bluetooth firmware to 20251020143443
+      - cirrus: cs35l41: Rename various Asus Laptop firmware files to not have Speaker ID
+      - amd-ucode: Fix minimum revisions in README
+      - linux-firmware: update firmware for MT7920 WiFi device
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - mediatek MT7920: update bluetooth firmware to 20251020151255
+      - linux-firmware: Renaming the file to cover a wide range of HP Lunar Lake system.
+      - amdgpu: DMCUB updates for various ASICs
+      - qcom: add ADSP firmware for kaanapali platform
+      - linux-firmware: Update AMD cpu microcode
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 29 Oct 2025 08:30:32 +0100
+
 linux-firmware (20251009.git46a6999a-0ubuntu1) resolute; urgency=medium
 
   * Miscellaneous Ubuntu changes
