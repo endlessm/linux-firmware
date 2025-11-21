@@ -8,6 +8,10 @@ jobs:
   pr_checks:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup VirtualEnv
+        uses: actions/prepare-venv@v1
+      - name: Install Python Packages
+        run: pip install pre-commit
       - name: Show versions
         run: |
           cat /etc/os-release
