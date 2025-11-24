@@ -8,6 +8,10 @@ jobs:
   pr_checks:
     runs-on: ubuntu-latest
     steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 100
       - name: Setup VirtualEnv
         uses: actions/prepare-venv@v1
       - name: Install Python Packages
@@ -17,10 +21,6 @@ jobs:
           cat /etc/os-release
           python3 --version
           pip3 list
-      - name: Clone repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 100
       - name: Run pre-commit hooks
         run: |
           pre-commit install
