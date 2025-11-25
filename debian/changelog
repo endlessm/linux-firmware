@@ -1,3 +1,121 @@
+linux-firmware (20251125.gitff6418d1-0ubuntu1) resolute; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Workflow] Update the gitea workflow
+    - [Workflow] Move checkout to top of workflow
+    - Rebase to upstream commit ff6418d185528bb9b040de1066c34fa405ecd4bd
+      Rebase against git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+      - rtl_bt: Add firmware and config files for RTL8761CUV
+      - mediatek MT7925: update bluetooth firmware to 20251015213201
+      - linux-firmware: update firmware for MT7925 WiFi device
+      - linux-firmware: Update AMD cpu microcode
+      - linux-firmware: Update WHENCE for microcode_amd_fam19h.bin
+      - amdgpu: DMCUB updates for various ASICs
+      - linux-firmware: Create audio folder in ti folder, and move all the audio firmwares into it
+      - linux-firmware: Update firmware file for Intel BlazarI core
+      - linux-firmware: Update firmware file for Intel BlazarU core
+      - Revert "rtw89: 8852bt: update fw to v0.29.127.0"
+      - rtw89: 8852bt: update fw to v0.29.122.1
+      - rtw89: 8852bt: update fw to v0.29.127.0 with format suffix -1
+      - Revert "rtw89: 8852b: update fw to v0.29.128.0"
+      - rtw89: 8852b: update fw to v0.29.29.14
+      - rtw89: 8852b: update fw to v0.29.128.0 with format suffix -2
+      - rtw89: 8851b: update fw to v0.29.41.5
+      - i915: Update GUC to v70.53.0 for DG2, MTL
+      - xe: Update GUC to v70.53.0 for BMG, LNL, PTL
+      - qcom: add SOCCP firmware for kaanapali platform
+      - amdgpu: DMCUB updates for various ASICs
+      - amdgpu: DMCUB updates for various ASICs
+      - ASoC: tas2781: Update dsp firmware for HP and ASUS projects
+      - Revert "Merge branch 'robot/patch-0-1762671757' into 'main'"
+      - ASoC: tas2781: Update dsp firmware for HP and ASUS projects
+      - rtl_nic: add firmware rtl8125k-1
+      - rtw88: 8822b: Update firmware to v30.20.0
+      - linux-firmware: add firmware for mt7987 internal 2.5G ethernet phy
+      - rtl_bt: Update RTL8922A BT USB firmware to 0x41C0_C905
+      - linux-firmware: Update AMD cpu microcode
+      - qcom: Add sdx35 Foxconn vendor firmware image file
+      - cirrus: cs42l45: Add firmware for Cirrus Logic CS42L45 SDCA codec
+      - cirrus: cs35l57: Add firmware for a few Dell products
+      - mt76: update firmware for MT7996
+      - mt76: update firmware for MT7992
+      - mt76: add firmware for MT7990
+      - qcom: Update aic100 firmware files
+      - rtl_nic: add firmware rtl9151a-1
+      - qcom: add ADSP, CDSP firmware for sm8750 platform
+      - qcom: update ADSP, CDSP firmware for kaanapali platform, change the license
+      - linux-firmware: update firmware for MT7922 WiFi device
+      - mediatek MT7922: update bluetooth firmware to 20251118163447
+      - amdgpu: add vce1 firmware
+      - amdgpu: update aldebaran firmware
+      - amdgpu: update dimgrey cavefish firmware
+      - amdgpu: update beige goby firmware
+      - amdgpu: update GC 11.0.1 firmware
+      - amdgpu: update PSP 13.0.4 firmware
+      - amdgpu: update VCN 4.0.2 firmware
+      - amdgpu: update GC 11.5.0 firmware
+      - amdgpu: update PSP 14.0.0 firmware
+      - amdgpu: update VCN 4.0.5 firmware
+      - amdgpu: update GC 11.0.4 firmware
+      - amdgpu: update PSP 13.0.11 firmware
+      - amdgpu: update GC 11.5.1 firmware
+      - amdgpu: update PSP 14.0.1 firmware
+      - amdgpu: update VCN 4.0.6 firmware
+      - amdgpu: update GC 9.4.3 firmware
+      - amdgpu: update PSP 13.0.6 firmware
+      - amdgpu: update SDMA 4.4.2 firmware
+      - amdgpu: update VCN 4.0.3 firmware
+      - amdgpu: update green sardine firmware
+      - amdgpu: update GC 11.5.2 firmware
+      - amdgpu: update PSP 14.0.4 firmware
+      - amdgpu: update GC 11.5.3 firmware
+      - amdgpu: update PSP 14.0.5 firmware
+      - amdgpu: update GC 9.4.4 firmware
+      - amdgpu: update PSP 13.0.14 firmware
+      - amdgpu: update GC 9.5.0 firmware
+      - amdgpu: update PSP 13.0.12 firmware
+      - amdgpu: update VCN 5.0.1 firmware
+      - amdgpu: update navi10 firmware
+      - amdgpu: update navi12 firmware
+      - amdgpu: update navi14 firmware
+      - amdgpu: update sienna cichlid firmware
+      - amdgpu: update navy flounder firmware
+      - amdgpu: update GC 11.0.0 firmware
+      - amdgpu: update PSP 13.0.0 firmware
+      - amdgpu: update SMU 13.0.0 firmware
+      - amdgpu: update VCN 4.0.0 firmware
+      - amdgpu: update PSP 13.0.0 kicker firmware
+      - amdgpu: update smu 13.0.0 kicker firmware
+      - amdgpu: update GC 11.0.3 firmware
+      - amdgpu: update PSP 13.0.10 firmware
+      - amdgpu: update SDMA 6.0.3 firmware
+      - amdgpu: update SMU 13.0.10 firmware
+      - amdgpu: update GC 11.0.2 firmware
+      - amdgpu: update PSP 13.0.7 firmware
+      - amdgpu: update smu 13.0.7 firmware
+      - amdgpu: update VCN 4.0.4 firmware
+      - amdgpu: update GC 12.0.0 firmware
+      - amdgpu: update PSP 14.0.2 firmware
+      - amdgpu: update SMU 14.0.2 firmware
+      - amdgpu: update GC 12.0.1 firmware
+      - amdgpu: update PSP 14.0.3 firmware
+      - amdgpu: update SMU 14.0.3 firmware
+      - amdgpu: update VCN 5.0.0 firmware
+      - amdgpu: update GC 10.3.6 firmware
+      - amdgpu: update PSP 13.0.5 firmware
+      - amdgpu: update VCN 3.1.2 firmware
+      - amdgpu: update yellow carp firmware
+      - amdgpu: update renoir firmware
+      - amdgpu: update vangogh firmware
+      - amdgpu: update vega10 firmware
+      - amdgpu: update vega12 firmware
+      - amdgpu: update vega20 firmware
+      - ASoC: tas2781: Add more symbol links on SPI devices
+      - rtl_bt: Update RTL8852B BT USB FW to 0x42D3_4E04
+      - amdgpu: DMCUB updates for various ASICs
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 25 Nov 2025 08:23:30 +0100
+
 linux-firmware (20251029.git4f72031f-0ubuntu1) resolute; urgency=medium
 
   * Miscellaneous Ubuntu changes
