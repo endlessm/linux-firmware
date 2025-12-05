@@ -7,3 +7,14 @@ if known, for each piece of firmware distributed for use with the Linux
 kernel.
 
 --------------------------------------------------------------------------
+
+Driver: ipw2200 - Intel ipw2200 wireless driver
+
+File: ipw2200-bss.fw
+File: ipw2200-ibss.fw
+File: ipw2200-sniffer.fw
+Info: version unknown
+
+License: Redistributable. See LICENCE.ipw2200 for details
+
+--------------------------------------------------------------------------
