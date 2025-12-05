@@ -43,3 +43,16 @@ Info: http://linux-lc100020.sourceforge.net/
 License: Redistributable. See LICENCE.zd1211 for details
 
 --------------------------------------------------------------------------
+
+Driver: pvrusb2, v4l-cx2341x - Hauppauge cx2341x based models
+
+File: v4l-pvrusb2-24xxx-01.fw
+File: v4l-pvrusb2-29xxx-01.fw
+File: v4l-cx2341x-dec.fw
+File: v4l-cx2341x-enc.fw
+File: v4l-cx2341x-init.mpg
+Info: http://www.isely.net/pvrusb2/firmware.html
+
+License: Redistributable. See LICENCE.cx2341x for details
+
+--------------------------------------------------------------------------
