@@ -56,3 +56,44 @@ Info: http://www.isely.net/pvrusb2/firmware.html
 License: Redistributable. See LICENCE.cx2341x for details
 
 --------------------------------------------------------------------------
+
+Driver: Echo Audio sound cards: snd-{echo3g,darla20,darla24,gina20,gina24,
+                                     indigo,indigodj,indigodjx,indigoio,
+                                     indigoiox,layla20,layla24,mia,mona}
+
+File: ea/3g_asic.fw
+File: ea/darla20_dsp.fw
+File: ea/darla24_dsp.fw
+File: ea/echo3g_dsp.fw
+File: ea/gina20_dsp.fw
+File: ea/gina24_301_asic.fw
+File: ea/gina24_301_dsp.fw
+File: ea/gina24_361_asic.fw
+File: ea/gina24_361_dsp.fw
+File: ea/indigo_dj_dsp.fw
+File: ea/indigo_djx_dsp.fw
+File: ea/indigo_dsp.fw
+File: ea/indigo_io_dsp.fw
+File: ea/indigo_iox_dsp.fw
+File: ea/layla20_asic.fw
+File: ea/layla20_dsp.fw
+File: ea/layla24_1_asic.fw
+File: ea/layla24_2A_asic.fw
+File: ea/layla24_2S_asic.fw
+File: ea/layla24_dsp.fw
+File: ea/loader_dsp.fw
+File: ea/mia_dsp.fw
+File: ea/mona_2_asic.fw
+File: ea/mona_301_1_asic_48.fw
+File: ea/mona_301_1_asic_96.fw
+File: ea/mona_301_dsp.fw
+File: ea/mona_361_1_asic_48.fw
+File: ea/mona_361_1_asic_96.fw
+File: ea/mona_361_dsp.fw
+Source: ea/source/
+
+Info: http://www.alsa-project.org/main/index.php/Main_Page
+
+License: Redistributable. See LICENCE.echoaudio for details
+
+--------------------------------------------------------------------------
