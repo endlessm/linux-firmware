@@ -29,3 +29,17 @@ Info: v1.3
 License: Redistributable. See LICENCE.ipw2100 for details
 
 --------------------------------------------------------------------------
+
+Driver: zd1211rw - ZD1211 USB-WLAN driver for Linux
+
+File: zd1211/zd1211_ub
+File: zd1211/zd1211_uphr
+File: zd1211/zd1211_ur
+File: zd1211/zd1211b_ub
+File: zd1211/zd1211b_uphr
+File: zd1211/zd1211b_ur
+Info: http://linux-lc100020.sourceforge.net/
+
+License: Redistributable. See LICENCE.zd1211 for details
+
+--------------------------------------------------------------------------
