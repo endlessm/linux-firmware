@@ -1,0 +1,11 @@
+Package: linux-firmware-qualcomm-misc
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113), linux-firmware-snapdragon (<= 1.2-0ubuntu1)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113), linux-firmware-snapdragon (<= 1.2-0ubuntu1)
+Description: Firmware for miscellaneous Qualcomm devices
+ This package provides firmware used by Linux kernel drivers
+ qaic, qcom-geni-se, qcom-qcs6490, qcom-qcs8300, qcom-qcs9100,
+ qcom-sc8280xp, qcom-sm8550, qcom-sm8650, qcom-x1e80100,
+ qcom_q6v5_mss, qcom_q6v5_pas, qdu100, and sdx61.

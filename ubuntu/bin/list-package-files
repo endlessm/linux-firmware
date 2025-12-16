@@ -1,0 +1,64 @@
+#!/bin/bash -eu
+#
+# List package files
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+function list_files()
+{
+	local files=${1} opt=${2}
+	local package_files
+
+	case "${opt}" in
+		--included)
+			readarray -t package_files < <(grep -E '^[0-9a-zA-Z:.]' "${files}" | grep -v '^:^')
+			;;
+		--excluded)
+			readarray -t package_files < <(sed -n 's/^:^//p' "${files}")
+			;;
+		"")
+			readarray -t package_files < <(grep -E '^[0-9a-zA-Z:.]' "${files}")
+			;;
+		*)
+			echo "EE: Invalid option: ${opt}" >&2
+			exit 1
+			;;
+	esac
+
+	if [ ${#package_files[@]} -gt 0 ] ; then
+		git ls-files --error-unmatch -- "${package_files[@]}"
+	fi
+}
+
+if [ $# != 1 ] && [ $# != 2 ] ; then
+	echo "Usage: $(basename "${0}") <package> [--included|--excluded]" >&2
+	exit 2
+fi
+
+package=${1}
+opt=${2:-}
+
+case "${package}" in
+	unpackaged|licenses)
+		files=ubuntu/"${package}"
+		;;
+	*)
+		if ! [ -e ubuntu/package/"${package}"/control ] ; then
+			echo "EE: Invalid package name: ${package}" >&2
+			exit 1
+		fi
+		files=ubuntu/package/"${package}"/files
+		;;
+esac
+
+trap out EXIT INT TERM HUP
+
+list_files "${files}" "${opt}"

@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode
+#export DH_VERBOSE=1
+
+DEB_PACKAGES := $(shell dh_listpackages)
+DEB_PACKAGE := $(firstword $(DEB_PACKAGES))
+
+%:
+	dh $@
+
+override_dh_install:
+	./debian/bin/install-firmware $(DEB_PACKAGE)
+	dh_install
+
+override_dh_compress:
+	# Some license files are not ASCII encoded and are therefore ignored
+	# by dh_compress, so compress them all explicitly
+	gzip -9n debian/$(DEB_PACKAGE)/usr/share/doc/$(DEB_PACKAGE)/licenses/*
+	dh_compress
+
+override_dh_builddeb:
+	# Individual firmware files are already compressed, so no need to also
+	# compress the package
+	dh_builddeb -- -Znone
+
+override_dh_strip_nondeterminism:
+
+override_dh_build:

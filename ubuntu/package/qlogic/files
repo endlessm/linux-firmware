@@ -1,0 +1,31 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENSE.bfa
+LICENSE.ib_qib
+LICENCE.phanfw
+LICENSE.qed
+LICENCE.qla1280
+LICENCE.qla2xxx
+
+:(glob)cbfw-*.bin
+:(glob)ctfw-*.bin
+:(glob)ct2fw-*.bin
+:(glob)phanfw.bin
+:(glob)ql2*_fw.bin
+
+qed/
+qlogic/
+
+# List of files and directories to be excluded from the package
+
+# Obsolete (no longer wanted by kernel 6.18)
+:^qed/qed_init_values_zipped-8.4.*
+:^qed/qed_init_values_zipped-8.7.*
+:^qed/qed_init_values_zipped-8.10.*
+:^qed/qed_init_values_zipped-8.15.*
+:^qed/qed_init_values_zipped-8.20.*
+:^qed/qed_init_values_zipped-8.33.*
+:^qed/qed_init_values_zipped-8.37.*
+:^qed/qed_init_values_zipped-8.42.*

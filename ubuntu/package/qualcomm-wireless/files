@@ -1,0 +1,63 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENCE.atheros_firmware
+LICENSE.QualcommAtheros_ar3k
+LICENSE.QualcommAtheros_ath10k
+LICENSE.qcom
+qcom/NOTICE.txt
+
+ar5523.bin
+ar7010.fw
+ar7010_1_1.fw
+ar9170-1.fw
+ar9170-2.fw
+ar9271.fw
+ath3k-1.fw
+htc_7010.fw
+htc_9271.fw
+:(glob)wil6210.*
+
+ar3k/
+ath6k/
+ath10k/
+ath11k/
+ath12k/
+qca/
+
+# List of files and directories to be excluded from the package
+
+# Replaces commit c5a7aadccbfd ("UBUNTU: Remove obsolete ar7010 firmware")
+:^ar7010.fw
+:^ar7010_1_1.fw
+
+# Replaces commit 4ce08856dee0 ("UBUNTU: Remove obsolete ar9170 firmware")
+:^ar9170-1.fw
+:^ar9170-2.fw
+
+# Replaces commit 0563995d173f ("UBUNTU: Remove obsolete ath9k firmware")
+:^ar9271.fw
+
+# Replaces commit 85ee46eb9136 ("UBUNTU: Remove obsolete ar3k firmware")
+:^ar3k/1020200/
+:^ar3k/30000/
+:^ar3k/30101/
+:^ar3k/30101coex/
+
+# Replaces commit f11a59536386 ("UBUNTU: Remove obsolete ath3k firmware")
+:^ar3k/1020201/
+
+# Replaces commit 0470cfcec635 ("UBUNT: Remove obsolete ath6k firmware")
+:^ath6k/AR6002/
+:^ath6k/AR6003.1/
+:^ath6k/AR6003/hw1.0/
+:^ath6k/AR6003/hw2.0/bdata.SD32.bin
+:^ath6k/AR6003/hw2.0/bdata.WB31.bin
+:^ath6k/AR6003/hw2.1.1/bdata.SD32.bin
+:^ath6k/AR6003/hw2.1.1/bdata.WB31.bin
+:^ath6k/AR6003/hw2.1.1/endpointping.bin
+
+# Obsolete (no longer wanted by kernel 6.18)
+:^htc_7010.fw
+:^htc_9271.fw

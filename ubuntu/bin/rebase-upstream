@@ -1,0 +1,101 @@
+#!/bin/bash -eu
+#
+# Rebase onto upstream
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+function usage()
+{
+	cat <<EOF
+Usage: $(basename "${0}") [-h] [<rev>]
+
+Postional arguments:
+  <rev>       Rebase to <rev>. If not provided, defaults to upstream/main.
+
+Optional arguments:
+  -h, --help  Show this help text and exit.
+EOF
+}
+
+rev=
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		*)
+			if [ -n "${rev}" ] ; then
+				echo "EE: Invalid argument: ${1}" >&2
+				exit 2
+			fi
+			rev=${1}
+			;;
+	esac
+	shift
+done
+
+if [ -z "${rev}" ] ; then
+	rev=upstream/main
+fi
+
+trap out EXIT INT TERM HUP
+
+for d in ubuntu/package/* ; do
+	changelog=${d}/changelog
+	if [ -e "${changelog}" ] ; then
+		version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+		if echo "${version}" | grep -qE '\.[0-9]+$' ; then
+			echo "EE: Package version is an SRU version: ${version} (${d##*/})" >&2
+			exit 1
+		fi
+	fi
+done
+
+# Add an upstream remote and fetch it
+upstream_git=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+if ! git remote | grep -qxF upstream ; then
+	git remote add upstream "${upstream_git}"
+fi
+echo "II: Fetch from ${upstream_git}"
+git fetch upstream
+
+if ! git rev-parse "${rev}" &>/dev/null ; then
+	echo "EE: Failed to parse git rev: ${rev}" >&2
+	exit 1
+fi
+
+new_commit=$(git rev-parse "${rev}")
+new_version=$(date --utc +%Y%m%d).git${new_commit::8}
+
+# Rebase onto upstream/main
+echo "II: Rebase to ${new_commit}"
+git rebase "${new_commit}"
+
+COMMIT=${new_commit}
+if [ -e ubuntu/upstream ] ; then
+	# Current upstream commit and version
+	. ubuntu/upstream
+fi
+
+# Create the rebase commit
+cat <<EOF > ubuntu/upstream
+COMMIT=${new_commit}
+VERSION=${new_version}
+EOF
+
+git add ubuntu/upstream
+git commit -s -m "UBUNTU: Rebase to upstream commit ${new_commit}
+
+Rebase against ${upstream_git}
+${new_commit}
+$(git log --no-merges --reverse --format='- %s' "${COMMIT}".."${new_commit}")"

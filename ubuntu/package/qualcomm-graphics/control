@@ -1,0 +1,9 @@
+Package: linux-firmware-qualcomm-graphics
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113), linux-firmware-snapdragon (<= 1.2-0ubuntu1)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113), linux-firmware-snapdragon (<= 1.2-0ubuntu1)
+Description: Firmware for Qualcomm graphics and video processors
+ This package provides firmware used by Linux kernel drivers
+ adreno, iris, and venus.

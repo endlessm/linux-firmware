@@ -1,0 +1,9 @@
+Package: linux-firmware-mellanox-spectrum
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
+Description: Firmware for Mellanox Spectrum switches
+ This package provides firmware used by Linux kernel drivers
+ mlxsw_spectrum.

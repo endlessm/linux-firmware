@@ -1,0 +1,79 @@
+#!/bin/bash -eu
+#
+# Check all packages
+#
+
+check_dir=ubuntu/build/checks
+
+rm -rf "${check_dir}"
+mkdir -p "${check_dir}"
+
+#
+# Run individual package checks
+#
+
+first=1
+for d in ubuntu/package/* ; do
+	test ${first} -eq 1 || echo
+	first=0
+
+	package=${d##*/}
+	./ubuntu/bin/check-package "${package}"
+done
+
+#
+# Run cross-package checks
+#
+
+echo
+echo "II: Run additional cross-package checks"
+
+# Generate additional file lists required for the tests
+./ubuntu/bin/list-package-files licenses > "${check_dir}"/licenses.files
+./ubuntu/bin/list-package-files unpackaged > "${check_dir}"/unpackaged.files
+git ls-files | sort -u > "${check_dir}"/all.files
+
+cd "${check_dir}"
+
+#
+# Check that different packages don't contain the same file(s)
+#
+
+echo "II: Check that different packages don't contain the same file(s)"
+
+fail=0
+while IFS= read -r f ; do
+	if grep -qFx "${f}" licenses.files ; then
+		# License files can be provided by multiple packages
+		continue
+	fi
+	fail=1
+	echo "EE: Multiple packages provide: ${f}" >&2
+	grep -Fx "${f}" ./*/package.files | sed "s|^\./|    - |;s|/.*||" >&2
+done < <(sort ./*/package.files | uniq -d)
+
+if [ ${fail} -ne 0 ] ; then
+	echo "EE: Check failed" >&2
+	exit 1
+fi
+
+#
+# Check that excluded files are *not* also listed in ubuntu/unpackaged
+#
+
+echo "II: Check that excluded files are not listed in ubuntu/unpackaged"
+
+sort -u ./*/excluded.files > packages-excluded.files
+sort packages-excluded.files unpackaged.files | uniq -d > check.files
+if [ -s check.files ] ; then
+	echo "EE: Incorrectly listed files in ubuntu/unpackaged:" >&2
+	sed 's/^/    - /' check.files >&2
+	echo "EE: Check failed" >&2
+	exit 1
+fi
+
+#
+# All good
+#
+
+echo "II: All checks passed"

@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+#
+# Format changes for a changelog entry
+#
+
+import sys
+
+import git
+import requests
+
+
+def get_bug_title(bug):
+    try:
+        r = requests.get(f"https://api.launchpad.net/devel/bugs/{bug}", timeout=5)
+        return r.json()["title"]
+    except:
+        pass
+    return None
+
+
+repo = git.Repo(".")
+
+commits = {}
+
+# Read commit shas from stdin
+for line in sys.stdin:
+    commit_sha = line.strip().split(" ")[0]
+    commit = repo.commit(commit_sha)
+    commit_msg = commit.message.split("\n")
+
+    # Check for 'Ignore: yes'
+    if "Ignore: yes" in commit_msg:
+        continue
+
+    # Extract all CVEs and LP bug numbers from the commit message
+    refs = set()
+    for line in commit_msg:
+        if line.startswith("CVE-"):
+            refs.add(line)
+        elif line.startswith("BugLink: "):
+            refs.add(line.split("/")[-1])
+    if len(refs) == 0:
+        if commit_msg[0].strip().startswith("UBUNTU:"):
+            refs.add("UBUNTU")
+        else:
+            refs.add("UPSTREAM")
+
+    # Add the commit to the commits list
+    key = " ".join(sorted(list(refs)))
+    if key not in commits:
+        commits[key] = []
+    commits[key].append(commit)
+
+for key in commits:
+    titles = []
+    for ref in key.split():
+        if ref == "UBUNTU":
+            title = "Miscellaneous Ubuntu changes"
+        elif ref == "UPSTREAM":
+            title = "Miscellaneous upstream changes"
+        elif ref.startswith("CVE-"):
+            title = ref
+        else:
+            title = get_bug_title(int(ref)) or "INVALID or PRIVATE BUG"
+            title = f"{title} (LP: #{ref})"
+        titles.append(title)
+
+    # FIXME: Wrap item title if too long
+    print("  * " + " // ".join(titles))
+
+    for commit in commits[key]:
+        commit_subject = commit.message.split("\n")[0].strip().removeprefix("UBUNTU:").strip()
+        print(f"    - {commit_subject}")
+
+        # For rebase commits, add the list of changes from the commit message
+        if commit_subject.startswith("Rebase to upstream commit"):
+            for line in commit.message.split("\n")[1:]:
+                if line.startswith("Rebase against ") or line.startswith("- "):
+                    print(f"      {line}")

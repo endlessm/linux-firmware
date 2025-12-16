@@ -1,0 +1,110 @@
+#!/bin/bash -eu
+#
+# Update package
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+if [ $# != 1 ] ; then
+	echo "Usage: $(basename "${0}") <package>" >&2
+	exit 2
+fi
+
+package=${1}
+
+pkg_dir=ubuntu/package/"${package}"
+if ! [ -e "${pkg_dir}"/control ] ; then
+	echo "EE: Invalid package name: ${package}" >&2
+	exit 1
+fi
+
+trap out EXIT INT TERM HUP
+
+echo "II: Update package: ${package}"
+
+# Current upstream commit and version
+. ubuntu/upstream
+
+readarray -t package_files < <(grep '^[0-9a-zA-Z:]' "${pkg_dir}"/files)
+readarray -t license_files < <(grep '^[0-9a-zA-Z]' ubuntu/licenses)
+
+#
+# Update the package's WHENCE file
+#
+
+echo "II: Create ${pkg_dir}/WHENCE"
+
+git ls-files --error-unmatch -- "${package_files[@]}" > "${pkg_dir}"/files.tmp
+./ubuntu/bin/trim-whence "${pkg_dir}"/files.tmp WHENCE* > "${pkg_dir}"/WHENCE
+rm "${pkg_dir}"/files.tmp
+
+#
+# Update the package's licenses file
+#
+
+echo "II: Create ${pkg_dir}/licenses"
+
+{
+	git ls-files --error-unmatch -- "${package_files[@]}"
+	git ls-files --error-unmatch -- "${license_files[@]}"
+} | sort | uniq -d > "${pkg_dir}"/licenses
+
+#
+# Collect the list of package files that are different from the upstream commit
+#
+
+binary_files=()
+non_binary_files=()
+
+while IFS= read -r -d "" line ; do
+	IFS=$'\t' read -r added _ name new_name <<<"${line}"
+
+	files=("${name}")
+	if [ -n "${new_name}" ] ; then
+		files+=("${new_name}")
+	fi
+
+	for f in "${files[@]}" ; do
+		if [ -h "${f}" ] ; then
+			# Symlink
+			binary_files+=("${f}")
+			non_binary_files+=("${f}")
+		elif [ "${added}" = "-" ] ; then
+			binary_files+=("${f}")
+		else
+			non_binary_files+=("${f}")
+		fi
+	done
+done < <(git diff --numstat -M -z "${COMMIT}" -- "${package_files[@]}" :^WHENCE.ubuntu)
+
+#
+# Create the list of binary files to include in the source package
+#
+
+rm -f "${pkg_dir}"/source/include-binaries
+
+if [ ${#binary_files[@]} -gt 0 ] ; then
+	echo "II: Create ${pkg_dir}/source/include-binaries"
+	mkdir -p "${pkg_dir}"/source
+	printf "%s\n" "${binary_files[@]}" > "${pkg_dir}"/source/include-binaries
+fi
+
+#
+# Create debian/patches/ubuntu.patch
+#
+
+rm -rf "${pkg_dir}"/patches
+
+if [ ${#non_binary_files[@]} -gt 0 ] ; then
+	echo "II: Create ${pkg_dir}/patches/ubuntu.patch"
+	mkdir -p "${pkg_dir}"/patches
+	git diff "${COMMIT}" -- "${non_binary_files[@]}" > "${pkg_dir}"/patches/ubuntu.patch
+	echo "ubuntu.patch" > "${pkg_dir}"/patches/series
+fi

@@ -1,0 +1,57 @@
+#!/bin/bash -eu
+#
+# Check a package
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+if [ $# != 1 ] ; then
+	echo "Usage: $(basename "${0}") <package>" >&2
+	exit 2
+fi
+
+package=${1}
+
+if ! [ -e ubuntu/package/"${package}"/control ] ; then
+	echo "EE: Invalid package name: ${package}" >&2
+	exit 1
+fi
+
+trap out EXIT INT TERM HUP
+
+echo "II: Check package: ${package}"
+
+check_dir=ubuntu/build/checks/${package}
+
+rm -rf "${check_dir}"
+mkdir -p "${check_dir}"
+
+# Create the lists of packaged, included and exluded files
+./ubuntu/bin/list-package-files "${package}" > "${check_dir}"/package.files
+./ubuntu/bin/list-package-files "${package}" --included > "${check_dir}"/included.files
+./ubuntu/bin/list-package-files "${package}" --excluded > "${check_dir}"/excluded.files
+
+cd "${check_dir}"
+
+echo "II: Check that excluded files are a subset of included files"
+sort included.files excluded.files | uniq -d > duplicate.files
+if ! diff excluded.files duplicate.files ; then
+	echo "EE: Check failed" >&2
+	exit 1
+fi
+
+echo "II: Check that packaged files == included files - excluded files"
+sort included.files excluded.files | uniq -u > unique.files
+if ! diff package.files unique.files ; then
+	echo "EE: Check failed" >&2
+	exit 1
+fi
+
+echo "II: All checks passed"

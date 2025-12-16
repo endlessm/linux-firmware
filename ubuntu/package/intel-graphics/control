@@ -1,0 +1,9 @@
+Package: linux-firmware-intel-graphics
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
+Description: Firmware for Intel graphics and IPU and VSC processors
+ This package provides firmware used by Linux kernel drivers
+ i915, atomisp, intel-ipu6-isys, intel-ipu7-isys, ipu3-imgu, mei-vsc-hw and xe.

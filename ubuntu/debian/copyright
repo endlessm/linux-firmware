@@ -1,0 +1,11 @@
+This is an Ubuntu Linux firmware package.
+
+This package was put together by the Ubuntu Kernel Team, from sources
+and/or binaries retrieved from vendors and from upstream kernel.org.
+
+This package is currently maintained by:
+Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+
+Copyright information for the individual firmware files can be found
+in /usr/share/doc/<package>/README. The individual license files can
+be found in /usr/share/doc/<package>/licenses/.

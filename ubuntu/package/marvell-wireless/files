@@ -1,0 +1,38 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENCE.Marvell
+LICENCE.NXP
+LICENCE.OLPC
+
+lbtf_usb.bin
+
+libertas/
+mrvl/
+mwl8k/
+mwlwifi/
+
+# List of files and directories to be excluded from the package
+
+:^mrvl/cpt*
+:^mrvl/prestera/
+
+# Replaces commit a46068ae4580 ("UBUNTU: Remove obsolete libertas firmware")
+:^libertas/gspi8682.bin
+:^libertas/gspi8682_helper.bin
+:^libertas/lbtf_sdio.bin
+:^libertas/sd8682.bin
+:^libertas/sd8682_helper.bin
+:^libertas/usb8388_olpc.bin
+
+# Replaces commit bfa2ac04ade6 ("UBUNTU: Remove obsolete mwl8k firmware")
+:^mwl8k/fmimage_8366_ap-1.fw
+
+# LP: #1962468
+# Remove upstream directories that contain reasonably old firmware files that
+# are not referenced by the currently supported Jammy kernels.
+:^mwlwifi/
+
+# Obsolete (no longer wanted by kernel 6.18)
+:^libertas/cf83*

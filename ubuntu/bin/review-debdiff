@@ -1,0 +1,91 @@
+#!/bin/bash -eu
+#
+# Review debdiff
+#
+
+COLS=$(tput cols)
+
+function colorize()
+{
+	local line color
+
+	while IFS= read -r line ; do
+		case "${line}" in
+			"-"*)     color="\e[31m" ;;
+			"+"*)     color="\e[32m" ;;
+			"!"*)     color="\e[33m" ;;
+			"@@"*)    color="\e[36m" ;;
+			"diff "*) color="\e[1m\e[36m" ;;
+			"II: "*)  color="\e[96m" ;;
+			"WW: "*)  color="\e[93m" ;;
+			*)        color="" ;;
+		esac
+
+		if [ -n "${color}" ] ; then
+			echo -e "${color}${line}\e[0m"
+		else
+			echo "${line}"
+		fi
+	done
+}
+
+function header()
+{
+	printf "II: "; printf '%.0s-' $(seq 6 ${COLS}); printf "\n"
+	echo "II: ${*}"
+	printf "II: "; printf '%.0s-' $(seq 6 ${COLS}); printf "\n"
+	echo
+}
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+if [ $# != 1 ] ; then
+	echo "Usage: $(basename "${0}") <package>" >&2
+	exit 2
+fi
+
+package=${1}
+
+pkg_dir=ubuntu/package/"${package}"
+if ! [ -e "${pkg_dir}"/control ] ; then
+	echo "EE: Invalid package name: ${package}" >&2
+	exit 1
+fi
+
+echo "II: Review debdiff for package: ${package}"
+
+trap out EXIT INT TERM HUP
+
+changelog=${pkg_dir}/changelog
+name=$(dpkg-parsechangelog -l "${changelog}" -S Source)
+version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+
+debdiff=../${name}_${version}.debdiff
+
+if [ ! -e "${debdiff}" ] ; then
+	echo "EE: Debdiff not found: ${debdiff}" >&2
+	exit 1
+fi
+
+{
+	header "lsdiff -s ${debdiff}"
+	lsdiff -s "${debdiff}"
+	echo
+
+	header "cat ${debdiff}"
+	cat "${debdiff}"
+	echo
+
+} | colorize
+
+changes=../${name}_${version}_source.changes
+header "cat ${changes}" | colorize
+cat "${changes}"
+echo

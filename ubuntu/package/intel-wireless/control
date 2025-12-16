@@ -1,0 +1,9 @@
+Package: linux-firmware-intel-wireless
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
+Description: Firmware for Intel Wi-Fi and Bluetooth adapters
+ This package provides firmware used by Linux kernel drivers
+ btusb, and iwlwifi.

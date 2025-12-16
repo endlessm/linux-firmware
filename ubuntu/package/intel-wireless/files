@@ -1,0 +1,26 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENCE.ibt_firmware
+LICENCE.ipw2100
+LICENCE.ipw2200
+LICENCE.iwlwifi_firmware
+
+:(glob)ipw2100-*
+:(glob)ipw2200-*
+intel/ibt-*
+intel/iwlwifi/
+
+# List of files and directories to be excluded from the package
+
+# LP: #2025360
+# Remove obsolete iwlwifi firmware
+:^intel/iwlwifi/iwlwifi-Qu-b0-hr-b0-5?.ucode
+:^intel/iwlwifi/iwlwifi-Qu-b0-jf-b0-5?.ucode
+:^intel/iwlwifi/iwlwifi-Qu-c0-hr-b0-5?.ucode
+:^intel/iwlwifi/iwlwifi-Qu-c0-jf-b0-5?.ucode
+:^intel/iwlwifi/iwlwifi-QuZ-a0-hr-b0-5?.ucode
+:^intel/iwlwifi/iwlwifi-QuZ-a0-jf-b0-5?.ucode
+:^intel/iwlwifi/iwlwifi-cc-a0-5?.ucode
+:^intel/iwlwifi/iwlwifi-ty-a0-gf-a0-5?.ucode

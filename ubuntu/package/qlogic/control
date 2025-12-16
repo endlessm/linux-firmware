@@ -1,0 +1,9 @@
+Package: linux-firmware-qlogic
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
+Description: Firmware for QLogic SCSI, FC, and IB host bus and Ethernet adapters
+ This package provides firmware used by Linux kernel drivers
+ bfa, bna, ip_iband, netxen_nic, qed, qla1280, qla2xxx, and qlc_nic.

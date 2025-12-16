@@ -1,0 +1,34 @@
+#!/bin/bash -eu
+#
+# Commit all package releases
+#
+
+# Sanity check
+./ubuntu/bin/check-package--all
+
+# Current upstream commit and version
+. ubuntu/upstream
+
+full_release=1
+full_version=
+
+for d in ubuntu/package/* ; do
+	changelog=${d}/changelog
+	version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+	if [ -z "${full_version}" ] ; then
+		full_version=${version}
+	fi
+	if [ "${version}" != "${full_version}" ] ; then
+		full_release=0
+	fi
+done
+
+# This is a full release (all packages, same version)
+if [ ${full_release} -eq 1 ] ; then
+	echo
+	echo "II: Commit and tag full release"
+	git add ubuntu/package/*/
+	git commit -s -m "UBUNTU: Ubuntu-${version}"
+	git tag -s -m "UBUNTU: Ubuntu-${version}" "Ubuntu-${version//~/_}"
+	exit
+fi

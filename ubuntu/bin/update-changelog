@@ -1,0 +1,141 @@
+#!/bin/bash -eu
+#
+# Update a changelog
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+function usage()
+{
+    cat <<EOF
+Usage: $(basename "${0}") [-h] [--rebuild] [--series <series>] [--suffix <suffix>] <package>
+
+Postional arguments:
+  <package>          Name of the package to work on.
+
+Optional arguments:
+  -h, --help         Show this help text and exit.
+  --rebuild          No-change rebuild.
+  --series <series>  Ubuntu series name.
+  --suffix <suffix>  Generate the new package version by appending <suffix> to
+                     the current version rather than incrementing the upload
+                     number by one.
+EOF
+}
+
+rebuild=0
+series=
+suffix=
+package=
+
+while [ ${#} -gt 0 ] ; do
+    case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		--rebuild)
+			rebuild=1
+			;;
+		--series)
+			shift
+			series=${1}
+			;;
+		--suffix)
+			shift
+			suffix=${1}
+			;;
+		*)
+			if [ -n "${package}" ] ; then
+				echo "EE: Invalid argument: ${1}" >&2
+				exit 2
+			fi
+			package=${1}
+			;;
+	esac
+	shift
+done
+
+if [ -z "${package}" ] ; then
+	usage >&2
+	exit 2
+fi
+
+if ! [ -e ubuntu/package/"${package}"/control ] ; then
+	echo "EE: Invalid package name: ${package}" >&2
+	exit 2
+fi
+
+trap out EXIT INT TERM HUP
+
+echo "II: Update changelog of package: ${package}"
+
+# Current upstream commit and version
+. ubuntu/upstream
+
+changelog=ubuntu/package/${package}/changelog
+version=
+if [ -e "${changelog}" ] ; then
+	version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+	if [ -z "${series}" ] ; then
+		series=$(dpkg-parsechangelog -l "${changelog}" -S Distribution)
+	fi
+fi
+
+if [ -z "${series}" ] ; then
+	echo "EE: Initial release, use --series <series>" >&2
+	exit 1
+fi
+
+# New release version and tag
+if [ "${version%-*}" = "${VERSION}" ] ; then
+	if [ -n "${suffix}" ] ; then
+		# Append the provided suffix
+		new_version=${version}${suffix}
+	else
+		# Bump the upload number
+		upload=$(echo "${version}" | grep -o '[0-9]*$')
+		new_version=${version%"${upload}"}$((upload + 1))
+	fi
+else
+	# New upstream version
+	new_version="${VERSION}-0ubuntu1"
+	if [ -n "${suffix}" ] ; then
+		# Append the provided suffix
+		new_version=${version}${suffix}
+	fi
+fi
+
+# Collect the changes for the package since the last release
+changes=ubuntu/package/${package}/changes
+./ubuntu/bin/list-changes "${package}" | tac | ./ubuntu/bin/format-changes > "${changes}"
+if ! [ -s "${changes}" ] ; then
+	if [ ${rebuild} -eq 0 ] ; then
+		echo "II: No changes"
+		exit
+	fi
+	echo "  * No-change rebuild" > "${changes}"
+fi
+
+{
+	echo "linux-firmware-${package} (${new_version}) ${series}; urgency=medium"
+	echo
+	cat "${changes}"
+	echo
+	echo " -- ${DEBFULLNAME} <${DEBEMAIL}>  $(date -R)"
+
+	if [ -s "${changelog}" ] ; then
+		echo
+		cat "${changelog}"
+	fi
+} > "${changelog}".new
+mv  "${changelog}".new "${changelog}"
+
+rm -f "${changes}"

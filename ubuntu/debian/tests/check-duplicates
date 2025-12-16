@@ -1,0 +1,19 @@
+#!/bin/sh
+# Check that there are no firmware duplicates (compressed and uncompressed)
+
+set -eu
+
+flag=/tmp/fail-$$
+rm -f "$flag"
+
+find /usr/lib/firmware -name '*.zst' | while IFS= read -r f ; do
+	if [ -e "${f%.zst}" ] ; then
+		echo "Duplicate file: ${f}"
+		touch "$flag"
+	fi
+done 2>&1
+
+if [ -e "$flag" ] ; then
+	rm -f "$flag"
+	exit 1
+fi

@@ -1,0 +1,37 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENCE.linaro
+LICENSE.qcom-2
+qcom/NOTICE.txt
+
+qcom/aic100/
+qcom/apq8016/
+qcom/apq8096/
+qcom/kaanapali/
+qcom/qcm2290/
+qcom/qcm6490/
+qcom/qcs615/
+qcom/qcs6490/
+qcom/qcs8300/
+qcom/qdu100/
+qcom/qrb4210/
+qcom/sa8775p/
+qcom/sc8280xp/
+qcom/sdm845/
+qcom/sdx35/
+qcom/sdx61/
+qcom/sm8150/
+qcom/sm8250/
+qcom/sm8450/
+qcom/sm8550/
+qcom/sm8650/
+qcom/sm8750/
+qcom/x1e80100/
+qcom/x1p42100/
+
+# List of files and directories to be excluded from the package
+
+:^qcom/*/*_zap.mbn
+:^qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn

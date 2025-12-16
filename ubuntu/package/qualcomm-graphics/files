@@ -1,0 +1,19 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENSE.qcom
+LICENSE.qcom_yamato
+qcom/NOTICE.txt
+
+qcom/a???_*.bin
+qcom/a???_*.fw
+qcom/a530v3_gpmu.fw2
+qcom/leia_p??_470.fw
+qcom/yamato_p??.fw
+
+qcom/*/*_zap.mbn
+qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
+
+qcom/venus-*
+qcom/vpu

@@ -1,0 +1,14 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENSE.i915
+LICENSE.intel
+LICENSE.ipu3_firmware
+LICENSE.ivsc
+LICENSE.xe
+
+i915/
+intel/ipu/
+intel/vsc/
+xe/

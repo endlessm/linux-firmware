@@ -1,0 +1,152 @@
+#!/bin/bash -eu
+#
+# Build package
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+function usage()
+{
+	cat <<EOF
+Usage: $(basename "${0}") [-h] <package> [-- <dpkg-buildpackage option>...]
+
+Postional arguments:
+  <package>   Name of the package to work on.
+
+Optional arguments:
+  -h, --help  Show this help text and exit.
+EOF
+}
+
+package=
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		--)
+			shift
+			break
+			;;
+		-*)
+			usage >&2
+			exit 2
+			;;
+		*)
+			if [ -n "${package}" ] ; then
+				echo "EE: Invalid argument: ${1}" >&2
+				exit 2
+			fi
+			package=${1}
+			;;
+	esac
+	shift
+done
+
+if [ -z "${package}" ] ; then
+	usage >&2
+	exit 2
+fi
+
+if ! [ -e ubuntu/package/"${package}"/control ] ; then
+	echo "EE: Invalid package name: ${package}" >&2
+	exit 2
+fi
+
+trap out EXIT INT TERM HUP
+
+echo "II: Build package: ${package}"
+
+changelog=ubuntu/package/"${package}"/changelog
+version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+
+tag=Ubuntu-${package}-${version//~/_}
+if ! git rev-parse "${tag}" &>/dev/null ; then
+	tag=Ubuntu-${version//~/_}
+	if ! git rev-parse "${tag}" &>/dev/null ; then
+		echo "EE: Release tag not found for version: ${version}" >&2
+		exit 1
+	fi
+fi
+
+echo "II: Build package from tag: ${tag}"
+
+package_name=$(dpkg-parsechangelog -l "${changelog}" -S Source)
+build_dir=ubuntu/build/"${package_name}"
+rm -rf "${build_dir}"
+
+#
+# Copy firmware files
+#
+
+echo "II: Copy firmware files"
+
+mkdir -p "${build_dir}"
+
+readarray -t package_files < <(grep '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)
+git archive --format=tar "${tag}" -- "${package_files[@]}" | tar -C "${build_dir}" -xf -
+
+#
+# Copy packaging files
+#
+
+echo "II: Copy packaging files"
+
+mkdir -p "${build_dir}"/debian
+
+git -C ubuntu/debian archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
+git -C ubuntu/package/"${package}" archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
+
+#
+# Fix packaging files
+#
+
+echo "II: Fix packaging files"
+
+{
+	git show "${tag}":ubuntu/templates/control.source.in
+	echo
+	git show "${tag}":ubuntu/package/"${package}"/control
+} | sed -e "s/@package@/${package}/" > "${build_dir}"/debian/control
+
+while IFS= read -r f ; do
+	mv "${f}" "${f/@package@/${package}}"
+done < <(find "${build_dir}"/debian/ -name '*@package@*')
+
+#
+# Remove unwanted files
+#
+
+for f in WHENCE.ubuntu debian/files ; do
+	rm -f "${build_dir}"/"${f}"
+done
+
+#
+# Finally, do the actual package build
+#
+
+echo "II: Build package"
+
+orig_tarball=${package_name}_${version%%-*}.orig.tar.xz
+if ! [ -h ubuntu/build/"${orig_tarball}" ] ; then
+	( cd ubuntu/build ; ln -s ../../../"${orig_tarball}" . )
+fi
+
+cd ubuntu/build/"${package_name}"
+
+dpkg-buildpackage "${@}"
+
+for f in ../"${package_name}"_"${version}"{.,_}* ; do
+	if [ -e "${f}" ] ; then
+		cp "${f}" ../../../../
+	fi
+done

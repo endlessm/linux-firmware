@@ -1,0 +1,10 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENCE.nvidia
+nvidia/
+
+# List of files and directories to be excluded from the package
+
+:^nvidia/tegra*

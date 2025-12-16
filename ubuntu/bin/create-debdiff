@@ -1,0 +1,42 @@
+#!/bin/bash -eu
+#
+# Create debdiff
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+if [ $# != 1 ] ; then
+	echo "Usage: $(basename "${0}") <package>" >&2
+	exit 2
+fi
+
+package=${1}
+
+pkg_dir=ubuntu/package/"${package}"
+if ! [ -e "${pkg_dir}"/control ] ; then
+	echo "EE: Invalid package name: ${package}" >&2
+	exit 1
+fi
+
+echo "II: Create debdiff for package: ${package}"
+
+trap out EXIT INT TERM HUP
+
+changelog=${pkg_dir}/changelog
+name=$(dpkg-parsechangelog -l "${changelog}" -S Source)
+curr_version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+prev_version=$(dpkg-parsechangelog -l "${changelog}" -S Version -o 1 -c 1)
+
+curr_base=../${name}_${curr_version}
+prev_base=../${name}_${prev_version}
+
+outfile=${curr_base}.debdiff
+echo "II: Create ${outfile}"
+debdiff "${prev_base}".dsc "${curr_base}".dsc > "${outfile}" || true

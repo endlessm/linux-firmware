@@ -1,0 +1,14 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENCE.Marvell
+mrvl/prestera/
+
+# List of files and directories to be excluded from the package
+
+# Remove obsolete Marvell Prestera firmware
+# Kernel 6.15 wants v4.1
+:^mrvl/prestera/mvsw_prestera_fw-v2.0.img
+:^mrvl/prestera/mvsw_prestera_fw-v3.0.img
+:^mrvl/prestera/mvsw_prestera_fw-v4.0.img

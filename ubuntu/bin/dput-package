@@ -1,0 +1,44 @@
+#!/bin/bash -eu
+#
+# dput package
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+if [ $# -lt 2 ] ; then
+	cmd=$(basename "${0}")
+	cat <<EOF >&2
+Usage: ${cmd} <package> <dput option>...
+
+Examples:
+  \$ ${cmd} misc ubuntu
+  \$ ${cmd} misc -s ubuntu
+  \$ ${cmd} misc ppa:foo/bar
+EOF
+	exit 2
+fi
+
+package=${1}
+shift
+
+if ! [ -e ubuntu/package/"${package}"/control ] ; then
+	echo "EE: Invalid package name: ${package}" >&2
+	exit 2
+fi
+
+trap out EXIT INT TERM HUP
+
+echo "II: Dput package: ${package}"
+
+changelog=ubuntu/package/"${package}"/changelog
+name=$(dpkg-parsechangelog -l "${changelog}" -S Source)
+version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+
+dput "${@}" ../"${name}"_"${version}"_source.changes

@@ -1,0 +1,132 @@
+#!/bin/bash -eu
+#
+# Install fimware files into the packaging directory
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+trap out EXIT INT TERM HUP
+
+if [ $# != 1 ] ; then
+	echo "Usage: $(basename "${0}") <package>" >&2
+	exit 2
+fi
+
+package=${1}
+
+#
+# Install WHENCE and license files
+#
+
+echo "II: Install WHENCE and license files"
+
+doc_dir=debian/${package}/usr/share/doc/${package}
+install -d "${doc_dir}"/licenses
+
+install debian/WHENCE "${doc_dir}"/README
+while IFS= read -r f ; do
+	if [ "${f#WHENCE}" = "${f}" ] ; then
+		install "${f}" "${doc_dir}"/licenses/
+	fi
+done < debian/licenses
+
+#
+# Install firmwares
+#
+
+echo "II: Install firmware files"
+
+fw_dir=debian/${package}/usr/lib/firmware
+install -d "${fw_dir}"
+
+time while IFS= read -r f ; do
+	if [ -e "${f}" ] ; then
+		echo "    ${f}"
+		install -D "${f}" "${fw_dir}"/"${f}"
+	fi
+done < <(sed -n 's/^\(File\|RawFile\): *//p' debian/WHENCE)
+
+#
+# Dedup firmwares
+#
+
+echo "II: Dedup firmware files"
+
+rdfind -makesymlinks true -makeresultsfile true -outputname debian/rdfind.log "${fw_dir}" >/dev/null
+
+#
+# Compress firmwares
+#
+
+echo "II: Compress firmware files"
+
+time while IFS= read -r fw ; do
+	if grep -m1 -qFx "File: ${fw}" debian/WHENCE ; then
+		zstd --compress -19 --quiet --rm "${fw_dir}"/"${fw}"
+	elif grep -m1 -qFx "RawFile: ${fw}" debian/WHENCE ; then
+		echo "II: Not compressing: ${fw}" >&2
+	else
+		echo "EE: File not found in debian/WHENCE: ${fw}" >&2
+		exit 1
+	fi
+done < <(find "${fw_dir}" -type f | sed 's|.*/lib/firmware/||')
+
+#
+# Fix dedup links
+# Make them relative and fix the ones that are now dangling due to the previous
+# compression step
+#
+
+echo "II: Fix dedup symlinks"
+
+while read -r lnk ; do
+	tgt="$(realpath "${lnk}")"
+	if [ -e "${tgt}" ] ; then
+		ln -sf --relative "${tgt}" "${lnk}"
+	else
+		rm -f "${lnk}"
+		ln -sf --relative "${tgt}".zst "${lnk}".zst
+	fi
+done < <(grep DUPTYPE_WITHIN_SAME_TREE debian/rdfind.log | grep -o "${fw_dir}.*")
+
+#
+# Create WHENCE links
+#
+
+echo "II: Create symlinks from debian/WHENCE"
+
+while IFS="|" read -r lnk tgt ; do
+	lnk=${fw_dir}/${lnk}
+	lnk_dir=${lnk%/*}
+	tgt_real=$(realpath -s -m "${lnk_dir}"/"${tgt}")
+
+	for ext in "" ".zst" ; do
+		if [ -e "${tgt_real}${ext}" ] ; then
+			install -d "${lnk_dir}"
+			ln -s "${tgt}${ext}" "${lnk}${ext}"
+		fi
+	done
+done < <(grep -E '^Link: ' debian/WHENCE | sed -e 's/^Link: *//;s/ * -> * /|/')
+
+#
+# Final checks
+#
+
+if [ "$(find "${fw_dir}" -type d -empty | wc -l)" -ne 0 ] ; then
+	echo "EE: Empty directories found" >&2
+	find "${fw_dir}" -type d -empty >&2
+	exit 1
+fi
+
+if [ "$(find "${fw_dir}" -xtype l | wc -l)" -ne 0 ] ; then
+	echo "EE: Dangling symlinks found" >&2
+	find "${fw_dir}" -xtype l >&2
+	exit 1
+fi

@@ -1,0 +1,12 @@
+Package: linux-firmware-mediatek
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
+Description: Firmware for Mediatek Wi-Fi, Bluetooth, and Ethernet adapters and SoCs
+ This package provides firmware used by Linux kernel drivers
+ btmtk, btmtk_usb, mt7601u, mt7615e, mt7622, mt7663, mt76x0,
+ mt76x2e, mt76x2u, mt7915e, mt7920, mt7921, mt7922, mt7925,
+ mt7996e, mt8196, mtk-2p5ge, mtk-sof, mtk-vpu, mtk_scp,
+ mtk_wed, rt2800pci, rt2800usb, rt2860sta, and rt2870sta.

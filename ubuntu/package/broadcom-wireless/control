@@ -1,0 +1,9 @@
+Package: linux-firmware-broadcom-wireless
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113), linux-firmware-raspi2 (<= 1.20190819-0ubuntu2)
+Description: Firmware for Broadcom and Cypress Wi-Fi and Bluetooth adapters
+ This package provides firmware used by Linux kernel drivers
+ brcmsmac and brcmfmac.

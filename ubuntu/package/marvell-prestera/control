@@ -1,0 +1,9 @@
+Package: linux-firmware-marvell-prestera
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
+Description: Firmware for Marvell Prestera ASIC devices
+ This package provides firmware used by Linux kernel drivers
+ prestera.

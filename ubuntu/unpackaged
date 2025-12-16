@@ -1,0 +1,88 @@
+# List of files and directories that are deliberately not packaged
+
+.codespell.cfg
+.editorconfig
+.gitignore
+.gitlab-ci.yml
+.pre-commit-config.yaml
+Dockerfile
+LICENSE
+Makefile
+README.md
+build_packages.py
+check_whence.py
+copy-firmware.sh
+dedup-firmware.sh
+contrib/
+
+# Ubuntu packaging bits
+ubuntu/
+
+# Replaces commit 22f2239919d9 ("UBUNTU: Remove obsolete dabusb firmware")
+LICENCE.dabusb
+dabusb/
+
+# Replaces commit 9b6d6bbcbc18 ("UBUNTU: Remove obsolete myricom firmware")
+myricom/
+
+# Replaces commit 09e02976b05b ("UBUNTU: Remove obsolete sxg firmware")
+sxg/
+
+# Replaces commit 251237583bdd ("UBUNTU: Revert "linux-firmware: Add firmware files for Siano DTV devices"")
+LICENCE.siano
+cmmb_vega_12mhz.inp
+cmmb_venice_12mhz.inp
+dvb_nova_12mhz.inp
+dvb_nova_12mhz_b0.inp
+isdbt_nova_12mhz.inp
+isdbt_nova_12mhz_b0.inp
+isdbt_rio.inp
+sms1xxx-hcw-55xxx-dvbt-02.fw
+sms1xxx-hcw-55xxx-isdbt-02.fw
+sms1xxx-nova-a-dvbt-01.fw
+sms1xxx-nova-b-dvbt-01.fw
+sms1xxx-stellar-dvbt-01.fw
+tdmb_nova_12mhz.inp
+
+# LP: #1962468
+# Remove upstream directories that contain reasonably old firmware files that
+# are not referenced by the currently supported Jammy kernels.
+LICENCE.ti-keystone
+LICENSE.mga
+atusb/
+dsp56k/
+matrox/
+myricom/
+sb16/
+sxg/
+ti-keystone/
+
+# Provided by firmware-carl9170 package
+carl9170-1.fw
+carl9170fw/
+
+# Provided by firmware-ath9k-htc package
+LICENCE.open-ath9k-htc-firmware
+ath9k_htc/
+
+# Provided by amd64-microcode package
+LICENSE.amd-sev
+LICENSE.amd-ucode
+LICENSE.amd_pmf
+amd/
+amd-ucode/
+amdtee/
+
+# Obsolete (no longer wanted by kernel 6.18)
+LICENCE.agere
+LICENSE.tlg2300
+LICENCE.via_vt6656
+LICENSE.vxge
+agere_ap_fw.bin
+agere_sta_fw.bin
+cpia2/
+r8a779x_usb3_v2.dlmem
+rsi_91x.fw
+tlg2300_firmware.bin
+vntwusb.fw
+vxge/

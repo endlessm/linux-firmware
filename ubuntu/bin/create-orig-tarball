@@ -1,0 +1,51 @@
+#!/bin/bash -eu
+#
+# Create an orig tarball for the provided package
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+if [ $# != 1 ] ; then
+	echo "Usage: $(basename "${0}") <package>" >&2
+	exit 2
+fi
+
+package=${1}
+
+if ! [ -e ubuntu/package/"${package}"/control ] ; then
+	echo "EE: Invalid package name: ${package}" >&2
+	exit 2
+fi
+
+echo "II: Create orig tarball for package: ${package}"
+
+trap out EXIT INT TERM HUP
+
+# Current upstream commit and version
+. ubuntu/upstream
+
+orig_tarball=../linux-firmware-${package}_${VERSION}.orig.tar.xz
+if [ -e "${orig_tarball}" ] ; then
+	echo "II: Orig tarball exists already: ${orig_tarball}"
+	exit
+fi
+
+# FIMXE: Check that we are on a tagged release commit
+
+# Construct the list of package files to include in the orig tarball
+# FIXME: Is there an easier way to do this?
+readarray -t package_files < <({
+	./ubuntu/bin/list-package-files "${package}"
+	git ls-tree -r --name-only "${COMMIT}"
+} | sort | uniq -d)
+
+echo "II: Create ${orig_tarball}"
+git archive --format=tar --prefix="linux-firmware-${package}-${VERSION}"/ "${COMMIT}" -- "${package_files[@]}" | \
+    xz -z - > "${orig_tarball}"

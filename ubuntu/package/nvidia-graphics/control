@@ -1,0 +1,9 @@
+Package: linux-firmware-nvidia-graphics
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
+Description: Firmware for Nvidia graphics
+ This package provides firmware used by Linux kernel drivers
+ nouveau.

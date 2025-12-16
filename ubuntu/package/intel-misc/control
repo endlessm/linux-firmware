@@ -1,0 +1,10 @@
+Package: linux-firmware-intel-misc
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
+Description: Firmware for miscellaneous Intel devices and adapters
+ This package provides firmware used by Linux kernel drivers
+ e100, hfi1, ice, intel_vpu, ish, snd_intel_sst_core, snd_soc_avs,
+ snd-soc-skl, and qat.

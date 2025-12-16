@@ -1,0 +1,18 @@
+# List of files and directories to be included in the package
+
+WHENCE*
+
+LICENCE.mediatek
+LICENCE.ralink-firmware.txt
+LICENCE.ralink_a_mediatek_company_firmware
+
+rt2561.bin
+rt2561s.bin
+rt2661.bin
+rt2860.bin
+rt2870.bin
+rt3071.bin
+rt3290.bin
+rt73.bin
+
+mediatek/
