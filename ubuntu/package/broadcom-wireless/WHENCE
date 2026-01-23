@@ -1,0 +1,168 @@
+------------------------------------------------------------------------------
+
+Driver: BCM-0bb4-0306 - Cypress Bluetooth firmware for HTC Vive
+
+File: brcm/BCM-0bb4-0306.hcd
+Link: brcm/BCM-0a5c-6410.hcd -> BCM-0bb4-0306.hcd
+
+Licence: Redistributable. See LICENCE.cypress for details.
+
+------------------------------------------------------------------------------
+
+Driver: brcmsmac - Broadcom 802.11n softmac wireless LAN driver.
+
+File: brcm/bcm43xx-0.fw
+File: brcm/bcm43xx_hdr-0.fw
+Version: 610.812
+
+Licence: Redistributable. See LICENCE.broadcom_bcm43xx for details.
+
+------------------------------------------------------------------------------
+
+Driver: brcmfmac - Broadcom 802.11n fullmac wireless LAN driver.
+
+File: brcm/bcm4329-fullmac-4.bin
+File: brcm/brcmfmac43236b.bin
+File: brcm/brcmfmac4329-sdio.bin
+File: brcm/brcmfmac4330-sdio.bin
+File: brcm/brcmfmac4334-sdio.bin
+File: brcm/brcmfmac4335-sdio.bin
+File: brcm/brcmfmac43241b0-sdio.bin
+File: brcm/brcmfmac43241b4-sdio.bin
+File: brcm/brcmfmac43241b5-sdio.bin
+File: brcm/brcmfmac43242a.bin
+File: brcm/brcmfmac43143.bin
+File: brcm/brcmfmac43143-sdio.bin
+File: brcm/brcmfmac43430a0-sdio.bin
+File: brcm/brcmfmac4350c2-pcie.bin
+File: brcm/brcmfmac4350-pcie.bin
+File: brcm/brcmfmac43569.bin
+File: brcm/brcmfmac4358-pcie.bin
+File: brcm/brcmfmac43602-pcie.bin
+File: brcm/brcmfmac43602-pcie.ap.bin
+File: brcm/brcmfmac4366b-pcie.bin
+File: brcm/brcmfmac4366c-pcie.bin
+File: brcm/brcmfmac4371-pcie.bin
+
+Licence: Redistributable. See LICENCE.broadcom_bcm43xx for details.
+
+File: brcm/brcmfmac4373.bin
+File: cypress/cyfmac43012-sdio.bin
+Link: brcm/brcmfmac43012-sdio.bin -> ../cypress/cyfmac43012-sdio.bin
+File: cypress/cyfmac43012-sdio.clm_blob
+Link: brcm/brcmfmac43012-sdio.clm_blob -> ../cypress/cyfmac43012-sdio.clm_blob
+File: cypress/cyfmac43340-sdio.bin
+Link: brcm/brcmfmac43340-sdio.bin -> ../cypress/cyfmac43340-sdio.bin
+File: cypress/cyfmac43362-sdio.bin
+Link: brcm/brcmfmac43362-sdio.bin -> ../cypress/cyfmac43362-sdio.bin
+File: cypress/cyfmac4339-sdio.bin
+Link: brcm/brcmfmac4339-sdio.bin -> ../cypress/cyfmac4339-sdio.bin
+File: cypress/cyfmac43430-sdio.bin
+Link: brcm/brcmfmac43430-sdio.bin -> ../cypress/cyfmac43430-sdio.bin
+File: cypress/cyfmac43430-sdio.clm_blob
+Link: brcm/brcmfmac43430-sdio.clm_blob -> ../cypress/cyfmac43430-sdio.clm_blob
+File: cypress/cyfmac43455-sdio.bin
+Link: brcm/brcmfmac43455-sdio.bin -> ../cypress/cyfmac43455-sdio.bin
+File: cypress/cyfmac43455-sdio.clm_blob
+Link: brcm/brcmfmac43455-sdio.clm_blob -> ../cypress/cyfmac43455-sdio.clm_blob
+File: cypress/cyfmac4354-sdio.bin
+Link: brcm/brcmfmac4354-sdio.bin -> ../cypress/cyfmac4354-sdio.bin
+File: cypress/cyfmac4354-sdio.clm_blob
+Link: brcm/brcmfmac4354-sdio.clm_blob -> ../cypress/cyfmac4354-sdio.clm_blob
+File: brcm/brcmfmac4354-sdio.nvidia,p2371-2180.txt
+File: cypress/cyfmac4356-pcie.bin
+Link: brcm/brcmfmac4356-pcie.bin -> ../cypress/cyfmac4356-pcie.bin
+File: cypress/cyfmac4356-pcie.clm_blob
+Link: brcm/brcmfmac4356-pcie.clm_blob -> ../cypress/cyfmac4356-pcie.clm_blob
+File: cypress/cyfmac4356-sdio.bin
+Link: brcm/brcmfmac4356-sdio.bin -> ../cypress/cyfmac4356-sdio.bin
+File: cypress/cyfmac4356-sdio.clm_blob
+Link: brcm/brcmfmac4356-sdio.clm_blob -> ../cypress/cyfmac4356-sdio.clm_blob
+File: cypress/cyfmac43570-pcie.bin
+Link: brcm/brcmfmac43570-pcie.bin -> ../cypress/cyfmac43570-pcie.bin
+File: cypress/cyfmac43570-pcie.clm_blob
+Link: brcm/brcmfmac43570-pcie.clm_blob -> ../cypress/cyfmac43570-pcie.clm_blob
+File: cypress/cyfmac4373-sdio.bin
+Link: brcm/brcmfmac4373-sdio.bin -> ../cypress/cyfmac4373-sdio.bin
+File: cypress/cyfmac4373-sdio.clm_blob
+Link: brcm/brcmfmac4373-sdio.clm_blob -> ../cypress/cyfmac4373-sdio.clm_blob
+File: cypress/cyfmac54591-pcie.bin
+Link: brcm/brcmfmac54591-pcie.bin -> ../cypress/cyfmac54591-pcie.bin
+File: cypress/cyfmac54591-pcie.clm_blob
+Link: brcm/brcmfmac54591-pcie.clm_blob -> ../cypress/cyfmac54591-pcie.clm_blob
+
+Licence: Redistributable. See LICENCE.cypress for details.
+
+File: brcm/brcmfmac43241b4-sdio.Advantech-MICA-071.txt
+File: brcm/brcmfmac43241b4-sdio.Intel Corp.-VALLEYVIEW C0 PLATFORM.txt
+File: brcm/brcmfmac4330-sdio.Prowise-PT301.txt
+File: brcm/brcmfmac43340-sdio.Insyde-VESPA2.txt
+File: brcm/brcmfmac43340-sdio.ASUSTeK COMPUTER INC.-TF103CE.txt
+File: brcm/brcmfmac43340-sdio.meegopad-t08.txt
+File: brcm/brcmfmac43340-sdio.pov-tab-p1006w-data.txt
+File: brcm/brcmfmac43340-sdio.predia-basic.txt
+File: brcm/brcmfmac43362-sdio.ASUSTeK COMPUTER INC.-ME176C.txt
+File: brcm/brcmfmac43362-sdio.WC121.txt
+File: brcm/brcmfmac43362-sdio.cubietech,cubietruck.txt
+Link: brcm/brcmfmac43362-sdio.kobo,aura.txt -> brcmfmac43362-sdio.WC121.txt
+Link: brcm/brcmfmac43362-sdio.kobo,tolino-shine2hd.txt -> brcmfmac43362-sdio.WC121.txt
+Link: brcm/brcmfmac43362-sdio.lemaker,bananapro.txt -> brcmfmac43362-sdio.cubietech,cubietruck.txt
+File: brcm/brcmfmac43430a0-sdio.ilife-S806.txt
+File: brcm/brcmfmac43430a0-sdio.jumper-ezpad-mini3.txt
+File: brcm/brcmfmac43430a0-sdio.ONDA-V80 PLUS.txt
+File: brcm/brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.sinovoip,bpi-m2-plus.txt -> brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.sinovoip,bpi-m2-zero.txt -> brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.sinovoip,bpi-m2-ultra.txt -> brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.sinovoip,bpi-m3.txt -> brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.sinovoip,bananapi-m64.txt -> brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.friendlyarm,nanopi-neo4.txt -> brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.friendlyarm,nanopi-r1.txt -> brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.starfive,visionfive-v1.txt -> brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.beagle,beaglev-starlight-jh7100-a1.txt -> brcmfmac43430-sdio.AP6212.txt
+Link: brcm/brcmfmac43430-sdio.beagle,beaglev-starlight-jh7100-r0.txt -> brcmfmac43430-sdio.AP6212.txt
+File: brcm/brcmfmac43430-sdio.Hampoo-D2D3_Vi8A1.txt
+File: brcm/brcmfmac43430-sdio.ilife-S806.txt
+File: brcm/brcmfmac43430-sdio.MUR1DX.txt
+File: brcm/brcmfmac43430-sdio.raspberrypi,3-model-b.txt
+Link: brcm/brcmfmac43430-sdio.raspberrypi,model-zero-w.txt -> brcmfmac43430-sdio.raspberrypi,3-model-b.txt
+Link: brcm/brcmfmac43430-sdio.raspberrypi,model-zero-2-w.txt -> brcmfmac43430-sdio.raspberrypi,3-model-b.txt
+File: brcm/brcmfmac43455-sdio.acepc-t8.txt
+File: brcm/brcmfmac43455-sdio.raspberrypi,3-model-b-plus.txt
+Link: brcm/brcmfmac43455-sdio.raspberrypi,3-model-a-plus.txt -> brcmfmac43455-sdio.raspberrypi,3-model-b-plus.txt
+File: brcm/brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+Link: brcm/brcmfmac43455-sdio.raspberrypi,4-compute-module.txt -> brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+Link: brcm/brcmfmac43455-sdio.raspberrypi,5-model-b.txt -> brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+Link: brcm/brcmfmac43455-sdio.raspberrypi,500.txt -> brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+Link: brcm/brcmfmac43455-sdio.raspberrypi,5-compute-module.txt -> brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+Link: brcm/brcmfmac43455-sdio.Raspberry Pi Foundation-Raspberry Pi 4 Model B.txt -> brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+Link: brcm/brcmfmac43455-sdio.Raspberry Pi Foundation-Raspberry Pi Compute Module 4.txt -> brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+File: brcm/brcmfmac43455-sdio.MINIX-NEO Z83-4.txt
+File: brcm/brcmfmac43455-sdio.Radxa-ROCK Pi X.txt
+File: brcm/brcmfmac4356-pcie.gpd-win-pocket.txt
+File: brcm/brcmfmac4356-pcie.Intel Corporation-CHERRYVIEW D1 PLATFORM.txt
+File: brcm/brcmfmac4356-pcie.Xiaomi Inc-Mipad2.txt
+File: brcm/brcmfmac4356-sdio.AP6356S.txt
+Link: brcm/brcmfmac4356-sdio.firefly,firefly-rk3399.txt -> brcmfmac4356-sdio.AP6356S.txt
+Link: brcm/brcmfmac4356-sdio.friendlyarm,nanopi-m4.txt -> brcmfmac4356-sdio.AP6356S.txt
+Link: brcm/brcmfmac4356-sdio.friendlyarm,nanopc-t4.txt -> brcmfmac4356-sdio.AP6356S.txt
+Link: brcm/brcmfmac4356-sdio.khadas,vim2.txt -> brcmfmac4356-sdio.AP6356S.txt
+Link: brcm/brcmfmac4356-sdio.vamrs,rock960.txt -> brcmfmac4356-sdio.AP6356S.txt
+File: brcm/brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.beagle,am5729-beagleboneai.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.khadas,vim.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,pinebook-pro.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,pinenote-v1.1.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,pinenote-v1.2.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,pinephone-pro.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,quartz64-a.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,quartz64-b.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,rockpro64-v2.0.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,rockpro64-v2.1.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,soquartz-model-a.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,soquartz-cm4io.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+Link: brcm/brcmfmac43455-sdio.pine64,soquartz-blade.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
+
+Licence: GPLv2. See GPL-2 for details.
+
+------------------------------------------------------------------------------

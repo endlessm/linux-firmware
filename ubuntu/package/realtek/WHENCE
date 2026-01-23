@@ -1,0 +1,634 @@
+------------------------------------------------------------------------------
+
+Driver: r8712u - Realtek 802.11n WLAN driver for RTL8712U
+
+File: rtlwifi/rtl8712u.bin
+Info: From Vendor's rtl8712_8188_8191_8192SU_usb_linux_v7_0.20100831
+      Reverted rtl8188C_8192C_8192D_usb_linux_v3.4.2_3727.20120404
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8192ce - Realtek 802.11n WLAN driver for RTL8192CE
+
+File: rtlwifi/rtl8192cfw.bin
+File: rtlwifi/rtl8192cfwU.bin
+File: rtlwifi/rtl8192cfwU_B.bin
+Info: From Vendor's realtek/rtlwifi_linux_mac80211_0019.0320.2014V628 driver
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8192cu - Realtek 802.11n WLAN driver for RTL8192CU
+
+File: rtlwifi/rtl8192cufw.bin
+File: rtlwifi/rtl8192cufw_A.bin
+File: rtlwifi/rtl8192cufw_B.bin
+File: rtlwifi/rtl8192cufw_TMSC.bin
+Info: From Vendor's rtl8188C_8192C_usb_linux_v4.0.1_6911.20130308 driver
+      All files extracted from driver/hal/rtl8192c/usb/Hal8192CUHWImg.c
+      Relevant variables (CONFIG_BT_COEXISTENCE not set):
+        - rtlwifi/rtl8192cufw_A.bin: Rtl8192CUFwUMCACutImgArray
+        - rtlwifi/rtl8192cufw_B.bin: Rtl8192CUFwUMCBCutImgArray
+        - rtlwifi/rtl8192cufw_TMSC.bin: Rtl8192CUFwTSMCImgArray
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8192se - Realtek 802.11n WLAN driver for RTL8192SE
+
+Info: updated from rtl_92ce_92se_92de_linux_mac80211_0004.0816.2011 driver version
+File: rtlwifi/rtl8192sefw.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8192de - Realtek 802.11n WLAN driver for RTL8192DE
+
+Info: Updated from Realtek version rtl_92ce_92se_92de_8723ae_linux_mac80211_0007.0809.2012
+File: rtlwifi/rtl8192defw.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8192du - Realtek 802.11an WLAN driver for RTL8192DU
+
+Info: Extracted from Realtek driver version v4.0.10_25039.20171107.
+File: rtlwifi/rtl8192dufw.bin
+Version: 39.0
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8723e - Realtek 802.11n WLAN driver for RTL8723E
+
+Info: Taken from Realtek version rtl_92ce_92se_92de_8723ae_linux_mac80211_0007.0809.2012
+File: rtlwifi/rtl8723fw.bin
+File: rtlwifi/rtl8723fw_B.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8723be - Realtek 802.11n WLAN driver for RTL8723BE
+
+Info: From Vendor's realtek/rtlwifi_linux_mac80211_0019.0320.2014V628 driver
+File: rtlwifi/rtl8723befw.bin
+Info: Update to version 36 - Sent by Realtek
+File: rtlwifi/rtl8723befw_36.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8723de - Realtek 802.11ac WLAN driver for RTL8723DE
+
+Info: Supplied by Vendor at https://github.com/pkshih/rtlwifi_rtl8723de
+File: rtlwifi/rtl8723defw.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8188ee - Realtek 802.11n WLAN driver for RTL8188EE
+
+Info: Taken from Realtek version rtl_92ce_92se_92de_8723ae_88ee_linux_mac80211_0010.0109.2013
+File: rtlwifi/rtl8188efw.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8821ae - Realtek 802.11n WLAN driver for RTL8812AE
+
+Info: From Vendor's realtek/rtlwifi_linux_mac80211_0019.0320.2014V628 driver
+File: rtlwifi/rtl8812aefw.bin
+File: rtlwifi/rtl8812aefw_wowlan.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8821ae - Realtek 802.11n WLAN driver for RTL8821AE
+
+Info: From Vendor's realtek/rtlwifi_linux_mac80211_0019.0320.2014V628 driver
+File: rtlwifi/rtl8821aefw.bin
+File: rtlwifi/rtl8821aefw_wowlan.bin
+Info: Update to version 29 - Sent by Realtek
+File: rtlwifi/rtl8821aefw_29.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8822be - Realtek 802.11n WLAN driver for RTL8822BE
+
+Info: Sent to Larry Finger by Realtek engineer Ping-Ke Shih <pkshih@realtek.com>
+File: rtlwifi/rtl8822befw.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtw88 - Realtek 802.11ac WLAN driver for RTL8822BE and RTL8822CE
+
+Info: Sent to Larry Finger by Realtek engineer Yan-Hsuan Chuang <yhchuang@realtek.com>
+File: rtw88/rtw8821a_fw.bin
+File: rtw88/rtw8822b_fw.bin
+File: rtw88/rtw8822c_fw.bin
+File: rtw88/rtw8822c_wow_fw.bin
+File: rtw88/README
+File: rtw88/rtw8723d_fw.bin
+File: rtw88/rtw8821c_fw.bin
+File: rtw88/rtw8703b_fw.bin
+File: rtw88/rtw8703b_wow_fw.bin
+File: rtw88/rtw8812a_fw.bin
+File: rtw88/rtw8814a_fw.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+Info:
+    These firmware should be put under /lib/firmware/rtw88/
+    And note that the rtw88 driver is able to support wake-on-wireless LAN
+    for RTL8822C devices, after kernel v5.6+. So, make sure the firmware
+    rtw88/rtw8822c_wow_fw.bin is also packed, otherwise the firmware load
+    fail could be a problem.
+    Although RTL8723D and RTL8703B devices are 802.11n devices, they
+    are also supported by rtw88 because the hardware arch is similar.
+
+------------------------------------------------------------------------------
+
+Driver: rtw89 - Realtek 802.11ax and 802.11be WLAN driver
+
+File: rtw89/rtw8851b_fw.bin
+File: rtw89/rtw8852a_fw.bin
+File: rtw89/rtw8852b_fw.bin
+File: rtw89/rtw8852b_fw-1.bin
+File: rtw89/rtw8852b_fw-2.bin
+File: rtw89/rtw8852bt_fw.bin
+File: rtw89/rtw8852bt_fw-1.bin
+File: rtw89/rtw8852c_fw.bin
+File: rtw89/rtw8852c_fw-1.bin
+File: rtw89/rtw8852c_fw-2.bin
+File: rtw89/rtw8922a_fw.bin
+File: rtw89/rtw8922a_fw-1.bin
+File: rtw89/rtw8922a_fw-2.bin
+File: rtw89/rtw8922a_fw-3.bin
+File: rtw89/rtw8922a_fw-4.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+   These firmware support 802.11ax chips including RTL8851B, RTL8852A,
+   RTL8852B, RTL8852BT and RTL8852C and 802.11be chip including RTL8922A.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8723bs - Realtek 802.11n WLAN driver for RTL8723BS
+
+Info: Firmware files extracted from data statements in Realtek driver
+      v4.3.5.5_12290.20140916_BTCOEX20140507-4E40.
+File: rtlwifi/rtl8723bs_bt.bin
+Link: rtlwifi/rtl8723bs_nic.bin -> rtl8723bu_nic.bin
+Link: rtlwifi/rtl8723bs_ap_wowlan.bin -> rtl8723bu_ap_wowlan.bin
+Link: rtlwifi/rtl8723bs_wowlan.bin -> rtl8723bu_wowlan.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rtl8xxxu - Realtek 802.11n WLAN driver for RTL8XXX USB devices
+
+Info: rtl8723au taken from Realtek driver
+      rtl8723A_WiFi_linux_v4.1.3_6044.20121224
+      Firmware is embedded in the driver as data statements. This info
+      has been extracted into a binary file.
+File: rtlwifi/rtl8723aufw_A.bin
+File: rtlwifi/rtl8723aufw_B.bin
+File: rtlwifi/rtl8723aufw_B_NoBT.bin
+
+Info: rtl8723bu taken from Realtek driver
+      rtl8723BU_WiFi_linux_v4.3.16_14189.20150519_BTCOEX20150119-5844
+      Firmware is embedded in the driver as data statements. This info
+      has been extracted into a binary file.
+File: rtlwifi/rtl8723bu_nic.bin
+File: rtlwifi/rtl8723bu_wowlan.bin
+File: rtlwifi/rtl8723bu_ap_wowlan.bin
+
+Info: rtl8192eu taken from Realtek driver
+      rtl8192EU_WiFi_linux_v5.11.2.1-18-g8e7df912b.20210527_COEX20171113-0047
+      Firmware is embedded in the driver as data statements. This info
+      has been extracted into a binary file.
+File: rtlwifi/rtl8192eu_nic.bin
+Version: 35.7
+File: rtlwifi/rtl8192eu_wowlan.bin
+Version: 35.7
+File: rtlwifi/rtl8192eu_ap_wowlan.bin
+Version: 18.0
+
+Info: rtl8188fu taken from Realtek driver
+      RTL8188FU_Linux_v4.3.23.6_20964.20170110
+      Firmware was embedded in the driver as data statements. This info
+      has been extracted into a binary file.
+File: rtlwifi/rtl8188fufw.bin
+
+File: rtlwifi/rtl8710bufw_SMIC.bin
+Version: 16.0
+File: rtlwifi/rtl8710bufw_UMC.bin
+Version: 16.0
+
+Info: rtl8188eu taken from Realtek driver version
+      v5.2.2.4_25483.20171222.
+      Firmware is embedded in the driver as data statements. This info
+      has been extracted into a binary file.
+File: rtlwifi/rtl8188eufw.bin
+Version: 28.0
+
+Info: rtl8192fu taken from Realtek driver version
+      v5.15.2-53-g9bfbc74cf.20230615_COEX20220422-2b07.
+      Firmware is embedded in the driver as data statements. This info
+      has been extracted into a binary file.
+File: rtlwifi/rtl8192fufw.bin
+Version: 7.3
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: r8169 - RealTek 8169/8168/8101 ethernet driver.
+
+File: rtl_nic/rtl8168d-1.fw
+File: rtl_nic/rtl8168d-2.fw
+File: rtl_nic/rtl8105e-1.fw
+File: rtl_nic/rtl8168e-1.fw
+File: rtl_nic/rtl8168e-2.fw
+
+File: rtl_nic/rtl8168e-3.fw
+Version: 0.0.4
+
+File: rtl_nic/rtl8168f-1.fw
+Version: 0.0.5
+
+File: rtl_nic/rtl8168f-2.fw
+Version: 0.0.4
+
+File: rtl_nic/rtl8411-1.fw
+Version: 0.0.3
+
+File: rtl_nic/rtl8411-2.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl8402-1.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl8106e-1.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl8106e-2.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl8168g-1.fw
+Version: 0.0.3
+
+File: rtl_nic/rtl8168g-2.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl8168g-3.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl8168h-1.fw
+Version: 0.0.2
+
+File: rtl_nic/rtl8168h-2.fw
+Version: 0.0.2
+
+File: rtl_nic/rtl8168fp-3.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl8107e-1.fw
+Version: 0.0.2
+
+File: rtl_nic/rtl8107e-2.fw
+Version: 0.0.2
+
+File: rtl_nic/rtl8125a-3.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl8125b-1.fw
+Version: 0.0.2
+
+File: rtl_nic/rtl8125b-2.fw
+Version: 0.0.2
+
+File: rtl_nic/rtl8125d-1.fw
+Version: 0.0.7
+
+File: rtl_nic/rtl8125d-2.fw
+Version: 0.0.4
+
+File: rtl_nic/rtl8125k-1.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl9151a-1.fw
+Version: 0.0.1
+
+File: rtl_nic/rtl8126a-2.fw
+Version: 0.0.2
+
+File: rtl_nic/rtl8125bp-2.fw
+Version: 0.0.4
+
+File: rtl_nic/rtl8126a-3.fw
+Version: 0.0.5
+
+File: rtl_nic/rtl8127a-1.fw
+Version: 0.0.5
+
+Licence: Redistributable. See LICENSE.r8169 for details.
+
+------------------------------------------------------------------------------
+
+Driver: r8152 - Realtek RTL8152/RTL8153 Based USB Ethernet Adapters
+
+File: rtl_nic/rtl8153a-2.fw
+File: rtl_nic/rtl8153a-3.fw
+File: rtl_nic/rtl8153a-4.fw
+File: rtl_nic/rtl8153b-2.fw
+File: rtl_nic/rtl8153c-1.fw
+File: rtl_nic/rtl8156a-2.fw
+File: rtl_nic/rtl8156b-2.fw
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+------------------------------------------------------------------------------
+
+Driver: rt1320 - Realtek rt1320 ASoC audio driver.
+
+File: realtek/rt1320/rt1320-patch-code-vab.bin
+Version: 0.0.1
+
+File: realtek/rt1320/rt1320-patch-code-vc.bin
+Version: 1.0.0
+
+File: realtek/rt1320/rt1321-patch-code-va.bin
+Version: 1.3.0
+
+Licence: Redistributable. See LICENSE.rt1320 for details.
+
+------------------------------------------------------------------------------
+
+Driver: btusb - Bluetooth USB driver
+
+File: intel/ibt-hw-37.7.bseq
+Version: 1316.02.00
+File: intel/ibt-hw-37.7.10-fw-1.80.2.3.d.bseq
+Version: BT_WilkinsPeak_B3_REL_87_0001
+File: intel/ibt-hw-37.7.10-fw-1.0.2.3.d.bseq
+Version: BT_WilkinsPeak_B3_REL_87_0001
+File: intel/ibt-hw-37.7.10-fw-1.80.1.2d.d.bseq
+Version: BT_WilkinsPeak_B5_REL_42_0001
+File: intel/ibt-hw-37.7.10-fw-1.0.1.2d.d.bseq
+Version: BT_WilkinsPeak_B5_REL_42_0001
+File: intel/ibt-hw-37.8.bseq
+Version: 1339_02.00
+File: intel/ibt-hw-37.8.10-fw-1.10.2.27.d.bseq
+Version: BT_StonePeak_C0_REL_59_0001
+File: intel/ibt-hw-37.8.10-fw-1.10.3.11.e.bseq
+Version: BT_StonePeak_D0_REL_50_0002
+File: intel/ibt-hw-37.8.10-fw-22.50.19.14.f.bseq
+Version: BT_StonePeak_D1_REL_67_1278
+File: intel/ibt-11-5.ddc
+Version: LnP/SfP_REL1294
+File: intel/ibt-11-5.sfi
+Version: BT_LightningPeak_REL0487
+File: intel/ibt-12-16.ddc
+Version: BT_WindStormPeak_REL1299
+File: intel/ibt-12-16.sfi
+Version: BT_WindStormPeak_REL1299
+
+File: intel/ibt-17-16-1.sfi
+File: intel/ibt-17-16-1.ddc
+File: intel/ibt-17-2.sfi
+File: intel/ibt-17-2.ddc
+File: intel/ibt-18-16-1.sfi
+File: intel/ibt-18-16-1.ddc
+File: intel/ibt-18-2.sfi
+File: intel/ibt-18-2.ddc
+Version: BT_Pulsar_REL20425_22.20.2412.20425
+
+File: intel/ibt-17-0-1.sfi
+Version: BT_JeffersonPeak_A0_B0_REL0201
+File: intel/ibt-17-0-1.ddc
+Version: BT_JeffersonPeak_A0_B0_REL0201
+File: intel/ibt-17-1.sfi
+Version: BT_JeffersonPeak_A0_B0_REL0201
+File: intel/ibt-17-1.ddc
+Version: BT_JeffersonPeak_A0_B0_REL0201
+
+File: intel/ibt-18-0-1.sfi
+Version: BT_ThunderPeak_A0_B0_REL0201
+File: intel/ibt-18-0-1.ddc
+Version: BT_ThunderPeak_A0_B0_REL0201
+File: intel/ibt-18-1.sfi
+Version: BT_ThunderPeak_A0_B0_REL0201
+File: intel/ibt-18-1.ddc
+Version: BT_ThunderPeak_A0_B0_REL0201
+File: intel/ibt-20-0-3.sfi
+Version: BT_CyclonePeak_A0_REL53636
+File: intel/ibt-20-0-3.ddc
+Version: BT_CyclonePeak_A0_REL53636
+File: intel/ibt-20-1-3.sfi
+Version: BT_CyclonePeak_A0_REL53636
+File: intel/ibt-20-1-3.ddc
+Version: BT_CyclonePeak_A0_REL53636
+File: intel/ibt-20-1-4.sfi
+Version: BT_CyclonePeak_A0_REL53636
+File: intel/ibt-20-1-4.ddc
+Version: BT_CyclonePeak_A0_REL53636
+File: intel/ibt-19-0-0.sfi
+Version: BT_Quasar_REL53697
+File: intel/ibt-19-0-0.ddc
+Version: BT_Quasar_REL53697
+File: intel/ibt-19-0-1.sfi
+Version: BT_Quasar_REL53697
+File: intel/ibt-19-0-1.ddc
+Version: BT_Quasar_REL53697
+File: intel/ibt-19-0-3.sfi
+Version: BT_Quasar_REL53697
+File: intel/ibt-19-0-3.ddc
+Version: BT_Quasar_REL53697
+File: intel/ibt-19-0-4.sfi
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-0-4.ddc
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-16-4.sfi
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-16-4.ddc
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-32-1.sfi
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-32-1.ddc
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-32-0.sfi
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-32-0.ddc
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-32-4.sfi
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-32-4.ddc
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-240-1.sfi
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-240-1.ddc
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-240-4.sfi
+Version: BT_HarrisonPeak_REL53697
+File: intel/ibt-19-240-4.ddc
+Version: BT_HarrisonPeak_REL53697
+
+File: intel/ibt-0041-0041.sfi
+File: intel/ibt-0041-0041.ddc
+File: intel/ibt-0040-0041.sfi
+File: intel/ibt-0040-0041.ddc
+File: intel/ibt-0040-4150.sfi
+File: intel/ibt-0040-4150.ddc
+File: intel/ibt-1040-0041.sfi
+File: intel/ibt-1040-0041.ddc
+File: intel/ibt-1040-4150.sfi
+File: intel/ibt-1040-4150.ddc
+File: intel/ibt-0040-1050.sfi
+File: intel/ibt-0040-1050.ddc
+File: intel/ibt-1040-1050.sfi
+File: intel/ibt-1040-1050.ddc
+Version: BT_Solar_REL82053_23.50.25205.82053
+
+File: intel/ibt-0040-1020.sfi
+File: intel/ibt-0040-1020.ddc
+File: intel/ibt-1040-1020.sfi
+File: intel/ibt-1040-1020.ddc
+File: intel/ibt-0040-2120.sfi
+File: intel/ibt-0040-2120.ddc
+File: intel/ibt-1040-2120.sfi
+File: intel/ibt-1040-2120.ddc
+Version: BT_SolarJfp_REL151_22.180.2405.151
+
+File: intel/ibt-0093-0041.sfi
+File: intel/ibt-0093-0041.ddc
+File: intel/ibt-0093-4150.sfi
+File: intel/ibt-0093-4150.ddc
+File: intel/ibt-0093-1050.sfi
+File: intel/ibt-0093-1050.ddc
+Version: BT_BlazaruHrpGfp_S_REL203_24.00.25462.203
+
+File: intel/ibt-0291-0291.sfi
+File: intel/ibt-0291-0291.ddc
+File: intel/ibt-0093-0291.sfi
+File: intel/ibt-0093-0291.ddc
+Version: BT_BlazarU_S_REL102203_24.20.26030.102203
+
+File: intel/ibt-0180-0041.sfi
+File: intel/ibt-0180-0041.ddc
+File: intel/ibt-0180-4150.sfi
+File: intel/ibt-0180-4150.ddc
+File: intel/ibt-0180-1050.sfi
+File: intel/ibt-0180-1050.ddc
+Version: BT_Magnetar_REL103882_23.50.25205.103882
+
+File: intel/ibt-0190-0291.sfi
+File: intel/ibt-0190-0291.ddc
+File: intel/ibt-0190-0041.sfi
+File: intel/ibt-0190-0041-iml.sfi
+File: intel/ibt-0190-0041.ddc
+File: intel/ibt-0190-0041-pci.ddc
+File: intel/ibt-0190-0041-pci.sfi
+File: intel/ibt-0190-0041-usb.ddc
+File: intel/ibt-0190-0041-usb.sfi
+Version: BT_BlazariGfp_S_REL156_24.00.25462.156
+
+File: intel/ibt-0190-0291-iml.sfi
+File: intel/ibt-0190-0291-usb.ddc
+File: intel/ibt-0190-0291-usb.sfi
+File: intel/ibt-0190-0291-pci.ddc
+File: intel/ibt-0190-0291-pci.sfi
+Version: BT_BlazarI_S_REL109743_24.20.26030.109743
+
+File: intel/ibt-00a0-01a1-iml.sfi
+File: intel/ibt-00a0-01a1-pci.ddc
+File: intel/ibt-00a0-01a1-pci.sfi
+File: intel/ibt-00a0-01a1-usb.ddc
+File: intel/ibt-00a0-01a1-usb.sfi
+File: intel/ibt-00a0-0291-iml.sfi
+File: intel/ibt-00a0-0291-pci.ddc
+File: intel/ibt-00a0-0291-pci.sfi
+File: intel/ibt-00a0-0291-usb.ddc
+File: intel/ibt-00a0-0291-usb.sfi
+Version: BT_Scorpius_S_REL75512_24.20.26030.75512
+
+File: intel/ibt-00a0-0041-iml.sfi
+File: intel/ibt-00a0-0041-pci.ddc
+File: intel/ibt-00a0-0041-pci.sfi
+Version: BT_ScorpiusGfp_S_REL199_24.00.25462.199
+
+Licence: Redistributable. See LICENCE.ibt_firmware for details
+
+File: rtl_bt/rtl8192ee_fw.bin
+File: rtl_bt/rtl8192eu_fw.bin
+File: rtl_bt/rtl8723a_fw.bin
+File: rtl_bt/rtl8723b_fw.bin
+File: rtl_bt/rtl8723bs_fw.bin
+File: rtl_bt/rtl8723bs_config.bin
+Link: rtl_bt/rtl8723b_config.bin -> rtl8723bs_config.bin
+Link: rtl_bt/rtl8723bs_config-OBDA8723.bin -> rtl8723bs_config.bin
+Link: rtl_bt/rtl8723bs_config-OBDA0623.bin -> rtl8723bs_config.bin
+File: rtl_bt/rtl8723cs_xx_fw.bin
+File: rtl_bt/rtl8723cs_xx_config.bin
+File: rtl_bt/rtl8761a_fw.bin
+File: rtl_bt/rtl8761b_fw.bin
+File: rtl_bt/rtl8761b_config.bin
+File: rtl_bt/rtl8761bu_fw.bin
+File: rtl_bt/rtl8761bu_config.bin
+File: rtl_bt/rtl8761cu_fw.bin
+File: rtl_bt/rtl8761cu_config.bin
+File: rtl_bt/rtl8812ae_fw.bin
+File: rtl_bt/rtl8821a_fw.bin
+Link: rtl_bt/rtl8821a_config.bin -> rtl8821c_config.bin
+File: rtl_bt/rtl8822b_fw.bin
+File: rtl_bt/rtl8822b_config.bin
+File: rtl_bt/rtl8723d_fw.bin
+Link: rtl_bt/rtl8723d_config.bin -> rtl8821c_config.bin
+File: rtl_bt/rtl8821c_fw.bin
+File: rtl_bt/rtl8821c_config.bin
+File: rtl_bt/rtl8821cs_fw.bin
+Link: rtl_bt/rtl8821cs_config.bin -> rtl8761b_config.bin
+File: rtl_bt/rtl8822cu_fw.bin
+Link: rtl_bt/rtl8822cu_config.bin -> rtl8761bu_config.bin
+File: rtl_bt/rtl8822cs_fw.bin
+File: rtl_bt/rtl8822cs_config.bin
+File: rtl_bt/rtl8852au_fw.bin
+Link: rtl_bt/rtl8852au_config.bin -> rtl8761bu_config.bin
+File: rtl_bt/rtl8852bu_fw.bin
+Link: rtl_bt/rtl8852bu_config.bin -> rtl8761bu_config.bin
+File: rtl_bt/rtl8852cu_fw.bin
+File: rtl_bt/rtl8852cu_fw_v2.bin
+Link: rtl_bt/rtl8852cu_config.bin -> rtl8761bu_config.bin
+File: rtl_bt/rtl8851bu_fw.bin
+Link: rtl_bt/rtl8851bu_config.bin -> rtl8761bu_config.bin
+File: rtl_bt/rtl8852btu_fw.bin
+Link: rtl_bt/rtl8852btu_config.bin -> rtl8761bu_config.bin
+File: rtl_bt/rtl8922au_fw.bin
+File: rtl_bt/rtl8922au_config.bin
+
+Licence: Redistributable. See LICENCE.rtlwifi_firmware.txt for details.
+
+Info:
+Found in vendor driver, linux_bt_usb_2.11.20140423_8723be.rar
+From https://github.com/troy-tan/driver_store
+Files rtl_bt/rtl8822b_* came directly from Realtek. These files are
+updated on April 14, 2017.
+
+------------------------------------------------------------------------------

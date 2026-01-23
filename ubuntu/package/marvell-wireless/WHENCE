@@ -1,0 +1,131 @@
+------------------------------------------------------------------------------
+
+Driver: libertas - Marvell Libertas fullmac-type 802.11b/g cards
+
+File: libertas/cf8381.bin
+File: libertas/cf8381_helper.bin
+File: libertas/cf8385.bin
+File: libertas/cf8385_helper.bin
+File: libertas/gspi8682.bin
+File: libertas/gspi8682_helper.bin
+File: libertas/gspi8686_v9.bin
+File: libertas/gspi8686_v9_helper.bin
+File: libertas/gspi8688.bin
+File: libertas/gspi8688_helper.bin
+File: libertas/sd8385.bin
+File: libertas/sd8385_helper.bin
+File: libertas/sd8682.bin
+File: libertas/sd8682_helper.bin
+File: libertas/sd8686_v8.bin
+File: libertas/sd8686_v8_helper.bin
+File: libertas/sd8686_v9.bin
+File: libertas/sd8686_v9_helper.bin
+File: libertas/usb8388_v5.bin
+File: libertas/usb8388_v9.bin
+File: libertas/usb8682.bin
+File: mrvl/sd8688.bin
+Link: libertas/sd8688.bin -> ../mrvl/sd8688.bin
+File: mrvl/sd8688_helper.bin
+Link: libertas/sd8688_helper.bin -> ../mrvl/sd8688_helper.bin
+
+Licence: Redistributable. See LICENCE.Marvell for details.
+
+Info:
+Extracted from Linux driver tarballs downloaded from Marvell's
+"Extranet" with permission.
+
+------------------------------------------------------------------------------
+
+Driver: libertas - Marvell Libertas 802.11b/g cards, OLPC firmware
+
+File: libertas/lbtf_sdio.bin
+Version: 9.0.7.p4
+
+File: lbtf_usb.bin
+Version: 5.132.3.p1
+
+File: libertas/usb8388_olpc.bin
+Version: 5.110.22.p23
+
+Licence: Redistributable. See LICENCE.OLPC for details.
+
+Available from http://dev.laptop.org/pub/firmware/libertas/
+
+------------------------------------------------------------------------------
+
+Driver: mwl8k - Marvell Libertas softmac-type 802.11b/g/n cards
+
+File: mwl8k/fmimage_8687.fw
+File: mwl8k/helper_8687.fw
+File: mwl8k/fmimage_8366.fw
+File: mwl8k/fmimage_8366_ap-1.fw
+File: mwl8k/fmimage_8366_ap-2.fw
+File: mwl8k/fmimage_8366_ap-3.fw
+Version: 5.2.8.16
+File: mwl8k/helper_8366.fw
+
+File: mwl8k/fmimage_8764_ap-1.fw
+Version: 7.4.0.9
+
+Licence: Redistributable. See LICENCE.Marvell for details.
+
+Info:
+8687 images downloaded from Marvell's "Extranet" with permission.
+8366 images contributed directly by Marvell.
+
+------------------------------------------------------------------------------
+
+Driver: mwifiex - Marvell Wi-Fi fullmac-type 802.11n/ac cards
+
+File: mrvl/sd8787_uapsta.bin
+Version: W14.68.35.p66
+
+File: mrvl/usb8766_uapsta.bin
+Version: 14.68.22.p16
+
+File: mrvl/sd8797_uapsta.bin
+Version: W14.68.29.p59
+
+File: mrvl/usb8797_uapsta.bin
+Version: W14.68.29.p60
+
+File: mrvl/sd8897_uapsta.bin
+Version: W15.68.19.17
+
+File: mrvl/usb8897_uapsta.bin
+Version: 15.68.4.p103
+
+File: mrvl/pcie8897_uapsta.bin
+Version: W15.68.19.p21
+
+File: mrvl/sd8887_uapsta.bin
+Version: W15.68.7.p189
+
+File: mrvl/sd8801_uapsta.bin
+Version: W14.68.36.p204
+
+File: mrvl/usb8801_uapsta.bin
+Version: W14.68.36.p138
+
+File: mrvl/pcieuart8997_combo_v4.bin
+Version: W16.68.1.p179
+
+File: mrvl/pcieusb8997_combo_v4.bin
+Version: W16.68.10.p159.1
+
+File: mrvl/pcie8997_wlan_v4.bin
+Version: W16.68.10.p159.1
+
+File: mrvl/usbusb8997_combo_v4.bin
+Version: W16.68.1.p183
+
+File: mrvl/sdsd8997_combo_v4.bin
+Version: W16.68.1.p197.1
+
+File: mrvl/sdsd8977_combo_v2.bin
+Version: W16.68.1.p195
+
+Licence: Redistributable. See LICENCE.NXP for details.
+Originates from https://github.com/NXP/mwifiex-firmware.git
+
+------------------------------------------------------------------------------

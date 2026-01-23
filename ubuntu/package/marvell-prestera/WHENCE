@@ -1,0 +1,13 @@
+------------------------------------------------------------------------------
+
+Driver: prestera - Marvell driver for Prestera family ASIC devices
+
+File: mrvl/prestera/mvsw_prestera_fw-v2.0.img
+File: mrvl/prestera/mvsw_prestera_fw-v3.0.img
+File: mrvl/prestera/mvsw_prestera_fw-v4.0.img
+File: mrvl/prestera/mvsw_prestera_fw-v4.1.img
+File: mrvl/prestera/mvsw_prestera_fw_arm64-v4.1.img
+
+Licence: Redistributable. See LICENCE.Marvell for details.
+
+------------------------------------------------------------------------------

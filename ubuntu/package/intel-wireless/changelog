@@ -1,0 +1,16 @@
+linux-firmware-intel-wireless (20260123.git1b7b9f6c-0ubuntu1) resolute; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - SAUCE: Add WHENCE.ubuntu skeleton
+    - SAUCE: Import ipw2200 firmware
+    - SAUCE: Import ipw2100 firmware
+    - SAUCE: Import zd1211 firmware
+    - SAUCE: Import pvrusb2 and cx2341x firmware
+    - SAUCE: Import echoaudio firmware
+    - SAUCE: Import asihpi firmware
+    - Rebase to upstream commit 1b7b9f6c3461815b4f656178d31a6b6a90e045ec
+      Rebase against https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+  * Split linux-firmware into multiple packages (LP: #1958518)
+    - [Packaging] Initial commit of packaging files
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 23 Jan 2026 16:01:23 +0100

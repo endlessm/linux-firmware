@@ -1,0 +1,502 @@
+------------------------------------------------------------------------------
+
+Driver: atomisp - Intel IPU2 (Image Processing Unit 2) driver
+
+File: intel/ipu/shisp_2400b0_v21.bin
+Version: irci_stable_candrpv_0415_20150423_1753
+
+File: intel/ipu/shisp_2401a0_v21.bin
+Version: irci_stable_candrpv_0415_20150521_0458
+
+License: Redistributable. See LICENSE.ivsc for details
+
+------------------------------------------------------------------------------
+
+Driver: ipu3-imgu - Intel IPU3 (3rd Gen Image Processing Unit) driver
+
+File: intel/ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
+Version: irci_irci_ecr-master_20161208_0213_20170112_1500
+md5sum: 59abc311fce49c5a180b5a8a3917912d
+Link: intel/ipu3-fw.bin -> ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
+Link: intel/irci_irci_ecr-master_20161208_0213_20170112_1500.bin -> ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
+
+Licence: Redistributable. See LICENSE.ipu3_firmware for details
+
+------------------------------------------------------------------------------
+
+Driver: intel-ipu6-isys - Intel IPU6 (Image Processing Unit 6) driver
+
+File: intel/ipu/ipu6epadln_fw.bin
+File: intel/ipu/ipu6ep_fw.bin
+File: intel/ipu/ipu6epmtl_fw.bin
+File: intel/ipu/ipu6_fw.bin
+Version: scci_master_20230926_0007
+
+File: intel/ipu/ipu6se_fw.bin
+Version: scci_master_20210502_1459
+
+Licence: Redistributable. See LICENSE.ivsc for details
+
+------------------------------------------------------------------------------
+
+Driver: intel-ipu7-isys - Intel IPU7 (Image Processing Unit 7) driver
+
+File: intel/ipu/ipu7_fw.bin
+Version: master_release_20240628_1854
+
+File: intel/ipu/ipu7ptl_fw.bin
+Version: 1.2.1.20251215_224531
+
+Licence: Redistributable. See LICENSE.intel for details
+
+------------------------------------------------------------------------------
+Driver: mei-vsc-hw - Intel Visual Sensing Controller
+
+File: intel/vsc/ivsc_fw.bin
+File: intel/vsc/ivsc_pkg_hi556_0.bin
+File: intel/vsc/ivsc_pkg_himx11b1_0.bin
+File: intel/vsc/ivsc_pkg_himx2170_0.bin
+File: intel/vsc/ivsc_pkg_himx2172_0.bin
+File: intel/vsc/ivsc_pkg_int3537_0.bin
+File: intel/vsc/ivsc_pkg_ovti01a0_0.bin
+File: intel/vsc/ivsc_pkg_ovti01af_0.bin
+File: intel/vsc/ivsc_pkg_ovti01as_0.bin
+File: intel/vsc/ivsc_pkg_ovti02c1_0.bin
+File: intel/vsc/ivsc_pkg_ovti02e1_0.bin
+File: intel/vsc/ivsc_pkg_ovti2740_0.bin
+File: intel/vsc/ivsc_pkg_ovti5678_0.bin
+File: intel/vsc/ivsc_pkg_ovti9734_0.bin
+File: intel/vsc/ivsc_pkg_ovti9738_0.bin
+File: intel/vsc/ivsc_skucfg_hi556_0_1.bin
+File: intel/vsc/ivsc_skucfg_himx11b1_0_1.bin
+File: intel/vsc/ivsc_skucfg_himx2170_0_1.bin
+File: intel/vsc/ivsc_skucfg_himx2172_0_1.bin
+File: intel/vsc/ivsc_skucfg_int3537_0_1.bin
+File: intel/vsc/ivsc_skucfg_ovti01a0_0_1.bin
+File: intel/vsc/ivsc_skucfg_ovti01af_0_1.bin
+File: intel/vsc/ivsc_skucfg_ovti01as_0_1.bin
+File: intel/vsc/ivsc_skucfg_ovti02c1_0_1.bin
+File: intel/vsc/ivsc_skucfg_ovti02e1_0_1.bin
+File: intel/vsc/ivsc_skucfg_ovti2740_0_1.bin
+File: intel/vsc/ivsc_skucfg_ovti5678_0_1.bin
+File: intel/vsc/ivsc_skucfg_ovti9734_0_1.bin
+File: intel/vsc/ivsc_skucfg_ovti9738_0_1.bin
+
+Licence: Redistributable. See LICENSE.ivsc for details
+
+------------------------------------------------------------------------------
+
+Driver: i915 - Intel Graphics driver
+
+File: i915/skl_dmc_ver1_23.bin
+File: i915/skl_dmc_ver1_26.bin
+File: i915/skl_dmc_ver1_27.bin
+Link: i915/skl_dmc_ver1.bin -> skl_dmc_ver1_26.bin
+Version: DMC API/ABI ver 1 - release 27 for Skylake
+
+File: i915/bxt_dmc_ver1_07.bin
+Link: i915/bxt_dmc_ver1.bin -> bxt_dmc_ver1_07.bin
+Version: DMC API/ABI ver 1 - release 07 for Broxton
+
+File: i915/kbl_dmc_ver1_01.bin
+Link: i915/kbl_dmc_ver1.bin -> kbl_dmc_ver1_01.bin
+Version: DMC API/ABI ver 1 - release 01 for Kabylake
+
+File: i915/kbl_dmc_ver1_04.bin
+Version: DMC API/ABI ver 1 - release 04 for Kabylake
+
+File: i915/skl_guc_ver1.bin
+Version: Guc API/ABI ver 1 - release 1059 for Skylake
+
+File: i915/skl_guc_ver4.bin
+Version: Guc API/ABI ver 4 - release 3 for Skylake
+
+File: i915/skl_guc_ver6_1.bin
+Link: i915/skl_guc_ver6.bin -> skl_guc_ver6_1.bin
+Version: Guc API/ABI ver 6 - release 1 for Skylake
+
+File: i915/skl_guc_ver9_33.bin
+Version: Guc API/ABI ver 9 - release 33 for Skylake
+
+File: i915/skl_guc_32.0.3.bin
+Version: Guc API/ABI ver 32 - release 0 for Skylake
+
+File: i915/skl_guc_33.0.0.bin
+Version: Guc API/ABI ver 33 - release 0 for Skylake
+
+File: i915/skl_guc_49.0.1.bin
+Version: Guc API/ABI ver 49 - release 0 for Skylake
+
+File: i915/skl_guc_62.0.0.bin
+Version: GuC API/APB ver 62.0.0 for Skylake
+
+File: i915/skl_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for Skylake
+
+File: i915/skl_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for Skylake
+
+File: i915/skl_huc_ver01_07_1398.bin
+Version: HuC API/ABI ver 1 - release 7 for Skylake
+
+File: i915/skl_huc_2.0.0.bin
+Version: HuC API/ABI ver 2 - release 0 for Skylake
+
+File: i915/bxt_huc_ver01_07_1398.bin
+Version: HuC API/APB ver 1 - release 7 for Broxton
+
+File: i915/bxt_huc_ver01_8_2893.bin
+Version: HuC API/APB ver 1 - release 8 for Broxton
+
+File: i915/bxt_huc_2.0.0.bin
+Version: HuC API/APB ver 2 - release 0 for Broxton
+
+File: i915/kbl_huc_ver02_00_1810.bin
+Version: HuC API/APB ver 2 - for Kabylake
+
+File: i915/kbl_huc_4.0.0.bin
+Version: HuC API/APB ver 4 - for Kabylake
+
+File: i915/bxt_guc_ver8_7.bin
+Version: Guc API/APB ver 8 - release 7 for Broxton
+
+File: i915/bxt_guc_ver9_29.bin
+Version: Guc API/APB ver 9 - release 29 for Broxton
+
+File: i915/bxt_guc_32.0.3.bin
+Version: Guc API/APB ver 32 - release 0 for Broxton
+
+File: i915/bxt_guc_33.0.0.bin
+Version: Guc API/APB ver 33 - release 0 for Broxton
+
+File: i915/bxt_guc_49.0.1.bin
+Version: Guc API/APB ver 49 - release 0 for Broxton
+
+File: i915/bxt_guc_62.0.0.bin
+Version: GuC API/APB ver 62.0.0 for Broxton
+
+File: i915/bxt_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for Broxton
+
+File: i915/bxt_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for Broxton
+
+File: i915/kbl_guc_ver9_14.bin
+Version: Guc API/APB ver 9 release 14 for Kabylake
+
+File: i915/cml_guc_33.0.0.bin
+Version: Guc API/APB ver 33 release 0 for Comet Lake
+
+File: i915/cml_guc_49.0.1.bin
+Version: Guc API/APB ver 49 release 0 for Comet Lake
+
+File: i915/cml_guc_62.0.0.bin
+Version: GuC API/APB ver 62.0.0 for Comet Lake
+
+File: i915/cml_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for Comet Lake
+
+File: i915/cml_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for Comet Lake
+
+File: i915/kbl_guc_ver9_39.bin
+Version: Guc API/APB ver 9 release 39 for Kabylake
+
+File: i915/kbl_guc_32.0.3.bin
+Version: Guc API/APB ver 32 release 0 for Kabylake
+
+File: i915/kbl_guc_33.0.0.bin
+Version: Guc API/APB ver 33 release 0 for Kabylake
+
+File: i915/kbl_guc_49.0.1.bin
+Version: Guc API/APB ver 49 release 0 for Kabylake
+
+File: i915/kbl_guc_62.0.0.bin
+Version: GuC API/APB ver 62.0.0 for Kabylake
+
+File: i915/kbl_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for Kabylake
+
+File: i915/kbl_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for Kabylake
+
+File: i915/glk_guc_32.0.3.bin
+Version: Guc API/APB ver 32 release 0 for Geminilake
+
+File: i915/glk_guc_33.0.0.bin
+Version: Guc API/APB ver 33 release 0 for Geminilake
+
+File: i915/glk_guc_49.0.1.bin
+Version: Guc API/APB ver 49 release 0 for Geminilake
+
+File: i915/glk_guc_62.0.0.bin
+Version: GuC API/APB ver 62.0.0 for Geminilake
+
+File: i915/glk_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for Geminilake
+
+File: i915/glk_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for Geminilake
+
+File: i915/glk_huc_ver03_01_2893.bin
+Version: Huc API/APB ver 3 release 1 for Geminilake
+
+File: i915/glk_huc_4.0.0.bin
+Version: Huc API/APB ver 4 release 0 for Geminilake
+
+File: i915/glk_dmc_ver1_04.bin
+Version: DMC API/ABI ver 1 - release 04 for Geminilake
+
+File: i915/cml_huc_4.0.0.bin
+Version: HuC API/ABI ver 4 - release 0 for Cometlake
+
+File: i915/cnl_dmc_ver1_06.bin
+Version: DMC API/ABI ver 1 - release 06 for Cannonlake
+
+File: i915/cnl_dmc_ver1_07.bin
+Version: DMC API/ABI ver 1 - release 07 for Cannonlake
+
+File: i915/icl_dmc_ver1_07.bin
+Version: DMC API/ABI ver 1 - release 07 for icelake
+
+File: i915/icl_dmc_ver1_09.bin
+Version: DMC API/ABI ver 1 - release 09 for icelake
+
+File: i915/icl_guc_32.0.3.bin
+Version: Guc API/APB ver 32 release 0 for Icelake
+
+File: i915/icl_guc_33.0.0.bin
+Version: Guc API/APB ver 33 release 0 for Icelake
+
+File: i915/icl_guc_49.0.1.bin
+Version: Guc API/APB ver 49 release 0 for Icelake
+
+File: i915/icl_guc_62.0.0.bin
+Version: GuC API/APB ver 62.0.0 for Icelake
+
+File: i915/icl_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for Icelake
+
+File: i915/icl_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for Icelake
+
+File: i915/icl_huc_ver8_4_3238.bin
+Version: Huc API/APB ver 8 release 4 for Icelake
+
+File: i915/tgl_dmc_ver2_04.bin
+Version: DMC API/APB ver 2 release 4 for Tigerlake
+
+File: i915/tgl_dmc_ver2_06.bin
+Version: DMC API/APB ver 2 release 6 for Tigerlake
+
+File: i915/tgl_dmc_ver2_08.bin
+Version: DMC API/APB ver 2 release 8 for Tigerlake
+
+File: i915/tgl_dmc_ver2_12.bin
+Version: DMC API/APB ver 2 release 12 for Tigerlake
+
+File: i915/icl_huc_9.0.0.bin
+Version: Huc API/APB ver 9 release 0 for Icelake
+
+File: i915/ehl_guc_33.0.4.bin
+Version: Guc API/APB ver 33 release 0 for Elkhartlake
+
+File: i915/ehl_guc_49.0.1.bin
+Version: Guc API/APB ver 49 release 0 for Elkhartlake
+
+File: i915/ehl_guc_62.0.0.bin
+Version: GuC API/APB ver 62.0.0 for Elkhartlake
+
+File: i915/ehl_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for Elkhartlake
+
+File: i915/ehl_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for Elkhartlake
+
+File: i915/ehl_huc_9.0.0.bin
+Version: Huc API/APB ver 9 release 0 for Elkhartlake
+
+File: i915/tgl_guc_35.2.0.bin
+Version: Guc API/APB ver 35 release 2 for Tigerlake
+
+File: i915/tgl_guc_49.0.1.bin
+Version: Guc API/APB ver 49 release 0 for Tigerlake
+
+File: i915/tgl_guc_62.0.0.bin
+Version: GuC API/APB ver 62.0.0 for Tigerlake
+
+File: i915/tgl_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for Tigerlake
+
+File: i915/tgl_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for Tigerlake
+
+File: i915/tgl_guc_70.bin
+Version: GuC API/APB ver 70.49.4 for Tigerlake
+
+File: i915/tgl_huc_7.0.3.bin
+Version: Huc API/APB ver 7 release 0 for Tigerlake
+
+File: i915/tgl_huc_7.0.12.bin
+Version: Huc API/APB ver 7 release 0 for Tigerlake
+
+File: i915/tgl_huc_7.5.0.bin
+Version: Huc API/APB ver 7 release 5 for Tigerlake
+
+File: i915/tgl_huc_7.9.3.bin
+Version: HuC API/APB ver 7.9.3 for Tigerlake
+
+File: i915/tgl_huc.bin
+Version: HuC API/APB ver 7.9.3 for Tigerlake
+
+File: i915/rkl_dmc_ver2_02.bin
+Version: DMC API/APB ver 2 release 2 for Rocketlake
+
+File: i915/rkl_dmc_ver2_03.bin
+Version: DMC API/APB ver 2 release 3 for Rocketlake
+
+File: i915/dg1_dmc_ver2_02.bin
+Version: DMC API/APB ver 2 release 2 for DG1
+
+File: i915/dg1_guc_49.0.1.bin
+Version: Guc API/APB ver 49 release 0 for DG1
+
+File: i915/dg1_guc_62.0.0.bin
+Version: GuC API/APB ver 62.0.0 for DG1
+
+File: i915/dg1_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for DG1
+
+File: i915/dg1_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for DG1
+
+File: i915/dg1_guc_70.bin
+Version: GuC API/APB ver 70.49.4 for DG1
+
+File: i915/dg1_huc_7.7.1.bin
+Version: Huc API/APB ver 7 release 1 for DG1
+
+File: i915/dg1_huc_7.9.3.bin
+Version: HuC API/APB ver 7.9.3 for DG1
+
+File: i915/dg1_huc.bin
+Version: HuC API/APB ver 7.9.3 for DG1
+
+File: i915/adls_dmc_ver2_01.bin
+Version: DMC API/APB ver 2 release 1 for Alderlake S
+
+File: i915/adlp_dmc_ver2_09.bin
+Version: DMC API/APB ver 2 release 9 for Alderlake P
+
+File: i915/adlp_dmc_ver2_10.bin
+Version: DMC API/APB ver 2 release 10 for Alderlake P
+
+File: i915/adlp_dmc_ver2_12.bin
+Version: DMC API/APB ver 2 release 12 for Alderlake P
+
+File: i915/adlp_dmc_ver2_14.bin
+Version: DMC API/APB ver 2 release 14 for Alderlake P
+
+File: i915/adlp_dmc_ver2_16.bin
+Version: DMC API/APB ver 2 release 16 for Alderlake P
+
+File: i915/adlp_dmc.bin
+Version: DMC API/APB ver 2 release 20 for Alderlake P
+
+File: i915/adlp_guc_62.0.3.bin
+Version: GuC API/APB ver 62.0.3 for Alderlake P
+
+File: i915/adlp_guc_69.0.3.bin
+Version: GuC API/APB ver 69.0.3 for Alderlake P
+
+File: i915/adlp_guc_70.1.1.bin
+Version: GuC API/APB ver 70.1.1 for Alderlake P
+
+File: i915/adlp_guc_70.bin
+Version: GuC API/APB ver 70.49.4 for Alderlake P
+
+File: i915/dg2_guc_70.1.2.bin
+Version: GuC API/APB ver 70.1.2 for DG2
+
+File: i915/dg2_guc_70.4.1.bin
+Version: GuC API/APB ver 70.4.1 for DG2
+
+File: i915/dg2_guc_70.bin
+Version: GuC API/APB ver 70.53.0 for DG2
+
+File: i915/dg2_huc_gsc.bin
+Version: HuC API/APB ver 7.10.16 for DG2
+
+File: i915/dg2_dmc_ver2_06.bin
+Version: DMC API/APB ver 2 release 6 for DG2
+
+File: i915/dg2_dmc_ver2_07.bin
+Version: DMC API/APB ver 2 release 7 for DG2
+
+File: i915/dg2_dmc_ver2_08.bin
+Version: DMC API/APB ver 2 release 8 for DG2
+
+File: i915/mtl_dmc_ver2_10.bin
+Version: DMC API/APB ver 2 release 10 for Meteorlake
+
+File: i915/mtl_dmc.bin
+Version: DMC API/APB ver 2 release 23 for Meteorlake
+
+File: i915/mtl_guc_70.bin
+Version: GuC API/APB ver 70.53.0 for Meteorlake
+
+File: i915/mtl_huc_gsc.bin
+Version: HuC API/APB ver 8.5.4 for Meteorlake
+
+File: i915/mtl_gsc_1.bin
+Version: GSC API/APB v1.0, release 102.1.15.1926, SVN 1 for Meteorlake
+
+File: i915/bmg_dmc.bin
+Version: DMC API/APB ver 2 release 6 for Battlemage
+
+File: i915/xe2lpd_dmc.bin
+Version: DMC API/APB ver 2 release 29 for Xe2LPD
+
+File: i915/xe3lpd_dmc.bin
+Version: DMC API/APB ver 2 release 33 for Xe3LPD
+
+File: i915/xe3lpd_3002_dmc.bin
+Version: DMC API/APB ver 2 release 28 for Xe3LPD_3002
+
+File: i915/xe3p_lpd_dmc.bin
+Version: DMC API/APB ver 2 release 33 for Xe3p_LPD
+
+License: Redistributable. See LICENSE.i915 for details
+------------------------------------------------------------------------------
+
+Driver: xe - Intel Graphics driver
+
+File: xe/lnl_gsc_1.bin
+Version: GSC API/APB v1.0, release 104.0.5.1429, SVN 1 for Lunarlake
+
+File: xe/lnl_guc_70.bin
+Version: GuC API/APB ver 70.53.0 for Lunarlake
+
+File: xe/lnl_huc.bin
+Version: HuC API/APB ver 9.4.13 for Lunarlake
+
+File: xe/bmg_guc_70.bin
+Version: GuC API/APB ver 70.55.3 for Battlemage
+
+File: xe/bmg_huc.bin
+Version: HuC API/APB ver 8.2.10 for Battlemage
+
+File: xe/fan_control_8086_e20b_8086_1100.bin
+Version: fan_control ver 203.0.0.0 for Battlemage
+
+File: xe/ptl_gsc_1.bin
+Version: GSC API/APB v1.0, release 105.0.2.1301, SVN 1 for Pantherlake
+
+File: xe/ptl_guc_70.bin
+Version: GuC API/APB ver 70.55.3 for Pantherlake
+
+File: xe/ptl_huc.bin
+Version: HuC API/APB ver 10.3.3 for Pantherlake
+
+License: Redistributable. See LICENSE.xe for details
+------------------------------------------------------------------------------

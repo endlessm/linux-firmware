@@ -1,0 +1,211 @@
+------------------------------------------------------------------------------
+
+Driver: venus - Qualcomm Venus video codec accelerator
+
+File: qcom/venus-1.8/venus.mbn
+Link: qcom/venus-1.8/venus.mdt -> venus.mbn
+
+Version: VIDEO.VE.1.8-00109
+
+File: qcom/venus-4.2/venus.mbn
+Link: qcom/venus-4.2/venus.mdt -> venus.mbn
+
+Version: VIDEO.VE.4.0-00119
+
+File: qcom/venus-5.2/venus.mbn
+Link: qcom/venus-5.2/venus.mdt -> venus.mbn
+
+Version: VIDEO.VE.5.2-00023-PROD-2
+
+File: qcom/venus-5.4/venus.mbn
+Link: qcom/venus-5.4/venus.mdt -> venus.mbn
+
+Version: VIDEO.VE.5.4-00063-PROD-1
+
+File: qcom/venus-6.0/venus.mbn
+
+Version: VIDEO.VE.6.0-00055-PROD-1
+
+File: qcom/vpu/vpu20_p1.mbn
+Link: qcom/vpu-2.0/venus.mbn -> ../vpu/vpu20_p1.mbn
+
+Version: VIDEO.VPU.2.0-00055-PROD-1
+
+File: qcom/vpu/vpu20_p4.mbn
+Link: qcom/vpu-1.0/venus.mbn -> ../vpu/vpu20_p4.mbn
+Link: qcom/vpu-1.0/venus.mdt -> ../vpu/vpu20_p4.mbn
+
+Version: VIDEO.VPU.1.0-00119
+
+Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+
+Binary files supplied originally from
+https://developer.qualcomm.com/hardware/dragonboard-410c/tools
+
+------------------------------------------------------------------------------
+
+Driver: iris - Qualcomm Iris video codec accelerator
+
+File: qcom/vpu/vpu20_p1_gen2.mbn
+
+Version: VIDEO.VPU.2.4.2-00025
+
+File: qcom/vpu/vpu30_p4_s7.mbn
+Link: qcom/vpu/vpu30_p4.mbn -> vpu30_p4_s7.mbn
+
+Version: VIDEO.VPU.3.1-0095
+
+File: qcom/vpu/vpu30_p4_s6.mbn
+
+Version: VIDEO.VPU.3.1-0093
+
+File: qcom/vpu/vpu30_p4_s6_16mb.mbn
+
+Version: VIDEO.VPU.3.1-0093
+
+File: qcom/vpu/vpu33_p4_s7.mbn
+Link: qcom/vpu/vpu33_p4.mbn -> vpu33_p4_s7.mbn
+
+Version: VIDEO.VPU.3.4-0054
+
+File: qcom/vpu/vpu35_p4_s7.mbn
+Link: qcom/vpu/vpu35_p4.mbn -> vpu35_p4_s7.mbn
+
+Version: VIDEO.VPU.3.5-0040
+
+File: qcom/vpu/vpu40_p2_s7.mbn
+
+Version: VIDEO.VPU.4.0-0045
+
+Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: adreno - Qualcomm Adreno GPU firmware
+
+File: qcom/leia_pfp_470.fw
+File: qcom/leia_pm4_470.fw
+File: qcom/a225_pfp.fw
+File: qcom/a225_pm4.fw
+File: qcom/a300_pfp.fw
+Link: a300_pfp.fw -> qcom/a300_pfp.fw
+File: qcom/a300_pm4.fw
+Link: a300_pm4.fw -> qcom/a300_pm4.fw
+File: qcom/a330_pfp.fw
+File: qcom/a330_pm4.fw
+File: qcom/a420_pfp.fw
+File: qcom/a420_pm4.fw
+File: qcom/a530_pfp.fw
+Version: 1.87.01
+File: qcom/a530_pm4.fw
+File: qcom/a530v3_gpmu.fw2
+Version v2.04 (2015-08-31)
+File: qcom/apq8096/a530_zap.mbn
+Link: qcom/a530_zap.mdt -> apq8096/a530_zap.mbn
+File: qcom/qrb4210/a610_zap.mbn
+File: qcom/qcs615/a612_zap.mbn
+Version: v0.19
+File: qcom/a612_rgmu.bin
+Version: v2.11
+File: qcom/a623_gmu.bin
+Version: v3.06.01
+File: qcom/qcs8300/a623_zap.mbn
+Version: v0.12
+File: qcom/a630_gmu.bin
+File: qcom/a630_sqe.fw
+Version: v2.07
+File: qcom/sdm845/a630_zap.mbn
+File: qcom/a640_gmu.bin
+Version: v1.05
+File: qcom/sm8150/a640_zap.mbn
+Version: v0.20
+File: qcom/a650_gmu.bin
+Version: v2.1.8
+File: qcom/a650_sqe.fw
+Version: v1.12
+File: qcom/sm8250/a650_zap.mbn
+File: qcom/a660_gmu.bin
+Version: v3.01.0B
+File: qcom/a660_sqe.fw
+Version: v1.12
+File: qcom/qcm6490/a660_zap.mbn
+Version: v0.09
+Link: qcom/qcs6490/a660_zap.mbn -> ../qcm6490/a660_zap.mbn
+Link: qcom/sm8350/a660_zap.mbn -> ../qcm6490/a660_zap.mbn
+File: qcom/a663_gmu.bin
+Version: v3.05.01
+File: qcom/sa8775p/a663_zap.mbn
+Version: v0.09
+File: qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
+File: qcom/a702_sqe.fw
+Version: v0.47
+File: qcom/qcm2290/a702_zap.mbn
+File: qcom/a730_sqe.fw
+Version: v1.81
+File: qcom/gmu_gen70000.bin
+Version: v4.00.07
+File: qcom/sm8450/a730_zap.mbn
+Version: v0.14
+File: qcom/a740_sqe.fw
+Version: v1.81
+File: qcom/gmu_gen70200.bin
+Version: v4.01.09
+File: qcom/sm8550/a740_zap.mbn
+Version: v0.11
+File: qcom/gen70500_gmu.bin
+Version: v4.03.11
+File: qcom/gen70500_sqe.fw
+Version: v1.62
+File: qcom/x1e80100/gen70500_zap.mbn
+Version: v0.15
+File: qcom/gen70900_aqe.fw
+Version: v0.23
+File: qcom/gen70900_sqe.fw
+Version: v1.81
+File: qcom/gmu_gen70900.bin
+Version: v4.02.14
+File: qcom/sm8650/gen70900_zap.mbn
+Version: v0.13
+File: qcom/gen71500_gmu.bin
+Version: v4.06.04
+File: qcom/gen71500_sqe.fw
+Version: v1.81
+File: qcom/x1p42100/gen71500_zap.mbn
+Version: v0.13
+File: qcom/gen80000_aqe.fw
+Version: v0.14
+File: qcom/gen80000_gmu.bin
+Version: v5.01.19
+File: qcom/gen80000_sqe.fw
+Version: v0.77
+File: qcom/sm8750/gen80000_zap.mbn
+Version: v0.02
+File: qcom/gen80200_aqe.fw
+Version: v0.25
+File: qcom/gen80200_gmu.bin
+Version: v5.03.17
+File: qcom/gen80200_sqe.fw
+Version: v0.88
+File: qcom/kaanapali/gen80200_zap.mbn
+Version: v0.03
+
+Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+
+Binary files supplied originally from
+https://developer.qualcomm.com/hardware/dragonboard-410c/tools
+
+------------------------------------------------------------------------------
+
+Driver: adreno - Qualcomm Adreno GPU firmware
+
+File: qcom/yamato_pfp.fw
+File: qcom/yamato_pm4.fw
+
+Licence: Redistributable, BSD-3-Clause licence, See LICENSE.qcom_yamato for details
+
+Info:
+Binary files generated from header files in EfikaMX kernel sources. A prefix of
+four zero bytes was prepended to make them work with the DRM MSM driver. See
+https://github.com/genesi/linux-legacy/tree/master/drivers/mxc/amd-gpu
+
+------------------------------------------------------------------------------

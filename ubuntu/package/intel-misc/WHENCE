@@ -1,0 +1,263 @@
+------------------------------------------------------------------------------
+
+Driver: e100 - Intel PRO/100 Ethernet NIC
+
+File: e100/d101m_ucode.bin
+File: e100/d101s_ucode.bin
+File: e100/d102e_ucode.bin
+
+Licence: Redistributable. See LICENCE.e100 for details
+
+------------------------------------------------------------------------------
+
+Driver: ixp4xx-npe - Intel IXP4xx XScale Network Processing Engine (NPE) Firmware
+File: ixp4xx/NPE-A
+File: ixp4xx/NPE-A-HSS
+File: ixp4xx/NPE-B
+File: ixp4xx/NPE-C
+Version: date = February 26, 2007
+License: Redistributable. See LICENSE.ixp4xx for details
+
+------------------------------------------------------------------------------
+
+Driver: isci - Intel C600 SAS controller driver
+
+File: isci/isci_firmware.bin
+Source: isci/
+
+Licence: GPLv2. See GPL-2 for details.
+
+------------------------------------------------------------------------------
+Driver: qat - Intel(R) QAT crypto accelerator
+
+File: intel/qat/qat_895xcc.bin
+Link: qat_895xcc.bin -> intel/qat/qat_895xcc.bin
+File: intel/qat/qat_895xcc_mmp.bin
+Link: qat_895xcc_mmp.bin -> intel/qat/qat_895xcc_mmp.bin
+Link: qat_mmp.bin -> intel/qat/qat_895xcc_mmp.bin
+Link: intel/qat/qat_mmp.bin -> qat_895xcc_mmp.bin
+File: intel/qat/qat_c3xxx.bin
+Link: qat_c3xxx.bin -> intel/qat/qat_c3xxx.bin
+File: intel/qat/qat_c3xxx_mmp.bin
+Link: qat_c3xxx_mmp.bin -> intel/qat/qat_c3xxx_mmp.bin
+File: intel/qat/qat_c62x.bin
+Link: qat_c62x.bin -> intel/qat/qat_c62x.bin
+File: intel/qat/qat_c62x_mmp.bin
+Link: qat_c62x_mmp.bin -> intel/qat/qat_c62x_mmp.bin
+File: intel/qat/qat_4xxx.bin
+Link: qat_4xxx.bin -> intel/qat/qat_4xxx.bin
+File: intel/qat/qat_4xxx_mmp.bin
+Link: qat_4xxx_mmp.bin -> intel/qat/qat_4xxx_mmp.bin
+File: intel/qat/qat_402xx.bin
+Link: qat_402xx.bin -> intel/qat/qat_402xx.bin
+File: intel/qat/qat_402xx_mmp.bin
+Link: qat_402xx_mmp.bin -> intel/qat/qat_402xx_mmp.bin
+File: intel/qat/qat_420xx.bin
+Link: qat_420xx.bin -> intel/qat/qat_420xx.bin
+File: intel/qat/qat_420xx_mmp.bin
+Link: qat_420xx_mmp.bin -> intel/qat/qat_420xx_mmp.bin
+
+Licence: Redistributable. See LICENCE.qat_firmware for details
+
+------------------------------------------------------------------------------
+
+Driver: snd_soc_sst_acpi
+
+File: intel/fw_sst_0f28.bin-48kHz_i2s_master
+
+License: Redistributable. See LICENCE.fw_sst_0f28 for details
+
+------------------------------------------------------------------------------
+
+Driver: snd_soc_catpt - Intel AudioDSP driver for HSW/BDW platforms
+
+File: intel/catpt/bdw/dsp_basefw.bin
+Version: 44b81c4d5397a63108356f58f036953d9b288c4e
+Link: intel/IntcSST2.bin -> catpt/bdw/dsp_basefw.bin
+
+License: Redistributable. See LICENCE.IntcSST2 for details
+
+------------------------------------------------------------------------------
+
+Driver: snd_soc_avs - Intel AudioDSP driver for cAVS platforms
+
+File: intel/avs/skl/dsp_basefw.bin
+File: intel/avs/skl/dsp_mod_7CAD0808-AB10-CD23-EF45-12AB34CD56EF.bin
+Version: 9.21.00.4899
+Link: intel/dsp_fw_release.bin -> avs/skl/dsp_basefw.bin
+Link: intel/dsp_fw_kbl.bin -> avs/skl/dsp_basefw.bin
+File: intel/avs/apl/dsp_basefw.bin
+Version: 9.22.01.4917
+Link: intel/dsp_fw_bxtn.bin -> avs/apl/dsp_basefw.bin
+Link: intel/dsp_fw_glk.bin -> avs/apl/dsp_basefw.bin
+File: intel/avs/cnl/dsp_basefw.bin
+Version: 10.23.00.8551
+Link: intel/dsp_fw_cnl.bin -> avs/cnl/dsp_basefw.bin
+
+License: Redistributable. See LICENCE.adsp_sst for details
+
+File: intel/avs/da7219-tplg.bin
+File: intel/avs/dmic-tplg.bin
+File: intel/avs/hda-808628xx-3ep-tplg.bin
+Link: intel/avs/hda-8086-generic-tplg.bin -> hda-808628xx-3ep-tplg.bin
+File: intel/avs/hda-generic-1ep-tplg.bin
+Link: intel/avs/hda-generic-tplg.bin -> hda-generic-1ep-tplg.bin
+File: intel/avs/max98357a-tplg.bin
+File: intel/avs/max98373-tplg.bin
+File: intel/avs/max98927-tplg.bin
+File: intel/avs/nau8825-tplg.bin
+File: intel/avs/rt274-tplg.bin
+File: intel/avs/rt286-tplg.bin
+File: intel/avs/rt298-tplg.bin
+File: intel/avs/rt5514-tplg.bin
+File: intel/avs/rt5640-tplg.bin
+File: intel/avs/rt5663-tplg.bin
+File: intel/avs/ssm4567-tplg.bin
+
+License: Apache-2.0. See Apache-2 for details.
+
+------------------------------------------------------------------------------
+
+Driver: snd_intel_sst_core
+
+File: intel/fw_sst_0f28.bin
+File: intel/fw_sst_0f28_ssp0.bin
+
+License: Redistributable. See LICENCE.fw_sst_0f28 for details
+
+------------------------------------------------------------------------------
+
+Driver: snd_intel_sst_core
+
+File: intel/fw_sst_22a8.bin
+Version: 01.0B.02.02
+
+License: Redistributable. See LICENCE.fw_sst_0f28 for details
+
+------------------------------------------------------------------------------
+
+Driver: snd-soc-skl
+
+File: intel/dsp_fw_release_v969.bin
+Version: 8.20.00.969
+File: intel/dsp_fw_release_v3402.bin
+Version: 9.21.00.3402_161
+
+License: Redistributable. See LICENCE.adsp_sst for details
+
+File: intel/dsp_fw_bxtn_v2219.bin
+Version: 9.22.01.2219_64
+File: intel/dsp_fw_bxtn_v3366.bin
+Version: 9.22.01.3366_157
+
+License: Redistributable. See LICENCE.adsp_sst for details
+
+File: intel/dsp_fw_kbl_v701.bin
+Version: 9.21.00.701
+File: intel/dsp_fw_kbl_v1037.bin
+Version: 09.21.00.1037
+File: intel/dsp_fw_kbl_v2042.bin
+Version: 9.21.00.2042_46
+File: intel/dsp_fw_kbl_v2630.bin
+Version: 9.21.00.2630_97
+File: intel/dsp_fw_kbl_v3266.bin
+Version: 9.21.00.3266_144
+File: intel/dsp_fw_kbl_v3420.bin
+Version: 9.21.00.3420_163
+File: intel/dsp_fw_kbl_v3402.bin
+Version: 9.21.00.3402_161
+
+License: Redistributable. See LICENCE.adsp_sst for details
+
+File: intel/dsp_fw_glk_v1814.bin
+Version: 9.92.01.1814
+File: intel/dsp_fw_glk_v2880.bin
+Version: 9.22.00.2880
+File: intel/dsp_fw_glk_v2768.bin
+Version: 9.22.01.2768
+File: intel/dsp_fw_glk_v3366.bin
+Version: 9.22.01.3366_157
+
+File: intel/dsp_fw_cnl_v1191.bin
+Version: 10.00.00.1191
+File: intel/dsp_fw_cnl_v1858.bin
+Version: 10.23.00.1858
+
+License: Redistributable. See LICENCE.adsp_sst for details
+
+------------------------------------------------------------------------------
+
+Driver: hfi1 - Intel OPA Gen 1 adapter
+
+File: hfi1_dc8051.fw
+Version: 1.27.0
+File: hfi1_fabric.fw
+Version: 0x1055
+File: hfi1_pcie.fw
+Version: 0x4755
+File: hfi1_sbus.fw
+Version: 0x10130001
+
+Licence: Redistributable. See LICENSE.hfi1_firmware for details
+
+------------------------------------------------------------------------------
+
+Driver: ice - Intel(R) Ethernet Connection E800 Series
+
+File: intel/ice/ddp/ice-1.3.43.0.pkg
+Link: intel/ice/ddp/ice.pkg -> ice-1.3.43.0.pkg
+File: intel/ice/ddp-lag/ice_lag-1.3.1.0.pkg
+
+License: Redistributable. See LICENSE.ice for details
+
+File: intel/ice/ddp-comms/ice_comms-1.3.55.0.pkg
+File: intel/ice/ddp-wireless_edge/ice_wireless_edge-1.3.23.0.pkg
+
+License: Redistributable. See LICENSE.ice_enhanced for details
+
+------------------------------------------------------------------------------
+
+Driver: ish - Intel Integrated Sensor Hub
+File: intel/ish/ish_lnlm.bin
+Version: 5.8.0.7716
+File: intel/ish/ish_ptl.bin
+Version: 5.8.1.7778
+
+License: Redistributable. See LICENSE.intel for details
+
+File: LENOVO/ish/ish_lnlm_53c4ffad_2a17559f.bin
+Link: intel/ish/ish_lnlm_53c4ffad_2a17559f.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_2a17559f.bin
+Version: 5.8.4.7720
+
+License: Redistributable. See LICENCE.lenovo for details
+
+File: HP/ish/ish_lnlm_12128606.bin
+Link: intel/ish/ish_lnlm_12128606.bin -> ../../HP/ish/ish_lnlm_12128606.bin
+Version: 5.8.200.7720_1029
+
+License: Redistributable. See LICENCE.HP for details
+
+File: dell/ish/ish_lnlm_39ceeaf8_58.7727.0.bin
+Link: intel/ish/ish_lnlm_39ceeaf8.bin -> ../../dell/ish/ish_lnlm_39ceeaf8_58.7727.0.bin
+
+License: Redistributable. See LICENSE.dell for details
+
+------------------------------------------------------------------------------
+
+Driver: intel_vpu - Intel NPU driver
+
+File: intel/vpu/vpu_37xx_v1.bin
+Version: 20251113*MTL_CLIENT_SILICON-NVR+NN-deployment*72f907ffc780df5579a2fed65afc4944da8b0e44*72f907ffc780df5579a2fed65afc4944da8b0e44*72f907ffc78
+Link: intel/vpu/vpu_37xx_v0.0.bin -> vpu_37xx_v1.bin
+
+File: intel/vpu/vpu_40xx_v1.bin
+Version: Nov 13 2025*NPU40xx*ci_tag_ud202548_vpu_rc_20251112_1901-1-g72f907ffc78*72f907ffc780df5579a2fed65afc4944da8b0e44
+Link: intel/vpu/vpu_40xx_v0.0.bin -> vpu_40xx_v1.bin
+
+File: intel/vpu/vpu_50xx_v1.bin
+Version: Nov 13 2025*NPU50xx*ci_tag_ud202548_vpu_rc_20251112_1901-1-g72f907ffc78*72f907ffc780df5579a2fed65afc4944da8b0e44
+Link: intel/vpu/vpu_50xx_v0.0.bin -> vpu_50xx_v1.bin
+
+License: Redistributable. See LICENSE.intel_vpu for details
+
+------------------------------------------------------------------------------

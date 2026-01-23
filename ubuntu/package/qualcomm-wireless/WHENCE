@@ -1,0 +1,571 @@
+------------------------------------------------------------------------------
+
+Driver: ath3k - DFU Driver for Atheros bluetooth chipset AR3011
+
+File: ath3k-1.fw
+Version: 1.0
+
+Fix EEPROM radio table issue and change PID to 3005
+
+Licence: Redistributable. See LICENCE.atheros_firmware for details
+
+------------------------------------------------------------------------------
+
+Driver: DFU Driver for Atheros bluetooth chipset AR3012
+
+File: ar3k/AthrBT_0x01020001.dfu
+File: ar3k/ramps_0x01020001_26.dfu
+File: ar3k/AthrBT_0x01020200.dfu
+File: ar3k/ramps_0x01020200_26.dfu
+File: ar3k/ramps_0x01020200_40.dfu
+File: ar3k/AthrBT_0x31010000.dfu
+File: ar3k/ramps_0x31010000_40.dfu
+File: ar3k/AthrBT_0x11020000.dfu
+File: ar3k/ramps_0x11020000_40.dfu
+File: ar3k/ramps_0x01020201_26.dfu
+File: ar3k/ramps_0x01020201_40.dfu
+File: ar3k/AthrBT_0x41020000.dfu
+File: ar3k/ramps_0x41020000_40.dfu
+File: ar3k/AthrBT_0x11020100.dfu
+File: ar3k/ramps_0x11020100_40.dfu
+File: ar3k/AthrBT_0x31010100.dfu
+File: ar3k/ramps_0x31010100_40.dfu
+
+Licence: Redistributable. See LICENCE.atheros_firmware for details
+
+------------------------------------------------------------------------------
+
+Driver: DFU Driver for Atheros bluetooth chipset AR3012
+
+File: ar3k/AthrBT_0x01020201.dfu
+File: ar3k/1020201coex/ramps_0x01020201_26_HighPriority.dfu
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ar3k for details
+
+------------------------------------------------------------------------------
+
+Driver: ath6kl - Atheros support for AR6003
+
+File: ath6k/AR6004/hw1.3/fw-3.bin
+File: ath6k/AR6004/hw1.3/bdata.bin
+File: ath6k/AR6004/hw1.2/fw-2.bin
+File: ath6k/AR6004/hw1.2/bdata.bin
+File: ath6k/AR6003/hw1.0/otp.bin.z77
+File: ath6k/AR6003/hw1.0/bdata.SD31.bin
+File: ath6k/AR6003/hw1.0/bdata.SD32.bin
+File: ath6k/AR6003/hw1.0/data.patch.bin
+File: ath6k/AR6003/hw1.0/bdata.WB31.bin
+File: ath6k/AR6003/hw1.0/athwlan.bin.z77
+File: ath6k/AR6003/hw2.1.1/fw-2.bin
+File: ath6k/AR6003/hw2.1.1/fw-3.bin
+File: ath6k/AR6003/hw2.1.1/otp.bin
+File: ath6k/AR6003/hw2.1.1/athwlan.bin
+File: ath6k/AR6003/hw2.1.1/endpointping.bin
+File: ath6k/AR6003/hw2.1.1/bdata.SD31.bin
+File: ath6k/AR6003/hw2.1.1/bdata.SD32.bin
+File: ath6k/AR6003/hw2.1.1/data.patch.bin
+File: ath6k/AR6003/hw2.1.1/bdata.WB31.bin
+File: ath6k/AR6003/hw2.0/otp.bin.z77
+File: ath6k/AR6003/hw2.0/bdata.SD31.bin
+File: ath6k/AR6003/hw2.0/bdata.SD32.bin
+File: ath6k/AR6003/hw2.0/data.patch.bin
+File: ath6k/AR6003/hw2.0/bdata.WB31.bin
+File: ath6k/AR6003/hw2.0/athwlan.bin.z77
+File: ath6k/AR6002/eeprom.data
+File: ath6k/AR6002/eeprom.bin
+File: ath6k/AR6002/athwlan.bin.z77
+File: ath6k/AR6002/data.patch.hw2_0.bin
+
+Licence: Redistributable. See LICENCE.atheros_firmware for details
+
+------------------------------------------------------------------------------
+
+Driver: ath10k - Qualcomm Atheros support for QCA988x family of chips
+
+File: ath10k/QCA988X/hw2.0/board.bin
+File: ath10k/QCA988X/hw2.0/firmware-4.bin
+Version: 10.2.4.45
+File: ath10k/QCA988X/hw2.0/notice_ath10k_firmware-4.txt
+File: ath10k/QCA988X/hw2.0/firmware-5.bin
+Version: 10.2.4-1.0-00047
+File: ath10k/QCA988X/hw2.0/notice_ath10k_firmware-5.txt
+File: ath10k/QCA6174/hw2.1/board.bin
+File: ath10k/QCA6174/hw2.1/board-2.bin
+File: ath10k/QCA6174/hw2.1/firmware-5.bin
+Version: SW_RM.1.1.1-00157-QCARMSWPZ-1
+File: ath10k/QCA6174/hw2.1/notice_ath10k_firmware-5.txt
+File: ath10k/QCA6174/hw3.0/board.bin
+File: ath10k/QCA6174/hw3.0/board-2.bin
+File: ath10k/QCA6174/hw3.0/firmware-4.bin
+Version: WLAN.RM.2.0-00180-QCARMSWPZ-1
+File: ath10k/QCA6174/hw3.0/notice_ath10k_firmware-4.txt
+File: ath10k/QCA6174/hw3.0/firmware-6.bin
+Version: WLAN.RM.4.4.1-00309-
+File: ath10k/QCA6174/hw3.0/notice_ath10k_firmware-6.txt
+File: ath10k/QCA6174/hw3.0/firmware-sdio-6.bin
+Version: WLAN.RMH.4.4.1-00174
+File: ath10k/QCA6174/hw3.0/notice_ath10k_firmware-sdio-6.txt
+File: ath10k/QCA9377/hw1.0/board.bin
+File: ath10k/QCA9377/hw1.0/board-2.bin
+File: ath10k/QCA9377/hw1.0/firmware-5.bin
+Version: WLAN.TF.1.0-00002-QCATFSWPZ-5
+File: ath10k/QCA9377/hw1.0/notice_ath10k_firmware-5.txt
+File: ath10k/QCA9377/hw1.0/firmware-sdio-5.bin
+Version: WLAN.TF.1.1.1-00061-QCATFSWPZ-1
+File: ath10k/QCA9377/hw1.0/notice_ath10k_firmware-sdio-5.txt
+File: ath10k/QCA99X0/hw2.0/board-2.bin
+File: ath10k/QCA99X0/hw2.0/firmware-5.bin
+Version: 10.4.1.00030-1
+File: ath10k/QCA99X0/hw2.0/notice_ath10k_firmware-5.txt
+File: ath10k/QCA4019/hw1.0/board-2.bin
+File: ath10k/QCA4019/hw1.0/firmware-5.bin
+Version: 10.4-3.6-00140
+File: ath10k/QCA4019/hw1.0/notice_ath10k_firmware-5.txt
+File: ath10k/QCA9887/hw1.0/board.bin
+File: ath10k/QCA9887/hw1.0/firmware-5.bin
+Version: 10.2.4-1.0-00047
+File: ath10k/QCA9887/hw1.0/notice_ath10k_firmware-5.txt
+File: ath10k/QCA9888/hw2.0/board-2.bin
+File: ath10k/QCA9888/hw2.0/firmware-5.bin
+Version: 10.4-3.9.0.2-00157
+File: ath10k/QCA9888/hw2.0/notice_ath10k_firmware-5.txt
+File: ath10k/QCA9984/hw1.0/board-2.bin
+File: ath10k/QCA9984/hw1.0/firmware-5.bin
+Version: 10.4-3.9.0.2-00157
+File: ath10k/QCA9984/hw1.0/notice_ath10k_firmware-5.txt
+File: ath10k/QCA9377/hw1.0/firmware-6.bin
+Version: WLAN.TF.2.1-00021-QCARMSWP-1
+File: ath10k/QCA9377/hw1.0/notice_ath10k_firmware-6.txt
+File: ath10k/WCN3990/hw1.0/board-2.bin
+File: ath10k/WCN3990/hw1.0/firmware-5.bin
+File: ath10k/WCN3990/hw1.0/wlanmdsp.mbn
+Link: qcom/sdm845/wlanmdsp.mbn -> ../../ath10k/WCN3990/hw1.0/wlanmdsp.mbn
+Version: WLAN.HL.2.0-01387-QCAHLSWMTPLZ-1
+File: ath10k/WCN3990/hw1.0/notice.txt_wlanmdsp
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k for details
+
+File: ath10k/WCN3990/hw1.0/qcm2290/wlanmdsp.mbn
+Version: WLAN.HL.3.3.7.c2-00931-QCAHLSWMTPLZ-1
+Link: ath10k/WCN3990/hw1.0/qrb4210/wlanmdsp.mbn -> ../qcm2290/wlanmdsp.mbn
+Link: qcom/qcm2290/wlanmdsp.mbn -> ../../ath10k/WCN3990/hw1.0/qcm2290/wlanmdsp.mbn
+Link: qcom/qrb4210/wlanmdsp.mbn -> ../../ath10k/WCN3990/hw1.0/qcm2290/wlanmdsp.mbn
+File: ath10k/WCN3990/hw1.0/qcm2290/firmware-5.bin
+Link: ath10k/WCN3990/hw1.0/qrb4210/firmware-5.bin -> ../qcm2290/firmware-5.bin
+
+Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: ath11k - Qualcomm Technologies 802.11ax chipset support
+
+File: ath11k/IPQ6018/hw1.0/board-2.bin
+File: ath11k/IPQ6018/hw1.0/m3_fw.b00
+File: ath11k/IPQ6018/hw1.0/m3_fw.b01
+File: ath11k/IPQ6018/hw1.0/m3_fw.b02
+File: ath11k/IPQ6018/hw1.0/m3_fw.flist
+File: ath11k/IPQ6018/hw1.0/m3_fw.mdt
+File: ath11k/IPQ6018/hw1.0/q6_fw.b00
+File: ath11k/IPQ6018/hw1.0/q6_fw.b01
+File: ath11k/IPQ6018/hw1.0/q6_fw.b02
+File: ath11k/IPQ6018/hw1.0/q6_fw.b03
+File: ath11k/IPQ6018/hw1.0/q6_fw.b04
+File: ath11k/IPQ6018/hw1.0/q6_fw.b05
+File: ath11k/IPQ6018/hw1.0/q6_fw.b07
+File: ath11k/IPQ6018/hw1.0/q6_fw.b08
+File: ath11k/IPQ6018/hw1.0/q6_fw.flist
+File: ath11k/IPQ6018/hw1.0/q6_fw.mdt
+Version: WLAN.HK.2.7.0.1-02409-QCAHKSWPL_SILICONZ-1
+File: ath11k/IPQ6018/hw1.0/Notice.txt
+File: ath11k/IPQ8074/hw2.0/board-2.bin
+File: ath11k/IPQ8074/hw2.0/m3_fw.b00
+File: ath11k/IPQ8074/hw2.0/m3_fw.b01
+File: ath11k/IPQ8074/hw2.0/m3_fw.b02
+File: ath11k/IPQ8074/hw2.0/m3_fw.flist
+File: ath11k/IPQ8074/hw2.0/m3_fw.mdt
+File: ath11k/IPQ8074/hw2.0/q6_fw.b00
+File: ath11k/IPQ8074/hw2.0/q6_fw.b01
+File: ath11k/IPQ8074/hw2.0/q6_fw.b02
+File: ath11k/IPQ8074/hw2.0/q6_fw.b03
+File: ath11k/IPQ8074/hw2.0/q6_fw.b04
+File: ath11k/IPQ8074/hw2.0/q6_fw.b05
+File: ath11k/IPQ8074/hw2.0/q6_fw.b07
+File: ath11k/IPQ8074/hw2.0/q6_fw.b08
+File: ath11k/IPQ8074/hw2.0/q6_fw.flist
+File: ath11k/IPQ8074/hw2.0/q6_fw.mdt
+Version: WLAN.HK.2.9.0.1-02146-QCAHKSWPL_SILICONZ-1
+File: ath11k/IPQ8074/hw2.0/Notice.txt
+File: ath11k/QCA6390/hw2.0/board-2.bin
+File: ath11k/QCA6390/hw2.0/amss.bin
+File: ath11k/QCA6390/hw2.0/m3.bin
+Version: WLAN.HST.1.0.1-05266-QCAHSTSWPLZ_V2_TO_X86-1
+File: ath11k/QCA6390/hw2.0/Notice.txt
+File: ath11k/WCN6855/hw2.0/regdb.bin
+File: ath11k/WCN6855/hw2.0/board-2.bin
+File: ath11k/WCN6855/hw2.0/amss.bin
+File: ath11k/WCN6855/hw2.0/m3.bin
+Version: WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.41
+File: ath11k/WCN6855/hw2.0/Notice.txt
+File: ath11k/WCN6855/hw2.0/nfa765/amss.bin
+File: ath11k/WCN6855/hw2.0/nfa765/m3.bin
+Version: WLAN.HSP.1.1-04685-QCAHSPSWPL_V1_V2_SILICONZ_IOE-1
+File: ath11k/WCN6855/hw2.0/nfa765/Notice.txt
+Link: ath11k/WCN6855/hw2.1/regdb.bin -> ../hw2.0/regdb.bin
+Link: ath11k/WCN6855/hw2.1/board-2.bin -> ../hw2.0/board-2.bin
+Link: ath11k/WCN6855/hw2.1/amss.bin -> ../hw2.0/amss.bin
+Link: ath11k/WCN6855/hw2.1/m3.bin -> ../hw2.0/m3.bin
+Link: ath11k/WCN6855/hw2.1/nfa765/amss.bin -> ../../hw2.0/nfa765/amss.bin
+Link: ath11k/WCN6855/hw2.1/nfa765/m3.bin -> ../../hw2.0/nfa765/m3.bin
+File: ath11k/QCN9074/hw1.0/board-2.bin
+File: ath11k/QCN9074/hw1.0/.notice
+File: ath11k/QCN9074/hw1.0/amss.bin
+File: ath11k/QCN9074/hw1.0/m3.bin
+Version: WLAN.HK.2.9.0.1-02175-QCAHKSWPL_SILICONZ-2
+File: ath11k/QCN9074/hw1.0/Notice.txt
+File: ath11k/WCN6750/hw1.0/board-2.bin
+File: ath11k/WCN6750/hw1.0/sc7280/wpss.mbn
+Link: ath11k/WCN6750/hw1.0/wpss.mdt -> sc7280/wpss.mbn
+Version: WLAN.MSL.1.0.1-01160-QCAMSLSWPLZ-1
+File: ath11k/WCN6750/hw1.0/Notice.txt
+File: ath11k/IPQ5018/hw1.0/board-2.bin
+File: ath11k/IPQ5018/hw1.0/m3_fw.b00
+File: ath11k/IPQ5018/hw1.0/m3_fw.b01
+File: ath11k/IPQ5018/hw1.0/m3_fw.b02
+File: ath11k/IPQ5018/hw1.0/m3_fw.flist
+File: ath11k/IPQ5018/hw1.0/m3_fw.mdt
+File: ath11k/IPQ5018/hw1.0/q6_fw.b00
+File: ath11k/IPQ5018/hw1.0/q6_fw.b01
+File: ath11k/IPQ5018/hw1.0/q6_fw.b02
+File: ath11k/IPQ5018/hw1.0/q6_fw.b03
+File: ath11k/IPQ5018/hw1.0/q6_fw.b04
+File: ath11k/IPQ5018/hw1.0/q6_fw.b05
+File: ath11k/IPQ5018/hw1.0/q6_fw.b07
+File: ath11k/IPQ5018/hw1.0/q6_fw.b08
+File: ath11k/IPQ5018/hw1.0/q6_fw.b09
+File: ath11k/IPQ5018/hw1.0/q6_fw.b10
+File: ath11k/IPQ5018/hw1.0/q6_fw.b11
+File: ath11k/IPQ5018/hw1.0/q6_fw.b13
+File: ath11k/IPQ5018/hw1.0/q6_fw.b14
+File: ath11k/IPQ5018/hw1.0/q6_fw.flist
+File: ath11k/IPQ5018/hw1.0/q6_fw.mdt
+Version: WLAN.HK.2.6.0.1-01300-QCAHKSWPL_SILICONZ-1
+File: ath11k/IPQ5018/hw1.0/Notice.txt
+File: ath11k/QCA2066/hw2.1/board-2.bin
+File: ath11k/QCA2066/hw2.1/amss.bin
+File: ath11k/QCA2066/hw2.1/m3.bin
+Version: WLAN.HSP.1.1-03926.13-QCAHSPSWPL_V2_SILICONZ_CE-2.52297.9
+File: ath11k/QCA2066/hw2.1/Notice.txt
+File: ath11k/QCA6698AQ/hw2.1/board-2.bin
+File: ath11k/QCA6698AQ/hw2.1/amss.bin
+File: ath11k/QCA6698AQ/hw2.1/m3.bin
+Version: WLAN.HSP.1.1-04866-QCAHSPSWPL_V1_V2_SILICONZ_IOE-1
+File: ath11k/QCA6698AQ/hw2.1/Notice.txt
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k for details
+
+File: ath11k/WCN6750/hw1.0/qcm6490/wpss.mbn
+Version: WLAN.MSL.2.0.c2-00204-QCAMSLSWPLZ-1
+Link: qcom/qcm6490/wpss.mbn -> ../../ath11k/WCN6750/hw1.0/qcm6490/wpss.mbn
+Link: qcom/qcs6490/wpss.mbn -> ../../ath11k/WCN6750/hw1.0/qcm6490/wpss.mbn
+
+Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: ath12k - Qualcomm Technologies Wi-Fi 7 chipset support
+
+File: ath12k/WCN7850/hw2.0/board-2.bin
+File: ath12k/WCN7850/hw2.0/amss.bin
+File: ath12k/WCN7850/hw2.0/m3.bin
+Version: WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
+File: ath12k/WCN7850/hw2.0/Notice.txt
+File: ath12k/WCN7850/hw2.0/ncm865/amss.bin
+File: ath12k/WCN7850/hw2.0/ncm865/m3.bin
+Version: WLAN.IOE_HMT.1.1-00018-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+File: ath12k/WCN7850/hw2.0/ncm865/Notice.txt
+File: ath12k/QCN9274/hw2.0/board-2.bin
+File: ath12k/QCN9274/hw2.0/firmware-2.bin
+Version: WLAN.WBE.1.5-01651-QCAHKSWPL_SILICONZ-1
+File: ath12k/QCN9274/hw2.0/Notice.txt
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k for details
+
+------------------------------------------------------------------------------
+
+Driver: ar5523 - Atheros AR5523 based USB Wifi dongles
+
+File: ar5523.bin
+
+Licence: Redistributable. See LICENCE.atheros_firmware for details
+
+------------------------------------------------------------------------------
+
+Driver: btqca - Qualcomm Atheros Bluetooth support for QCA61x4 USB chips
+
+File: qca/nvm_usb_00000201.bin
+File: qca/nvm_usb_00000200.bin
+File: qca/nvm_usb_00000300.bin
+File: qca/nvm_usb_00000302.bin
+File: qca/rampatch_usb_00000200.bin
+File: qca/rampatch_usb_00000201.bin
+File: qca/rampatch_usb_00000300.bin
+Version: BTFM.RM.2.2.c3-00031-QCABTFMSWP-1
+File: qca/rampatch_usb_00000302.bin
+Version: BTFM.RM.4.4.1-00028-QCABTFMSWP-1
+File: qca/nvm_usb_00000302_eu.bin
+File: qca/rampatch_usb_00130200.bin
+Version: BTFW.HSP.2.0.0-00609-USB_PATCHZ-1
+File: qca/nvm_usb_00130200.bin
+File: qca/nvm_usb_00130200_0104.bin
+File: qca/nvm_usb_00130200_0105.bin
+File: qca/nvm_usb_00130200_0106.bin
+File: qca/nvm_usb_00130200_0107.bin
+File: qca/nvm_usb_00130200_0109.bin
+File: qca/nvm_usb_00130200_0110.bin
+File: qca/rampatch_usb_00130201.bin
+Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+File: qca/nvm_usb_00130201.bin
+Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+File: qca/nvm_usb_00130201_010a.bin
+Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+File: qca/nvm_usb_00130201_010b.bin
+Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+File: qca/nvm_usb_00130201_0303.bin
+Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+File: qca/nvm_usb_00130201_gf.bin
+Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+File: qca/nvm_usb_00130201_gf_010a.bin
+Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+File: qca/nvm_usb_00130201_gf_010b.bin
+Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+File: qca/nvm_usb_00130201_gf_0303.bin
+Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+File: qca/rampatch_usb_00190200.bin
+File: qca/QCA2066/rampatch_usb_00130201.bin
+Version: BTFW.HSP.2.1.0-00653-VER_PATCHZ-3
+File: qca/QCA2066/nvm_usb_00130201_030a.bin
+File: qca/QCA2066/nvm_usb_00130201_gf_030a.bin
+Version: BTFW.HAMILTON.2.0.0-00799-USB_PATCHZ-5
+File: qca/nvm_usb_00190200.bin
+File: qca/nvm_usb_00190200_0104.bin
+File: qca/nvm_usb_00190200_0106.bin
+File: qca/nvm_usb_00190200_0108.bin
+File: qca/nvm_usb_00190200_0109.bin
+File: qca/nvm_usb_00190200_010a.bin
+File: qca/nvm_usb_00190200_010c.bin
+File: qca/nvm_usb_00190200_010e.bin
+File: qca/nvm_usb_00190200_0110.bin
+File: qca/nvm_usb_00190200_0111.bin
+File: qca/nvm_usb_00190200_0112.bin
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: btqca - Qualcomm Atheros Bluetooth support for QCA61x4 serial chips
+
+File: qca/rampatch_00130300.bin
+Version: BTFM.RM.2.2.c3-00031-QCABTFMSWP-1
+File: qca/rampatch_00130302.bin
+Version: BTFM.RM.2.2.c3-00031-QCABTFMSWP-1
+File: qca/rampatch_00230302.bin
+Version: QCA6174_DEV.BLD.0111
+File: qca/nvm_00130300.bin
+File: qca/nvm_00130302.bin
+File: qca/nvm_00230302.bin
+File: qca/rampatch_00440302.bin
+Version: BTFM.RM.4.4.1-00028-QCABTFMSWP-1
+File: qca/nvm_00440302.bin
+File: qca/nvm_00440302_eu.bin
+File: qca/nvm_00440302_i2s_eu.bin
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: btqca - Qualcomm Atheros Bluetooth support for QCA_QCC2072 chip
+
+File: qca/ornbtfw11.tlv
+Version: BTFW.ORNE.1.1.0-00202-PATCH-2_DEF
+File: qca/ornnv11.bin
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: qca - Qualcomm Atheros Bluetooth support for WCN3950 chips
+
+File: qca/cmbtfw12.tlv
+Version: BTFM.CMC.1.2.0-00218-QCACHROMZ-2
+File: qca/cmbtfw13.tlv
+Version: BTFM.CMC.1.3.0-00108-QCACHROMZ-1
+File: qca/cmnv12.bin
+File: qca/cmnv13.bin
+File: qca/cmnv13s.bin
+File: qca/cmnv13t.bin
+
+Licence: Redistributable. See LICENSE.qcom and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: qca - Qualcomm Atheros Bluetooth support for WCN3988 chips
+
+File: qca/apbtfw10.tlv
+Version: BTFM.CHE.2.0.0-00082-QCACHROMZ-1
+File: qca/apbtfw11.tlv
+Version: BTFM.CHE.2.1.5.c5-00042-QCACHROMZ-2
+File: qca/apnv10.bin
+File: qca/apnv11.bin
+
+Licence: Redistributable. See LICENSE.qcom and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: qca - Qualcomm Atheros Bluetooth support for WCN399x chips
+
+File: qca/crbtfw21.tlv
+Version: BTFM.CHE.2.1.3.c7-00024-QCACHROM-1
+File: qca/crnv21.bin
+File: qca/crbtfw32.tlv
+Version: BTFM.CHE.3.2.0.c2-00044-QCACHROMZ-1
+File: qca/crnv32.bin
+File: qca/crnv32u.bin
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: qca - Qualcomm Atheros Bluetooth support for WCN6750 chips
+
+File: qca/msbtfw11.mbn
+Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+File: qca/msbtfw11.tlv
+Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+File: qca/msnv11.bin
+Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+File: qca/msnv11.b0a
+Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+File: qca/msnv11.b09
+Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: qca - Qualcomm Atheros Bluetooth support for WCN685x uart interface chips
+
+File: qca/wcnhpbtfw21.tlv
+Version: BTFW.HSP.2.1.0-00660-USB_UART_PATCHZ-6
+File: qca/wcnhpnv21.bin
+File: qca/wcnhpnv21g.bin
+File: qca/wcnhpnv21.b8c
+File: qca/wcnhpnv21.b9f
+File: qca/wcnhpnv21.ba0
+File: qca/wcnhpnv21.ba1
+File: qca/wcnhpnv21.ba2
+File: qca/wcnhpnv21.ba3
+File: qca/wcnhpnv21.ba4
+File: qca/wcnhpnv21.baa
+File: qca/wcnhpnv21.bb8
+File: qca/wcnhpnv21.b10c
+File: qca/wcnhpnv21.b111
+File: qca/wcnhpnv21g.b8c
+File: qca/wcnhpnv21g.b9f
+File: qca/wcnhpnv21g.ba0
+File: qca/wcnhpnv21g.ba1
+File: qca/wcnhpnv21g.ba2
+File: qca/wcnhpnv21g.ba3
+File: qca/wcnhpnv21g.ba4
+File: qca/wcnhpnv21g.baa
+File: qca/wcnhpnv21g.bb8
+File: qca/wcnhpnv21g.b10c
+File: qca/wcnhpnv21g.b111
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: qca - Qualcomm Atheros Bluetooth support for QCA2066 chips
+
+File: qca/hpbtfw21.tlv
+Version: BTFW.HSP.2.1.0-00653-VER_PATCHZ-3
+File: qca/hpnv21.bin
+File: qca/hpnv21g.bin
+File: qca/hpnv21.301
+File: qca/hpnv21.302
+File: qca/hpnv21g.301
+File: qca/hpnv21g.302
+File: qca/hpnv21.309
+File: qca/hpnv21g.309
+File: qca/hpnv21.30a
+File: qca/hpnv21g.30a
+File: qca/hpnv21.b8c
+File: qca/hpnv21.b9f
+File: qca/hpnv21.ba0
+File: qca/hpnv21.ba1
+File: qca/hpnv21.ba2
+File: qca/hpnv21.ba3
+File: qca/hpnv21.ba4
+File: qca/hpnv21.baa
+File: qca/hpnv21.bb8
+File: qca/hpnv21.b10c
+File: qca/hpnv21.b111
+File: qca/hpnv21g.b8c
+File: qca/hpnv21g.b9f
+File: qca/hpnv21g.ba0
+File: qca/hpnv21g.ba1
+File: qca/hpnv21g.ba2
+File: qca/hpnv21g.ba3
+File: qca/hpnv21g.ba4
+File: qca/hpnv21g.baa
+File: qca/hpnv21g.bb8
+File: qca/hpnv21g.b10c
+File: qca/hpnv21g.b111
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: qca - Qualcomm Atheros Bluetooth support for QCA6390 chips
+
+File: qca/htbtfw20.tlv
+Version: BTFM.HST.2.0.0-00943-QCACHROM-1
+File: qca/htnv20.bin
+
+Licence: Redistributable. See LICENSE.qcom and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: qca - Qualcomm Atheros Bluetooth support for WCN7850 chips
+
+File: qca/hmtbtfw20.tlv
+Version: BTFW.HAMILTON.2.0.1-00349-WOS_PATCHZ-2
+File: qca/hmtnv20.b10f
+File: qca/hmtnv20.b112
+File: qca/hmtnv20.bin
+
+Licence: Redistributable. See LICENSE.qcom and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: qca - Qualcomm Atheros Bluetooth support for QCA6698AQ chips
+
+File: qca/QCA6698/hpbtfw21.tlv
+Version: BTFW.HSP.2.1.2-00035-PATCHZ-1
+File: qca/QCA6698/hpnv21.b206
+File: qca/QCA6698/hpnv21.b207
+File: qca/QCA6698/hpnv21.bin
+
+Licence: Redistributable. See LICENSE.qcom and qca/NOTICE.txt for details
+
+------------------------------------------------------------------------------
+
+Driver: wil6210 - Qualcomm Atheros support for 11ad family of chips
+
+File: wil6210.fw
+File: wil6210.brd
+Version: 5.2.0.18
+
+Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k for details
+
+------------------------------------------------------------------------------
