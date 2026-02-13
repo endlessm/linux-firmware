@@ -68,7 +68,22 @@ if [ -z "${package}" ] ; then
 	exit 2
 fi
 
-if ! [ -e ubuntu/package/"${package}"/control ] ; then
+case "${package}" in
+	meta)
+		is_meta=1
+		package_name=linux-firmware
+		changelog=ubuntu/meta/debian/changelog
+		changes=ubuntu/meta/changes
+		;;
+	*)
+		is_meta=0
+		package_name=linux-firmware-${package}
+		changelog=ubuntu/package/${package}/changelog
+		changes=ubuntu/package/${package}/changes
+		;;
+esac
+
+if ! [ -e "${changelog}" ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
 	exit 2
 fi
@@ -80,7 +95,6 @@ echo "II: Update changelog of package: ${package}"
 # Current upstream commit and version
 . ubuntu/upstream
 
-changelog=ubuntu/package/${package}/changelog
 version=
 if [ -e "${changelog}" ] ; then
 	version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
@@ -94,23 +108,36 @@ if [ -z "${series}" ] ; then
 	exit 1
 fi
 
-# New release version
-if [ "${version%-*}" = "${VERSION}" ] ; then
+#
+# Calculate the new package version
+#
+
+if [ "${version#"${VERSION}"}" != "${version}" ] ; then
 	if [ -n "${suffix}" ] ; then
 		# Append the provided suffix
 		new_version=${version}${suffix}
 	else
 		# Bump the upload number
 		upload=$(echo "${version}" | grep -o '[0-9]*$')
-		new_version=${version%"${upload}"}$((upload + 1))
+		if [ -z "${upload}" ] ; then
+            new_version=${version}0.1
+		else
+			new_version=${version%"${upload}"}$((upload + 1))
+		fi
 	fi
 else
 	# New upstream version
-	new_version=${VERSION}-0ubuntu1${suffix}
+	if [ ${is_meta} -eq 0 ] ; then
+		new_version=${VERSION}-0ubuntu1${suffix}
+	else
+		new_version=${VERSION}.0ubuntu${suffix}
+	fi
 fi
 
+#
 # Collect the changes for the package since the last release
-changes=ubuntu/package/${package}/changes
+#
+
 ./ubuntu/bin/list-changes "${package}" | tac | ./ubuntu/bin/format-changes > "${changes}"
 if ! [ -s "${changes}" ] ; then
 	if [ ${rebuild} -eq 0 ] ; then
@@ -120,8 +147,12 @@ if ! [ -s "${changes}" ] ; then
 	echo "  * No-change rebuild" > "${changes}"
 fi
 
+#
+# Add a new changelog entry
+#
+
 {
-	echo "linux-firmware-${package} (${new_version}) ${series}; urgency=medium"
+	echo "${package_name} (${new_version}) ${series}; urgency=medium"
 	echo
 	cat "${changes}"
 	echo

@@ -57,7 +57,18 @@ if [ -z "${package}" ] ; then
 	exit 2
 fi
 
-if ! [ -e ubuntu/package/"${package}"/control ] ; then
+case "${package}" in
+	meta)
+		is_meta=1
+		changelog=ubuntu/meta/debian/changelog
+		;;
+	*)
+		is_meta=0
+		changelog=ubuntu/package/${package}/changelog
+		;;
+esac
+
+if ! [ -e "${changelog}" ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
 	exit 2
 fi
@@ -66,80 +77,109 @@ trap out EXIT INT TERM HUP
 
 echo "II: Build package: ${package}"
 
-changelog=ubuntu/package/"${package}"/changelog
-version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
-
-tag=Ubuntu-${package}-${version//~/_}
-if ! git rev-parse "${tag}" &>/dev/null ; then
-	tag=Ubuntu-${version//~/_}
-	if ! git rev-parse "${tag}" &>/dev/null ; then
-		echo "EE: Release tag not found for version: ${version}" >&2
-		exit 1
-	fi
-fi
-
-echo "II: Build package from tag: ${tag}"
-
 package_name=$(dpkg-parsechangelog -l "${changelog}" -S Source)
 build_dir=ubuntu/build/"${package_name}"
 rm -rf "${build_dir}"
 
-#
-# Copy firmware files
-#
+version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
 
-echo "II: Copy firmware files"
+if [ ${is_meta} -eq 1 ] ; then
 
-mkdir -p "${build_dir}"
+	# FIXME
+	echo "WW: FIXME"
+	tag=HEAD
 
-readarray -t package_files < <(grep '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)
-git archive --format=tar "${tag}" -- "${package_files[@]}" | tar -C "${build_dir}" -xf -
+	echo "II: Build package from tag: ${tag}"
 
-#
-# Copy packaging files
-#
+	#
+	# Copy packaging files
+	#
 
-echo "II: Copy packaging files"
+	echo "II: Copy packaging files"
 
-mkdir -p "${build_dir}"/debian
+	mkdir -p "${build_dir}"/debian
 
-git -C ubuntu/debian archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
-git -C ubuntu/package/"${package}" archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
+	git -C ubuntu/"${package}"/debian archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
 
-#
-# Fix packaging files
-#
+else
 
-echo "II: Fix packaging files"
+	#
+	# Determine the previous release tag
+	#
 
-{
-	git show "${tag}":ubuntu/templates/control.source.in
-	echo
-	git show "${tag}":ubuntu/package/"${package}"/control
-} | sed -e "s/@package@/${package}/" > "${build_dir}"/debian/control
+	tag=Ubuntu-${package}-${version//~/_}
+	if ! git rev-parse "${tag}" &>/dev/null ; then
+		tag=Ubuntu-${version//~/_}
+		if ! git rev-parse "${tag}" &>/dev/null ; then
+			echo "EE: Release tag not found for version: ${version}" >&2
+			exit 1
+		fi
+	fi
 
-while IFS= read -r f ; do
-	mv "${f}" "${f/@package@/${package}}"
-done < <(find "${build_dir}"/debian/ -name '*@package@*')
+	echo "II: Build package from tag: ${tag}"
 
-#
-# Remove unwanted files
-#
+	#
+	# Copy firmware files
+	#
 
-for f in WHENCE.ubuntu debian/files ; do
-	rm -f "${build_dir}"/"${f}"
-done
+	echo "II: Copy firmware files"
+
+	mkdir -p "${build_dir}"
+
+	readarray -t package_files < <(grep '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)
+	git archive --format=tar "${tag}" -- "${package_files[@]}" | tar -C "${build_dir}" -xf -
+
+	#
+	# Copy packaging files
+	#
+
+	echo "II: Copy packaging files"
+
+	mkdir -p "${build_dir}"/debian
+
+	git -C ubuntu/debian archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
+	git -C ubuntu/package/"${package}" archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
+
+	#
+	# Fix packaging files
+	#
+
+	echo "II: Fix packaging files"
+
+	{
+		git show "${tag}":ubuntu/templates/control.source.in
+		echo
+		git show "${tag}":ubuntu/package/"${package}"/control
+	} | sed -e "s/@package@/${package}/" > "${build_dir}"/debian/control
+
+	while IFS= read -r f ; do
+		mv "${f}" "${f/@package@/${package}}"
+	done < <(find "${build_dir}"/debian/ -name '*@package@*')
+
+	#
+	# Remove unwanted files
+	#
+
+	for f in WHENCE.ubuntu debian/files ; do
+		rm -f "${build_dir}"/"${f}"
+	done
+
+	#
+	# Link the orig tarball
+	#
+
+	orig_tarball=${package_name}_${version%%-*}.orig.tar.xz
+	if ! [ -h ubuntu/build/"${orig_tarball}" ] ; then
+		( cd ubuntu/build ; ln -s ../../../"${orig_tarball}" . )
+	fi
+
+fi
 
 #
 # Finally, do the actual package build
 #
 
 echo "II: Build package"
-
-orig_tarball=${package_name}_${version%%-*}.orig.tar.xz
-if ! [ -h ubuntu/build/"${orig_tarball}" ] ; then
-	( cd ubuntu/build ; ln -s ../../../"${orig_tarball}" . )
-fi
 
 cd ubuntu/build/"${package_name}"
 

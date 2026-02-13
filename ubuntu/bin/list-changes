@@ -19,10 +19,20 @@ fi
 
 package=${1}
 
-pkg_dir=ubuntu/package/"${package}"
-if ! [ -e "${pkg_dir}"/control ] ; then
+case "${package}" in
+	meta)
+		is_meta=1
+		changelog=ubuntu/meta/debian/changelog
+		;;
+	*)
+		is_meta=0
+		changelog=ubuntu/package/${package}/changelog
+		;;
+esac
+
+if ! [ -e "${changelog}" ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
-	exit 1
+	exit 2
 fi
 
 trap out EXIT INT TERM HUP
@@ -30,34 +40,39 @@ trap out EXIT INT TERM HUP
 # Current upstream commit and version
 . ubuntu/upstream
 
-if [ -e "${pkg_dir}"/changelog ] ; then
-	version=$(dpkg-parsechangelog -l "${pkg_dir}"/changelog -S Version)
-else
-	version=${VERSION}-0ubuntu
-fi
+if [ ${is_meta} -eq 0 ] ; then
 
-# Find the previous package release
-prev_release=$(git log --format="%H %s" "${COMMIT}".. | \
-               grep -F "UBUNTU: Ubuntu-${package}-${version}" || true)
+	version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
 
-if [ -z "${prev_release}" ] ; then
-	# Find the previous rebase release
+	# Find the previous package release
 	prev_release=$(git log --format="%H %s" "${COMMIT}".. | \
-	               grep -F "UBUNTU: Ubuntu-${version}" || true)
+	               grep -F "UBUNTU: Ubuntu-${package}-${version}" || true)
+
+	if [ -z "${prev_release}" ] ; then
+		# Find the previous rebase release
+		prev_release=$(git log --format="%H %s" "${COMMIT}".. | \
+		               grep -F "UBUNTU: Ubuntu-${version}" || true)
+	fi
+
+	if [ -z "${prev_release}" ] ; then
+		# Initial commit
+		prev_release=${COMMIT}
+	fi
+
+	readarray -t package_files < <(grep -E '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)
+
+	package_files+=(
+		"ubuntu/debian/"
+		"ubuntu/package/${package}/"
+		"ubuntu/templates/"
+		"ubuntu/upstream"
+	)
+
+	git log --no-merges --format="%h %s" "${prev_release%% *}".. -- "${package_files[@]}"
+
+else
+
+	echo "EE: FIXME" >&2
+	git log --no-merges --format="%h %s" -- ubuntu/meta/debian/
+
 fi
-
-if [ -z "${prev_release}" ] ; then
-	# Initial commit
-	prev_release=${COMMIT}
-fi
-
-readarray -t package_files < <(grep -E '^[0-9a-zA-Z:]' "${pkg_dir}"/files)
-
-package_files+=(
-	"ubuntu/debian/"
-	"ubuntu/package/${package}/"
-	"ubuntu/templates/"
-	"ubuntu/upstream"
-)
-
-git log --no-merges --format="%h %s" "${prev_release%% *}".. -- "${package_files[@]}"

@@ -53,8 +53,16 @@ fi
 
 package=${1}
 
-pkg_dir=ubuntu/package/"${package}"
-if ! [ -e "${pkg_dir}"/control ] ; then
+case "${package}" in
+	meta)
+		changelog=ubuntu/meta/debian/changelog
+		;;
+	*)
+		changelog=ubuntu/package/${package}/changelog
+		;;
+esac
+
+if ! [ -e "${changelog}" ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
 	exit 1
 fi
@@ -63,7 +71,6 @@ echo "II: Review debdiff for package: ${package}"
 
 trap out EXIT INT TERM HUP
 
-changelog=${pkg_dir}/changelog
 name=$(dpkg-parsechangelog -l "${changelog}" -S Source)
 version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
 
