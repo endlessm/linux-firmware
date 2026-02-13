@@ -1,0 +1,6 @@
+linux-firmware (20260123.git1b7b9f6c.0ubuntu) resolute; urgency=medium
+
+  * Split linux-firmware into multiple packages (LP: #1958518)
+    - [Packaging] Initial commit of metapackage packaging files
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 13 Feb 2026 13:58:46 +0100

@@ -1,0 +1,36 @@
+Source: linux-firmware
+Section: misc
+Priority: optional
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13)
+Vcs-Git: https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-firmware
+
+Package: linux-firmware
+Architecture: all
+Priority: optional
+Depends:
+ ${misc:Depends},
+Recommends:
+ firmware-sof-signed,
+ linux-firmware-amd-graphics,
+ linux-firmware-broadcom-wireless,
+ linux-firmware-intel-graphics,
+ linux-firmware-intel-misc,
+ linux-firmware-intel-wireless,
+ linux-firmware-marvell-prestera,
+ linux-firmware-marvell-wireless,
+ linux-firmware-mediatek,
+ linux-firmware-mellanox-spectrum,
+ linux-firmware-misc,
+ linux-firmware-netronome,
+ linux-firmware-nvidia-graphics,
+ linux-firmware-qlogic,
+ linux-firmware-qualcomm-graphics,
+ linux-firmware-qualcomm-misc,
+ linux-firmware-qualcomm-wireless,
+ linux-firmware-realtek,
+Description: Firmware for Linux kernel drivers (metapackage)
+ This package recommends packages that provide firmware used by Linux
+ kernel drivers.
