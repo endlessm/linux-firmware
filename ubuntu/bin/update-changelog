@@ -94,7 +94,7 @@ if [ -z "${series}" ] ; then
 	exit 1
 fi
 
-# New release version and tag
+# New release version
 if [ "${version%-*}" = "${VERSION}" ] ; then
 	if [ -n "${suffix}" ] ; then
 		# Append the provided suffix
@@ -106,11 +106,7 @@ if [ "${version%-*}" = "${VERSION}" ] ; then
 	fi
 else
 	# New upstream version
-	new_version="${VERSION}-0ubuntu1"
-	if [ -n "${suffix}" ] ; then
-		# Append the provided suffix
-		new_version=${version}${suffix}
-	fi
+	new_version=${VERSION}-0ubuntu1${suffix}
 fi
 
 # Collect the changes for the package since the last release
