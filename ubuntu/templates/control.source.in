@@ -10,5 +10,5 @@ Build-Depends:
  rdfind,
  rsync,
  zstd,
-Vcs-Git: git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-firmware
+Vcs-Git: https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-firmware
 XS-Testsuite: autopkgtest
