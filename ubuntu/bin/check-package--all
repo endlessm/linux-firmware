@@ -12,20 +12,16 @@ mkdir -p "${check_dir}"
 # Run individual package checks
 #
 
-first=1
 for d in ubuntu/package/* ; do
-	test ${first} -eq 1 || echo
-	first=0
-
 	package=${d##*/}
 	./ubuntu/bin/check-package "${package}"
+	echo
 done
 
 #
 # Run cross-package checks
 #
 
-echo
 echo "II: Run additional cross-package checks"
 
 # Generate additional file lists required for the tests
