@@ -12,8 +12,6 @@ Architecture: all
 Priority: optional
 Depends:
  ${misc:Depends},
-Recommends:
- firmware-sof-signed,
  linux-firmware-amd-graphics,
  linux-firmware-broadcom-wireless,
  linux-firmware-intel-graphics,
@@ -31,6 +29,8 @@ Recommends:
  linux-firmware-qualcomm-misc,
  linux-firmware-qualcomm-wireless,
  linux-firmware-realtek,
+Recommends:
+ firmware-sof-signed,
 Description: Firmware for Linux kernel drivers (metapackage)
- This package recommends packages that provide firmware used by Linux
- kernel drivers.
+ This package recommends and depends on packages that provide firmware used
+ by Linux kernel drivers.
