@@ -9,6 +9,10 @@ qcom/NOTICE.txt
 qcom/a???_*.bin
 qcom/a???_*.fw
 qcom/a530v3_gpmu.fw2
+qcom/gen*_aqe.fw
+qcom/gen*_gmu.bin
+qcom/gen*_sqe.fw
+qcom/gmu_gen*.bin
 qcom/leia_p??_470.fw
 qcom/yamato_p??.fw
 
