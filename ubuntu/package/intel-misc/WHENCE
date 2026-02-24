@@ -206,7 +206,7 @@ Driver: ice - Intel(R) Ethernet Connection E800 Series
 
 File: intel/ice/ddp/ice-1.3.43.0.pkg
 Link: intel/ice/ddp/ice.pkg -> ice-1.3.43.0.pkg
-File: intel/ice/ddp-lag/ice_lag-1.3.1.0.pkg
+File: intel/ice/ddp-lag/ice_lag-1.3.2.0.pkg
 
 License: Redistributable. See LICENSE.ice for details
 
@@ -225,8 +225,16 @@ Version: 5.8.1.7778
 
 License: Redistributable. See LICENSE.intel for details
 
-File: LENOVO/ish/ish_lnlm_53c4ffad_2a17559f.bin
-Link: intel/ish/ish_lnlm_53c4ffad_2a17559f.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_2a17559f.bin
+File: LENOVO/ish/ish_lnlm_53c4ffad_a672a235.bin
+Link: intel/ish/ish_lnlm_53c4ffad_a672a235.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_a672a235.bin
+Version: 5.8.36.09092
+
+File: LENOVO/ish/ish_lnlm_53c4ffad_cb391961.bin
+Link: intel/ish/ish_lnlm_53c4ffad_cb391961.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_cb391961.bin
+Version: 5.8.4.7720
+
+File: LENOVO/ish/ish_lnlm_53c4ffad_ebb27e41.bin
+Link: intel/ish/ish_lnlm_53c4ffad_ebb27e41.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_ebb27e41.bin
 Version: 5.8.4.7720
 
 License: Redistributable. See LICENCE.lenovo for details
@@ -239,6 +247,9 @@ License: Redistributable. See LICENCE.HP for details
 
 File: dell/ish/ish_lnlm_39ceeaf8_58.7727.0.bin
 Link: intel/ish/ish_lnlm_39ceeaf8.bin -> ../../dell/ish/ish_lnlm_39ceeaf8_58.7727.0.bin
+
+File: dell/ish/ish_ptl_39ceeaf8_581.7779.0.bin
+Link: intel/ish/ish_ptl_39ceeaf8.bin -> ../../dell/ish/ish_ptl_39ceeaf8_581.7779.0.bin
 
 License: Redistributable. See LICENSE.dell for details
 

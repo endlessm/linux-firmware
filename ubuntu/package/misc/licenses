@@ -1,5 +1,3 @@
-GPL-2
-GPL-3
 LICENCE.Abilis
 LICENCE.Marvell
 LICENCE.advansys
@@ -31,6 +29,7 @@ LICENCE.moxa
 LICENCE.multitech
 LICENCE.myri10ge_firmware
 LICENCE.nvidia
+LICENCE.r8a779g_pcie_phy
 LICENCE.r8a779x_usb3
 LICENCE.rockchip
 LICENCE.sensoray

@@ -43,10 +43,12 @@ Link: qcom/qcs6490/battmgr.jsn -> ../qcm6490/battmgr.jsn
 Link: qcom/qcs6490/cdsp.mbn -> ../qcm6490/cdsp.mbn
 Link: qcom/qcs6490/cdspr.jsn -> ../qcm6490/cdspr.jsn
 File: qcom/qcs6490/radxa/dragon-q6a/adsp.mbn
-Version: ADSP.HT.5.5.c8-00217-KODIAK-1
+Version: ADSP.HT.5.5.c9-00028-KODIAK-2
 RawFile: qcom/qcs6490/radxa/dragon-q6a/adspr.jsn
-RawFile: qcom/qcs6490/radxa/dragon-q6a/adsps.jsn
 RawFile: qcom/qcs6490/radxa/dragon-q6a/adspua.jsn
+File: qcom/qcs6490/radxa/dragon-q6a/cdsp.mbn
+Version: CDSP.HT.2.5.c4-00004-KODIAK-1
+RawFile: qcom/qcs6490/radxa/dragon-q6a/cdspr.jsn
 File: qcom/qcs6490/Thundercomm/RubikPi3/adsp.mbn
 Version: ADSP.HT.5.5.c8-00217-KODIAK-1
 RawFile: qcom/qcs6490/Thundercomm/RubikPi3/adspr.jsn
@@ -156,6 +158,16 @@ https://github.com/andersson/pil-squasher
 cdsp.mbn has been converted from 21-cdsp_split/firmware/cdsp.* using
 https://github.com/andersson/pil-squasher
 
+File: qcom/glymur/adsp.mbn
+File: qcom/glymur/adsp_dtb.mbn
+Version: LPAIDSP.HT.1.6.c1-00007-GLYMUR-3
+RawFile: qcom/glymur/adspr.jsn
+RawFile: qcom/glymur/adsps.jsn
+RawFile: qcom/glymur/adspua.jsn
+File: qcom/glymur/cdsp.mbn
+File: qcom/glymur/cdsp_dtb.mbn
+Version: CDSP.HT.3.3-00302-GLYMUR-1
+RawFile: qcom/glymur/cdspr.jsn
 File: qcom/kaanapali/adsp.mbn
 File: qcom/kaanapali/adsp_dtb.mbn
 Version: LPAIDSP.HT.1.6-00223-KAANAPALI-1
@@ -172,27 +184,27 @@ File: qcom/kaanapali/soccp_dtb.mbn
 Version: SOCCP.FW.2.1-00204-KAANAPALI_SOCCP_PACK-1
 RawFile: qcom/kaanapali/soccpr.jsn
 File: qcom/qcs8300/adsp.mbn
-Version: DSP.AT.1.0.1-00170-LEMANS-1
+Version: DSP.AT.1.0.1-00196-LEMANS-2
 RawFile: qcom/qcs8300/adspr.jsn
 RawFile: qcom/qcs8300/adspua.jsn
 File: qcom/qcs8300/cdsp0.mbn
-Version: DSP.AT.1.0.1-00170-LEMANS-1
+Version: DSP.AT.1.0.1-00196-LEMANS-2
 RawFile: qcom/qcs8300/cdspr.jsn
 File: qcom/qcs8300/gpdsp0.mbn
-Version: DSP.AT.1.0.1-00170-LEMANS-1
+Version: DSP.AT.1.0.1-00196-LEMANS-2
 File: qcom/sa8775p/adsp.mbn
-Version: DSP.AT.1.0.1-00190-LEMANS-1
+Version: DSP.AT.1.0.1-00196-LEMANS-2
 RawFile: qcom/sa8775p/adspr.jsn
 RawFile: qcom/sa8775p/adspua.jsn
 File: qcom/sa8775p/cdsp0.mbn
-Version: DSP.AT.1.0.1-00190-LEMANS-1
+Version: DSP.AT.1.0.1-00196-LEMANS-2
 File: qcom/sa8775p/cdsp1.mbn
-Version: DSP.AT.1.0.1-00190-LEMANS-1
+Version: DSP.AT.1.0.1-00196-LEMANS-2
 RawFile: qcom/sa8775p/cdspr.jsn
 File: qcom/sa8775p/gpdsp0.mbn
-Version: DSP.AT.1.0.1-00190-LEMANS-1
+Version: DSP.AT.1.0.1-00196-LEMANS-2
 File: qcom/sa8775p/gpdsp1.mbn
-Version: DSP.AT.1.0.1-00190-LEMANS-1
+Version: DSP.AT.1.0.1-00196-LEMANS-2
 RawFile: qcom/sa8775p/gpdsp1r.jsn
 RawFile: qcom/sa8775p/gpdspr.jsn
 File: qcom/sm8750/adsp.mbn
@@ -417,6 +429,7 @@ File: qcom/sa8775p/qupv3fw.elf
 File: qcom/qcm6490/qupv3fw.elf
 Link: qcom/qcs6490/qupv3fw.elf -> ../qcm6490/qupv3fw.elf
 File: qcom/qcs8300/qupv3fw.elf
+File: qcom/x1e80100/qupv3fw.elf
 
 License: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
 ------------------------------------------------------------------------------

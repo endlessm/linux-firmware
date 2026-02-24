@@ -763,31 +763,27 @@ Version: BT_WindStormPeak_REL1299
 
 File: intel/ibt-17-16-1.sfi
 File: intel/ibt-17-16-1.ddc
-File: intel/ibt-17-2.sfi
-File: intel/ibt-17-2.ddc
+Link: intel/ibt-17-2.sfi -> ibt-17-16-1.sfi
+Link: intel/ibt-17-2.ddc -> ibt-17-16-1.ddc
+
 File: intel/ibt-18-16-1.sfi
 File: intel/ibt-18-16-1.ddc
-File: intel/ibt-18-2.sfi
-File: intel/ibt-18-2.ddc
+Link: intel/ibt-18-2.sfi -> ibt-18-16-1.sfi
+Link: intel/ibt-18-2.ddc -> ibt-18-16-1.ddc
 Version: BT_Pulsar_REL20425_22.20.2412.20425
 
 File: intel/ibt-17-0-1.sfi
-Version: BT_JeffersonPeak_A0_B0_REL0201
 File: intel/ibt-17-0-1.ddc
-Version: BT_JeffersonPeak_A0_B0_REL0201
-File: intel/ibt-17-1.sfi
-Version: BT_JeffersonPeak_A0_B0_REL0201
-File: intel/ibt-17-1.ddc
+Link: intel/ibt-17-1.sfi -> ibt-17-0-1.sfi
+Link: intel/ibt-17-1.ddc -> ibt-17-0-1.ddc
 Version: BT_JeffersonPeak_A0_B0_REL0201
 
 File: intel/ibt-18-0-1.sfi
-Version: BT_ThunderPeak_A0_B0_REL0201
 File: intel/ibt-18-0-1.ddc
+Link: intel/ibt-18-1.sfi -> ibt-18-0-1.sfi
+Link: intel/ibt-18-1.ddc -> ibt-18-0-1.ddc
 Version: BT_ThunderPeak_A0_B0_REL0201
-File: intel/ibt-18-1.sfi
-Version: BT_ThunderPeak_A0_B0_REL0201
-File: intel/ibt-18-1.ddc
-Version: BT_ThunderPeak_A0_B0_REL0201
+
 File: intel/ibt-20-0-3.sfi
 Version: BT_CyclonePeak_A0_REL53636
 File: intel/ibt-20-0-3.ddc
@@ -800,71 +796,53 @@ File: intel/ibt-20-1-4.sfi
 Version: BT_CyclonePeak_A0_REL53636
 File: intel/ibt-20-1-4.ddc
 Version: BT_CyclonePeak_A0_REL53636
-File: intel/ibt-19-0-0.sfi
-Version: BT_Quasar_REL53697
-File: intel/ibt-19-0-0.ddc
-Version: BT_Quasar_REL53697
-File: intel/ibt-19-0-1.sfi
-Version: BT_Quasar_REL53697
-File: intel/ibt-19-0-1.ddc
-Version: BT_Quasar_REL53697
-File: intel/ibt-19-0-3.sfi
-Version: BT_Quasar_REL53697
-File: intel/ibt-19-0-3.ddc
-Version: BT_Quasar_REL53697
+
 File: intel/ibt-19-0-4.sfi
-Version: BT_HarrisonPeak_REL53697
 File: intel/ibt-19-0-4.ddc
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-16-4.sfi
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-16-4.ddc
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-32-1.sfi
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-32-1.ddc
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-32-0.sfi
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-32-0.ddc
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-32-4.sfi
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-32-4.ddc
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-240-1.sfi
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-240-1.ddc
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-240-4.sfi
-Version: BT_HarrisonPeak_REL53697
-File: intel/ibt-19-240-4.ddc
+Link: intel/ibt-19-0-0.sfi -> ibt-19-0-4.sfi
+Link: intel/ibt-19-0-0.ddc -> ibt-19-0-4.ddc
+Link: intel/ibt-19-0-1.sfi -> ibt-19-0-4.sfi
+Link: intel/ibt-19-0-1.ddc -> ibt-19-0-4.ddc
+Link: intel/ibt-19-0-3.sfi -> ibt-19-0-4.sfi
+Link: intel/ibt-19-0-3.ddc -> ibt-19-0-4.ddc
+Link: intel/ibt-19-16-4.sfi -> ibt-19-0-4.sfi
+Link: intel/ibt-19-16-4.ddc -> ibt-19-0-4.ddc
+Link: intel/ibt-19-32-1.sfi -> ibt-19-0-4.sfi
+Link: intel/ibt-19-32-1.ddc -> ibt-19-0-4.ddc
+Link: intel/ibt-19-32-0.sfi -> ibt-19-0-4.sfi
+Link: intel/ibt-19-32-0.ddc -> ibt-19-0-4.ddc
+Link: intel/ibt-19-32-4.sfi -> ibt-19-0-4.sfi
+Link: intel/ibt-19-32-4.ddc -> ibt-19-0-4.ddc
+Link: intel/ibt-19-240-1.sfi -> ibt-19-0-4.sfi
+Link: intel/ibt-19-240-1.ddc -> ibt-19-0-4.ddc
+Link: intel/ibt-19-240-4.sfi -> ibt-19-0-4.sfi
+Link: intel/ibt-19-240-4.ddc -> ibt-19-0-4.ddc
 Version: BT_HarrisonPeak_REL53697
 
 File: intel/ibt-0041-0041.sfi
 File: intel/ibt-0041-0041.ddc
 File: intel/ibt-0040-0041.sfi
 File: intel/ibt-0040-0041.ddc
-File: intel/ibt-0040-4150.sfi
-File: intel/ibt-0040-4150.ddc
+Link: intel/ibt-0040-4150.sfi -> ibt-0040-0041.sfi
+Link: intel/ibt-0040-4150.ddc -> ibt-0040-0041.ddc
 File: intel/ibt-1040-0041.sfi
 File: intel/ibt-1040-0041.ddc
-File: intel/ibt-1040-4150.sfi
-File: intel/ibt-1040-4150.ddc
-File: intel/ibt-0040-1050.sfi
-File: intel/ibt-0040-1050.ddc
-File: intel/ibt-1040-1050.sfi
-File: intel/ibt-1040-1050.ddc
-Version: BT_Solar_REL82053_23.50.25205.82053
+Link: intel/ibt-1040-4150.sfi -> ibt-1040-0041.sfi
+Link: intel/ibt-1040-4150.ddc -> ibt-1040-0041.ddc
+Link: intel/ibt-0040-1050.sfi -> ibt-0040-0041.sfi
+Link: intel/ibt-0040-1050.ddc -> ibt-0040-0041.ddc
+Link: intel/ibt-1040-1050.sfi -> ibt-1040-0041.sfi
+Link: intel/ibt-1040-1050.ddc -> ibt-1040-0041.ddc
+Version: BT_Solar_REL82122_23.50.26053.82122
 
 File: intel/ibt-0040-1020.sfi
 File: intel/ibt-0040-1020.ddc
 File: intel/ibt-1040-1020.sfi
 File: intel/ibt-1040-1020.ddc
-File: intel/ibt-0040-2120.sfi
-File: intel/ibt-0040-2120.ddc
-File: intel/ibt-1040-2120.sfi
-File: intel/ibt-1040-2120.ddc
+Link: intel/ibt-0040-2120.sfi -> ibt-0040-1020.sfi
+Link: intel/ibt-0040-2120.ddc -> ibt-0040-1020.ddc
+Link: intel/ibt-1040-2120.sfi -> ibt-1040-1020.sfi
+Link: intel/ibt-1040-2120.ddc -> ibt-1040-1020.ddc
 Version: BT_SolarJfp_REL151_22.180.2405.151
 
 File: intel/ibt-0093-0041.sfi
