@@ -253,9 +253,11 @@ LICENSE.rsi
 rsi/
 
 # Renesas
+LICENCE.r8a779g_pcie_phy
 LICENCE.r8a779x_usb3
 r8a779x_usb3_v1.dlmem
 r8a779x_usb3_v3.dlmem
+rcar_gen4_pcie.bin
 
 # Rockchip
 LICENCE.rockchip
