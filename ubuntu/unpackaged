@@ -5,7 +5,10 @@
 .gitignore
 .gitlab-ci.yml
 .pre-commit-config.yaml
+Apache-2
 Dockerfile
+GPL-2
+GPL-3
 LICENSE
 Makefile
 README.md
