@@ -5,7 +5,16 @@ Workflow
 ---------------------------
 
 $ ubuntu/bin/rebase-upstream [REV]
+
+# Update the package files following the rebase
+# This will automatically update the package files and commit the changes
 $ ubuntu/bin/update-package--all
+
+# Run checks which should fail if firmware files were added or deleted by the rebase
+# Update the package files (ubuntu/package/*/files) accordingly and commit the changes
+$ ubuntu/bin/check-package--all
+
+# Update and commit the changelogs of all packages
 $ ubuntu/bin/update-changelog--all
 $ ubuntu/bin/commit-release--all
 
