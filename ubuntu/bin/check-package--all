@@ -31,7 +31,7 @@ echo "II: Run additional cross-package checks"
 # Generate additional file lists required for the tests
 ./ubuntu/bin/list-package-files licenses > "${check_dir}"/licenses.files
 ./ubuntu/bin/list-package-files unpackaged > "${check_dir}"/unpackaged.files
-git ls-files | sort -u > "${check_dir}"/all.files
+git ls-files | sort -u > "${check_dir}"/all-git.files
 
 cd "${check_dir}"
 
@@ -68,6 +68,21 @@ sort packages-excluded.files unpackaged.files | uniq -d > check.files
 if [ -s check.files ] ; then
 	echo "EE: Incorrectly listed files in ubuntu/unpackaged:" >&2
 	sed 's/^/    - /' check.files >&2
+	echo "EE: Check failed" >&2
+	exit 1
+fi
+
+#
+# Check that all files are packaged or explicitly excluded
+#
+
+echo "II: Check that all files are packaged or explicitly excluded"
+
+sort -u ./*/package.files ./*/excluded.files unpackaged.files > all-package.files
+sort all-git.files all-package.files | uniq -u > missing.files
+if [ -s missing.files ] ; then
+	echo "EE: Unpackaged files:" >&2
+	sed 's/^/    - /' missing.files >&2
 	echo "EE: Check failed" >&2
 	exit 1
 fi
