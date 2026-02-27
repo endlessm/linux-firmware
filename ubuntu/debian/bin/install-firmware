@@ -28,12 +28,12 @@ package=${1}
 echo "II: Install WHENCE and license files"
 
 doc_dir=debian/${package}/usr/share/doc/${package}
-install -d "${doc_dir}"/licenses
+mkdir -p "${doc_dir}"/licenses
 
-install debian/WHENCE "${doc_dir}"/README
+install -m 644 debian/WHENCE "${doc_dir}"/README
 while IFS= read -r f ; do
 	if [ "${f#WHENCE}" = "${f}" ] ; then
-		install "${f}" "${doc_dir}"/licenses/
+		install -m 644 "${f}" "${doc_dir}"/licenses/
 	fi
 done < debian/licenses
 
@@ -44,12 +44,14 @@ done < debian/licenses
 echo "II: Install firmware files"
 
 fw_dir=debian/${package}/usr/lib/firmware
-install -d "${fw_dir}"
+mkdir -p "${fw_dir}"
 
 time while IFS= read -r f ; do
 	if [ -e "${f}" ] ; then
 		echo "    ${f}"
-		install -D "${f}" "${fw_dir}"/"${f}"
+		fw_file=${fw_dir}/${f}
+		mkdir -p "${fw_file%/*}"
+		install -m 644 "${f}" "${fw_file}"
 	fi
 done < <(sed -n 's/^\(File\|RawFile\): *//p' debian/WHENCE)
 
@@ -109,7 +111,7 @@ while IFS="|" read -r lnk tgt ; do
 
 	for ext in "" ".zst" ; do
 		if [ -e "${tgt_real}${ext}" ] ; then
-			install -d "${lnk_dir}"
+			mkdir -p "${lnk_dir}"
 			ln -s "${tgt}${ext}" "${lnk}${ext}"
 		fi
 	done
