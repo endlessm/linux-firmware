@@ -1,1 +1,9 @@
-do--all
+#!/bin/bash -eu
+
+for d in ubuntu/package/* ; do
+	package=${d##*/}
+	./ubuntu/bin/update-changelog "${package}" "${@}"
+	echo
+done
+
+./ubuntu/bin/update-changelog meta "${@}"
