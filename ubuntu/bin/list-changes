@@ -40,39 +40,44 @@ trap out EXIT INT TERM HUP
 # Current upstream commit and version
 . ubuntu/upstream
 
+#
+# Find the previous release commit
+#
+
+# Get the last commit that touched the first line of the changelog
+blame=$(git blame -L 1,1 "${changelog}")
+echo "II: Previous release: ${blame}" >&2
+
+# Sanity checks
+version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+case "${blame}" in
+	00000000*)
+		echo "EE: Uncommited changes" >&2
+		exit 1
+		;;
+	*" (${version}) "*)
+		true
+		;;
+	*)
+		echo "EE: Previous release version looks incorrect (should be ${version})" >&2
+		exit 1
+		;;
+esac
+
+prev_release=${blame%% *}
+
 if [ ${is_meta} -eq 0 ] ; then
-
-	version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
-
-	# Find the previous package release
-	prev_release=$(git log --format="%H %s" "${COMMIT}".. | \
-	               grep -F "UBUNTU: Ubuntu-${package}-${version}" || true)
-
-	if [ -z "${prev_release}" ] ; then
-		# Find the previous rebase release
-		prev_release=$(git log --format="%H %s" "${COMMIT}".. | \
-		               grep -F "UBUNTU: Ubuntu-${version}" || true)
-	fi
-
-	if [ -z "${prev_release}" ] ; then
-		# Initial commit
-		prev_release=${COMMIT}
-	fi
-
 	readarray -t package_files < <(grep -E '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)
-
 	package_files+=(
 		"ubuntu/debian/"
 		"ubuntu/package/${package}/"
 		"ubuntu/templates/"
 		"ubuntu/upstream"
 	)
-
-	git log --no-merges --format="%h %s" "${prev_release%% *}".. -- "${package_files[@]}"
-
 else
-
-	echo "EE: FIXME" >&2
-	git log --no-merges --format="%h %s" -- ubuntu/meta/debian/
-
+	package_files=(
+		"ubuntu/meta/debian/"
+	)
 fi
+
+git log --no-merges --format="%h %s" "${prev_release}".. -- "${package_files[@]}"
