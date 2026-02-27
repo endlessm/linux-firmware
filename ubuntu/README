@@ -26,7 +26,14 @@ $ ubuntu/bin/create-orig-tarball--all
 $ ubuntu/bin/build-package--all -- -S -sa
 
 
-3. Upload new source packages
+3. Review source packages
+-------------------------
+
+$ ubuntu/bin/create-debdiff--all
+$ ubuntu/bin/review-debdiff--all
+
+
+4. Upload new source packages
 -----------------------------
 
 # To a PPA
@@ -39,7 +46,7 @@ $ ubuntu/bin/dput-package--all -s ubuntu
 $ ubuntu/bin/dput-package--all ubuntu
 
 
-4. No-change rebuild
+5. No-change rebuild
 --------------------
 
 $ ubuntu/bin/update-changelog--all --rebuild
