@@ -81,15 +81,22 @@ package_name=$(dpkg-parsechangelog -l "${changelog}" -S Source)
 build_dir=ubuntu/build/"${package_name}"
 rm -rf "${build_dir}"
 
+#
+# Find the release commit
+#
+
 version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+blame=$(git blame -L 1,1 "${changelog}" | grep -F " (${version}) " || true)
+release=${blame%% *}
+
+if [ -z "${release}" ] ; then
+	echo "EE: Release commit not found" >&2
+	exit 1
+fi
+
+echo "II: Build package from commit: ${release}"
 
 if [ ${is_meta} -eq 1 ] ; then
-
-	# FIXME
-	echo "WW: FIXME"
-	tag=HEAD
-
-	echo "II: Build package from tag: ${tag}"
 
 	#
 	# Copy packaging files
@@ -99,24 +106,9 @@ if [ ${is_meta} -eq 1 ] ; then
 
 	mkdir -p "${build_dir}"/debian
 
-	git -C ubuntu/"${package}"/debian archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
+	git -C ubuntu/"${package}"/debian archive --format=tar "${release}" -- . | tar -C "${build_dir}"/debian/ -xf -
 
 else
-
-	#
-	# Determine the previous release tag
-	#
-
-	tag=Ubuntu-${package}-${version//~/_}
-	if ! git rev-parse "${tag}" &>/dev/null ; then
-		tag=Ubuntu-${version//~/_}
-		if ! git rev-parse "${tag}" &>/dev/null ; then
-			echo "EE: Release tag not found for version: ${version}" >&2
-			exit 1
-		fi
-	fi
-
-	echo "II: Build package from tag: ${tag}"
 
 	#
 	# Copy firmware files
@@ -127,7 +119,7 @@ else
 	mkdir -p "${build_dir}"
 
 	readarray -t package_files < <(grep '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)
-	git archive --format=tar "${tag}" -- "${package_files[@]}" | tar -C "${build_dir}" -xf -
+	git archive --format=tar "${release}" -- "${package_files[@]}" | tar -C "${build_dir}" -xf -
 
 	#
 	# Copy packaging files
@@ -137,8 +129,8 @@ else
 
 	mkdir -p "${build_dir}"/debian
 
-	git -C ubuntu/debian archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
-	git -C ubuntu/package/"${package}" archive --format=tar "${tag}" -- . | tar -C "${build_dir}"/debian/ -xf -
+	git -C ubuntu/debian archive --format=tar "${release}" -- . | tar -C "${build_dir}"/debian/ -xf -
+	git -C ubuntu/package/"${package}" archive --format=tar "${release}" -- . | tar -C "${build_dir}"/debian/ -xf -
 
 	#
 	# Fix packaging files
@@ -147,9 +139,9 @@ else
 	echo "II: Fix packaging files"
 
 	{
-		git show "${tag}":ubuntu/templates/control.source.in
+		git show "${release}":ubuntu/templates/control.source.in
 		echo
-		git show "${tag}":ubuntu/package/"${package}"/control
+		git show "${release}":ubuntu/package/"${package}"/control
 	} | sed -e "s/@package@/${package}/" > "${build_dir}"/debian/control
 
 	while IFS= read -r f ; do
