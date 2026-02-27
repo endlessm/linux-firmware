@@ -239,8 +239,8 @@ Version: 5.8.4.7720
 
 License: Redistributable. See LICENCE.lenovo for details
 
-File: HP/ish/ish_lnlm_12128606.bin
-Link: intel/ish/ish_lnlm_12128606.bin -> ../../HP/ish/ish_lnlm_12128606.bin
+File: HP/ish/ish_lnlm_12128606_f9751b71.bin
+Link: intel/ish/ish_lnlm_12128606_f9751b71.bin -> ../../HP/ish/ish_lnlm_12128606_f9751b71.bin
 Version: 5.8.200.7720_1029
 
 License: Redistributable. See LICENCE.HP for details

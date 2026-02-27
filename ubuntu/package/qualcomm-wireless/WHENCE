@@ -323,23 +323,23 @@ File: qca/nvm_usb_00130200_0107.bin
 File: qca/nvm_usb_00130200_0109.bin
 File: qca/nvm_usb_00130200_0110.bin
 File: qca/rampatch_usb_00130201.bin
-Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+Version: BTFW.HSP.2.1.0-00665-USB_UART_PATCHZ-1
 File: qca/nvm_usb_00130201.bin
-Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+Version: BTFW.HSP.2.1.0-00665-USB_UART_PATCHZ-1
 File: qca/nvm_usb_00130201_010a.bin
-Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+Version: BTFW.HSP.2.1.0-00665-USB_UART_PATCHZ-1
 File: qca/nvm_usb_00130201_010b.bin
-Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+Version: BTFW.HSP.2.1.0-00665-USB_UART_PATCHZ-1
 File: qca/nvm_usb_00130201_0303.bin
-Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+Version: BTFW.HSP.2.1.0-00665-USB_UART_PATCHZ-1
 File: qca/nvm_usb_00130201_gf.bin
-Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+Version: BTFW.HSP.2.1.0-00665-USB_UART_PATCHZ-1
 File: qca/nvm_usb_00130201_gf_010a.bin
-Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+Version: BTFW.HSP.2.1.0-00665-USB_UART_PATCHZ-1
 File: qca/nvm_usb_00130201_gf_010b.bin
-Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+Version: BTFW.HSP.2.1.0-00665-USB_UART_PATCHZ-1
 File: qca/nvm_usb_00130201_gf_0303.bin
-Version: BTFW.HSP.2.1.0-00659-USB_UART_PATCHZ-1
+Version: BTFW.HSP.2.1.0-00665-USB_UART_PATCHZ-1
 File: qca/rampatch_usb_00190200.bin
 File: qca/QCA2066/rampatch_usb_00130201.bin
 Version: BTFW.HSP.2.1.0-00653-VER_PATCHZ-3
@@ -438,15 +438,15 @@ Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k and qca/NOTICE.txt 
 Driver: qca - Qualcomm Atheros Bluetooth support for WCN6750 chips
 
 File: qca/msbtfw11.mbn
-Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+Version: BTFW.MOSELLE.1.1.3-00106-MSL_PATCHZ-1
 File: qca/msbtfw11.tlv
-Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+Version: BTFW.MOSELLE.1.1.3-00106-MSL_PATCHZ-1
 File: qca/msnv11.bin
-Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+Version: BTFW.MOSELLE.1.1.3-00106-MSL_PATCHZ-1
 File: qca/msnv11.b0a
-Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+Version: BTFW.MOSELLE.1.1.3-00106-MSL_PATCHZ-1
 File: qca/msnv11.b09
-Version: BTFW.MOSELLE.1.1.3-00105-MSL_PATCHZ-1
+Version: BTFW.MOSELLE.1.1.3-00106-MSL_PATCHZ-1
 
 Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k and qca/NOTICE.txt for details
 
