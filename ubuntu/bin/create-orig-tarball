@@ -12,12 +12,51 @@ function out()
 	exit "${rc}"
 }
 
-if [ $# != 1 ] ; then
-	echo "Usage: $(basename "${0}") <package>" >&2
+function usage()
+{
+	cat <<EOF
+Usage: $(basename "${0}") [--force] [-h] <package>
+
+Postional arguments:
+  <package>   Name of the package to work on.
+
+Optional arguments:
+  --force     Overwrite an already existing tarball.
+  -h, --help  Show this help text and exit.
+EOF
+}
+
+force=0
+package=
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		--force)
+			force=1
+			;;
+		-*)
+			usage >&2
+			exit 2
+			;;
+		*)
+			if [ -n "${package}" ] ; then
+				echo "EE: Invalid argument: ${1}" >&2
+				exit 2
+			fi
+			package=${1}
+			;;
+	esac
+	shift
+done
+
+if [ -z "${package}" ] ; then
+	usage >&2
 	exit 2
 fi
-
-package=${1}
 
 case "${package}" in
 	meta)
@@ -39,6 +78,9 @@ trap out EXIT INT TERM HUP
 . ubuntu/upstream
 
 orig_tarball=../linux-firmware-${package}_${VERSION}.orig.tar.xz
+if [ ${force} -eq 1 ] ; then
+	rm -f "${orig_tarball}"
+fi
 if [ -e "${orig_tarball}" ] ; then
 	echo "II: Orig tarball exists already: ${orig_tarball}"
 	exit
