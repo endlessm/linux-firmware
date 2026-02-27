@@ -19,6 +19,13 @@ fi
 
 package=${1}
 
+case "${package}" in
+	meta)
+		echo "II: No orig tarball needed for package: ${package}"
+		exit
+		;;
+esac
+
 if ! [ -e ubuntu/package/"${package}"/control ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
 	exit 2

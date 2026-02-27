@@ -3,7 +3,7 @@
 cmd=$(basename "${0}")
 
 first=1
-for d in ubuntu/package/* ; do
+for d in ubuntu/package/* ubuntu/meta ; do
 	test ${first} -eq 1 || echo
 	first=0
 
