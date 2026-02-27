@@ -7,6 +7,6 @@ for d in ubuntu/package/* ; do
 done
 
 git add ubuntu/package/*
-git commit -s -m "UBUNTU: [Packaging] Update package files following rebase to upstream
+git commit -s -m "UBUNTU: [Packaging] Update package files
 
 Ignore: yes"
