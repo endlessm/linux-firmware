@@ -1,6 +1,6 @@
 # List of files and directories to be included in the package
 
-WHENCE*
+WHENCE
 
 LICENCE.broadcom_bcm43xx
 LICENCE.cypress

@@ -82,7 +82,7 @@ while IFS= read -r -d "" line ; do
 			non_binary_files+=("${f}")
 		fi
 	done
-done < <(git diff --numstat -M -z "${COMMIT}" -- "${package_files[@]}" :^WHENCE.ubuntu)
+done < <(git diff --numstat -M -z "${COMMIT}" -- "${package_files[@]}")
 
 #
 # Create the list of binary files to include in the source package

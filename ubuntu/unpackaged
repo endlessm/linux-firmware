@@ -12,6 +12,7 @@ GPL-3
 LICENSE
 Makefile
 README.md
+WHENCE.ubuntu
 build_packages.py
 check_whence.py
 copy-firmware.sh
