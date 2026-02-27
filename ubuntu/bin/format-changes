@@ -72,6 +72,12 @@ for key in commits:
         commit_subject = commit.message.split("\n")[0].strip().removeprefix("UBUNTU:").strip()
         print(f"    - {commit_subject}")
 
+        # FIXME: [juergh] Don't add all the individual rebase commits since they don't
+        # apply to all packages. For example, if a rebase primarly updates AMD GPU firmwares,
+        # these commits should only be listed in the amd-graphics package changelog but not
+        # the others. Until this is fixed, don't list any commits.
+        continue
+
         # For rebase commits, add the list of changes from the commit message
         if commit_subject.startswith("Rebase to upstream commit"):
             for line in commit.message.split("\n")[1:]:
