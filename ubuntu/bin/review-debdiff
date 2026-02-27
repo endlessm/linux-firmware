@@ -23,11 +23,11 @@ function colorize()
 			"-"*)             color="\e[31m" ;;
 			"+"*)             color="\e[32m" ;;
 			"!"*)             color="\e[33m" ;;
+			"Binary files "*) color="\e[33m" ;;
 			"@@"*)            color="\e[36m" ;;
 			"diff "*)         color="\e[1m\e[36m" ;;
 			"II: "*)          color="\e[96m" ;;
 			"WW: "*)          color="\e[93m" ;;
-			"Binary files "*) color="\e[33m" ;;
 			*)                color="" ;;
 		esac
 
@@ -135,10 +135,13 @@ fi
 	echo
 
 	header "${filterdiff[*]} ${debdiff}"
-	"${filterdiff[@]}" "${debdiff}"
+	"${filterdiff[@]}" "${debdiff}" | grep -v '^Binary files '
 	echo
 
-} | colorize
+	"${filterdiff[@]}" "${debdiff}" | grep '^Binary files '
+	echo
+
+} | sed '/^diff /i\\' | cat -s | colorize
 
 changes=../${name}_${version}_source.changes
 header "cat ${changes}" | colorize
