@@ -1,3 +1,14 @@
+linux-firmware-intel-wireless (20260227.gitd8e138dd-0ubuntu1) resolute; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] templates: Update Vcs-Git
+    - Rebase to upstream commit 1db833e68de88cd3f7f6612a5552b3e671e36ef0
+    - Rebase to upstream commit d8e138dd8970ffc9f5f879e2d62938abe6cd3f22
+    - [Packaging] Exclude WHENCE.ubuntu from package files
+    - [Packaging] d/bin/install-firmware: Fix file and directory permissions
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 27 Feb 2026 19:18:28 +0100
+
 linux-firmware-intel-wireless (20260123.git1b7b9f6c-0ubuntu1) resolute; urgency=medium
 
   * Miscellaneous Ubuntu changes

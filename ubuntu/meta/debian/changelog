@@ -1,3 +1,10 @@
+linux-firmware (20260227.gitd8e138dd.0ubuntu) resolute; urgency=medium
+
+  * No wireless on "Intel Centrino Ultimate-N 6300 AGN" (LP: #2141993)
+    - [Packaging] meta: Switch from Recommends to Depends
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 27 Feb 2026 19:18:31 +0100
+
 linux-firmware (20260123.git1b7b9f6c.0ubuntu) resolute; urgency=medium
 
   * Split linux-firmware into multiple packages (LP: #1958518)
