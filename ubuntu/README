@@ -30,7 +30,7 @@ $ ubuntu/bin/build-package--all -- -S -sa
 -------------------------
 
 $ ubuntu/bin/create-debdiff--all
-$ ubuntu/bin/review-debdiff--all
+$ ubuntu/bin/review-debdiff--all [--no-whence]
 
 
 4. Upload new source packages
