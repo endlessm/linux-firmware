@@ -5,6 +5,15 @@
 
 COLS=$(tput cols)
 
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
 function colorize()
 {
 	local line color
@@ -31,27 +40,57 @@ function colorize()
 
 function header()
 {
-	printf "II: "; printf '%.0s-' $(seq 6 ${COLS}); printf "\n"
+	printf "II: "; printf '%.0s-' $(seq 6 "${COLS}"); printf "\n"
 	echo "II: ${*}"
-	printf "II: "; printf '%.0s-' $(seq 6 ${COLS}); printf "\n"
+	printf "II: "; printf '%.0s-' $(seq 6 "${COLS}"); printf "\n"
 	echo
 }
 
-function out()
+function usage()
 {
-	local rc=${?}
+	cat <<EOF
+Usage: $(basename "${0}") [-h] [--no-whence] <package>
 
-	trap - EXIT INT TERM HUP
-	test ${rc} -eq 0 || echo "EE: Script failed" >&2
-	exit "${rc}"
+Postional arguments:
+  <package>    Name of the package to work on.
+
+Optional arguments:
+  -h, --help   Show this help text and exit.
+  --no-whence  Don't show WHENCE differences.
+EOF
 }
 
-if [ $# != 1 ] ; then
-	echo "Usage: $(basename "${0}") <package>" >&2
+no_whence=0
+package=
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		--no-whence)
+			no_whence=1
+			;;
+		-*)
+			usage >&2
+			exit 2
+			;;
+		*)
+			if [ -n "${package}" ] ; then
+				echo "EE: Invalid argument: ${1}" >&2
+				exit 2
+			fi
+			package=${1}
+			;;
+	esac
+	shift
+done
+
+if [ -z "${package}" ] ; then
+	usage >&2
 	exit 2
 fi
-
-package=${1}
 
 case "${package}" in
 	meta)
@@ -81,13 +120,21 @@ if [ ! -e "${debdiff}" ] ; then
 	exit 1
 fi
 
+# Filter-out WHENCE
+whence=$(lsdiff "${debdiff}" | grep '^[^/]*/WHENCE' || true)
+if [ -n "${whence}" ] && [ ${no_whence} -eq 1 ] ; then
+	filterdiff=("filterdiff" "-x" "${whence}")
+else
+	filterdiff=("cat")
+fi
+
 {
 	header "lsdiff -s ${debdiff}"
 	lsdiff -s "${debdiff}"
 	echo
 
-	header "cat ${debdiff}"
-	cat "${debdiff}"
+	header "${filterdiff[*]} ${debdiff}"
+	"${filterdiff[@]}" "${debdiff}"
 	echo
 
 } | colorize
