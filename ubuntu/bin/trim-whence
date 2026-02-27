@@ -8,15 +8,13 @@ import sys
 
 def yield_sections(whence_file):
     with open(whence_file, encoding="utf-8") as fh:
-        add = False
         section = []
         for line in fh:
             if line.startswith("--------"):
-                add = True
                 if section:
                     yield section
                     section = []
-            elif add:
+            else:
                 if line.split(":")[0] in ("File", "RawFile", "Link"):
                     # Replace "\ " (backslash space) with a single space and
                     # remove single-quotes (') and double-quotes (")
@@ -34,10 +32,14 @@ whence_files = sys.argv[2:]
 with open(package_filelist, encoding="utf-8") as fh:
     package_files = [line.strip() for line in fh]
 
-# Read then WHENCE sections
+# Read the WHENCE sections
 whence_sections = []
 for f in whence_files:
     whence_sections.extend(list(yield_sections(f)))
+
+# Print the header
+for line in whence_sections[0]:
+    print(line)
 
 # Print the sections that reference the packaged files
 found = False
@@ -50,5 +52,5 @@ for section in whence_sections:
                 print("-" * 78)
                 print("\n".join(section))
                 break
-if found:
-    print("-" * 78)
+
+print("-" * 78)
