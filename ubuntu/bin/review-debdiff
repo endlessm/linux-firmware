@@ -20,14 +20,15 @@ function colorize()
 
 	while IFS= read -r line ; do
 		case "${line}" in
-			"-"*)     color="\e[31m" ;;
-			"+"*)     color="\e[32m" ;;
-			"!"*)     color="\e[33m" ;;
-			"@@"*)    color="\e[36m" ;;
-			"diff "*) color="\e[1m\e[36m" ;;
-			"II: "*)  color="\e[96m" ;;
-			"WW: "*)  color="\e[93m" ;;
-			*)        color="" ;;
+			"-"*)             color="\e[31m" ;;
+			"+"*)             color="\e[32m" ;;
+			"!"*)             color="\e[33m" ;;
+			"@@"*)            color="\e[36m" ;;
+			"diff "*)         color="\e[1m\e[36m" ;;
+			"II: "*)          color="\e[96m" ;;
+			"WW: "*)          color="\e[93m" ;;
+			"Binary files "*) color="\e[33m" ;;
+			*)                color="" ;;
 		esac
 
 		if [ -n "${color}" ] ; then
