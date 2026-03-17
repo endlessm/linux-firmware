@@ -1,0 +1,37 @@
+---
+name: PR checks
+
+on:
+  pull_request:
+
+jobs:
+  pr_checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: ${{ github.event.pull_request.commits + 1 }}
+
+      - name: Setup VirtualEnv
+        uses: actions/prepare-venv@v1
+
+      - name: Install Python packages
+        run: pip install pre-commit
+
+      - name: Show versions
+        run: |
+          cat /etc/os-release
+          python3 --version
+          pip3 list
+
+      - name: Run pre-commit hooks
+        run: |
+          pre-commit install
+          pre-commit run --all-files
+
+      - name: Run ubuntu-check-commit
+        uses: actions/ubuntu-check-commit@main
+        with:
+          start_rev: ${{ github.event.pull_request.base.sha }}
+          end_rev: ${{ github.event.pull_request.head.sha }}
