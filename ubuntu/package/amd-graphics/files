@@ -4,12 +4,10 @@ WHENCE
 
 LICENSE.amdgpu
 LICENSE.amdisp
-LICENSE.amdnpu
 LICENSE.radeon
 MIT
 
 amdgpu/
-amdnpu/
 r128/
 radeon/
 

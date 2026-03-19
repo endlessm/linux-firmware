@@ -4,6 +4,6 @@ Priority: optional
 Depends: ${misc:Depends}
 Replaces: linux-firmware (<< 20260113)
 Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
-Description: Firmware for AMD/ATI graphics and NPU accelerators
+Description: Firmware for AMD/ATI graphics
  This package provides firmware used by Linux kernel drivers
- amdgpu, amdxdna, r128 and radeon.
+ amdgpu and radeon.
