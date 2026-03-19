@@ -1,3 +1,12 @@
+linux-firmware (20260319.git217ca6e4.0ubuntu) resolute; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] meta: d/copyright: Fix upstream name and source
+  * Don't depend on all split packages (LP: #2143702)
+    - [Packaging] meta: Introduce linux-firmware-minimal
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Thu, 19 Mar 2026 13:32:17 +0100
+
 linux-firmware (20260227.gitd8e138dd.0ubuntu) resolute; urgency=medium
 
   * No wireless on "Intel Centrino Ultimate-N 6300 AGN" (LP: #2141993)

@@ -1,3 +1,10 @@
+linux-firmware-qualcomm-graphics (20260319.git217ca6e4-0ubuntu1) resolute; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit 217ca6e4deac7617b421ec62bbb43c5c8a520a59
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Thu, 19 Mar 2026 13:32:15 +0100
+
 linux-firmware-qualcomm-graphics (20260227.gitd8e138dd-0ubuntu1) resolute; urgency=medium
 
   * Miscellaneous Ubuntu changes
