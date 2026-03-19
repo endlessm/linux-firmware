@@ -15,7 +15,7 @@ function out()
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-h] <package> [<commit>] [-- <dpkg-buildpackage option>...]
+Usage: $(basename "${0}") [-h] [--suffix SUFFIX] <package> [<commit>] [-- <dpkg-buildpackage option>...]
 
 Postional arguments:
   <package>   Name of the package to work on.
@@ -23,10 +23,12 @@ Postional arguments:
               release commit.
 
 Optional arguments:
-  -h, --help  Show this help text and exit.
+  -h, --help       Show this help text and exit.
+  --suffix SUFFIX  Append SUFFIX to the package version.
 EOF
 }
 
+suffix=
 package=
 commit=
 
@@ -35,6 +37,10 @@ while [ ${#} -gt 0 ] ; do
 		-h|--help)
 			usage
 			exit
+			;;
+		--suffix)
+			shift
+			suffix=${1}
 			;;
 		--)
 			shift
@@ -170,6 +176,11 @@ fi
 #
 
 version=$(dpkg-parsechangelog -l "${build_dir}"/debian/changelog -S Version)
+if [ -n "${suffix}" ] ; then
+	# Append the suffix to the build version
+	sed -i "1s/${version}/${version}${suffix}/" "${build_dir}"/debian/changelog
+	version=${version}${suffix}
+fi
 
 #
 # Link the orig tarball into the build directory
