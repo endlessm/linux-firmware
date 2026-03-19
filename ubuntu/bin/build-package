@@ -15,10 +15,12 @@ function out()
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-h] <package> [-- <dpkg-buildpackage option>...]
+Usage: $(basename "${0}") [-h] <package> [<commit>] [-- <dpkg-buildpackage option>...]
 
 Postional arguments:
   <package>   Name of the package to work on.
+  <commit>    Commit to build the package from. If not provided, uses the last
+              release commit.
 
 Optional arguments:
   -h, --help  Show this help text and exit.
@@ -26,6 +28,7 @@ EOF
 }
 
 package=
+commit=
 
 while [ ${#} -gt 0 ] ; do
 	case "${1}" in
@@ -42,11 +45,14 @@ while [ ${#} -gt 0 ] ; do
 			exit 2
 			;;
 		*)
-			if [ -n "${package}" ] ; then
+			if [ -z "${package}" ] ; then
+				package=${1}
+			elif [ -z "${commit}" ] ; then
+				commit=${1}
+			else
 				echo "EE: Invalid argument: ${1}" >&2
 				exit 2
 			fi
-			package=${1}
 			;;
 	esac
 	shift
@@ -82,19 +88,20 @@ build_dir=ubuntu/build/"${package_name}"
 rm -rf "${build_dir}"
 
 #
-# Find the release commit
+# Determine the build commit
 #
 
-version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
-blame=$(git blame -L 1,1 "${changelog}" | grep -F " (${version}) " || true)
-release=${blame%% *}
+if [ -z "${commit}" ] ; then
+	blame=$(git blame -L 1,1 "${changelog}" || true)
+	commit=${blame%% *}
+fi
 
-if [ -z "${release}" ] ; then
-	echo "EE: Release commit not found" >&2
+if [ -z "${commit}" ] ; then
+	echo "EE: Build commit not found" >&2
 	exit 1
 fi
 
-echo "II: Build package from commit: ${release}"
+echo "II: Build package from commit: ${commit}"
 
 if [ ${is_meta} -eq 1 ] ; then
 
@@ -106,7 +113,7 @@ if [ ${is_meta} -eq 1 ] ; then
 
 	mkdir -p "${build_dir}"/debian
 
-	git -C ubuntu/"${package}"/debian archive --format=tar "${release}" -- . | tar -C "${build_dir}"/debian/ -xf -
+	git -C ubuntu/"${package}"/debian archive --format=tar "${commit}" -- . | tar -C "${build_dir}"/debian/ -xf -
 
 else
 
@@ -119,7 +126,7 @@ else
 	mkdir -p "${build_dir}"
 
 	readarray -t package_files < <(grep '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)
-	git archive --format=tar "${release}" -- "${package_files[@]}" | tar -C "${build_dir}" -xf -
+	git archive --format=tar "${commit}" -- "${package_files[@]}" | tar -C "${build_dir}" -xf -
 
 	#
 	# Copy packaging files
@@ -129,8 +136,8 @@ else
 
 	mkdir -p "${build_dir}"/debian
 
-	git -C ubuntu/debian archive --format=tar "${release}" -- . | tar -C "${build_dir}"/debian/ -xf -
-	git -C ubuntu/package/"${package}" archive --format=tar "${release}" -- . | tar -C "${build_dir}"/debian/ -xf -
+	git -C ubuntu/debian archive --format=tar "${commit}" -- . | tar -C "${build_dir}"/debian/ -xf -
+	git -C ubuntu/package/"${package}" archive --format=tar "${commit}" -- . | tar -C "${build_dir}"/debian/ -xf -
 
 	#
 	# Fix packaging files
@@ -139,9 +146,9 @@ else
 	echo "II: Fix packaging files"
 
 	{
-		git show "${release}":ubuntu/templates/control.source.in
+		git show "${commit}":ubuntu/templates/control.source.in
 		echo
-		git show "${release}":ubuntu/package/"${package}"/control
+		git show "${commit}":ubuntu/package/"${package}"/control
 	} | sed -e "s/@package@/${package}/" > "${build_dir}"/debian/control
 
 	while IFS= read -r f ; do
@@ -156,15 +163,21 @@ else
 		rm -f "${build_dir}"/"${f}"
 	done
 
-	#
-	# Link the orig tarball
-	#
+fi
 
-	orig_tarball=${package_name}_${version%%-*}.orig.tar.xz
-	if ! [ -h ubuntu/build/"${orig_tarball}" ] ; then
-		( cd ubuntu/build ; ln -s ../../../"${orig_tarball}" . )
-	fi
+#
+# Package version
+#
 
+version=$(dpkg-parsechangelog -l "${build_dir}"/debian/changelog -S Version)
+
+#
+# Link the orig tarball into the build directory
+#
+
+orig_tarball=${package_name}_${version%%-*}.orig.tar.xz
+if [ -e ../"${orig_tarball}" ] && ! [ -h ubuntu/build/"${orig_tarball}" ] ; then
+	ln -s  ../../../"${orig_tarball}" ubuntu/build/"${orig_tarball}"
 fi
 
 #
