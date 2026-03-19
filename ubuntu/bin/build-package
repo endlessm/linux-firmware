@@ -15,7 +15,7 @@ function out()
 function usage()
 {
 	cat <<EOF
-Usage: $(basename "${0}") [-h] [--suffix SUFFIX] <package> [<commit>] [-- <dpkg-buildpackage option>...]
+Usage: $(basename "${0}") [--force] [-h] [--suffix SUFFIX] <package> [<commit>] [-- <dpkg-buildpackage option>...]
 
 Postional arguments:
   <package>   Name of the package to work on.
@@ -23,17 +23,22 @@ Postional arguments:
               release commit.
 
 Optional arguments:
+  --force          Force things.
   -h, --help       Show this help text and exit.
   --suffix SUFFIX  Append SUFFIX to the package version.
 EOF
 }
 
+force=0
 suffix=
 package=
 commit=
 
 while [ ${#} -gt 0 ] ; do
 	case "${1}" in
+		--force)
+			force=1
+			;;
 		-h|--help)
 			usage
 			exit
@@ -107,7 +112,12 @@ if [ -z "${commit}" ] ; then
 	exit 1
 fi
 
-echo "II: Build package from commit: ${commit}"
+echo "II: Build package from commit: $(git log --format='%h ("%s")' "${commit}" -1)"
+
+if [ ${force} -eq 0 ] && ! git describe --exact-match "${commit}" &>/dev/null ; then
+	echo "EE: Build commit is untagged, use --force to ignore" >&2
+	exit 1
+fi
 
 if [ ${is_meta} -eq 1 ] ; then
 
