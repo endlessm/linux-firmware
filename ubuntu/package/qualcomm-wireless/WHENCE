@@ -285,7 +285,7 @@ Driver: ath12k - Qualcomm Technologies Wi-Fi 7 chipset support
 File: ath12k/WCN7850/hw2.0/board-2.bin
 File: ath12k/WCN7850/hw2.0/amss.bin
 File: ath12k/WCN7850/hw2.0/m3.bin
-Version: WLAN.HMT.1.1.c5-00302-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.115823.3
+Version: WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 File: ath12k/WCN7850/hw2.0/Notice.txt
 File: ath12k/WCN7850/hw2.0/ncm865/amss.bin
 File: ath12k/WCN7850/hw2.0/ncm865/m3.bin

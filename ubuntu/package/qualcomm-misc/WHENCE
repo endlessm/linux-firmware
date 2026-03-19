@@ -40,7 +40,7 @@ RawFile: qcom/qcm6490/adsps.jsn
 RawFile: qcom/qcm6490/adspua.jsn
 RawFile: qcom/qcm6490/battmgr.jsn
 File: qcom/qcm6490/cdsp.mbn
-Version: CDSP.HT.2.5.c3-00130-KODIAK-1
+Version: CDSP.HT.2.5.c3-00134-KODIAK-1
 RawFile: qcom/qcm6490/cdspr.jsn
 File: qcom/qcm6490/ipa_fws.mbn
 Link: qcom/qcs6490/adsp.mbn -> ../qcm6490/adsp.mbn
@@ -217,14 +217,14 @@ RawFile: qcom/sa8775p/gpdsp1r.jsn
 RawFile: qcom/sa8775p/gpdspr.jsn
 File: qcom/sm8750/adsp.mbn
 File: qcom/sm8750/adsp_dtb.mbn
-Version: LPAIDSP.HT.1.2.c1-00379-PAKALA-1
+Version: LPAIDSP.HT.1.2.c1-00450-PAKALA-2
 RawFile: qcom/sm8750/adspr.jsn
 RawFile: qcom/sm8750/adsps.jsn
 RawFile: qcom/sm8750/adspua.jsn
 RawFile: qcom/sm8750/adspuo.jsn
 File: qcom/sm8750/cdsp.mbn
 File: qcom/sm8750/cdsp_dtb.mbn
-Version: CDSP.HT.3.1-00883-PAKALA-1
+Version: CDSP.HT.3.1-00889-PAKALA-1
 RawFile: qcom/sm8750/cdspr.jsn
 File: qcom/x1e80100/adsp.mbn
 File: qcom/x1e80100/adsp_dtb.mbn
@@ -266,14 +266,24 @@ Licence: Redistributable. See LICENCE.linaro for details
 Originates from https://github.com/linux-msm/audioreach-topology.git
 ------------------------------------------------------------------------------
 
+Driver: qcom-kaanapali - Qualcomm ASoC tplg Firmware
+File: qcom/kaanapali/Kaanapali-MTP-tplg.bin
+Version: v1.0.2
+Info: DATE=28.02.2026
+
+Licence: Redistributable. See LICENCE.linaro for details
+Originates from https://github.com/linux-msm/audioreach-topology.git
+
+------------------------------------------------------------------------------
+
 Driver: qcom-qcs6490 - Qualcomm ASoC topology
 File: qcom/qcs6490/radxa/dragon-q6a/QCS6490-Radxa-Dragon-Q6A-tplg.bin
 Link: qcom/qcs6490/QCS6490-Radxa-Dragon-Q6A-tplg.bin -> radxa/dragon-q6a/QCS6490-Radxa-Dragon-Q6A-tplg.bin
 File: qcom/qcs6490/Thundercomm/RubikPi3/QCS6490-Thundercomm-RubikPi3-tplg.bin
 Link: qcom/qcs6490/QCS6490-Thundercomm-RubikPi3-tplg.bin -> Thundercomm/RubikPi3/QCS6490-Thundercomm-RubikPi3-tplg.bin
 File: qcom/qcs6490/QCS6490-RB3Gen2-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
+Version: v1.0.2
+Info: DATE=28.02.2026
 
 Licence: Redistributable. See LICENCE.linaro for details
 Originates from https://github.com/linux-msm/audioreach-topology.git
@@ -282,7 +292,8 @@ Originates from https://github.com/linux-msm/audioreach-topology.git
 
 Driver: qcom-qcs8300 - Qualcomm ASoC topology
 File: qcom/qcs8300/MONACO-EVK-tplg.bin
-Version: v0.1.0
+Version: v1.0.2
+Info: DATE=28.02.2026
 
 Licence: Redistributable. See LICENCE.linaro for details
 Originates from https://github.com/linux-msm/audioreach-topology.git
@@ -292,8 +303,8 @@ Originates from https://github.com/linux-msm/audioreach-topology.git
 Driver: qcom-qcs9100 - Qualcomm ASoC topology
 File: qcom/sa8775p/LEMANS-EVK-tplg.bin
 Link: qcom/qcs9100/LEMANS-EVK-tplg.bin -> ../sa8775p/LEMANS-EVK-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
+Version: v1.0.2
+Info: DATE=28.02.2026
 
 Licence: Redistributable. See LICENCE.linaro for details
 Originates from https://github.com/linux-msm/audioreach-topology.git
@@ -435,6 +446,7 @@ License: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
 Driver: qcom-geni-se - Qualcomm QUPv3 firmware image file
 File: qcom/sa8775p/qupv3fw.elf
 File: qcom/qcm6490/qupv3fw.elf
+File: qcom/qcs615/qupv3fw.elf
 Link: qcom/qcs6490/qupv3fw.elf -> ../qcm6490/qupv3fw.elf
 File: qcom/qcs8300/qupv3fw.elf
 File: qcom/x1e80100/qupv3fw.elf
@@ -456,8 +468,8 @@ License: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
 
 Driver: qcm6490 - Qualcomm ASoC tplg Firmware
 File: qcom/qcm6490/QCM6490-IDP-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
+Version: v1.0.2
+Info: DATE=28.02.2026
 
 Licence: Redistributable. See LICENCE.linaro for details
 Originates from https://github.com/linux-msm/audioreach-topology.git
@@ -465,8 +477,8 @@ Originates from https://github.com/linux-msm/audioreach-topology.git
 
 Driver: qcs615 - Qualcomm ASoC tplg Firmware
 File: qcom/qcs615/TALOS-EVK-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
+Version: v1.0.2
+Info: DATE=28.02.2026
 
 Licence: Redistributable. See LICENCE.linaro for details
 Originates from https://github.com/linux-msm/audioreach-topology.git
@@ -474,8 +486,8 @@ Originates from https://github.com/linux-msm/audioreach-topology.git
 
 Driver: sm8450 - Qualcomm ASoC tplg Firmware
 File: qcom/sm8450/SM8450-HDK-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
+Version: v1.0.2
+Info: DATE=28.02.2026
 
 Licence: Redistributable. See LICENCE.linaro for details
 Originates from https://github.com/linux-msm/audioreach-topology.git

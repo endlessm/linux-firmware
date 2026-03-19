@@ -296,9 +296,9 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7920 - MediaTek MT7920 Wireless MACs
 
 File: mediatek/WIFI_MT7961_patch_mcu_1a_2_hdr.bin
-Version: 20260105151012a
+Version: 20260224110857a
 File: mediatek/WIFI_RAM_CODE_MT7961_1a.bin
-Version: 20260105151805
+Version: 20260224110939
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -307,7 +307,7 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7920 - MediaTek MT7920 bluetooth chipset
 
 File: mediatek/BT_RAM_CODE_MT7961_1a_2_hdr.bin
-Version: 20260105151350
+Version: 20260224111231
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -316,9 +316,9 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7921 - MediaTek MT7921 Wireless MACs
 
 File: mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin
-Version: 20251223091050a
+Version: 20260224110909a
 File: mediatek/WIFI_RAM_CODE_MT7961_1.bin
-Version: 20251223091148
+Version: 20260224110949
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -327,7 +327,7 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7921 - MediaTek MT7921 bluetooth chipset
 
 File: mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin
-Version: 20251223091725
+Version: 20260224111243
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -336,9 +336,9 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7922 - MediaTek MT7922 Wireless MACs
 
 File: mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin
-Version: 20260106153416a
+Version: 20260224103145a
 File: mediatek/WIFI_RAM_CODE_MT7922_1.bin
-Version: 20260106153428
+Version: 20260224103233
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -347,7 +347,7 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7922 - MediaTek MT7922 bluetooth chipset
 
 File: mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin
-Version: 20260106153735
+Version: 20260224103448
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 

@@ -230,19 +230,33 @@ File: intel/ish/ish_lnlm.bin
 Version: 5.8.0.7716
 File: intel/ish/ish_ptl.bin
 Version: 5.8.1.7778
+File: intel/ish/ish_wcl.bin
+Version: 5.8.4.7784
 
 License: Redistributable. See LICENSE.intel for details
 
-File: LENOVO/ish/ish_lnlm_53c4ffad_a672a235.bin
-Link: intel/ish/ish_lnlm_53c4ffad_a672a235.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_a672a235.bin
+File: LENOVO/ish/ish_lnlm_lenovo_X9-14_2025_5.8.36.09092.bin
+Link: intel/ish/ish_lnlm_53c4ffad_a672a235.bin -> ../../LENOVO/ish/ish_lnlm_lenovo_X9-14_2025_5.8.36.09092.bin
+Info: product_family - "ThinkPad X9-14 Gen 1"
 Version: 5.8.36.09092
 
-File: LENOVO/ish/ish_lnlm_53c4ffad_cb391961.bin
-Link: intel/ish/ish_lnlm_53c4ffad_cb391961.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_cb391961.bin
-Version: 5.8.4.7720
+File: LENOVO/ish/ish_lnlm_lenovo_x9-15_2025_5.8.0.7720.bin
+Link: intel/ish/ish_lnlm_53c4ffad_90ef58cf.bin -> ../../LENOVO/ish/ish_lnlm_lenovo_x9-15_2025_5.8.0.7720.bin
+Info: product_family - "ThinkPad X9-15 Gen 1"
+Version: 5.8.0.7720
 
-File: LENOVO/ish/ish_lnlm_53c4ffad_ebb27e41.bin
-Link: intel/ish/ish_lnlm_53c4ffad_ebb27e41.bin -> ../../LENOVO/ish/ish_lnlm_53c4ffad_ebb27e41.bin
+File: LENOVO/ish/ish_ptl_lenovo_X1_2026_5.8.1.7782.bin
+Link: intel/ish/ish_lnlm_53c4ffad_bc3e29f7.bin -> ../../LENOVO/ish/ish_ptl_lenovo_X1_2026_5.8.1.7782.bin
+Info: product_family - "ThinkPad X1 2-in-1 Gen 11"
+Link: intel/ish/ish_lnlm_53c4ffad_75d6ebe2.bin -> ../../LENOVO/ish/ish_ptl_lenovo_X1_2026_5.8.1.7782.bin
+Info: product_family - "ThinkPad X1 Carbon Gen 14"
+Version: 5.8.1.7782
+
+File: LENOVO/ish/ish_lnlm_lenovo_X1_2025_5.8.4.7720.bin
+Link: intel/ish/ish_lnlm_53c4ffad_cb391961.bin -> ../../LENOVO/ish/ish_lnlm_lenovo_X1_2025_5.8.4.7720.bin
+Info: product_family - "ThinkPad X1 2-in-1 Gen 10"
+Link: intel/ish/ish_lnlm_53c4ffad_ebb27e41.bin -> ../../LENOVO/ish/ish_lnlm_lenovo_X1_2025_5.8.4.7720.bin
+Info: product_family - "ThinkPad X1 Carbon Gen 13"
 Version: 5.8.4.7720
 
 License: Redistributable. See LICENCE.lenovo for details
@@ -266,15 +280,15 @@ License: Redistributable. See LICENSE.dell for details
 Driver: intel_vpu - Intel NPU driver
 
 File: intel/vpu/vpu_37xx_v1.bin
-Version: 20251113*MTL_CLIENT_SILICON-NVR+NN-deployment*72f907ffc780df5579a2fed65afc4944da8b0e44*72f907ffc780df5579a2fed65afc4944da8b0e44*72f907ffc78
+Version: 20260219*MTL_CLIENT_SILICON-NVR+NN-deployment*f693e2c0dc3ce525f34822f263cc12192ff0722f*f693e2c0dc3ce525f34822f263cc12192ff0722f*f693e2c0dc3
 Link: intel/vpu/vpu_37xx_v0.0.bin -> vpu_37xx_v1.bin
 
 File: intel/vpu/vpu_40xx_v1.bin
-Version: Nov 13 2025*NPU40xx*ci_tag_ud202548_vpu_rc_20251112_1901-1-g72f907ffc78*72f907ffc780df5579a2fed65afc4944da8b0e44
+Version: Feb 19 2026*NPU40xx*build/ci/npu-fw-ci-ci_branch_UD202608_npu_release_26ww05-20260206_112046-32016-7-gf693e2c0dc3*f693e2c0dc3ce525f34822f263cc12192ff0722f
 Link: intel/vpu/vpu_40xx_v0.0.bin -> vpu_40xx_v1.bin
 
 File: intel/vpu/vpu_50xx_v1.bin
-Version: Nov 13 2025*NPU50xx*ci_tag_ud202548_vpu_rc_20251112_1901-1-g72f907ffc78*72f907ffc780df5579a2fed65afc4944da8b0e44
+Version: Feb 19 2026*NPU50xx*build/ci/npu-fw-ci-ci_branch_UD202608_npu_release_26ww05-20260206_112046-32016-7-gf693e2c0dc3*f693e2c0dc3ce525f34822f263cc12192ff0722f
 Link: intel/vpu/vpu_50xx_v0.0.bin -> vpu_50xx_v1.bin
 
 License: Redistributable. See LICENSE.intel_vpu for details
