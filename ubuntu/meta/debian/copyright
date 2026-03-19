@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: linux-firmware-meta
-Source: https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-firmware-meta
+Upstream-Name: linux-firmware
+Source: https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux-firmware
 
 Files: *
 Copyright: 2026 Canonical Ltd.
