@@ -1,0 +1,9 @@
+Package: linux-firmware-amd-misc
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends}
+Replaces: linux-firmware (<< 20260113), linux-firmware-amd-graphics (<= 20260319.git217ca6e4-0ubuntu1)
+Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113), linux-firmware-amd-graphics (<= 20260319.git217ca6e4-0ubuntu1)
+Description: Firmware for AMD NPU accelerators
+ This package provides firmware used by Linux kernel drivers
+ amdxdna.
