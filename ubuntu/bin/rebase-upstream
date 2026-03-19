@@ -45,7 +45,7 @@ while [ ${#} -gt 0 ] ; do
 done
 
 if [ -z "${rev}" ] ; then
-	rev=upstream/main
+	rev=kernel.org/main
 fi
 
 trap out EXIT INT TERM HUP
@@ -62,12 +62,12 @@ for d in ubuntu/package/* ; do
 done
 
 # Add an upstream remote and fetch it
-upstream_git=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-if ! git remote | grep -qxF upstream ; then
-	git remote add upstream "${upstream_git}"
+kernel_org_url=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+if ! git remote | grep -qxF kernel.org ; then
+	git remote add kernel.org "${kernel_org_url}"
 fi
-echo "II: Fetch from ${upstream_git}"
-git fetch upstream
+echo "II: Fetch from ${kernel_org_url}"
+git fetch kernel.org
 
 if ! git rev-parse "${rev}" &>/dev/null ; then
 	echo "EE: Failed to parse git rev: ${rev}" >&2
@@ -77,7 +77,7 @@ fi
 new_commit=$(git rev-parse "${rev}")
 new_version=$(date --utc +%Y%m%d).git${new_commit::8}
 
-# Rebase onto upstream/main
+# Rebase onto kernel.org/main
 echo "II: Rebase to ${new_commit}"
 git rebase "${new_commit}"
 
@@ -96,6 +96,6 @@ EOF
 git add ubuntu/upstream
 git commit -s -m "UBUNTU: Rebase to upstream commit ${new_commit}
 
-Rebase against ${upstream_git}
+Rebase against ${kernel_org_url}
 ${new_commit}
 $(git log --no-merges --reverse --format='- %s' "${COMMIT}".."${new_commit}")"
