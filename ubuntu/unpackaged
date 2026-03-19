@@ -2,6 +2,7 @@
 
 .codespell.cfg
 .editorconfig
+.forgejo/workflows/pr_check.yaml
 .gitignore
 .gitlab-ci.yml
 .pre-commit-config.yaml
