@@ -39,6 +39,8 @@ Package: linux-firmware-minimal
 Architecture: all
 Priority: optional
 Provides: linux-firmware
+Conflicts: linux-firmware
+Replaces: linux-firmware
 Recommends:
  ${misc:Depends},
  firmware-sof-signed,
