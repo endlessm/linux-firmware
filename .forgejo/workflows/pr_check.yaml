@@ -11,7 +11,7 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: ${{ github.event.pull_request.commits + 1 }}
+          fetch-depth: 100
 
       - name: Setup VirtualEnv
         uses: actions/prepare-venv@v1
