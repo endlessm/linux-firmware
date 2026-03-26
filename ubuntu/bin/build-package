@@ -175,9 +175,7 @@ else
 	# Remove unwanted files
 	#
 
-	for f in debian/files ; do
-		rm -f "${build_dir}"/"${f}"
-	done
+	rm -f debian/files
 
 fi
 

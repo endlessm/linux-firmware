@@ -141,7 +141,7 @@ fi
 	"${filterdiff[@]}" "${debdiff}" | grep '^Binary files '
 	echo
 
-} | sed '/^diff /i\\' | cat -s | colorize
+} | awk '/^diff / { print "" } { print }' | cat -s | colorize
 
 changes=../${name}_${version}_source.changes
 header "cat ${changes}" | colorize

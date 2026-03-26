@@ -69,7 +69,9 @@ for key in commits:
     print("  * " + " // ".join(titles))
 
     for commit in commits[key]:
-        commit_subject = commit.message.split("\n")[0].strip().removeprefix("UBUNTU:").strip()
+        commit_subject = (
+            commit.message.split("\n")[0].strip().removeprefix("UBUNTU:").strip()
+        )
         print(f"    - {commit_subject}")
 
         # FIXME: [juergh] Don't add all the individual rebase commits since they don't
