@@ -170,7 +170,7 @@ def main():
             ret = 1
 
     for name in sorted(list(git_files - known_files)):
-        if name.startswith("ubuntu/"):
+        if name.startswith("ubuntu/") or name.startswith(".forgejo/"):
             continue
         # Ignore subdirectory changelogs and GPG detached signatures
         if name.endswith("/ChangeLog") or (
