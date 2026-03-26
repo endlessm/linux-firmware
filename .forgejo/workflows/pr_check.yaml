@@ -27,7 +27,6 @@ jobs:
 
       - name: Run pre-commit hooks
         run: |
-          pre-commit install
           pre-commit run --all-files
 
       - name: Run ubuntu-check-commit
