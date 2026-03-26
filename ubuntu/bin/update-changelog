@@ -93,6 +93,7 @@ trap out EXIT INT TERM HUP
 echo "II: Update changelog of package: ${package}"
 
 # Current upstream commit and version
+# shellcheck disable=SC1091
 . ubuntu/upstream
 
 #

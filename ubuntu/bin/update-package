@@ -30,6 +30,7 @@ trap out EXIT INT TERM HUP
 echo "II: Update package: ${package}"
 
 # Current upstream commit and version
+# shellcheck disable=SC1091
 . ubuntu/upstream
 
 readarray -t package_files < <(grep '^[0-9a-zA-Z:]' "${pkg_dir}"/files)

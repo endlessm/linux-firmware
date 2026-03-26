@@ -7,6 +7,7 @@
 ./ubuntu/bin/check-package--all
 
 # Current upstream commit and version
+# shellcheck disable=SC1091
 . ubuntu/upstream
 
 full_release=1

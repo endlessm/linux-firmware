@@ -84,6 +84,7 @@ git rebase "${new_commit}"
 COMMIT=${new_commit}
 if [ -e ubuntu/upstream ] ; then
 	# Current upstream commit and version
+	# shellcheck disable=SC1091
 	. ubuntu/upstream
 fi
 
