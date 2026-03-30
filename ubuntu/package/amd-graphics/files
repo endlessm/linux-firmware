@@ -8,15 +8,9 @@ LICENSE.radeon
 MIT
 
 amdgpu/
-r128/
 radeon/
 
 # List of files and directories to be excluded from the package
-
-# LP: #1962468
-# Remove upstream directories that contain reasonably old firmware files that
-# are not referenced by the currently supported Jammy kernels.
-:^r128/
 
 # Obsolete (no longer wanted by kernel 6.18)
 :^amdgpu/arcturus_mec2.bin
