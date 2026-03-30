@@ -1,0 +1,13 @@
+#!/bin/bash -eu
+#
+# Add and commit all package files
+#
+
+git add ubuntu/package/ || true
+git add meta/debian/ || true
+
+cat <<EOF | git commit -s -F -
+UBUNTU: [Packaging] Update package files
+
+Ignore: yes
+EOF
