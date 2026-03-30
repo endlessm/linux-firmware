@@ -11,7 +11,6 @@ lbtf_usb.bin
 libertas/
 mrvl/
 mwl8k/
-mwlwifi/
 
 # List of files and directories to be excluded from the package
 
@@ -28,11 +27,6 @@ mwlwifi/
 
 # Replaces commit bfa2ac04ade6 ("UBUNTU: Remove obsolete mwl8k firmware")
 :^mwl8k/fmimage_8366_ap-1.fw
-
-# LP: #1962468
-# Remove upstream directories that contain reasonably old firmware files that
-# are not referenced by the currently supported Jammy kernels.
-:^mwlwifi/
 
 # Obsolete (no longer wanted by kernel 6.18)
 :^libertas/cf83*
