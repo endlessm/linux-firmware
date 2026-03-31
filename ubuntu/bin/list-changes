@@ -67,17 +67,17 @@ esac
 
 prev_release=${blame%% *}
 
-if [ ${is_meta} -eq 0 ] ; then
+if [ ${is_meta} -eq 1 ] ; then
+	package_files=(
+		"ubuntu/meta/debian/"
+	)
+else
 	readarray -t package_files < <(grep -E '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)
 	package_files+=(
 		"ubuntu/debian/"
 		"ubuntu/package/${package}/"
 		"ubuntu/templates/"
 		"ubuntu/upstream"
-	)
-else
-	package_files=(
-		"ubuntu/meta/debian/"
 	)
 fi
 
