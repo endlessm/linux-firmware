@@ -101,7 +101,7 @@ echo "II: Update changelog of package: ${package}"
 #
 
 version=
-if [ -e "${changelog}" ] ; then
+if [ -s "${changelog}" ] ; then
 	version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
 	if [ -z "${series}" ] ; then
 		series=$(dpkg-parsechangelog -l "${changelog}" -S Distribution)
@@ -143,13 +143,18 @@ fi
 # Collect the changes for the package since the last release
 #
 
-./ubuntu/bin/list-changes "${package}" | tac | ./ubuntu/bin/format-changes > "${changes}"
-if ! [ -s "${changes}" ] ; then
-	if [ ${rebuild} -eq 0 ] ; then
-		echo "II: No changes"
-		exit
+if [ -s "${changelog}" ] ; then
+	./ubuntu/bin/list-changes "${package}" | tac | ./ubuntu/bin/format-changes > "${changes}"
+	if ! [ -s "${changes}" ] ; then
+		if [ ${rebuild} -eq 0 ] ; then
+			echo "II: No changes"
+			rm -f "${changes}"
+			exit
+		fi
+		echo "  * No-change rebuild" > "${changes}"
 	fi
-	echo "  * No-change rebuild" > "${changes}"
+else
+	echo "  * Initial version" > "${changes}"
 fi
 
 #
@@ -168,6 +173,6 @@ fi
 		cat "${changelog}"
 	fi
 } > "${changelog}".new
-mv  "${changelog}".new "${changelog}"
+mv "${changelog}".new "${changelog}"
 
 rm -f "${changes}"

@@ -114,3 +114,9 @@ if [ ${#non_binary_files[@]} -gt 0 ] ; then
 	git diff "${COMMIT}" -- "${non_binary_files[@]}" > "${pkg_dir}"/patches/ubuntu.patch
 	echo "ubuntu.patch" > "${pkg_dir}"/patches/series
 fi
+
+#
+# Make sure we have a changelog
+#
+
+touch "${pkg_dir}"/changelog
