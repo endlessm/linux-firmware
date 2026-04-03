@@ -1,3 +1,12 @@
+linux-firmware-amd-graphics (20260319.git217ca6e4-0ubuntu2) resolute; urgency=medium
+
+  * Split out NPU firmware into a new package (LP: #2146533)
+    - [Packaging] amd-graphics: Remove NPU firmware files
+  * Miscellaneous Ubuntu changes
+    - [Packaging] Don't track WHENCE changes
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 03 Apr 2026 11:52:56 +0200
+
 linux-firmware-amd-graphics (20260319.git217ca6e4-0ubuntu1) resolute; urgency=medium
 
   * Miscellaneous Ubuntu changes
