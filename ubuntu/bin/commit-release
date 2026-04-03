@@ -1,0 +1,48 @@
+#!/bin/bash -eu
+#
+# Commit a package release
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+if [ $# != 1 ] ; then
+	echo "Usage: $(basename "${0}") <package>" >&2
+	exit 2
+fi
+
+package=${1}
+
+case "${package}" in
+	meta)
+		changelog=ubuntu/meta/debian/changelog
+		;;
+	*)
+		changelog=ubuntu/package/${package}/changelog
+		;;
+esac
+
+if ! [ -e "${changelog}" ] ; then
+	echo "EE: Invalid package name: ${package}" >&2
+	exit 1
+fi
+
+trap out EXIT INT TERM HUP
+
+# Sanity check
+./ubuntu/bin/check-package--all
+
+echo "II: Commit and tag release"
+
+version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+tag=Ubuntu-${package}-${version}
+
+git add "${changelog}"
+git commit -s -m "UBUNTU: ${tag}"
+git tag -s -m "UBUNTU: ${tag}" "${tag//~/_}"
