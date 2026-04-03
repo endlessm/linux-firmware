@@ -1,0 +1,28 @@
+             **********
+             * WHENCE *
+             **********
+
+This file attempts to document the origin and licensing information,
+if known, for each piece of firmware distributed for use with the Linux
+kernel.
+
+------------------------------------------------------------------------------
+
+Driver: amdxdna - AMD Inference processor
+
+File: amdnpu/1502_00/npu.sbin.1.5.2.380
+Link: amdnpu/1502_00/npu.sbin -> npu.sbin.1.5.2.380
+File: amdnpu/17f0_10/npu.sbin.1.0.0.63
+Link: amdnpu/17f0_10/npu.sbin -> npu.sbin.1.0.0.63
+File: amdnpu/17f0_11/npu.sbin.1.0.0.166
+Link: amdnpu/17f0_11/npu.sbin -> npu.sbin.1.0.0.166
+File: amdnpu/1502_00/npu.sbin.1.5.5.391
+Link: amdnpu/1502_00/npu_7.sbin -> npu.sbin.1.5.5.391
+File: amdnpu/17f0_10/npu.sbin.1.1.2.64
+Link: amdnpu/17f0_10/npu_7.sbin -> npu.sbin.1.1.2.64
+File: amdnpu/17f0_11/npu.sbin.1.1.2.65
+Link: amdnpu/17f0_11/npu_7.sbin -> npu.sbin.1.1.2.65
+
+Licence: Redistributable. See LICENSE.amdnpu for details.
+
+------------------------------------------------------------------------------

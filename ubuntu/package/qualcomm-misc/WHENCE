@@ -236,6 +236,19 @@ RawFile: qcom/x1e80100/battmgr.jsn
 
 Licence: Redistributable. See LICENSE.qcom-2 and qcom/NOTICE.txt for details
 
+File: qcom/x1e80100/dell/xps13-9345/adsp_dtbs.elf
+RawFile: qcom/x1e80100/dell/xps13-9345/adspr.jsn
+RawFile: qcom/x1e80100/dell/xps13-9345/adsps.jsn
+RawFile: qcom/x1e80100/dell/xps13-9345/adspua.jsn
+RawFile: qcom/x1e80100/dell/xps13-9345/battmgr.jsn
+File: qcom/x1e80100/dell/xps13-9345/cdsp_dtbs.elf
+RawFile: qcom/x1e80100/dell/xps13-9345/cdspr.jsn
+File: qcom/x1e80100/dell/xps13-9345/qcadsp8380.mbn
+File: qcom/x1e80100/dell/xps13-9345/qccdsp8380.mbn
+File: qcom/x1e80100/dell/xps13-9345/qcdxkmsuc8380.mbn
+
+License: Redistributable. See LICENSE.dell for details
+
 ------------------------------------------------------------------------------
 
 Driver: qcom_q6v5_mss - Qualcomm modem subsystem firmware
