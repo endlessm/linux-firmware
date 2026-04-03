@@ -1,3 +1,12 @@
+linux-firmware (20260319.git217ca6e4.1ubuntu) resolute; urgency=medium
+
+  * dpkg: linux-firmware: dependency problems, but removing anyway as you requested (LP: #2145068)
+    - [Packaging] meta: Fix dependency problem
+  * Split out NPU firmware into a new package (LP: #2146533)
+    - [Packaging] meta: Add new amd-misc package to Depends and Recommends
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 03 Apr 2026 11:52:59 +0200
+
 linux-firmware (20260319.git217ca6e4.0ubuntu) resolute; urgency=medium
 
   * Miscellaneous Ubuntu changes
