@@ -1,7 +1,5 @@
 # List of files and directories to be included in the package
 
-WHENCE
-
 LICENCE.mediatek
 LICENCE.ralink-firmware.txt
 LICENCE.ralink_a_mediatek_company_firmware

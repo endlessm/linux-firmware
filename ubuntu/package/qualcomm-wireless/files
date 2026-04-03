@@ -1,7 +1,5 @@
 # List of files and directories to be included in the package
 
-WHENCE
-
 LICENCE.atheros_firmware
 LICENSE.QualcommAtheros_ar3k
 LICENSE.QualcommAtheros_ath10k

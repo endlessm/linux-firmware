@@ -1,7 +1,5 @@
 # List of files and directories to be included in the package
 
-WHENCE
-
 LICENSE.bfa
 LICENSE.ib_qib
 LICENCE.phanfw

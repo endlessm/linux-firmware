@@ -1,7 +1,5 @@
 # List of files and directories to be included in the package
 
-WHENCE
-
 LICENCE.rtlwifi_firmware.txt
 LICENSE.r8169
 LICENSE.rt1320

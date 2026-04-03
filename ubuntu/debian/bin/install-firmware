@@ -32,9 +32,7 @@ mkdir -p "${doc_dir}"/licenses
 
 install -m 644 debian/WHENCE "${doc_dir}"/README
 while IFS= read -r f ; do
-	if [ "${f#WHENCE}" = "${f}" ] ; then
-		install -m 644 "${f}" "${doc_dir}"/licenses/
-	fi
+	install -m 644 "${f}" "${doc_dir}"/licenses/
 done < debian/licenses
 
 #

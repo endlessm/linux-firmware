@@ -1,8 +1,7 @@
 # List of files and directories to be included in the package
 
-WHENCE
-
 LICENSE.mellanox
+
 mellanox/
 
 # List of files and directories to be excluded from the package

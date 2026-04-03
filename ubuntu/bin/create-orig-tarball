@@ -97,5 +97,5 @@ readarray -t package_files < <({
 } | sort | uniq -d)
 
 echo "II: Create ${orig_tarball}"
-git archive --format=tar --prefix="linux-firmware-${package}-${VERSION}"/ "${COMMIT}" -- "${package_files[@]}" | \
-    xz -z - > "${orig_tarball}"
+git archive --format=tar --prefix="linux-firmware-${package}-${VERSION}"/ "${COMMIT}" -- \
+    "${package_files[@]}" WHENCE | xz -z - > "${orig_tarball}"

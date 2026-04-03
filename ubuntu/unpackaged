@@ -13,6 +13,8 @@ GPL-3
 LICENSE
 Makefile
 README.md
+# WHENCE is explicitly included in the orig tarball (only)
+WHENCE
 WHENCE.ubuntu
 build_packages.py
 check_whence.py
