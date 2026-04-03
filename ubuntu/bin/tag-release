@@ -1,0 +1,37 @@
+#!/bin/bash -eu
+#
+# Tag a release commit
+#
+
+function out()
+{
+	local rc=${?}
+
+	trap - EXIT INT TERM HUP
+	test ${rc} -eq 0 || echo "EE: Script failed" >&2
+	exit "${rc}"
+}
+
+if [ $# -gt 1 ] ; then
+	echo "Usage: $(basename "${0}") [<commit>]" >&2
+	exit 2
+fi
+
+trap out EXIT INT TERM HUP
+
+commit=${1:-HEAD}
+
+subject=$(git log --format=%s "${commit}" -1)
+
+case "${subject}" in
+	"UBUNTU: Ubuntu-"*)
+		tag=${subject#UBUNTU: }
+		tag=${tag//~/_}
+		echo "II: Tag commit ${commit} with: ${tag}"
+		git tag -s -m "${subject}" "${tag}" "${commit}"
+		;;
+	*)
+		echo "EE: Not a release commit: ${commit} (\"${subject}\")" >&2
+		exit 1
+		;;
+esac

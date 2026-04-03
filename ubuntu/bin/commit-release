@@ -38,11 +38,12 @@ trap out EXIT INT TERM HUP
 # Sanity check
 ./ubuntu/bin/check-package--all
 
-echo "II: Commit and tag release"
+echo "II: Commit release"
 
 version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
 tag=Ubuntu-${package}-${version}
 
 git add "${changelog}"
 git commit -s -m "UBUNTU: ${tag}"
-git tag -s -m "UBUNTU: ${tag}" "${tag//~/_}"
+
+ubuntu/bin/tag-release
