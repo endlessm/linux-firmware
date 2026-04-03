@@ -1,0 +1,5 @@
+linux-firmware-amd-misc (20260319.git217ca6e4-0ubuntu1) resolute; urgency=medium
+
+  * Initial version
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 03 Apr 2026 11:52:56 +0200
