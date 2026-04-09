@@ -59,15 +59,7 @@ if [ -z "${package}" ] ; then
 	exit 2
 fi
 
-case "${package}" in
-	meta)
-		changelog=ubuntu/meta/debian/changelog
-		;;
-	*)
-		changelog=ubuntu/package/${package}/changelog
-		;;
-esac
-
+changelog=ubuntu/package/${package}/changelog
 if ! [ -e "${changelog}" ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
 	exit 1

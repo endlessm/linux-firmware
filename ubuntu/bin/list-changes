@@ -19,17 +19,7 @@ fi
 
 package=${1}
 
-case "${package}" in
-	meta)
-		is_meta=1
-		changelog=ubuntu/meta/debian/changelog
-		;;
-	*)
-		is_meta=0
-		changelog=ubuntu/package/${package}/changelog
-		;;
-esac
-
+changelog=ubuntu/package/${package}/changelog
 if ! [ -e "${changelog}" ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
 	exit 2
@@ -67,9 +57,9 @@ esac
 
 prev_release=${blame%% *}
 
-if [ ${is_meta} -eq 1 ] ; then
+if [ "${package}" = "meta" ] ; then
 	package_files=(
-		"ubuntu/meta/debian/"
+		"ubuntu/package/meta/"
 	)
 else
 	readarray -t package_files < <(grep -E '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)

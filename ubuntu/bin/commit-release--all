@@ -28,7 +28,7 @@ done
 if [ ${full_release} -eq 1 ] ; then
 	echo
 	echo "II: Commit and tag full release"
-	git add ubuntu/package/*/ ubuntu/meta/debian/
+	git add ubuntu/package/
 	git commit -s -m "UBUNTU: Ubuntu-${version}"
 	git tag -s -m "UBUNTU: Ubuntu-${version}" "Ubuntu-${version//~/_}"
 	exit

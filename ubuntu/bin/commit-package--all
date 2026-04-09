@@ -3,8 +3,12 @@
 # Add and commit all package files
 #
 
-git add ubuntu/package/ || true
-git add meta/debian/ || true
+if [ -z "$(git status --porcelain -- ubuntu/package/)" ] ; then
+	echo "II: No package files changes to commit"
+	exit 0
+fi
+
+git add ubuntu/package/
 
 cat <<EOF | git commit -s -F -
 UBUNTU: [Packaging] Update package files

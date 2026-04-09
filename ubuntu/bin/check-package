@@ -19,6 +19,11 @@ fi
 
 package=${1}
 
+if [ "${package}" = "meta" ] ; then
+	# Nothing to do for the meta package
+	exit 0
+fi
+
 if ! [ -e ubuntu/package/"${package}"/control ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
 	exit 1

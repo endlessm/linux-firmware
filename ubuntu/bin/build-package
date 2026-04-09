@@ -74,17 +74,7 @@ if [ -z "${package}" ] ; then
 	exit 2
 fi
 
-case "${package}" in
-	meta)
-		is_meta=1
-		changelog=ubuntu/meta/debian/changelog
-		;;
-	*)
-		is_meta=0
-		changelog=ubuntu/package/${package}/changelog
-		;;
-esac
-
+changelog=ubuntu/package/${package}/changelog
 if ! [ -e "${changelog}" ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
 	exit 2
@@ -119,7 +109,7 @@ if [ ${force} -eq 0 ] && ! git describe --exact-match "${commit}" &>/dev/null ; 
 	exit 1
 fi
 
-if [ ${is_meta} -eq 1 ] ; then
+if [ "${package}" = "meta" ] ; then
 
 	#
 	# Copy packaging files
@@ -129,7 +119,7 @@ if [ ${is_meta} -eq 1 ] ; then
 
 	mkdir -p "${build_dir}"/debian
 
-	git -C ubuntu/"${package}"/debian archive --format=tar "${commit}" -- . | tar -C "${build_dir}"/debian/ -xf -
+	git -C ubuntu/package/"${package}" archive --format=tar "${commit}" -- . | tar -C "${build_dir}"/debian/ -xf -
 
 else
 
@@ -175,7 +165,7 @@ else
 	# Remove unwanted files
 	#
 
-	rm -f debian/files
+	rm -f debian/files debian/README
 
 fi
 

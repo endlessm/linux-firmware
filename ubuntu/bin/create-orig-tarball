@@ -58,12 +58,10 @@ if [ -z "${package}" ] ; then
 	exit 2
 fi
 
-case "${package}" in
-	meta)
-		echo "II: No orig tarball needed for package: ${package}"
-		exit
-		;;
-esac
+if [ "${package}" = "meta" ] ; then
+	echo "II: No orig tarball needed for package: ${package}"
+	exit 0
+fi
 
 if ! [ -e ubuntu/package/"${package}"/control ] ; then
 	echo "EE: Invalid package name: ${package}" >&2

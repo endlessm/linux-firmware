@@ -68,21 +68,7 @@ if [ -z "${package}" ] ; then
 	exit 2
 fi
 
-case "${package}" in
-	meta)
-		is_meta=1
-		package_name=linux-firmware
-		changelog=ubuntu/meta/debian/changelog
-		changes=ubuntu/meta/changes
-		;;
-	*)
-		is_meta=0
-		package_name=linux-firmware-${package}
-		changelog=ubuntu/package/${package}/changelog
-		changes=ubuntu/package/${package}/changes
-		;;
-esac
-
+changelog=ubuntu/package/${package}/changelog
 if ! [ -e "${changelog}" ] ; then
 	echo "EE: Invalid package name: ${package}" >&2
 	exit 2
@@ -132,7 +118,7 @@ if [ "${version#"${VERSION}"}" != "${version}" ] ; then
 	fi
 else
 	# New upstream version
-	if [ ${is_meta} -eq 1 ] ; then
+	if [ "${package}" = "meta" ] ; then
 		new_version=${VERSION}.1ubuntu${suffix}
 	else
 		new_version=${VERSION}-0ubuntu1${suffix}
@@ -142,6 +128,8 @@ fi
 #
 # Collect the changes for the package since the last release
 #
+
+changes=ubuntu/package/${package}/changes
 
 if [ -s "${changelog}" ] ; then
 	./ubuntu/bin/list-changes "${package}" | tac | ./ubuntu/bin/format-changes > "${changes}"
@@ -160,6 +148,12 @@ fi
 #
 # Add a new changelog entry
 #
+
+if [ "${package}" = "meta" ] ; then
+	package_name=linux-firmware
+else
+	package_name=linux-firmware-${package}
+fi
 
 {
 	echo "${package_name} (${new_version}) ${series}; urgency=medium"
