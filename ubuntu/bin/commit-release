@@ -75,6 +75,11 @@ fi
 
 trap out EXIT INT TERM HUP
 
+if [ -z "$(git status --porcelain -- "${changelog}")" ] ; then
+	echo "II: No changelog changes to commit"
+	exit 0
+fi
+
 # Sanity check
 if [ ${no_check} -eq 0 ] ; then
 	./ubuntu/bin/check-package--all
