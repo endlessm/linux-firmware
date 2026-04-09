@@ -133,7 +133,7 @@ if [ "${version#"${VERSION}"}" != "${version}" ] ; then
 else
 	# New upstream version
 	if [ ${is_meta} -eq 1 ] ; then
-		new_version=${VERSION}.0ubuntu${suffix}
+		new_version=${VERSION}.1ubuntu${suffix}
 	else
 		new_version=${VERSION}-0ubuntu1${suffix}
 	fi
