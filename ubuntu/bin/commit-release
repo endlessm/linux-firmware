@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 #
-# Commit a package release
+# Commit and tag a package release
 #
 
 function out()
@@ -12,12 +12,52 @@ function out()
 	exit "${rc}"
 }
 
-if [ $# != 1 ] ; then
-	echo "Usage: $(basename "${0}") <package>" >&2
+function usage()
+{
+	cat <<EOF
+Usage: $(basename "${0}") [-h] [--no-check] <package>
+
+Postional arguments:
+  <package>   Name of the package to work on.
+
+Optional arguments:
+  -h, --help  Show this help text and exit.
+  --no-check  Don't run package checks.
+EOF
+}
+
+no_check=0
+package=
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		-h|--help)
+			usage
+			exit
+			;;
+		--no-check)
+			no_check=1
+			;;
+		-*)
+			usage >&2
+			exit 2
+			;;
+		*)
+			if [ -z "${package}" ] ; then
+				package=${1}
+			else
+				usage >&2
+				exit 2
+			fi
+			;;
+	esac
+	shift
+done
+
+if [ -z "${package}" ] ; then
+	usage >&2
 	exit 2
 fi
-
-package=${1}
 
 case "${package}" in
 	meta)
@@ -36,7 +76,9 @@ fi
 trap out EXIT INT TERM HUP
 
 # Sanity check
-./ubuntu/bin/check-package--all
+if [ ${no_check} -eq 0 ] ; then
+	./ubuntu/bin/check-package--all
+fi
 
 echo "II: Commit release"
 
