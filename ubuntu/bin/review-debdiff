@@ -47,51 +47,12 @@ function header()
 	echo
 }
 
-function usage()
-{
-	cat <<EOF
-Usage: $(basename "${0}") [-h] [--no-whence] <package>
-
-Postional arguments:
-  <package>    Name of the package to work on.
-
-Optional arguments:
-  -h, --help   Show this help text and exit.
-  --no-whence  Don't show WHENCE differences.
-EOF
-}
-
-no_whence=0
-package=
-
-while [ ${#} -gt 0 ] ; do
-	case "${1}" in
-		-h|--help)
-			usage
-			exit
-			;;
-		--no-whence)
-			no_whence=1
-			;;
-		-*)
-			usage >&2
-			exit 2
-			;;
-		*)
-			if [ -n "${package}" ] ; then
-				echo "EE: Invalid argument: ${1}" >&2
-				exit 2
-			fi
-			package=${1}
-			;;
-	esac
-	shift
-done
-
-if [ -z "${package}" ] ; then
-	usage >&2
+if [ $# != 1 ] ; then
+	echo "Usage: $(basename "${0}") <package>" >&2
 	exit 2
 fi
+
+package=${1}
 
 changelog=ubuntu/package/${package}/changelog
 if ! [ -e "${changelog}" ] ; then
@@ -113,24 +74,17 @@ if [ ! -e "${debdiff}" ] ; then
 	exit 1
 fi
 
-# Filter-out WHENCE
-whence=$(lsdiff "${debdiff}" | grep '^[^/]*/WHENCE' || true)
-if [ -n "${whence}" ] && [ ${no_whence} -eq 1 ] ; then
-	filterdiff=("filterdiff" "-x" "${whence}")
-else
-	filterdiff=("cat")
-fi
-
 {
 	header "lsdiff -s ${debdiff}"
 	lsdiff -s "${debdiff}"
 	echo
 
-	header "${filterdiff[*]} ${debdiff}"
-	"${filterdiff[@]}" "${debdiff}" | grep -v '^Binary files '
+	header "cat ${debdiff} (non-binary files)"
+	grep -v '^Binary files ' "${debdiff}" || true
 	echo
 
-	"${filterdiff[@]}" "${debdiff}" | grep '^Binary files '
+	header "cat ${debdiff} (binary files)"
+	grep '^Binary files ' "${debdiff}" || true
 	echo
 
 } | awk '/^diff / { print "" } { print }' | cat -s | colorize
