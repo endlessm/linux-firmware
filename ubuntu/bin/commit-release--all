@@ -10,26 +10,34 @@
 # shellcheck disable=SC1091
 . ubuntu/upstream
 
-full_release=1
-full_version=
+rebase_release=1
 
 for d in ubuntu/package/* ; do
-	changelog=${d}/changelog
-	version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
-	if [ -z "${full_version}" ] ; then
-		full_version=${version}
+	package=${d##*/}
+	if [ "${package}" = "meta" ] ; then
+		rebase_version=${VERSION}.1ubuntu
+	else
+		rebase_version=${VERSION}-0ubuntu1
 	fi
-	if [ "${version}" != "${full_version}" ] ; then
-		full_release=0
+
+	version=$(dpkg-parsechangelog -l "${d}"/changelog -S Version)
+	if [ "${version}" != "${rebase_version}" ] ; then
+		rebase_release=0
 	fi
 done
 
-# This is a full release (all packages, same version)
-if [ ${full_release} -eq 1 ] ; then
+# This is a rebase release (all packages, same version)
+if [ ${rebase_release} -eq 1 ] ; then
 	echo
-	echo "II: Commit and tag full release"
-	git add ubuntu/package/
+	echo "II: Commit and tag rebase release"
+	git add ubuntu/package/*/changelog
 	git commit -s -m "UBUNTU: Ubuntu-${version}"
-	git tag -s -m "UBUNTU: Ubuntu-${version}" "Ubuntu-${version//~/_}"
-	exit
+	ubuntu/bin/tag-release
+	exit 0
 fi
+
+for d in ubuntu/package/* ; do
+	if [ -n "$(git status --porcelain -- "${d}"/changelog)" ] ; then
+		ubuntu/bin/commit-release "${d##*/}"
+	fi
+done
