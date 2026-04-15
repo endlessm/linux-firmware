@@ -7,6 +7,7 @@ import sys
 
 import git
 import requests
+import textwrap
 
 
 def get_bug_title(bug):
@@ -62,11 +63,15 @@ for key in commits:
             title = ref
         else:
             title = get_bug_title(int(ref)) or "INVALID or PRIVATE BUG"
-            title = f"{title} (LP: #{ref})"
+            title = f"{title} (LP###{ref})"
         titles.append(title)
 
-    # FIXME: Wrap item title if too long
-    print("  * " + " // ".join(titles))
+    # Wrap item title if too long
+    title_lines = textwrap.wrap("#// ".join(titles), 96)
+    print("  * " + title_lines[0].replace("LP###", "LP: #").replace("#//", " //"))
+    for line in title_lines[1:]:
+        line = line.replace("LP###", "LP: #").replace("#//", " //")
+        print("    " + line)
 
     for commit in commits[key]:
         commit_subject = (
