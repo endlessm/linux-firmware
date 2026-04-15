@@ -43,6 +43,12 @@ mkdir -p "${check_dir}"
 ./ubuntu/bin/list-package-files "${package}" --included > "${check_dir}"/included.files
 ./ubuntu/bin/list-package-files "${package}" --excluded > "${check_dir}"/excluded.files
 
+# Create the lists of WHENCE, sources and licences files
+whence=ubuntu/package/"${package}"/WHENCE
+sed -nE 's/^(File|RawFile): +//p' "${whence}" > "${check_dir}"/whence.files
+sed -nE 's/^Source: +//p' "${whence}" > "${check_dir}"/sources.files
+cp ubuntu/package/"${package}"/licenses "${check_dir}"/licenses.files
+
 cd "${check_dir}"
 
 echo "II: Check that excluded files are a subset of included files"
@@ -57,6 +63,18 @@ sort included.files excluded.files | uniq -u > unique.files
 if ! diff package.files unique.files ; then
 	echo "EE: Check failed" >&2
 	exit 1
+fi
+
+echo "II: Check that all packaged files are referenced in WHENCE, sources or licenses"
+# Gather the list of unreferenced package files
+sort package.files > f1
+sort -u whence.files sources.files licenses.files > f2
+comm -23 f1 f2 > unreferenced.files
+
+if [ -s unreferenced.files ] ; then
+	sed 's/^/< /' unreferenced.files
+	# echo "EE: Check failed" >&2
+	# exit 1
 fi
 
 echo "II: All checks passed"
