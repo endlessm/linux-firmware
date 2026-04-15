@@ -1,0 +1,21 @@
+#!/bin/bash -eu
+
+cmd=$(basename "${0}")
+
+pkgs=()
+opts=()
+for x in "${@}" ; do
+	if [ -d ubuntu/package/"${x}" ] ; then
+		pkgs+=("${x}")
+	else
+		opts+=("${x}")
+	fi
+done
+
+first=1
+for pkg in "${pkgs[@]}" ; do
+	test ${first} -eq 1 || echo
+	first=0
+
+	./ubuntu/bin/"${cmd%s}" "${pkg}" "${opts[@]}"
+done
