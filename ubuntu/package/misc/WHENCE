@@ -1246,6 +1246,14 @@ Licence: Redistributable. See LICENCE.inside-secure for details.
 
 ------------------------------------------------------------------------------
 
+Driver: lt8713sx - Lontium DP Hub
+
+File: lt8713sx_fw.bin
+
+License: Redistributable. See LICENSE.Lontium for details.
+
+------------------------------------------------------------------------------
+
 Driver: lt9611uxc - Lontium DSI to HDMI bridge
 
 File: lt9611uxc_fw.bin
