@@ -1,3 +1,13 @@
+linux-firmware-intel-wireless (20260319.git217ca6e4-0ubuntu2) resolute; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] Don't track WHENCE changes
+  * Pull backport-iwlwifi-dkms of core103 to support BE201/BE211/BE213 on Intel PTL/WCL platforms
+    (LP: #2146301)
+    - iwlwifi: add Bz/Sc FW for core103-40 release
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 15 Apr 2026 13:57:24 +0200
+
 linux-firmware-intel-wireless (20260319.git217ca6e4-0ubuntu1) resolute; urgency=medium
 
   * Miscellaneous Ubuntu changes
