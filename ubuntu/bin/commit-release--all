@@ -38,6 +38,6 @@ fi
 
 for d in ubuntu/package/* ; do
 	if [ -n "$(git status --porcelain -- "${d}"/changelog)" ] ; then
-		ubuntu/bin/commit-release "${d##*/}"
+		ubuntu/bin/commit-release --no-check "${d##*/}"
 	fi
 done
