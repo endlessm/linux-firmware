@@ -12,15 +12,53 @@ function out()
 	exit "${rc}"
 }
 
-if [ $# -gt 1 ] ; then
-	echo "Usage: $(basename "${0}") [<commit>]" >&2
-	exit 2
-fi
+function usage()
+{
+	cat <<EOF
+Usage: $(basename "${0}") [--force] [-h] [<commit>]
+
+Tag the given commit or HEAD.
+
+Postional arguments:
+  <commit>    Commit to tag. If not provided, tags HEAD.
+
+Optional arguments:
+  --force     Force things.
+  -h, --help  Show this help text and exit.
+EOF
+}
+
+opts=()
+commit=
+
+while [ ${#} -gt 0 ] ; do
+	case "${1}" in
+		--force)
+			opts+=(--force)
+			;;
+		-h|--help)
+			usage
+			exit
+			;;
+		-*)
+			usage >&2
+			exit 2
+			;;
+		*)
+			if [ -z "${commit}" ] ; then
+				commit=${1}
+			else
+				echo "EE: Invalid argument: ${1}" >&2
+				exit 2
+			fi
+			;;
+	esac
+	shift
+done
 
 trap out EXIT INT TERM HUP
 
-commit=${1:-HEAD}
-
+commit=${commit:-HEAD}
 subject=$(git log --format=%s "${commit}" -1)
 
 case "${subject}" in
@@ -28,7 +66,7 @@ case "${subject}" in
 		tag=${subject#UBUNTU: }
 		tag=${tag//~/_}
 		echo "II: Tag commit ${commit} with: ${tag}"
-		git tag -s -m "${subject}" "${tag}" "${commit}"
+		git tag "${opts[@]}" -s -m "${subject}" "${tag}" "${commit}"
 		;;
 	*)
 		echo "EE: Not a release commit: ${commit} (\"${subject}\")" >&2
