@@ -35,6 +35,7 @@ trap out EXIT INT TERM HUP
 echo "II: Update package: ${package}"
 
 # Current upstream commit and version
+COMMIT=
 # shellcheck disable=SC1091
 . ubuntu/upstream
 

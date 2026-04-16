@@ -73,6 +73,8 @@ echo "II: Create orig tarball for package: ${package}"
 trap out EXIT INT TERM HUP
 
 # Current upstream commit and version
+COMMIT=
+VERSION=
 # shellcheck disable=SC1091
 . ubuntu/upstream
 
