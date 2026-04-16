@@ -19,6 +19,13 @@ def get_bug_title(bug):
     return None
 
 
+def combine_and_wrap_titles(titles, length):
+    """Combine all titles into a single line and wrap it"""
+    titles = [x.replace("LP: #", "LP###") for x in titles]
+    lines = textwrap.wrap("#// ".join(titles), length)
+    return [x.replace("LP###", "LP: #").replace("#//", " //") for x in lines]
+
+
 repo = git.Repo(".")
 
 commits = {}
@@ -63,14 +70,13 @@ for key in commits:
             title = ref
         else:
             title = get_bug_title(int(ref)) or "INVALID or PRIVATE BUG"
-            title = f"{title} (LP###{ref})"
+            title = f"{title} (LP: #{ref})"
         titles.append(title)
 
-    # Wrap item title if too long
-    title_lines = textwrap.wrap("#// ".join(titles), 96)
-    print("  * " + title_lines[0].replace("LP###", "LP: #").replace("#//", " //"))
-    for line in title_lines[1:]:
-        line = line.replace("LP###", "LP: #").replace("#//", " //")
+    # Print the combined and wrapped item title
+    lines = combine_and_wrap_titles(titles, 96)
+    print("  * " + lines[0])
+    for line in lines[1:]:
         print("    " + line)
 
     for commit in commits[key]:
