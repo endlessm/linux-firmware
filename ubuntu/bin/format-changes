@@ -11,12 +11,18 @@ import textwrap
 
 
 def get_bug_title(bug):
+    """Get the bug title from Launchpad"""
     try:
-        r = requests.get(f"https://api.launchpad.net/devel/bugs/{bug}", timeout=5)
-        return r.json()["title"]
-    except:
-        pass
-    return None
+        url = f"https://api.launchpad.net/devel/bugs/{int(bug)}"
+        r = requests.get(url, timeout=5)
+        r.raise_for_status()
+    except ValueError:
+        print(f"EE: Invalid bug number: {bug}", file=sys.stderr)
+        sys.exit(1)
+    except requests.exceptions.HTTPError:
+        print(f"EE: Failed to query URL: {url} ({r.status_code})", file=sys.stderr)
+        sys.exit(1)
+    return r.json()["title"]
 
 
 def combine_and_wrap_titles(titles, length):
@@ -69,7 +75,7 @@ for key in commits:
         elif ref.startswith("CVE-"):
             title = ref
         else:
-            title = get_bug_title(int(ref)) or "INVALID or PRIVATE BUG"
+            title = get_bug_title(ref)
             title = f"{title} (LP: #{ref})"
         titles.append(title)
 
