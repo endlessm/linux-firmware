@@ -3,6 +3,7 @@
 # Trim WHENCE file sections
 #
 
+import os
 import sys
 
 
@@ -42,15 +43,18 @@ for line in whence_sections[0]:
     print(line)
 
 # Print the sections that reference the packaged files
-found = False
 for section in whence_sections:
     for line in section:
+        f = None
+        if line.startswith("Link:"):
+            l, _, f = line.split(":", 1)[1].partition(" -> ")
+            # Construct the link target
+            f = os.path.normpath(os.path.join(os.path.dirname(l.strip()), f.strip()))
         if line.startswith("File:") or line.startswith("RawFile:"):
             f = line.split(":", 1)[1].strip()
-            if f in package_files:
-                found = True
-                print("-" * 78)
-                print("\n".join(section))
-                break
+        if f and f in package_files:
+            print("-" * 78)
+            print("\n".join(section))
+            break
 
 print("-" * 78)
