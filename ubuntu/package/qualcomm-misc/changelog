@@ -1,3 +1,9 @@
+linux-firmware-qualcomm-misc (20260319.git217ca6e4-0ubuntu2.0) resolute; urgency=medium
+
+  * Initial dummy SRU version
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 29 Apr 2026 18:10:51 +0200
+
 linux-firmware-qualcomm-misc (20260319.git217ca6e4-0ubuntu2) resolute; urgency=medium
 
   * Missing firmware for DELL XPS13 9345 (LP: #2146528)

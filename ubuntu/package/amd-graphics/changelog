@@ -1,3 +1,9 @@
+linux-firmware-amd-graphics (20260319.git217ca6e4-0ubuntu3.0) resolute; urgency=medium
+
+  * Initial dummy SRU version
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 29 Apr 2026 18:10:50 +0200
+
 linux-firmware-amd-graphics (20260319.git217ca6e4-0ubuntu3) resolute; urgency=medium
 
   * Regression on Acer Nitro AN17-41: amdgpu DC/DMUB fails to light up internal eDP and Radeon-
