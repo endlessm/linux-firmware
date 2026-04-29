@@ -4,7 +4,7 @@
 #
 
 # Sanity check
-./ubuntu/bin/check-package--all
+./ubuntu/bin/check-packages
 
 # Current upstream commit and version
 VERSION=
@@ -33,12 +33,10 @@ if [ ${rebase_release} -eq 1 ] ; then
 	echo "II: Commit and tag rebase release"
 	git add ubuntu/package/*/changelog
 	git commit -s -m "UBUNTU: Ubuntu-${version}"
-	ubuntu/bin/tag-release
+	./ubuntu/bin/tag-release
 	exit 0
 fi
 
 for d in ubuntu/package/* ; do
-	if [ -n "$(git status --porcelain -- "${d}"/changelog)" ] ; then
-		ubuntu/bin/commit-release --no-check "${d##*/}"
-	fi
+	./ubuntu/bin/commit-release --no-check "${d##*/}"
 done

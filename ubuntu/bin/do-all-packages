@@ -1,0 +1,14 @@
+#!/bin/bash -eu
+#
+# Operate on all packages
+#
+
+cmd=$(basename "${0}")
+cmd=${cmd%s}
+
+first=1
+for d in ubuntu/package/* ; do
+	[ ${first} -eq 1 ] && first=0 || { echo; }
+	package=${d##*/}
+	./ubuntu/bin/"${cmd}" "${package}" "${@}"
+done

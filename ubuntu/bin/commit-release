@@ -74,7 +74,7 @@ fi
 
 # Sanity check
 if [ ${no_check} -eq 0 ] ; then
-	./ubuntu/bin/check-package--all
+	./ubuntu/bin/check-packages
 fi
 
 echo "II: Commit release"
@@ -85,4 +85,4 @@ tag=Ubuntu-${package}-${version}
 git add "${changelog}"
 git commit -s -m "UBUNTU: ${tag}"
 
-ubuntu/bin/tag-release
+./ubuntu/bin/tag-release

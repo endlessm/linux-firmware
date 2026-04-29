@@ -8,10 +8,7 @@ if [ -z "$(git status --porcelain -- ubuntu/package/)" ] ; then
 	exit 0
 fi
 
+echo "II: Commit package files"
+
 git add ubuntu/package/
-
-cat <<EOF | git commit -s -F -
-UBUNTU: [Packaging] Update package files
-
-Ignore: yes
-EOF
+git commit -s -m "UBUNTU: [Packaging] Update package files" -m "Ignore: yes"
