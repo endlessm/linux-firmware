@@ -13,8 +13,6 @@ ar9170-1.fw
 ar9170-2.fw
 ar9271.fw
 ath3k-1.fw
-htc_7010.fw
-htc_9271.fw
 :(glob)wil6210.*
 
 ar3k/
@@ -55,7 +53,3 @@ qca/
 :^ath6k/AR6003/hw2.1.1/bdata.SD32.bin
 :^ath6k/AR6003/hw2.1.1/bdata.WB31.bin
 :^ath6k/AR6003/hw2.1.1/endpointping.bin
-
-# Obsolete (no longer wanted by kernel 6.18)
-:^htc_7010.fw
-:^htc_9271.fw

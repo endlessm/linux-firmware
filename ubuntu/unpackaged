@@ -90,6 +90,8 @@ LICENSE.vxge
 agere_ap_fw.bin
 agere_sta_fw.bin
 cpia2/
+htc_7010.fw
+htc_9271.fw
 r8a779x_usb3_v2.dlmem
 rsi_91x.fw
 tlg2300_firmware.bin
