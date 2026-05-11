@@ -70,10 +70,6 @@ ti-keystone/
 carl9170-1.fw
 carl9170fw/
 
-# Provided by firmware-ath9k-htc package
-LICENCE.open-ath9k-htc-firmware
-ath9k_htc/
-
 # Provided by amd64-microcode package
 LICENSE.amd-sev
 LICENSE.amd-ucode
