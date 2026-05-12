@@ -165,7 +165,7 @@ else
 	# Remove unwanted files
 	#
 
-	rm -f debian/files debian/README
+	rm -f "${build_dir}"/debian/{files,README}
 
 fi
 
