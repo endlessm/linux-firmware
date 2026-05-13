@@ -2,9 +2,7 @@ Package: linux-firmware-misc
 Architecture: all
 Priority: optional
 Depends: ${misc:Depends}
-Provides: atmel-firmware
-Conflicts: atmel-firmware
-Replaces: linux-firmware (<< 20260113), atmel-firmware
+Replaces: linux-firmware (<< 20260113)
 Breaks: initramfs-tools (<< 0.142ubuntu8~), linux-firmware (<< 20260113)
 Description: Firmware for miscellaneous devices and adapters
  This package provides firmware used by various Linux kernel drivers.

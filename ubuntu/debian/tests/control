@@ -2,6 +2,7 @@ Tests: check-duplicates
 Depends: @,
  alsa-topology-conf,
  amd64-microcode,
+ atmel-firmware,
  bluez-firmware,
  dahdi-firmware-nonfree,
  indi-dsi,
