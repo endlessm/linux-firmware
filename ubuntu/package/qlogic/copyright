@@ -1,0 +1,196 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: linux-firmware
+Upstream-Contact: linux-firmware@kernel.org
+Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
+
+Files: cbfw-3.2.5.1.bin
+ ct2fw-3.2.5.1.bin
+ ctfw-3.2.5.1.bin
+Copyright: 2013-2014 Brocade Communications Systems, Inc.
+           2014-2015 QLogic Corporation.
+License: Redistributable-bfa
+
+Files: phanfw.bin
+Copyright: 2003-2013 QLogic Corporation
+License: Redistributable-phanfw
+
+Files: qed/*
+Copyright: 2015-2018 QLogic Corporation.
+License: Redistributable-qed
+
+Files: ql2100_fw.bin
+ ql2200_fw.bin
+ ql23*
+ ql2400_fw.bin
+ ql2500_fw.bin
+Copyright: 2003-2017 QLogic Corporation
+License: Redistributable-qla2xxx
+
+Files: qlogic/*
+Copyright: 1995, 1996, 1997, 1998, 1999, 2000 QLogic, Inc.
+License: Redistributable-qla1280
+
+Files: qlogic/isp1000.bin
+Copyright: Unknown
+License: unknown
+Comment: Found in hex form in kernel source.
+
+Files: qlogic/sd7220.fw
+Copyright: 2007, 2008 QLogic Corporation. All rights reserved.
+License: Redistributable-ib_qib
+Comment: Found in hex form in kernel source.
+
+License: Redistributable-bfa
+ This file contains firmware data derived from proprietary unpublished
+ source code.
+ Copyright (c) 2013-2014 Brocade Communications Systems, Inc.
+ Copyright (c) 2014-2015 QLogic Corporation.
+ .
+ Permission is hereby granted for the distribution of this firmware data
+ in hexadecimal or equivalent format, provided this copyright notice is
+ accompanying it.
+ .
+ QLogic grants permission to use and redistribute these firmware files
+ for use with QLogic BR-series devices, but not as a part of the Linux
+ kernel or in any other form which would require these files themselves
+ to be covered by the terms of the GNU General Public License.
+ These firmware files are distributed in the hope that they will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+License: Redistributable-ib_qib
+ Copyright (c) 2007, 2008 QLogic Corporation. All rights reserved.
+ .
+ This software is available to you under a choice of one of two
+ licenses.  You may choose to be licensed under the terms of the GNU
+ General Public License (GPL) Version 2, available from the file
+ COPYING in the main directory of this source tree, or the
+ OpenIB.org BSD license below:
+ .
+     Redistribution and use in source and binary forms, with or
+     without modification, are permitted provided that the following
+     conditions are met:
+ .
+      - Redistributions of source code must retain the above
+        copyright notice, this list of conditions and the following
+        disclaimer.
+ .
+      - Redistributions in binary form must reproduce the above
+        copyright notice, this list of conditions and the following
+        disclaimer in the documentation and/or other materials
+        provided with the distribution.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+License: Redistributable-phanfw
+ Copyright ©  2003-2013 QLogic Corporation
+ QLogic Linux Intelligent Ethernet (3000 and 3100 Series) Adapter Firmware
+ .
+ Redistribution and use in binary form, without modification, for use in
+ conjunction with QLogic authorized products is permitted provided that the
+ following conditions are met:
+ .
+ 1. Redistribution in binary form must reproduce the above copyright notice, this
+    list of conditions and the following disclaimer in the documentation and/or
+    other materials provided with the distribution.
+ 2. The name of QLogic Corporation may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+ 3. Reverse engineering, decompilation, or disassembly of this firmware is not
+    permitted.
+ .
+ REGARDLESS OF WHAT LICENSING MECHANISM IS USED OR APPLICABLE,THIS PROGRAM IS
+ PROVIDED BY QLOGIC CORPORATION "AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR
+ BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ GOODS OR SERVICES; LOSS OF USE,DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
+ .
+ USER ACKNOWLEDGES AND AGREES THAT USE OF THIS PROGRAM WILL NOT CREATE OR GIVE
+ GROUNDS FOR A LICENSE BY IMPLICATION, ESTOPPEL, OR OTHERWISE IN ANY INTELLECTUAL
+ PROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER
+ PROPRIETARY RIGHT) EMBODIED IN ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER
+ SOLELY OR IN COMBINATION WITH THIS PROGRAM.
+
+License: Redistributable-qed
+ This file contains firmware data derived from proprietary unpublished
+ source code.
+ Copyright (c) 2015-2018 QLogic Corporation.
+ .
+ Permission is hereby granted for the distribution of this firmware data
+ in hexadecimal or equivalent format, provided this copyright notice is
+ accompanying it.
+
+License: Redistributable-qla1280
+ Copyright (C) 1995, 1996, 1997, 1998, 1999, 2000 QLogic, Inc.
+ All rights reserved.
+ .
+ Redistribution and use in source and binary forms are permitted provided
+ that the following conditions are met:
+ 1. Redistribution of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistribution in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: Redistributable-qla2xxx
+ Copyright (c) 2003-2017 QLogic Corporation
+ QLogic Linux Fibre Channel Adapter Firmware
+ .
+ Redistribution and use in binary form, without modification, for use in conjunction
+ with QLogic authorized products is permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistribution in binary form must reproduce the above copyright notice, this
+    list of conditions and the following disclaimer in the documentation and/or
+    other materials provided with the distribution.
+ 2. The name of QLogic Corporation may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+ 3. Reverse engineering, decompilation, or disassembly of this firmware is not
+    permitted.
+ .
+ REGARDLESS OF WHAT LICENSING MECHANISM IS USED OR APPLICABLE,THIS PROGRAM IS
+ PROVIDED BY QLOGIC CORPORATION "AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR
+ BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ GOODS OR SERVICES; LOSS OF USE,DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ .
+ USER ACKNOWLEDGES AND AGREES THAT USE OF THIS PROGRAM WILL NOT CREATE OR GIVE
+ GROUNDS FOR A LICENSE BY IMPLICATION, ESTOPPEL, OR OTHERWISE IN ANY INTELLECTUAL
+ PROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY
+ RIGHT) EMBODIED IN ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN
+ COMBINATION WITH THIS PROGRAM.
+
+License: unknown
+ The license for this firmware is not clearly documented.
+ No explicit licensing terms were provided upstream.
+

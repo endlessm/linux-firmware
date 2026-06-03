@@ -1,0 +1,120 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: linux-firmware
+Upstream-Contact: linux-firmware@kernel.org
+Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
+
+Files: mediatek/*
+ vpu_*
+Copyright: Unknown
+License: Redistributable-mediatek
+
+Files: mediatek/mt7601u.bin
+ mediatek/mt7650.bin
+ mediatek/mt7662.bin
+ mediatek/mt7662_rom_patch.bin
+ mt76*
+Copyright: 2013, Ralink, A MediaTek Company
+License: Redistributable-ralink_a_mediatek_company_firmware
+
+Files: rt2561*
+ rt2661.bin
+ rt28*
+ rt30*
+ rt3290.bin
+ rt73.bin
+Copyright: 2007, Ralink Technology Corporation
+License: Redistributable-ralink-firmware
+
+License: Redistributable-mediatek
+ MediaTek Inc. grants permission to use and redistribute aforementioned firmware
+ files for the use with devices containing MediaTek chipsets, but not as part of
+ the Linux kernel or in any other form which would require these files themselves
+ to be covered by the terms of the GNU General Public License or the GNU Lesser
+ General Public License.
+ .
+ These firmware files are distributed in the hope that they will be useful, but
+ are provided WITHOUT ANY WARRANTY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTY
+ OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+License: Redistributable-ralink-firmware
+ Copyright (c) 2007, Ralink Technology Corporation
+ All rights reserved.
+ .
+ Redistribution.  Redistribution and use in binary form, without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions must reproduce the above copyright notice and the
+   following disclaimer in the documentation and/or other materials
+   provided with the distribution.
+ * Neither the name of Ralink Technology Corporation nor the names of its
+   suppliers may be used to endorse or promote products derived from this
+   software without specific prior written permission.
+ * No reverse engineering, decompilation, or disassembly of this software
+   is permitted.
+ .
+ Limited patent license. Ralink Technology Corporation grants a world-wide,
+ royalty-free, non-exclusive license under patents it now or hereafter
+ owns or controls to make, have made, use, import, offer to sell and
+ sell ("Utilize") this software, but solely to the extent that any
+ such patent is necessary to Utilize the software alone, or in
+ combination with an operating system licensed under an approved Open
+ Source license as listed by the Open Source Initiative at
+ http://opensource.org/licenses.  The patent license shall not apply to
+ any other combinations which include this software.  No hardware per
+ se is licensed hereunder.
+ .
+ DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
+
+License: Redistributable-ralink_a_mediatek_company_firmware
+ Copyright (c) 2013, Ralink, A MediaTek Company
+ All rights reserved.
+ .
+ Redistribution.  Redistribution and use in binary form, without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions must reproduce the above copyright notice and the
+   following disclaimer in the documentation and/or other materials
+   provided with the distribution.
+ * Neither the name of Ralink Technology Corporation nor the names of its
+   suppliers may be used to endorse or promote products derived from this
+   software without specific prior written permission.
+ * No reverse engineering, decompilation, or disassembly of this software
+   is permitted.
+ .
+ Limited patent license. Ralink Technology Corporation grants a world-wide,
+ royalty-free, non-exclusive license under patents it now or hereafter
+ owns or controls to make, have made, use, import, offer to sell and
+ sell ("Utilize") this software, but solely to the extent that any
+ such patent is necessary to Utilize the software alone, or in
+ combination with an operating system licensed under an approved Open
+ Source license as listed by the Open Source Initiative at
+ http://opensource.org/licenses.  The patent license shall not apply to
+ any other combinations which include this software.  No hardware per
+ se is licensed hereunder.
+ .
+ DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
+
