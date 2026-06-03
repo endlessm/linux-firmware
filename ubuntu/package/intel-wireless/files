@@ -1,10 +1,5 @@
 # List of files and directories to be included in the package
 
-LICENCE.ibt_firmware
-LICENCE.ipw2100
-LICENCE.ipw2200
-LICENCE.iwlwifi_firmware
-
 :(glob)ipw2100-*
 :(glob)ipw2200-*
 intel/ibt-*

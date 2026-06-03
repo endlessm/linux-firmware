@@ -80,8 +80,8 @@ amdtee/
 
 # Obsolete (no longer wanted by kernel 6.18)
 LICENCE.agere
-LICENSE.tlg2300
 LICENCE.via_vt6656
+LICENSE.tlg2300
 LICENSE.vxge
 agere_ap_fw.bin
 agere_sta_fw.bin

@@ -1,9 +1,5 @@
 # List of files and directories to be included in the package
 
-LICENSE.qcom
-LICENSE.qcom_yamato
-qcom/NOTICE.txt
-
 qcom/a???_*.bin
 qcom/a???_*.fw
 qcom/a530v3_gpmu.fw2

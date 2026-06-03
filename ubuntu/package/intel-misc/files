@@ -1,20 +1,5 @@
 # List of files and directories to be included in the package
 
-LICENCE.HP
-LICENCE.IntcSST2
-LICENCE.adsp_sst
-LICENSE.dell
-LICENCE.e100
-LICENCE.fw_sst_0f28
-LICENCE.lenovo
-LICENCE.qat_firmware
-LICENSE.hfi1_firmware
-LICENSE.ice
-LICENSE.ice_enhanced
-LICENSE.intel
-LICENSE.intel_vpu
-LICENSE.ixp4xx
-
 HP/ish/
 LENOVO/ish/
 dell/ish/

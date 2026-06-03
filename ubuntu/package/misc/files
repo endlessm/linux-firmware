@@ -1,36 +1,29 @@
 # List of files and directories to be included in the package
 
 # 3Com
-LICENCE.typhoon
 3com/
 cis/
 vicam/
 
 # ARM
-LICENCE.mali_csffw
 arm/
 
 # Abilis Systems
-LICENCE.Abilis
 :(glob)as102_*
 
 # Adaptec
 adaptec/
 
 # AdvanSys
-LICENCE.advansys
 advansys/
 
 # Aeonsemi
-LICENSE.aeonsemi
 aeonsemi/
 
 # Airoha
-LICENSE.airoha
 airoha/
 
 # Alacritech
-LICENCE.alacritech
 slicoss/
 # Replaces commit e55ef4edc755 ("UBUNTU: Remove obsolete slicoss firmware")
 :^slicoss/oasisdbgdownload.sys
@@ -39,31 +32,22 @@ slicoss/
 acenic/
 
 # Amlogic
-LICENSE.amlogic
-LICENSE.amlogic_vdec
 amlogic/
 meson/
 
 # Amphion
-LICENSE.amphion_vpu
 amphion/
 
 # Atmel
-LICENSE.atmel
 atmel/
 
 # Audioscience
-LICENCE.asihpi
 asihpi/
 
 # Bosch
-LICENSE.bmi260
 bmi260-init-data.fw
 
 # Broadcom
-LICENCE.bnx2
-LICENCE.bnx2x
-LICENCE.tigon
 bnx2/
 bnx2x/
 tigon/
@@ -76,40 +60,30 @@ tigon/
 :^bnx2x/bnx2x-e2-7.13.11.0.fw
 
 # Cadence
-LICENCE.cadence
 cadence/
 
 # Cavium
-LICENCE.cavium
-LICENCE.cavium_liquidio
 cavium/
 liquidio/
 
 # Chelsio
-LICENCE.chelsio_firmware
-LICENCE.cxgb3
 cxgb3/
 cxgb4/
 # Replaces commit 03310ea1e1e7 ("UBUNTU: Remove obsolete cxgb firmware")
 :^cxgb3/t3fw-7.10.0.bin
 
 # Chips&Media
-LICENCE.cnm
 cnm/
 
 # Cirrus
-LICENSE.cirrus
 cs42l43.bin
 cirrus/
 sdca/
 
 # Comtrol
-LICENSE.rp2
 rp2.fw
 
 # Conexant
-LICENSE.conexant
-LICENCE.cx2341x
 :(glob)v4l-cx2*
 v4l-pvrusb2-24xxx-01.fw
 v4l-pvrusb2-29xxx-01.fw
@@ -119,37 +93,29 @@ whiteheat.fw
 whiteheat_loader.fw
 
 # Creative Technology
-LICENCE.ca0132
 ctefx.bin
 ctspeq.bin
 
 # DiBcom
-LICENSE.dib0700
 dvb-usb-dib0700-1.20.fw
 
 # Echo Digital Audio Corporation
-LICENCE.echoaudio
 ea/
 
 # ESS
 ess/
 
 # Emagic
-LICENCE.emi26
 emi26/
 emi62/
 
 # Ene Technology
-LICENCE.ene_firmware
 ene-ub6250/
 
 # ITE Tech
-LICENCE.it913x
 :(glob)dvb-usb-it9135-*
 
 # Ikanos Communications (now Qualcomm)
-LICENCE.ueagle
-LICENCE.ueagle-atm4-firmware
 ueagle-atm/
 # Replaces commit 6a312e01f665 ("UBUNTU: Remove obsolete ueagle-atm firmware")
 :^ueagle-atm/CMVeiWO.bin
@@ -162,22 +128,18 @@ ueagle-atm/
 :^ueagle-atm/CMVepWO.bin
 
 # Imagination Technologies
-LICENSE.powervr
 powervr/
 
 # Inside Out Networks
 edgeport/
 
 # Inside Secure
-LICENCE.inside-secure
 inside-secure/
 
 # Kawasaki
-LICENCE.kaweth
 kaweth/
 
 # Keyspan
-LICENCE.keyspan
 keyspan/
 keyspan_pda/
 
@@ -188,22 +150,16 @@ korg/
 lgs8g75.fw
 
 # Lontium
-LICENSE.Lontium
 lt8713sx_fw.bin
 lt9611uxc_fw.bin
 
 # Marvell
-LICENCE.Marvell
 mrvl/cpt*
 
 # Microchip
-LICENCE.microchip
 microchip/
 
 # Micronas / Sensoray
-LICENSE.drxk
-LICENCE.go7007
-LICENCE.sensoray
 dvb-usb-terratec-h5-drxk.fw
 f2255usb.bin
 go7007/
@@ -214,75 +170,57 @@ yam/
 sun/
 usbdux*
 # Montage
-LICENSE.montage
 tsse_firmware.bin
 
 # Moxa
-LICENCE.moxa
 moxa/
 
 # Multi-Tech Systems
-LICENCE.multitech
 :(glob)mts_*
 
 # Myricom
-LICENCE.myri10ge_firmware
 :(glob)myri10ge_*
 
 # NXP
-LICENSE.nxp
-LICENSE.nxp_mc_firmware
-LICENSE.sdma_firmware
 dpaa2/
 imx/
 nxp/
 
 # Nvidia
-LICENCE.nvidia
 nvidia/tegra*
 
 # Ositech
 ositech/
 
 # Redpine Signals Inc
-LICENSE.rsi
 rsi/
 
 # Renesas
-LICENCE.r8a779g_pcie_phy
-LICENCE.r8a779x_usb3
 r8a779x_usb3_v1.dlmem
 r8a779x_usb3_v3.dlmem
 rcar_gen4_pcie.bin
 
 # Rockchip
-LICENCE.rockchip
 rockchip/
 
 # ST Microelectronics
-LICENCE.cw1200
-LICENCE.cw1200-sdd
 sdd_sagrad_1091_1098.bin
 wsm_22.bin
 
 # Samsung
-LICENSE.s5p-mfc
 :(glob)s5p-mfc*
 
 # Silicon Labs
 wfx/
+:^wfx/LICENCE.wf200
 
 # Technotrend
 ttusb-budget/
 
 # Tehuti
-LICENSE.tehuti
 tehuti/
 
 # Texas Instruments
-LICENCE.ti-connectivity
-LICENCE.ti-tspa
-LICENCE.wl1251
 :(glob)ti_*.fw
 ti/
 ti-connectivity/
@@ -300,14 +238,10 @@ ti-connectivity/
 :^ti-connectivity/wl18xx-fw.bin
 
 # Xceive
-LICENCE.xc4000
-LICENCE.xc5000
-LICENCE.xc5000c
 :(glob)dvb-fe-xc*
 
 # Yamaha
 yamaha/
 
 # ZyDAS
-LICENCE.zd1211
 zd1211/

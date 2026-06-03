@@ -1,12 +1,5 @@
 # List of files and directories to be included in the package
 
-LICENSE.bfa
-LICENSE.ib_qib
-LICENCE.phanfw
-LICENSE.qed
-LICENCE.qla1280
-LICENCE.qla2xxx
-
 :(glob)cbfw-*.bin
 :(glob)ctfw-*.bin
 :(glob)ct2fw-*.bin

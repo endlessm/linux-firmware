@@ -1,12 +1,5 @@
 # List of files and directories to be included in the package
 
-LICENCE.atheros_firmware
-LICENCE.open-ath9k-htc-firmware
-LICENSE.QualcommAtheros_ar3k
-LICENSE.QualcommAtheros_ath10k
-LICENSE.qcom
-qcom/NOTICE.txt
-
 ar5523.bin
 ar7010.fw
 ar7010_1_1.fw
@@ -25,6 +18,9 @@ ath12k/
 qca/
 
 # List of files and directories to be excluded from the package
+
+# Exclude licenses
+:^qca/NOTICE.txt
 
 # Replaces commit c5a7aadccbfd ("UBUNTU: Remove obsolete ar7010 firmware")
 :^ar7010.fw

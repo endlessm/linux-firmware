@@ -1,9 +1,5 @@
 # List of files and directories to be included in the package
 
-LICENCE.rtlwifi_firmware.txt
-LICENSE.r8169
-LICENSE.rt1320
-
 realtek/rt1320/
 rtl_bt/
 rtl_nic/

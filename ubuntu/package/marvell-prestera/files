@@ -1,7 +1,5 @@
 # List of files and directories to be included in the package
 
-LICENCE.Marvell
-
 mrvl/prestera/
 
 # List of files and directories to be excluded from the package

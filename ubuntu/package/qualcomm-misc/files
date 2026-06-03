@@ -1,9 +1,5 @@
 # List of files and directories to be included in the package
 
-LICENCE.linaro
-LICENSE.qcom-2
-qcom/NOTICE.txt
-
 qcom/aic100/
 qcom/apq8016/
 qcom/apq8096/

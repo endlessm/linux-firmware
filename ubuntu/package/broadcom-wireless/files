@@ -1,8 +1,5 @@
 # List of files and directories to be included in the package
 
-LICENCE.broadcom_bcm43xx
-LICENCE.cypress
-
 brcm/BCM-*
 brcm/bcm4329-*
 brcm/bcm43xx*
