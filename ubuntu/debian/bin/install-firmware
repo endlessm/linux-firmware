@@ -22,18 +22,15 @@ fi
 package=${1}
 
 #
-# Install WHENCE and license files
+# Install WHENCE file
 #
 
-echo "II: Install WHENCE and license files"
+echo "II: Install WHENCE file"
 
 doc_dir=debian/${package}/usr/share/doc/${package}
-mkdir -p "${doc_dir}"/licenses
+mkdir -p "${doc_dir}"
 
 install -m 644 debian/WHENCE "${doc_dir}"/README
-while IFS= read -r f ; do
-	install -m 644 "${f}" "${doc_dir}"/licenses/
-done < debian/licenses
 
 #
 # Install firmwares
