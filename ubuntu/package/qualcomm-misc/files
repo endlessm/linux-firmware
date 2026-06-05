@@ -28,5 +28,5 @@ qcom/x1p42100/
 
 # List of files and directories to be excluded from the package
 
-:^qcom/*/*_zap.mbn
-:^qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
+!qcom/*/*_zap.mbn
+!qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn

@@ -4,7 +4,7 @@ HP/ish/
 LENOVO/ish/
 dell/ish/
 e100/
-:(glob)hfi1_*.fw
+hfi1_*.fw
 intel/dsp_fw_*
 intel/fw_sst_*
 intel/avs/

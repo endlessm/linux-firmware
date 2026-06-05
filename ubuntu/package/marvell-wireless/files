@@ -8,19 +8,19 @@ mwl8k/
 
 # List of files and directories to be excluded from the package
 
-:^mrvl/cpt*
-:^mrvl/prestera/
+!mrvl/cpt*
+!mrvl/prestera/
 
 # Replaces commit a46068ae4580 ("UBUNTU: Remove obsolete libertas firmware")
-:^libertas/gspi8682.bin
-:^libertas/gspi8682_helper.bin
-:^libertas/lbtf_sdio.bin
-:^libertas/sd8682.bin
-:^libertas/sd8682_helper.bin
-:^libertas/usb8388_olpc.bin
+!libertas/gspi8682.bin
+!libertas/gspi8682_helper.bin
+!libertas/lbtf_sdio.bin
+!libertas/sd8682.bin
+!libertas/sd8682_helper.bin
+!libertas/usb8388_olpc.bin
 
 # Replaces commit bfa2ac04ade6 ("UBUNTU: Remove obsolete mwl8k firmware")
-:^mwl8k/fmimage_8366_ap-1.fw
+!mwl8k/fmimage_8366_ap-1.fw
 
 # Obsolete (no longer wanted by kernel 6.18)
-:^libertas/cf83*
+!libertas/cf83*

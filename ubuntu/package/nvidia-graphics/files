@@ -4,4 +4,4 @@ nvidia/
 
 # List of files and directories to be excluded from the package
 
-:^nvidia/tegra*
+!nvidia/tegra*

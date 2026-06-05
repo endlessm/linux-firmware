@@ -9,7 +9,7 @@ vicam/
 arm/
 
 # Abilis Systems
-:(glob)as102_*
+as102_*
 
 # Adaptec
 adaptec/
@@ -26,7 +26,7 @@ airoha/
 # Alacritech
 slicoss/
 # Replaces commit e55ef4edc755 ("UBUNTU: Remove obsolete slicoss firmware")
-:^slicoss/oasisdbgdownload.sys
+!slicoss/oasisdbgdownload.sys
 
 # Alteon
 acenic/
@@ -52,12 +52,12 @@ bnx2/
 bnx2x/
 tigon/
 # Obsolete (no longer wanted by kernel 6.18)
-:^bnx2x/bnx2x-e1-7.13.1.0.fw
-:^bnx2x/bnx2x-e1-7.13.11.0.fw
-:^bnx2x/bnx2x-e1h-7.13.1.0.fw
-:^bnx2x/bnx2x-e1h-7.13.11.0.fw
-:^bnx2x/bnx2x-e2-7.13.1.0.fw
-:^bnx2x/bnx2x-e2-7.13.11.0.fw
+!bnx2x/bnx2x-e1-7.13.1.0.fw
+!bnx2x/bnx2x-e1-7.13.11.0.fw
+!bnx2x/bnx2x-e1h-7.13.1.0.fw
+!bnx2x/bnx2x-e1h-7.13.11.0.fw
+!bnx2x/bnx2x-e2-7.13.1.0.fw
+!bnx2x/bnx2x-e2-7.13.11.0.fw
 
 # Cadence
 cadence/
@@ -70,7 +70,7 @@ liquidio/
 cxgb3/
 cxgb4/
 # Replaces commit 03310ea1e1e7 ("UBUNTU: Remove obsolete cxgb firmware")
-:^cxgb3/t3fw-7.10.0.bin
+!cxgb3/t3fw-7.10.0.bin
 
 # Chips&Media
 cnm/
@@ -84,7 +84,7 @@ sdca/
 rp2.fw
 
 # Conexant
-:(glob)v4l-cx2*
+v4l-cx2*
 v4l-pvrusb2-24xxx-01.fw
 v4l-pvrusb2-29xxx-01.fw
 
@@ -113,19 +113,19 @@ emi62/
 ene-ub6250/
 
 # ITE Tech
-:(glob)dvb-usb-it9135-*
+dvb-usb-it9135-*
 
 # Ikanos Communications (now Qualcomm)
 ueagle-atm/
 # Replaces commit 6a312e01f665 ("UBUNTU: Remove obsolete ueagle-atm firmware")
-:^ueagle-atm/CMVeiWO.bin
-:^ueagle-atm/CMVepES.bin
-:^ueagle-atm/CMVepES03.bin
-:^ueagle-atm/CMVepFR.bin
-:^ueagle-atm/CMVepFR04.bin
-:^ueagle-atm/CMVepFR10.bin
-:^ueagle-atm/CMVepIT.bin
-:^ueagle-atm/CMVepWO.bin
+!ueagle-atm/CMVeiWO.bin
+!ueagle-atm/CMVepES.bin
+!ueagle-atm/CMVepES03.bin
+!ueagle-atm/CMVepFR.bin
+!ueagle-atm/CMVepFR04.bin
+!ueagle-atm/CMVepFR10.bin
+!ueagle-atm/CMVepIT.bin
+!ueagle-atm/CMVepWO.bin
 
 # Imagination Technologies
 powervr/
@@ -176,10 +176,10 @@ tsse_firmware.bin
 moxa/
 
 # Multi-Tech Systems
-:(glob)mts_*
+mts_*
 
 # Myricom
-:(glob)myri10ge_*
+myri10ge_*
 
 # NXP
 dpaa2/
@@ -208,11 +208,11 @@ sdd_sagrad_1091_1098.bin
 wsm_22.bin
 
 # Samsung
-:(glob)s5p-mfc*
+s5p-mfc*
 
 # Silicon Labs
 wfx/
-:^wfx/LICENCE.wf200
+!wfx/LICENCE.wf200
 
 # Technotrend
 ttusb-budget/
@@ -221,24 +221,24 @@ ttusb-budget/
 tehuti/
 
 # Texas Instruments
-:(glob)ti_*.fw
+ti_*.fw
 ti/
 ti-connectivity/
 # Replaces commit 1be4f28f91fb ("UBUNTU: Remove obsolete ti-connectivity firmware")
-:^ti-connectivity/TIInit_7.2.31.bts
-:^ti-connectivity/wl1271-fw-2.bin
-:^ti-connectivity/wl1271-fw-ap.bin
-:^ti-connectivity/wl1271-fw.bin
-:^ti-connectivity/wl127x-fw-3.bin
-:^ti-connectivity/wl127x-fw-plt-3.bin
-:^ti-connectivity/wl128x-fw-3.bin
-:^ti-connectivity/wl128x-fw-ap.bin
-:^ti-connectivity/wl128x-fw-plt-3.bin
-:^ti-connectivity/wl128x-fw.bin
-:^ti-connectivity/wl18xx-fw.bin
+!ti-connectivity/TIInit_7.2.31.bts
+!ti-connectivity/wl1271-fw-2.bin
+!ti-connectivity/wl1271-fw-ap.bin
+!ti-connectivity/wl1271-fw.bin
+!ti-connectivity/wl127x-fw-3.bin
+!ti-connectivity/wl127x-fw-plt-3.bin
+!ti-connectivity/wl128x-fw-3.bin
+!ti-connectivity/wl128x-fw-ap.bin
+!ti-connectivity/wl128x-fw-plt-3.bin
+!ti-connectivity/wl128x-fw.bin
+!ti-connectivity/wl18xx-fw.bin
 
 # Xceive
-:(glob)dvb-fe-xc*
+dvb-fe-xc*
 
 # Yamaha
 yamaha/

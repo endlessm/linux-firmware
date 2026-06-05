@@ -5,7 +5,7 @@ mellanox/
 # List of files and directories to be excluded from the package
 
 # Kernel 6.15 wants xx.2010.1006
-:^mellanox/mlxsw_spectrum-13.1*.mfa2
-:^mellanox/mlxsw_spectrum-13.200*.mfa2
-:^mellanox/mlxsw_spectrum2-29.200*.mfa2
-:^mellanox/mlxsw_spectrum3-30.200*.mfa2
+!mellanox/mlxsw_spectrum-13.1*.mfa2
+!mellanox/mlxsw_spectrum-13.200*.mfa2
+!mellanox/mlxsw_spectrum2-29.200*.mfa2
+!mellanox/mlxsw_spectrum3-30.200*.mfa2
