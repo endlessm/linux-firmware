@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+#
+# List package changes since the previous release
+#
+
+import argparse
+import sys
+
+import git
+
+from lib.changelog import ChangelogError
+from lib.package import Package, PackageError
+
+
+def main() -> None:
+    """List package changes since the previous release."""
+    # Split argv on '--' to separate our args from git log args
+    argv = sys.argv[1:]
+    if "--" in argv:
+        idx = argv.index("--")
+        main_argv = argv[:idx]
+        git_log_args = argv[idx + 1 :]
+    else:
+        main_argv = argv
+        git_log_args = []
+
+    parser = argparse.ArgumentParser(
+        description="List package changes since the previous release",
+        usage="%(prog)s <package> [<revision-range>] [-- <git-log-options>...]",
+    )
+    parser.add_argument("package", help="Package name")
+    parser.add_argument(
+        "range",
+        nargs="?",
+        default=None,
+        help="Revision range (default: <prev-release>..HEAD)",
+    )
+    args = parser.parse_args(main_argv)
+
+    # Parse revision range and create package
+    try:
+        if args.range is None:
+            # Default: release..HEAD
+            pkg = Package(args.package)
+            rev_range = f"{pkg.changelog.release_commit}.."
+        elif ".." in args.range:
+            # Explicit range: A..B or A..
+            start, _, end = args.range.partition("..")
+            end = end or "HEAD"
+            pkg = Package(args.package, end)
+            rev_range = args.range
+        else:
+            # Single commit: release(at A)..A
+            pkg = Package(args.package, args.range)
+            rev_range = f"{pkg.changelog.release_commit}..{args.range}"
+    except (PackageError, ChangelogError) as e:
+        print(f"EE: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    # Build git log command
+    paths = pkg.tracked_paths
+    log_args = git_log_args + [rev_range, "--"] + paths
+
+    try:
+        repo = git.Repo()
+        output = repo.git.log(*log_args)
+        if output:
+            print(output)
+    except git.GitCommandError as e:
+        print(f"EE: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

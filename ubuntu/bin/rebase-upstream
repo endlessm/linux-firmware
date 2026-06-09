@@ -1,102 +1,97 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # Rebase onto upstream
 #
 
-function out()
-{
-	local rc=${?}
+import argparse
+import re
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
 
-	trap - EXIT INT TERM HUP
-	test ${rc} -eq 0 || echo "EE: Script failed" >&2
-	exit "${rc}"
-}
+import git
 
-function usage()
-{
-	cat <<EOF
-Usage: $(basename "${0}") [-h] [<rev>]
+from lib.changelog import ChangelogError
+from lib.package import Package, PackageError, read_upstream
 
-Postional arguments:
-  <rev>       Rebase to <rev>. If not provided, defaults to upstream/main.
+KERNEL_ORG_URL = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git"
+DEFAULT_REV = "kernel.org/main"
 
-Optional arguments:
-  -h, --help  Show this help text and exit.
-EOF
-}
 
-rev=
+def main() -> None:
+    """Rebase the current branch onto an upstream commit."""
+    parser = argparse.ArgumentParser(description="Rebase onto upstream")
+    parser.add_argument(
+        "rev",
+        nargs="?",
+        default=DEFAULT_REV,
+        help=f"Revision to rebase to (default: {DEFAULT_REV})",
+    )
+    args = parser.parse_args()
 
-while [ ${#} -gt 0 ] ; do
-	case "${1}" in
-		-h|--help)
-			usage
-			exit
-			;;
-		*)
-			if [ -n "${rev}" ] ; then
-				echo "EE: Invalid argument: ${1}" >&2
-				exit 2
-			fi
-			rev=${1}
-			;;
-	esac
-	shift
-done
+    repo = git.Repo()
 
-if [ -z "${rev}" ] ; then
-	rev=kernel.org/main
-fi
+    # Verify no package has an SRU version
+    for pkg_dir in sorted(Path("ubuntu/package").iterdir()):
+        if not pkg_dir.is_dir():
+            continue
+        try:
+            pkg = Package(pkg_dir.name)
+        except (PackageError, ChangelogError):
+            continue
+        version = str(pkg.changelog.Changelog.version)
+        if re.search(r"\.\d+$", version):
+            print(f"EE: Package version is an SRU version: {version} ({pkg_dir.name})", file=sys.stderr)
+            sys.exit(1)
 
-trap out EXIT INT TERM HUP
+    # Add upstream remote if missing and fetch
+    remotes = [r.name for r in repo.remotes]
+    if "kernel.org" not in remotes:
+        repo.git.remote("add", "kernel.org", KERNEL_ORG_URL)
+    print(f"II: Fetch from {KERNEL_ORG_URL}")
+    repo.git.fetch("kernel.org")
 
-for d in ubuntu/package/* ; do
-	changelog=${d}/changelog
-	if [ -e "${changelog}" ] ; then
-		version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
-		if echo "${version}" | grep -qE '\.[0-9]+$' ; then
-			echo "EE: Package version is an SRU version: ${version} (${d##*/})" >&2
-			exit 1
-		fi
-	fi
-done
+    # Resolve revision
+    try:
+        new_commit = repo.git.rev_parse(args.rev)
+    except git.GitCommandError:
+        print(f"EE: Failed to parse git rev: {args.rev}", file=sys.stderr)
+        sys.exit(1)
 
-# Add an upstream remote and fetch it
-kernel_org_url=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-if ! git remote | grep -qxF kernel.org ; then
-	git remote add kernel.org "${kernel_org_url}"
-fi
-echo "II: Fetch from ${kernel_org_url}"
-git fetch kernel.org
+    new_version = datetime.now(UTC).strftime("%Y%m%d") + f".git{new_commit[:8]}"
 
-if ! git rev-parse "${rev}" &>/dev/null ; then
-	echo "EE: Failed to parse git rev: ${rev}" >&2
-	exit 1
-fi
+    # Rebase
+    print(f"II: Rebase to {new_commit}")
+    try:
+        repo.git.rebase(new_commit)
+    except git.GitCommandError as e:
+        print(f"EE: Rebase failed: {e}", file=sys.stderr)
+        sys.exit(1)
 
-new_commit=$(git rev-parse "${rev}")
-new_version=$(date --utc +%Y%m%d).git${new_commit::8}
+    # Read old commit from ubuntu/upstream (if it exists)
+    upstream_path = Path("ubuntu/upstream")
+    old_commit = new_commit
+    if upstream_path.exists():
+        try:
+            old_commit, _ = read_upstream()
+        except PackageError:
+            pass
 
-# Rebase onto kernel.org/main
-echo "II: Rebase to ${new_commit}"
-git rebase "${new_commit}"
+    # Write new ubuntu/upstream
+    upstream_path.write_text(
+        f"COMMIT={new_commit}\nVERSION={new_version}\n",
+        encoding="utf-8",
+    )
 
-COMMIT=${new_commit}
-if [ -e ubuntu/upstream ] ; then
-	# Current upstream commit and version
-	# shellcheck disable=SC1091
-	. ubuntu/upstream
-fi
+    # Build commit message
+    log_output = repo.git.log("--no-merges", "--reverse", "--format=- %s", f"{old_commit}..{new_commit}")
+    message = (
+        f"UBUNTU: Rebase to upstream commit {new_commit}\n\nRebase against {KERNEL_ORG_URL}\n{new_commit}\n{log_output}"
+    )
 
-# Create the rebase commit
-cat <<EOF > ubuntu/upstream
-COMMIT=${new_commit}
-VERSION=${new_version}
-EOF
+    repo.git.add("ubuntu/upstream")
+    repo.git.commit("-s", "-m", message)
 
-git add ubuntu/upstream
-git commit -s -m "UBUNTU: Rebase to upstream commit ${new_commit}
 
-Rebase against ${kernel_org_url}
-${new_commit}
-$(git log --no-merges --reverse --format='- %s' "${COMMIT}".."${new_commit}")"
+if __name__ == "__main__":
+    main()

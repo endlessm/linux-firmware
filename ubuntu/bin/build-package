@@ -1,206 +1,161 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # Build package
 #
 
-function out()
-{
-	local rc=${?}
+import argparse
+import io
+import shutil
+import subprocess
+import sys
+import tarfile
+from pathlib import Path
 
-	trap - EXIT INT TERM HUP
-	test ${rc} -eq 0 || echo "EE: Script failed" >&2
-	exit "${rc}"
-}
+import git
 
-function usage()
-{
-	cat <<EOF
-Usage: $(basename "${0}") [--force] [-h] [--suffix SUFFIX] <package> [<commit>] [-- <dpkg-buildpackage option>...]
+from lib.changelog import ChangelogError
+from lib.git_files import GitFiles, GitFilesError
+from lib.package import Package, PackageError
 
-Postional arguments:
-  <package>   Name of the package to work on.
-  <commit>    Commit to build the package from. If not provided, uses the last
-              release commit.
 
-Optional arguments:
-  --force          Force things.
-  -h, --help       Show this help text and exit.
-  --suffix SUFFIX  Append SUFFIX to the package version.
-EOF
-}
+def _extract(repo: git.Repo, commit: str, path: str | list[str], dest: Path) -> None:
+    """Extract files from git at commit into dest."""
+    buf = io.BytesIO()
+    if isinstance(path, str):
+        repo.git.archive(f"{commit}:{path}", format="tar", output_stream=buf)
+    else:
+        repo.git.archive(commit, "--", *path, format="tar", output_stream=buf)
+    buf.seek(0)
+    with tarfile.open(fileobj=buf) as tf:
+        tf.extractall(dest, filter="tar")
 
-force=0
-suffix=
-package=
-commit=
 
-while [ ${#} -gt 0 ] ; do
-	case "${1}" in
-		--force)
-			force=1
-			;;
-		-h|--help)
-			usage
-			exit
-			;;
-		--suffix)
-			shift
-			suffix=${1}
-			;;
-		--)
-			shift
-			break
-			;;
-		-*)
-			usage >&2
-			exit 2
-			;;
-		*)
-			if [ -z "${package}" ] ; then
-				package=${1}
-			elif [ -z "${commit}" ] ; then
-				commit=${1}
-			else
-				echo "EE: Invalid argument: ${1}" >&2
-				exit 2
-			fi
-			;;
-	esac
-	shift
-done
+def main() -> None:
+    """Build a Debian package."""
+    argv = sys.argv[1:]
+    if "--" in argv:
+        idx = argv.index("--")
+        main_argv = argv[:idx]
+        dpkg_args = argv[idx + 1 :]
+    else:
+        main_argv = argv
+        dpkg_args = []
 
-if [ -z "${package}" ] ; then
-	usage >&2
-	exit 2
-fi
+    parser = argparse.ArgumentParser(
+        description="Build package",
+        usage="%(prog)s [--force] [--suffix SUFFIX] <package> [<commit>] [-- <dpkg-buildpackage options>...]",
+    )
+    parser.add_argument("package", help="Package name")
+    parser.add_argument("commit", nargs="?", default=None, help="Build commit (default: last release commit)")
+    parser.add_argument("--force", action="store_true", help="Force build from untagged commit")
+    parser.add_argument("--suffix", help="Append suffix to package version")
+    args = parser.parse_args(main_argv)
 
-changelog=ubuntu/package/${package}/changelog
-if ! [ -e "${changelog}" ] ; then
-	echo "EE: Invalid package name: ${package}" >&2
-	exit 2
-fi
+    print(f"II: Build package: {args.package}")
 
-trap out EXIT INT TERM HUP
+    # Determine build commit
+    commit = args.commit
+    if not commit:
+        try:
+            commit = Package(args.package).changelog.release_commit
+        except (PackageError, ChangelogError, GitFilesError) as e:
+            print(f"EE: {e}", file=sys.stderr)
+            sys.exit(2)
 
-echo "II: Build package: ${package}"
+    if not commit:
+        print("EE: Build commit not found", file=sys.stderr)
+        sys.exit(1)
 
-package_name=$(dpkg-parsechangelog -l "${changelog}" -S Source)
-build_dir=ubuntu/build/"${package_name}"
-rm -rf "${build_dir}"
+    build_pkg = Package(args.package, commit)
 
-#
-# Determine the build commit
-#
+    if str(build_pkg.changelog.Changelog.version).endswith(".0"):
+        print("II: Skip dummy SRU release version")
+        sys.exit(0)
 
-if [ -z "${commit}" ] ; then
-	blame=$(git blame -L 1,1 "${changelog}" || true)
-	commit=${blame%% *}
-fi
+    repo = git.Repo()
+    summary = repo.git.log('--format=%h ("%s")', commit, "-1")
+    print(f"II: Build package from commit: {summary}")
 
-if [ -z "${commit}" ] ; then
-	echo "EE: Build commit not found" >&2
-	exit 1
-fi
+    if not args.force:
+        try:
+            repo.git.describe("--exact-match", commit)
+        except git.GitCommandError:
+            print("EE: Build commit is untagged, use --force to ignore", file=sys.stderr)
+            sys.exit(1)
 
-echo "II: Build package from commit: $(git log --format='%h ("%s")' "${commit}" -1)"
+    # Set up build directory
+    source_name = str(build_pkg.changelog.Changelog.package)
+    build_dir = Path("ubuntu/build") / source_name
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
 
-if [ ${force} -eq 0 ] && ! git describe --exact-match "${commit}" &>/dev/null ; then
-	echo "EE: Build commit is untagged, use --force to ignore" >&2
-	exit 1
-fi
+    if args.package == "meta":
+        # Meta package: just copy packaging files
+        print("II: Copy packaging files")
+        debian_dir = build_dir / "debian"
+        debian_dir.mkdir(parents=True)
+        _extract(repo, commit, "ubuntu/package/meta", debian_dir)
+    else:
+        # Regular package: firmware + packaging
 
-if [ "${package}" = "meta" ] ; then
+        print("II: Copy firmware files")
+        build_dir.mkdir(parents=True)
+        _extract(repo, commit, build_pkg.content.paths(), build_dir)
 
-	#
-	# Copy packaging files
-	#
+        print("II: Copy packaging files")
+        debian_dir = build_dir / "debian"
+        debian_dir.mkdir(exist_ok=True)
+        _extract(repo, commit, "ubuntu/debian", debian_dir)
+        _extract(repo, commit, f"ubuntu/package/{args.package}", debian_dir)
 
-	echo "II: Copy packaging files"
+        print("II: Fix packaging files")
 
-	mkdir -p "${build_dir}"/debian
+        # Create debian/control
+        gf = GitFiles(commit)
+        source_in = gf.read("ubuntu/templates/control.source.in")
+        pkg_control = gf.read(f"ubuntu/package/{args.package}/control")
+        control = f"{source_in}\n\n{pkg_control}\n".replace("@package@", args.package)
+        (debian_dir / "control").write_text(control, encoding="utf-8")
 
-	git -C ubuntu/package/"${package}" archive --format=tar "${commit}" -- . | tar -C "${build_dir}"/debian/ -xf -
+        # Rename files containing @package@ in their name
+        for path in sorted(debian_dir.rglob("*@package@*"), reverse=True):
+            path.rename(path.with_name(path.name.replace("@package@", args.package)))
 
-else
+        # Remove unwanted files
+        for name in ("files", "README"):
+            unwanted = debian_dir / name
+            if unwanted.exists():
+                unwanted.unlink()
 
-	#
-	# Copy firmware files
-	#
+    # Apply version suffix
+    changelog_path = build_dir / "debian" / "changelog"
+    version = str(build_pkg.changelog.Changelog.version)
+    if args.suffix:
+        text = changelog_path.read_text(encoding="utf-8")
+        text = text.replace(f"({version})", f"({version}{args.suffix})", 1)
+        changelog_path.write_text(text, encoding="utf-8")
+        version = f"{version}{args.suffix}"
 
-	echo "II: Copy firmware files"
+    # Link the orig tarball into the build directory
+    orig_version = version.split("-")[0]
+    orig_tarball = f"{source_name}_{orig_version}.orig.tar.xz"
+    orig_source = Path("..") / orig_tarball
+    orig_link = Path("ubuntu/build") / orig_tarball
 
-	mkdir -p "${build_dir}"
+    if orig_source.exists() and not orig_link.is_symlink():
+        # Symlink target is relative to ubuntu/build/
+        orig_link.symlink_to(Path("../../..") / orig_tarball)
 
-	readarray -t package_files < <(grep '^[0-9a-zA-Z:]' ubuntu/package/"${package}"/files)
-	git archive --format=tar "${commit}" -- "${package_files[@]}" | tar -C "${build_dir}" -xf -
+    # Build the package
+    print("II: Build package")
+    subprocess.run(["dpkg-buildpackage", *dpkg_args], check=True, cwd=build_dir)
 
-	#
-	# Copy packaging files
-	#
+    # Copy build artifacts to ../
+    output_dir = Path("..")
+    for pattern in (f"{source_name}_{version}.*", f"{source_name}_{version}_*"):
+        for artifact in Path("ubuntu/build").glob(pattern):
+            shutil.copy2(artifact, output_dir)
 
-	echo "II: Copy packaging files"
 
-	mkdir -p "${build_dir}"/debian
-
-	git -C ubuntu/debian archive --format=tar "${commit}" -- . | tar -C "${build_dir}"/debian/ -xf -
-	git -C ubuntu/package/"${package}" archive --format=tar "${commit}" -- . | tar -C "${build_dir}"/debian/ -xf -
-
-	#
-	# Fix packaging files
-	#
-
-	echo "II: Fix packaging files"
-
-	{
-		git show "${commit}":ubuntu/templates/control.source.in
-		echo
-		git show "${commit}":ubuntu/package/"${package}"/control
-	} | sed -e "s/@package@/${package}/" > "${build_dir}"/debian/control
-
-	while IFS= read -r f ; do
-		mv "${f}" "${f/@package@/${package}}"
-	done < <(find "${build_dir}"/debian/ -name '*@package@*')
-
-	#
-	# Remove unwanted files
-	#
-
-	rm -f "${build_dir}"/debian/{files,README}
-
-fi
-
-#
-# Package version
-#
-
-version=$(dpkg-parsechangelog -l "${build_dir}"/debian/changelog -S Version)
-if [ -n "${suffix}" ] ; then
-	# Append the suffix to the build version
-	sed -i "1s/${version}/${version}${suffix}/" "${build_dir}"/debian/changelog
-	version=${version}${suffix}
-fi
-
-#
-# Link the orig tarball into the build directory
-#
-
-orig_tarball=${package_name}_${version%%-*}.orig.tar.xz
-if [ -e ../"${orig_tarball}" ] && ! [ -h ubuntu/build/"${orig_tarball}" ] ; then
-	ln -s  ../../../"${orig_tarball}" ubuntu/build/"${orig_tarball}"
-fi
-
-#
-# Finally, do the actual package build
-#
-
-echo "II: Build package"
-
-cd ubuntu/build/"${package_name}"
-
-dpkg-buildpackage "${@}"
-
-for f in ../"${package_name}"_"${version}"{.,_}* ; do
-	if [ -e "${f}" ] ; then
-		cp "${f}" ../../../../
-	fi
-done
+if __name__ == "__main__":
+    main()

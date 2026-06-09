@@ -1,80 +1,42 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # Check a package
 #
 
-function out()
-{
-	local rc=${?}
+import argparse
+import sys
 
-	trap - EXIT INT TERM HUP
-	test ${rc} -eq 0 || echo "EE: Script failed" >&2
-	exit "${rc}"
-}
+from lib.package import Package, PackageError
 
-if [ $# != 1 ] ; then
-	echo "Usage: $(basename "${0}") <package>" >&2
-	exit 2
-fi
 
-package=${1}
+def main() -> None:
+    """Parse arguments and list package files."""
+    parser = argparse.ArgumentParser(description="Check a package")
+    parser.add_argument("package", help="Package name")
+    parser.add_argument(
+        "commit",
+        nargs="?",
+        default=None,
+        help="Commit to check package at (default: None)",
+    )
+    args = parser.parse_args()
 
-if [ "${package}" = "meta" ] ; then
-	# Nothing to do for the meta package
-	exit 0
-fi
+    print(f"II: Run checks for package: {args.package}")
+    try:
+        pkg = Package(args.package, args.commit)
+        pkg.check()
+    except PackageError as e:
+        print(f"EE: {e}", file=sys.stderr)
+        for f in e.files:
+            print(f"    {f}", file=sys.stderr)
+        sys.exit(1)
+    except OSError as e:
+        print(f"EE: Script failed: {e}", file=sys.stderr)
+        sys.exit(1)
 
-if ! [ -e ubuntu/package/"${package}"/control ] ; then
-	echo "EE: Invalid package name: ${package}" >&2
-	exit 1
-fi
+    print("II: All checks passed")
+    sys.exit(0)
 
-trap out EXIT INT TERM HUP
 
-echo "II: Check package: ${package}"
-
-check_dir=ubuntu/build/checks/${package}
-
-rm -rf "${check_dir}"
-mkdir -p "${check_dir}"
-
-# Create the lists of packaged, included and exluded files
-./ubuntu/bin/list-package-files "${package}" > "${check_dir}"/package.files
-./ubuntu/bin/list-package-files "${package}" --included > "${check_dir}"/included.files
-./ubuntu/bin/list-package-files "${package}" --excluded > "${check_dir}"/excluded.files
-
-# Create the lists of WHENCE, sources and licences files
-whence=ubuntu/package/"${package}"/WHENCE
-sed -nE 's/^(File|RawFile): +//p' "${whence}" > "${check_dir}"/whence.files
-sed -nE 's/^Source: +//p' "${whence}" > "${check_dir}"/sources.files
-cp ubuntu/package/"${package}"/licenses "${check_dir}"/licenses.files
-
-cd "${check_dir}"
-
-echo "II: Check that excluded files are a subset of included files"
-sort included.files excluded.files | uniq -d > duplicate.files
-if ! diff excluded.files duplicate.files ; then
-	echo "EE: Check failed" >&2
-	exit 1
-fi
-
-echo "II: Check that packaged files == included files - excluded files"
-sort included.files excluded.files | uniq -u > unique.files
-if ! diff package.files unique.files ; then
-	echo "EE: Check failed" >&2
-	exit 1
-fi
-
-echo "II: Check that all packaged files are referenced in WHENCE, sources or licenses"
-# Gather the list of unreferenced package files
-sort package.files > f1
-sort -u whence.files sources.files licenses.files > f2
-comm -23 f1 f2 > unreferenced.files
-
-if [ -s unreferenced.files ] ; then
-	sed 's/^/< /' unreferenced.files
-	# echo "EE: Check failed" >&2
-	# exit 1
-fi
-
-echo "II: All checks passed"
+if __name__ == "__main__":
+    main()

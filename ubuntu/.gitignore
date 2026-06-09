@@ -1,5 +1,7 @@
 *~
+__pycache__/
 build/
+tests/output/
 
 # Undo upstream ignores
 !debian/

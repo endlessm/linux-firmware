@@ -1,64 +1,155 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # List package files
 #
 
-function out()
-{
-	local rc=${?}
+import argparse
+import sys
+from pathlib import Path
 
-	trap - EXIT INT TERM HUP
-	test ${rc} -eq 0 || echo "EE: Script failed" >&2
-	exit "${rc}"
-}
+from lib.git_files import GitFiles
+from lib.package import Package, PackageError, PackageFiles, PackageOrig
 
-function list_files()
-{
-	local files=${1} opt=${2}
-	local package_files
 
-	case "${opt}" in
-		--included)
-			readarray -t package_files < <(grep -E '^[0-9a-zA-Z:.]' "${files}" | grep -v '^:^')
-			;;
-		--excluded)
-			readarray -t package_files < <(sed -n 's/^:^//p' "${files}")
-			;;
-		"")
-			readarray -t package_files < <(grep -E '^[0-9a-zA-Z:.]' "${files}")
-			;;
-		*)
-			echo "EE: Invalid option: ${opt}" >&2
-			exit 1
-			;;
-	esac
+def list_files(files: GitFiles, opt: str | None, details: bool) -> None:
+    """List package files, optionally at a given commit."""
+    if details:
+        for entry in files.entries(opt):
+            print("\t".join(entry))
+    else:
+        for path in files.paths(opt):
+            print(path)
 
-	if [ ${#package_files[@]} -gt 0 ] ; then
-		git ls-files --error-unmatch -- "${package_files[@]}"
-	fi
-}
 
-if [ $# != 1 ] && [ $# != 2 ] ; then
-	echo "Usage: $(basename "${0}") <package> [--included|--excluded]" >&2
-	exit 2
-fi
+def list_copyright(pkg: Package) -> None:
+    """List files with their copyright license and diagnostics."""
+    if pkg.copyright is None:
+        print("EE: No copyright file", file=sys.stderr)
+        sys.exit(1)
 
-package=${1}
-opt=${2:-}
+    packaged = pkg.files.paths()
+    covered = pkg.copyright.file_licenses(packaged)
+    covered_files = {f for f, _ in covered}
+    uncovered = sorted(set(packaged) - covered_files)
+    unmatched = pkg.copyright.unmatched_patterns(packaged)
+    unresolved = pkg.copyright.unresolved_licenses()
+    orphaned = pkg.copyright.orphaned_licenses()
 
-case "${package}" in
-	unpackaged|licenses)
-		files=ubuntu/"${package}"
-		;;
-	*)
-		if ! [ -e ubuntu/package/"${package}"/control ] ; then
-			echo "EE: Invalid package name: ${package}" >&2
-			exit 1
-		fi
-		files=ubuntu/package/"${package}"/files
-		;;
-esac
+    for f, license in covered:
+        print(f"{f}\t{license}")
 
-trap out EXIT INT TERM HUP
+    if uncovered:
+        print("EE: Unlicensed files", file=sys.stderr)
+        for f in uncovered:
+            print(f, file=sys.stderr)
 
-list_files "${files}" "${opt}"
+    if unmatched:
+        print("EE: Unmatched copyright patterns", file=sys.stderr)
+        for pattern in unmatched:
+            print(pattern, file=sys.stderr)
+
+    if unresolved:
+        print("EE: Unresolved license references", file=sys.stderr)
+        for name in unresolved:
+            print(name, file=sys.stderr)
+
+    if orphaned:
+        print("EE: Orphaned license paragraphs", file=sys.stderr)
+        for name in orphaned:
+            print(name, file=sys.stderr)
+
+
+def main() -> None:
+    """Parse arguments and list package files."""
+    parser = argparse.ArgumentParser(description="List package files")
+    parser.add_argument("package", help="Package name, or 'unpackaged'")
+    parser.add_argument(
+        "commit",
+        nargs="?",
+        default=None,
+        help="Commit to list files at (default: None)",
+    )
+    parser.add_argument(
+        "--orig",
+        action="store_true",
+        help="List orig tarball files",
+    )
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        "--included",
+        dest="opt",
+        action="store_const",
+        const="included",
+        help="List only included files",
+    )
+    group.add_argument(
+        "--excluded",
+        dest="opt",
+        action="store_const",
+        const="excluded",
+        help="List only excluded files",
+    )
+    group.add_argument(
+        "--licenses",
+        action="store_true",
+        help="List license files referenced in WHENCE",
+    )
+    group.add_argument(
+        "--firmwares",
+        action="store_true",
+        help="List only firmware files",
+    )
+    group.add_argument(
+        "--content",
+        action="store_true",
+        help="List package content files (firmware + licenses)",
+    )
+    group.add_argument(
+        "--copyright",
+        action="store_true",
+        help="List files with their copyright license",
+    )
+    parser.add_argument(
+        "--details",
+        action="store_true",
+        help="Show sha1 and type of each file (requires commit)",
+    )
+    parser.set_defaults(opt=None)
+    args = parser.parse_args()
+
+    if args.package == "meta":
+        sys.exit(0)
+
+    try:
+        if args.package == "unpackaged":
+            list_files(PackageFiles(Path("ubuntu") / args.package, args.commit), args.opt, args.details)
+            return
+
+        package = Package(args.package, args.commit)
+        pkg: Package | PackageOrig = package.orig if args.orig else package
+
+        if args.copyright:
+            if not isinstance(pkg, Package):
+                print("EE: --copyright is not supported with --orig", file=sys.stderr)
+                sys.exit(1)
+            list_copyright(pkg)
+        elif args.licenses:
+            list_files(pkg.licenses, args.opt, args.details)
+        elif args.firmwares:
+            list_files(pkg.firmwares, args.opt, args.details)
+        elif args.content:
+            list_files(pkg.content, args.opt, args.details)
+        else:
+            list_files(pkg.files, args.opt, args.details)
+    except PackageError as e:
+        print(f"EE: {e}", file=sys.stderr)
+        for f in e.files:
+            print(f"    {f}", file=sys.stderr)
+        sys.exit(1)
+    except OSError as e:
+        print(f"EE: Script failed: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

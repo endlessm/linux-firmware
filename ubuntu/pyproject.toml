@@ -1,0 +1,42 @@
+[project]
+requires-python = ">=3.13"
+dependencies = [
+    "gitpython",
+    "pathspec",
+    "python-debian",
+    "requests",
+]
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "pytest",
+    "ruff",
+    "types-requests",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+]
+
+[tool.mypy]
+strict = true
+python_version = "3.13"
+mypy_path = "lib"
+
+[[tool.mypy.overrides]]
+module = "debian.changelog"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

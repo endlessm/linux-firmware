@@ -1,90 +1,87 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # Check all packages
 #
 
-check_dir=ubuntu/build/checks
+import sys
+from pathlib import Path
 
-rm -rf "${check_dir}"
-mkdir -p "${check_dir}"
+import git
 
-#
-# Run individual package checks
-#
+from lib.package import Package, PackageError, PackageFiles
 
-for d in ubuntu/package/* ; do
-	package=${d##*/}
-	./ubuntu/bin/check-package "${package}"
-	echo
-done
 
-#
-# Run cross-package checks
-#
+def main() -> None:
+    """Run per-package and cross-package checks."""
+    packaged_files: dict[str, list[str]] = {}
+    excluded_files: dict[str, list[str]] = {}
+    licenses_files: dict[str, list[str]] = {}
 
-echo "II: Run additional cross-package checks"
+    for pkg_dir in sorted(Path("ubuntu/package").iterdir()):
+        name = pkg_dir.name
+        print(f"II: Run checks for package: {name}")
+        try:
+            pkg = Package(name)
+            pkg.check()
+        except PackageError as e:
+            print(f"EE: {e}", file=sys.stderr)
+            for f in e.files:
+                print(f"    {f}", file=sys.stderr)
+            sys.exit(1)
 
-# Generate additional file lists required for the tests
-./ubuntu/bin/list-package-files licenses > "${check_dir}"/licenses.files
-./ubuntu/bin/list-package-files unpackaged > "${check_dir}"/unpackaged.files
-git ls-files | sort -u > "${check_dir}"/all-git.files
+        if name != "meta":
+            packaged_files[name] = pkg.files.paths()
+            excluded_files[name] = pkg.files.paths("excluded")
+            licenses_files[name] = pkg.licenses.paths()
 
-cd "${check_dir}"
+        print()
 
-#
-# Check that different packages don't contain the same file(s)
-#
+    print("II: Run additional cross-package checks")
 
-echo "II: Check that different packages don't contain the same file(s)"
+    all_git_files = set(git.Repo().git.ls_files().splitlines())
+    all_packaged = {f for files in packaged_files.values() for f in files}
+    all_excluded = {f for files in excluded_files.values() for f in files}
+    all_licenses = {f for files in licenses_files.values() for f in files}
+    unpackaged_files = set(PackageFiles(Path("ubuntu/unpackaged")).paths())
 
-fail=0
-while IFS= read -r f ; do
-	if grep -qFx "${f}" licenses.files ; then
-		# License files can be provided by multiple packages
-		continue
-	fi
-	fail=1
-	echo "EE: Multiple packages provide: ${f}" >&2
-	grep -Fx "${f}" ./*/package.files | sed "s|^\./|    - |;s|/.*||" >&2
-done < <(sort ./*/package.files | uniq -d)
+    print("II: Check that different packages don't contain the same file(s)")
+    seen: dict[str, list[str]] = {}
+    for name, files in packaged_files.items():
+        for f in files:
+            seen.setdefault(f, []).append(name)
 
-if [ ${fail} -ne 0 ] ; then
-	echo "EE: Check failed" >&2
-	exit 1
-fi
+    fail = False
+    for f, packages in sorted(seen.items()):
+        if len(packages) > 1:
+            fail = True
+            print(f"EE: Multiple packages provide: {f}", file=sys.stderr)
+            for name in packages:
+                print(f"    - {name}", file=sys.stderr)
+    if fail:
+        print("EE: Check failed", file=sys.stderr)
+        sys.exit(1)
 
-#
-# Check that excluded files are *not* also listed in ubuntu/unpackaged
-#
+    print("II: Check that excluded files are not listed in ubuntu/unpackaged")
+    bad = sorted(all_excluded & unpackaged_files)
+    if bad:
+        print("EE: Incorrectly listed files in ubuntu/unpackaged:", file=sys.stderr)
+        for f in bad:
+            print(f"    - {f}", file=sys.stderr)
+        print("EE: Check failed", file=sys.stderr)
+        sys.exit(1)
 
-echo "II: Check that excluded files are not listed in ubuntu/unpackaged"
+    print("II: Check that all files are packaged or explicitly excluded")
+    all_accounted = all_packaged | all_excluded | unpackaged_files | all_licenses
+    missing = sorted(all_git_files - all_accounted)
+    if missing:
+        print("EE: Unpackaged files:", file=sys.stderr)
+        for f in missing:
+            print(f"    - {f}", file=sys.stderr)
+        print("EE: Check failed", file=sys.stderr)
+        sys.exit(1)
 
-sort -u ./*/excluded.files > packages-excluded.files
-sort packages-excluded.files unpackaged.files | uniq -d > check.files
-if [ -s check.files ] ; then
-	echo "EE: Incorrectly listed files in ubuntu/unpackaged:" >&2
-	sed 's/^/    - /' check.files >&2
-	echo "EE: Check failed" >&2
-	exit 1
-fi
+    print("II: All checks passed")
 
-#
-# Check that all files are packaged or explicitly excluded
-#
 
-echo "II: Check that all files are packaged or explicitly excluded"
-
-sort -u ./*/package.files ./*/excluded.files unpackaged.files > all-package.files
-sort all-git.files all-package.files | uniq -u > missing.files
-if [ -s missing.files ] ; then
-	echo "EE: Unpackaged files:" >&2
-	sed 's/^/    - /' missing.files >&2
-	echo "EE: Check failed" >&2
-	exit 1
-fi
-
-#
-# All good
-#
-
-echo "II: All checks passed"
+if __name__ == "__main__":
+    main()

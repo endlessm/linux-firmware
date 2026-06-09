@@ -1,42 +1,100 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # Commit all package releases
 #
 
-# Sanity check
-./ubuntu/bin/check-packages
+import argparse
+import re
+import subprocess
+import sys
+from pathlib import Path
 
-# Current upstream commit and version
-VERSION=
-# shellcheck disable=SC1091
-. ubuntu/upstream
+import git
 
-rebase_release=1
+from lib.changelog import ChangelogError
+from lib.package import Package, PackageError, read_upstream
 
-for d in ubuntu/package/* ; do
-	package=${d##*/}
-	if [ "${package}" = "meta" ] ; then
-		rebase_version=${VERSION}.1ubuntu
-	else
-		rebase_version=${VERSION}-0ubuntu1
-	fi
 
-	version=$(dpkg-parsechangelog -l "${d}"/changelog -S Version)
-	if [ "${version}" != "${rebase_version}" ] ; then
-		rebase_release=0
-	fi
-done
+def main() -> None:
+    """Commit all package releases."""
+    parser = argparse.ArgumentParser(description="Commit and tag all  package releases")
+    parser.add_argument("--no-check", action="store_true", help="Don't run package checks")
+    parser.add_argument("--no-tag", action="store_true", help="Don't tag the releases")
+    parser.add_argument("--force", action="store_true", help="Force tagging")
+    args = parser.parse_args()
 
-# This is a rebase release (all packages, same version)
-if [ ${rebase_release} -eq 1 ] ; then
-	echo
-	echo "II: Commit and tag rebase release"
-	git add ubuntu/package/*/changelog
-	git commit -s -m "UBUNTU: Ubuntu-${version}"
-	./ubuntu/bin/tag-release
-	exit 0
-fi
+    # Sanity check
+    if not args.no_check:
+        result = subprocess.run(["./ubuntu/bin/check-packages"], check=False)
+        if result.returncode != 0:
+            sys.exit(result.returncode)
 
-for d in ubuntu/package/* ; do
-	./ubuntu/bin/commit-release --no-check "${d##*/}"
-done
+    _, upstream_version = read_upstream()
+
+    sru_release = True
+    rebase_release = True
+    version = ""
+
+    for pkg_dir in sorted(Path("ubuntu/package").iterdir()):
+        try:
+            pkg = Package(pkg_dir.name)
+        except (PackageError, ChangelogError):
+            continue
+
+        version = str(pkg.changelog.Changelog.version)
+
+        # Rebase release patterns: VERSION.1ubuntu or VERSION-0ubuntu1
+        if version in (f"{upstream_version}.1ubuntu", f"{upstream_version}-0ubuntu1"):
+            sru_release = False
+        # SRU release patterns: VERSION.*ubuntu0.0 or VERSION-0ubuntu*.0
+        elif re.match(rf"^{re.escape(upstream_version)}\.\d+ubuntu0\.0$", version) or re.match(
+            rf"^{re.escape(upstream_version)}-0ubuntu\d+\.0$", version
+        ):
+            rebase_release = False
+        else:
+            # Regular release
+            sru_release = False
+            rebase_release = False
+
+    if sru_release and rebase_release:
+        print()
+        print("EE: Internal error", file=sys.stderr)
+        sys.exit(1)
+
+    repo = git.Repo()
+
+    # This is a dummy SRU release
+    if sru_release:
+        print()
+        print("II: Commit dummy SRU release")
+        repo.git.add("ubuntu/package/*/changelog")
+        # fmt: off
+        repo.git.commit(
+            "-s",
+            "-m", "UBUNTU: [Packaging] Initial dummy SRU release",
+            "-m", "Ignore: yes",
+        )
+        # fmt: on
+        return
+
+    # This is a rebase release (all packages, same version)
+    if rebase_release:
+        print()
+        print("II: Commit and tag rebase release")
+        repo.git.add("ubuntu/package/*/changelog")
+        repo.git.commit("-s", "-m", f"UBUNTU: Ubuntu-{version}")
+        if not args.no_tag:
+            force = ["--force"] if args.force else []
+            subprocess.run(["./ubuntu/bin/tag-release", *force], check=True)
+        return
+
+    # Regular releases - commit each package separately
+    for pkg_dir in sorted(Path("ubuntu/package").iterdir()):
+        print()
+        no_tag = ["--no-tag"] if args.no_tag else []
+        force = ["--force"] if args.force else []
+        subprocess.run(["./ubuntu/bin/commit-release", "--no-check", *no_tag, *force, pkg_dir.name], check=True)
+
+
+if __name__ == "__main__":
+    main()

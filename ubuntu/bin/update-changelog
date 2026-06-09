@@ -1,173 +1,39 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
-# Update a changelog
-#
-
-function out()
-{
-	local rc=${?}
-
-	trap - EXIT INT TERM HUP
-	test ${rc} -eq 0 || echo "EE: Script failed" >&2
-	exit "${rc}"
-}
-
-function usage()
-{
-	cat <<EOF
-Usage: $(basename "${0}") [-h] [--rebuild] [--series <series>] [--suffix <suffix>] <package>
-
-Postional arguments:
-  <package>          Name of the package to work on.
-
-Optional arguments:
-  -h, --help         Show this help text and exit.
-  --rebuild          No-change rebuild.
-  --series <series>  Ubuntu series name.
-  --suffix <suffix>  Generate the new package version by appending <suffix> to
-                     the current version rather than incrementing the upload
-                     number by one.
-EOF
-}
-
-rebuild=0
-series=
-suffix=
-package=
-
-while [ ${#} -gt 0 ] ; do
-	case "${1}" in
-		-h|--help)
-			usage
-			exit
-			;;
-		--rebuild)
-			rebuild=1
-			;;
-		--series)
-			shift
-			series=${1}
-			;;
-		--suffix)
-			shift
-			suffix=${1}
-			;;
-		*)
-			if [ -n "${package}" ] ; then
-				echo "EE: Invalid argument: ${1}" >&2
-				exit 2
-			fi
-			package=${1}
-			;;
-	esac
-	shift
-done
-
-if [ -z "${package}" ] ; then
-	usage >&2
-	exit 2
-fi
-
-changelog=ubuntu/package/${package}/changelog
-if ! [ -e "${changelog}" ] ; then
-	echo "EE: Invalid package name: ${package}" >&2
-	exit 2
-fi
-
-trap out EXIT INT TERM HUP
-
-echo "II: Update changelog of package: ${package}"
-
-# Current upstream commit and version
-VERSION=
-# shellcheck disable=SC1091
-. ubuntu/upstream
-
-#
-# Determine the current package version and series
+# Update a package changelog
 #
 
-version=
-if [ -s "${changelog}" ] ; then
-	version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
-	if [ -z "${series}" ] ; then
-		series=$(dpkg-parsechangelog -l "${changelog}" -S Distribution)
-	fi
-fi
+import argparse
+import sys
 
-if [ -z "${series}" ] ; then
-	echo "EE: Initial release, use --series <series>" >&2
-	exit 1
-fi
+from lib.changelog import ChangelogError
+from lib.package import Package, PackageError
 
-#
-# Calculate the new package version
-#
 
-if [ "${version#"${VERSION}"}" != "${version}" ] ; then
-	if [ -n "${suffix}" ] ; then
-		# Append the provided suffix
-		new_version=${version}${suffix}
-	else
-		# Bump the upload number
-		upload=$(echo "${version}" | grep -o '[0-9]*$')
-		if [ -z "${upload}" ] ; then
-			new_version=${version}0.1
-		else
-			new_version=${version%"${upload}"}$((upload + 1))
-		fi
-	fi
-else
-	# New upstream version
-	if [ "${package}" = "meta" ] ; then
-		new_version=${VERSION}.1ubuntu${suffix}
-	else
-		new_version=${VERSION}-0ubuntu1${suffix}
-	fi
-fi
+def main() -> None:
+    """Update a package changelog."""
+    parser = argparse.ArgumentParser(description="Update a package changelog")
+    parser.add_argument("package", help="Package name")
+    parser.add_argument("--rebuild", action="store_true", help="No-change rebuild")
+    parser.add_argument("--series", help="Ubuntu series name")
+    parser.add_argument("--sru", action="store_true", help="Add a dummy SRU changelog entry")
+    args = parser.parse_args()
 
-#
-# Collect the changes for the package since the last release
-#
+    try:
+        pkg = Package(args.package)
+        print(f"II: Update changelog of package: {args.package}")
+        if not pkg.changelog.update(
+            pkg.orig.upstream_version,
+            pkg.tracked_paths,
+            series=args.series,
+            sru=args.sru,
+            rebuild=args.rebuild,
+        ):
+            print("II: No changes")
+    except (PackageError, ChangelogError) as e:
+        print(f"EE: {e}", file=sys.stderr)
+        sys.exit(1)
 
-changes=ubuntu/package/${package}/changes
 
-if [ -s "${changelog}" ] ; then
-	./ubuntu/bin/list-changes "${package}" | tac | ./ubuntu/bin/format-changes > "${changes}"
-	if ! [ -s "${changes}" ] ; then
-		if [ ${rebuild} -eq 0 ] ; then
-			echo "II: No changes"
-			rm -f "${changes}"
-			exit
-		fi
-		echo "  * No-change rebuild" > "${changes}"
-	fi
-else
-	echo "  * Initial version" > "${changes}"
-fi
-
-#
-# Add a new changelog entry
-#
-
-if [ "${package}" = "meta" ] ; then
-	package_name=linux-firmware
-else
-	package_name=linux-firmware-${package}
-fi
-
-{
-	echo "${package_name} (${new_version}) ${series}; urgency=medium"
-	echo
-	cat "${changes}"
-	echo
-	echo " -- ${DEBFULLNAME} <${DEBEMAIL}>  $(date -R)"
-
-	if [ -s "${changelog}" ] ; then
-		echo
-		cat "${changelog}"
-	fi
-} > "${changelog}".new
-mv "${changelog}".new "${changelog}"
-
-rm -f "${changes}"
+if __name__ == "__main__":
+    main()

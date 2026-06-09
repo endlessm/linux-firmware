@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# Run ruff and mypy on all Python scripts and libraries
+#
+
+set -euo pipefail
+
+bin_dir=$(dirname "$(realpath "$0")")
+lib_dir=${bin_dir}/../lib
+config_file=${bin_dir}/../pyproject.toml
+
+if [ ${#} -eq 0 ] ; then
+	mapfile -t scripts < <(grep -rlP '^#!/usr/bin/env python3' "${bin_dir}" | sort)
+	mapfile -t lib_files < <(find "${lib_dir}" -name "*.py" | sort)
+
+	targets=("${scripts[@]}" "${lib_files[@]}")
+else
+	targets=("${@}")
+fi
+
+failed=0
+
+ruff format "${targets[@]}" || failed=1
+ruff check "${targets[@]}" || failed=1
+mypy --config-file "${config_file}" --scripts-are-modules "${targets[@]}" || failed=1
+
+exit "${failed}"

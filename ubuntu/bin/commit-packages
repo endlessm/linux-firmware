@@ -1,14 +1,30 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # Add and commit all package files
 #
 
-if [ -z "$(git status --porcelain -- ubuntu/package/)" ] ; then
-	echo "II: No package files changes to commit"
-	exit 0
-fi
+import git
 
-echo "II: Commit package files"
 
-git add ubuntu/package/
-git commit -s -m "UBUNTU: [Packaging] Update package files" -m "Ignore: yes"
+def main() -> None:
+    """Add and commit all package files."""
+    repo = git.Repo()
+
+    if not repo.git.status("--porcelain", "--", "ubuntu/package/"):
+        print("II: No package files changes to commit")
+        return
+
+    print("II: Commit package files")
+
+    repo.git.add("ubuntu/package/")
+    # fmt: off
+    repo.git.commit(
+        "-s",
+        "-m", "UBUNTU: [Packaging] Update package files",
+        "-m", "Ignore: yes",
+    )
+    # fmt: on
+
+
+if __name__ == "__main__":
+    main()

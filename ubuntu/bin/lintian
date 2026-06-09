@@ -1,0 +1,28 @@
+#!/bin/bash -eu
+#
+# Run lintian on a package
+#
+
+pkg=${1}
+shift
+
+changelog=ubuntu/package/"${pkg}"/changelog
+
+s=$(dpkg-parsechangelog -l "${changelog}" -S Source)
+v=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+
+basename=${s}_${v}
+changes=../${basename}_source.changes
+if [ -e "${changes}" ] ; then
+	lintian "${changes}" "${@}"
+	exit 0
+fi
+
+dsc=../${basename}.dsc
+if [ -e "${dsc}" ] ; then
+	lintian "${dsc}" "${@}"
+	exit 0
+fi
+
+echo "EE: Not found: ../${basename}{_source.changes,.dsc}" >&2
+exit 1

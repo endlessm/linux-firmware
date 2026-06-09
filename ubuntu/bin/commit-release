@@ -1,88 +1,56 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # Commit and tag a package release
 #
 
-function out()
-{
-	local rc=${?}
+import argparse
+import subprocess
+import sys
 
-	trap - EXIT INT TERM HUP
-	test ${rc} -eq 0 || echo "EE: Script failed" >&2
-	exit "${rc}"
-}
+import git
 
-function usage()
-{
-	cat <<EOF
-Usage: $(basename "${0}") [-h] [--no-check] <package>
+from lib.changelog import ChangelogError
+from lib.package import Package, PackageError
 
-Postional arguments:
-  <package>   Name of the package to work on.
 
-Optional arguments:
-  -h, --help  Show this help text and exit.
-  --no-check  Don't run package checks.
-EOF
-}
+def main() -> None:
+    """Commit and tag a package release."""
+    parser = argparse.ArgumentParser(description="Commit and tag a package release")
+    parser.add_argument("package", help="Package name")
+    parser.add_argument("--no-check", action="store_true", help="Don't run package checks")
+    parser.add_argument("--no-tag", action="store_true", help="Don't tag the release")
+    parser.add_argument("--force", action="store_true", help="Force tagging")
+    args = parser.parse_args()
 
-no_check=0
-package=
+    try:
+        pkg = Package(args.package)
+    except (PackageError, ChangelogError) as e:
+        print(f"EE: {e}", file=sys.stderr)
+        sys.exit(1)
 
-while [ ${#} -gt 0 ] ; do
-	case "${1}" in
-		-h|--help)
-			usage
-			exit
-			;;
-		--no-check)
-			no_check=1
-			;;
-		-*)
-			usage >&2
-			exit 2
-			;;
-		*)
-			if [ -z "${package}" ] ; then
-				package=${1}
-			else
-				usage >&2
-				exit 2
-			fi
-			;;
-	esac
-	shift
-done
+    print(f"II: Commit release of package: {args.package}")
 
-if [ -z "${package}" ] ; then
-	usage >&2
-	exit 2
-fi
+    repo = git.Repo()
 
-changelog=ubuntu/package/${package}/changelog
-if ! [ -e "${changelog}" ] ; then
-	echo "EE: Invalid package name: ${package}" >&2
-	exit 1
-fi
+    if not repo.git.status("--porcelain", "--", str(pkg.changelog.path)):
+        print("II: No changelog changes to commit")
+        return
 
-trap out EXIT INT TERM HUP
+    if not args.no_check:
+        result = subprocess.run(["./ubuntu/bin/check-packages"], check=False)
+        if result.returncode != 0:
+            sys.exit(result.returncode)
 
-if [ -z "$(git status --porcelain -- "${changelog}")" ] ; then
-	echo "II: No changelog changes to commit"
-	exit 0
-fi
+    version = str(pkg.changelog.Changelog.version)
+    tag = f"Ubuntu-{args.package}-{version}"
 
-# Sanity check
-if [ ${no_check} -eq 0 ] ; then
-	./ubuntu/bin/check-packages
-fi
+    repo.git.add(str(pkg.changelog.path))
+    repo.git.commit("-s", "-m", f"UBUNTU: {tag}")
 
-echo "II: Commit release"
+    if not args.no_tag:
+        force = ["--force"] if args.force else []
+        subprocess.run(["./ubuntu/bin/tag-release", *force], check=True)
 
-version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
-tag=Ubuntu-${package}-${version}
 
-git add "${changelog}"
-git commit -s -m "UBUNTU: ${tag}"
-
-./ubuntu/bin/tag-release
+if __name__ == "__main__":
+    main()

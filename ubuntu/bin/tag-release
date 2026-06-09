@@ -1,75 +1,46 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # Tag a release commit
 #
 
-function out()
-{
-	local rc=${?}
+import argparse
+import sys
 
-	trap - EXIT INT TERM HUP
-	test ${rc} -eq 0 || echo "EE: Script failed" >&2
-	exit "${rc}"
-}
+import git
 
-function usage()
-{
-	cat <<EOF
-Usage: $(basename "${0}") [--force] [-h] [<commit>]
 
-Tag the given commit or HEAD.
+def main() -> None:
+    """Tag a release commit."""
+    parser = argparse.ArgumentParser(description="Tag a release commit")
+    parser.add_argument("commit", nargs="?", default="HEAD", help="Commit to tag (default: HEAD)")
+    parser.add_argument("--force", action="store_true", help="Force tagging")
+    args = parser.parse_args()
 
-Postional arguments:
-  <commit>    Commit to tag. If not provided, tags HEAD.
+    repo = git.Repo()
 
-Optional arguments:
-  --force     Force things.
-  -h, --help  Show this help text and exit.
-EOF
-}
+    try:
+        subject = repo.git.log("--format=%s", args.commit, "-1")
+    except git.GitCommandError as e:
+        print(f"EE: {e}", file=sys.stderr)
+        sys.exit(1)
 
-opts=()
-commit=
+    if not subject.startswith("UBUNTU: Ubuntu-"):
+        print(f'EE: Not a release commit: {args.commit} ("{subject}")', file=sys.stderr)
+        sys.exit(1)
 
-while [ ${#} -gt 0 ] ; do
-	case "${1}" in
-		--force)
-			opts+=(--force)
-			;;
-		-h|--help)
-			usage
-			exit
-			;;
-		-*)
-			usage >&2
-			exit 2
-			;;
-		*)
-			if [ -z "${commit}" ] ; then
-				commit=${1}
-			else
-				echo "EE: Invalid argument: ${1}" >&2
-				exit 2
-			fi
-			;;
-	esac
-	shift
-done
+    tag = subject.removeprefix("UBUNTU: ").replace("~", "_")
+    print(f"II: Tag commit {args.commit} with: {tag}")
 
-trap out EXIT INT TERM HUP
+    tag_args = ["-s", "-m", subject, tag, args.commit]
+    if args.force:
+        tag_args.insert(0, "--force")
 
-commit=${commit:-HEAD}
-subject=$(git log --format=%s "${commit}" -1)
+    try:
+        repo.git.tag(*tag_args)
+    except git.GitCommandError as e:
+        print(f"EE: {e}", file=sys.stderr)
+        sys.exit(1)
 
-case "${subject}" in
-	"UBUNTU: Ubuntu-"*)
-		tag=${subject#UBUNTU: }
-		tag=${tag//~/_}
-		echo "II: Tag commit ${commit} with: ${tag}"
-		git tag "${opts[@]}" -s -m "${subject}" "${tag}" "${commit}"
-		;;
-	*)
-		echo "EE: Not a release commit: ${commit} (\"${subject}\")" >&2
-		exit 1
-		;;
-esac
+
+if __name__ == "__main__":
+    main()

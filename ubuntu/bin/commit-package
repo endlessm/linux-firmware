@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+#
+# Add and commit package files
+#
+
+import argparse
+import sys
+from pathlib import Path
+
+import git
+
+
+def main() -> None:
+    """Add and commit package files."""
+    parser = argparse.ArgumentParser(description="Add and commit package files")
+    parser.add_argument("package", help="Package name")
+    args = parser.parse_args()
+
+    pkg_dir = Path("ubuntu/package") / args.package
+    if not pkg_dir.is_dir():
+        print(f"EE: Invalid package name: {args.package}", file=sys.stderr)
+        sys.exit(1)
+
+    repo = git.Repo()
+
+    if not repo.git.status("--porcelain", "--", str(pkg_dir) + "/"):
+        print("II: No package files changes to commit")
+        return
+
+    print(f"II: Commit package files for package: {args.package}")
+
+    repo.git.add(str(pkg_dir) + "/")
+    # fmt: off
+    repo.git.commit(
+        "-s",
+        "-m", f"UBUNTU: [Packaging] {args.package}: Update package files",
+        "-m", "Ignore: yes",
+    )
+    # fmt: on
+
+
+if __name__ == "__main__":
+    main()

@@ -1,123 +1,53 @@
-#!/bin/bash -eu
+#!/usr/bin/env python3
 #
 # Update package
 #
 
-function out()
-{
-	local rc=${?}
+import argparse
+import sys
 
-	trap - EXIT INT TERM HUP
-	test ${rc} -eq 0 || echo "EE: Script failed" >&2
-	exit "${rc}"
-}
+from lib.changelog import ChangelogError
+from lib.package import Package, PackageError
+from lib.whence import Whence, WhenceError
 
-if [ $# != 1 ] ; then
-	echo "Usage: $(basename "${0}") <package>" >&2
-	exit 2
-fi
 
-package=${1}
+def main() -> None:
+    """Update a package's WHENCE, patches, and include-binaries files."""
+    parser = argparse.ArgumentParser(description="Update package")
+    parser.add_argument("package", help="Package name")
+    parser.add_argument(
+        "commit",
+        nargs="?",
+        default="HEAD",
+        help="Commit to read package files at (default: HEAD)",
+    )
+    args = parser.parse_args()
 
-if [ "${package}" = "meta" ] ; then
-	# Nothing to do for the meta package
-	exit 0
-fi
+    print(f"II: Update package: {args.package}")
 
-pkg_dir=ubuntu/package/"${package}"
-if ! [ -e "${pkg_dir}"/control ] ; then
-	echo "EE: Invalid package name: ${package}" >&2
-	exit 1
-fi
+    if args.package == "meta":
+        return
 
-trap out EXIT INT TERM HUP
+    try:
+        pkg = Package(args.package, args.commit)
+        package_files = pkg.files
 
-echo "II: Update package: ${package}"
+        # Update WHENCE
+        print("II: Update WHENCE")
+        whence = Whence("WHENCE*", args.commit)
+        pkg.whence.update(package_files, whence)
 
-# Current upstream commit and version
-COMMIT=
-# shellcheck disable=SC1091
-. ubuntu/upstream
+        # Update Debian delta (patches and binaries)
+        print("II: Update Debian delta")
+        pkg.update_delta()
 
-readarray -t package_files < <(grep '^[0-9a-zA-Z:]' "${pkg_dir}"/files)
-readarray -t license_files < <(grep '^[0-9a-zA-Z]' ubuntu/licenses)
+    except (PackageError, WhenceError, ChangelogError) as e:
+        print(f"EE: {e}", file=sys.stderr)
+        sys.exit(1)
+    except (OSError, ValueError) as e:
+        print(f"EE: Script failed: {e}", file=sys.stderr)
+        sys.exit(1)
 
-#
-# Update the package's WHENCE file
-#
 
-echo "II: Create ${pkg_dir}/WHENCE"
-
-git ls-files --error-unmatch -- "${package_files[@]}" > "${pkg_dir}"/files.tmp
-./ubuntu/bin/trim-whence "${pkg_dir}"/files.tmp WHENCE* > "${pkg_dir}"/WHENCE
-rm "${pkg_dir}"/files.tmp
-
-#
-# Update the package's licenses file
-#
-
-echo "II: Create ${pkg_dir}/licenses"
-
-{
-	git ls-files --error-unmatch -- "${package_files[@]}"
-	git ls-files --error-unmatch -- "${license_files[@]}"
-} | sort | uniq -d > "${pkg_dir}"/licenses
-
-#
-# Collect the list of package files that are different from the upstream commit
-#
-
-binary_files=()
-non_binary_files=()
-
-while IFS= read -r -d "" line ; do
-	IFS=$'\t' read -r added _ name new_name <<<"${line}"
-
-	files=("${name}")
-	if [ -n "${new_name}" ] ; then
-		files+=("${new_name}")
-	fi
-
-	for f in "${files[@]}" ; do
-		if [ -h "${f}" ] ; then
-			# Symlink
-			binary_files+=("${f}")
-			non_binary_files+=("${f}")
-		elif [ "${added}" = "-" ] ; then
-			binary_files+=("${f}")
-		else
-			non_binary_files+=("${f}")
-		fi
-	done
-done < <(git diff --numstat -M -z "${COMMIT}" -- "${package_files[@]}")
-
-#
-# Create the list of binary files to include in the source package
-#
-
-rm -f "${pkg_dir}"/source/include-binaries
-
-if [ ${#binary_files[@]} -gt 0 ] ; then
-	echo "II: Create ${pkg_dir}/source/include-binaries"
-	mkdir -p "${pkg_dir}"/source
-	printf "%s\n" "${binary_files[@]}" > "${pkg_dir}"/source/include-binaries
-fi
-
-#
-# Create debian/patches/ubuntu.patch
-#
-
-rm -rf "${pkg_dir}"/patches
-
-if [ ${#non_binary_files[@]} -gt 0 ] ; then
-	echo "II: Create ${pkg_dir}/patches/ubuntu.patch"
-	mkdir -p "${pkg_dir}"/patches
-	git diff "${COMMIT}" -- "${non_binary_files[@]}" > "${pkg_dir}"/patches/ubuntu.patch
-	echo "ubuntu.patch" > "${pkg_dir}"/patches/series
-fi
-
-#
-# Make sure we have a changelog
-#
-
-touch "${pkg_dir}"/changelog
+if __name__ == "__main__":
+    main()
