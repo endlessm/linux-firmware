@@ -80,11 +80,11 @@ fi
 	echo
 
 	header "cat ${debdiff} (non-binary files)"
-	grep -v '^Binary files ' "${debdiff}" || true
+	grep -av '^Binary files ' "${debdiff}" || true
 	echo
 
 	header "cat ${debdiff} (binary files)"
-	grep '^Binary files ' "${debdiff}" || true
+	grep -a '^Binary files ' "${debdiff}" || true
 	echo
 
 } | awk '/^diff / { print "" } { print }' | cat -s | colorize
