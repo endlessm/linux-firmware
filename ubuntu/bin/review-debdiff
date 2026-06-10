@@ -66,6 +66,10 @@ trap out EXIT INT TERM HUP
 
 name=$(dpkg-parsechangelog -l "${changelog}" -S Source)
 version=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+if [ "${version%.0}" != "${version}" ] ; then
+	echo "II: Skip dummy SRU release version"
+	exit 0
+fi
 
 debdiff=../${name}_${version}.debdiff
 
