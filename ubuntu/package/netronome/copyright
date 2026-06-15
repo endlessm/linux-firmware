@@ -3,6 +3,10 @@ Upstream-Name: linux-firmware
 Upstream-Contact: linux-firmware@kernel.org
 Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
 
+Files: debian/*
+Copyright: 2026 Canonical Ltd.
+License: GPL-2+
+
 Files: netronome/*
 Copyright: 2017, NETRONOME Systems, Inc. All rights reserved.
 License: Redistributable-Netronome
@@ -74,3 +78,11 @@ License: Redistributable-Netronome
  specifically disclaim any express or implied warranty of fitness for High
  Risk Activities.
 
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in /usr/share/common-licenses/GPL-2.

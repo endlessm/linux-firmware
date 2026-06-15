@@ -3,13 +3,14 @@ Upstream-Name: linux-firmware
 Upstream-Contact: linux-firmware@kernel.org
 Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
 
+Files: debian/*
+Copyright: 2026 Canonical Ltd.
+License: GPL-2+
+
 Files: ar3k/*
  ar5523.bin
- ar7010*
- ar9271.fw
  ath3k-1.fw
  ath6k/*
- htc_*
 Copyright: 2008-2010, Atheros Communications, Inc.
 License: Redistributable-atheros_firmware
 
@@ -138,7 +139,6 @@ Files: ath10k/QCA4019/hw1.0/board-2.bin
  ath11k/WCN6750/hw1.0/Notice.txt
  ath11k/WCN6750/hw1.0/board-2.bin
  ath11k/WCN6750/hw1.0/sc7280/wpss.mbn
- ath11k/WCN6750/hw1.0/wpss.mdt
  ath11k/WCN6855/hw2.0/Notice.txt
  ath11k/WCN6855/hw2.0/amss.bin
  ath11k/WCN6855/hw2.0/board-2.bin
@@ -147,27 +147,14 @@ Files: ath10k/QCA4019/hw1.0/board-2.bin
  ath11k/WCN6855/hw2.0/nfa765/amss.bin
  ath11k/WCN6855/hw2.0/nfa765/m3.bin
  ath11k/WCN6855/hw2.0/regdb.bin
- ath11k/WCN6855/hw2.1/amss.bin
- ath11k/WCN6855/hw2.1/board-2.bin
- ath11k/WCN6855/hw2.1/m3.bin
- ath11k/WCN6855/hw2.1/nfa765/amss.bin
- ath11k/WCN6855/hw2.1/nfa765/m3.bin
- ath11k/WCN6855/hw2.1/regdb.bin
  ath12k/*
- qcom/sdm845/wlanmdsp.mbn
  wil6210.*
 Copyright: 2015-2017, Qualcomm Atheros, Inc.
 License: Redistributable-QualcommAtheros_ath10k
 
 Files: ath10k/WCN3990/hw1.0/qcm2290/firmware-5.bin
  ath10k/WCN3990/hw1.0/qcm2290/wlanmdsp.mbn
- ath10k/WCN3990/hw1.0/qrb4210/firmware-5.bin
- ath10k/WCN3990/hw1.0/qrb4210/wlanmdsp.mbn
  ath11k/WCN6750/hw1.0/qcm6490/wpss.mbn
- qcom/qcm2290/wlanmdsp.mbn
- qcom/qcm6490/wpss.mbn
- qcom/qcs6490/wpss.mbn
- qcom/qrb4210/wlanmdsp.mbn
 Copyright: 2013-2017 Qualcomm Technologies, Inc. All rights reserved.
            1995-2005 Jean-loup Gailly and Mark Adler
 License: Redistributable-qcom
@@ -956,7 +943,7 @@ License: Redistributable-qcom
  //
  /*
   * This code implements the MD5 message-digest algorithm.
-  * The algorithm is due to Ron Rivest.	This code was
+  * The algorithm is due to Ron Rivest. This code was
   * written by Colin Plumb in 1993, no copyright is claimed.
   * This code is in the public domain; do with it what you wish.
   *
@@ -1265,3 +1252,11 @@ License: Redistributable-qcom
  ------------------------------------------------------------------------------
  ------------------------------------------------------------------------------
 
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in /usr/share/common-licenses/GPL-2.

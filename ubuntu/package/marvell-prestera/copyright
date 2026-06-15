@@ -3,6 +3,10 @@ Upstream-Name: linux-firmware
 Upstream-Contact: linux-firmware@kernel.org
 Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
 
+Files: debian/*
+Copyright: 2026 Canonical Ltd.
+License: GPL-2+
+
 Files: mrvl/*
 Copyright: 2019.  Marvell International Ltd.  All rights reserved.
 License: Redistributable-Marvell
@@ -31,3 +35,10 @@ License: Redistributable-Marvell
  MARVELL, ITS AFFILIATES AND THEIR SUPPLIERS DISCLAIM ANY WARRANTY THAT THE
  DELIVERABLES WILL OPERATE WITHOUT INTERRUPTION OR BE ERROR-FREE.
 
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+ .
+ On Debian systems, the full text of the GNU General Public License

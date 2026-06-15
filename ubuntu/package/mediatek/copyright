@@ -3,8 +3,11 @@ Upstream-Name: linux-firmware
 Upstream-Contact: linux-firmware@kernel.org
 Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
 
+Files: debian/*
+Copyright: 2026 Canonical Ltd.
+License: GPL-2+
+
 Files: mediatek/*
- vpu_*
 Copyright: Unknown
 License: Redistributable-mediatek
 
@@ -12,7 +15,6 @@ Files: mediatek/mt7601u.bin
  mediatek/mt7650.bin
  mediatek/mt7662.bin
  mediatek/mt7662_rom_patch.bin
- mt76*
 Copyright: 2013, Ralink, A MediaTek Company
 License: Redistributable-ralink_a_mediatek_company_firmware
 
@@ -118,3 +120,11 @@ License: Redistributable-ralink_a_mediatek_company_firmware
  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
  DAMAGE.
 
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in /usr/share/common-licenses/GPL-2.

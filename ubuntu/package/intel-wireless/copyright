@@ -3,8 +3,11 @@ Upstream-Name: linux-firmware
 Upstream-Contact: linux-firmware@kernel.org
 Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
 
-Files: intel/*
- iwlwifi-*
+Files: debian/*
+Copyright: 2026 Canonical Ltd.
+License: GPL-2+
+
+Files: intel/iwlwifi/*
 Copyright: 2006-2021, Intel Corporation.
 License: Redistributable-iwlwifi_firmware
 
@@ -12,12 +15,6 @@ Files: intel/ibt-0040-0041.ddc
  intel/ibt-0040-0041.sfi
  intel/ibt-0040-1020.ddc
  intel/ibt-0040-1020.sfi
- intel/ibt-0040-1050.ddc
- intel/ibt-0040-1050.sfi
- intel/ibt-0040-2120.ddc
- intel/ibt-0040-2120.sfi
- intel/ibt-0040-4150.ddc
- intel/ibt-0040-4150.sfi
  intel/ibt-0041-0041.ddc
  intel/ibt-0041-0041.sfi
  intel/ibt-0093-0041.ddc
@@ -67,12 +64,6 @@ Files: intel/ibt-0040-0041.ddc
  intel/ibt-1040-0041.sfi
  intel/ibt-1040-1020.ddc
  intel/ibt-1040-1020.sfi
- intel/ibt-1040-1050.ddc
- intel/ibt-1040-1050.sfi
- intel/ibt-1040-2120.ddc
- intel/ibt-1040-2120.sfi
- intel/ibt-1040-4150.ddc
- intel/ibt-1040-4150.sfi
  intel/ibt-11-5.ddc
  intel/ibt-11-5.sfi
  intel/ibt-1190-0041-iml.sfi
@@ -87,40 +78,14 @@ Files: intel/ibt-0040-0041.ddc
  intel/ibt-12-16.sfi
  intel/ibt-17-0-1.ddc
  intel/ibt-17-0-1.sfi
- intel/ibt-17-1.ddc
- intel/ibt-17-1.sfi
  intel/ibt-17-16-1.ddc
  intel/ibt-17-16-1.sfi
- intel/ibt-17-2.ddc
- intel/ibt-17-2.sfi
  intel/ibt-18-0-1.ddc
  intel/ibt-18-0-1.sfi
- intel/ibt-18-1.ddc
- intel/ibt-18-1.sfi
  intel/ibt-18-16-1.ddc
  intel/ibt-18-16-1.sfi
- intel/ibt-18-2.ddc
- intel/ibt-18-2.sfi
- intel/ibt-19-0-0.ddc
- intel/ibt-19-0-0.sfi
- intel/ibt-19-0-1.ddc
- intel/ibt-19-0-1.sfi
- intel/ibt-19-0-3.ddc
- intel/ibt-19-0-3.sfi
  intel/ibt-19-0-4.ddc
  intel/ibt-19-0-4.sfi
- intel/ibt-19-16-4.ddc
- intel/ibt-19-16-4.sfi
- intel/ibt-19-240-1.ddc
- intel/ibt-19-240-1.sfi
- intel/ibt-19-240-4.ddc
- intel/ibt-19-240-4.sfi
- intel/ibt-19-32-0.ddc
- intel/ibt-19-32-0.sfi
- intel/ibt-19-32-1.ddc
- intel/ibt-19-32-1.sfi
- intel/ibt-19-32-4.ddc
- intel/ibt-19-32-4.sfi
  intel/ibt-20-0-3.ddc
  intel/ibt-20-0-3.sfi
  intel/ibt-20-1-3.ddc
@@ -146,10 +111,6 @@ License: Redistributable-ipw2100
 Files: ipw2200-*
 Copyright: Unknown
 License: Redistributable-ipw2200
-
-Files: rtl_bt/*
-Copyright: 2010, Realtek Semiconductor Corporation
-License: Redistributable-rtlwifi_firmware
 
 License: Redistributable-ibt_firmware
  Copyright © 2014, Intel Corporation.
@@ -652,44 +613,11 @@ License: Redistributable-iwlwifi_firmware
  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
  DAMAGE.
 
-License: Redistributable-rtlwifi_firmware
- Copyright (c) 2010, Realtek Semiconductor Corporation
- All rights reserved.
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
  .
- Redistribution.  Redistribution and use in binary form, without
- modification, are permitted provided that the following conditions are
- met:
- .
- * Redistributions must reproduce the above copyright notice and the
-   following disclaimer in the documentation and/or other materials
-   provided with the distribution.
- * Neither the name of Realtek Semiconductor Corporation nor the names of its
-   suppliers may be used to endorse or promote products derived from this
-   software without specific prior written permission.
- * No reverse engineering, decompilation, or disassembly of this software
-   is permitted.
- .
- Limited patent license. Realtek Semiconductor Corporation grants a world-wide,
- royalty-free, non-exclusive license under patents it now or hereafter
- owns or controls to make, have made, use, import, offer to sell and
- sell ("Utilize") this software, but solely to the extent that any
- such patent is necessary to Utilize the software alone, or in
- combination with an operating system licensed under an approved Open
- Source license as listed by the Open Source Initiative at
- http://opensource.org/licenses.  The patent license shall not apply to
- any other combinations which include this software.  No hardware per
- se is licensed hereunder.
- .
- DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
- CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
- BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
- FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
- OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
- ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
- TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
- USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
- DAMAGE.
-
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in /usr/share/common-licenses/GPL-2.

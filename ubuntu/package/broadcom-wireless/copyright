@@ -3,35 +3,17 @@ Upstream-Name: linux-firmware
 Upstream-Contact: linux-firmware@kernel.org
 Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
 
+Files: debian/*
+Copyright: 2026 Canonical Ltd.
+License: GPL-2+
+
 Files: brcm/*
 Copyright: Unknown
 License: GPL-2+
 
-Files: brcm/BCM-0a5c-6410.hcd
- brcm/BCM-0bb4-0306.hcd
- brcm/brcmfmac43012-sdio.bin
- brcm/brcmfmac43012-sdio.clm_blob
- brcm/brcmfmac43340-sdio.bin
- brcm/brcmfmac43362-sdio.bin
- brcm/brcmfmac4339-sdio.bin
- brcm/brcmfmac43430-sdio.bin
- brcm/brcmfmac43430-sdio.clm_blob
- brcm/brcmfmac43455-sdio.bin
- brcm/brcmfmac43455-sdio.clm_blob
- brcm/brcmfmac4354-sdio.bin
- brcm/brcmfmac4354-sdio.clm_blob
+Files: brcm/BCM-0bb4-0306.hcd
  brcm/brcmfmac4354-sdio.nvidia,p2371-2180.txt
- brcm/brcmfmac4356-pcie.bin
- brcm/brcmfmac4356-pcie.clm_blob
- brcm/brcmfmac4356-sdio.bin
- brcm/brcmfmac4356-sdio.clm_blob
- brcm/brcmfmac43570-pcie.bin
- brcm/brcmfmac43570-pcie.clm_blob
- brcm/brcmfmac4373-sdio.bin
- brcm/brcmfmac4373-sdio.clm_blob
  brcm/brcmfmac4373.bin
- brcm/brcmfmac54591-pcie.bin
- brcm/brcmfmac54591-pcie.clm_blob
  cypress/*
 Copyright: Unknown
 License: Redistributable-cypress
@@ -83,7 +65,7 @@ License: Redistributable-broadcom_bcm43xx
  use of the Software. ANY USE, REPRODUCTION, OR DISTRIBUTION OF THE SOFTWARE
  CONSTITUTES LICENSEE’S ACCEPTANCE OF THIS AGREEMENT.
  .
- 1.	License. Subject to the terms and conditions of this Agreement,
+ 1. License. Subject to the terms and conditions of this Agreement,
  Broadcom hereby grants to Licensee a limited, non-exclusive, non-transferable,
  royalty-free license: (i) to use and integrate the Software with any other
  software; and (ii) to reproduce and distribute the Software complete,
@@ -91,7 +73,7 @@ License: Redistributable-broadcom_bcm43xx
  proprietary integrated circuit product(s) sold by Broadcom with which the
  Software was designed to be used, or their successors.
  .
- 2.	Restrictions. Licensee shall distribute Software with a copy of this
+ 2. Restrictions. Licensee shall distribute Software with a copy of this
  Agreement. Licensee shall not remove, efface or obscure any copyright or
  trademark notices from the Software. Reproductions of the Broadcom copyright
  notice shall be included with each copy of the Software, except where such
@@ -105,14 +87,14 @@ License: Redistributable-broadcom_bcm43xx
  terms of this Agreement. In such event, Licensee will destroy all copies of the
  Software and its component parts.
  .
- 3.	Ownership. The Software is licensed and not sold.  Title to and
+ 3. Ownership. The Software is licensed and not sold.  Title to and
  ownership of the Software, including all intellectual property rights thereto,
  and any portion thereof remain with Broadcom or its licensors. Licensee hereby
  covenants that it will not assert any claim that the Software created by or for
  Broadcom infringe any intellectual property right owned or controlled by
  Licensee.
  .
- 4.     	Disclaimer. THE SOFTWARE IS OFFERED “AS IS,” AND BROADCOM PROVIDES AND
+ 4. Disclaimer. THE SOFTWARE IS OFFERED “AS IS,” AND BROADCOM PROVIDES AND
  GRANTS AND LICENSEE RECEIVES NO SUPPORT AND NO WARRANTIES OF ANY KIND, EXPRESS
  OR IMPLIED, BY STATUTE, COMMUNICATION OR CONDUCT WITH LICENSEE, OR OTHERWISE.
  BROADCOM SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY,
@@ -131,7 +113,7 @@ License: Redistributable-broadcom_bcm43xx
  LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY
  LIMITED REMEDY.
  .
- 5. 	Export Laws.  LICENSEE UNDERSTANDS AND AGREES THAT THE SOFTWARE IS
+ 5. Export Laws.  LICENSEE UNDERSTANDS AND AGREES THAT THE SOFTWARE IS
  SUBJECT TO UNITED STATES AND OTHER APPLICABLE EXPORT-RELATED LAWS AND
  REGULATIONS AND THAT LICENSEE MAY NOT EXPORT, RE-EXPORT OR TRANSFER THE
  SOFTWARE OR ANY DIRECT PRODUCT OF THE SOFTWARE EXCEPT AS PERMITTED UNDER THOSE
@@ -277,4 +259,3 @@ License: Redistributable-cypress
  be deemed effective when actually received and must be sent to Cypress
  Semiconductor Corporation, ATTN: Chief Legal Officer, 198 Champion Court, San
  Jose, CA 95134 USA.
-

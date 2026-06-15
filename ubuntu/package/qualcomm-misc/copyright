@@ -3,6 +3,10 @@ Upstream-Name: linux-firmware
 Upstream-Contact: linux-firmware@kernel.org
 Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
 
+Files: debian/*
+Copyright: 2026 Canonical Ltd.
+License: GPL-2+
+
 Files: qcom/*
 Copyright: 2013-2017 Qualcomm Technologies, Inc. All rights reserved.
            1995-2005 Jean-loup Gailly and Mark Adler
@@ -40,15 +44,11 @@ Files: qcom/kaanapali/Kaanapali-MTP-tplg.bin
  qcom/qcm6490/QCM6490-IDP-tplg.bin
  qcom/qcs615/TALOS-EVK-tplg.bin
  qcom/qcs6490/QCS6490-RB3Gen2-tplg.bin
- qcom/qcs6490/QCS6490-Radxa-Dragon-Q6A-tplg.bin
- qcom/qcs6490/QCS6490-Thundercomm-RubikPi3-tplg.bin
  qcom/qcs6490/Thundercomm/RubikPi3/QCS6490-Thundercomm-RubikPi3-tplg.bin
  qcom/qcs6490/radxa/dragon-q6a/QCS6490-Radxa-Dragon-Q6A-tplg.bin
  qcom/qcs8300/MONACO-EVK-tplg.bin
- qcom/qcs9100/LEMANS-EVK-tplg.bin
  qcom/sa8775p/LEMANS-EVK-tplg.bin
  qcom/sc8280xp/LENOVO/21BX/audioreach-tplg.bin
- qcom/sc8280xp/SC8280XP-LENOVO-X13S-tplg.bin
  qcom/sm8450/SM8450-HDK-tplg.bin
  qcom/sm8550/SM8550-HDK-tplg.bin
  qcom/sm8550/SM8550-QRD-tplg.bin
@@ -62,17 +62,8 @@ Files: qcom/kaanapali/Kaanapali-MTP-tplg.bin
  qcom/x1e80100/LENOVO/21N1/X1E80100-LENOVO-Thinkpad-T14s-tplg.bin
  qcom/x1e80100/LENOVO/83ED/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin
  qcom/x1e80100/X1E001DE-DEVKIT-tplg.bin
- qcom/x1e80100/X1E80100-ASUS-Vivobook-16-tplg.bin
- qcom/x1e80100/X1E80100-ASUS-Vivobook-S15-tplg.bin
- qcom/x1e80100/X1E80100-ASUS-Zenbook-A14-tplg.bin
  qcom/x1e80100/X1E80100-CRD-tplg.bin
- qcom/x1e80100/X1E80100-Dell-Inspiron-14p-7441-tplg.bin
- qcom/x1e80100/X1E80100-Dell-Latitude-7455-tplg.bin
- qcom/x1e80100/X1E80100-Dell-XPS-13-9345-tplg.bin
  qcom/x1e80100/X1E80100-EVK-tplg.bin
- qcom/x1e80100/X1E80100-HP-OMNIBOOK-X14-tplg.bin
- qcom/x1e80100/X1E80100-LENOVO-Thinkpad-T14s-tplg.bin
- qcom/x1e80100/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin
  qcom/x1e80100/X1E80100-Romulus-tplg.bin
  qcom/x1e80100/X1E80100-TUXEDO-Elite-14-tplg.bin
  qcom/x1e80100/dell/inspiron-14-plus-7441/X1E80100-Dell-Inspiron-14p-7441-tplg.bin
@@ -650,7 +641,7 @@ License: Redistributable-qcom
  //
  /*
   * This code implements the MD5 message-digest algorithm.
-  * The algorithm is due to Ron Rivest.	This code was
+  * The algorithm is due to Ron Rivest. This code was
   * written by Colin Plumb in 1993, no copyright is claimed.
   * This code is in the public domain; do with it what you wish.
   *
@@ -1372,7 +1363,7 @@ License: Redistributable-qcom-2
  //
  /*
   * This code implements the MD5 message-digest algorithm.
-  * The algorithm is due to Ron Rivest.	This code was
+  * The algorithm is due to Ron Rivest. This code was
   * written by Colin Plumb in 1993, no copyright is claimed.
   * This code is in the public domain; do with it what you wish.
   *
@@ -1681,3 +1672,11 @@ License: Redistributable-qcom-2
  ------------------------------------------------------------------------------
  ------------------------------------------------------------------------------
 
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in /usr/share/common-licenses/GPL-2.

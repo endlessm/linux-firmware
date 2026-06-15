@@ -3,6 +3,10 @@ Upstream-Name: linux-firmware
 Upstream-Contact: linux-firmware@kernel.org
 Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
 
+Files: debian/*
+Copyright: 2026 Canonical Ltd.
+License: GPL-2+
+
 Files: intel/*
 Copyright: 2014-15 Intel Corporation.
            1994-2009  Red Hat, Inc. All rights reserved.
@@ -37,8 +41,6 @@ Copyright: 2014-15 Intel Corporation.
 License: Redistributable-adsp_sst
 
 Files: dell/*
- intel/ish/ish_lnlm_39ceeaf8.bin
- intel/ish/ish_ptl_39ceeaf8.bin
 Copyright: Unknown
 License: Redistributable-dell
 
@@ -51,16 +53,13 @@ Copyright: 2015, Intel Corporation.
 License: Redistributable-hfi1_firmware
 
 Files: HP/ish/ish_lnlm_12128606_f9751b71.bin
- intel/ish/ish_lnlm_12128606_f9751b71.bin
 Copyright: 2025 HP Inc. (“HP”)
 License: Redistributable-HP
 
 Files: intel/avs/da7219-tplg.bin
  intel/avs/dmic-tplg.bin
- intel/avs/hda-8086-generic-tplg.bin
  intel/avs/hda-808628xx-3ep-tplg.bin
  intel/avs/hda-generic-1ep-tplg.bin
- intel/avs/hda-generic-tplg.bin
  intel/avs/max98357a-tplg.bin
  intel/avs/max98373-tplg.bin
  intel/avs/max98927-tplg.bin
@@ -89,12 +88,10 @@ License: Redistributable-ice_enhanced
 
 Files: intel/ice/ddp-lag/ice_lag-1.3.2.0.pkg
  intel/ice/ddp/ice-1.3.43.0.pkg
- intel/ice/ddp/ice.pkg
 Copyright: 2019, Intel Corporation.
 License: Redistributable-ice
 
-Files: intel/IntcSST2.bin
- intel/catpt/bdw/dsp_basefw.bin
+Files: intel/catpt/bdw/dsp_basefw.bin
 Copyright: 2014, Intel Corporation.
 License: Redistributable-IntcSST2
 
@@ -116,22 +113,16 @@ Files: intel/qat/qat_402xx.bin
  intel/qat/qat_c3xxx_mmp.bin
  intel/qat/qat_c62x.bin
  intel/qat/qat_c62x_mmp.bin
- intel/qat/qat_mmp.bin
- qat_*
 Copyright: 2014-2023 Intel Corporation.
 License: Redistributable-qat_firmware
 
-Files: intel/vpu/vpu_37xx_v0.0.bin
- intel/vpu/vpu_37xx_v1.bin
- intel/vpu/vpu_40xx_v0.0.bin
+Files: intel/vpu/vpu_37xx_v1.bin
  intel/vpu/vpu_40xx_v1.bin
- intel/vpu/vpu_50xx_v0.0.bin
  intel/vpu/vpu_50xx_v1.bin
 Copyright: 2025, Intel Corporation.
 License: Redistributable-intel_vpu
 
-Files: isci
- isci/isci_firmware.bin
+Files: isci/*
 Copyright: Unknown
 License: GPL-2+
 
@@ -140,12 +131,6 @@ Copyright: 2007, Intel Corporation.
 License: Redistributable-ixp4xx
 
 Files: LENOVO/*
- intel/ish/ish_lnlm_53c4ffad_75d6ebe2.bin
- intel/ish/ish_lnlm_53c4ffad_90ef58cf.bin
- intel/ish/ish_lnlm_53c4ffad_a672a235.bin
- intel/ish/ish_lnlm_53c4ffad_bc3e29f7.bin
- intel/ish/ish_lnlm_53c4ffad_cb391961.bin
- intel/ish/ish_lnlm_53c4ffad_ebb27e41.bin
 Copyright: 2025 Lenovo PC HK Ltd ("Lenovo")
 License: Redistributable-lenovo
 
@@ -899,8 +884,8 @@ License: Redistributable-adsp_sst
  (30) - Alex Tatmanjants (targets using libc/posix)
  .
    Copyright (c) 1995 Alex Tatmanjants <alex@elvisti.kiev.ua>
-  		at Electronni Visti IA, Kiev, Ukraine.
-  			All rights reserved.
+   at Electronni Visti IA, Kiev, Ukraine.
+   All rights reserved.
  .
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions
@@ -1686,4 +1671,3 @@ License: Redistributable-qat_firmware
  TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
  DAMAGE.
-

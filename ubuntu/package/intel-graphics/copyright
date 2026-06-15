@@ -3,6 +3,10 @@ Upstream-Name: linux-firmware
 Upstream-Contact: linux-firmware@kernel.org
 Source: https://git.kernel.org/pub/scm/linux/firmware/linux-firmware.git
 
+Files: debian/*
+Copyright: 2026 Canonical Ltd.
+License: GPL-2+
+
 Files: i915/*
 Copyright: 2015, Intel Corporation.
 License: Redistributable-i915
@@ -17,8 +21,6 @@ Copyright: 1999-2025 Intel Corporation
 License: Redistributable-intel
 
 Files: intel/ipu/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
- intel/ipu3-fw.bin
- intel/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
 Copyright: 2017, Intel Corporation.
 License: Redistributable-ipu3_firmware
 
@@ -223,3 +225,11 @@ License: Redistributable-xe
  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
  DAMAGE.
 
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in /usr/share/common-licenses/GPL-2.
