@@ -1,8 +1,17 @@
-linux-firmware-amd-graphics (20260319.git217ca6e4-0ubuntu3.0) resolute; urgency=medium
+linux-firmware-amd-graphics (20260319.git217ca6e4-0ubuntu3.1) resolute; urgency=medium
 
-  * Initial dummy SRU version
+  * AMD Ryzen did not response after system enter suspend (LP: #2147396)
+    - amdgpu: rembrandt DMCUB v4.0.74.0
+  * linux-firmware package does not mention about all licensing in copyright file (LP: #2147186)
+    - [Packaging] Add per-package DEP-5 copyright files
+    - [Packaging] Don't package individual license files
+  * [SRU] Fix resource assignment in gc1101 firmware (LP: #2153395)
+    - amdgpu: update GC 11.0.1 firmware
+    - amdgpu: Update gc 11.0.1 microcode
+  * Autopkgtest test failures (LP: #2156342)
+    - [Packaging] d/tests/control: Fix package dependencies
 
- -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 29 Apr 2026 18:10:50 +0200
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 16 Jun 2026 15:43:37 +0200
 
 linux-firmware-amd-graphics (20260319.git217ca6e4-0ubuntu3) resolute; urgency=medium
 
