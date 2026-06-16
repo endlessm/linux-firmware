@@ -1,8 +1,17 @@
-linux-firmware-mediatek (20260319.git217ca6e4-0ubuntu1.0) resolute; urgency=medium
+linux-firmware-mediatek (20260319.git217ca6e4-0ubuntu1.1) resolute; urgency=medium
 
-  * Initial dummy SRU version
+  * Missing symlink /usr/lib/firmware/rt3090.bin.zst (LP: #2150443)
+    - [Packaging] mediatek: Add rt3090.bin symlink
+  * [SRU][S/R/N] mt7925: Fix scanning issues with Netgear APs (LP: #2154392)
+    - linux-firmware: update firmware for MT7925 WiFi device
+    - mediatek MT7925: update bluetooth firmware to 20260414153243
+  * linux-firmware package does not mention about all licensing in copyright file (LP: #2147186)
+    - [Packaging] Add per-package DEP-5 copyright files
+    - [Packaging] Don't package individual license files
+  * Autopkgtest test failures (LP: #2156342)
+    - [Packaging] d/tests/control: Fix package dependencies
 
- -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 29 Apr 2026 18:10:50 +0200
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 16 Jun 2026 15:43:45 +0200
 
 linux-firmware-mediatek (20260319.git217ca6e4-0ubuntu1) resolute; urgency=medium
 
