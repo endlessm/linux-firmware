@@ -1,8 +1,12 @@
-linux-firmware-mellanox-spectrum (20260319.git217ca6e4-0ubuntu1.0) resolute; urgency=medium
+linux-firmware-mellanox-spectrum (20260319.git217ca6e4-0ubuntu1.1) resolute; urgency=medium
 
-  * Initial dummy SRU version
+  * linux-firmware package does not mention about all licensing in copyright file (LP: #2147186)
+    - [Packaging] Add per-package DEP-5 copyright files
+    - [Packaging] Don't package individual license files
+  * Autopkgtest test failures (LP: #2156342)
+    - [Packaging] d/tests/control: Fix package dependencies
 
- -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 29 Apr 2026 18:10:50 +0200
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 16 Jun 2026 15:43:46 +0200
 
 linux-firmware-mellanox-spectrum (20260319.git217ca6e4-0ubuntu1) resolute; urgency=medium
 
