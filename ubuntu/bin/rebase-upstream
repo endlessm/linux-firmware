@@ -4,15 +4,13 @@
 #
 
 import argparse
-import re
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
 import git
 
-from lib.changelog import ChangelogError
-from lib.package import Package, PackageError, read_upstream
+from lib.package import PackageError, read_upstream
 
 KERNEL_ORG_URL = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git"
 DEFAULT_REV = "kernel.org/main"
@@ -30,19 +28,6 @@ def main() -> None:
     args = parser.parse_args()
 
     repo = git.Repo()
-
-    # Verify no package has an SRU version
-    for pkg_dir in sorted(Path("ubuntu/package").iterdir()):
-        if not pkg_dir.is_dir():
-            continue
-        try:
-            pkg = Package(pkg_dir.name)
-        except (PackageError, ChangelogError):
-            continue
-        version = str(pkg.changelog.Changelog.version)
-        if re.search(r"\.\d+$", version):
-            print(f"EE: Package version is an SRU version: {version} ({pkg_dir.name})", file=sys.stderr)
-            sys.exit(1)
 
     # Add upstream remote if missing and fetch
     remotes = [r.name for r in repo.remotes]
