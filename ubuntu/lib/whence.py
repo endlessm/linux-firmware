@@ -64,7 +64,8 @@ def section_file_licenses(section: list[str], tree_files: set[str]) -> Iterator[
                 licence_seen = False
             accumulator.append(line.split(":", 1)[1].strip())
         elif line.startswith(("Licence:", "License:")):
-            tokens = set(token.rstrip(".,;)") for token in line.split(":", 1)[1].split())
+            # Licenses are in LICENSES/ directory
+            tokens = set("LICENSES/" + token.rstrip(".,;)") for token in line.split(":", 1)[1].split())
             license_paths = sorted(tokens & tree_files)
             for f in accumulator:
                 for lic in license_paths:

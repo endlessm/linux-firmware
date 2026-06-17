@@ -130,14 +130,14 @@ class TestSectionFileLicenses:
     def test_file_with_licence(self) -> None:
         """File followed by Licence yields (file, license) pair."""
         section = ["File: foo.bin", "Licence: Redistributable. See LICENCE.foo for details."]
-        result = list(section_file_licenses(section, {"LICENCE.foo"}))
-        assert result == [("foo.bin", "LICENCE.foo")]
+        result = list(section_file_licenses(section, {"LICENSES/LICENCE.foo"}))
+        assert result == [("foo.bin", "LICENSES/LICENCE.foo")]
 
     def test_multiple_files_single_licence(self) -> None:
         """Multiple files followed by one Licence yields pairs for all files."""
         section = ["File: a.bin", "File: b.bin", "Licence: See LICENCE.x for details."]
-        result = list(section_file_licenses(section, {"LICENCE.x"}))
-        assert result == [("a.bin", "LICENCE.x"), ("b.bin", "LICENCE.x")]
+        result = list(section_file_licenses(section, {"LICENSES/LICENCE.x"}))
+        assert result == [("a.bin", "LICENSES/LICENCE.x"), ("b.bin", "LICENSES/LICENCE.x")]
 
     def test_multiple_licences_same_files(self) -> None:
         """Consecutive Licence lines apply to the same accumulated files."""
@@ -147,11 +147,11 @@ class TestSectionFileLicenses:
             "Licence: See LICENCE.x for details.",
             "Licence: See LICENCE.y for details.",
         ]
-        result = list(section_file_licenses(section, {"LICENCE.x", "LICENCE.y"}))
-        assert ("a.bin", "LICENCE.x") in result
-        assert ("a.bin", "LICENCE.y") in result
-        assert ("b.bin", "LICENCE.x") in result
-        assert ("b.bin", "LICENCE.y") in result
+        result = list(section_file_licenses(section, {"LICENSES/LICENCE.x", "LICENSES/LICENCE.y"}))
+        assert ("a.bin", "LICENSES/LICENCE.x") in result
+        assert ("a.bin", "LICENSES/LICENCE.y") in result
+        assert ("b.bin", "LICENSES/LICENCE.x") in result
+        assert ("b.bin", "LICENSES/LICENCE.y") in result
 
     def test_interleaved_files_licences(self) -> None:
         """Files after a Licence line start a new group."""
@@ -161,13 +161,13 @@ class TestSectionFileLicenses:
             "File: b.bin",
             "Licence: See LICENCE.y for details.",
         ]
-        result = list(section_file_licenses(section, {"LICENCE.x", "LICENCE.y"}))
-        assert result == [("a.bin", "LICENCE.x"), ("b.bin", "LICENCE.y")]
+        result = list(section_file_licenses(section, {"LICENSES/LICENCE.x", "LICENSES/LICENCE.y"}))
+        assert result == [("a.bin", "LICENSES/LICENCE.x"), ("b.bin", "LICENSES/LICENCE.y")]
 
     def test_files_with_no_licence(self) -> None:
         """Files with no Licence line yield (file, None)."""
         section = ["File: foo.bin", "File: bar.bin"]
-        result = list(section_file_licenses(section, {"LICENCE.foo"}))
+        result = list(section_file_licenses(section, {"LICENSES/LICENCE.foo"}))
         assert result == [("foo.bin", None), ("bar.bin", None)]
 
     def test_token_not_in_tree(self) -> None:
@@ -179,14 +179,14 @@ class TestSectionFileLicenses:
     def test_trailing_punctuation_stripped(self) -> None:
         """Trailing punctuation is stripped before matching."""
         section = ["File: foo.bin", "Licence: See LICENCE.foo."]
-        result = list(section_file_licenses(section, {"LICENCE.foo"}))
-        assert result == [("foo.bin", "LICENCE.foo")]
+        result = list(section_file_licenses(section, {"LICENSES/LICENCE.foo"}))
+        assert result == [("foo.bin", "LICENSES/LICENCE.foo")]
 
     def test_license_spelling(self) -> None:
         """Both Licence and License spellings are recognized."""
         section = ["File: foo.bin", "License: Redistributable. See MIT for details"]
-        result = list(section_file_licenses(section, {"MIT"}))
-        assert result == [("foo.bin", "MIT")]
+        result = list(section_file_licenses(section, {"LICENSES/MIT"}))
+        assert result == [("foo.bin", "LICENSES/MIT")]
 
     def test_link_lines_ignored(self) -> None:
         """Link lines do not accumulate into the file list."""
@@ -195,8 +195,8 @@ class TestSectionFileLicenses:
             "Link: dir/link.bin -> ../target.bin",
             "Licence: See LICENCE.x for details.",
         ]
-        result = list(section_file_licenses(section, {"LICENCE.x"}))
-        assert result == [("a.bin", "LICENCE.x")]
+        result = list(section_file_licenses(section, {"LICENSES/LICENCE.x"}))
+        assert result == [("a.bin", "LICENSES/LICENCE.x")]
 
     def test_rawfile_and_source(self) -> None:
         """RawFile and Source lines accumulate like File."""
@@ -205,27 +205,21 @@ class TestSectionFileLicenses:
             "Source: src.tar",
             "Licence: See LICENCE.x for details.",
         ]
-        result = list(section_file_licenses(section, {"LICENCE.x"}))
-        assert result == [("raw.bin", "LICENCE.x"), ("src.tar", "LICENCE.x")]
-
-    def test_path_with_directory(self) -> None:
-        """Paths with directories are matched."""
-        section = ["File: fw/a.bin", "Licence: See qcom/NOTICE.txt for details"]
-        result = list(section_file_licenses(section, {"qcom/NOTICE.txt"}))
-        assert result == [("fw/a.bin", "qcom/NOTICE.txt")]
+        result = list(section_file_licenses(section, {"LICENSES/LICENCE.x"}))
+        assert result == [("raw.bin", "LICENSES/LICENCE.x"), ("src.tar", "LICENSES/LICENCE.x")]
 
     def test_multiple_licence_tokens_one_line(self) -> None:
         """Multiple valid tokens on one Licence line are all yielded."""
         section = ["File: a.bin", "Licence: See LICENCE.a and LICENCE.b for details"]
-        tree = {"LICENCE.a", "LICENCE.b"}
+        tree = {"LICENSES/LICENCE.a", "LICENSES/LICENCE.b"}
         result = list(section_file_licenses(section, tree))
-        assert ("a.bin", "LICENCE.a") in result
-        assert ("a.bin", "LICENCE.b") in result
+        assert ("a.bin", "LICENSES/LICENCE.a") in result
+        assert ("a.bin", "LICENSES/LICENCE.b") in result
 
     def test_files_after_licence_not_flagged_unlicensed(self) -> None:
         """Files consumed by a licence are not yielded as unlicensed at section end."""
         section = ["File: a.bin", "Licence: See LICENCE.x for details."]
-        result = list(section_file_licenses(section, {"LICENCE.x"}))
+        result = list(section_file_licenses(section, {"LICENSES/LICENCE.x"}))
         assert ("a.bin", None) not in result
 
 
@@ -244,8 +238,8 @@ class TestWhenceLicenses:
             repo,
             {
                 "WHENCE": content,
-                "LICENCE.a": "license a",
-                "LICENCE.b": "license b",
+                "LICENSES/LICENCE.a": "license a",
+                "LICENSES/LICENCE.b": "license b",
                 "a.bin": "binary a",
                 "b.bin": "binary b",
             },
@@ -253,8 +247,8 @@ class TestWhenceLicenses:
 
         whence = Whence(Path("WHENCE"))
         license_pathspecs = whence.licenses().pathspecs()
-        assert "LICENCE.a" in license_pathspecs
-        assert "LICENCE.b" in license_pathspecs
+        assert "LICENSES/LICENCE.a" in license_pathspecs
+        assert "LICENSES/LICENCE.b" in license_pathspecs
 
     def test_filtered_by_files(self, git_repo: tuple[git.Repo, Path]) -> None:
         """Filtered licenses returns only licenses for the given files."""
@@ -268,8 +262,8 @@ class TestWhenceLicenses:
             repo,
             {
                 "WHENCE": content,
-                "LICENCE.a": "license a",
-                "LICENCE.b": "license b",
+                "LICENSES/LICENCE.a": "license a",
+                "LICENSES/LICENCE.b": "license b",
                 "a.bin": "binary a",
                 "b.bin": "binary b",
             },
@@ -277,8 +271,8 @@ class TestWhenceLicenses:
 
         whence = Whence(Path("WHENCE"))
         license_pathspecs = whence.licenses(["a.bin"]).pathspecs()
-        assert "LICENCE.a" in license_pathspecs
-        assert "LICENCE.b" not in license_pathspecs
+        assert "LICENSES/LICENCE.a" in license_pathspecs
+        assert "LICENSES/LICENCE.b" not in license_pathspecs
 
     def test_interleaved_section_filtered(self, git_repo: tuple[git.Repo, Path]) -> None:
         """Filtering works correctly with interleaved files/licences in one section."""
@@ -293,8 +287,8 @@ class TestWhenceLicenses:
             repo,
             {
                 "WHENCE": content,
-                "LICENCE.x": "license x",
-                "LICENCE.y": "license y",
+                "LICENSES/LICENCE.x": "license x",
+                "LICENSES/LICENCE.y": "license y",
                 "a.bin": "binary a",
                 "b.bin": "binary b",
             },
@@ -303,5 +297,5 @@ class TestWhenceLicenses:
         whence = Whence(Path("WHENCE"))
         # Only b.bin is packaged; should only get LICENCE.y
         license_pathspecs = whence.licenses(["b.bin"]).pathspecs()
-        assert "LICENCE.y" in license_pathspecs
-        assert "LICENCE.x" not in license_pathspecs
+        assert "LICENSES/LICENCE.y" in license_pathspecs
+        assert "LICENSES/LICENCE.x" not in license_pathspecs

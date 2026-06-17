@@ -194,7 +194,7 @@ class TestPackage:
                     "License: Redistributable\n"
                 ),
                 "foo.bin": "binary",
-                "LICENCE.test": "license text",
+                "LICENSES/LICENCE.test": "license text",
             },
         )
 
@@ -455,13 +455,13 @@ class TestPackageDeltaUpdate:
         """Files present in orig with modified content at C2 appear in delta.
 
         Truth table rows exercised:
-          fw/text.txt  — row 2:  P-P-M (modified only at C2)
-          fw/data.bin  — row 4:  P-M-P (modified at C1, unchanged at C2)
-          fw/link      — row 5:  P-M-M (modified at C1, modified again at C2)
-          LICENSE.test — row 2:  P-P-M (license file modified at C2)
+          fw/text.txt           — row 2:  P-P-M (modified only at C2)
+          fw/data.bin           — row 4:  P-M-P (modified at C1, unchanged at C2)
+          fw/link               — row 5:  P-M-M (modified at C1, modified again at C2)
+          LICENSES/LICENSE.test — row 2:  P-P-M (license file modified at C2)
 
         Expected:
-          ubuntu.patch: diffs for fw/link, fw/text.txt, LICENSE.test
+          ubuntu.patch: diffs for fw/link, fw/text.txt, LICENSES/LICENSE.test
           include-binaries: fw/data.bin, fw/link
         """
         repo, root = git_repo
@@ -471,7 +471,7 @@ class TestPackageDeltaUpdate:
             repo,
             text={
                 "fw/text.txt": "original text\n",
-                "LICENSE.test": "Original license\n",
+                "LICENSES/LICENSE.test": "Original license\n",
                 "WHENCE": _make_whence(["fw/text.txt", "fw/data.bin", "fw/link"], ["LICENSE.test"]),
             },
             binary={"fw/data.bin": b"\x00\x01\x02\x03"},
@@ -499,11 +499,11 @@ class TestPackageDeltaUpdate:
             repo,
             text={
                 "fw/text.txt": "modified text\n",  # row 2: modified at C2
-                "LICENSE.test": "Modified license\n",  # row 2: license modified at C2
+                "LICENSES/LICENSE.test": "Modified license\n",  # row 2: license modified at C2
                 f"{_PKG}/changelog": _make_changelog_v2(_CHANGELOG_V1),
                 f"{_PKG}/WHENCE": _make_whence(["fw/text.txt", "fw/data.bin", "fw/link"], ["LICENSE.test"]),
             },
-            symlinks={"fw/link": "LICENSE.test"},  # row 5: modified again at C2
+            symlinks={"fw/link": "other.bin"},  # row 5: modified again at C2
             message="second release",
         )
 
@@ -517,7 +517,7 @@ class TestPackageDeltaUpdate:
 
         # --- Assert: ubuntu.patch ---
         patch = (root / _PKG / "patches" / "ubuntu.patch").read_text()
-        assert "diff --git a/LICENSE.test b/LICENSE.test" in patch
+        assert "diff --git a/LICENSES/LICENSE.test b/LICENSES/LICENSE.test" in patch
         assert "diff --git a/fw/link b/fw/link" in patch
         assert "diff --git a/fw/text.txt b/fw/text.txt" in patch
         # Binary file should NOT be in the patch
@@ -531,13 +531,13 @@ class TestPackageDeltaUpdate:
         """Files not present in orig but added to package appear in delta.
 
         Truth table rows exercised:
-          fw/text.txt  — row 10/13: A-M-P (added at C1, unchanged at C2)
-          fw/data.bin  — row 16/17: A-A-M (added at C2, not in C1)
-          fw/link      — row 11/14: A-M-M (added at C1, modified at C2)
-          LICENSE.new  — row 10/13: A-M-P (license added at C1, unchanged at C2)
+          fw/text.txt           — row 10/13: A-M-P (added at C1, unchanged at C2)
+          fw/data.bin           — row 16/17: A-A-M (added at C2, not in C1)
+          fw/link               — row 11/14: A-M-M (added at C1, modified at C2)
+          LICENSES/LICENSE.new  — row 10/13: A-M-P (license added at C1, unchanged at C2)
 
         Expected:
-          ubuntu.patch: diffs for fw/link, fw/text.txt, LICENSE.new
+          ubuntu.patch: diffs for fw/link, fw/text.txt, LICENSES/LICENSE.new
           include-binaries: fw/data.bin, fw/link
         """
         repo, root = git_repo
@@ -555,7 +555,7 @@ class TestPackageDeltaUpdate:
             repo,
             text={
                 "fw/text.txt": "added text\n",  # row 10/13: added at C1
-                "LICENSE.new": "New license\n",  # row 10/13: license added at C1
+                "LICENSES/LICENSE.new": "New license\n",  # row 10/13: license added at C1
                 "ubuntu/upstream": f"COMMIT={c0}\nVERSION=1.0",
                 f"{_PKG}/files": "fw/text.txt\nfw/link",
                 f"{_PKG}/changelog": _CHANGELOG_V1,
@@ -592,7 +592,7 @@ class TestPackageDeltaUpdate:
         patch = (root / _PKG / "patches" / "ubuntu.patch").read_text()
         assert "diff --git a/fw/text.txt b/fw/text.txt" in patch
         assert "diff --git a/fw/link b/fw/link" in patch
-        assert "diff --git a/LICENSE.new b/LICENSE.new" in patch
+        assert "diff --git a/LICENSES/LICENSE.new b/LICENSES/LICENSE.new" in patch
         # Binary should NOT be in patch
         assert "fw/data.bin" not in patch
 
@@ -609,14 +609,14 @@ class TestPackageDeltaUpdate:
         be in orig — even if the file exists at C0 with identical content.
 
         Truth table rows exercised:
-          fw/text.txt  — row 7: P-A-P (re-added with SAME content as C0)
-          fw/data.bin  — row 8: P-A-M (re-added with different content)
-          fw/link      — row 8: P-A-M (re-added with different target)
-          LICENSE.test — row 7: P-A-P (license re-added, same content as C0)
+          fw/text.txt           — row 7: P-A-P (re-added with SAME content as C0)
+          fw/data.bin           — row 8: P-A-M (re-added with different content)
+          fw/link               — row 8: P-A-M (re-added with different target)
+          LICENSES/LICENSE.test — row 7: P-A-P (license re-added, same content as C0)
 
         Expected:
           include-binaries: fw/data.bin, fw/link
-          ubuntu.patch: diffs for fw/text.txt, LICENSE.test, fw/link
+          ubuntu.patch: diffs for fw/text.txt, LICENSES/LICENSE.test, fw/link
               (all are new relative to orig, which uses C1's pathspecs)
 
         Key insight: Row 7 files are not in orig (C1's pathspecs exclude them),
@@ -631,7 +631,7 @@ class TestPackageDeltaUpdate:
             repo,
             text={
                 "fw/text.txt": "original text\n",
-                "LICENSE.test": "Original license\n",
+                "LICENSES/LICENSE.test": "Original license\n",
                 "WHENCE": _make_whence(["fw/text.txt", "fw/data.bin", "fw/link"], ["LICENSE.test"]),
             },
             binary={"fw/data.bin": b"\x00\x01\x02\x03"},
@@ -671,7 +671,7 @@ class TestPackageDeltaUpdate:
             # Row 8: re-add binary with DIFFERENT content
             binary={"fw/data.bin": b"\x50\x00\x52\x53"},
             # Row 8: re-add link with DIFFERENT target
-            symlinks={"fw/link": "LICENSE.test"},
+            symlinks={"fw/link": "data.bin"},
             message="second release",
         )
 
@@ -689,7 +689,7 @@ class TestPackageDeltaUpdate:
         # Row 7 text: not in orig, so full diff against EMPTY_TREE as addition
         assert "diff --git a/fw/text.txt b/fw/text.txt" in patch
         # Row 7 license: not in orig, full diff as addition
-        assert "diff --git a/LICENSE.test b/LICENSE.test" in patch
+        assert "diff --git a/LICENSES/LICENSE.test b/LICENSES/LICENSE.test" in patch
         # Row 8 link: target changed from C0, diff shows the change
         assert "diff --git a/fw/link b/fw/link" in patch
         # Row 8 binary: never in patch (binary type)
@@ -699,14 +699,14 @@ class TestPackageDeltaUpdate:
         """Unchanged and removed files produce no delta; existing output is cleaned up.
 
         Truth table rows exercised:
-          fw/text.txt     — row 1:     P-P-P (unchanged throughout)
-          fw/data.bin     — row 1:     P-P-P (unchanged binary)
-          fw/link         — row 1:     P-P-P (unchanged link)
-          LICENSE.test    — row 1:     P-P-P (unchanged license)
-          fw/removed.txt  — row 3:     P-P-A (present, then removed at C2)
-          fw/gone.bin     — row 6:     P-M-A (modified at C1, removed at C2)
-          fw/dropped.txt  — row 9:     P-A-A (removed from files at C1, still absent)
-          fw/transient.txt— row 12/15: A-M-A (added at C1, removed at C2)
+          fw/text.txt           — row 1:     P-P-P (unchanged throughout)
+          fw/data.bin           — row 1:     P-P-P (unchanged binary)
+          fw/link               — row 1:     P-P-P (unchanged link)
+          LICENSES/LICENSE.test — row 1:     P-P-P (unchanged license)
+          fw/removed.txt        — row 3:     P-P-A (present, then removed at C2)
+          fw/gone.bin           — row 6:     P-M-A (modified at C1, removed at C2)
+          fw/dropped.txt        — row 9:     P-A-A (removed from files at C1, still absent)
+          fw/transient.txt      — row 12/15: A-M-A (added at C1, removed at C2)
 
         Expected:
           No patches/ directory (or removed if pre-existing)
@@ -725,7 +725,7 @@ class TestPackageDeltaUpdate:
                 "fw/removed.txt": "will be removed\n",  # row 3
                 "fw/gone.bin": "placeholder\n",  # row 6 (will become binary at C1)
                 "fw/dropped.txt": "will be dropped\n",  # row 9
-                "LICENSE.test": "Unchanged license\n",  # row 1
+                "LICENSES/LICENSE.test": "Unchanged license\n",  # row 1
                 "WHENCE": _make_whence(
                     ["fw/text.txt", "fw/removed.txt", "fw/gone.bin", "fw/dropped.txt", "fw/link"],
                     ["LICENSE.test"],
