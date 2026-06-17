@@ -12,11 +12,9 @@ Copyright: 1999-2004 3Com Corporation.  All Rights Reserved.
 License: Redistributable-typhoon
 Comment: Found in hex form in kernel source.
 
-Files: acenic/*
-Copyright: Unknown
-License: Unknown
-Comment: Found in hex form in kernel source, but source allegedly available at
- http://alteon.shareable.org/
+Files: Lontium/*
+Copyright: Lontium Semiconductor Corp.
+License: Redistributable-Lontium
 
 Files: adaptec/*
 Copyright: Unknown
@@ -193,22 +191,9 @@ Files: emi26/*
 Copyright: Unknown
 License: Redistributable-emi26
 
-Files: emi62/*
-Copyright: Unknown
-License: Unknown
-Comment: Converted from Intel HEX files, used in our binary representation of ihex.
-
 Files: ene-ub6250/*
 Copyright: Unknown
 License: Redistributable-ene_firmware
-
-Files: ess/*
-Copyright: Unknown
-License: GPL-2+
-Comment: Found in alsa-firmware package in hex form with a comment claiming to
- be GPLv2+, but without source - and with another comment saying "ESS
- drops binary dsp code images on our heads, but we don't get to see
- specs on the dsp."
 
 Files: go7007/*
 Copyright: Unknown
@@ -237,24 +222,9 @@ Files: keyspan/*
 Copyright: 1999-2001
 License: Redistributable-keyspan
 
-Files: korg/k1212.dsp
-Copyright: Unknown
-License: Unknown
-Comment: Found in alsa-firmware package in hex form; no licensing information.
-
-Files: lgs8g75.fw
- mts_mt9234*
-Copyright: Unknown
-License: Unknown
-
 Files: liquidio/*
 Copyright: 2018, Cavium, Inc. All rights reserved.
 License: Redistributable-cavium_liquidio
-
-Files: lt8713sx_fw.bin
- lt9611uxc_fw.bin
-Copyright: Unknown
-License: Redistributable-Lontium
 
 Files: meson/*
 Copyright: Unknown
@@ -268,7 +238,7 @@ Files: moxa/*
 Copyright: Unknown
 License: Redistributable-moxa
 
-Files: mrvl/*
+Files: mrvl/cpt*
 Copyright: 2019.  Marvell International Ltd.  All rights reserved.
 License: Redistributable-Marvell
 
@@ -338,13 +308,6 @@ License: Redistributable-cw1200-sdd
 Files: slicoss/*
 Copyright: 1999-2009 Alacritech, Inc.
 License: Redistributable-alacritech
-Comment: Found in hex form in kernel source.
-
-Files: sun/cassini.bin
- ttusb-budget/dspbootcode.bin
- vicam/firmware.fw
-Copyright: Unknown
-License: Unknown
 Comment: Found in hex form in kernel source.
 
 Files: tehuti/bdx.bin
@@ -426,15 +389,10 @@ Files: wsm_22.bin
 Copyright: 2007-2013, ST Microelectronics NV.
 License: Redistributable-cw1200
 
-Files: yam/*
-Copyright: F6FBB 1998
-License: Unknown
-Comment: Found in hex form in kernel source.
-
 Files: yamaha/*
 Copyright: 1997-1999 Yamaha Corporation. All Rights Reserved.
             1998-2002 by Paul Davis <pbd@op.net>
-License: Unknown
+License: GPL-2+
 Comment: Found alsa-firmware package in hex form, with the following comment:
  Copyright (c) 1997-1999 Yamaha Corporation. All Rights Reserved.
  Copyright (c) 1998-2002 by Paul Davis <pbd@op.net>
@@ -3869,7 +3827,3 @@ License: Redistributable-zd1211
  (You can still find it at http://linux-lc100020.sourceforge.net/ )
  This package was distributed under both the GPL and MPL.
  The firmware was in it in the form of a large array in a header file.
-
-License: Unknown
- The license for this firmware is not clearly documented.
- No explicit licensing terms were provided upstream.

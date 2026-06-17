@@ -19,9 +19,6 @@ qca/
 
 # List of files and directories to be excluded from the package
 
-# Exclude licenses
-!qca/NOTICE.txt
-
 # Replaces commit c5a7aadccbfd ("UBUNTU: Remove obsolete ar7010 firmware")
 !ar7010.fw
 !ar7010_1_1.fw

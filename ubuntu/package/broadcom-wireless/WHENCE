@@ -171,6 +171,6 @@ Link: brcm/brcmfmac43455-sdio.pine64,soquartz-model-a.txt -> brcmfmac43455-sdio.
 Link: brcm/brcmfmac43455-sdio.pine64,soquartz-cm4io.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
 Link: brcm/brcmfmac43455-sdio.pine64,soquartz-blade.txt -> brcmfmac43455-sdio.AW-CM256SM.txt
 
-Licence: GPLv2. See GPL-2 for details.
+Licence: GPLv2. See GPL-2.0 for details.
 
 ------------------------------------------------------------------------------

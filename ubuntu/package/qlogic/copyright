@@ -34,11 +34,6 @@ Files: qlogic/*
 Copyright: 1995, 1996, 1997, 1998, 1999, 2000 QLogic, Inc.
 License: Redistributable-qla1280
 
-Files: qlogic/isp1000.bin
-Copyright: Unknown
-License: Unknown
-Comment: Found in hex form in kernel source.
-
 Files: qlogic/sd7220.fw
 Copyright: 2007, 2008 QLogic Corporation. All rights reserved.
 License: Redistributable-ib_qib
@@ -193,10 +188,6 @@ License: Redistributable-qla2xxx
  PROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY
  RIGHT) EMBODIED IN ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN
  COMBINATION WITH THIS PROGRAM.
-
-License: Unknown
- The license for this firmware is not clearly documented.
- No explicit licensing terms were provided upstream.
 
 License: GPL-2+
  This program is free software; you can redistribute it and/or modify it

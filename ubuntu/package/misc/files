@@ -3,7 +3,6 @@
 # 3Com
 3com/
 cis/
-vicam/
 
 # ARM
 arm/
@@ -27,9 +26,6 @@ airoha/
 slicoss/
 # Replaces commit e55ef4edc755 ("UBUNTU: Remove obsolete slicoss firmware")
 !slicoss/oasisdbgdownload.sys
-
-# Alteon
-acenic/
 
 # Amlogic
 amlogic/
@@ -102,12 +98,8 @@ dvb-usb-dib0700-1.20.fw
 # Echo Digital Audio Corporation
 ea/
 
-# ESS
-ess/
-
 # Emagic
 emi26/
-emi62/
 
 # Ene Technology
 ene-ub6250/
@@ -143,15 +135,8 @@ kaweth/
 keyspan/
 keyspan_pda/
 
-# Korg
-korg/
-
-# Legend Silicon
-lgs8g75.fw
-
 # Lontium
-lt8713sx_fw.bin
-lt9611uxc_fw.bin
+Lontium/
 
 # Marvell
 mrvl/cpt*
@@ -166,8 +151,6 @@ go7007/
 
 # Miscellaneous vendors
 av7110/
-yam/
-sun/
 usbdux*
 # Montage
 tsse_firmware.bin
@@ -212,10 +195,6 @@ s5p-mfc*
 
 # Silicon Labs
 wfx/
-!wfx/LICENCE.wf200
-
-# Technotrend
-ttusb-budget/
 
 # Tehuti
 tehuti/

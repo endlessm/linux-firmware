@@ -101,8 +101,6 @@ Driver: mtk-vpu - MediaTek VPU video processing unit driver
 
 File: mediatek/mt8173/vpu_d.bin
 File: mediatek/mt8173/vpu_p.bin
-Link: vpu_d.bin -> mediatek/mt8173/vpu_d.bin
-Link: vpu_p.bin -> mediatek/mt8173/vpu_p.bin
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -376,6 +374,17 @@ Driver: mt7925 - MediaTek MT7925 bluetooth chipset
 
 File: mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin
 Version: 20260414153243
+
+Licence: Redistributable. See LICENCE.mediatek for details.
+
+------------------------------------------------------------------------------
+
+Driver: mt7927 - MediaTek MT7927 Wireless MACs
+
+File: mediatek/mt7927/WIFI_MT6639_PATCH_MCU_2_1_hdr.bin
+Version: 20260414133750a
+File: mediatek/mt7927/WIFI_RAM_CODE_MT6639_2_1.bin
+Version: 20260414134255
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 

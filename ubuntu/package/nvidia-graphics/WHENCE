@@ -352,6 +352,7 @@ Link: nvidia/tu117/nvdec/scrubber.bin -> ../../tu116/nvdec/scrubber.bin
 Link: nvidia/tu117/sec2/desc.bin -> ../../tu116/sec2/desc.bin
 Link: nvidia/tu117/sec2/image.bin -> ../../tu116/sec2/image.bin
 Link: nvidia/tu117/sec2/sig.bin -> ../../tu116/sec2/sig.bin
+Link: nvidia/ga100/acr/bl.bin -> ../../tu102/acr/bl.bin
 File: nvidia/ga102/acr/ucode_ahesasc.bin
 File: nvidia/ga102/acr/ucode_asb.bin
 File: nvidia/ga102/acr/ucode_unload.bin

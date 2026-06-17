@@ -34,7 +34,7 @@ Version: MPSS.HA.1.1-00435-KD_ALL_PACK-1
 RawFile: qcom/qcm2290/modemr.jsn
 RawFile: qcom/qcm2290/modemuw.jsn
 File: qcom/qcm6490/adsp.mbn
-Version: ADSP.HT.5.5.c8-00246-KODIAK-1
+Version: ADSP.HT.5.5.c8-00249.1-KODIAK-1
 RawFile: qcom/qcm6490/adspr.jsn
 RawFile: qcom/qcm6490/adsps.jsn
 RawFile: qcom/qcm6490/adspua.jsn
@@ -121,7 +121,7 @@ Version: vfw-3.1:rel0085-070fa3311d9ef968015fee7fea07198d7eb208a1
 RawFile: qcom/x1e80100/LENOVO/21N1/adspua.jsn
 File: qcom/x1e80100/cdsp.mbn
 File: qcom/x1e80100/cdsp_dtb.mbn
-Version: CDSP.HT.2.9.c1-00069-HAMOA-1
+Version: CDSP.HT.2.9.c1-00082-HAMOA-1
 RawFile: qcom/x1e80100/cdspr.jsn
 File: qcom/x1e80100/LENOVO/21N1/qcadsp8380.mbn
 Version: ADSP.HT.5.9-00787.2-HAMOA-1
@@ -150,7 +150,7 @@ File: qcom/x1e80100/LENOVO/83ED/qcdxkmsuc8380.mbn
 File: qcom/x1e80100/LENOVO/83ED/qcvss8380.mbn
 Version: video-firmware.3.1-e5aea20c64cb6df9a1c9be99e206053b36424939
 
-Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+Licence: Redistributable. See LICENSE.qcom and NOTICE.qcom for details
 
 Info:
 Binary files supplied originally from
@@ -168,56 +168,58 @@ https://github.com/andersson/pil-squasher
 
 File: qcom/glymur/adsp.mbn
 File: qcom/glymur/adsp_dtb.mbn
-Version: LPAIDSP.HT.1.6.c1-00007-GLYMUR-3
+Version: LPAIDSP.HT.1.6.2-00009-GLYMUR-1
 RawFile: qcom/glymur/adspr.jsn
 RawFile: qcom/glymur/adsps.jsn
 RawFile: qcom/glymur/adspua.jsn
 File: qcom/glymur/cdsp.mbn
 File: qcom/glymur/cdsp_dtb.mbn
-Version: CDSP.HT.3.3-00302-GLYMUR-1
+Version: CDSP.HT.3.3-00311-GLYMUR-1
 RawFile: qcom/glymur/cdspr.jsn
 File: qcom/kaanapali/adsp.mbn
 File: qcom/kaanapali/adsp_dtb.mbn
-Version: LPAIDSP.HT.1.6-00223-KAANAPALI-1
+Version: LPAIDSP.HT.1.6.1-00002-KAANAPALI-1
 RawFile: qcom/kaanapali/adspr.jsn
 RawFile: qcom/kaanapali/adsps.jsn
 RawFile: qcom/kaanapali/adspua.jsn
 RawFile: qcom/kaanapali/adspuo.jsn
 File: qcom/kaanapali/cdsp.mbn
 File: qcom/kaanapali/cdsp_dtb.mbn
-Version: CDSP.HT.3.2-00726.1-KAANAPALI-1
+Version: CDSP.HT.3.2.c1-00001-KAANAPALI-3
 RawFile: qcom/kaanapali/cdspr.jsn
 File: qcom/kaanapali/soccp.mbn
 File: qcom/kaanapali/soccp_dtb.mbn
 Version: SOCCP.FW.2.1-00204-KAANAPALI_SOCCP_PACK-1
 RawFile: qcom/kaanapali/soccpr.jsn
 File: qcom/qcs8300/adsp.mbn
-Version: DSP.AT.1.0.1-00196-LEMANS-2
+Version: DSP.AT.1.0.1-00201-LEMANS-2
 RawFile: qcom/qcs8300/adspr.jsn
 RawFile: qcom/qcs8300/adspua.jsn
 File: qcom/qcs8300/cdsp0.mbn
-Version: DSP.AT.1.0.1-00196-LEMANS-2
+Version: DSP.AT.1.0.1-00201-LEMANS-2
 RawFile: qcom/qcs8300/cdspr.jsn
 File: qcom/qcs8300/gpdsp0.mbn
-Version: DSP.AT.1.0.1-00196-LEMANS-2
+Version: DSP.AT.1.0.1-00201-LEMANS-2
+RawFile: qcom/qcs8300/gpdspr.jsn
 File: qcom/sa8775p/adsp.mbn
-Version: DSP.AT.1.0.1-00196-LEMANS-2
+Version: DSP.AT.1.0.1-00201-LEMANS-2
 RawFile: qcom/sa8775p/adspr.jsn
 RawFile: qcom/sa8775p/adspua.jsn
 File: qcom/sa8775p/cdsp0.mbn
-Version: DSP.AT.1.0.1-00196-LEMANS-2
+Version: DSP.AT.1.0.1-00201-LEMANS-2
 File: qcom/sa8775p/cdsp1.mbn
-Version: DSP.AT.1.0.1-00196-LEMANS-2
+Version: DSP.AT.1.0.1-00201-LEMANS-2
 RawFile: qcom/sa8775p/cdspr.jsn
+RawFile: qcom/sa8775p/cdsp1r.jsn
 File: qcom/sa8775p/gpdsp0.mbn
-Version: DSP.AT.1.0.1-00196-LEMANS-2
+Version: DSP.AT.1.0.1-00201-LEMANS-2
 File: qcom/sa8775p/gpdsp1.mbn
-Version: DSP.AT.1.0.1-00196-LEMANS-2
+Version: DSP.AT.1.0.1-00201-LEMANS-2
 RawFile: qcom/sa8775p/gpdsp1r.jsn
 RawFile: qcom/sa8775p/gpdspr.jsn
 File: qcom/sm8750/adsp.mbn
 File: qcom/sm8750/adsp_dtb.mbn
-Version: LPAIDSP.HT.1.2.c1-00450-PAKALA-2
+Version: LPAIDSP.HT.1.2.c2-00021-PAKALA-1
 RawFile: qcom/sm8750/adspr.jsn
 RawFile: qcom/sm8750/adsps.jsn
 RawFile: qcom/sm8750/adspua.jsn
@@ -228,13 +230,16 @@ Version: CDSP.HT.3.1-00889-PAKALA-1
 RawFile: qcom/sm8750/cdspr.jsn
 File: qcom/x1e80100/adsp.mbn
 File: qcom/x1e80100/adsp_dtb.mbn
-Version: ADSP.HT.5.9-00828-HAMOA-1
+Version: ADSP.HT.5.9-00839-HAMOA-1
 RawFile: qcom/x1e80100/adspr.jsn
 RawFile: qcom/x1e80100/adsps.jsn
 RawFile: qcom/x1e80100/adspua.jsn
 RawFile: qcom/x1e80100/battmgr.jsn
+File: qcom/shikra/cdsp.mbn
+Version: CDSP.VT.2.4.3-00076-SHIKRA-1
+RawFile: qcom/shikra/cdspr.jsn
 
-Licence: Redistributable. See LICENSE.qcom-2 and qcom/NOTICE.txt for details
+Licence: Redistributable. See LICENSE.qcom-2 and NOTICE.qcom for details
 
 File: qcom/x1e80100/dell/xps13-9345/adsp_dtbs.elf
 RawFile: qcom/x1e80100/dell/xps13-9345/adspr.jsn
@@ -247,7 +252,7 @@ File: qcom/x1e80100/dell/xps13-9345/qcadsp8380.mbn
 File: qcom/x1e80100/dell/xps13-9345/qccdsp8380.mbn
 File: qcom/x1e80100/dell/xps13-9345/qcdxkmsuc8380.mbn
 
-License: Redistributable. See LICENSE.dell for details
+Licence: Redistributable. See LICENSE.dell and NOTICE.qcom for details
 
 ------------------------------------------------------------------------------
 
@@ -258,7 +263,7 @@ File: qcom/sdm845/modem_nm.mbn
 RawFile: qcom/sdm845/modemuw.jsn
 Link: qcom/sdm845/modem.mbn -> modem_nm.mbn
 
-Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+Licence: Redistributable. See LICENSE.qcom and NOTICE.qcom for details
 
 Info:
 Binary files supplied originally from
@@ -269,147 +274,55 @@ https://github.com/andersson/pil-squasher
 
 ------------------------------------------------------------------------------
 
-Driver: qcom-sc8280xp - Qualcomm ASoC tplg Firmware
-File: qcom/sc8280xp/LENOVO/21BX/audioreach-tplg.bin
-Link: qcom/sc8280xp/SC8280XP-LENOVO-X13S-tplg.bin -> LENOVO/21BX/audioreach-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://github.com/linux-msm/audioreach-topology.git
-------------------------------------------------------------------------------
-
-Driver: qcom-kaanapali - Qualcomm ASoC tplg Firmware
+Driver: Qualcomm ASoC tplg Firmware
+File: qcom/glymur/GLYMUR-CRD-tplg.bin
 File: qcom/kaanapali/Kaanapali-MTP-tplg.bin
-Version: v1.0.2
-Info: DATE=28.02.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://github.com/linux-msm/audioreach-topology.git
-
-------------------------------------------------------------------------------
-
-Driver: qcom-qcs6490 - Qualcomm ASoC topology
+File: qcom/qcm6490/QCM6490-IDP-tplg.bin
+File: qcom/qcs615/TALOS-EVK-tplg.bin
 File: qcom/qcs6490/radxa/dragon-q6a/QCS6490-Radxa-Dragon-Q6A-tplg.bin
 Link: qcom/qcs6490/QCS6490-Radxa-Dragon-Q6A-tplg.bin -> radxa/dragon-q6a/QCS6490-Radxa-Dragon-Q6A-tplg.bin
 File: qcom/qcs6490/Thundercomm/RubikPi3/QCS6490-Thundercomm-RubikPi3-tplg.bin
 Link: qcom/qcs6490/QCS6490-Thundercomm-RubikPi3-tplg.bin -> Thundercomm/RubikPi3/QCS6490-Thundercomm-RubikPi3-tplg.bin
 File: qcom/qcs6490/QCS6490-RB3Gen2-tplg.bin
-Version: v1.0.2
-Info: DATE=28.02.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://github.com/linux-msm/audioreach-topology.git
-
-------------------------------------------------------------------------------
-
-Driver: qcom-qcs8300 - Qualcomm ASoC topology
 File: qcom/qcs8300/MONACO-EVK-tplg.bin
-Version: v1.0.2
-Info: DATE=28.02.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://github.com/linux-msm/audioreach-topology.git
-
-------------------------------------------------------------------------------
-
-Driver: qcom-qcs9100 - Qualcomm ASoC topology
-File: qcom/sa8775p/LEMANS-EVK-tplg.bin
+File: qcom/qcs8300/arduino-monza-tplg.bin
 Link: qcom/qcs9100/LEMANS-EVK-tplg.bin -> ../sa8775p/LEMANS-EVK-tplg.bin
-Version: v1.0.2
-Info: DATE=28.02.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://github.com/linux-msm/audioreach-topology.git
-
-------------------------------------------------------------------------------
-
-Driver: qcom-sm8550 - Qualcomm ASoC tplg Firmware
+File: qcom/sa8775p/LEMANS-EVK-tplg.bin
+File: qcom/sc8280xp/LENOVO/21BX/audioreach-tplg.bin
+Link: qcom/sc8280xp/SC8280XP-LENOVO-X13S-tplg.bin -> LENOVO/21BX/audioreach-tplg.bin
+File: qcom/sm8450/SM8450-HDK-tplg.bin
 File: qcom/sm8550/SM8550-HDK-tplg.bin
 File: qcom/sm8550/SM8550-QRD-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://git.codelinaro.org/linaro/qcomlt/audioreach-topology.git
-
-------------------------------------------------------------------------------
-
-Driver: qcom-sm8650 - Qualcomm ASoC tplg Firmware
 File: qcom/sm8650/SM8650-QRD-tplg.bin
 File: qcom/sm8650/SM8650-MTP-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://git.codelinaro.org/linaro/qcomlt/audioreach-topology.git
-
-------------------------------------------------------------------------------
-
-Driver: qcom-x1e80100 - Qualcomm ASoC tplg Firmware
+File: qcom/sm8750/SM8750-MTP-tplg.bin
+File: qcom/sm8750/SM8750-QRD-tplg.bin
 File: qcom/x1e80100/LENOVO/21N1/X1E80100-LENOVO-Thinkpad-T14s-tplg.bin
 Link: qcom/x1e80100/X1E80100-LENOVO-Thinkpad-T14s-tplg.bin -> LENOVO/21N1/X1E80100-LENOVO-Thinkpad-T14s-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/LENOVO/83ED/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin
 Link: qcom/x1e80100/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin -> LENOVO/83ED/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/X1E80100-EVK-tplg.bin
-Version: v0.1.0
-
 File: qcom/x1e80100/ASUSTeK/vivobook-16/X1E80100-ASUS-Vivobook-16-tplg.bin
 Link: qcom/x1e80100/X1E80100-ASUS-Vivobook-16-tplg.bin -> ASUSTeK/vivobook-16/X1E80100-ASUS-Vivobook-16-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/ASUSTeK/vivobook-s15/X1E80100-ASUS-Vivobook-S15-tplg.bin
 Link: qcom/x1e80100/X1E80100-ASUS-Vivobook-S15-tplg.bin -> ASUSTeK/vivobook-s15/X1E80100-ASUS-Vivobook-S15-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/ASUSTeK/zenbook-a14/X1E80100-ASUS-Zenbook-A14-tplg.bin
 Link: qcom/x1e80100/X1E80100-ASUS-Zenbook-A14-tplg.bin -> ASUSTeK/zenbook-a14/X1E80100-ASUS-Zenbook-A14-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/X1E001DE-DEVKIT-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/X1E80100-CRD-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/X1E80100-Romulus-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/X1E80100-TUXEDO-Elite-14-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/dell/inspiron-14-plus-7441/X1E80100-Dell-Inspiron-14p-7441-tplg.bin
 Link: qcom/x1e80100/X1E80100-Dell-Inspiron-14p-7441-tplg.bin -> dell/inspiron-14-plus-7441/X1E80100-Dell-Inspiron-14p-7441-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/dell/latitude-7455/X1E80100-Dell-Latitude-7455-tplg.bin
 Link: qcom/x1e80100/X1E80100-Dell-Latitude-7455-tplg.bin -> dell/latitude-7455/X1E80100-Dell-Latitude-7455-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/dell/xps13-9345/X1E80100-Dell-XPS-13-9345-tplg.bin
 Link: qcom/x1e80100/X1E80100-Dell-XPS-13-9345-tplg.bin -> dell/xps13-9345/X1E80100-Dell-XPS-13-9345-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
 File: qcom/x1e80100/hp/omnibook-x14/X1E80100-HP-OMNIBOOK-X14-tplg.bin
 Link: qcom/x1e80100/X1E80100-HP-OMNIBOOK-X14-tplg.bin -> hp/omnibook-x14/X1E80100-HP-OMNIBOOK-X14-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
+
+Version: v1.0.3
+Info: DATE=07.04.2026
 
 Licence: Redistributable. See LICENCE.linaro for details
 Originates from https://github.com/linux-msm/audioreach-topology.git
@@ -424,7 +337,7 @@ File: qcom/aic100/fw5.bin
 File: qcom/aic100/fw9.bin
 File: qcom/aic100/sbl.bin
 
-License: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+License: Redistributable. See LICENSE.qcom and NOTICE.qcom for details
 
 ------------------------------------------------------------------------------
 
@@ -452,7 +365,7 @@ File: qcom/qdu100/xbl_ramdump.elf
 File: qcom/qdu100/zeros_1sector.bin
 File: qcom/qdu100/qdsp6sw.mbn.xz
 
-License: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+License: Redistributable. See LICENSE.qcom and NOTICE.qcom for details
 
 ------------------------------------------------------------------------------
 
@@ -463,55 +376,19 @@ File: qcom/qcs615/qupv3fw.elf
 Link: qcom/qcs6490/qupv3fw.elf -> ../qcm6490/qupv3fw.elf
 File: qcom/qcs8300/qupv3fw.elf
 File: qcom/x1e80100/qupv3fw.elf
+File: qcom/shikra/qupv3fw.elf
 
-License: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+License: Redistributable. See LICENSE.qcom and NOTICE.qcom for details
 ------------------------------------------------------------------------------
 
 Driver: sdx61 - Qualcomm SDX61 firmware image file for Foxconn vendor
 File: qcom/sdx61/foxconn/prog_firehose_lite.elf
 
-License: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+License: Redistributable. See LICENSE.qcom and NOTICE.qcom for details
 ------------------------------------------------------------------------------
 
 Driver: sdx35 - Qualcomm SDX35 firmware image file for Foxconn vendor
 File: qcom/sdx35/foxconn/xbl_s_devprg_ns.melf
 
-License: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
-------------------------------------------------------------------------------
-
-Driver: qcm6490 - Qualcomm ASoC tplg Firmware
-File: qcom/qcm6490/QCM6490-IDP-tplg.bin
-Version: v1.0.2
-Info: DATE=28.02.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://github.com/linux-msm/audioreach-topology.git
-------------------------------------------------------------------------------
-
-Driver: qcs615 - Qualcomm ASoC tplg Firmware
-File: qcom/qcs615/TALOS-EVK-tplg.bin
-Version: v1.0.2
-Info: DATE=28.02.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://github.com/linux-msm/audioreach-topology.git
-------------------------------------------------------------------------------
-
-Driver: sm8450 - Qualcomm ASoC tplg Firmware
-File: qcom/sm8450/SM8450-HDK-tplg.bin
-Version: v1.0.2
-Info: DATE=28.02.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://github.com/linux-msm/audioreach-topology.git
-------------------------------------------------------------------------------
-
-Driver: sm8750 - Qualcomm ASoC tplg Firmware
-File: qcom/sm8750/SM8750-MTP-tplg.bin
-File: qcom/sm8750/SM8750-QRD-tplg.bin
-Version: v1.0.1
-Info: DATE=10.01.2026
-
-Licence: Redistributable. See LICENCE.linaro for details
-Originates from https://github.com/linux-msm/audioreach-topology.git
+License: Redistributable. See LICENSE.qcom and NOTICE.qcom for details
 ------------------------------------------------------------------------------

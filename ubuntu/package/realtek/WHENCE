@@ -375,6 +375,9 @@ Version: 0.0.5
 File: rtl_nic/rtl8127a-1.fw
 Version: 0.0.5
 
+File: rtl_nic/rtl8261c.bin
+Version: 0.0.1
+
 Licence: Redistributable. See LICENSE.r8169 for details.
 
 ------------------------------------------------------------------------------
@@ -461,15 +464,15 @@ Link: intel/ibt-18-1.ddc -> ibt-18-0-1.ddc
 Version: BT_ThunderPeak_A0_B0_REL0201
 
 File: intel/ibt-20-0-3.sfi
-Version: BT_Quasar_REL53843_22.180.2607.53843
+Version: BT_CyclonePeak_A0_REL53636
 File: intel/ibt-20-0-3.ddc
 Version: BT_CyclonePeak_A0_REL53636
 File: intel/ibt-20-1-3.sfi
-Version: BT_Quasar_REL53843_22.180.2607.53843
+Version: BT_CyclonePeak_A0_REL53636
 File: intel/ibt-20-1-3.ddc
 Version: BT_CyclonePeak_A0_REL53636
 File: intel/ibt-20-1-4.sfi
-Version: BT_Quasar_REL53843_22.180.2607.53843
+Version: BT_CyclonePeak_A0_REL53636
 File: intel/ibt-20-1-4.ddc
 Version: BT_CyclonePeak_A0_REL53636
 
@@ -527,13 +530,13 @@ File: intel/ibt-0093-4150.sfi
 File: intel/ibt-0093-4150.ddc
 File: intel/ibt-0093-1050.sfi
 File: intel/ibt-0093-1050.ddc
-Version: BT_BlazaruHrpGfp_S_REL297_24.00.26071.297
+Version: BT_BlazaruHrpGfp_S_REL308_24.00.26134.308
 
 File: intel/ibt-0291-0291.sfi
 File: intel/ibt-0291-0291.ddc
 File: intel/ibt-0093-0291.sfi
 File: intel/ibt-0093-0291.ddc
-Version: BT_BlazarU_S_REL105597_24.30.26081.105597
+Version: BT_BlazarU_S_REL110262_24.40.26135.110262
 
 File: intel/ibt-0180-0041.sfi
 File: intel/ibt-0180-0041.ddc
@@ -545,35 +548,30 @@ Version: BT_Magnetar_REL103882_23.50.25205.103882
 
 File: intel/ibt-0190-0291.sfi
 File: intel/ibt-0190-0291.ddc
-File: intel/ibt-0190-0041.sfi
+Version: BT_BlazariGfp_S_REL233_24.00.26071.233
+
+#Below fw files are for BlazarIW for WCL
+File: intel/ibt-1190-0041-iml.sfi
 File: intel/ibt-0190-0041-iml.sfi
-File: intel/ibt-0190-0041.ddc
 File: intel/ibt-0190-0041-pci.ddc
 File: intel/ibt-0190-0041-pci.sfi
 File: intel/ibt-0190-0041-usb.ddc
 File: intel/ibt-0190-0041-usb.sfi
-Version: BT_BlazariGfp_S_REL233_24.00.26071.233
-
-#below fw files are for BlazarIW for WCL
-File: intel/ibt-1190-0041-iml.sfi
 File: intel/ibt-1190-0041-pci.ddc
 File: intel/ibt-1190-0041-pci.sfi
 File: intel/ibt-1190-0041-usb.sfi
 File: intel/ibt-1190-0041-usb.ddc
-Version: BT_BlazariGfp_S_REL182_24.00.25515.182
+Version: BT_BlazariGfp_S_REL244_24.00.26134.244
 
 File: intel/ibt-0190-0291-iml.sfi
 File: intel/ibt-0190-0291-usb.ddc
 File: intel/ibt-0190-0291-usb.sfi
 File: intel/ibt-0190-0291-pci.ddc
 File: intel/ibt-0190-0291-pci.sfi
-Version: BT_BlazarI_S_REL113003_24.30.26081.113003
-
-# Below fw files are for BlazarIW for WCL
 File: intel/ibt-1190-01a1-iml.sfi
 File: intel/ibt-1190-01a1-pci.ddc
 File: intel/ibt-1190-01a1-pci.sfi
-Version: BT_BlazarI_S_REL109279_24.20.26022.109279
+Version: BT_BlazarI_S_REL117603_24.40.26135.117603
 
 File: intel/ibt-00a0-01a1-iml.sfi
 File: intel/ibt-00a0-01a1-pci.ddc
@@ -585,12 +583,12 @@ File: intel/ibt-00a0-0291-pci.ddc
 File: intel/ibt-00a0-0291-pci.sfi
 File: intel/ibt-00a0-0291-usb.ddc
 File: intel/ibt-00a0-0291-usb.sfi
-Version: BT_Scorpius_S_REL79662_24.30.26081.79662
+Version: BT_Scorpius_S_REL85926_24.40.26135.85926
 
 File: intel/ibt-00a0-0041-iml.sfi
 File: intel/ibt-00a0-0041-pci.ddc
 File: intel/ibt-00a0-0041-pci.sfi
-Version: BT_ScorpiusGfp_S_REL281_24.00.26071.281
+Version: BT_ScorpiusGfp_S_REL291_24.00.26134.291
 
 Licence: Redistributable. See LICENCE.ibt_firmware for details
 
@@ -606,6 +604,7 @@ Link: rtl_bt/rtl8723bs_config-OBDA0623.bin -> rtl8723bs_config.bin
 File: rtl_bt/rtl8723cs_xx_fw.bin
 File: rtl_bt/rtl8723cs_xx_config.bin
 File: rtl_bt/rtl8761a_fw.bin
+Link: rtl_bt/rtl8761a_config.bin -> rtl8761bu_config.bin
 File: rtl_bt/rtl8761b_fw.bin
 File: rtl_bt/rtl8761b_config.bin
 File: rtl_bt/rtl8761bu_fw.bin

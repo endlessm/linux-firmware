@@ -1,19 +1,19 @@
-diff --git a/LICENCE.asihpi b/LICENCE.asihpi
+diff --git a/LICENSES/LICENCE.asihpi b/LICENSES/LICENCE.asihpi
 new file mode 100644
 index 000000000000..3df637e8f767
 --- /dev/null
-+++ b/LICENCE.asihpi
++++ b/LICENSES/LICENCE.asihpi
 @@ -0,0 +1,5 @@
 +Copyright (c) 2005 Audioscience <support@audioscience.com>
 +
 +Verbatim copying and distribution of the firmware are permitted
 +worldwide, without royalty, in any medium, provided this notice is
 +preserved.
-diff --git a/LICENCE.cx2341x b/LICENCE.cx2341x
+diff --git a/LICENSES/LICENCE.cx2341x b/LICENSES/LICENCE.cx2341x
 new file mode 100644
 index 000000000000..ab9808fd2ed6
 --- /dev/null
-+++ b/LICENCE.cx2341x
++++ b/LICENSES/LICENCE.cx2341x
 @@ -0,0 +1,277 @@
 +END-USER FIRMWARE LICENSE AGREEMENT
 +
@@ -292,11 +292,11 @@ index 000000000000..ab9808fd2ed6
 +at any time if you violate its terms. Upon termination, you will
 +immediately destroy the Firmware or return all copies of the Firmware
 +to Hauppauge.
-diff --git a/LICENCE.echoaudio b/LICENCE.echoaudio
+diff --git a/LICENSES/LICENCE.echoaudio b/LICENSES/LICENCE.echoaudio
 new file mode 100644
 index 000000000000..e3d63ce8055f
 --- /dev/null
-+++ b/LICENCE.echoaudio
++++ b/LICENSES/LICENCE.echoaudio
 @@ -0,0 +1,25 @@
 +Copyright Echo Digital Audio Corporation (c)
 +All rights reserved
@@ -323,11 +323,11 @@ index 000000000000..e3d63ce8055f
 +You should have received a copy of the GNU Lesser General Public
 +License along with this library; if not, write to the Free Software
 +Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-diff --git a/LICENCE.zd1211 b/LICENCE.zd1211
+diff --git a/LICENSES/LICENCE.zd1211 b/LICENSES/LICENCE.zd1211
 new file mode 100644
 index 000000000000..e0fde756fd89
 --- /dev/null
-+++ b/LICENCE.zd1211
++++ b/LICENSES/LICENCE.zd1211
 @@ -0,0 +1,5 @@
 +The firmware was originally distributed by Zydas in their original driver package.
 +

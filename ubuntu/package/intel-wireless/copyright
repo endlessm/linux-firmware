@@ -49,8 +49,6 @@ Files: intel/ibt-0040-0041.ddc
  intel/ibt-0190-0041-pci.sfi
  intel/ibt-0190-0041-usb.ddc
  intel/ibt-0190-0041-usb.sfi
- intel/ibt-0190-0041.ddc
- intel/ibt-0190-0041.sfi
  intel/ibt-0190-0291-iml.sfi
  intel/ibt-0190-0291-pci.ddc
  intel/ibt-0190-0291-pci.sfi

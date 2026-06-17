@@ -33,7 +33,7 @@ Driver: isci - Intel C600 SAS controller driver
 File: isci/isci_firmware.bin
 Source: isci/
 
-Licence: GPLv2. See GPL-2 for details.
+Licence: GPLv2. See GPL-2.0 for details.
 
 ------------------------------------------------------------------------------
 Driver: qat - Intel(R) QAT crypto accelerator
@@ -53,14 +53,17 @@ Link: qat_c62x.bin -> intel/qat/qat_c62x.bin
 File: intel/qat/qat_c62x_mmp.bin
 Link: qat_c62x_mmp.bin -> intel/qat/qat_c62x_mmp.bin
 File: intel/qat/qat_4xxx.bin
+Version: 1.2.80
 Link: qat_4xxx.bin -> intel/qat/qat_4xxx.bin
 File: intel/qat/qat_4xxx_mmp.bin
 Link: qat_4xxx_mmp.bin -> intel/qat/qat_4xxx_mmp.bin
 File: intel/qat/qat_402xx.bin
+Version: 1.2.80
 Link: qat_402xx.bin -> intel/qat/qat_402xx.bin
 File: intel/qat/qat_402xx_mmp.bin
 Link: qat_402xx_mmp.bin -> intel/qat/qat_402xx_mmp.bin
 File: intel/qat/qat_420xx.bin
+Version: 1.0.0
 Link: qat_420xx.bin -> intel/qat/qat_420xx.bin
 File: intel/qat/qat_420xx_mmp.bin
 Link: qat_420xx_mmp.bin -> intel/qat/qat_420xx_mmp.bin
@@ -122,7 +125,7 @@ File: intel/avs/rt5640-tplg.bin
 File: intel/avs/rt5663-tplg.bin
 File: intel/avs/ssm4567-tplg.bin
 
-License: Apache-2.0. See Apache-2 for details.
+License: Apache-2.0. See Apache-2.0 for details.
 
 ------------------------------------------------------------------------------
 
@@ -246,9 +249,9 @@ Info: product_family - "ThinkPad X9-15 Gen 1"
 Version: 5.8.0.7720
 
 File: LENOVO/ish/ish_ptl_lenovo_X1_2026_5.8.1.7782.bin
-Link: intel/ish/ish_lnlm_53c4ffad_bc3e29f7.bin -> ../../LENOVO/ish/ish_ptl_lenovo_X1_2026_5.8.1.7782.bin
+Link: intel/ish/ish_ptl_53c4ffad_bc3e29f7.bin -> ../../LENOVO/ish/ish_ptl_lenovo_X1_2026_5.8.1.7782.bin
 Info: product_family - "ThinkPad X1 2-in-1 Gen 11"
-Link: intel/ish/ish_lnlm_53c4ffad_75d6ebe2.bin -> ../../LENOVO/ish/ish_ptl_lenovo_X1_2026_5.8.1.7782.bin
+Link: intel/ish/ish_ptl_53c4ffad_75d6ebe2.bin -> ../../LENOVO/ish/ish_ptl_lenovo_X1_2026_5.8.1.7782.bin
 Info: product_family - "ThinkPad X1 Carbon Gen 14"
 Version: 5.8.1.7782
 
@@ -265,13 +268,17 @@ File: HP/ish/ish_lnlm_12128606_f9751b71.bin
 Link: intel/ish/ish_lnlm_12128606_f9751b71.bin -> ../../HP/ish/ish_lnlm_12128606_f9751b71.bin
 Version: 5.8.200.7720_1029
 
+File: HP/ish/ish_ptl_12128606_581.7779.0.bin
+Version: 5.8.1.7779
+
 License: Redistributable. See LICENCE.HP for details
 
 File: dell/ish/ish_lnlm_39ceeaf8_58.7727.0.bin
 Link: intel/ish/ish_lnlm_39ceeaf8.bin -> ../../dell/ish/ish_lnlm_39ceeaf8_58.7727.0.bin
 
 File: dell/ish/ish_ptl_39ceeaf8_581.7779.0.bin
-Link: intel/ish/ish_ptl_39ceeaf8.bin -> ../../dell/ish/ish_ptl_39ceeaf8_581.7779.0.bin
+File: dell/ish/ish_ptl_39ceeaf8_581.7783.0.bin
+Link: intel/ish/ish_ptl_39ceeaf8.bin -> ../../dell/ish/ish_ptl_39ceeaf8_581.7783.0.bin
 
 License: Redistributable. See LICENSE.dell for details
 
@@ -280,15 +287,15 @@ License: Redistributable. See LICENSE.dell for details
 Driver: intel_vpu - Intel NPU driver
 
 File: intel/vpu/vpu_37xx_v1.bin
-Version: 20260219*MTL_CLIENT_SILICON-NVR+NN-deployment*f693e2c0dc3ce525f34822f263cc12192ff0722f*f693e2c0dc3ce525f34822f263cc12192ff0722f*f693e2c0dc3
+Version: 20260505*MTL_CLIENT_SILICON-NVR+NN-deployment*3b1e1e826d34b0aeea5cc6d75b017eb4cbf5b735*3b1e1e826d34b0aeea5cc6d75b017eb4cbf5b735*3b1e1e826d3
 Link: intel/vpu/vpu_37xx_v0.0.bin -> vpu_37xx_v1.bin
 
 File: intel/vpu/vpu_40xx_v1.bin
-Version: Feb 19 2026*NPU40xx*build/ci/npu-fw-ci-ci_branch_UD202608_npu_release_26ww05-20260206_112046-32016-7-gf693e2c0dc3*f693e2c0dc3ce525f34822f263cc12192ff0722f
+Version: May  5 2026*NPU40xx*build/ci/npu-fw-ci-ci_branch_UD202620_npu_release_26ww17-20260422_094127-fc285c23e1bf595d6430660503e8616549c01a34-8-g3b1e1e826d3*3b1e1e826d34b0aeea5cc6d75b017eb4cbf5b735
 Link: intel/vpu/vpu_40xx_v0.0.bin -> vpu_40xx_v1.bin
 
 File: intel/vpu/vpu_50xx_v1.bin
-Version: Feb 19 2026*NPU50xx*build/ci/npu-fw-ci-ci_branch_UD202608_npu_release_26ww05-20260206_112046-32016-7-gf693e2c0dc3*f693e2c0dc3ce525f34822f263cc12192ff0722f
+Version: May  5 2026*NPU50xx*build/ci/npu-fw-ci-ci_branch_UD202620_npu_release_26ww17-20260422_094127-fc285c23e1bf595d6430660503e8616549c01a34-8-g3b1e1e826d3*3b1e1e826d34b0aeea5cc6d75b017eb4cbf5b735
 Link: intel/vpu/vpu_50xx_v0.0.bin -> vpu_50xx_v1.bin
 
 License: Redistributable. See LICENSE.intel_vpu for details

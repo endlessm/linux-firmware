@@ -466,13 +466,13 @@ File: i915/xe2lpd_dmc.bin
 Version: DMC API/APB ver 2 release 29 for Xe2LPD
 
 File: i915/xe3lpd_dmc.bin
-Version: DMC API/APB ver 2 release 33 for Xe3LPD
+Version: DMC API/APB ver 2 release 36 for Xe3LPD
 
 File: i915/xe3lpd_3002_dmc.bin
-Version: DMC API/APB ver 2 release 28 for Xe3LPD_3002
+Version: DMC API/APB ver 2 release 31 for Xe3LPD_3002
 
 File: i915/xe3p_lpd_dmc.bin
-Version: DMC API/APB ver 2 release 33 for Xe3p_LPD
+Version: DMC API/APB ver 2 release 37 for Xe3p_LPD
 
 License: Redistributable. See LICENSE.i915 for details
 ------------------------------------------------------------------------------
@@ -483,13 +483,13 @@ File: xe/lnl_gsc_1.bin
 Version: GSC API/APB v1.0, release 104.0.5.1429, SVN 1 for Lunarlake
 
 File: xe/lnl_guc_70.bin
-Version: GuC API/APB ver 70.58.0 for Lunarlake
+Version: GuC API/APB ver 70.65.0 for Lunarlake
 
 File: xe/lnl_huc.bin
 Version: HuC API/APB ver 9.4.13 for Lunarlake
 
 File: xe/bmg_guc_70.bin
-Version: GuC API/APB ver 70.58.0 for Battlemage
+Version: GuC API/APB ver 70.65.0 for Battlemage
 
 File: xe/bmg_huc.bin
 Version: HuC API/APB ver 8.2.10 for Battlemage
@@ -498,10 +498,10 @@ File: xe/fan_control_8086_e20b_8086_1100.bin
 Version: fan_control ver 203.0.0.0 for Battlemage
 
 File: xe/ptl_gsc_1.bin
-Version: GSC API/APB v1.0, release 105.0.2.1301, SVN 1 for Pantherlake
+Version: GSC API/APB v1.0, release 105.0.2.1397, SVN 1 for Pantherlake
 
 File: xe/ptl_guc_70.bin
-Version: GuC API/APB ver 70.58.0 for Pantherlake
+Version: GuC API/APB ver 70.65.0 for Pantherlake
 
 File: xe/ptl_huc.bin
 Version: HuC API/APB ver 10.3.3 for Pantherlake
