@@ -12,7 +12,7 @@ from pathlib import Path
 import git
 
 from lib.changelog import ChangelogError
-from lib.package import Package, PackageError, read_upstream
+from lib.package import Package, PackageError
 
 
 def main() -> None:
@@ -29,8 +29,6 @@ def main() -> None:
         if result.returncode != 0:
             sys.exit(result.returncode)
 
-    _, upstream_version = read_upstream()
-
     sru_release = True
     rebase_release = True
     version = ""
@@ -44,11 +42,11 @@ def main() -> None:
         version = str(pkg.changelog.Changelog.version)
 
         # Rebase release patterns: VERSION.1ubuntu or VERSION-0ubuntu1
-        if version in (f"{upstream_version}.1ubuntu", f"{upstream_version}-0ubuntu1"):
+        if version in (f"{pkg.upstream_version}.1ubuntu", f"{pkg.upstream_version}-0ubuntu1"):
             sru_release = False
         # SRU release patterns: VERSION.*ubuntu0.0 or VERSION-0ubuntu*.0
-        elif re.match(rf"^{re.escape(upstream_version)}\.\d+ubuntu0\.0$", version) or re.match(
-            rf"^{re.escape(upstream_version)}-0ubuntu\d+\.0$", version
+        elif re.match(rf"^{re.escape(pkg.upstream_version)}\.\d+ubuntu0\.0$", version) or re.match(
+            rf"^{re.escape(pkg.upstream_version)}-0ubuntu\d+\.0$", version
         ):
             rebase_release = False
         else:

@@ -65,30 +65,25 @@ class PackageChangelog:
             self._changelog = Changelog(content)
         return self._changelog
 
-    @property
-    def base_commit(self) -> str:
+    def base_commit(self, upstream_version: str) -> str:
         """Return the git commit SHA that introduced the first changelog entry.
 
         Changelogs are newest-first, so the last matching line is the oldest entry.
-        Raises ChangelogError if no matching entry is found.
         """
+        rev = self.commit or "HEAD"
+
         try:
-            output = self._repo.git.blame("-l", self.commit or "HEAD", "--", str(self.path))
+            output = self._repo.git.blame("-l", rev, "--", str(self.path))
         except git.GitCommandError as e:
             raise ChangelogError(str(e)) from e
 
-        version = str(self.Changelog.version)
-        version_prefix = ".".join(version.split("-")[0].split(".")[0:2])
-
         commit: str | None = None
         for line in output.splitlines():
-            if "linux-firmware" in line and f" ({version_prefix}" in line:
+            if "linux-firmware" in line and f" ({upstream_version}" in line:
                 # Root commits in blame output are prefixed with ^
                 commit = line.split()[0].lstrip("^")
 
-        if commit is None:
-            raise ChangelogError(f"No base commit found for version: {version}")
-        return commit
+        return commit or rev
 
     @property
     def release_commit(self) -> str:

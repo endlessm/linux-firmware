@@ -26,7 +26,7 @@ def main() -> None:
         print(f"EE: {e}", file=sys.stderr)
         sys.exit(1)
 
-    if pkg.is_meta:
+    if pkg.is_native:
         print(f"II: No orig tarball needed for package: {args.package}")
         return
 

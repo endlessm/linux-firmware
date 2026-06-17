@@ -176,6 +176,7 @@ class TestPackage:
         commit_files(
             repo,
             {
+                "ubuntu/upstream": "COMMIT=" + "0" * 40 + "\nVERSION=1.0",
                 "ubuntu/package/test-pkg/files": "foo.bin",
                 "ubuntu/package/test-pkg/WHENCE": "File: foo.bin\nLicence: See LICENCE.test for details",
                 "ubuntu/package/test-pkg/changelog": (
@@ -200,18 +201,19 @@ class TestPackage:
 
         pkg = Package("test-pkg")
         assert pkg.name == "test-pkg"
-        assert pkg.is_meta is False
+        assert pkg.is_native is False
         assert pkg.path == Path("ubuntu/package/test-pkg")
         assert isinstance(pkg.files, PackageFiles)
         assert isinstance(pkg.whence, PackageWhence)
 
-    def test_meta_package(self, git_repo: tuple[git.Repo, Path]) -> None:
-        """Meta package has is_meta=True and no file components."""
+    def test_native_package(self, git_repo: tuple[git.Repo, Path]) -> None:
+        """Meta package has is_native=True and no file components."""
         repo, _ = git_repo
 
         commit_files(
             repo,
             {
+                "ubuntu/upstream": "COMMIT=" + "0" * 40 + "\nVERSION=1.0",
                 "ubuntu/package/meta/changelog": (
                     "linux-firmware (1.0) noble; urgency=medium\n\n"
                     "  * Test\n\n"
@@ -222,7 +224,7 @@ class TestPackage:
 
         pkg = Package("meta")
         assert pkg.name == "meta"
-        assert pkg.is_meta is True
+        assert pkg.is_native is True
         assert not hasattr(pkg, "files")
         assert not hasattr(pkg, "whence")
 
@@ -237,6 +239,7 @@ class TestPackageTrackedPaths:
         commit_files(
             repo,
             {
+                "ubuntu/upstream": "COMMIT=" + "0" * 40 + "\nVERSION=1.0",
                 "ubuntu/package/meta/changelog": (
                     "linux-firmware (1.0) noble; urgency=medium\n\n"
                     "  * Test\n\n"
@@ -255,6 +258,7 @@ class TestPackageTrackedPaths:
         commit_files(
             repo,
             {
+                "ubuntu/upstream": "COMMIT=" + "0" * 40 + "\nVERSION=1.0",
                 "ubuntu/package/test-pkg/files": "amd/*.bin\nintel/*.bin\n!amd/excluded.bin",
                 "ubuntu/package/test-pkg/WHENCE": "File: foo.bin",
                 "ubuntu/package/test-pkg/changelog": (
@@ -1072,6 +1076,7 @@ class TestCheckMeta:
         commit_files(
             repo,
             {
+                "ubuntu/upstream": "COMMIT=" + "0" * 40 + "\nVERSION=1.0",
                 "ubuntu/package/meta/changelog": (
                     "linux-firmware (1.0) noble; urgency=medium\n\n"
                     "  * Test\n\n"

@@ -23,7 +23,7 @@ def main() -> None:
         pkg = Package(args.package)
         print(f"II: Update changelog of package: {args.package}")
         if not pkg.changelog.update(
-            pkg.orig.upstream_version,
+            pkg.upstream_version,
             pkg.tracked_paths,
             series=args.series,
             sru=args.sru,

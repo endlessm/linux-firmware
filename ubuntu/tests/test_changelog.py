@@ -13,7 +13,7 @@ from .conftest import commit_file
 
 
 class TestBaseCommit:
-    """Tests for PackageChangelog.base_commit property."""
+    """Tests for PackageChangelog.base_commit method."""
 
     def test_returns_sha(self, git_repo: tuple[git.Repo, Path]) -> None:
         """Returns 40-char SHA for matching version."""
@@ -30,11 +30,11 @@ linux-firmware (1.2.3-0ubuntu1) noble; urgency=medium
         sha = commit_file(repo, "changelog", changelog_content)
 
         changelog = PackageChangelog(Path("changelog"))
-        assert changelog.base_commit == sha
-        assert len(changelog.base_commit) == 40
+        assert changelog.base_commit("1.2.3") == sha
+        assert len(changelog.base_commit("1.2.3")) == 40
 
-    def test_no_match_raises(self, git_repo: tuple[git.Repo, Path]) -> None:
-        """Non-matching version raises ChangelogError."""
+    def test_no_match_returns_rev(self, git_repo: tuple[git.Repo, Path]) -> None:
+        """Non-matching version falls back to rev (HEAD)."""
         repo, _ = git_repo
         changelog_content = """\
 some-other-package (1.2.3-0ubuntu1) noble; urgency=medium
@@ -43,11 +43,10 @@ some-other-package (1.2.3-0ubuntu1) noble; urgency=medium
 
  -- Test User <test@test.com>  Mon, 01 Jan 2024 00:00:00 +0000
 """
-        commit_file(repo, "changelog", changelog_content)
+        sha = commit_file(repo, "changelog", changelog_content)
 
         changelog = PackageChangelog(Path("changelog"))
-        with pytest.raises(ChangelogError, match="No base commit found"):
-            _ = changelog.base_commit
+        assert changelog.base_commit("9.9.9") == "HEAD"
 
 
 class TestPrevReleaseCommit:

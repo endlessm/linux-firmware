@@ -166,10 +166,12 @@ class Package:
         """Initialize package by name, loading its components at the given commit."""
         self.name = name
         self.commit = commit
+        self.source_name = f"linux-firmware-{self.name}"
+        self.upstream_commit, self.upstream_version = read_upstream(self.commit)
         self._repo = git.Repo()
-        self.is_meta = name == "meta"
+        self.is_native = name == "meta"
 
-        if self.is_meta:
+        if self.is_native:
             self.path = Path("ubuntu") / "package" / "meta"
             self.changelog = PackageChangelog(self.path / "changelog", self.commit)
         else:
@@ -202,7 +204,7 @@ class Package:
     @property
     def tracked_paths(self) -> list[str]:
         """Pathspecs tracked for changelog purposes (file globs + common dirs)."""
-        if self.is_meta:
+        if self.is_native:
             return [str(self.path) + "/"]
         return self.files.pathspecs() + [
             "ubuntu/debian/",
@@ -214,7 +216,7 @@ class Package:
     @cached_property
     def orig(self) -> PackageOrig:
         """Return PackageOrig using the file list from the base commit."""
-        return PackageOrig(self.name, self.changelog.base_commit)
+        return PackageOrig(self.name, self.changelog.base_commit(self.upstream_version))
 
     def update_delta(self) -> None:
         """Update patches/ubuntu.patch and source/include-binaries.
@@ -237,7 +239,7 @@ class Package:
                 binary_files.append(file_path)
             if file_type in ("text", "link"):
                 if file_path in orig_paths:
-                    text_files.append((self.orig.upstream_commit, file_path))
+                    text_files.append((self.upstream_commit, file_path))
                 else:
                     text_files.append((EMPTY_TREE, file_path))
 
@@ -362,7 +364,7 @@ class Package:
         is not found.
         """
         print("II: Check orig tarball content")
-        orig_tarball = f"../{self.orig.source_name}_{self.orig.upstream_version}.orig.tar.xz"
+        orig_tarball = f"../{self.source_name}_{self.upstream_version}.orig.tar.xz"
         if os.path.exists(orig_tarball):
             with tarfile.open(orig_tarball, "r:xz") as tar:
                 orig_tarball_files = [m.name for m in tar.getmembers() if m.isfile() and "/" in m.name]
@@ -385,7 +387,7 @@ class Package:
         Raises PackageError with a message and list of offending files on failure.
         Does nothing for the meta package.
         """
-        if self.is_meta:
+        if self.is_native:
             return
 
         self.check_excluded_subset()
