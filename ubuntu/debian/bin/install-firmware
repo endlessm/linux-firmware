@@ -41,7 +41,7 @@ echo "II: Install firmware files"
 fw_dir=debian/${package}/usr/lib/firmware
 mkdir -p "${fw_dir}"
 
-time while IFS= read -r f ; do
+while IFS= read -r f ; do
 	if [ -e "${f}" ] ; then
 		echo "    ${f}"
 		fw_file=${fw_dir}/${f}
@@ -64,7 +64,7 @@ rdfind -makesymlinks true -makeresultsfile true -outputname debian/rdfind.log "$
 
 echo "II: Compress firmware files"
 
-time while IFS= read -r fw ; do
+while IFS= read -r fw ; do
 	if grep -m1 -qFx "File: ${fw}" debian/WHENCE ; then
 		zstd --compress -19 --quiet --rm "${fw_dir}"/"${fw}"
 	elif grep -m1 -qFx "RawFile: ${fw}" debian/WHENCE ; then
