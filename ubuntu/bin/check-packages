@@ -3,6 +3,7 @@
 # Check all packages
 #
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -13,30 +14,43 @@ from lib.package import Package, PackageError, PackageFiles
 
 def main() -> None:
     """Run per-package and cross-package checks."""
+    parser = argparse.ArgumentParser(description="Check all packages")
+    parser.add_argument(
+        "--cross-only", action="store_true", help="Skip per-package checks, only run cross-package checks"
+    )
+    args = parser.parse_args()
+
     packaged_files: dict[str, list[str]] = {}
     excluded_files: dict[str, list[str]] = {}
     licenses_files: dict[str, list[str]] = {}
 
     for pkg_dir in sorted(Path("ubuntu/package").iterdir()):
         name = pkg_dir.name
-        print(f"II: Run checks for package: {name}")
         try:
             pkg = Package(name)
-            pkg.check()
         except PackageError as e:
             print(f"EE: {e}", file=sys.stderr)
             for f in e.files:
                 print(f"    {f}", file=sys.stderr)
             sys.exit(1)
 
-        if name != "meta":
+        if not args.cross_only:
+            print(f"II: Run checks for package: {name}")
+            try:
+                pkg.check()
+            except PackageError as e:
+                print(f"EE: {e}", file=sys.stderr)
+                for f in e.files:
+                    print(f"    {f}", file=sys.stderr)
+                sys.exit(1)
+            print()
+
+        if not pkg.is_native:
             packaged_files[name] = pkg.files.paths()
             excluded_files[name] = pkg.files.paths("excluded")
             licenses_files[name] = pkg.licenses.paths()
 
-        print()
-
-    print("II: Run additional cross-package checks")
+    print("II: Run cross-package checks")
 
     all_git_files = set(git.Repo().git.ls_files().splitlines())
     all_packaged = {f for files in packaged_files.values() for f in files}
