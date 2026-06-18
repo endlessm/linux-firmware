@@ -33,22 +33,24 @@ def main() -> None:
     print(f"II: Create orig tarball for package: {args.package}")
 
     orig = pkg.orig
-    orig_tarball = Path(f"../{orig.source_name}_{orig.upstream_version}.orig.tar.xz")
+    orig_tarball = Path(f"../{orig.source_name}_{orig.upstream_version}.orig.tar")
+    orig_tarball_xz = Path(f"{orig_tarball}.xz")
+
     if args.force:
-        orig_tarball.unlink(missing_ok=True)
-    if orig_tarball.exists():
-        print(f"II: Orig tarball exists already: {orig_tarball}")
+        orig_tarball_xz.unlink(missing_ok=True)
+    if orig_tarball_xz.exists():
+        print(f"II: Orig tarball exists already: {orig_tarball_xz}")
         return
 
     # Create tarball
-    print(f"II: Create {orig_tarball}")
+    print(f"II: Create {orig_tarball_xz}")
     prefix = f"{orig.source_name}-{orig.upstream_version}/"
     try:
         subprocess.run(
             [
                 "git",
                 "archive",
-                "--format=tar.xz",
+                "--format=tar",
                 f"--prefix={prefix}",
                 "-o",
                 str(orig_tarball),
@@ -58,8 +60,10 @@ def main() -> None:
             + orig.content.paths(),
             check=True,
         )
+        subprocess.run(["xz", str(orig_tarball)], check=True)
     except subprocess.CalledProcessError:
         orig_tarball.unlink(missing_ok=True)
+        orig_tarball_xz.unlink(missing_ok=True)
         print("EE: Failed to create tarball", file=sys.stderr)
         sys.exit(1)
 
