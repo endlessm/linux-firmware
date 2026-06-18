@@ -112,10 +112,13 @@ def main() -> None:
     parser.add_argument(
         "--details",
         action="store_true",
-        help="Show sha1 and type of each file (requires commit)",
+        help="Show mode, sha1 and type of each file",
     )
     parser.set_defaults(opt=None)
     args = parser.parse_args()
+
+    if args.details and args.commit is None:
+        parser.error("--details requires an explicit commit")
 
     if args.package == "meta":
         sys.exit(0)

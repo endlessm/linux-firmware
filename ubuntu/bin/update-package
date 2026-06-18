@@ -18,8 +18,8 @@ def main() -> None:
     parser.add_argument(
         "commit",
         nargs="?",
-        default="HEAD",
-        help="Commit to read package files at (default: HEAD)",
+        default=None,
+        help="Commit to read package files at (default: None)",
     )
     args = parser.parse_args()
 
@@ -39,6 +39,8 @@ def main() -> None:
 
         # Update Debian delta (patches and binaries)
         print("II: Update Debian delta")
+        if args.commit is None:
+            print("WW: Generating delta from HEAD (uncommitted changes ignored)", file=sys.stderr)
         pkg.update_delta()
 
     except (PackageError, WhenceError, ChangelogError) as e:

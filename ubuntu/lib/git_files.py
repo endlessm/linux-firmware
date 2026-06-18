@@ -1,5 +1,7 @@
 """Git-tracked file list resolution for firmware packages."""
 
+import sys
+
 import git
 from pathspec import GitIgnoreSpec
 
@@ -106,13 +108,14 @@ class GitFiles:
         return all_paths
 
     def tree(self, opt: str | None = None) -> list[tuple[str, str, str]]:
-        """Return (mode, sha1, path) tuples for matched files. Requires a commit."""
+        """Return (mode, sha1, path) tuples for matched files."""
         if not self.commit:
-            raise GitFilesError("GitFiles.tree() requires a commit")
+            print("WW: No commit specified, falling back to HEAD", file=sys.stderr)
 
+        commit = self.commit or "HEAD"
         paths = self.paths(opt)
         try:
-            output = self._repo.git.ls_tree("-r", self.commit, "--", *paths)
+            output = self._repo.git.ls_tree("-r", commit, "--", *paths)
         except git.GitCommandError as e:
             raise GitFilesError(str(e)) from e
 
@@ -125,13 +128,11 @@ class GitFiles:
         return [(mode, sha1, path) for path, (mode, sha1) in ls_tree.items()]
 
     def entries(self, opt: str | None = None) -> list[tuple[str, str, str, str]]:
-        """Return (mode, type, sha1, path) tuples. Type is 'text', 'binary', or 'link'.
-
-        Requires a commit.
-        """
+        """Return (mode, type, sha1, path) tuples. Type is 'text', 'binary', or 'link'."""
         if not self.commit:
-            raise GitFilesError("GitFiles.entries() requires a commit")
+            print("WW: No commit specified, falling back to HEAD", file=sys.stderr)
 
+        commit = self.commit or "HEAD"
         tree = self.tree(opt)
         file_types: dict[str, str] = {}
         non_links = []
@@ -143,7 +144,7 @@ class GitFiles:
 
         if non_links:
             try:
-                output = self._repo.git.diff_tree("--numstat", EMPTY_TREE, self.commit, "--", *non_links)
+                output = self._repo.git.diff_tree("--numstat", EMPTY_TREE, commit, "--", *non_links)
             except git.GitCommandError as e:
                 raise GitFilesError(str(e)) from e
             for line in output.splitlines():

@@ -246,7 +246,10 @@ class Package:
         patch = ""
         if text_files:
             text_files = sorted(text_files, key=lambda x: x[1])
-            patches = [self._repo.git.diff(c, self.commit, "--", p) for c, p in text_files]
+            if self.commit:
+                patches = [self._repo.git.diff(c, self.commit, "--", p) for c, p in text_files]
+            else:
+                patches = [self._repo.git.diff(c, "--", p) for c, p in text_files]
             patch = "\n".join(patches)
 
         _write_include_binaries(self.path, sorted(binary_files))
