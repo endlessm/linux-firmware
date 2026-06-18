@@ -123,10 +123,10 @@ class PackageChangelog:
     def _next_version(self, upstream_version: str, sru: bool = False) -> str:
         """Calculate next package version based on current version and upstream."""
         version = str(self.Changelog.version)
-        is_meta = "-" not in version
+        is_native = "-" not in version
 
         if version.startswith(upstream_version):
-            if is_meta:
+            if is_native:
                 if sru:
                     return f"{version}0.0"
                 base = version.rsplit(".", 1)[0]
@@ -141,7 +141,7 @@ class PackageChangelog:
                 upload = match.group(1)
                 return f"{version[: -len(upload)]}{int(upload) + 1}"
         else:
-            if is_meta:
+            if is_native:
                 return f"{upstream_version}.1ubuntu"
             else:
                 return f"{upstream_version}-0ubuntu1"
@@ -216,11 +216,15 @@ class PackageChangelog:
             commits = self.changes(paths)
             commits.reverse()
             changes = self.format_changes(commits)
-            if not changes:
-                if rebuild:
-                    changes = ["  * No-change rebuild"]
-                else:
-                    return False
+
+        if not changes and series and series != str(self.Changelog.distributions):
+            changes = [f"  * Initial release for {series.capitalize()}"]
+
+        if not changes and rebuild:
+            changes = ["  * No-change rebuild"]
+
+        if not changes:
+            return False
 
         series = series or str(self.Changelog.distributions)
         new_version = self._next_version(upstream_version, sru)
