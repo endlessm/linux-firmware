@@ -7,4 +7,3 @@ Depends: @,
  linux-firmware,
  linux-firmware-raspi [arm64 armhf],
  wireless-regdb,
-Restrictions: needs-recommends
