@@ -9,15 +9,15 @@ DEB_PACKAGE := $(firstword $(DEB_PACKAGES))
 %:
 	dh $@
 
-override_dh_install:
+override_dh_auto_install:
 	./debian/bin/install-firmware $(DEB_PACKAGE)
-	dh_install
-
-override_dh_builddeb:
-	# Individual firmware files are already compressed, so no need to also
-	# compress the package
-	dh_builddeb -- -Znone
 
 override_dh_strip_nondeterminism:
 
-override_dh_build:
+override_dh_auto_clean:
+
+override_dh_auto_configure:
+
+override_dh_auto_build:
+
+override_dh_auto_test:
