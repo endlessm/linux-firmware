@@ -29,7 +29,7 @@ def main() -> None:
 
     print(f"II: Commit package files for package: {args.package}")
 
-    repo.git.add(str(pkg_dir) + "/")
+    repo.git.add(str(pkg_dir) + "/", "ubuntu/unpackaged")
     # fmt: off
     repo.git.commit(
         "-s",

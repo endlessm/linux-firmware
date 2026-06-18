@@ -16,7 +16,7 @@ def main() -> None:
 
     print("II: Commit package files")
 
-    repo.git.add("ubuntu/package/")
+    repo.git.add("ubuntu/package/", "ubuntu/unpackaged")
     # fmt: off
     repo.git.commit(
         "-s",
