@@ -2,6 +2,7 @@
 requires-python = ">=3.13"
 dependencies = [
     "gitpython",
+    "launchpadlib",
     "pathspec",
     "python-debian",
     "requests",
@@ -36,6 +37,14 @@ mypy_path = "lib"
 
 [[tool.mypy.overrides]]
 module = "debian.changelog"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "launchpadlib.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "lazr.*"
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

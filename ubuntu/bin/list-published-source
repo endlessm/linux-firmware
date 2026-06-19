@@ -1,0 +1,122 @@
+#!/usr/bin/env python3
+#
+# List the latest published source package version
+#
+
+import argparse
+import sys
+from pathlib import Path
+from typing import TextIO
+
+from debian.changelog import Changelog
+from launchpadlib.launchpad import Launchpad
+from lazr.restfulclient.resource import Entry
+
+
+def get_package(package: str, series: str | None) -> tuple[str, str]:
+    """Return (source_name, series) from the package changelog."""
+    changelog_path = Path("ubuntu/package") / package / "changelog"
+    if not changelog_path.exists():
+        print(f"EE: Invalid package name: {package}", file=sys.stderr)
+        sys.exit(2)
+
+    with open(changelog_path) as f:
+        cl = Changelog(f)
+    source_name = str(cl.package)
+    pkg_series = series or str(cl.distributions)
+    return source_name, pkg_series
+
+
+def get_archive(lp: Launchpad, ubuntu: Entry, archive_arg: str | None) -> Entry:
+    """Return the archive object for the given archive argument.
+
+    Supports:
+      - None or 'primary' -> ubuntu.main_archive
+      - 'ppa:<owner>/<name>' -> the named PPA
+    """
+    if archive_arg is None or archive_arg == "primary":
+        return ubuntu.main_archive
+
+    if archive_arg.startswith("ppa:"):
+        try:
+            owner, name = archive_arg.removeprefix("ppa:").split("/", 1)
+        except ValueError:
+            print(f"EE: Invalid PPA format: {archive_arg} (expected ppa:<owner>/<name>)", file=sys.stderr)
+            sys.exit(2)
+        person = lp.people[owner]
+        return person.getPPAByName(name=name)
+
+    print(f"EE: Unknown archive: {archive_arg} (use 'primary' or 'ppa:<owner>/<name>')", file=sys.stderr)
+    sys.exit(2)
+
+
+def format_suite(series: str, pocket: str) -> str:
+    """Format series and pocket as a suite name (like rmadison)."""
+    if pocket == "Release":
+        return series
+    return f"{series}-{pocket.lower()}"
+
+
+def print_result(source: str, version: str, suite: str, script: bool = False, file: TextIO = sys.stdout) -> None:
+    """Print the result."""
+    if script:
+        print(f"{source} {version.replace(' ', '-')} {suite}")
+    else:
+        print(f"{source:<32} | {version:<32} | {suite}")
+
+
+def main() -> None:
+    """List the latest published source package version."""
+    parser = argparse.ArgumentParser(description="List the latest published source package version")
+    parser.add_argument("package", help="Package name (e.g., misc, netronome, intel-wireless)")
+    parser.add_argument(
+        "--series",
+        default=None,
+        help="Ubuntu series (default: from package changelog)",
+    )
+    parser.add_argument(
+        "--pocket",
+        default=None,
+        help="Pocket filter (e.g., Release, Updates, Proposed)",
+    )
+    parser.add_argument(
+        "--archive",
+        default=None,
+        help="Archive to query: 'primary' (default) or 'ppa:<owner>/<name>'",
+    )
+    parser.add_argument(
+        "--script",
+        action="store_true",
+        help="Format the output for script consumption",
+    )
+    args = parser.parse_args()
+
+    source_name, series = get_package(args.package, args.series)
+
+    lp = Launchpad.login_anonymously("list-published-source", "production")
+    ubuntu = lp.distributions["ubuntu"]
+    archive = get_archive(lp, ubuntu, args.archive)
+
+    lp_series = ubuntu.getSeries(name_or_version=series)
+    kwargs = {
+        "source_name": source_name,
+        "exact_match": True,
+        "status": "Published",
+        "distro_series": lp_series,
+    }
+    if args.pocket:
+        kwargs["pocket"] = args.pocket
+
+    pubs = archive.getPublishedSources(**kwargs)
+    if not pubs:
+        print_result(source_name, "(not published)", series, script=args.script, file=sys.stderr)
+        sys.exit(1)
+
+    for pub in pubs:
+        pub_series = pub.distro_series.name
+        suite = format_suite(pub_series, pub.pocket)
+        print_result(pub.source_package_name, pub.source_package_version, suite, script=args.script)
+
+
+if __name__ == "__main__":
+    main()
