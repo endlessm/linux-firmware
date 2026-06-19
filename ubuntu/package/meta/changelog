@@ -1,8 +1,9 @@
-linux-firmware (20260319.git217ca6e4.1ubuntu0.0) resolute; urgency=medium
+linux-firmware (20260617.gite7eb98af.1ubuntu) stonking; urgency=medium
 
-  * Initial dummy SRU version
+  * Miscellaneous Ubuntu changes
+    - [Packaging] meta: d/control: Fix Recommends of linux-firmware-minimal
 
- -- Juerg Haefliger <juerg.haefliger@canonical.com>  Wed, 29 Apr 2026 18:10:50 +0200
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 19 Jun 2026 10:39:45 +0200
 
 linux-firmware (20260319.git217ca6e4.1ubuntu) resolute; urgency=medium
 

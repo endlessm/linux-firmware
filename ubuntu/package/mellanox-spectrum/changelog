@@ -1,3 +1,13 @@
+linux-firmware-mellanox-spectrum (20260617.gite7eb98af-0ubuntu1) stonking; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit e7eb98afc667913acc533ab910c608bee7d08f25
+    - [Packaging] d/tests/control: Drop needs-recommends
+    - [Packaging] d/bin/install-firmware: Don't time operations
+    - [Packaging] d/rules: Fix lintian warnings
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Fri, 19 Jun 2026 10:39:45 +0200
+
 linux-firmware-mellanox-spectrum (20260319.git217ca6e4-0ubuntu1.1) resolute; urgency=medium
 
   * linux-firmware package does not mention about all licensing in copyright file (LP: #2147186)
