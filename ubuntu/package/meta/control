@@ -42,8 +42,9 @@ Priority: optional
 Provides: linux-firmware
 Conflicts: linux-firmware
 Replaces: linux-firmware
-Recommends:
+Depends:
  ${misc:Depends},
+Recommends:
  firmware-sof-signed,
  linux-firmware-amd-graphics,
  linux-firmware-amd-misc,
