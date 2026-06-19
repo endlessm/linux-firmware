@@ -15,11 +15,14 @@ $ ubuntu/bin/rebase-upstream [REV]
 ### Update package files following the rebase
 
 ```sh
+# Run checks, which should fail if firmware files were added or deleted by the rebase
+# Update the package files (ubuntu/package/*/*, ubuntu/unpackaged) accordingly
+$ ubuntu/bin/check-packages
+
 $ ubuntu/bin/update-packages
 $ ubuntu/bin/commit-packages
 
-# Run checks, which should fail if firmware files were added or deleted by the rebase
-# Update the package files (ubuntu/package/*/files) accordingly
+# Run the checks again to make sure everything is clean
 $ ubuntu/bin/check-packages
 ```
 
@@ -72,7 +75,11 @@ $ ubuntu/bin/build-package <package> -- -S
 ```sh
 $ ubuntu/bin/create-debdiff <package>
 $ ubuntu/bin/review-debdiff <package>
+
+# Run lintian
+$ ubuntu/bin/lintian <package>
 ```
+
 
 ### Upload source package
 
