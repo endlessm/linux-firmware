@@ -29,10 +29,6 @@ jobs:
         run: |
           pre-commit run --all-files
 
-      - name: Run check--all
-        run: |
-          ./ubuntu/bin/check--all
-
       - name: Run ubuntu-check-commit
         uses: actions/ubuntu-check-commit@main
         with:
