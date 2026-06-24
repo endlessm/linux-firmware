@@ -70,7 +70,7 @@ Files: qcom/kaanapali/Kaanapali-MTP-tplg.bin
  qcom/x1e80100/dell/latitude-7455/X1E80100-Dell-Latitude-7455-tplg.bin
  qcom/x1e80100/dell/xps13-9345/X1E80100-Dell-XPS-13-9345-tplg.bin
  qcom/x1e80100/hp/omnibook-x14/X1E80100-HP-OMNIBOOK-X14-tplg.bin
-Copyright: Unknown
+Copyright: 2023 Linaro Ltd
 License: Redistributable-linaro
 Comment: Originates from https://github.com/linux-msm/audioreach-topology.git;
  Originates from
@@ -81,7 +81,7 @@ Files: qcom/x1e80100/dell/xps13-9345/adsp_dtbs.elf
  qcom/x1e80100/dell/xps13-9345/qcadsp8380.mbn
  qcom/x1e80100/dell/xps13-9345/qccdsp8380.mbn
  qcom/x1e80100/dell/xps13-9345/qcdxkmsuc8380.mbn
-Copyright: Unknown
+Copyright: Dell Technologies
 License: Redistributable-dell
 
 License: Redistributable-dell

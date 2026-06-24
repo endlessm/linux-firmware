@@ -8,7 +8,7 @@ Copyright: 2026 Canonical Ltd.
 License: GPL-2+
 
 Files: nvidia/*
-Copyright: Unknown
+Copyright: NVIDIA Corporation
 License: Redistributable-nvidia
 
 License: Redistributable-nvidia

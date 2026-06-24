@@ -8,7 +8,7 @@ Copyright: 2026 Canonical Ltd.
 License: GPL-2+
 
 Files: mrvl/*
-Copyright: Unknown
+Copyright: 2019 NXP B.V.
 License: Redistributable-NXP
 Comment: Originates from https://github.com/NXP/mwifiex-firmware.git
 

@@ -188,7 +188,7 @@ Files: qca/QCA6698/hpbtfw21.tlv
  qca/hmtnv20.bin
  qca/htbtfw20.tlv
  qca/htnv20.bin
-Copyright: Unknown
+Copyright: 2013-2017 Qualcomm Technologies, Inc.
 License: Redistributable-qcom
 
 License: Redistributable-QualcommAtheros_ar3k

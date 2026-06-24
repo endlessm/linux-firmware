@@ -8,7 +8,7 @@ Copyright: 2026 Canonical Ltd.
 License: GPL-2+
 
 Files: mediatek/*
-Copyright: Unknown
+Copyright: MediaTek Inc.
 License: Redistributable-mediatek
 
 Files: mediatek/mt7601u.bin

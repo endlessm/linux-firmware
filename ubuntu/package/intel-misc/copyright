@@ -7,41 +7,8 @@ Files: debian/*
 Copyright: 2026 Canonical Ltd.
 License: GPL-2+
 
-Files: intel/*
-Copyright: 2014-15 Intel Corporation.
-           1994-2009  Red Hat, Inc. All rights reserved.
-           1981-2000 The Regents of the University of California.
-           1991 by AT&T.
-           1998-2001 by Lucent Technologies
-           1989, 1990 Advanced Micro Devices, Inc.
-           1993 by Sun Microsystems, Inc. All rights reserved.
-           2001 Hans-Peter Nilsson
-           1999, 2000, 2001, 2002 Stephane Carrez (stcarrez@nerim.fr)
-           2001 Christopher G. Demetriou
-           2002 SuperH, Inc. All rights reserved
-           1999 Kungliga Tekniska Högskolan
-           1997 by Andrey A. Chernov, Moscow, Russia.
-           1997-2002 FreeBSD Project.
-           1984,2000 S.L. Moshier
-           1999 Citrus Project,
-           1991 DJ Delorie
-           1990-1999, 2000, 2001    Free Software Foundation, Inc.
-           1996 Xavier Leroy (Xavier.Leroy@inria.fr)
-           1993 Intel Corporation
-           1992, 1993, 1994 Henry Spencer.  All rights reserved.
-           1999, 2000
-           2003, Artem B. Bityuckiy, SoftMine Corporation.
-           1996 by Andrey A. Chernov, Moscow, Russia.
-           2009 ARM Ltd
-           2004, 2009 Xilinx, Inc.  All rights reserved.
-           1996-2010,2014 Texas Instruments Incorporated
-           2004 National Semiconductor Corporation
-           2011, Adapteva, Inc.
-           2003 Altera Corporation
-License: Redistributable-adsp_sst
-
-Files: dell/*
-Copyright: Unknown
+Files: dell/ish/*
+Copyright: Dell Technologies
 License: Redistributable-dell
 
 Files: e100/*
@@ -56,6 +23,13 @@ Files: HP/ish/ish_lnlm_12128606_f9751b71.bin
  HP/ish/ish_ptl_12128606_581.7779.0.bin
 Copyright: 2025 HP Inc. (“HP”)
 License: Redistributable-HP
+
+Files: intel/avs/apl/*
+ intel/avs/cnl/*
+ intel/avs/skl/*
+ intel/dsp_*
+Copyright: 2014-2015 Intel Corporation
+License: Redistributable-adsp_sst
 
 Files: intel/avs/da7219-tplg.bin
  intel/avs/dmic-tplg.bin
@@ -72,7 +46,7 @@ Files: intel/avs/da7219-tplg.bin
  intel/avs/rt5640-tplg.bin
  intel/avs/rt5663-tplg.bin
  intel/avs/ssm4567-tplg.bin
-Copyright: Unknown
+Copyright: 2022-2025 Intel Corporation
 License: Apache-2.0
 
 Files: intel/fw_sst_0f28.bin
@@ -124,14 +98,14 @@ Copyright: 2025, Intel Corporation.
 License: Redistributable-intel_vpu
 
 Files: isci/*
-Copyright: Unknown
+Copyright: 2008-2011 Intel Corporation
 License: GPL-2+
 
 Files: ixp4xx/*
 Copyright: 2007, Intel Corporation.
 License: Redistributable-ixp4xx
 
-Files: LENOVO/*
+Files: LENOVO/ish/*
 Copyright: 2025 Lenovo PC HK Ltd ("Lenovo")
 License: Redistributable-lenovo
 

@@ -17,7 +17,7 @@ Copyright: Lontium Semiconductor Corp.
 License: Redistributable-Lontium
 
 Files: adaptec/*
-Copyright: Unknown
+Copyright: Adaptec, Inc.
 License: GPL-2+
 Comment: Found in hex form in kernel source, with the following notice:
  .
@@ -40,11 +40,11 @@ Copyright: 2025.  AEONSEMI Corporation.  All rights reserved.
 License: Redistributable-aeonsemi
 
 Files: airoha/*
-Copyright: Unknown
+Copyright: Airoha, Inc.
 License: Redistributable-airoha
 
 Files: amlogic/*
-Copyright: Unknown
+Copyright: Amlogic Co., Inc.
 License: Redistributable-amlogic
 
 Files: amphion/*
@@ -61,7 +61,7 @@ Copyright: 2010, Abilis Systems Sarl
 License: Redistributable-Abilis
 
 Files: asihpi/*
-Copyright: Unknown
+Copyright: 2005 Audioscience
 License: Redistributable-asihpi
 
 Files: atmel/*
@@ -69,8 +69,7 @@ Copyright: 2015 Atmel Corporation. All rights reserved.
 License: Redistributable-atmel
 
 Files: av7110/*
- keyspan_pda/*
-Copyright: Unknown
+Copyright: Convergence Integrated Media GmbH
 License: GPL-2+
 Comment: Compiled from original 8051 source into Intel HEX, used in our binary ihex
  form.
@@ -82,7 +81,7 @@ Comment: Originates from
  https://source.chromium.org/chromiumos/chromiumos/codesearch/+/main:src/platform/ec/third_party/bmi260/accelgyro_bmi260_config_tbin.h
 
 Files: bnx2/*
-Copyright: Unknown
+Copyright: 2004-2010 Broadcom Corporation
 License: Redistributable-bnx2
 Comment: Found in hex form in kernel source.
 
@@ -130,7 +129,7 @@ Copyright: 2012, Creative Technology Ltd
 License: Redistributable-ca0132
 
 Files: cxgb3/*
-Copyright: Unknown
+Copyright: Chelsio Communications
 License: GPL-2-or-OpenIB-BSD
 
 Files: cxgb3/ael2005_opt_edc.bin
@@ -151,12 +150,16 @@ Copyright: 2018 NXP. All rights reserved.
 License: Redistributable-nxp_mc_firmware
 
 Files: dvb-fe-xc4000-1.4.1.fw
-Copyright: Unknown
+Copyright: 2009 Xceive Corporation
 License: Redistributable-xc4000
 
-Files: dvb-fe-xc5000*
-Copyright: Unknown
-License: Redistributable-xc5000-and-xc5000c
+Files: dvb-fe-xc5000-1.6.114.fw
+Copyright: 2009 Xceive Corporation
+License: Redistributable-xc5000
+
+Files: dvb-fe-xc5000c-4.1.30.7.fw
+Copyright: 2012 Cresta Technology Corporation
+License: Redistributable-xc5000c
 
 Files: dvb-usb-dib0700-1.20.fw
 Copyright: 2009, DiBcom
@@ -167,11 +170,11 @@ Copyright: 2014, ITE Tech. Inc.
 License: Redistributable-it913x
 
 Files: dvb-usb-terratec-h5-drxk.fw
-Copyright: Unknown
+Copyright: TerraTec Electronic GmbH
 License: Redistributable-drxk
 
 Files: ea/*
-Copyright: Unknown
+Copyright: Echo Digital Audio Corporation
 License: Redistributable-echoaudio
 
 Files: edgeport/*
@@ -188,21 +191,21 @@ Comment: Allegedly GPLv2+, but no source visible. Marked:
  Found in hex form in kernel source.
 
 Files: emi26/*
-Copyright: Unknown
+Copyright: 1999-2002 Emagic
 License: Redistributable-emi26
 
 Files: ene-ub6250/*
-Copyright: Unknown
+Copyright: ENE Technology, Inc.
 License: Redistributable-ene_firmware
 
 Files: go7007/*
-Copyright: Unknown
+Copyright: Micronas USA, Inc.
 License: Redistributable-go7007
 
 Files: f2255usb.bin
  go7007/s2250-1.fw
  go7007/s2250-2.fw
-Copyright: Unknown
+Copyright: Sensoray Company, Inc.
 License: Redistributable-sensoray
 
 Files: imx/*
@@ -219,15 +222,21 @@ License: Redistributable-kaweth
 Comment: Found in hex form in the kernel source.
 
 Files: keyspan/*
-Copyright: 1999-2001
+Copyright: 1999-2001 Keyspan, A division of InnoSys Incorporated
 License: Redistributable-keyspan
+
+Files: keyspan_pda/*
+Copyright: Keyspan, A division of InnoSys Incorporated
+License: GPL-2+
+Comment: Compiled from original 8051 source into Intel HEX, used in our binary ihex
+ form.
 
 Files: liquidio/*
 Copyright: 2018, Cavium, Inc. All rights reserved.
 License: Redistributable-cavium_liquidio
 
 Files: meson/*
-Copyright: Unknown
+Copyright: Amlogic Co., Inc.
 License: Redistributable-amlogic_vdec
 
 Files: microchip/*
@@ -235,7 +244,7 @@ Copyright: 2018 Microchip Technology Incorporated and its subsidiaries.
 License: Redistributable-microchip
 
 Files: moxa/*
-Copyright: Unknown
+Copyright: Moxa, Inc.
 License: Redistributable-moxa
 
 Files: mrvl/cpt*
@@ -254,7 +263,7 @@ Copyright: 2006-2010, Myricom Inc.
 License: Redistributable-myri10ge_firmware
 
 Files: nvidia/*
-Copyright: Unknown
+Copyright: NVIDIA Corporation
 License: Redistributable-nvidia
 
 Files: nxp/*
@@ -264,7 +273,7 @@ Comment: Originates from https://github.com/NXP/uwb-NXPUWB-FW.git; Originates fr
  https://github.com/nxp-imx/imx-firmware/tree/lf-6.1.22_2.0.0/nxp
 
 Files: ositech/Xilinx7OD.bin
-Copyright: Unknown
+Copyright: Ositech Communications, Inc.
 License: GPL-2+
 Comment: Allegedly GPL, but no source visible. Marked:
  This file contains the firmware of Seven of Diamonds from OSITECH.
@@ -298,7 +307,7 @@ Copyright: 2019 Redpine Signals Inc.
 License: Redistributable-rsi
 
 Files: s5p-mfc*
-Copyright: Unknown
+Copyright: Samsung Electronics Co., Ltd.
 License: Redistributable-s5p-mfc
 
 Files: sdd_sagrad_1091_1098.bin
@@ -347,29 +356,29 @@ Copyright: 2024 Montage Technology. All rights reserved.
 License: Redistributable-montage
 
 Files: ueagle-atm/*
-Copyright: Unknown
+Copyright: Analog Devices, Inc.
 License: Redistributable-ueagle
 
 Files: ueagle-atm/CMV4p.bin.v2
  ueagle-atm/DSP4p.bin
  ueagle-atm/eagleIV.fw
-Copyright: Unknown
+Copyright: 2006 Ikanos Communications, Inc.
 License: Redistributable-ueagle-atm4-firmware
 
 Files: usbdux*
-Copyright: Unknown
+Copyright: 2004,2009,2010,2015 Bernd Porr, Bernd.Porr@f2s.com
 License: GPL-2+
 
 Files: v4l-cx231xx-avcore-01.fw
  v4l-cx23418-*
  v4l-cx23885-avcore-01.fw
  v4l-cx25840.fw
-Copyright: Unknown
+Copyright: Conexant Systems, Inc.
 License: Redistributable-conexant
 
 Files: v4l-cx2341x-*
  v4l-pvrusb2-2*
-Copyright: Unknown
+Copyright: Hauppauge Computer Works, Inc.
 License: Redistributable-cx2341x
 
 Files: wfx/*
@@ -378,7 +387,7 @@ Copyright: 2021, Silicon Laboratories, Inc.
 License: Redistributable-wf200
 
 Files: whiteheat*
-Copyright: 2000-2002  ConnectTech Inc
+Copyright: 2000-2002 ConnectTech Inc
 License: GPL-2+
 Comment: Allegedly GPLv2, but no source visible. Marked:
  Copyright (C) 2000-2002  ConnectTech Inc
@@ -391,14 +400,14 @@ License: Redistributable-cw1200
 
 Files: yamaha/*
 Copyright: 1997-1999 Yamaha Corporation. All Rights Reserved.
-            1998-2002 by Paul Davis <pbd@op.net>
+           1998-2002 by Paul Davis <pbd@op.net>
 License: GPL-2+
 Comment: Found alsa-firmware package in hex form, with the following comment:
  Copyright (c) 1997-1999 Yamaha Corporation. All Rights Reserved.
  Copyright (c) 1998-2002 by Paul Davis <pbd@op.net>
 
 Files: zd1211/*
-Copyright: Unknown
+Copyright: ZyDAS Technology Corporation
 License: Redistributable-zd1211
 
 License: GPL-2+
@@ -3772,7 +3781,7 @@ License: Redistributable-xc4000
  // ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-License: Redistributable-xc5000-and-xc5000c
+License: Redistributable-xc5000
  The following XC500 firmware file "dvb-fe-xc5000-1.6.114.fw" was
  created based on "xc5000_firmwares_32000Khz.h".
  .
@@ -3796,7 +3805,8 @@ License: Redistributable-xc5000-and-xc5000c
  // WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
  // ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- .
+
+License: Redistributable-xc5000c
  The following XC500C firmware file "dvb-fe-xc5000C-4.1.30.7.fw" was created
  based on "Xc5200_firmwares_32000Khz.h".
  .
