@@ -49,6 +49,7 @@ def main() -> None:
     parser.add_argument("commit", nargs="?", default=None, help="Build commit (default: last release commit)")
     parser.add_argument("--force", action="store_true", help="Force build from untagged commit")
     parser.add_argument("--suffix", help="Append suffix to package version")
+    parser.add_argument("--no-lintian", action="store_true", help="Don't run lintian after source package build")
     args = parser.parse_args(main_argv)
 
     print(f"II: Build package: {args.package}")
@@ -155,6 +156,10 @@ def main() -> None:
     for pattern in (f"{source_name}_{version}.*", f"{source_name}_{version}_*"):
         for artifact in Path("ubuntu/build").glob(pattern):
             shutil.copy2(artifact, output_dir)
+
+    # Run lintian after source package build
+    if "-S" in dpkg_args and not args.no_lintian:
+        subprocess.run(["ubuntu/bin/lintian", args.package], check=True)
 
 
 if __name__ == "__main__":
