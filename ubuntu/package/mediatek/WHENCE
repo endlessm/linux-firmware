@@ -250,15 +250,15 @@ File: mediatek/mt7916_eeprom.bin
 Version: 20211130
 
 File: mediatek/mt7986_wm.bin
-Version: 20240823
+Version: 20260515
 File: mediatek/mt7986_wm_mt7975.bin
-Version: 20240823
+Version: 20260515
 File: mediatek/mt7986_wa.bin
-Version: 20240823
+Version: 20260515
 File: mediatek/mt7986_rom_patch.bin
-Version: 20240823
+Version: 20260515
 File: mediatek/mt7986_rom_patch_mt7975.bin
-Version: 20240823
+Version: 20260515
 File: mediatek/mt7986_eeprom_mt7976.bin
 Version: 20211105
 File: mediatek/mt7986_eeprom_mt7976_dbdc.bin
@@ -269,11 +269,13 @@ File: mediatek/mt7986_eeprom_mt7975_dual.bin
 Version: 20220208
 
 File: mediatek/mt7981_wm.bin
-Version: 20240823
+Version: 20260515
 File: mediatek/mt7981_wa.bin
-Version: 20240823
+Version: 20260515
 File: mediatek/mt7981_rom_patch.bin
-Version: 20240823
+Version: 20260515
+File: mediatek/mt7981_eeprom_mt7976_dbdc.bin
+Version: 20260515
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -342,9 +344,9 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7922 - MediaTek MT7922 Wireless MACs
 
 File: mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin
-Version: 20260224103145a
+Version: 20260605203307a
 File: mediatek/WIFI_RAM_CODE_MT7922_1.bin
-Version: 20260224103233
+Version: 20260605203411
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -353,7 +355,7 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7922 - MediaTek MT7922 bluetooth chipset
 
 File: mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin
-Version: 20260224103448
+Version: 20260605203811
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -362,9 +364,9 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7925 - MediaTek MT7925 Wireless MACs
 
 File: mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin
-Version: 20260414153001a
+Version: 20260605184651a
 File: mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin
-Version: 20260414153105
+Version: 20260605184805
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -373,7 +375,7 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7925 - MediaTek MT7925 bluetooth chipset
 
 File: mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin
-Version: 20260414153243
+Version: 20260605184935
 
 Licence: Redistributable. See LICENCE.mediatek for details.
 
@@ -406,19 +408,23 @@ Licence: Redistributable. See LICENCE.mediatek for details.
 Driver: mt7996e - MediaTek Wireless MACs for MT7996/MT7992/MT7990
 
 File: mediatek/mt7996/mt7996_wm.bin
-Version: 20251111002938
+Version: 20260310125322
 File: mediatek/mt7996/mt7996_wm_233.bin
-Version: 20251111003337
+Version: 20260311120212
+File: mediatek/mt7996/mt7996_wm_tm.bin
+Version: 20260311120212
+File: mediatek/mt7996/mt7996_wm_tm_233.bin
+Version: 20260311120212
 File: mediatek/mt7996/mt7996_wa.bin
-Version: 20251111002848
+Version: 20260311120325
 File: mediatek/mt7996/mt7996_wa_233.bin
-Version: 20251111003249
+Version: 20260311120618
 File: mediatek/mt7996/mt7996_rom_patch.bin
-Version: 20251111002942a
+Version: 20260311120419a
 File: mediatek/mt7996/mt7996_rom_patch_233.bin
-Version: 20251111003341a
+Version: 20260311120705a
 File: mediatek/mt7996/mt7996_dsp.bin
-Version: 20251111002821
+Version: 20260311120212
 File: mediatek/mt7996/mt7996_eeprom.bin
 Version: 20230518
 File: mediatek/mt7996/mt7996_eeprom_2i5i6i.bin
@@ -429,21 +435,25 @@ File: mediatek/mt7996/mt7996_eeprom_233_2i5i6i.bin
 Version: 20231129
 
 File: mediatek/mt7996/mt7992_wm.bin
-Version: 20251113125714
+Version: 20260310125322
 File: mediatek/mt7996/mt7992_wm_23.bin
-Version: 20251113124751
+Version: 20260310125322
+File: mediatek/mt7996/mt7992_wm_tm.bin
+Version: 20260310125322
+File: mediatek/mt7996/mt7992_wm_tm_23.bin
+Version: 20260310125322
 File: mediatek/mt7996/mt7992_wa.bin
-Version: 20251113125621
+Version: 20260310125812
 File: mediatek/mt7996/mt7992_wa_23.bin
-Version: 20251113124712
+Version: 20260310125526
 File: mediatek/mt7996/mt7992_rom_patch.bin
-Version: 20251113130209a
+Version: 20260310125447a
 File: mediatek/mt7996/mt7992_rom_patch_23.bin
-Version: 20251113125214a
+Version: 20260310125531a
 File: mediatek/mt7996/mt7992_dsp.bin
-Version: 20251113125550
+Version: 20260310125322
 File: mediatek/mt7996/mt7992_dsp_23.bin
-Version: 20251113124647
+Version: 20260310125322
 File: mediatek/mt7996/mt7992_eeprom.bin
 Version: 20230928
 File: mediatek/mt7996/mt7992_eeprom_2i5i.bin
@@ -456,9 +466,11 @@ File: mediatek/mt7996/mt7992_eeprom_23_2i5i.bin
 Version: 20230811
 
 File: mediatek/mt7996/mt7990_wm.bin
-Version: 20251112210146
+Version: 20260310181622
+File: mediatek/mt7996/mt7990_wm_tm.bin
+Version: 20260310181622
 File: mediatek/mt7996/mt7990_rom_patch.bin
-Version: 20251112210058a
+Version: 20260310181840a
 File: mediatek/mt7996/mt7990_eeprom.bin
 Version: 20240910
 File: mediatek/mt7996/mt7990_eeprom_2i5i.bin

@@ -571,35 +571,6 @@ Licence: Redistributable. See LICENCE.ueagle-atm4-firmware for details
 
 ------------------------------------------------------------------------------
 
-Driver: ueagle-atm - Driver for USB ADSL Modems based on Eagle I,II,III
-
-File: ueagle-atm/930-fpga.bin
-File: ueagle-atm/CMVeiWO.bin
-File: ueagle-atm/CMVepFR10.bin
-File: ueagle-atm/DSP9p.bin
-File: ueagle-atm/eagleIII.fw
-File: ueagle-atm/adi930.fw
-File: ueagle-atm/CMVep.bin
-File: ueagle-atm/CMVepFR.bin
-File: ueagle-atm/DSPei.bin
-File: ueagle-atm/CMV9i.bin
-File: ueagle-atm/CMVepES03.bin
-File: ueagle-atm/CMVepIT.bin
-File: ueagle-atm/DSPep.bin
-File: ueagle-atm/CMV9p.bin
-File: ueagle-atm/CMVepES.bin
-File: ueagle-atm/CMVepWO.bin
-File: ueagle-atm/eagleI.fw
-File: ueagle-atm/CMVei.bin
-File: ueagle-atm/CMVepFR04.bin
-File: ueagle-atm/DSP9i.bin
-File: ueagle-atm/eagleII.fw
-Version: 1.1
-
-Licence: Redistributable. See LICENCE.ueagle for details
-
-------------------------------------------------------------------------------
-
 Driver: ti-vpe - Texas Instruments V4L2 driver for Video Processing Engine
 
 File: ti/vpdma-1b8.bin
@@ -2431,6 +2402,18 @@ File: cirrus/cs35l56-b2-dsp1-misc-10280dd6-02-ampr.bin
 Link: cirrus/cs35l56-b2-dsp1-misc-10280dd6-03.wmfw -> cs35l56/CS35L56_Rev4.5.9.wmfw
 File: cirrus/cs35l56-b2-dsp1-misc-10280dd6-03-ampl.bin
 File: cirrus/cs35l56-b2-dsp1-misc-10280dd6-03-ampr.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e13-spkid0.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e13-spkid0-00-l3u1.bin -> cs35l63-a1-dsp1-misc-10280e2b-spkid0-00-l1u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e13-spkid0-00-l3u3.bin -> cs35l63-a1-dsp1-misc-10280e2b-spkid0-00-l1u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e13-spkid1.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e13-spkid1-00-l3u1.bin -> cs35l63-a1-dsp1-misc-10280e2b-spkid1-00-l1u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e13-spkid1-00-l3u3.bin -> cs35l63-a1-dsp1-misc-10280e2b-spkid1-00-l1u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e14-spkid0.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e14-spkid0-00-l3u1.bin -> cs35l63-a1-dsp1-misc-10280e2c-spkid0-00-l1u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e14-spkid0-00-l3u3.bin -> cs35l63-a1-dsp1-misc-10280e2c-spkid0-00-l1u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e14-spkid1.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e14-spkid1-00-l3u1.bin -> cs35l63-a1-dsp1-misc-10280e2c-spkid1-00-l1u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280e14-spkid1-00-l3u3.bin -> cs35l63-a1-dsp1-misc-10280e2c-spkid1-00-l1u3.bin
 Link: cirrus/cs35l63-a1-dsp1-misc-10280e1a-spkid0.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
 File: cirrus/cs35l63-a1-dsp1-misc-10280e1a-spkid0-02-l3u1.bin
 File: cirrus/cs35l63-a1-dsp1-misc-10280e1a-spkid0-02-l3u3.bin
@@ -3188,6 +3171,16 @@ Link: sdca/1fa/1028/dba/2.bin -> ../db3/2.bin
 Link: sdca/1fa/1028/dba/3.bin -> ../db3/3.bin
 Link: sdca/1fa/1028/dba/4.bin -> ../db3/4.bin
 Link: sdca/1fa/1028/dba/42450005.bin -> ../db3/42450005.bin
+Link: sdca/1fa/1028/e13/1.bin -> ../db3/1.bin
+Link: sdca/1fa/1028/e13/2.bin -> ../db3/2.bin
+Link: sdca/1fa/1028/e13/3.bin -> ../db3/3.bin
+Link: sdca/1fa/1028/e13/4.bin -> ../db3/4.bin
+Link: sdca/1fa/1028/e13/42450005.bin -> ../db3/42450005.bin
+Link: sdca/1fa/1028/e14/1.bin -> ../db3/1.bin
+Link: sdca/1fa/1028/e14/2.bin -> ../db3/2.bin
+Link: sdca/1fa/1028/e14/3.bin -> ../db3/3.bin
+Link: sdca/1fa/1028/e14/4.bin -> ../db3/4.bin
+Link: sdca/1fa/1028/e14/42450005.bin -> ../db3/42450005.bin
 File: sdca/1fa/1028/e1a/1.bin
 File: sdca/1fa/1028/e1a/2.bin
 File: sdca/1fa/1028/e1a/3.bin
@@ -3308,6 +3301,26 @@ Link: sdca/1fa/1028/e2c/2.bin -> ../e22/2.bin
 Link: sdca/1fa/1028/e2c/3.bin -> ../e22/3.bin
 Link: sdca/1fa/1028/e2c/4.bin -> ../e22/4.bin
 Link: sdca/1fa/1028/e2c/42450005.bin -> ../e22/42450005.bin
+Link: sdca/1fa/1028/e5f/1.bin -> ../e22/1.bin
+Link: sdca/1fa/1028/e5f/2.bin -> ../e22/2.bin
+Link: sdca/1fa/1028/e5f/3.bin -> ../e22/3.bin
+Link: sdca/1fa/1028/e5f/4.bin -> ../e22/4.bin
+Link: sdca/1fa/1028/e5f/42450005.bin -> ../e22/42450005.bin
+Link: sdca/1fa/1028/e60/1.bin -> ../e22/1.bin
+Link: sdca/1fa/1028/e60/2.bin -> ../e22/2.bin
+Link: sdca/1fa/1028/e60/3.bin -> ../e22/3.bin
+Link: sdca/1fa/1028/e60/4.bin -> ../e22/4.bin
+Link: sdca/1fa/1028/e60/42450005.bin -> ../e22/42450005.bin
+Link: sdca/1fa/1028/e65/1.bin -> ../e22/1.bin
+Link: sdca/1fa/1028/e65/2.bin -> ../e22/2.bin
+Link: sdca/1fa/1028/e65/3.bin -> ../e22/3.bin
+Link: sdca/1fa/1028/e65/4.bin -> ../e22/4.bin
+Link: sdca/1fa/1028/e65/42450005.bin -> ../e22/42450005.bin
+Link: sdca/1fa/1028/e66/1.bin -> ../e22/1.bin
+Link: sdca/1fa/1028/e66/2.bin -> ../e22/2.bin
+Link: sdca/1fa/1028/e66/3.bin -> ../e22/3.bin
+Link: sdca/1fa/1028/e66/4.bin -> ../e22/4.bin
+Link: sdca/1fa/1028/e66/42450005.bin -> ../e22/42450005.bin
 File: sdca/1fa/17aa/2352/1.bin
 File: sdca/1fa/17aa/2352/2.bin
 File: sdca/1fa/17aa/2352/3.bin
@@ -3345,6 +3358,17 @@ Version: 44.00.02
 
 Licence: Redistributable. See LICENSE.nxp for details
 Originates from https://github.com/NXP/uwb-NXPUWB-FW.git
+------------------------------------------------------------------------------
+
+Driver: nxpwifi - NXP wireless LAN driver.
+
+File: nxp/sd_w61x_v1.bin.se
+Version: 18.99.3.p26.7
+
+Licence: Redistributable. See LICENSE.nxp for details
+
+Originates from https://github.com/nxp-imx/imx-firmware/tree/lf-6.12.34_2.1.0
+
 ------------------------------------------------------------------------------
 
 Driver: btnxpuart - NXP BT UART driver
@@ -3487,6 +3511,8 @@ File: ti/audio/tas2781/TAS2XXX8F40.bin
 File: ti/audio/tas2781/TAS2XXX8F41.bin
 File: ti/audio/tas2781/TAS2XXX8F42.bin
 File: ti/audio/tas2781/TAS2XXX8F62.bin
+File: ti/audio/tas2781/TAS2XXX8F94.bin
+File: ti/audio/tas2781/TAS2XXX8F95.bin
 File: ti/audio/tas2781/TXNW2781RCA0.bin
 File: ti/audio/tas2781/TXNW2781RCA1.bin
 File: ti/audio/tas2781/TIAS2781RCA2.bin
@@ -3611,6 +3637,8 @@ Link: TAS2XXX8F40.bin -> ti/audio/tas2781/TAS2XXX8F40.bin
 Link: TAS2XXX8F41.bin -> ti/audio/tas2781/TAS2XXX8F41.bin
 Link: TAS2XXX8F42.bin -> ti/audio/tas2781/TAS2XXX8F42.bin
 Link: TAS2XXX8F62.bin -> ti/audio/tas2781/TAS2XXX8F62.bin
+Link: TAS2XXX8F94.bin -> ti/audio/tas2781/TAS2XXX8F94.bin
+Link: TAS2XXX8F95.bin -> ti/audio/tas2781/TAS2XXX8F95.bin
 Link: TIAS2781RCA2.bin -> ti/audio/tas2781/TIAS2781RCA2.bin
 Link: TIAS2781RCA4.bin -> ti/audio/tas2781/TIAS2781RCA4.bin
 Link: TXNW2781RCA1.bin -> ti/audio/tas2781/TXNW2781RCA0.bin

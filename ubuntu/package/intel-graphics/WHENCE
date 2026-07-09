@@ -506,5 +506,8 @@ Version: GuC API/APB ver 70.65.0 for Pantherlake
 File: xe/ptl_huc.bin
 Version: HuC API/APB ver 10.3.3 for Pantherlake
 
+File: xe/nvl_guc_70.bin
+Version: GuC API/APB ver 70.71.0 for Novalake S
+
 License: Redistributable. See LICENSE.xe for details
 ------------------------------------------------------------------------------

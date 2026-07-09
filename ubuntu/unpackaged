@@ -9,6 +9,7 @@
 AGENTS.md
 Dockerfile
 LICENSE
+LICENSE-CRITERIA.md
 Makefile
 README.md
 # WHENCE is explicitly included in the orig tarball (only)

@@ -63,7 +63,7 @@ RawFile: qcom/qcs6490/Thundercomm/RubikPi3/adspr.jsn
 RawFile: qcom/qcs6490/Thundercomm/RubikPi3/adsps.jsn
 RawFile: qcom/qcs6490/Thundercomm/RubikPi3/adspua.jsn
 File: qcom/qcs615/adsp.mbn
-Version: ADSP.VT.5.2.c6-00059-SM6150-1
+Version: ADSP.VT.5.2.c6-00073-SM6150-1
 RawFile: qcom/qcs615/adspr.jsn
 RawFile: qcom/qcs615/adsps.jsn
 RawFile: qcom/qcs615/adspua.jsn
@@ -168,17 +168,17 @@ https://github.com/andersson/pil-squasher
 
 File: qcom/glymur/adsp.mbn
 File: qcom/glymur/adsp_dtb.mbn
-Version: LPAIDSP.HT.1.6.2-00009-GLYMUR-1
+Version: LPAIDSP.HT.1.6.2-00020-GLYMUR-2
 RawFile: qcom/glymur/adspr.jsn
 RawFile: qcom/glymur/adsps.jsn
 RawFile: qcom/glymur/adspua.jsn
 File: qcom/glymur/cdsp.mbn
 File: qcom/glymur/cdsp_dtb.mbn
-Version: CDSP.HT.3.3-00311-GLYMUR-1
+Version: CDSP.HT.3.3-00315-GLYMUR-1
 RawFile: qcom/glymur/cdspr.jsn
 File: qcom/kaanapali/adsp.mbn
 File: qcom/kaanapali/adsp_dtb.mbn
-Version: LPAIDSP.HT.1.6.1-00002-KAANAPALI-1
+Version: LPAIDSP.HT.1.6.1-00035-KAANAPALI-1
 RawFile: qcom/kaanapali/adspr.jsn
 RawFile: qcom/kaanapali/adsps.jsn
 RawFile: qcom/kaanapali/adspua.jsn
@@ -236,8 +236,14 @@ RawFile: qcom/x1e80100/adsps.jsn
 RawFile: qcom/x1e80100/adspua.jsn
 RawFile: qcom/x1e80100/battmgr.jsn
 File: qcom/shikra/cdsp.mbn
-Version: CDSP.VT.2.4.3-00076-SHIKRA-1
+Version: CDSP.VT.2.4.3-00088-SHIKRA-1
 RawFile: qcom/shikra/cdspr.jsn
+File: qcom/shikra/lpaicp.mbn
+File: qcom/shikra/lpaicp_dtb.mbn
+Version: LPAICP.FW.1.2-00135-SHIKRA_LPAICP_PACK-1
+RawFile: qcom/shikra/lpaicpr.jsn
+File: qcom/shikra/cqs/qdsp6sw.mbn
+Version: MPSS.JO.4.0-00194-SHIKRA_LWG_PACK-1
 
 Licence: Redistributable. See LICENSE.qcom-2 and NOTICE.qcom for details
 
@@ -283,6 +289,7 @@ File: qcom/qcs6490/radxa/dragon-q6a/QCS6490-Radxa-Dragon-Q6A-tplg.bin
 Link: qcom/qcs6490/QCS6490-Radxa-Dragon-Q6A-tplg.bin -> radxa/dragon-q6a/QCS6490-Radxa-Dragon-Q6A-tplg.bin
 File: qcom/qcs6490/Thundercomm/RubikPi3/QCS6490-Thundercomm-RubikPi3-tplg.bin
 Link: qcom/qcs6490/QCS6490-Thundercomm-RubikPi3-tplg.bin -> Thundercomm/RubikPi3/QCS6490-Thundercomm-RubikPi3-tplg.bin
+File: qcom/qcs6490/QCS6490-RB3Gen2-Industrial-Mezz-tplg.bin
 File: qcom/qcs6490/QCS6490-RB3Gen2-tplg.bin
 File: qcom/qcs8300/MONACO-EVK-tplg.bin
 File: qcom/qcs8300/arduino-monza-tplg.bin
@@ -293,6 +300,8 @@ Link: qcom/sc8280xp/SC8280XP-LENOVO-X13S-tplg.bin -> LENOVO/21BX/audioreach-tplg
 File: qcom/sm8450/SM8450-HDK-tplg.bin
 File: qcom/sm8550/SM8550-HDK-tplg.bin
 File: qcom/sm8550/SM8550-QRD-tplg.bin
+File: qcom/sm8650/ayaneo/ps2/SM8650-APS2-tplg.bin
+File: qcom/sm8650/SM8650-HDK-tplg.bin
 File: qcom/sm8650/SM8650-QRD-tplg.bin
 File: qcom/sm8650/SM8650-MTP-tplg.bin
 File: qcom/sm8750/SM8750-MTP-tplg.bin
@@ -320,9 +329,10 @@ File: qcom/x1e80100/dell/xps13-9345/X1E80100-Dell-XPS-13-9345-tplg.bin
 Link: qcom/x1e80100/X1E80100-Dell-XPS-13-9345-tplg.bin -> dell/xps13-9345/X1E80100-Dell-XPS-13-9345-tplg.bin
 File: qcom/x1e80100/hp/omnibook-x14/X1E80100-HP-OMNIBOOK-X14-tplg.bin
 Link: qcom/x1e80100/X1E80100-HP-OMNIBOOK-X14-tplg.bin -> hp/omnibook-x14/X1E80100-HP-OMNIBOOK-X14-tplg.bin
+File: qcom/x1e80100/X1P42100-Microsoft-Surface-Pro-12in-tplg.bin
 
-Version: v1.0.3
-Info: DATE=07.04.2026
+Version: v1.0.4
+Info: DATE=05.06.2026
 
 Licence: Redistributable. See LICENCE.linaro for details
 Originates from https://github.com/linux-msm/audioreach-topology.git
