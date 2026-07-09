@@ -11,161 +11,34 @@ Files: ar3k/*
  ar5523.bin
  ath3k-1.fw
  ath6k/*
-Copyright: 2008-2010, Atheros Communications, Inc.
+Copyright: 2008-2010 Atheros Communications, Inc.
 License: Redistributable-atheros_firmware
 
 Files: ar3k/1020201coex/ramps_0x01020201_26_HighPriority.dfu
  ar3k/AthrBT_0x01020201.dfu
-Copyright: 2015, Qualcomm Atheros, Inc.
+Copyright: 2015 Qualcomm Atheros, Inc.
 License: Redistributable-QualcommAtheros_ar3k
 
-Files: ath10k/QCA4019/hw1.0/board-2.bin
- ath10k/QCA4019/hw1.0/firmware-5.bin
- ath10k/QCA4019/hw1.0/notice_ath10k_firmware-5.txt
- ath10k/QCA6174/hw2.1/board-2.bin
- ath10k/QCA6174/hw2.1/board.bin
- ath10k/QCA6174/hw2.1/firmware-5.bin
- ath10k/QCA6174/hw2.1/notice_ath10k_firmware-5.txt
- ath10k/QCA6174/hw3.0/board-2.bin
- ath10k/QCA6174/hw3.0/board.bin
- ath10k/QCA6174/hw3.0/firmware-4.bin
- ath10k/QCA6174/hw3.0/firmware-6.bin
- ath10k/QCA6174/hw3.0/firmware-sdio-6.bin
- ath10k/QCA6174/hw3.0/notice_ath10k_firmware-4.txt
- ath10k/QCA6174/hw3.0/notice_ath10k_firmware-6.txt
- ath10k/QCA6174/hw3.0/notice_ath10k_firmware-sdio-6.txt
- ath10k/QCA9377/hw1.0/board-2.bin
- ath10k/QCA9377/hw1.0/board.bin
- ath10k/QCA9377/hw1.0/firmware-5.bin
- ath10k/QCA9377/hw1.0/firmware-6.bin
- ath10k/QCA9377/hw1.0/firmware-sdio-5.bin
- ath10k/QCA9377/hw1.0/notice_ath10k_firmware-5.txt
- ath10k/QCA9377/hw1.0/notice_ath10k_firmware-6.txt
- ath10k/QCA9377/hw1.0/notice_ath10k_firmware-sdio-5.txt
- ath10k/QCA9887/hw1.0/board.bin
- ath10k/QCA9887/hw1.0/firmware-5.bin
- ath10k/QCA9887/hw1.0/notice_ath10k_firmware-5.txt
- ath10k/QCA9888/hw2.0/board-2.bin
- ath10k/QCA9888/hw2.0/firmware-5.bin
- ath10k/QCA9888/hw2.0/notice_ath10k_firmware-5.txt
- ath10k/QCA988X/hw2.0/board.bin
- ath10k/QCA988X/hw2.0/firmware-4.bin
- ath10k/QCA988X/hw2.0/firmware-5.bin
- ath10k/QCA988X/hw2.0/notice_ath10k_firmware-4.txt
- ath10k/QCA988X/hw2.0/notice_ath10k_firmware-5.txt
- ath10k/QCA9984/hw1.0/board-2.bin
- ath10k/QCA9984/hw1.0/firmware-5.bin
- ath10k/QCA9984/hw1.0/notice_ath10k_firmware-5.txt
- ath10k/QCA99X0/hw2.0/board-2.bin
- ath10k/QCA99X0/hw2.0/firmware-5.bin
- ath10k/QCA99X0/hw2.0/notice_ath10k_firmware-5.txt
- ath10k/WCN3990/hw1.0/board-2.bin
- ath10k/WCN3990/hw1.0/firmware-5.bin
- ath10k/WCN3990/hw1.0/notice.txt_wlanmdsp
- ath10k/WCN3990/hw1.0/wlanmdsp.mbn
- ath11k/IPQ5018/hw1.0/Notice.txt
- ath11k/IPQ5018/hw1.0/board-2.bin
- ath11k/IPQ5018/hw1.0/m3_fw.b00
- ath11k/IPQ5018/hw1.0/m3_fw.b01
- ath11k/IPQ5018/hw1.0/m3_fw.b02
- ath11k/IPQ5018/hw1.0/m3_fw.flist
- ath11k/IPQ5018/hw1.0/m3_fw.mdt
- ath11k/IPQ5018/hw1.0/q6_fw.b00
- ath11k/IPQ5018/hw1.0/q6_fw.b01
- ath11k/IPQ5018/hw1.0/q6_fw.b02
- ath11k/IPQ5018/hw1.0/q6_fw.b03
- ath11k/IPQ5018/hw1.0/q6_fw.b04
- ath11k/IPQ5018/hw1.0/q6_fw.b05
- ath11k/IPQ5018/hw1.0/q6_fw.b07
- ath11k/IPQ5018/hw1.0/q6_fw.b08
- ath11k/IPQ5018/hw1.0/q6_fw.b09
- ath11k/IPQ5018/hw1.0/q6_fw.b10
- ath11k/IPQ5018/hw1.0/q6_fw.b11
- ath11k/IPQ5018/hw1.0/q6_fw.b13
- ath11k/IPQ5018/hw1.0/q6_fw.b14
- ath11k/IPQ5018/hw1.0/q6_fw.flist
- ath11k/IPQ5018/hw1.0/q6_fw.mdt
- ath11k/IPQ6018/hw1.0/Notice.txt
- ath11k/IPQ6018/hw1.0/board-2.bin
- ath11k/IPQ6018/hw1.0/m3_fw.b00
- ath11k/IPQ6018/hw1.0/m3_fw.b01
- ath11k/IPQ6018/hw1.0/m3_fw.b02
- ath11k/IPQ6018/hw1.0/m3_fw.flist
- ath11k/IPQ6018/hw1.0/m3_fw.mdt
- ath11k/IPQ6018/hw1.0/q6_fw.b00
- ath11k/IPQ6018/hw1.0/q6_fw.b01
- ath11k/IPQ6018/hw1.0/q6_fw.b02
- ath11k/IPQ6018/hw1.0/q6_fw.b03
- ath11k/IPQ6018/hw1.0/q6_fw.b04
- ath11k/IPQ6018/hw1.0/q6_fw.b05
- ath11k/IPQ6018/hw1.0/q6_fw.b07
- ath11k/IPQ6018/hw1.0/q6_fw.b08
- ath11k/IPQ6018/hw1.0/q6_fw.flist
- ath11k/IPQ6018/hw1.0/q6_fw.mdt
- ath11k/IPQ8074/hw2.0/Notice.txt
- ath11k/IPQ8074/hw2.0/board-2.bin
- ath11k/IPQ8074/hw2.0/m3_fw.b00
- ath11k/IPQ8074/hw2.0/m3_fw.b01
- ath11k/IPQ8074/hw2.0/m3_fw.b02
- ath11k/IPQ8074/hw2.0/m3_fw.flist
- ath11k/IPQ8074/hw2.0/m3_fw.mdt
- ath11k/IPQ8074/hw2.0/q6_fw.b00
- ath11k/IPQ8074/hw2.0/q6_fw.b01
- ath11k/IPQ8074/hw2.0/q6_fw.b02
- ath11k/IPQ8074/hw2.0/q6_fw.b03
- ath11k/IPQ8074/hw2.0/q6_fw.b04
- ath11k/IPQ8074/hw2.0/q6_fw.b05
- ath11k/IPQ8074/hw2.0/q6_fw.b07
- ath11k/IPQ8074/hw2.0/q6_fw.b08
- ath11k/IPQ8074/hw2.0/q6_fw.flist
- ath11k/IPQ8074/hw2.0/q6_fw.mdt
- ath11k/QCA2066/hw2.1/Notice.txt
- ath11k/QCA2066/hw2.1/amss.bin
- ath11k/QCA2066/hw2.1/board-2.bin
- ath11k/QCA2066/hw2.1/m3.bin
- ath11k/QCA6390/hw2.0/Notice.txt
- ath11k/QCA6390/hw2.0/amss.bin
- ath11k/QCA6390/hw2.0/board-2.bin
- ath11k/QCA6390/hw2.0/m3.bin
- ath11k/QCA6698AQ/hw2.1/Notice.txt
- ath11k/QCA6698AQ/hw2.1/amss.bin
- ath11k/QCA6698AQ/hw2.1/board-2.bin
- ath11k/QCA6698AQ/hw2.1/m3.bin
- ath11k/QCN9074/hw1.0/.notice
- ath11k/QCN9074/hw1.0/Notice.txt
- ath11k/QCN9074/hw1.0/amss.bin
- ath11k/QCN9074/hw1.0/board-2.bin
- ath11k/QCN9074/hw1.0/m3.bin
- ath11k/WCN6750/hw1.0/Notice.txt
- ath11k/WCN6750/hw1.0/board-2.bin
- ath11k/WCN6750/hw1.0/sc7280/wpss.mbn
- ath11k/WCN6855/hw2.0/Notice.txt
- ath11k/WCN6855/hw2.0/amss.bin
- ath11k/WCN6855/hw2.0/board-2.bin
- ath11k/WCN6855/hw2.0/m3.bin
- ath11k/WCN6855/hw2.0/nfa765/Notice.txt
- ath11k/WCN6855/hw2.0/nfa765/amss.bin
- ath11k/WCN6855/hw2.0/nfa765/m3.bin
- ath11k/WCN6855/hw2.0/regdb.bin
+Files: ath10k/*
+ ath11k/*
  ath12k/*
  wil6210.*
-Copyright: 2015-2017, Qualcomm Atheros, Inc.
+Copyright: 2015-2017 Qualcomm Atheros, Inc.
 License: Redistributable-QualcommAtheros_ath10k
 
 Files: ath10k/WCN3990/hw1.0/qcm2290/firmware-5.bin
  ath10k/WCN3990/hw1.0/qcm2290/wlanmdsp.mbn
  ath11k/WCN6750/hw1.0/qcm6490/wpss.mbn
-Copyright: 2013-2017 Qualcomm Technologies, Inc. All rights reserved.
+Copyright: 2013-2017 Qualcomm Technologies, Inc.
            1995-2005 Jean-loup Gailly and Mark Adler
 License: Redistributable-qcom
 
 Files: ath9k_htc/*
 Copyright: 2013 Qualcomm Atheros, Inc.
-           2013 QUALCOMM ATHEROS Incorporated.  All rights reserved.
 License: Redistributable-open-ath9k-htc-firmware
 
 Files: qca/*
-Copyright: 2015-2017, Qualcomm Atheros, Inc.
+Copyright: 2015-2017 Qualcomm Atheros, Inc.
 License: Redistributable-QualcommAtheros_ath10k
 
 Files: qca/QCA6698/hpbtfw21.tlv
@@ -337,7 +210,6 @@ License: Redistributable-open-ath9k-htc-firmware
  The source code repository is publicly available at
  https://github.com/qca/open-ath9k-htc-firmware .
  .
- .
  LICENCE.txt
  -----------
  .
@@ -382,7 +254,6 @@ License: Redistributable-open-ath9k-htc-firmware
  IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  .
  ----
- .
  .
  NOTICE.TXT
  ----------
@@ -484,9 +355,8 @@ License: Redistributable-open-ath9k-htc-firmware
  // FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
  // for more details.
  //
- // You should have received a copy of the GNU General Public License along
- // with eCos; if not, write to the Free Software Foundation, Inc.,
- // 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+ // You should have received a copy of the GNU General Public License
+ // along with this program.  If not, see <https://www.gnu.org/licenses/>.
  //
  // As a special exception, if other files instantiate templates or use macros
  // or inline functions from this file, or you compile this file and link it
@@ -766,7 +636,6 @@ License: Redistributable-qcom
  with permission. Other products and brand names may be trademarks or registered
  trademarks of their respective owners.
  .
- .
    LICENSE ISSUES
    ==============
  .
@@ -893,8 +762,6 @@ License: Redistributable-qcom
   * [including the GNU Public Licence.]
   */
  .
- .
- ------------------------------------------------------------------------------
  ------------------------------------------------------------------------------
  .
  /* ====================================================================
@@ -903,7 +770,6 @@ License: Redistributable-qcom
   * Copyright (C) 1995-2003, 2010 Mark Adler
   * For conditions of distribution and use, see copyright notice in zlib.h
   */
- .
  .
   /* zlib.h -- interface of the 'zlib' general purpose compression library
    version 1.2.3, July 18th, 2005
@@ -928,18 +794,15 @@ License: Redistributable-qcom
    Jean-loup Gailly        Mark Adler
    jloup@gzip.org          madler@alumni.caltech.edu
  .
- .
    The data format used by the zlib library is described by RFCs (Request for
    Comments) 1950 to 1952 in the files http://www.ietf.org/rfc/rfc1950.txt
    (zlib format), rfc1951.txt (deflate format) and rfc1952.txt (gzip format).
  */
  .
- .
  ------------------------------------------------------------------------------
  .
-  //
- // Copyright (c) 2004-2006 Qualphone, Inc. All rights reserved.
  //
+ // Copyright (c) 2004-2006 Qualphone, Inc. All rights reserved.
  //
  /*
   * This code implements the MD5 message-digest algorithm.
@@ -958,11 +821,7 @@ License: Redistributable-qcom
   * will fill a supplied 16-byte array with the digest.
   */
  .
- .
  ------------------------------------------------------------------------------
- ------------------------------------------------------------------------------
- .
- .
  .
  /*
   * Written by Aaron D. Gifford <me@aarongifford.com>
@@ -995,7 +854,6 @@ License: Redistributable-qcom
   *
   */
  .
- ------------------------------------------------------------------------------
  ------------------------------------------------------------------------------
  .
  /*-
@@ -1036,7 +894,6 @@ License: Redistributable-qcom
   *      using byte-swap instructions
   *      polynomial $edb88320
   *
- .
  .
   ------------------------------------------------------------------------------
  .
@@ -1168,7 +1025,6 @@ License: Redistributable-qcom
   * SUCH DAMAGE.
   */
  ------------------------------------------------------------------------------
- ------------------------------------------------------------------------------
  .
  /*
  * AUTHOR:   Aaron D. Gifford <me@aarongifford.com>
@@ -1248,8 +1104,6 @@ License: Redistributable-qcom
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
  .
- .
- ------------------------------------------------------------------------------
  ------------------------------------------------------------------------------
 
 License: GPL-2+

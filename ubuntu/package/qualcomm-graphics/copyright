@@ -246,7 +246,6 @@ License: Redistributable-qcom
  with permission. Other products and brand names may be trademarks or registered
  trademarks of their respective owners.
  .
- .
    LICENSE ISSUES
    ==============
  .
@@ -373,8 +372,6 @@ License: Redistributable-qcom
   * [including the GNU Public Licence.]
   */
  .
- .
- ------------------------------------------------------------------------------
  ------------------------------------------------------------------------------
  .
  /* ====================================================================
@@ -383,7 +380,6 @@ License: Redistributable-qcom
   * Copyright (C) 1995-2003, 2010 Mark Adler
   * For conditions of distribution and use, see copyright notice in zlib.h
   */
- .
  .
   /* zlib.h -- interface of the 'zlib' general purpose compression library
    version 1.2.3, July 18th, 2005
@@ -408,18 +404,15 @@ License: Redistributable-qcom
    Jean-loup Gailly        Mark Adler
    jloup@gzip.org          madler@alumni.caltech.edu
  .
- .
    The data format used by the zlib library is described by RFCs (Request for
    Comments) 1950 to 1952 in the files http://www.ietf.org/rfc/rfc1950.txt
    (zlib format), rfc1951.txt (deflate format) and rfc1952.txt (gzip format).
  */
  .
- .
  ------------------------------------------------------------------------------
  .
-  //
- // Copyright (c) 2004-2006 Qualphone, Inc. All rights reserved.
  //
+ // Copyright (c) 2004-2006 Qualphone, Inc. All rights reserved.
  //
  /*
   * This code implements the MD5 message-digest algorithm.
@@ -438,11 +431,7 @@ License: Redistributable-qcom
   * will fill a supplied 16-byte array with the digest.
   */
  .
- .
  ------------------------------------------------------------------------------
- ------------------------------------------------------------------------------
- .
- .
  .
  /*
   * Written by Aaron D. Gifford <me@aarongifford.com>
@@ -475,7 +464,6 @@ License: Redistributable-qcom
   *
   */
  .
- ------------------------------------------------------------------------------
  ------------------------------------------------------------------------------
  .
  /*-
@@ -516,7 +504,6 @@ License: Redistributable-qcom
   *      using byte-swap instructions
   *      polynomial $edb88320
   *
- .
  .
   ------------------------------------------------------------------------------
  .
@@ -648,7 +635,6 @@ License: Redistributable-qcom
   * SUCH DAMAGE.
   */
  ------------------------------------------------------------------------------
- ------------------------------------------------------------------------------
  .
  /*
  * AUTHOR:   Aaron D. Gifford <me@aarongifford.com>
@@ -728,8 +714,6 @@ License: Redistributable-qcom
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
  .
- .
- ------------------------------------------------------------------------------
  ------------------------------------------------------------------------------
 
 License: Redistributable-qcom_yamato

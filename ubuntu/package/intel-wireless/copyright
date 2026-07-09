@@ -11,94 +11,7 @@ Files: intel/iwlwifi/*
 Copyright: 2006-2021, Intel Corporation.
 License: Redistributable-iwlwifi_firmware
 
-Files: intel/ibt-0040-0041.ddc
- intel/ibt-0040-0041.sfi
- intel/ibt-0040-1020.ddc
- intel/ibt-0040-1020.sfi
- intel/ibt-0041-0041.ddc
- intel/ibt-0041-0041.sfi
- intel/ibt-0093-0041.ddc
- intel/ibt-0093-0041.sfi
- intel/ibt-0093-0291.ddc
- intel/ibt-0093-0291.sfi
- intel/ibt-0093-1050.ddc
- intel/ibt-0093-1050.sfi
- intel/ibt-0093-4150.ddc
- intel/ibt-0093-4150.sfi
- intel/ibt-00a0-0041-iml.sfi
- intel/ibt-00a0-0041-pci.ddc
- intel/ibt-00a0-0041-pci.sfi
- intel/ibt-00a0-01a1-iml.sfi
- intel/ibt-00a0-01a1-pci.ddc
- intel/ibt-00a0-01a1-pci.sfi
- intel/ibt-00a0-01a1-usb.ddc
- intel/ibt-00a0-01a1-usb.sfi
- intel/ibt-00a0-0291-iml.sfi
- intel/ibt-00a0-0291-pci.ddc
- intel/ibt-00a0-0291-pci.sfi
- intel/ibt-00a0-0291-usb.ddc
- intel/ibt-00a0-0291-usb.sfi
- intel/ibt-0180-0041.ddc
- intel/ibt-0180-0041.sfi
- intel/ibt-0180-1050.ddc
- intel/ibt-0180-1050.sfi
- intel/ibt-0180-4150.ddc
- intel/ibt-0180-4150.sfi
- intel/ibt-0190-0041-iml.sfi
- intel/ibt-0190-0041-pci.ddc
- intel/ibt-0190-0041-pci.sfi
- intel/ibt-0190-0041-usb.ddc
- intel/ibt-0190-0041-usb.sfi
- intel/ibt-0190-0291-iml.sfi
- intel/ibt-0190-0291-pci.ddc
- intel/ibt-0190-0291-pci.sfi
- intel/ibt-0190-0291-usb.ddc
- intel/ibt-0190-0291-usb.sfi
- intel/ibt-0190-0291.ddc
- intel/ibt-0190-0291.sfi
- intel/ibt-0291-0291.ddc
- intel/ibt-0291-0291.sfi
- intel/ibt-1040-0041.ddc
- intel/ibt-1040-0041.sfi
- intel/ibt-1040-1020.ddc
- intel/ibt-1040-1020.sfi
- intel/ibt-11-5.ddc
- intel/ibt-11-5.sfi
- intel/ibt-1190-0041-iml.sfi
- intel/ibt-1190-0041-pci.ddc
- intel/ibt-1190-0041-pci.sfi
- intel/ibt-1190-0041-usb.ddc
- intel/ibt-1190-0041-usb.sfi
- intel/ibt-1190-01a1-iml.sfi
- intel/ibt-1190-01a1-pci.ddc
- intel/ibt-1190-01a1-pci.sfi
- intel/ibt-12-16.ddc
- intel/ibt-12-16.sfi
- intel/ibt-17-0-1.ddc
- intel/ibt-17-0-1.sfi
- intel/ibt-17-16-1.ddc
- intel/ibt-17-16-1.sfi
- intel/ibt-18-0-1.ddc
- intel/ibt-18-0-1.sfi
- intel/ibt-18-16-1.ddc
- intel/ibt-18-16-1.sfi
- intel/ibt-19-0-4.ddc
- intel/ibt-19-0-4.sfi
- intel/ibt-20-0-3.ddc
- intel/ibt-20-0-3.sfi
- intel/ibt-20-1-3.ddc
- intel/ibt-20-1-3.sfi
- intel/ibt-20-1-4.ddc
- intel/ibt-20-1-4.sfi
- intel/ibt-hw-37.7.10-fw-1.0.1.2d.d.bseq
- intel/ibt-hw-37.7.10-fw-1.0.2.3.d.bseq
- intel/ibt-hw-37.7.10-fw-1.80.1.2d.d.bseq
- intel/ibt-hw-37.7.10-fw-1.80.2.3.d.bseq
- intel/ibt-hw-37.7.bseq
- intel/ibt-hw-37.8.10-fw-1.10.2.27.d.bseq
- intel/ibt-hw-37.8.10-fw-1.10.3.11.e.bseq
- intel/ibt-hw-37.8.10-fw-22.50.19.14.f.bseq
- intel/ibt-hw-37.8.bseq
+Files: intel/ibt-*
 Copyright: 2014, Intel Corporation.
 License: Redistributable-ibt_firmware
 
@@ -354,10 +267,6 @@ License: Redistributable-ipw2100
  of the Software by the Government constitutes acknowledgment of Intel's
  proprietary rights therein. Contractor or Manufacturer is Intel Corporation,
  2200 Mission College Blvd., Santa Clara, CA 95052.
- .
- .
- .
- .
 
 License: Redistributable-ipw2200
                               TERMS AND CONDITIONS
@@ -565,10 +474,6 @@ License: Redistributable-ipw2200
  of the Software by the Government constitutes acknowledgment of Intel's
  proprietary rights therein. Contractor or Manufacturer is Intel Corporation,
  2200 Mission College Blvd., Santa Clara, CA 95052.
- .
- .
- .
- .
 
 License: Redistributable-iwlwifi_firmware
  Copyright (c) 2006-2021, Intel Corporation.
