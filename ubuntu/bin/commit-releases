@@ -21,6 +21,8 @@ def main() -> None:
     parser.add_argument("--no-check", action="store_true", help="Don't run package checks")
     parser.add_argument("--no-tag", action="store_true", help="Don't tag the releases")
     parser.add_argument("--force", action="store_true", help="Force tagging")
+    parser.add_argument("--dry-run", action="store_true", help="Show what would be done without doing it")
+
     args = parser.parse_args()
 
     # Sanity check
@@ -65,6 +67,9 @@ def main() -> None:
     if sru_release:
         print()
         print("II: Commit dummy SRU release")
+        if args.dry_run:
+            print("II: Dry run, exiting...")
+            return
         repo.git.add("ubuntu/package/*/changelog")
         # fmt: off
         repo.git.commit(
@@ -79,6 +84,9 @@ def main() -> None:
     if rebase_release:
         print()
         print("II: Commit and tag rebase release")
+        if args.dry_run:
+            print("II: Dry run, exiting...")
+            return
         repo.git.add("ubuntu/package/*/changelog")
         repo.git.commit("-s", "-m", f"UBUNTU: Ubuntu-{version}")
         if not args.no_tag:
@@ -89,9 +97,12 @@ def main() -> None:
     # Regular releases - commit each package separately
     for pkg_dir in sorted(Path("ubuntu/package").iterdir()):
         print()
+        dry_run = ["--dry-run"] if args.dry_run else []
         no_tag = ["--no-tag"] if args.no_tag else []
         force = ["--force"] if args.force else []
-        subprocess.run(["./ubuntu/bin/commit-release", "--no-check", *no_tag, *force, pkg_dir.name], check=True)
+        subprocess.run(
+            ["./ubuntu/bin/commit-release", "--no-check", *dry_run, *no_tag, *force, pkg_dir.name], check=True
+        )
 
 
 if __name__ == "__main__":

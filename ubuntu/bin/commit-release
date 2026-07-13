@@ -20,6 +20,8 @@ def main() -> None:
     parser.add_argument("--no-check", action="store_true", help="Don't run package checks")
     parser.add_argument("--no-tag", action="store_true", help="Don't tag the release")
     parser.add_argument("--force", action="store_true", help="Force tagging")
+    parser.add_argument("--dry-run", action="store_true", help="Show what would be done without doing it")
+
     args = parser.parse_args()
 
     try:
@@ -43,6 +45,10 @@ def main() -> None:
 
     version = str(pkg.changelog.Changelog.version)
     tag = f"Ubuntu-{args.package}-{version}"
+
+    if args.dry_run:
+        print("II: Dry run, exiting...")
+        return
 
     repo.git.add(str(pkg.changelog.path))
     repo.git.commit("-s", "-m", f"UBUNTU: {tag}")
