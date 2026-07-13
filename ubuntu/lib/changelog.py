@@ -223,6 +223,9 @@ class PackageChangelog:
         if not changes and rebuild:
             changes = ["  * No-change rebuild"]
 
+        if not changes and not str(self.Changelog.version).startswith(upstream_version):
+            changes = ["  * New upstream version"]
+
         if not changes:
             return False
 
