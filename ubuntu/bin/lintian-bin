@@ -1,0 +1,16 @@
+#!/bin/bash -eu
+#
+# Build a binary package and run lintian on it
+#
+
+pkg=${1}
+
+changelog=ubuntu/package/${pkg}/changelog
+version=$(dpkg-parsechangelog -l "${changelog}" -S version)
+
+echo "II: Build binary package"
+ubuntu/bin/build-package "${pkg}" -- -b
+
+echo
+echo "II: Run lintian"
+lintian ../linux-firmware-"${pkg}"_"${version}"_all.deb
