@@ -1,3 +1,14 @@
+linux-firmware-misc (20260709.git2c35b1ed-0ubuntu1) stonking; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] d/copyright: Fix Source: URL
+    - [Packaging] d/copyright: Add copyright information
+    - [Packaging] d/copyright: Misc cleanups to match Resolute
+    - Rebase to upstream commit 2c35b1ed46f661baaf14b08cebb9201ca802f939
+    - [Packaging] Move nvidia/tegra firmwares from misc to nvidia-graphics
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 13 Jul 2026 12:15:53 +0200
+
 linux-firmware-misc (20260617.gite7eb98af-0ubuntu1) stonking; urgency=medium
 
   * Miscellaneous Ubuntu changes

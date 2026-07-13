@@ -1,3 +1,13 @@
+linux-firmware-qualcomm-misc (20260709.git2c35b1ed-0ubuntu1) stonking; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - [Packaging] d/copyright: Fix Source: URL
+    - [Packaging] d/copyright: Add copyright information
+    - [Packaging] d/copyright: Misc cleanups to match Resolute
+    - Rebase to upstream commit 2c35b1ed46f661baaf14b08cebb9201ca802f939
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Mon, 13 Jul 2026 12:15:54 +0200
+
 linux-firmware-qualcomm-misc (20260617.gite7eb98af-0ubuntu1) stonking; urgency=medium
 
   * Miscellaneous Ubuntu changes
