@@ -1,7 +1,3 @@
 # List of files and directories to be included in the package
 
 nvidia/
-
-# List of files and directories to be excluded from the package
-
-!nvidia/tegra*

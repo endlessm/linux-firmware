@@ -160,9 +160,6 @@ dpaa2/
 imx/
 nxp/
 
-# Nvidia
-nvidia/tegra*
-
 # Ositech
 ositech/
 

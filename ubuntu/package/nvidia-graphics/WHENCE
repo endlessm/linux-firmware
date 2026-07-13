@@ -8,6 +8,41 @@ kernel.
 
 ------------------------------------------------------------------------------
 
+Driver: xhci-tegra - NVIDIA Tegra XHCI driver
+
+File: nvidia/tegra124/xusb.bin
+Version: v45.46
+
+File: nvidia/tegra210/xusb.bin
+Version: v50.24
+
+File: nvidia/tegra186/xusb.bin
+Version: v55.15
+
+File: nvidia/tegra194/xusb.bin
+Version: v60.06
+
+Licence: Redistributable. See LICENCE.nvidia for details
+
+------------------------------------------------------------------------------
+
+Driver: tegra-vic - NVIDIA Tegra VIC driver
+
+File: nvidia/tegra124/vic03_ucode.bin
+Link: nvidia/tegra124/vic.bin -> vic03_ucode.bin
+
+File: nvidia/tegra210/vic04_ucode.bin
+Link: nvidia/tegra210/vic.bin -> vic04_ucode.bin
+
+File: nvidia/tegra186/vic04_ucode.bin
+Link: nvidia/tegra186/vic.bin -> vic04_ucode.bin
+
+File: nvidia/tegra194/vic.bin
+
+Licence: Redistributable. See LICENCE.nvidia for details
+
+------------------------------------------------------------------------------
+
 Driver: nouveau - NVIDIA GPU driver
 
 File: nvidia/gk20a/fecs_data.bin
