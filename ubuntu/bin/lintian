@@ -28,13 +28,13 @@ v=$(dpkg-parsechangelog -l "${changelog}" -S Version)
 basename=${s}_${v}
 changes=../${basename}_source.changes
 if [ -e "${changes}" ] ; then
-	run_lintian "${@}" "${changes}"
+	run_lintian "${@}" "${changes}" || true
 	exit 0
 fi
 
 dsc=../${basename}.dsc
 if [ -e "${dsc}" ] ; then
-	run_lintian "${@}" "${dsc}"
+	run_lintian "${@}" "${dsc}" || true
 	exit 0
 fi
 

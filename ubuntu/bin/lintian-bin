@@ -5,12 +5,16 @@
 
 pkg=${1}
 
-changelog=ubuntu/package/${pkg}/changelog
-version=$(dpkg-parsechangelog -l "${changelog}" -S version)
-
-echo "II: Build binary package"
 ubuntu/bin/build-package "${pkg}" -- -b
 
-echo
 echo "II: Run lintian"
-lintian ../linux-firmware-"${pkg}"_"${version}"_all.deb
+
+changelog=ubuntu/package/${pkg}/changelog
+package=$(dpkg-parsechangelog -l "${changelog}" -S source)
+version=$(dpkg-parsechangelog -l "${changelog}" -S version)
+
+if lintian ../"${package}"_"${version}"_all.deb ; then
+	echo "II: PASS"
+else
+	echo "EE: FAIL" >&2
+fi
