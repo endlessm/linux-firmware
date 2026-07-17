@@ -21,6 +21,8 @@ def main() -> None:
         default=None,
         help="Commit to read package files at (default: None)",
     )
+    parser.add_argument("--whence", action="store_true", help="Update WHENCE")
+    parser.add_argument("--delta", action="store_true", help="Update Debian delta")
     args = parser.parse_args()
 
     print(f"II: Update package: {args.package}")
@@ -28,20 +30,25 @@ def main() -> None:
     if args.package == "meta":
         return
 
+    update_whence = not (args.delta and not args.whence)
+    update_delta = not (args.whence and not args.delta)
+
     try:
         pkg = Package(args.package, args.commit)
         package_files = pkg.files
 
-        # Update WHENCE
-        print("II: Update WHENCE")
-        whence = Whence("WHENCE*", args.commit)
-        pkg.whence.update(package_files, whence)
+        if update_whence:
+            # Update WHENCE
+            print("II: Update WHENCE")
+            whence = Whence("WHENCE*", args.commit)
+            pkg.whence.update(package_files, whence)
 
-        # Update Debian delta (patches and binaries)
-        print("II: Update Debian delta")
-        if args.commit is None:
-            print("WW: Generating delta from HEAD (uncommitted changes ignored)", file=sys.stderr)
-        pkg.update_delta()
+        if update_delta:
+            # Update Debian delta (patches and binaries)
+            print("II: Update Debian delta")
+            if args.commit is None:
+                print("WW: Generating delta from HEAD (uncommitted changes ignored)", file=sys.stderr)
+            pkg.update_delta()
 
     except (PackageError, WhenceError, ChangelogError) as e:
         print(f"EE: {e}", file=sys.stderr)
