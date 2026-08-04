@@ -127,32 +127,6 @@ class GitFiles:
 
         return [(mode, sha1, path) for path, (mode, sha1) in ls_tree.items()]
 
-    def entries(self, opt: str | None = None) -> list[tuple[str, str, str, str]]:
-        """Return (mode, type, sha1, path) tuples. Type is 'text', 'binary', or 'link'."""
-        if not self.commit:
-            print("WW: No commit specified, falling back to HEAD", file=sys.stderr)
-
-        commit = self.commit or "HEAD"
-        tree = self.tree(opt)
-        file_types: dict[str, str] = {}
-        non_links = []
-        for mode, _, path in tree:
-            if mode == "120000":
-                file_types[path] = "link"
-            else:
-                non_links.append(path)
-
-        if non_links:
-            try:
-                output = self._repo.git.diff_tree("--numstat", EMPTY_TREE, commit, "--", *non_links)
-            except git.GitCommandError as e:
-                raise GitFilesError(str(e)) from e
-            for line in output.splitlines():
-                added, _, path = line.split("\t")
-                file_types[path] = "binary" if added == "-" else "text"
-
-        return [(mode, file_types[path], sha1, path) for mode, sha1, path in tree]
-
     def exists(self, path: str) -> bool:
         """Check if a file exists in this tree."""
         return path in self.paths()

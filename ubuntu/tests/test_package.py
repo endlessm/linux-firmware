@@ -604,6 +604,75 @@ class TestPackageDeltaUpdate:
         series = (root / _PKG / "patches" / "series").read_text()
         assert series == "ubuntu.patch\n"
 
+    def test_nul_free_binary_in_patch(self, git_repo: tuple[git.Repo, Path]) -> None:
+        """NUL-free firmware goes to ubuntu.patch, not include-binaries.
+
+        Git's "Binary files differ" marker only appears for files containing a
+        NUL byte. NUL-free firmware produces a normal text diff and goes to
+        ubuntu.patch. This matches dpkg-source's own NUL-based heuristic, which
+        also treats NUL-free firmware as text.
+
+        Truth table rows exercised:
+          fw/nulfree.bin — row 16/17: A-A-M (added at C2, not in C1)
+          fw/text.txt    — row 10/13: A-M-P (added at C1, unchanged at C2)
+
+        Expected:
+          ubuntu.patch: diffs for fw/nulfree.bin and fw/text.txt
+          include-binaries: (none)
+        """
+        repo, root = git_repo
+
+        # --- C0 (upstream): only WHENCE, no firmware files ---
+        c0 = _commit_mixed(
+            repo,
+            text={"WHENCE": "Header\n"},
+            message="upstream",
+        )
+
+        # --- C1 (1st release): add text file + packaging ---
+        _commit_mixed(
+            repo,
+            text={
+                "fw/text.txt": "added text\n",
+                "ubuntu/upstream": f"COMMIT={c0}\nVERSION=1.0",
+                f"{_PKG}/files": "fw/text.txt",
+                f"{_PKG}/changelog": _CHANGELOG_V1,
+                f"{_PKG}/WHENCE": _make_whence(["fw/text.txt", "fw/nulfree.bin"], []),
+                f"{_PKG}/copyright": _make_copyright(["fw/*"]),
+            },
+            message="first release",
+        )
+
+        # --- C2 (2nd release): add NUL-free binary, update files list ---
+        _commit_mixed(
+            repo,
+            text={
+                # Expand the files list to include the new binary
+                f"{_PKG}/files": "fw/text.txt\nfw/nulfree.bin",
+                f"{_PKG}/changelog": _make_changelog_v2(_CHANGELOG_V1),
+                f"{_PKG}/WHENCE": _make_whence(["fw/text.txt", "fw/nulfree.bin"], []),
+            },
+            # NUL-free firmware: no \x00 byte, but high bytes that fail UTF-8 decode
+            binary={"fw/nulfree.bin": b"\xff\xfe\xfd\xfc\xfb\xfa\xf9\xf8"},
+            message="second release",
+        )
+
+        # --- Act ---
+        pkg = Package("test-pkg", "HEAD")
+        pkg.update_delta()
+
+        # --- Assert: no include-binaries ---
+        assert not (root / _PKG / "source").exists()
+
+        # --- Assert: ubuntu.patch ---
+        patch = (root / _PKG / "patches" / "ubuntu.patch").read_bytes()
+        assert b"diff --git a/fw/nulfree.bin b/fw/nulfree.bin" in patch
+        assert b"diff --git a/fw/text.txt b/fw/text.txt" in patch
+
+        # --- Assert: series file ---
+        series = (root / _PKG / "patches" / "series").read_text()
+        assert series == "ubuntu.patch\n"
+
     def test_removed_then_readded(self, git_repo: tuple[git.Repo, Path]) -> None:
         """Files removed from C1's files list then re-added at C2 appear in delta.
 

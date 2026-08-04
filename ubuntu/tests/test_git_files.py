@@ -12,7 +12,7 @@ from lib.git_files import (
     _split_pathspecs,
 )
 
-from .conftest import commit_binary, commit_file, commit_files, commit_symlink
+from .conftest import commit_file, commit_files
 
 
 class TestSplitPathspecs:
@@ -214,57 +214,3 @@ class TestGitFilesTree:
         paths = [p for _, _, p in tree]
         assert "a.bin" in paths
         assert "b.bin" in paths
-
-
-class TestGitFilesEntries:
-    """Tests for GitFiles.entries method."""
-
-    def test_detects_text(self, git_repo: tuple[git.Repo, Path]) -> None:
-        """Text file is detected as type='text'."""
-        repo, _ = git_repo
-        commit_file(repo, "readme.txt", "hello world")
-
-        gf = GitFiles("HEAD", ["readme.txt"])
-        entries = gf.entries()
-        assert len(entries) == 1
-        _, file_type, _, path = entries[0]
-        assert file_type == "text"
-        assert path == "readme.txt"
-
-    def test_detects_binary(self, git_repo: tuple[git.Repo, Path]) -> None:
-        """Binary file is detected as type='binary'."""
-        repo, _ = git_repo
-        commit_binary(repo, "firmware.bin", b"\x00\x01\x02\xff")
-
-        gf = GitFiles("HEAD", ["firmware.bin"])
-        entries = gf.entries()
-        assert len(entries) == 1
-        _, file_type, _, path = entries[0]
-        assert file_type == "binary"
-        assert path == "firmware.bin"
-
-    def test_detects_link(self, git_repo: tuple[git.Repo, Path]) -> None:
-        """Symlink is detected as type='link'."""
-        repo, _ = git_repo
-        commit_file(repo, "target.txt", "target content")
-        commit_symlink(repo, "link.txt", "target.txt")
-
-        gf = GitFiles("HEAD", ["link.txt", "target.txt"])
-        entries = gf.entries()
-        types = {path: ftype for _, ftype, _, path in entries}
-        assert types["link.txt"] == "link"
-        assert types["target.txt"] == "text"
-
-    def test_mixed_types(self, git_repo: tuple[git.Repo, Path]) -> None:
-        """Multiple file types are correctly classified."""
-        repo, _ = git_repo
-        commit_file(repo, "doc.txt", "documentation")
-        commit_binary(repo, "fw.bin", b"\x00\x01\x02\x03")
-        commit_symlink(repo, "fw_link.bin", "fw.bin")
-
-        gf = GitFiles("HEAD", ["doc.txt", "fw.bin", "fw_link.bin"])
-        entries = gf.entries()
-        types = {path: ftype for _, ftype, _, path in entries}
-        assert types["doc.txt"] == "text"
-        assert types["fw.bin"] == "binary"
-        assert types["fw_link.bin"] == "link"

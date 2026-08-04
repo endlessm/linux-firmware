@@ -14,7 +14,7 @@ from lib.package import Package, PackageError, PackageFiles, PackageOrig
 def list_files(files: GitFiles, opt: str | None, details: bool) -> None:
     """List package files, optionally at a given commit."""
     if details:
-        for entry in files.entries(opt):
+        for entry in files.tree(opt):
             print("\t".join(entry))
     else:
         for path in files.paths(opt):
@@ -112,7 +112,7 @@ def main() -> None:
     parser.add_argument(
         "--details",
         action="store_true",
-        help="Show mode, sha1 and type of each file",
+        help="Show mode, sha1 and path of each file",
     )
     parser.set_defaults(opt=None)
     args = parser.parse_args()

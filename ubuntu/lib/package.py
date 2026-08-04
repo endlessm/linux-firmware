@@ -1,6 +1,7 @@
 """Package management for ubuntu firmware packages."""
 
 import os
+import re
 import sys
 import tarfile
 from functools import cached_property
@@ -225,35 +226,33 @@ class Package:
         current file set (firmware + licenses). Generates patches for changed
         text files and updates the binary inclusion list.
         """
-        orig_entries = self.orig.content.entries()
-        orig_paths = self.orig.content.paths()
+        orig_tree = self.orig.content.tree()
+        orig_paths = set(self.orig.content.paths())
 
-        current_entries = self.content.entries()
-        changed_entries = set(current_entries) - set(orig_entries)
+        current_tree = self.content.tree()
+        changed = set(current_tree) - set(orig_tree)
 
+        binary_diff_re = re.compile(r"^Binary files .+ and .+ differ$", re.MULTILINE)
         binary_files: list[str] = []
-        text_files: list[tuple[str, str]] = []
+        text_patches: list[str] = []
 
-        for _, file_type, _, file_path in changed_entries:
-            if file_type in ("binary", "link"):
-                binary_files.append(file_path)
-            if file_type in ("text", "link"):
-                if file_path in orig_paths:
-                    text_files.append((self.upstream_commit, file_path))
-                else:
-                    text_files.append((EMPTY_TREE, file_path))
+        for mode, _, path in sorted(changed, key=lambda e: e[2]):
+            base = self.upstream_commit if path in orig_paths else EMPTY_TREE
+            commits = [base, self.commit] if self.commit else [base]
+            diff_output = self._repo.git.diff(*commits, "--", path)
 
-        patch = ""
-        if text_files:
-            text_files = sorted(text_files, key=lambda x: x[1])
-            if self.commit:
-                patches = [self._repo.git.diff(c, self.commit, "--", p) for c, p in text_files]
+            if mode == "120000":
+                binary_files.append(path)
+                text_patches.append(diff_output)
+            elif bool(binary_diff_re.search(diff_output)):
+                binary_files.append(path)
             else:
-                patches = [self._repo.git.diff(c, "--", p) for c, p in text_files]
-            patch = "\n".join(patches)
+                text_patches.append(diff_output)
 
-        _write_include_binaries(self.path, sorted(binary_files))
-        _write_ubuntu_patch(self.path, patch)
+        text_patch = "\n".join(text_patches) if text_patches else ""
+
+        _write_include_binaries(self.path, binary_files)
+        _write_ubuntu_patch(self.path, text_patch)
 
     def check_excluded_subset(self) -> None:
         """Check that excluded files are a subset of included files.
