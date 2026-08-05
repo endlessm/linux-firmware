@@ -5,16 +5,17 @@
 
 pkg=${1}
 
-ubuntu/bin/build-package "${pkg}" -- -b
-
-echo "II: Run lintian"
+echo "II: Run lintian on package: ${pkg}"
 
 changelog=ubuntu/package/${pkg}/changelog
-package=$(dpkg-parsechangelog -l "${changelog}" -S source)
-version=$(dpkg-parsechangelog -l "${changelog}" -S version)
 
-if lintian ../"${package}"_"${version}"_all.deb ; then
-	echo "II: PASS"
-else
-	echo "EE: FAIL" >&2
+s=$(dpkg-parsechangelog -l "${changelog}" -S Source)
+v=$(dpkg-parsechangelog -l "${changelog}" -S Version)
+
+deb=../${s}_${v}_all.deb
+if ! [ -e "${deb}" ] ; then
+	echo "EE: Not found: ${deb}" >&2
+	exit 1
 fi
+
+lintian "${deb}" || true
