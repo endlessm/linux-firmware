@@ -1,3 +1,9 @@
+linux-firmware (20260818.giteeed587f.1ubuntu) stonking; urgency=medium
+
+  * New upstream version
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 18 Aug 2026 14:14:09 +0200
+
 linux-firmware (20260709.git2c35b1ed.1ubuntu) stonking; urgency=medium
 
   * New upstream version

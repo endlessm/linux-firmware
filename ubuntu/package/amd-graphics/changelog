@@ -1,3 +1,10 @@
+linux-firmware-amd-graphics (20260818.giteeed587f-0ubuntu1) stonking; urgency=medium
+
+  * Miscellaneous Ubuntu changes
+    - Rebase to upstream commit eeed587f5b5032c39b3fb01cf8feffff46f9967c
+
+ -- Juerg Haefliger <juerg.haefliger@canonical.com>  Tue, 18 Aug 2026 14:14:07 +0200
+
 linux-firmware-amd-graphics (20260709.git2c35b1ed-0ubuntu1) stonking; urgency=medium
 
   * Miscellaneous Ubuntu changes
