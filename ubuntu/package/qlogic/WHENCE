@@ -32,6 +32,8 @@ File: ql2400_fw.bin
 Version: 8.07.00 MID
 File: ql2500_fw.bin
 Version: 8.08.207 MIDQ
+File: ql2900_fw.bin
+Version: 10.34.03
 
 Licence: Redistributable. See LICENCE.qla2xxx for details
 

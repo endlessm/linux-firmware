@@ -517,7 +517,7 @@ Driver: an8811hb - Airoha 2.5G Ethernet Phy
 
 File: airoha/an8811hb/EthMD32_CRC.DM.bin
 File: airoha/an8811hb/EthMD32_CRC.DSP.bin
-Version: 25110702
+Version: 26071602
 
 Licence: Redistributable. See LICENSE.airoha for details.
 
@@ -545,7 +545,9 @@ Licence: Redistributable. See LICENSE.airoha for details.
 Driver: airoha-npu-7583 - Airoha Network Processor Unit driver for AN7583 SoC
 
 File: airoha/an7583_npu_data.bin
+Version: 0.5
 File: airoha/an7583_npu_rv32.bin
+Version: 0.5
 
 Licence: Redistributable. See LICENSE.airoha for details.
 
@@ -2196,6 +2198,7 @@ File: cirrus/cs35l56/CS35L56_Rev3.13.3R.wmfw
 File: cirrus/cs35l56/CS35L56_Rev3.13.4.wmfw
 File: cirrus/cs35l56/CS35L56_Rev4.5.3.wmfw
 File: cirrus/cs35l56/CS35L56_Rev4.5.9.wmfw
+File: cirrus/cs35l56/CS35L56_Rev4.7.0.wmfw
 File: cirrus/cs35l56/CS35L56_Rev4.7.2.wmfw
 File: cirrus/cs35l63/CS35L63_Rev2.5.4.wmfw
 File: cirrus/cs35l63/CS35L63_Rev2.5.7.wmfw
@@ -2748,6 +2751,30 @@ Link: cirrus/cs35l56-b0-dsp1-misc-10280e87-spkid0-l3u1.bin -> cs35l56-b0-dsp1-mi
 Link: cirrus/cs35l56-b0-dsp1-misc-10280e87-spkid1.wmfw -> cs35l56/CS35L56_Rev3.11.28.wmfw
 Link: cirrus/cs35l56-b0-dsp1-misc-10280e87-spkid1-l2u3.bin -> cs35l56-b0-dsp1-misc-10280d13-spkid1-amp2.bin
 Link: cirrus/cs35l56-b0-dsp1-misc-10280e87-spkid1-l3u1.bin -> cs35l56-b0-dsp1-misc-10280d13-spkid1-amp1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid0.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid0-02-l1u1.bin -> cs35l63-a1-dsp1-misc-10280e1c-spkid0-01-l3u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid0-02-l1u3.bin -> cs35l63-a1-dsp1-misc-10280e1c-spkid0-01-l3u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid1.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid1-02-l1u1.bin -> cs35l63-a1-dsp1-misc-10280e1c-spkid1-01-l3u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid1-02-l1u3.bin -> cs35l63-a1-dsp1-misc-10280e1c-spkid1-01-l3u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid2.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid2-02-l1u1.bin -> cs35l63-a1-dsp1-misc-10280e1c-spkid2-01-l3u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid2-02-l1u3.bin -> cs35l63-a1-dsp1-misc-10280e1c-spkid2-01-l3u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid3.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid3-02-l1u1.bin -> cs35l63-a1-dsp1-misc-10280e1c-spkid3-01-l3u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efb-spkid3-02-l1u3.bin -> cs35l63-a1-dsp1-misc-10280e1c-spkid3-01-l3u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid0.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid0-05-l1u1.bin -> cs35l63-a1-dsp1-misc-10280e1e-spkid0-06-l3u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid0-05-l1u3.bin -> cs35l63-a1-dsp1-misc-10280e1e-spkid0-06-l3u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid1.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid1-05-l1u1.bin -> cs35l63-a1-dsp1-misc-10280e1e-spkid1-06-l3u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid1-05-l1u3.bin -> cs35l63-a1-dsp1-misc-10280e1e-spkid1-06-l3u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid2.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid2-05-l1u1.bin -> cs35l63-a1-dsp1-misc-10280e1e-spkid2-06-l3u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid2-05-l1u3.bin -> cs35l63-a1-dsp1-misc-10280e1e-spkid2-06-l3u3.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid3.wmfw -> cs35l63/CS35L63_Rev2.5.7.wmfw
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid3-05-l1u1.bin -> cs35l63-a1-dsp1-misc-10280e1e-spkid3-06-l3u1.bin
+Link: cirrus/cs35l63-a1-dsp1-misc-10280efc-spkid3-05-l1u3.bin -> cs35l63-a1-dsp1-misc-10280e1e-spkid3-06-l3u3.bin
 Link: cirrus/cs35l56-b0-dsp1-misc-103c8c52.wmfw -> cs35l56/CS35L56_Rev3.11.16.wmfw
 File: cirrus/cs35l56-b0-dsp1-misc-103c8c52-amp1.bin
 File: cirrus/cs35l56-b0-dsp1-misc-103c8c52-amp2.bin
@@ -2930,6 +2957,28 @@ File: cirrus/cs35l56-b0-dsp1-misc-10433451-l1u0.bin
 File: cirrus/cs35l56-b0-dsp1-misc-10433451-l1u1.bin
 File: cirrus/cs35l56-b0-dsp1-misc-10433451-l1u2.bin
 File: cirrus/cs35l56-b0-dsp1-misc-10433451-l1u3.bin
+Link: cirrus/cs35l57-b2-dsp1-misc-144dc1dc.wmfw -> cs35l56/CS35L56_Rev4.7.0.wmfw
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1dc-l1u0.bin
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1dc-l1u1.bin
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1dc-l1u2.bin
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1dc-l2u3.bin
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1dc-l2u4.bin
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1dc-l2u5.bin
+Link: cirrus/cs35l57-b2-dsp1-misc-144dc1de.wmfw -> cs35l56/CS35L56_Rev4.7.0.wmfw
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1de-l1u0.bin
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1de-l1u1.bin
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1de-l2u2.bin
+File: cirrus/cs35l57-b2-dsp1-misc-144dc1de-l2u3.bin
+Link: cirrus/cs35l57-b2-dsp1-misc-144dc910.wmfw -> cs35l56/CS35L56_Rev4.7.0.wmfw
+File: cirrus/cs35l57-b2-dsp1-misc-144dc910-l1u0.bin
+File: cirrus/cs35l57-b2-dsp1-misc-144dc910-l2u1.bin
+Link: cirrus/cs35l57-b2-dsp1-misc-144dca0a.wmfw -> cs35l56/CS35L56_Rev4.7.0.wmfw
+Link: cirrus/cs35l57-b2-dsp1-misc-144dca0a-l1u0.bin -> cs35l57-b2-dsp1-misc-144dc1dc-l1u0.bin
+Link: cirrus/cs35l57-b2-dsp1-misc-144dca0a-l1u1.bin -> cs35l57-b2-dsp1-misc-144dc1dc-l1u1.bin
+Link: cirrus/cs35l57-b2-dsp1-misc-144dca0a-l1u2.bin -> cs35l57-b2-dsp1-misc-144dc1dc-l1u2.bin
+Link: cirrus/cs35l57-b2-dsp1-misc-144dca0a-l2u3.bin -> cs35l57-b2-dsp1-misc-144dc1dc-l2u3.bin
+Link: cirrus/cs35l57-b2-dsp1-misc-144dca0a-l2u4.bin -> cs35l57-b2-dsp1-misc-144dc1dc-l2u4.bin
+Link: cirrus/cs35l57-b2-dsp1-misc-144dca0a-l2u5.bin -> cs35l57-b2-dsp1-misc-144dc1dc-l2u5.bin
 Link: cirrus/cs35l56-b0-dsp1-misc-17aa233b-spkid0.wmfw -> cs35l56/CS35L56_Rev3.11.20.wmfw
 File: cirrus/cs35l56-b0-dsp1-misc-17aa233b-spkid0-ampl.bin
 File: cirrus/cs35l56-b0-dsp1-misc-17aa233b-spkid0-ampr.bin
@@ -3378,6 +3427,7 @@ Licence: Redistributable. See LICENSE.amlogic for details
 Driver: powervr - Imagination Technologies PowerVR graphics driver
 
 File: powervr/rogue_33.15.11.3_v1.fw
+File: powervr/rogue_36.52.104.182_v1.fw
 File: powervr/rogue_36.53.104.796_v1.fw
 Version: 1.1.OS@6976702
 
@@ -3476,6 +3526,7 @@ File: ti/audio/tas2781/TAS2XXX8F40.bin
 File: ti/audio/tas2781/TAS2XXX8F41.bin
 File: ti/audio/tas2781/TAS2XXX8F42.bin
 File: ti/audio/tas2781/TAS2XXX8F62.bin
+File: ti/audio/tas2781/TAS2XXX8F7E.bin
 File: ti/audio/tas2781/TAS2XXX8F94.bin
 File: ti/audio/tas2781/TAS2XXX8F95.bin
 File: ti/audio/tas2781/TXNW2781RCA0.bin
@@ -3602,6 +3653,7 @@ Link: TAS2XXX8F40.bin -> ti/audio/tas2781/TAS2XXX8F40.bin
 Link: TAS2XXX8F41.bin -> ti/audio/tas2781/TAS2XXX8F41.bin
 Link: TAS2XXX8F42.bin -> ti/audio/tas2781/TAS2XXX8F42.bin
 Link: TAS2XXX8F62.bin -> ti/audio/tas2781/TAS2XXX8F62.bin
+Link: TAS2XXX8F7E.bin -> ti/audio/tas2781/TAS2XXX8F7E.bin
 Link: TAS2XXX8F94.bin -> ti/audio/tas2781/TAS2XXX8F94.bin
 Link: TAS2XXX8F95.bin -> ti/audio/tas2781/TAS2XXX8F95.bin
 Link: TIAS2781RCA2.bin -> ti/audio/tas2781/TIAS2781RCA2.bin
@@ -3626,6 +3678,22 @@ File: ti/audio/tas2783/8EF6-X-9.bin
 File: ti/audio/tas2783/8EF6-X-C.bin
 File: ti/audio/tas2783/1534-2-0x8.bin
 File: ti/audio/tas2783/1534-2-0xB.bin
+File: ti/audio/tas2783/15E2-0-0x8.bin
+File: ti/audio/tas2783/15E2-0-0x9.bin
+File: ti/audio/tas2783/15E2-0-0xA.bin
+File: ti/audio/tas2783/15E2-0-0xB.bin
+File: ti/audio/tas2783/15E2-0-0xC.bin
+File: ti/audio/tas2783/15E2-0-0xD.bin
+File: ti/audio/tas2783/15E2-0-0xE.bin
+File: ti/audio/tas2783/15E2-0-0xF.bin
+File: ti/audio/tas2783/15E2-1-0x8.bin
+File: ti/audio/tas2783/15E2-1-0x9.bin
+File: ti/audio/tas2783/15E2-1-0xA.bin
+File: ti/audio/tas2783/15E2-1-0xB.bin
+File: ti/audio/tas2783/15E2-1-0xC.bin
+File: ti/audio/tas2783/15E2-1-0xD.bin
+File: ti/audio/tas2783/15E2-1-0xE.bin
+File: ti/audio/tas2783/15E2-1-0xF.bin
 File: ti/audio/tas2783/16F4-1-0x9.bin
 File: ti/audio/tas2783/16F4-1-0xC.bin
 File: ti/audio/tas2783/1714-1-0x8.bin
@@ -3674,6 +3742,10 @@ File: ti/audio/tas2783/1B94-2-0-0xB.bin
 File: ti/audio/tas2783/1B94-2-0-0xC.bin
 File: ti/audio/tas2783/1B94-3-0-0xB.bin
 File: ti/audio/tas2783/1B94-3-0-0xC.bin
+File: ti/audio/tas2783/1C64-0-0-0x8.bin
+File: ti/audio/tas2783/1C64-0-0-0xB.bin
+File: ti/audio/tas2783/1C64-1-0-0x8.bin
+File: ti/audio/tas2783/1C64-1-0-0xB.bin
 File: ti/audio/tas2783/3431-2-0x8.bin
 File: ti/audio/tas2783/3431-2-0xB.bin
 File: ti/audio/tas2783/35C1-1-0x9.bin
@@ -3762,9 +3834,61 @@ File: ti/audio/tas2783/8FA5-0-0x9.bin
 File: ti/audio/tas2783/8FA5-0-0xA.bin
 File: ti/audio/tas2783/8FA5-0-0xC.bin
 File: ti/audio/tas2783/8FA5-0-0xD.bin
+File: ti/audio/tas2783/8FF4-1-0xC.bin
+File: ti/audio/tas2783/8FF4-1-0xD.bin
+File: ti/audio/tas2783/8FF4-2-0x9.bin
+File: ti/audio/tas2783/8FF4-2-0xA.bin
+File: ti/audio/tas2783/8FF5-1-0xC.bin
+File: ti/audio/tas2783/8FF5-1-0xD.bin
+File: ti/audio/tas2783/8FF5-2-0x9.bin
+File: ti/audio/tas2783/8FF5-2-0xA.bin
+File: ti/audio/tas2783/8FF7-1-0xC.bin
+File: ti/audio/tas2783/8FF7-2-0x9.bin
+File: ti/audio/tas2783/9001-1-0xA.bin
+File: ti/audio/tas2783/9001-1-0xD.bin
+File: ti/audio/tas2783/9001-2-0x9.bin
+File: ti/audio/tas2783/9001-2-0xC.bin
+File: ti/audio/tas2783/9013-0-2-0x9.bin
+File: ti/audio/tas2783/9013-0-2-0xC.bin
+File: ti/audio/tas2783/9013-1-2-0x9.bin
+File: ti/audio/tas2783/9013-1-2-0xC.bin
+File: ti/audio/tas2783/9014-0-2-0x9.bin
+File: ti/audio/tas2783/9014-0-2-0xC.bin
+File: ti/audio/tas2783/9014-1-2-0x9.bin
+File: ti/audio/tas2783/9014-1-2-0xC.bin
+File: ti/audio/tas2783/9015-0-2-0x9.bin
+File: ti/audio/tas2783/9015-0-2-0xC.bin
+File: ti/audio/tas2783/9015-1-2-0x9.bin
+File: ti/audio/tas2783/9015-1-2-0xC.bin
+File: ti/audio/tas2783/9026-0-2-0x9.bin
+File: ti/audio/tas2783/9026-0-2-0xC.bin
+File: ti/audio/tas2783/9026-1-2-0x9.bin
+File: ti/audio/tas2783/9026-1-2-0xC.bin
+File: ti/audio/tas2783/9028-2-0xC.bin
+File: ti/audio/tas2783/9028-2-0xD.bin
+File: ti/audio/tas2783/9028-3-0x9.bin
+File: ti/audio/tas2783/9028-3-0xA.bin
+File: ti/audio/tas2783/9029-2-0xC.bin
+File: ti/audio/tas2783/9029-3-0x9.bin
 
 Link: 1534-2-0x8.bin -> ti/audio/tas2783/1534-2-0x8.bin
 Link: 1534-2-0xB.bin -> ti/audio/tas2783/1534-2-0xB.bin
+Link: 15E2-0-0x8.bin -> ti/audio/tas2783/15E2-0-0x8.bin
+Link: 15E2-0-0x9.bin -> ti/audio/tas2783/15E2-0-0x9.bin
+Link: 15E2-0-0xA.bin -> ti/audio/tas2783/15E2-0-0xA.bin
+Link: 15E2-0-0xB.bin -> ti/audio/tas2783/15E2-0-0xB.bin
+Link: 15E2-0-0xC.bin -> ti/audio/tas2783/15E2-0-0xC.bin
+Link: 15E2-0-0xD.bin -> ti/audio/tas2783/15E2-0-0xD.bin
+Link: 15E2-0-0xE.bin -> ti/audio/tas2783/15E2-0-0xE.bin
+Link: 15E2-0-0xF.bin -> ti/audio/tas2783/15E2-0-0xF.bin
+Link: 15E2-1-0x8.bin -> ti/audio/tas2783/15E2-1-0x8.bin
+Link: 15E2-1-0x9.bin -> ti/audio/tas2783/15E2-1-0x9.bin
+Link: 15E2-1-0xA.bin -> ti/audio/tas2783/15E2-1-0xA.bin
+Link: 15E2-1-0xB.bin -> ti/audio/tas2783/15E2-1-0xB.bin
+Link: 15E2-1-0xC.bin -> ti/audio/tas2783/15E2-1-0xC.bin
+Link: 15E2-1-0xD.bin -> ti/audio/tas2783/15E2-1-0xD.bin
+Link: 15E2-1-0xE.bin -> ti/audio/tas2783/15E2-1-0xE.bin
+Link: 15E2-1-0xF.bin -> ti/audio/tas2783/15E2-1-0xF.bin
 Link: 16F4-1-0x9.bin -> ti/audio/tas2783/16F4-1-0x9.bin
 Link: 16F4-1-0xC.bin -> ti/audio/tas2783/16F4-1-0xC.bin
 Link: 1714-1-0x8.bin -> ti/audio/tas2783/1714-1-0x8.bin
@@ -3813,6 +3937,10 @@ Link: 1B94-2-0-0xB.bin -> ti/audio/tas2783/1B94-2-0-0xB.bin
 Link: 1B94-2-0-0xC.bin -> ti/audio/tas2783/1B94-2-0-0xC.bin
 Link: 1B94-3-0-0xB.bin -> ti/audio/tas2783/1B94-3-0-0xB.bin
 Link: 1B94-3-0-0xC.bin -> ti/audio/tas2783/1B94-3-0-0xC.bin
+Link: 1C64-0-0-0x8.bin -> ti/audio/tas2783/1C64-0-0-0x8.bin
+Link: 1C64-0-0-0xB.bin -> ti/audio/tas2783/1C64-0-0-0xB.bin
+Link: 1C64-1-0-0x8.bin -> ti/audio/tas2783/1C64-1-0-0x8.bin
+Link: 1C64-1-0-0xB.bin -> ti/audio/tas2783/1C64-1-0-0xB.bin
 Link: 3431-2-0x8.bin -> ti/audio/tas2783/3431-2-0x8.bin
 Link: 3431-2-0xB.bin -> ti/audio/tas2783/3431-2-0xB.bin
 Link: 35C1-1-0x9.bin -> ti/audio/tas2783/35C1-1-0x9.bin
@@ -3901,6 +4029,42 @@ Link: 8FA5-0-0x9.bin -> ti/audio/tas2783/8FA5-0-0x9.bin
 Link: 8FA5-0-0xA.bin -> ti/audio/tas2783/8FA5-0-0xA.bin
 Link: 8FA5-0-0xC.bin -> ti/audio/tas2783/8FA5-0-0xC.bin
 Link: 8FA5-0-0xD.bin -> ti/audio/tas2783/8FA5-0-0xD.bin
+Link: 8FF4-1-0xC.bin -> ti/audio/tas2783/8FF4-1-0xC.bin
+Link: 8FF4-1-0xD.bin -> ti/audio/tas2783/8FF4-1-0xD.bin
+Link: 8FF4-2-0x9.bin -> ti/audio/tas2783/8FF4-2-0x9.bin
+Link: 8FF4-2-0xA.bin -> ti/audio/tas2783/8FF4-2-0xA.bin
+Link: 8FF5-1-0xC.bin -> ti/audio/tas2783/8FF5-1-0xC.bin
+Link: 8FF5-1-0xD.bin -> ti/audio/tas2783/8FF5-1-0xD.bin
+Link: 8FF5-2-0x9.bin -> ti/audio/tas2783/8FF5-2-0x9.bin
+Link: 8FF5-2-0xA.bin -> ti/audio/tas2783/8FF5-2-0xA.bin
+Link: 8FF7-1-0xC.bin -> ti/audio/tas2783/8FF7-1-0xC.bin
+Link: 8FF7-2-0x9.bin -> ti/audio/tas2783/8FF7-2-0x9.bin
+Link: 9001-1-0xA.bin -> ti/audio/tas2783/9001-1-0xA.bin
+Link: 9001-1-0xD.bin -> ti/audio/tas2783/9001-1-0xD.bin
+Link: 9001-2-0x9.bin -> ti/audio/tas2783/9001-2-0x9.bin
+Link: 9001-2-0xC.bin -> ti/audio/tas2783/9001-2-0xC.bin
+Link: 9013-0-2-0x9.bin -> ti/audio/tas2783/9013-0-2-0x9.bin
+Link: 9013-0-2-0xC.bin -> ti/audio/tas2783/9013-0-2-0xC.bin
+Link: 9013-1-2-0x9.bin -> ti/audio/tas2783/9013-1-2-0x9.bin
+Link: 9013-1-2-0xC.bin -> ti/audio/tas2783/9013-1-2-0xC.bin
+Link: 9014-0-2-0x9.bin -> ti/audio/tas2783/9014-0-2-0x9.bin
+Link: 9014-0-2-0xC.bin -> ti/audio/tas2783/9014-0-2-0xC.bin
+Link: 9014-1-2-0x9.bin -> ti/audio/tas2783/9014-1-2-0x9.bin
+Link: 9014-1-2-0xC.bin -> ti/audio/tas2783/9014-1-2-0xC.bin
+Link: 9015-0-2-0x9.bin -> ti/audio/tas2783/9015-0-2-0x9.bin
+Link: 9015-0-2-0xC.bin -> ti/audio/tas2783/9015-0-2-0xC.bin
+Link: 9015-1-2-0x9.bin -> ti/audio/tas2783/9015-1-2-0x9.bin
+Link: 9015-1-2-0xC.bin -> ti/audio/tas2783/9015-1-2-0xC.bin
+Link: 9026-0-2-0x9.bin -> ti/audio/tas2783/9026-0-2-0x9.bin
+Link: 9026-0-2-0xC.bin -> ti/audio/tas2783/9026-0-2-0xC.bin
+Link: 9026-1-2-0x9.bin -> ti/audio/tas2783/9026-1-2-0x9.bin
+Link: 9026-1-2-0xC.bin -> ti/audio/tas2783/9026-1-2-0xC.bin
+Link: 9028-2-0xC.bin -> ti/audio/tas2783/9028-2-0xC.bin
+Link: 9028-2-0xD.bin -> ti/audio/tas2783/9028-2-0xD.bin
+Link: 9028-3-0x9.bin -> ti/audio/tas2783/9028-3-0x9.bin
+Link: 9028-3-0xA.bin -> ti/audio/tas2783/9028-3-0xA.bin
+Link: 9029-2-0xC.bin -> ti/audio/tas2783/9029-2-0xC.bin
+Link: 9029-3-0x9.bin -> ti/audio/tas2783/9029-3-0x9.bin
 Licence: Redistributable. LICENCE.ti-tspa for details. Marked:
 	 Copyright (C) 2026 Texas Instruments
 
@@ -3969,6 +4133,20 @@ Licence: Redistributable. See LICENCE.ti-tspa for details.
 
 Info:
 Firmware file generated via https://git.ti.com/cgit/lpaa-android-drivers/tasdevice-linux-driver/tree/json/tool/Non_Integrated_Bin_Tool_v1.4.1 and branch-master.
+------------------------------------------------------------------------------
+
+Driver: mm81x - Morse Micro mm81x Wi-Fi HaLow driver.
+
+File: morsemicro/mm81x/v56/mm8108.bin
+File: morsemicro/mm81x/v56/bcf_mm8108_mf15457.bin
+File: morsemicro/mm81x/v56/bcf_aw_hm677.bin
+Link: morsemicro/mm81x/v56/bcf_boardtype_0804.bin -> bcf_mm8108_mf15457.bin
+Link: morsemicro/mm81x/v56/bcf_boardtype_0807.bin -> bcf_mm8108_mf15457.bin
+Link: morsemicro/mm81x/v56/bcf_boardtype_0a02.bin -> bcf_aw_hm677.bin
+
+Version: 56
+
+License: Redistributable. See LICENCE.morsemicro for details.
 ------------------------------------------------------------------------------
 
 Driver: zd1211rw - ZD1211 USB-WLAN driver for Linux

@@ -3,7 +3,9 @@
 qcom/aic100/
 qcom/apq8016/
 qcom/apq8096/
+qcom/eliza/
 qcom/glymur/
+qcom/hawi/
 qcom/kaanapali/
 qcom/qcm2290/
 qcom/qcm6490/
@@ -30,4 +32,4 @@ qcom/x1p42100/
 # List of files and directories to be excluded from the package
 
 !qcom/*/*_zap.mbn
-!qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
+!qcom/*/*/*/qcdxkmsuc8?80.mbn

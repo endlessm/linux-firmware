@@ -40,6 +40,10 @@ Copyright: 2013-2017 Qualcomm Technologies, Inc. All rights reserved.
            1995-2005 Jean-loup Gailly and Mark Adler
 License: Redistributable-qcom-2
 
+Files: qcom/x1e80100/dell/xps13-9345/*
+Copyright: Dell Technologies
+License: Redistributable-dell
+
 Files: qcom/kaanapali/Kaanapali-MTP-tplg.bin
  qcom/qcm6490/QCM6490-IDP-tplg.bin
  qcom/qcs615/TALOS-EVK-tplg.bin
@@ -75,14 +79,6 @@ License: Redistributable-linaro
 Comment: Originates from https://github.com/linux-msm/audioreach-topology.git;
  Originates from
  https://git.codelinaro.org/linaro/qcomlt/audioreach-topology.git
-
-Files: qcom/x1e80100/dell/xps13-9345/adsp_dtbs.elf
- qcom/x1e80100/dell/xps13-9345/cdsp_dtbs.elf
- qcom/x1e80100/dell/xps13-9345/qcadsp8380.mbn
- qcom/x1e80100/dell/xps13-9345/qccdsp8380.mbn
- qcom/x1e80100/dell/xps13-9345/qcdxkmsuc8380.mbn
-Copyright: Dell Technologies
-License: Redistributable-dell
 
 License: Redistributable-dell
  PLEASE READ THIS LICENSE AGREEMENT ("AGREEMENT") CAREFULLY.  THIS AGREEMENT

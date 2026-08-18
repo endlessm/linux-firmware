@@ -11,7 +11,7 @@ qcom/leia_p??_470.fw
 qcom/yamato_p??.fw
 
 qcom/*/*_zap.mbn
-qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
+qcom/*/*/*/qcdxkmsuc8?80.mbn
 
 qcom/venus-*
 qcom/vpu

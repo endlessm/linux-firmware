@@ -28,7 +28,7 @@ Version: VIDEO.VE.5.2-00023-PROD-2
 File: qcom/venus-5.4/venus.mbn
 Link: qcom/venus-5.4/venus.mdt -> venus.mbn
 
-Version: VIDEO.VE.5.4-00063-PROD-1
+Version: VIDEO.VE.5.4-00064-PROD-1
 
 File: qcom/venus-6.0/venus.mbn
 
@@ -83,6 +83,10 @@ Version: VIDEO.VPU.3.1-0093
 File: qcom/vpu/vpu30_p4_s6_16mb.mbn
 
 Version: VIDEO.VPU.3.1-0093
+
+File: qcom/vpu/vpu33_p2_s7.mbn
+
+Version: VIDEO.VPU.3.4-0062
 
 File: qcom/vpu/vpu33_p4_s7.mbn
 Link: qcom/vpu/vpu33_p4.mbn -> vpu33_p4_s7.mbn
@@ -161,7 +165,6 @@ File: qcom/a663_gmu.bin
 Version: v3.05.01
 File: qcom/sa8775p/a663_zap.mbn
 Version: v0.09
-File: qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
 File: qcom/a702_sqe.fw
 Version: v0.49
 File: qcom/qcm2290/a702_zap.mbn
@@ -199,6 +202,12 @@ File: qcom/gen71500_sqe.fw
 Version: v1.81
 File: qcom/x1p42100/gen71500_zap.mbn
 Version: v0.13
+File: qcom/gen71700_gmu.bin
+Version: v4.09.00
+File: qcom/gen71700_sqe.fw
+Version: v1.82
+File: qcom/eliza/gen71700_zap.mbn
+Version: v0.15
 File: qcom/gen80000_aqe.fw
 Version: v0.14
 File: qcom/gen80000_gmu.bin
@@ -228,6 +237,18 @@ Licence: Redistributable. See LICENSE.qcom and NOTICE.qcom for details
 
 Binary files supplied originally from
 https://developer.qualcomm.com/hardware/dragonboard-410c/tools
+
+# Adreno ZAP shaders for Dell
+File: qcom/x1e80100/dell/xps13-9345/qcdxkmsuc8380.mbn
+
+Licence: Redistributable. See LICENSE.dell and NOTICE.qcom for details
+
+# Adreno ZAP shaders for Lenovo
+File: qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
+File: qcom/x1e80100/LENOVO/21N1/qcdxkmsuc8380.mbn
+File: qcom/x1e80100/LENOVO/83ED/qcdxkmsuc8380.mbn
+
+Licence: Redistributable. See LICENSE.qcom and NOTICE.qcom for details
 
 ------------------------------------------------------------------------------
 

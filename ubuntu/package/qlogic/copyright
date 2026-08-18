@@ -22,11 +22,7 @@ Files: qed/*
 Copyright: 2015-2018 QLogic Corporation.
 License: Redistributable-qed
 
-Files: ql2100_fw.bin
- ql2200_fw.bin
- ql23*
- ql2400_fw.bin
- ql2500_fw.bin
+Files: ql2*_fw.bin
 Copyright: 2003-2017 QLogic Corporation
 License: Redistributable-qla2xxx
 

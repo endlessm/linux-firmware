@@ -325,7 +325,7 @@ Version: WLAN.WBE.1.6-01275-QCAHKSWPL_SILICONZ-1
 File: ath12k/IPQ5424/hw1.0/Notice.txt
 File: ath12k/QCC2072/hw1.0/board-2.bin
 File: ath12k/QCC2072/hw1.0/firmware-2.bin
-Version: WLAN.COL.1.0.c2-00074-QCACOLSWPL_V1_TO_SILICONZ-1
+Version: WLAN.COL.1.0.c2-00228-QCACOLSWPL_V1_TO_SILICON-1
 File: ath12k/QCC2072/hw1.0/Notice.txt
 
 Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k for details

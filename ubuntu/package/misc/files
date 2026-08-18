@@ -146,6 +146,9 @@ usbdux*
 # Montage
 tsse_firmware.bin
 
+# Morse Micro
+morsemicro/
+
 # Moxa
 moxa/
 

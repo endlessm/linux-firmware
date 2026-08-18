@@ -483,13 +483,13 @@ File: xe/lnl_gsc_1.bin
 Version: GSC API/APB v1.0, release 104.0.5.1429, SVN 1 for Lunarlake
 
 File: xe/lnl_guc_70.bin
-Version: GuC API/APB ver 70.65.0 for Lunarlake
+Version: GuC API/APB ver 70.72.1 for Lunarlake
 
 File: xe/lnl_huc.bin
 Version: HuC API/APB ver 9.4.13 for Lunarlake
 
 File: xe/bmg_guc_70.bin
-Version: GuC API/APB ver 70.65.0 for Battlemage
+Version: GuC API/APB ver 70.72.1 for Battlemage
 
 File: xe/bmg_huc.bin
 Version: HuC API/APB ver 8.2.10 for Battlemage
@@ -501,13 +501,13 @@ File: xe/ptl_gsc_1.bin
 Version: GSC API/APB v1.0, release 105.0.2.1397, SVN 1 for Pantherlake
 
 File: xe/ptl_guc_70.bin
-Version: GuC API/APB ver 70.65.0 for Pantherlake
+Version: GuC API/APB ver 70.72.1 for Pantherlake
 
 File: xe/ptl_huc.bin
 Version: HuC API/APB ver 10.3.3 for Pantherlake
 
 File: xe/nvl_guc_70.bin
-Version: GuC API/APB ver 70.71.0 for Novalake S
+Version: GuC API/APB ver 70.72.1 for Novalake S
 
 License: Redistributable. See LICENSE.xe for details
 ------------------------------------------------------------------------------
