@@ -17,6 +17,20 @@ Licence: Redistributable. See LICENCE.cypress for details.
 
 --------------------------------------------------------------------------
 
+Driver: BCM-4345C5 - Broadcom Bluetooth firmware for RPi 400
+
+File: brcm/BCM4345C5.hcd
+Link: brcm/BCM4345C5.raspberrypi,400.hcd -> BCM4345C5.hcd
+Link: brcm/BCM4345C5.raspberrypi,4-compute-module.hcd -> BCM4345C5.hcd
+
+Licence: Unknown
+
+Found in bluez-firmware package of Raspberry Pi debian package pool;
+no licensing information.
+https://archive.raspberrypi.org/debian/pool/main/b
+
+--------------------------------------------------------------------------
+
 Driver: snd-korg1212 - Korg 1212 IO audio device
 
 File: korg/k1212.dsp
