@@ -1,8 +1,0 @@
-No source provided but the binary firmware is redistributable.
-
-Quoting from https://mail.gna.org/public/eagleusb-dev/2004-11/msg00172.html:
-
-    Last week, I talked to different parties at ADI regarding the licensing of
-    Layer 1 ( DSP ) and USB firmware source codes. ADI is not providing source
-    code for the firmware :-( The binary files will be distributed freely to end
-    users ( Is public domain licensing good for this? )

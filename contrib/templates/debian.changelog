@@ -1,5 +1,0 @@
-{{package}} ({{version}}) unstable; urgency=medium
-
-  * Automated release
-
- -- Linux Firmware <linux-firmware@kernel.org>  {{ date }}

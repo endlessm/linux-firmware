@@ -1,4 +1,0 @@
-This is not a full WLAN.HK.2.9.0.1-02175-QCAHKSWPL_SILICONZ-2 distribution.
-This only exists to publish a new version of m3.bin that fixes an issue present
-in the WLAN.HK.2.9.0.1-02146-QCAHKSWPL_SILICONZ-1 release. The amss.bin is
-duplicated from the prior release.
