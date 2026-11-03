@@ -1,3 +1,9 @@
+linux-firmware (20260818.giteeed587f-0ubuntu1endless1) eos; urgency=medium
+
+  * Bump to Ubuntu-20260818.giteeed587f-0ubuntu1.
+
+ -- Jian-Hong Pan <jhp@endlessaccess.org>  Tue, 03 Nov 2026 17:47:11 +0800
+
 linux-firmware (20260108.gitd86b47f7-0ubuntu1) resolute; urgency=medium
 
   * Miscellaneous Ubuntu changes
