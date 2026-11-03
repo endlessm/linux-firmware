@@ -89,14 +89,14 @@ find "${firmware_dir}" -type d -empty -delete
 
 echo "Install licenses"
 
-install -m 0644 GPL-* "${licenses_dir}"
+install -m 0644 LICENSES/GPL-* "${licenses_dir}"
 
 while IFS= read -r item ; do
 	item=${item#./}
 	item=${item%.zst}
 	while IFS= read -r license ; do
 		if ! [ -e "${licenses_dir}/${license}" ] ; then
-			install -m 0644 "${license}" "${licenses_dir}"
+			install -m 0644 "LICENSES/${license}" "${licenses_dir}"
 		fi
 	done < <(grep -A 1000 -h "^File:[ '\"]*${item}[ '\"]*$" WHENCE* | \
 	         grep -m1 "^Licen[cs]e:" | tr " " "\n" | grep "LICEN[CS]E" || \
